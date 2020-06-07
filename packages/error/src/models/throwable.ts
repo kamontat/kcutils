@@ -16,11 +16,11 @@ export default class Throwable extends Error {
     return new Throwable(state.code, state.name, message, undefined, state.type === ThrowStateType.WARN ? false : true);
   }
 
-  static from<E extends Error>(error: E, deadly?: boolean): Throwable {
+  static from<E extends Error>(error: E, deadly: boolean = true): Throwable {
     if (typeof error === "object" && typeof ((error as unknown) as Throwable).code === "number")
       return (error as unknown) as Throwable;
 
-    return new Throwable(-1, error.name, error.message, error.stack, deadly ?? true);
+    return new Throwable(-1, error.name, error.message, error.stack, deadly);
   }
 
   private readonly _stack: ThrowableStack[];
