@@ -19,9 +19,6 @@ commands:
       - run:
           name: "Import private key in GPG"
           command: echo "$GPG_PRIVATE_KEY_BASE64" | base64 --decode | gpg --batch --allow-secret-key-import --import
-      - run:
-          name: "Listing all secret keys in GPG"
-          command: gpg --keyid-format LONG --list-secret-keys
   gpg-cleanup:
     description: GPG cleanup
     steps:
@@ -107,6 +104,12 @@ jobs:
           name: Install and links lerna project together
           command: yarn bootstrap
       - run:
+          name: "[IMPORTANT] Update version on package"
+          command: yarn version:ci || true
+      - run:
+          name: "[IMPORTANT] Release new package version"
+          command: yarn release:ci || true
+      - run:
           name: Build compiler
           command: yarn build:init
       - run:
@@ -115,15 +118,9 @@ jobs:
       - run:
           name: "[IMPORTANT] Build dependencies graph"
           command: yarn start:graph
-      - run:
-          name: "[IMPORTANT] Update version on package"
-          command: yarn version:ci || true
-      - run:
-          name: "[IMPORTANT] Release new package version"
-          command: yarn release:ci || true
       - gpg-cleanup
       - store_artifacts:
-          path: ./packages/internals/graph/graph.pdf
+          path: ./internals/graph/graph.pdf
           destination: result/graph.pdf
 
 workflows:
