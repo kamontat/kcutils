@@ -49,7 +49,7 @@ for i in "$@"; do
     key="${i%=*}"
     value="${i#*=}"
 
-    if [[ $key == "type" ]] || [[ $key == "cmd" ]]; then
+    if [[ $key == "type" ]] || [[ $key == "cmd" ]] || [[ $key == "CI" ]]; then
       eval "${key}=${value}"
     else
       echo "unknown key $key: add as parameters instead"
@@ -96,7 +96,7 @@ if [[ "$cmd" == "version" ]] || [[ "$cmd" == "v" ]]; then
     $lerna "${version_params[@]}" \
       --message "chore(release): $prefix release $suffix"
   fi
-elif [[ "$type" == "publish" ]] || [[ "$cmd" == "p" ]]; then
+elif [[ "$cmd" == "publish" ]] || [[ "$cmd" == "p" ]]; then
   if [[ $CI == "true" ]]; then
     publish_params+=("--yes")
   fi
@@ -104,5 +104,5 @@ elif [[ "$type" == "publish" ]] || [[ "$cmd" == "p" ]]; then
   echo "[debug] cmd = $lerna ${publish_params[*]}"
   $lerna "${publish_params[@]}"
 else
-  echo "unknown type = ${type}" && exit 3
+  echo "unknown cmd = ${cmd}" && exit 3
 fi
