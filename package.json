@@ -14,11 +14,10 @@
     "dev:gwebsite": "scripts/runner.sh type=exec cmd=develop on=gwebsite",
     "build:graph": "scripts/runner.sh type=run cmd=build on=@internal/graph",
     "start:graph": "scripts/runner.sh type=exec cmd=start on=@internal/graph",
-    "version:local": "lerna version --exact --force-publish --conventional-commits --conventional-graduate --changelog-preset 'angular' --create-release github --message 'chore(release): updates'",
-    "version:beta": "lerna version --exact --preid beta --force-publish --conventional-commits --conventional-prerelease --changelog-preset 'angular' --create-release github --message 'chore(prerelease): updates'",
-    "version:ci": "lerna version --sign-git-commit --sign-git-tag --yes --exact --force-publish --conventional-commits --conventional-graduate --changelog-preset 'angular' --create-release github --message 'chore(release): auto updates [skip ci]'",
-    "release:local": "lerna publish from-git",
-    "release:ci": "lerna publish from-git --yes"
+    "version:local": "scripts/release.sh cmd=version",
+    "version:ci": "scripts/release.sh cmd=version CI=true",
+    "release:local": "scripts/release.sh cmd=publish",
+    "release:ci": "scripts/release.sh cmd=publish CI=true"
   },
   "devDependencies": {
     "@types/jest": "25.2.3",
