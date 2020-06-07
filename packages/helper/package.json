@@ -1,0 +1,19 @@
+{
+  "name": "@kcutils/helper",
+  "version": "0.1.0",
+  "description": "internal helper",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "icompiler-webpack",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@internal/commandline": "0.1.0",
+    "@internal/configuration": "0.1.0"
+  }
+}

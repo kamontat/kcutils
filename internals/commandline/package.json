@@ -1,0 +1,27 @@
+{
+  "name": "@internal/commandline",
+  "private": true,
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "bin": {
+    "icompiler-tsc": "bin/compiler-tsc.js",
+    "icompiler-webpack": "bin/compiler-webpack.js",
+    "icleaner": "bin/cleaner.js",
+    "itester": "bin/tester.js",
+    "irunner": "bin/runner.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean:cli": "trash lib *.tsbuildinfo"
+  },
+  "dependencies": {
+    "del": "5.1.0",
+    "minimist": "1.2.5"
+  },
+  "devDependencies": {
+    "@types/minimist": "1.2.0",
+    "@types/package_json": "0.1.0",
+    "trash-cli": "3.0.0"
+  }
+}

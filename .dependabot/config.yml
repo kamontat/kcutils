@@ -1,0 +1,19 @@
+version: 1
+
+update_configs:
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "weekly"
+    version_requirement_updates: "auto"
+    default_reviewers:
+      - "kamontat"
+    automerged_updates:
+      - match:
+          dependency_type: "development" # development | production | all
+          update_type: "all" # security:patch | semver:patch | semver:minor | in_range | all
+      - match:
+          dependency_type: "production" # development | production | all
+          update_type: "all" # security:patch | semver:patch | semver:minor | in_range | all
+    commit_message:
+      prefix: "chore"
+      include_scope: true

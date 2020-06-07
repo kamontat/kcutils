@@ -1,0 +1,43 @@
+{
+  "name": "@kcutils/root",
+  "version": "0.0.0-development",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "scripts/runner.sh type=run cmd=build",
+    "build:ci": "scripts/runner.sh type=run cmd=build",
+    "build:init": "scripts/runner.sh type=run cmd=build on=@internal/*",
+    "test": "lerna exec yarn test --ignore '@types/*' --ignore '@internal/*'",
+    "test:ci": "jest --ci --runInBand",
+    "clean": "lerna run clean && lerna run clean:cli",
+    "clean:all": "lerna run clean -- --all",
+    "dev:gwebsite": "scripts/runner.sh type=exec cmd=develop on=gwebsite",
+    "build:graph": "scripts/runner.sh type=run cmd=build on=@internal/graph",
+    "start:graph": "scripts/runner.sh type=exec cmd=start on=@internal/graph",
+    "version:local": "lerna version --exact --force-publish --conventional-commits --conventional-graduate --changelog-preset 'angular' --create-release github --message 'chore(release): updates'",
+    "version:beta": "lerna version --exact --preid beta --force-publish --conventional-commits --conventional-prerelease --changelog-preset 'angular' --create-release github --message 'chore(prerelease): updates'",
+    "version:ci": "lerna version --sign-git-commit --sign-git-tag --yes --exact --force-publish --conventional-commits --conventional-graduate --changelog-preset 'angular' --create-release github --message 'chore(release): auto updates [skip ci]'",
+    "release:local": "lerna publish from-git",
+    "release:ci": "lerna publish from-git --yes"
+  },
+  "devDependencies": {
+    "@types/jest": "25.2.3",
+    "@types/node": "14.0.10",
+    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "@typescript-eslint/parser": "2.34.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-loader": "4.0.2",
+    "eslint-plugin-prettier": "3.1.3",
+    "eslint-plugin-react": "7.20.0",
+    "jest": "26.0.1",
+    "jest-junit": "10.0.0",
+    "lerna": "3.22.0",
+    "prettier": "2.0.5",
+    "ts-jest": "26.1.0",
+    "ts-loader": "7.0.5",
+    "typescript": "3.9.5",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  }
+}

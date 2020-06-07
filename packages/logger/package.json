@@ -1,0 +1,21 @@
+{
+  "name": "@kcutils/logger",
+  "version": "0.0.1-alpha.1",
+  "description": "another logger services base on signale",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "icompiler-webpack",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester"
+  },
+  "dependencies": {
+    "@kcutils/helper": "0.1.0"
+  },
+  "devDependencies": {
+    "@internal/commandline": "0.1.0",
+    "@internal/configuration": "0.1.0"
+  }
+}

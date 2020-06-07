@@ -1,0 +1,139 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@2.1.0
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
+parameters:
+  node-version:
+    type: string
+    default: "12.16"
+
+# Require environment data
+# you can see all require environment variable at .env-default file
+
+commands:
+  gpg-setup:
+    description: GPG setup
+    steps:
+      - run:
+          name: "Import private key in GPG"
+          command: echo "$GPG_PRIVATE_KEY_BASE64" | base64 --decode | gpg --batch --allow-secret-key-import --import
+      - run:
+          name: "Listing all secret keys in GPG"
+          command: gpg --keyid-format LONG --list-secret-keys
+  gpg-cleanup:
+    description: GPG cleanup
+    steps:
+      - run:
+          name: "Deleting private key in GPG"
+          command: gpg --batch --yes --delete-secret-key "$GPG_IDENTIFY_KEY"
+      - run:
+          name: "Deleting public key in GPG"
+          command: gpg --batch --yes --delete-key "$GPG_IDENTIFY_KEY"
+      - run:
+          name: "Listing all secret keys in GPG"
+          command: gpg --keyid-format LONG --list-secret-key
+  git-setup:
+    description: Git setup
+    steps:
+      - run:
+          name: "Add git user email"
+          command: git config --global user.email "$COMMIT_EMAIL"
+      - run:
+          name: "Add git username"
+          command: git config --global user.name "$COMMIT_NAME"
+      - run:
+          name: "Add git user signing key"
+          command: git config --global user.signingKey "$GPG_SIGNING_KEY"
+
+jobs:
+  main:
+    docker:
+      - image: cimg/node:<< pipeline.parameters.node-version >>
+    environment:
+      ENV: "ci"
+      JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-version: "v1-lerna"
+          cache-key: "yarn.lock"
+          pkg-manager: yarn
+          include-branch-in-cache-key: false
+      - run:
+          name: Install and links lerna project together
+          command: yarn bootstrap
+      - run:
+          name: "[IMPORTANT] Compile and build application"
+          command: yarn build:ci
+      - run:
+          name: "[IMPORTANT] Test all unittest"
+          command: yarn test:ci
+      - sonarcloud/scan:
+          cache_version: 1
+      - store_test_results:
+          path: ./reports/junit/
+      - store_artifacts:
+          path: ./coverage
+          destination: reports/coverage
+      - store_artifacts:
+          path: ./reports/junit/
+          destination: reports/junit
+
+  release:
+    docker:
+      - image: cimg/node:<< pipeline.parameters.node-version >>
+    steps:
+      - add_ssh_keys:
+          name: Import github.com SSH key
+          fingerprints:
+            - "$SSH_FINGERPRINT"
+      - checkout
+      - gpg-setup
+      - git-setup
+      - run:
+          name: Install graphviz
+          command: |
+            sudo add-apt-repository universe
+            sudo apt-get update
+            sudo apt-get install -y graphviz
+      - node/install-packages:
+          cache-version: "v1-lerna"
+          cache-key: "yarn.lock"
+          pkg-manager: yarn
+          include-branch-in-cache-key: false
+      - run:
+          name: Install and links lerna project together
+          command: yarn bootstrap
+      - run:
+          name: Build compiler
+          command: yarn build:init
+      - run:
+          name: Build internal graph generator
+          command: yarn build:graph
+      - run:
+          name: "[IMPORTANT] Build dependencies graph"
+          command: yarn start:graph
+      - run:
+          name: "[IMPORTANT] Update version on package"
+          command: yarn version:ci || true
+      - run:
+          name: "[IMPORTANT] Release new package version"
+          command: yarn release:ci || true
+      - gpg-cleanup
+      - store_artifacts:
+          path: ./packages/internals/graph/graph.pdf
+          destination: result/graph.pdf
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - main
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - main

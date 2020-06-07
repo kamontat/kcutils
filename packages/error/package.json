@@ -1,0 +1,21 @@
+{
+  "name": "@kcutils/error",
+  "version": "0.1.0",
+  "description": "error management",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "icompiler-webpack",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester"
+  },
+  "dependencies": {
+    "@kcutils/helper": "0.1.0"
+  },
+  "devDependencies": {
+    "@internal/commandline": "0.1.0",
+    "@internal/configuration": "0.1.0"
+  }
+}
