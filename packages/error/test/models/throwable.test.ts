@@ -43,5 +43,7 @@ describe("Throwable object", () => {
       process.env.ENV = "production";
       expect(t.toString()).not.toContain("stacks");
     });
+
+    test("log throwable exception stack", () => {});
   });
 });

@@ -24,3 +24,9 @@ export const isProduction = () => {
 export const isCI = () => {
   return process.env.CI === "true";
 };
+
+export const setEnv = (name: string, value: string | undefined) => {
+  const old = process.env[name];
+  process.env[name] = value;
+  return old;
+};

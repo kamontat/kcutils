@@ -20,7 +20,7 @@ export default class Manager extends AbstractManager {
   private errors: Throwable[];
 
   constructor() {
-    super();
+    super({ captureRejections: true });
     this.errors = [];
   }
 

@@ -15,18 +15,39 @@ export interface ParsedFile {
   name: string;
 }
 
+const filewhitelist = "________________________________";
+
 export class Paths {
+  private readonly absolutePath: boolean;
   private readonly file: ParsedFile;
   private readonly dir: string[];
 
   constructor(filepath: string | null | undefined) {
-    const fileparsed = path.parse(filepath ?? "");
+    const fp = filepath?.endsWith(path.sep) ? `${filepath}${filewhitelist}` : filepath ?? "";
+    const fileparsed = path.parse(fp);
+    // console.log(fileparsed);
 
-    this.file = { base: fileparsed.base, ext: fileparsed.ext, name: fileparsed.name };
+    this.file = {
+      base: fileparsed.base === filewhitelist ? "" : fileparsed.base,
+      ext: fileparsed.ext,
+      name: fileparsed.name === filewhitelist ? "" : fileparsed.name,
+    };
 
-    if (filepath) this.dir = fileparsed.dir.split(path.sep);
-    else if (fileparsed.root === "") this.dir = ["internal"];
-    else this.dir = ["empty"];
+    this.absolutePath = fileparsed.root !== "";
+    if (fileparsed.dir == "") this.dir = ["internal"];
+    else
+      this.dir = path
+        .normalize(fileparsed.dir)
+        .split(path.sep)
+        .filter(v => v !== "" && v !== "..");
+  }
+
+  get absolute() {
+    return this.absolutePath;
+  }
+
+  get dirdeep() {
+    return this.dir.length;
   }
 
   get filename() {
@@ -42,8 +63,12 @@ export class Paths {
    * @param num
    */
   first(num: number) {
-    if (num === 0) return this.filename;
-    else return this.dir.slice(this.dir.length - num, this.dir.length).join(path.sep);
+    if (num <= 0) return this.filename;
+    else
+      return this.dir
+        .slice(this.dir.length - num, this.dir.length)
+        .concat(this.filename)
+        .join(path.sep);
   }
 
   /**
@@ -72,10 +97,16 @@ export class Paths {
    * @param num number of directory after regex
    * @param include include regex directory?
    */
-  after(regex: RegExp, num: number) {
+  after(regex: RegExp, num: number, size: number = 0): string {
+    const n = num < 0 ? 0 : num;
+
     const index = this.dir.findIndex(v => regex.test(v));
-    if (index < 0) return this.dir[0];
-    else return this.dir[index + num];
+    const targetdir = index < 0 ? this.dir[n] : this.dir[index + n];
+    if (size <= 0) return targetdir;
+    else {
+      const arr = [targetdir, this.after(regex, n + 1, size - 1)];
+      return arr.filter(v => v !== undefined && v !== "").join(path.sep);
+    }
   }
 
   /**

@@ -1,4 +1,4 @@
-import { isDevelopment, isStaging, isProduction, isTesting, isCI } from "..";
+import { isDevelopment, isStaging, isProduction, isTesting, isCI, setEnv as setEnvironment } from "..";
 
 const setCI = (str: string | undefined) => {
   const old = process.env.CI;
@@ -91,5 +91,23 @@ describe("Environment Helper", () => {
     expect(isCI()).toBeFalsy();
 
     setCI(old);
+  });
+
+  test("can set environment value", () => {
+    process.env.SOMETHING_NOT_RELATE = "this";
+    expect(process.env.SOMETHING_NOT_RELATE).toEqual("this");
+
+    setEnvironment("SOMETHING_NOT_RELATE", "that");
+    expect(process.env.SOMETHING_NOT_RELATE).toEqual("that");
+  });
+
+  test("return old environment value", () => {
+    // process.env.I_DID_NOT_THINK = "this";
+    expect(process.env.I_DID_NOT_THINK).toEqual(undefined);
+
+    const old = setEnvironment("I_DID_NOT_THINK", "new");
+
+    expect(old).toEqual(undefined);
+    expect(process.env.I_DID_NOT_THINK).toEqual("new");
   });
 });

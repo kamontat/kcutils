@@ -11,6 +11,11 @@ export interface ThrowableStack {
   method: string | null;
 }
 
+export let projectName = "example";
+export const setProject = (name: string) => {
+  projectName = name;
+};
+
 export default class Throwable extends Error {
   static build(state: ThrowState, message?: string): Throwable {
     return new Throwable(state.code, state.name, message, undefined, state.type === ThrowStateType.WARN ? false : true);
@@ -74,7 +79,9 @@ export default class Throwable extends Error {
 
         const registry = /registry\.npmjs\.org/;
         const extLibName = `<${s.path.after(registry, 1)}>/${s.path.filename}`;
-        const intLibName = `<${s.path.after(/ggaholic/, 2)}>/${s.path.after(/ggaholic/, 3)}/${s.path.filename}`;
+        const intLibName = `<${s.path.after(new RegExp(projectName), 2)}>/${s.path.after(new RegExp(projectName), 3)}/${
+          s.path.filename
+        }`;
 
         const filename = s.path.includes(registry) ? extLibName : intLibName;
 
