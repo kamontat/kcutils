@@ -25,7 +25,6 @@ export class Paths {
   constructor(filepath: string | null | undefined) {
     const fp = filepath?.endsWith(path.sep) ? `${filepath}${filewhitelist}` : filepath ?? "";
     const fileparsed = path.parse(fp);
-    // console.log(fileparsed);
 
     this.file = {
       base: fileparsed.base === filewhitelist ? "" : fileparsed.base,
@@ -34,7 +33,7 @@ export class Paths {
     };
 
     this.absolutePath = fileparsed.root !== "";
-    if (fileparsed.dir == "") this.dir = ["internal"];
+    if (fileparsed.dir === "") this.dir = ["internal"];
     else
       this.dir = path
         .normalize(fileparsed.dir)
