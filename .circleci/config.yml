@@ -85,7 +85,7 @@ jobs:
       - add_ssh_keys:
           name: Import github.com SSH key
           fingerprints:
-            - "$SSH_FINGERPRINT"
+            - "8a:c6:f5:db:29:7a:63:a8:96:f2:60:b3:96:53:b8:65"
       - checkout
       - gpg-setup
       - git-setup
