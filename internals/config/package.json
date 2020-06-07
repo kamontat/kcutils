@@ -1,7 +1,7 @@
 {
   "name": "@internal/configuration",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -9,7 +9,7 @@
     "clean": "icleaner"
   },
   "devDependencies": {
-    "@internal/commandline": "0.2.1",
+    "@internal/commandline": "0.2.2",
     "@types/eslint": "6.8.0",
     "@types/webpack": "4.41.12"
   }

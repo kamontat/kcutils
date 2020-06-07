@@ -1,7 +1,7 @@
 {
   "name": "@internal/graph",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -14,9 +14,9 @@
     "graphviz": "0.0.9"
   },
   "devDependencies": {
-    "@internal/commandline": "0.2.1",
-    "@types/graphviz": "0.2.1",
-    "@types/lerna__project": "0.2.1",
-    "@types/package_json": "0.2.1"
+    "@internal/commandline": "0.2.2",
+    "@types/graphviz": "0.2.2",
+    "@types/lerna__project": "0.2.2",
+    "@types/package_json": "0.2.2"
   }
 }

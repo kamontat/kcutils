@@ -1,7 +1,7 @@
 {
   "name": "@internal/testkit",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -17,7 +17,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@internal/commandline": "0.2.1",
+    "@internal/commandline": "0.2.2",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6"
   }
