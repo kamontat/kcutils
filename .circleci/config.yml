@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   node: circleci/node@2.1.0
-  sonarcloud: sonarsource/sonarcloud@1.0.1
 
 parameters:
   node-version:
@@ -70,8 +69,6 @@ jobs:
       - run:
           name: "[IMPORTANT] Test all unittest"
           command: yarn test:ci
-      - sonarcloud/scan:
-          cache_version: 1
       - store_test_results:
           path: ./reports/junit/
       - store_artifacts:
