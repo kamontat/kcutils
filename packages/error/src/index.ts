@@ -1,5 +1,5 @@
 import ThrowState, { ThrowStateType } from "./models/state";
 import Throwable from "./models/throwable";
-import Manager from "./services/manager";
+import Manager, { EventType } from "./services/manager";
 
-export { ThrowState, ThrowStateType, Throwable, Manager };
+export { ThrowState, ThrowStateType, Throwable, Manager, EventType };
