@@ -1,14 +1,10 @@
 {
-  "name": "@kcutils/example",
-  "version": "0.2.1",
+  "name": "@kcutils/graph",
+  "version": "0.0.1",
   "private": true,
-  "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "icompiler-webpack",
     "start": "irunner",
@@ -17,6 +13,7 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.2.1",
-    "@kcinternal/configuration": "0.2.1"
+    "@kcinternal/configuration": "0.2.1",
+    "@kcinternal/graph": "0.1.0"
   }
 }

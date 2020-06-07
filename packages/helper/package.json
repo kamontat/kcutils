@@ -5,6 +5,16 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/error"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -15,7 +25,7 @@
     "test": "itester"
   },
   "devDependencies": {
-    "@internal/commandline": "0.2.1",
-    "@internal/configuration": "0.2.1"
+    "@kcinternal/commandline": "0.2.1",
+    "@kcinternal/configuration": "0.2.1"
   }
 }

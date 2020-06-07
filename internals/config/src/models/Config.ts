@@ -1,4 +1,4 @@
-import { Setting } from "@internal/commandline";
+import { Setting } from "@kcinternal/commandline";
 import { ConfigBuilder } from "./ConfigBuilder";
 
 export class Config<C, R> extends Setting<C, R> {

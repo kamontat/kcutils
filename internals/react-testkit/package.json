@@ -1,6 +1,6 @@
 {
-  "name": "@internal/testkit",
-  "private": true,
+  "name": "@kcinternal/react-testkit",
+  "description": "internal modules for kc monots projects",
   "version": "0.2.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -17,7 +17,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@internal/commandline": "0.2.1",
+    "@kcinternal/commandline": "0.2.1",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6"
   }

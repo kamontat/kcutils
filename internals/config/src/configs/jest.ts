@@ -17,13 +17,6 @@ interface JestConfig {
 const jest: ConfigBuilder<void, JestConfig> = {
   default: void 0,
   transformer: ({ helper }) => {
-    // const snapshot = [];
-
-    // const pjson = helper.loadParentPackageJsonSync();
-    // if (Object.keys(pjson.devDependencies ?? {}).includes("@internal/testkit")) {
-    //   snapshot.push("enzyme-to-json/serializer");
-    // }
-
     return {
       verbose: true,
       rootDir: helper.parent.pwd,

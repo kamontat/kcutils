@@ -1,4 +1,4 @@
-import { DataTransformFn } from "@internal/commandline";
+import { DataTransformFn } from "@kcinternal/commandline";
 
 export type ConfigBuilder<I, O> = {
   default: I;

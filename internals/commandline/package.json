@@ -1,6 +1,6 @@
 {
-  "name": "@internal/commandline",
-  "private": true,
+  "name": "@kcinternal/commandline",
+  "description": "internal modules for kc monots projects",
   "version": "0.2.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

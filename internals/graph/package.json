@@ -1,9 +1,10 @@
 {
-  "name": "@internal/graph",
-  "private": true,
-  "version": "0.2.1",
+  "name": "@kcinternal/graph",
+  "description": "internal modules for kc monots projects",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build": "icompiler-tsc",
     "start": "irunner",
@@ -14,7 +15,7 @@
     "graphviz": "0.0.9"
   },
   "devDependencies": {
-    "@internal/commandline": "0.2.1",
+    "@kcinternal/commandline": "0.2.1",
     "@types/graphviz": "0.2.1",
     "@types/lerna__project": "0.2.1",
     "@types/package_json": "0.2.1"
