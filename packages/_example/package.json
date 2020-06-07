@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/example",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "",
   "main": "lib/index.js",
@@ -12,9 +12,8 @@
     "clean": "icleaner",
     "test": "itester"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@internal/commandline": "0.1.0",
-    "@internal/configuration": "0.1.0"
+    "@internal/commandline": "0.2.0",
+    "@internal/configuration": "0.2.0"
   }
 }

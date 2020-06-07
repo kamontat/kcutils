@@ -1,7 +1,7 @@
 {
   "name": "@internal/testkit",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -10,14 +10,14 @@
     "clean": "icleaner"
   },
   "dependencies": {
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
-    "enzyme-to-json": "3.5.0"
+    "enzyme-to-json": "3.5.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@internal/commandline": "0.1.0",
+    "@internal/commandline": "0.2.0",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6"
   }
