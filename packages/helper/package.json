@@ -5,6 +5,9 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "icompiler-webpack",
     "start": "irunner",
