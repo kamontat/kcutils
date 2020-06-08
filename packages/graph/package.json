@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/graph",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2-beta.2",
   "private": true,
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -12,8 +12,8 @@
     "test": "itester"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.3.0-beta.1",
-    "@kcinternal/configuration": "0.3.0-beta.1",
-    "@kcinternal/graph": "0.2.0-beta.1"
+    "@kcinternal/commandline": "0.3.0-beta.2",
+    "@kcinternal/configuration": "0.3.0-beta.2",
+    "@kcinternal/graph": "0.2.0-beta.2"
   }
 }
