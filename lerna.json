@@ -7,7 +7,7 @@
       "exact": true
     },
     "version": {
-      "allowBranch": "master",
+      "allowBranch": ["master", "develop", "feature/*"],
       "message": "chore(release): publish %s"
     },
     "publish": {
