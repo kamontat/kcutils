@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/example@0.2.2-beta.0...@kcutils/example@0.2.2-beta.1) (2020-06-08)
+
+**Note:** Version bump only for package @kcutils/example
+
+
+
+
+
 ## [0.2.2-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/example@0.2.1...@kcutils/example@0.2.2-beta.0) (2020-06-08)
 
 
