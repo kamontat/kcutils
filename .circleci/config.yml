@@ -87,10 +87,10 @@ commands:
         type: string
     steps:
       - run:
-          name: "[IMPORTANT] Update version on package"
+          name: "Update version on package"
           command: yarn version:ci << parameters.option >> || true
       - run:
-          name: "[IMPORTANT] Release new package version"
+          name: "Release new package version"
           command: yarn release:ci || true
 
 jobs:
@@ -104,10 +104,10 @@ jobs:
       - checkout
       - install-dependencies
       - run:
-          name: "[IMPORTANT] Compile and build application"
+          name: "Compile and build application"
           command: yarn build:ci
       - run:
-          name: "[IMPORTANT] Test all unittest"
+          name: "Test all unittest"
           command: yarn test:ci
       - sonarcloud/scan:
           cache_version: 1
@@ -125,8 +125,8 @@ jobs:
       - image: cimg/node:<< pipeline.parameters.node-version >>
     steps:
       - checkout
-      - gpg-setup
-      - git-setup
+      - install-aptget:
+          package-name: graphviz
       - install-dependencies
       - run:
           name: Build compiler
@@ -135,7 +135,7 @@ jobs:
           name: Build internal graph generator
           command: yarn build:graph
       - run:
-          name: "[IMPORTANT] Build dependencies graph"
+          name: "Build dependencies graph"
           command: yarn start:graph
       - store_artifacts:
           path: ./internals/graph/graph.pdf
@@ -148,11 +148,22 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
-      - install-dependencies
       - publish:
           option: type=beta
-      - gpg-cleanup
       - git-cleanup
+      - gpg-cleanup
+
+  release-rc:
+    docker:
+      - image: cimg/node:<< pipeline.parameters.node-version >>
+    steps:
+      - checkout
+      - gpg-setup
+      - git-setup
+      - publish:
+          option: "type=rc"
+      - git-cleanup
+      - gpg-cleanup
 
   release:
     docker:
@@ -161,13 +172,10 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
-      - install-aptget:
-          package-name: graphviz
-      - install-dependencies
       - publish:
-          option: ''
-      - gpg-cleanup
+          option: ""
       - git-cleanup
+      - gpg-cleanup
 
 workflows:
   version: 2
@@ -178,20 +186,31 @@ workflows:
       - build-graph:
           filters:
             branches:
-              only: master
+              only:
+                - master
           requires:
             - main
       - release:
           context: monots-release
           filters:
             branches:
-              only: master
+              only:
+                - master
           requires:
             - build-graph
+      - release-rc:
+          context: monots-release
+          filters:
+            branches:
+              only:
+                - develop
+          requires:
+            - main
       - release-beta:
           context: monots-release
           filters:
             branches:
-              only: develop
+              only:
+                - /feature\/.*/
           requires:
             - main

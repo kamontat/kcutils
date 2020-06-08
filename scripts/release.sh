@@ -9,8 +9,8 @@
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
 #/ -----------------------------------
-#/ How to:       release cmd=version type=[beta|alpha|rc|live]
-#/               release cmd=publish
+#/ How to:       release [dry=true] cmd=version type=[beta|alpha|rc|live]
+#/               release [dry=true] cmd=publish type=[beta|alpha|rc|live]
 #/ -----------------------------------
 #/ Create by:    Kamontat Chantrachirathumrong <developer@kamontat.net>
 #/ Since:        07/06/2020
@@ -42,10 +42,38 @@ publish_params=(
 
 type=""
 cmd=""
+dry=""
 
 run_lerna() {
-  echo "[debug] cmd = $lerna ${*}"
-  $lerna "$@"
+  printf "[debug] cmd = %s" "$lerna"
+  for i in "$@"; do
+    printf " '%s'" "$i"
+  done
+  echo
+
+  if test -z "$dry"; then
+    $lerna "$@"
+  fi
+}
+
+on_type() {
+  local t="$1"
+  local prefn="$2"
+  local livefn="$3"
+  local fn="$4"
+
+  if [[ "$t" == "alpha" ]] || [[ "$t" == "beta" ]] || [[ "$t" == "rc" ]]; then
+    [[ "$t" == "alpha" ]] && fullname="alpha"
+    [[ "$t" == "beta" ]] && fullname="beta"
+    [[ "$t" == "rc" ]] && fullname="release candidate"
+
+    $prefn "$t" "$fullname"
+  elif [[ "$t" == "live" ]]; then
+    "$t" == "live" && fullname="live"
+    $livefn "$t" "$fullname"
+  else
+    $fn
+  fi
 }
 
 for i in "$@"; do
@@ -54,7 +82,7 @@ for i in "$@"; do
     key="${i%=*}"
     value="${i#*=}"
 
-    if [[ $key == "type" ]] || [[ $key == "cmd" ]] || [[ $key == "CI" ]]; then
+    if [[ $key == "type" ]] || [[ $key == "cmd" ]] || [[ $key == "dry" ]] || [[ $key == "CI" ]]; then
       eval "${key}=${value}"
     else
       echo "unknown key $key: add as parameters instead"
@@ -71,40 +99,54 @@ if [[ "$cmd" == "version" ]] || [[ "$cmd" == "v" ]]; then
   prefix=""
   suffix=""
   if [[ $CI == "true" ]]; then
-    prefix="auto"
-    suffix="[skip ci]"
+    prefix="auto "
+    suffix=" [skip ci]"
     version_params+=("--yes")
   fi
 
-  if [[ "$type" == "alpha" ]]; then
+  create_preversion() {
+    local id="$1"
+    local name="$2"
+
     run_lerna "${version_params[@]}" \
-      --preid alpha \
+      --preid "$id" \
       --conventional-prerelease \
-      --message "chore(prerelease): $prefix publish alpha version $suffix"
-  elif [[ "$type" == "beta" ]]; then
-    run_lerna "${version_params[@]}" \
-      --preid beta \
-      --conventional-prerelease \
-      --message "chore(prerelease): $prefix publish beta version $suffix"
-  elif [[ "$type" == "rc" ]]; then
-    run_lerna "${version_params[@]}" \
-      --preid rc \
-      --conventional-prerelease \
-      --message "chore(prerelease): $prefix publish release candidate version $suffix"
-  elif [[ "$type" == "live" ]]; then
+      --message "chore(prerelease): ${prefix}release $name version$suffix"
+  }
+
+  create_liveversion() {
     run_lerna "${version_params[@]}" \
       --conventional-graduate \
-      --message "chore(release): $prefix publish public version $suffix"
-  else
+      --message "chore(release): ${prefix}release public version$suffix"
+  }
+
+  create_version() {
     run_lerna "${version_params[@]}" \
-      --message "chore(release): $prefix release $suffix"
-  fi
+      --message "chore(release): ${prefix}release version$suffix"
+  }
+
+  on_type "$type" create_preversion create_liveversion create_version
 elif [[ "$cmd" == "publish" ]] || [[ "$cmd" == "p" ]]; then
   if [[ $CI == "true" ]]; then
     publish_params+=("--yes")
   fi
 
-  run_lerna "${publish_params[@]}"
+  create_prepublish() {
+    local id="$1"
+    local name="$2"
+    local npm_name
+    [[ "$id" == "rc" ]] && npm_name="next" || npm_name="$id"
+
+    run_lerna "${publish_params[@]}" \
+      --dist-tag "$npm_name"
+  }
+
+  create_publish() {
+    run_lerna "${publish_params[@]}" \
+      --dist-tag "latest"
+  }
+
+  on_type "$type" create_prepublish create_publish
 else
   echo "unknown cmd = ${cmd}" && exit 3
 fi
