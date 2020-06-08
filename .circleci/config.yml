@@ -43,6 +43,55 @@ commands:
       - run:
           name: "Add git user signing key"
           command: git config --global user.signingKey "$GPG_SIGNING_KEY"
+  git-cleanup:
+    description: Git cleanup
+    steps:
+      - run:
+          name: "Add git user email"
+          command: git config --global user.email "user@example.com"
+      - run:
+          name: "Add git username"
+          command: git config --global user.name "example user"
+      - run:
+          name: "Add git user signing key"
+          command: git config --global user.signingKey "abc"
+  install-aptget:
+    description: Install aptget package
+    parameters:
+      package-name:
+        description: aptget package name
+        type: string
+    steps:
+      - run:
+          name: Install << parameters.package-name >>
+          command: |
+            sudo add-apt-repository universe
+            sudo apt-get update
+            sudo apt-get install -y << parameters.package-name >>
+  install-dependencies:
+    description: Install and links projects
+    steps:
+      - node/install-packages:
+          cache-version: "v1-lerna"
+          cache-key: "yarn.lock"
+          pkg-manager: yarn
+          include-branch-in-cache-key: false
+      - run:
+          name: Install and links lerna project together
+          command: yarn bootstrap
+  publish:
+    description: Publish new version
+    parameters:
+      option:
+        description: extra option for version command
+        type: string
+    steps:
+      - run:
+          name: "[IMPORTANT] Update version on package"
+          command: yarn version:ci << parameters.option >> || true
+      - run:
+          name: "[IMPORTANT] Release new package version"
+          command: yarn release:ci || true
 
 jobs:
   main:
@@ -53,14 +102,7 @@ jobs:
       JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
     steps:
       - checkout
-      - node/install-packages:
-          cache-version: "v1-lerna"
-          cache-key: "yarn.lock"
-          pkg-manager: yarn
-          include-branch-in-cache-key: false
-      - run:
-          name: Install and links lerna project together
-          command: yarn bootstrap
+      - install-dependencies
       - run:
           name: "[IMPORTANT] Compile and build application"
           command: yarn build:ci
@@ -78,33 +120,14 @@ jobs:
           path: ./reports/junit/
           destination: reports/junit
 
-  release:
+  build-graph:
     docker:
       - image: cimg/node:<< pipeline.parameters.node-version >>
     steps:
       - checkout
       - gpg-setup
       - git-setup
-      - run:
-          name: Install graphviz
-          command: |
-            sudo add-apt-repository universe
-            sudo apt-get update
-            sudo apt-get install -y graphviz
-      - node/install-packages:
-          cache-version: "v1-lerna"
-          cache-key: "yarn.lock"
-          pkg-manager: yarn
-          include-branch-in-cache-key: false
-      - run:
-          name: Install and links lerna project together
-          command: yarn bootstrap
-      - run:
-          name: "[IMPORTANT] Update version on package"
-          command: yarn version:ci || true
-      - run:
-          name: "[IMPORTANT] Release new package version"
-          command: yarn release:ci || true
+      - install-dependencies
       - run:
           name: Build compiler
           command: yarn build:init
@@ -114,10 +137,37 @@ jobs:
       - run:
           name: "[IMPORTANT] Build dependencies graph"
           command: yarn start:graph
-      - gpg-cleanup
       - store_artifacts:
           path: ./internals/graph/graph.pdf
           destination: result/graph.pdf
+
+  release-beta:
+    docker:
+      - image: cimg/node:<< pipeline.parameters.node-version >>
+    steps:
+      - checkout
+      - gpg-setup
+      - git-setup
+      - install-dependencies
+      - publish:
+          option: type=beta
+      - gpg-cleanup
+      - git-cleanup
+
+  release:
+    docker:
+      - image: cimg/node:<< pipeline.parameters.node-version >>
+    steps:
+      - checkout
+      - gpg-setup
+      - git-setup
+      - install-aptget:
+          package-name: graphviz
+      - install-dependencies
+      - publish:
+          option: ''
+      - gpg-cleanup
+      - git-cleanup
 
 workflows:
   version: 2
@@ -125,10 +175,23 @@ workflows:
     jobs:
       - main:
           context: monots-release
+      - build-graph:
+          filters:
+            branches:
+              only: master
+          requires:
+            - main
       - release:
           context: monots-release
           filters:
             branches:
               only: master
+          requires:
+            - build-graph
+      - release-beta:
+          context: monots-release
+          filters:
+            branches:
+              only: develop
           requires:
             - main

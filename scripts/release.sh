@@ -43,6 +43,11 @@ publish_params=(
 type=""
 cmd=""
 
+run_lerna() {
+  echo "[debug] cmd = $lerna ${*}"
+  $lerna "$@"
+}
+
 for i in "$@"; do
   if [[ "$i" =~ "=" ]]; then
 
@@ -71,29 +76,27 @@ if [[ "$cmd" == "version" ]] || [[ "$cmd" == "v" ]]; then
     version_params+=("--yes")
   fi
 
-  echo "[debug] cmd = $lerna exec yarn '${cmd}' '${params[*]}'"
-
   if [[ "$type" == "alpha" ]]; then
-    $lerna "${version_params[@]}" \
+    run_lerna "${version_params[@]}" \
       --preid alpha \
       --conventional-prerelease \
       --message "chore(prerelease): $prefix publish alpha version $suffix"
   elif [[ "$type" == "beta" ]]; then
-    $lerna "${version_params[@]}" \
+    run_lerna "${version_params[@]}" \
       --preid beta \
       --conventional-prerelease \
       --message "chore(prerelease): $prefix publish beta version $suffix"
   elif [[ "$type" == "rc" ]]; then
-    $lerna "${version_params[@]}" \
+    run_lerna "${version_params[@]}" \
       --preid rc \
       --conventional-prerelease \
       --message "chore(prerelease): $prefix publish release candidate version $suffix"
   elif [[ "$type" == "live" ]]; then
-    $lerna "${version_params[@]}" \
+    run_lerna "${version_params[@]}" \
       --conventional-graduate \
       --message "chore(release): $prefix publish public version $suffix"
   else
-    $lerna "${version_params[@]}" \
+    run_lerna "${version_params[@]}" \
       --message "chore(release): $prefix release $suffix"
   fi
 elif [[ "$cmd" == "publish" ]] || [[ "$cmd" == "p" ]]; then
@@ -101,8 +104,7 @@ elif [[ "$cmd" == "publish" ]] || [[ "$cmd" == "p" ]]; then
     publish_params+=("--yes")
   fi
 
-  echo "[debug] cmd = $lerna ${publish_params[*]}"
-  $lerna "${publish_params[@]}"
+  run_lerna "${publish_params[@]}"
 else
   echo "unknown cmd = ${cmd}" && exit 3
 fi
