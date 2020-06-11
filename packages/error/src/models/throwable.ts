@@ -1,9 +1,9 @@
-import { Paths, isProduction } from "@kcutils/helper";
+import { env, path } from "@kcutils/helper";
 
 import { ThrowState, ThrowStateType } from "./state";
 
 export interface ThrowableStack {
-  path: Paths;
+  path: path.Paths;
   typename: string | null;
   linenum: number | null;
   colmnum: number | null;
@@ -51,7 +51,7 @@ export default class Throwable extends Error {
     this._stack = [];
     for (const frame of rawStack) {
       this._stack.push({
-        path: new Paths(frame.getFileName()),
+        path: new path.Paths(frame.getFileName()),
         typename: frame.getTypeName(),
         linenum: frame.getLineNumber(),
         colmnum: frame.getColumnNumber(),
@@ -100,7 +100,7 @@ export default class Throwable extends Error {
   }
 
   toString() {
-    if (isProduction()) return this.getProductionFormatted();
+    if (env.isProduction()) return this.getProductionFormatted();
     else return this.getDevelopmentFormatted();
   }
 }
