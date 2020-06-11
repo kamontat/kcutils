@@ -1,4 +1,7 @@
-import { Paths } from "..";
+import { path } from "..";
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const { Paths } = path;
 
 describe("Path Helper", () => {
   test("create new paths", () => {
