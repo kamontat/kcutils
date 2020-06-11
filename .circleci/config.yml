@@ -70,15 +70,23 @@ commands:
             sudo apt-get install -y << parameters.package-name >>
   install-dependencies:
     description: Install and links projects
+    parameters:
+      only-lerna:
+        default: false
+        type: boolean
+        description: only install lerna
     steps:
       - node/install-packages:
           cache-version: "v1-lerna"
           cache-key: "yarn.lock"
           pkg-manager: yarn
           include-branch-in-cache-key: false
-      - run:
-          name: Install and links lerna project together
-          command: yarn bootstrap
+      - unless:
+          condition: << parameters.only-lerna >>
+          steps:
+            - run:
+                name: Install and links lerna project together
+                command: yarn bootstrap
   publish:
     description: Publish new version
     parameters:
@@ -148,8 +156,10 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
+      - install-dependencies:
+          only-lerna: true
       - publish:
-          option: type=beta
+          option: "type=beta"
       - git-cleanup
       - gpg-cleanup
 
@@ -160,6 +170,8 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
+      - install-dependencies:
+          only-lerna: true
       - publish:
           option: "type=rc"
       - git-cleanup
@@ -172,6 +184,8 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
+      - install-dependencies:
+          only-lerna: true
       - publish:
           option: ""
       - git-cleanup
