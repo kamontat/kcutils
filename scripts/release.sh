@@ -27,12 +27,12 @@ lerna="${PWD}/node_modules/.bin/lerna"
 version_params=(
   "version"                      # require parameters
   "--exact"                      # create version without ^ or ~
-  "--force-publish"              # force publish even it exist
   "--conventional-commits"       # use convertional commit
   "--changelog-preset" "angular" # convertional commit is angular
   "--create-release" "github"    # create release on github too
   "--sign-git-commit"            # sign git commit
   "--sign-git-tag"               # sign git tag
+  "--no-private"                 # ignore private packages
 )
 
 publish_params=(

@@ -12,7 +12,6 @@
     },
     "publish": {
       "graphType": "all",
-      "ignoreChanges": ["*.md"],
       "message": "chore(release): publish"
     }
   }
