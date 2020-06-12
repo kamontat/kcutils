@@ -1,8 +1,8 @@
 type Checking<I, O> = (t: I) => O;
 
 export class Optional<T> {
-  private data: T;
-  private empty: boolean;
+  private readonly data: T;
+  private readonly empty: boolean;
 
   constructor(data: T | undefined | null, extra?: Checking<T, boolean>) {
     const checking = extra ?? (() => true);

@@ -32,16 +32,16 @@ type Parameters = "longest-label";
 
 export class Logger<T extends string = ""> {
   private _option: StrictOption;
-
   private _setting: StrictSetting;
-  private _types: Types<DefaultKeyTypes | T>;
 
-  private _timers: Map<string, number>;
   private _color: Chalk;
-
   private _isPreviousLogInteractive: boolean;
 
-  private _parameters: Map<Parameters, string>;
+  private readonly _types: Types<DefaultKeyTypes | T>;
+
+  private readonly _timers: Map<string, number>;
+
+  private readonly _parameters: Map<Parameters, string>;
 
   constructor(opts?: OptionalLoggerOption<T>) {
     this._option = json.deepMerge(options, opts);
@@ -83,13 +83,11 @@ export class Logger<T extends string = ""> {
 
     const inputOption = typeof data === "string" ? { message: data } : data;
 
-    // const stream = inputOption.stream ? inputOption.stream : level.stream;
-
     const _stream = this._option.overrideStream ? this._option.streams : level.stream;
     let _streams = array.toArray(_stream);
     if (inputOption.stream) {
       const streams = array.toArray(inputOption.stream);
-      inputOption.appendStream ? _streams.push(...streams) : (_streams = streams);
+      _streams = inputOption.appendStream ? _streams.concat(...streams) : streams;
     }
 
     const message = this.build(_type, data);
@@ -135,7 +133,7 @@ export class Logger<T extends string = ""> {
       const previous = this._timers.get(_label) as number;
       const current = Date.now();
       const timestamp = current - previous;
-      const time = timestamp < 1000 ? timestamp + "ms" : (timestamp / 1000).toFixed(2) + "s";
+      const time = timestamp < 1000 ? `${timestamp} ms` : `${(timestamp / 1000).toFixed(2)} s`;
 
       this._timers.delete(_label);
 
@@ -307,7 +305,7 @@ export class Logger<T extends string = ""> {
 
   private buildAsString(type: LoggerType, output: OutputMessage) {
     const withSpace = (i: string) => {
-      if (string.isNotEmpty(i)) return " " + i;
+      if (string.isNotEmpty(i)) return ` ${i}`;
       else return i;
     };
 
@@ -334,12 +332,13 @@ export class Logger<T extends string = ""> {
   }
 
   private buildMetadata() {
-    let d = "invalid";
+    let d: string;
     if (this._option.datetime === "time") d = this.time;
     else if (this._option.datetime === "date") d = this.date;
     else if (this._option.datetime === "datetime") d = this.datetime;
     else if (this._option.datetime === "timestamp") d = this.timestamp;
     else d = this.date; // default
+
     const datetime = { index: 1, data: d };
 
     const scopes = { index: 2, data: this._option.scopes };
@@ -465,7 +464,7 @@ export class Logger<T extends string = ""> {
         cursorTo(stream, 0);
       }
 
-      stream.write(message + "\n");
+      stream.write(`${message}\n`);
       this._isPreviousLogInteractive = this._option.interactive;
     });
   }

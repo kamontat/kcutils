@@ -1,7 +1,7 @@
 import { Writable } from "stream";
 
 export class MockStream extends Writable {
-  constructor(private overrideWrite: (chunk: any, encoding: BufferEncoding) => Promise<void>) {
+  constructor(private readonly overrideWrite: (chunk: any, encoding: BufferEncoding) => Promise<void>) {
     super();
   }
 

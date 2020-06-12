@@ -84,7 +84,6 @@ export default class Throwable extends Error {
         else return `<${rootdir}>/${dir}`;
       };
 
-      // console.log(s.path);
       let filename = "";
       const registry = /registry\.npmjs\.org/;
       const nodeModules = /node_modules/;
