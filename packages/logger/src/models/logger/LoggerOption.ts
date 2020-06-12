@@ -3,8 +3,8 @@ import { OptionalSetting } from "./LoggerSetting";
 import { Levels } from "../../constants/levels";
 import { Writable } from "stream";
 
-type DateTimeFormat = "date" | "time" | "datetime" | "timestamp";
-type OutputType = "file" | "console";
+export type DateTimeFormat = "date" | "time" | "datetime" | "timestamp";
+export type OutputType = "file" | "console";
 
 export interface StrictOption {
   debug: boolean;

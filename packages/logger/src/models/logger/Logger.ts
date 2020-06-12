@@ -82,10 +82,18 @@ export class Logger<T extends string = ""> {
     const level = toLevel(type.level);
 
     const inputOption = typeof data === "string" ? { message: data } : data;
-    const stream = inputOption.stream ? inputOption.stream : level.stream;
+
+    // const stream = inputOption.stream ? inputOption.stream : level.stream;
+
+    const _stream = this._option.overrideStream ? this._option.streams : level.stream;
+    let _streams = array.toArray(_stream);
+    if (inputOption.stream) {
+      const streams = array.toArray(inputOption.stream);
+      inputOption.appendStream ? _streams.push(...streams) : (_streams = streams);
+    }
 
     const message = this.build(_type, data);
-    this.writing(stream, message);
+    this.writing(_streams, message);
   }
 
   // build logger message
@@ -154,7 +162,7 @@ export class Logger<T extends string = ""> {
     return this._option.secrets.reduce((msg, secret) => {
       const regex = new RegExp(secret, "gi");
       const s = this._option.censor(secret);
-      const formatting = this.format(s, this._setting.secret);
+      const formatting = this.format(s, this._setting.secret, undefined, false);
       return msg.replace(regex, formatting);
     }, message);
   }
@@ -195,7 +203,7 @@ export class Logger<T extends string = ""> {
    * @param setting new setting merged with current setting
    * @param type new type merged with current type
    */
-  copy<U extends string>(option?: OptionalOption, setting?: OptionalSetting, type?: Types<U>): Logger<T | U> {
+  copy<U extends string = "">(option?: OptionalOption, setting?: OptionalSetting, type?: Types<U>): Logger<T | U> {
     const options = json.deepMerge(this._option, option);
     const settings = json.deepMerge(this._setting, setting);
     const types = json.deepMerge(this._types, type);
@@ -339,7 +347,7 @@ export class Logger<T extends string = ""> {
     const seperator = { index: 4, data: this._option.separator };
 
     const metadata: OutputMessageMetadata = { datetime, scopes, filename, seperator };
-    this.idebug("build metadata object: ", JSON.stringify(metadata));
+    this.idebug("build metadata object: ", metadata);
     return metadata;
   }
 
@@ -353,7 +361,7 @@ export class Logger<T extends string = ""> {
     const custom = { index: 3, data: array.toArray(customPrefix ?? "") };
 
     const prefix: OutputMessagePrefix = { label, badge, custom };
-    this.idebug("build prefix object: ", JSON.stringify(prefix));
+    this.idebug("build prefix object: ", prefix);
     return prefix;
   }
 
@@ -361,7 +369,7 @@ export class Logger<T extends string = ""> {
     const messages = { index: 1, data: array.toArray(msg) };
 
     const data: OutputMessageData = { messages };
-    this.idebug("build data object: ", JSON.stringify(data));
+    this.idebug("build data object: ", data);
     return data;
   }
 
@@ -369,7 +377,7 @@ export class Logger<T extends string = ""> {
     const custom = { index: 1, data: array.toArray(customSuffix ?? "") };
 
     const suffix: OutputMessageSuffix = { custom };
-    this.idebug("build metadata object: ", JSON.stringify(suffix));
+    this.idebug("build metadata object: ", suffix);
     return suffix;
   }
 
@@ -379,9 +387,10 @@ export class Logger<T extends string = ""> {
    */
   private shouldLog(type: LoggerType) {
     const level = toLevel(this._option.level);
+    const typeLevel = toLevel(type.level);
 
-    let msg = `${type.label}(${level.name}) type for log level ${level.name}`;
-    const res = level.level <= level.level;
+    let msg = `${type.label}(${typeLevel.name}) type for log level ${level.name}`;
+    const res = typeLevel.level <= level.level;
     if (res) msg += " is runnable";
     else msg += " is disabled";
 
@@ -409,9 +418,9 @@ export class Logger<T extends string = ""> {
    * @param settings formatting settings
    * @param color with color format
    */
-  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk) {
+  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, censor: boolean = true) {
     const msg = array.toArray(input).join(" ");
-    this.idebug(`formatting ${msg} by`, JSON.stringify(settings));
+    this.idebug(`formatting ${msg} by`, settings);
     if (settings === undefined || settings === false) return "";
 
     type Execute = [string, boolean, (s: string) => string];
@@ -422,7 +431,7 @@ export class Logger<T extends string = ""> {
       ["bold", settings.bold, m => this._color.bold(m)],
       ["italic", settings.italic, m => this._color.italic(m)],
       ["color", color !== undefined, m => (color as Chalk)(m)],
-      ["censor", this.isContainSecret(msg), m => this.censor(m)],
+      ["censor", this.isContainSecret(msg) && censor, m => this.censor(m)],
     ];
 
     return executes.reduce((p, c) => {
@@ -446,8 +455,7 @@ export class Logger<T extends string = ""> {
    * @param message message
    */
   private writing(stream: Writable | Writable[], message: string) {
-    const oldStreams = this._option.overrideStream ? [] : array.toArray(stream);
-    const streams = array.flatmap(oldStreams, this._option.streams);
+    const streams = array.toArray(stream);
 
     this.idebug(`write message to ${streams.length} output`);
     streams.forEach(stream => {

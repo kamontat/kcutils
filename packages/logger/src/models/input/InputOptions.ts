@@ -1,7 +1,10 @@
+import { Writable } from "stream";
+
 export interface InputOption {
   label?: string;
   prefix?: string;
   suffix?: string;
   message: string | string[];
-  stream?: NodeJS.WriteStream | NodeJS.WriteStream[];
+  stream?: Writable | Writable[];
+  appendStream?: boolean;
 }

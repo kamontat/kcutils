@@ -18,7 +18,7 @@ const _levels = new Map([
   ["silly", silly],
 ]);
 
-export const levels = _levels.values();
+export const levels = Array.from(_levels.values());
 export type Levels = "silent" | "error" | "warn" | "info" | "debug" | "silly";
 
 export const toLevel = (level: string): LoggerLevel => {
