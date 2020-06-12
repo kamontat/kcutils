@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.3.0-rc.0...@kcinternal/configuration@0.3.1-rc.1) (2020-06-12)
+
+
+### Performance Improvements
+
+* **config:** ignore folder with _ in the front ([7fb7a19](https://github.com/kamontat/kcutils/commit/7fb7a196301232b34c3ba8470148a2f26237f661))
+
+
+
+
+
 # [0.3.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.3.0-beta.2...@kcinternal/configuration@0.3.0-rc.0) (2020-06-11)
 
 **Note:** Version bump only for package @kcinternal/configuration

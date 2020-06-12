@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.2-rc.0...@kcutils/error@0.2.3-rc.1) (2020-06-12)
+
+
+### Bug Fixes
+
+* **lint:** fix code review by sonar ([84a3a07](https://github.com/kamontat/kcutils/commit/84a3a0743a78b66be31db67a7ba8249a92fd720d))
+* **model:** after should return undefined with it not found ([4846859](https://github.com/kamontat/kcutils/commit/4846859a0b4a2a6c3fa9c61ec4b3d674ec64d328))
+
+
+### Performance Improvements
+
+* **model:** update new stack output for custom throwable class ([157c2a9](https://github.com/kamontat/kcutils/commit/157c2a982a9ae27e0fb44c3c9c75096ddf33b1a4))
+* update new helper version ([b996c86](https://github.com/kamontat/kcutils/commit/b996c8690099ddd649eefeaa9d81c44d498a9ec4))
+
+
+
+
+
 ## [0.2.2-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.2-beta.2...@kcutils/error@0.2.2-rc.0) (2020-06-11)
 
 **Note:** Version bump only for package @kcutils/error
