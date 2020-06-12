@@ -3,7 +3,7 @@ import { string } from "@kcutils/helper";
 import { Logger } from "../src";
 import { DateTimeFormat } from "../src/models/logger/LoggerOption";
 import { error, warn, info, silly, silent, debug, toLevel, Levels } from "../src/constants/levels";
-import { MockStream } from "./models/stream";
+import { MockStream } from "../src/test/models/stream";
 import { LoggerLevelBuilder } from "../src/models/logger/LoggerLevel";
 import { DefaultKeyTypes } from "../src/constants/types";
 
