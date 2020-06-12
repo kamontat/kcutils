@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/example",
-  "version": "0.2.2-beta.2",
+  "version": "0.2.2-rc.0",
   "private": true,
   "description": "",
   "main": "lib/index.js",
@@ -26,7 +26,7 @@
     "test": "itester"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.3.0-beta.2",
-    "@kcinternal/configuration": "0.3.0-beta.2"
+    "@kcinternal/commandline": "0.3.0-rc.0",
+    "@kcinternal/configuration": "0.3.0-rc.0"
   }
 }
