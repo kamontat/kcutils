@@ -19,6 +19,6 @@ describe("Array helper", () => {
     const a2: (string | string[])[] = [[str, str], str, str, [str, str]];
     const arr = array.flatmap(a1, a2);
 
-    expect(arr).toHaveLength(4);
+    expect(arr).toHaveLength(14);
   });
 });
