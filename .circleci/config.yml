@@ -95,6 +95,9 @@ commands:
         type: string
     steps:
       - run:
+          name: "List all package will package"
+          command: yarn updated:ci || true
+      - run:
           name: "Update version on package"
           command: yarn version:ci << parameters.option >> || true
       - run:

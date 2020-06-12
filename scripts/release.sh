@@ -24,6 +24,11 @@ cd "$(dirname "$0")/.." || exit 1
 
 lerna="${PWD}/node_modules/.bin/lerna"
 
+updated_params=(
+  "updated"
+  "--long"
+)
+
 version_params=(
   "version"                      # require parameters
   "--exact"                      # create version without ^ or ~
@@ -147,6 +152,8 @@ elif [[ "$cmd" == "publish" ]] || [[ "$cmd" == "p" ]]; then
   }
 
   on_type "$type" create_prepublish create_publish
+elif [[ "$cmd" == "updated" ]] || [[ "$cmd" == "u" ]]; then
+  run_lerna "${updated_params[@]}"
 else
   echo "unknown cmd = ${cmd}" && exit 3
 fi
