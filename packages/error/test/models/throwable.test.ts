@@ -1,6 +1,9 @@
-import { Throwable } from "../../src";
+import { env } from "@kcutils/helper";
+import { Throwable, setProject } from "../../src";
 
 describe("Throwable object", () => {
+  setProject("error");
+
   describe("Creation", () => {
     const t = new Throwable(12, "Name", "message...");
 
@@ -35,15 +38,30 @@ describe("Throwable object", () => {
     });
 
     test("development message is multiple details line", () => {
-      process.env.ENV = "development";
+      const old = env.setEnv("ENV", "development");
+
       expect(t.toString()).toContain("stacks");
+
+      env.setEnv("ENV", old);
     });
 
     test("production message is oneline error", () => {
-      process.env.ENV = "production";
+      const old = env.setEnv("ENV", "production");
+
       expect(t.toString()).not.toContain("stacks");
+
+      env.setEnv("ENV", old);
     });
 
-    test("log throwable exception stack", () => {});
+    test("log throwable exception stack", () => {
+      const old = env.setEnv("ENV", "development");
+
+      const t = new Throwable(13, "name");
+      const str = t.toString();
+      expect(str).toContain("<error>");
+      expect(str).toContain("jest");
+
+      env.setEnv("ENV", old);
+    });
   });
 });

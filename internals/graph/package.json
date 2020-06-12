@@ -1,10 +1,23 @@
 {
   "name": "@kcinternal/graph",
   "description": "internal modules for kc monots projects",
-  "version": "0.1.0",
+  "version": "0.2.1-rc.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "internals/graph"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "icompiler-tsc",
     "start": "irunner",
@@ -15,9 +28,9 @@
     "graphviz": "0.0.9"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.2.1",
-    "@types/graphviz": "0.2.1",
-    "@types/lerna__project": "0.2.1",
-    "@types/package_json": "0.2.1"
+    "@kcinternal/commandline": "0.3.1-rc.1",
+    "@types/graphviz": "0.2.2-rc.1",
+    "@types/lerna__project": "0.2.2-rc.1",
+    "@types/package_json": "0.2.2-rc.1"
   }
 }

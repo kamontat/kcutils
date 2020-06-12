@@ -1,9 +1,23 @@
 {
   "name": "@kcinternal/react-testkit",
   "description": "internal modules for kc monots projects",
-  "version": "0.2.1",
+  "version": "0.2.3-rc.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "internals/react-testkit"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "icompiler-tsc",
     "start": "irunner",
@@ -17,7 +31,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.2.1",
+    "@kcinternal/commandline": "0.3.1-rc.1",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6"
   }

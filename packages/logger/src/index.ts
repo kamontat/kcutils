@@ -1,5 +1,1 @@
-export class Index {
-  constructor() {
-    console.log("hello, world");
-  }
-}
+export { Logger } from "./models/logger/Logger";

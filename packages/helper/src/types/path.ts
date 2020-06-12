@@ -16,6 +16,7 @@ export interface ParsedFile {
 }
 
 const filewhitelist = "________________________________";
+const internal = "internal";
 
 export class Paths {
   private readonly absolutePath: boolean;
@@ -33,12 +34,20 @@ export class Paths {
     };
 
     this.absolutePath = fileparsed.root !== "";
-    if (fileparsed.dir === "") this.dir = ["internal"];
+    if (fileparsed.dir === "") this.dir = [internal];
     else
       this.dir = path
         .normalize(fileparsed.dir)
         .split(path.sep)
         .filter(v => v !== "" && v !== "..");
+  }
+
+  get isFileExist() {
+    return this.file.base !== "";
+  }
+
+  get isDirectoryExist() {
+    return this.dir.length === 1 && this.dir.includes(internal);
   }
 
   get absolute() {
@@ -74,9 +83,10 @@ export class Paths {
    * get directory name at num
    *
    * @example
-   *    at(2) of /a/b/c/d/e/f.txt -> d
-   *    at(1) of /a/b/c/d/e/f.txt -> e
-   *    at(0) of /a/b/c/d/e/f.txt -> f.txt
+   *    at(2)  of /a/b/c/d/e/f.txt -> d
+   *    at(1)  of /a/b/c/d/e/f.txt -> e
+   *    at(0)  of /a/b/c/d/e/f.txt -> f.txt
+   *    at(-1) of /a/b/c/d/e/f.txt -> a
    * @param num num
    */
   at(num: number) {
@@ -92,11 +102,13 @@ export class Paths {
    * @example
    *    after(/b/, 1) of /a/b/c/d/e.txt -> c
    *    after(/d/, 0) of /a/b/c/d/e.txt -> d
+   *    after(/b/, 1, 1) of /a/b/c/d/e.txt -> c/d
+   *    after(/d/, 0, 5) of /a/b/c/d/e.txt -> d
    * @param regex directory regex name
    * @param num number of directory after regex
-   * @param include include regex directory?
+   * @param size zero mean 1 directory only
    */
-  after(regex: RegExp, num: number, size: number = 0): string {
+  after(regex: RegExp, num: number, size: number = 0): string | undefined {
     const n = num < 0 ? 0 : num;
 
     const index = this.dir.findIndex(v => regex.test(v));

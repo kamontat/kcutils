@@ -1,9 +1,23 @@
 {
   "name": "@kcinternal/commandline",
   "description": "internal modules for kc monots projects",
-  "version": "0.2.1",
+  "version": "0.3.1-rc.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "internals/commandline"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "icompiler-tsc": "bin/compiler-tsc.js",
     "icompiler-webpack": "bin/compiler-webpack.js",
@@ -21,7 +35,7 @@
   },
   "devDependencies": {
     "@types/minimist": "1.2.0",
-    "@types/package_json": "0.2.1",
+    "@types/package_json": "0.2.2-rc.1",
     "trash-cli": "3.0.0"
   }
 }

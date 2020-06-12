@@ -1,4 +1,6 @@
-import { isDevelopment, isStaging, isProduction, isTesting, isCI, setEnv as setEnvironment } from "..";
+import { env } from "..";
+
+const { isDevelopment, isStaging, isProduction, isTesting, isCI, setEnv } = env;
 
 const setCI = (str: string | undefined) => {
   const old = process.env.CI;
@@ -6,7 +8,7 @@ const setCI = (str: string | undefined) => {
   return old;
 };
 
-const setEnv = (str: string | undefined) => {
+const _setEnv = (str: string | undefined) => {
   const old = process.env.ENV;
   process.env.ENV = str;
   return old;
@@ -14,59 +16,59 @@ const setEnv = (str: string | undefined) => {
 
 describe("Environment Helper", () => {
   test("check undefined env", () => {
-    const old = setEnv(undefined);
+    const old = _setEnv(undefined);
 
     expect(isDevelopment()).toBeTruthy();
     expect(isStaging()).toBeFalsy();
     expect(isProduction()).toBeFalsy();
     expect(isTesting()).toBeFalsy();
 
-    setEnv(old);
+    _setEnv(old);
   });
 
   test("check development", () => {
-    const old = setEnv("development");
+    const old = _setEnv("development");
 
     expect(isDevelopment()).toBeTruthy();
     expect(isStaging()).toBeFalsy();
 
-    setEnv(old);
+    _setEnv(old);
   });
 
   test("check staging", () => {
-    const old = setEnv("staging");
+    const old = _setEnv("staging");
 
     expect(isStaging()).toBeTruthy();
     expect(isProduction()).toBeFalsy();
 
-    setEnv(old);
+    _setEnv(old);
   });
 
   test("check development", () => {
-    const old = setEnv("prod");
+    const old = _setEnv("prod");
 
     expect(isProduction()).toBeTruthy();
     expect(isTesting()).toBeFalsy();
 
-    setEnv(old);
+    _setEnv(old);
   });
 
   test("check dev", () => {
-    const old = setEnv("dev");
+    const old = _setEnv("dev");
 
     expect(isDevelopment()).toBeTruthy();
     expect(isStaging()).toBeFalsy();
 
-    setEnv(old);
+    _setEnv(old);
   });
 
   test("check d", () => {
-    const old = setEnv("d");
+    const old = _setEnv("d");
 
     expect(isDevelopment()).toBeTruthy();
     expect(isStaging()).toBeFalsy();
 
-    setEnv(old);
+    _setEnv(old);
   });
 
   test("check when on ci", () => {
@@ -97,7 +99,7 @@ describe("Environment Helper", () => {
     process.env.SOMETHING_NOT_RELATE = "this";
     expect(process.env.SOMETHING_NOT_RELATE).toEqual("this");
 
-    setEnvironment("SOMETHING_NOT_RELATE", "that");
+    setEnv("SOMETHING_NOT_RELATE", "that");
     expect(process.env.SOMETHING_NOT_RELATE).toEqual("that");
   });
 
@@ -105,7 +107,7 @@ describe("Environment Helper", () => {
     // process.env.I_DID_NOT_THINK = "this";
     expect(process.env.I_DID_NOT_THINK).toEqual(undefined);
 
-    const old = setEnvironment("I_DID_NOT_THINK", "new");
+    const old = setEnv("I_DID_NOT_THINK", "new");
 
     expect(old).toEqual(undefined);
     expect(process.env.I_DID_NOT_THINK).toEqual("new");

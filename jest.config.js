@@ -15,6 +15,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     "packages/**/*.{ts,tsx}",
+    "!packages/_*/**/*.{ts,tsx}",
     "!internals/**/*.{ts,tsx}",
     "!typings/**/*.{ts,tsx}",
   ],

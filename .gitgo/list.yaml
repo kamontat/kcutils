@@ -17,7 +17,7 @@ commit:
     - type: model
       value: Models
     - type: lint
-      value: Linter
+      value: Linter or Code Review
     - type: config
       value: Configuration
     - type: test
