@@ -14,7 +14,10 @@ type PossibleValues = PossibleValue | Record<string, PossibleValue>;
 
 type NestedJson = Partial<Record<string, PossibleValues>>;
 
-export const isObject = (obj: any) => obj && typeof obj === "object" && !Array.isArray(obj);
+export const isObject = (obj: any) => {
+  if (obj === undefined || obj === null) return false;
+  else return typeof obj === "object" && !Array.isArray(obj);
+};
 
 export const deepMerge = <T extends NestedJson, U extends NestedJson>(
   _jsonA?: T,

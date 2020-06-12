@@ -58,4 +58,15 @@ describe("String Helper", () => {
       expect(str4).toEqual("912");
     });
   });
+
+  describe("isNotEmpty", () => {
+    test.each([
+      [undefined, false],
+      [null, false],
+      ["", false],
+      ["not-empty", true],
+    ])("when input is '%s' should return %s", (a, expected) => {
+      expect(string.isNotEmpty(a)).toBe(expected);
+    });
+  });
 });
