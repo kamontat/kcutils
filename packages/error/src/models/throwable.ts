@@ -1,4 +1,5 @@
-import { env, path } from "@kcutils/helper";
+import { sep } from "path";
+import { env, path, string } from "@kcutils/helper";
 
 import { ThrowState, ThrowStateType } from "./state";
 
@@ -68,26 +69,55 @@ export default class Throwable extends Error {
 
   private getDevelopmentFormatted() {
     let msg = `${this.name}(${this.code}): ${this.message}\n`;
+    msg += `stacks:\n`;
 
-    msg += `    stacks:\n`;
-    msg += `${this._stack
-      .map(s => {
-        const typename = s.typename ? `${s.typename}.` : "";
-        const funcname = s.funcname ?? s.method ?? "<anonymous>";
+    const stacks = this._stack.map(s => {
+      const typename = s.typename ? `${s.typename}.` : "";
+      const funcname = s.funcname ?? s.method ?? "<anonymous>";
 
-        const name = `${typename}${funcname}`.padEnd(30, " ");
+      const name = `${typename}${funcname}`;
 
-        const registry = /registry\.npmjs\.org/;
-        const extLibName = `<${s.path.after(registry, 1)}>/${s.path.filename}`;
-        const intLibName = `<${s.path.after(new RegExp(projectName), 2)}>/${s.path.after(new RegExp(projectName), 3)}/${
-          s.path.filename
-        }`;
+      const buildDir = (regex: RegExp, start: number) => {
+        const rootdir = s.path.after(regex, start);
+        const dir = s.path.after(regex, start + 1);
+        if (rootdir === dir) return `<${rootdir}>`;
+        else return `<${rootdir}>/${dir}`;
+      };
 
-        const filename = s.path.includes(registry) ? extLibName : intLibName;
+      // console.log(s.path);
+      let filename = "";
+      const registry = /registry\.npmjs\.org/;
+      const nodeModules = /node_modules/;
+      if (s.path.includes(registry)) {
+        filename = buildDir(registry, 1);
+      } else if (s.path.includes(nodeModules)) {
+        filename = buildDir(nodeModules, 1);
+      } else {
+        filename = buildDir(new RegExp(projectName), 0);
+      }
 
-        return `      - ${name} ${filename}:${s.linenum}:${s.colmnum}`;
-      })
+      const linenum = s.linenum ? `:${s.linenum}` : "";
+      const colnum = s.colmnum ? `:${s.colmnum}` : "";
+
+      if (s.path.isFileExist) {
+        filename += sep;
+        filename += `${s.path.filename}`;
+      }
+
+      return {
+        name,
+        filename,
+        linenum,
+        colnum,
+      };
+    });
+
+    const maximum = stacks.reduce((p, c) => (c.name.length > p ? c.name.length : p), 0);
+
+    msg += `${stacks
+      .map(s => `  - ${string.padEnd(s.name, maximum)} ${s.filename}${s.linenum}${s.colnum}`)
       .join("\n")}`;
+
     return msg;
   }
 
