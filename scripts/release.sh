@@ -111,18 +111,18 @@ if [[ "$cmd" == "version" ]] || [[ "$cmd" == "v" ]]; then
     run_lerna "${version_params[@]}" \
       --preid "$id" \
       --conventional-prerelease \
-      --message "chore(prerelease): ${prefix}release $name version$suffix"
+      --message "chore(prerelease): ${prefix}publish $name version$suffix"
   }
 
   create_liveversion() {
     run_lerna "${version_params[@]}" \
       --conventional-graduate \
-      --message "chore(release): ${prefix}release public version$suffix"
+      --message "chore(release): ${prefix}publish public version$suffix"
   }
 
   create_version() {
     run_lerna "${version_params[@]}" \
-      --message "chore(release): ${prefix}release version$suffix"
+      --message "chore(release): ${prefix}publish version$suffix"
   }
 
   on_type "$type" create_preversion create_liveversion create_version

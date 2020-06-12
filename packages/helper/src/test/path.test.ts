@@ -1,4 +1,7 @@
-import { Paths } from "..";
+import { path } from "..";
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const { Paths } = path;
 
 describe("Path Helper", () => {
   test("create new paths", () => {
@@ -85,12 +88,16 @@ describe("Path Helper", () => {
 
     test("return directory on <num> index", () => {
       const p = new Paths("/abc/def/ghi/jkl/text");
+
       expect(p.at(1)).toEqual("jkl");
       expect(p.at(2)).toEqual("ghi");
       expect(p.at(3)).toEqual("def");
+
       expect(p.at(4)).toEqual("abc");
       expect(p.at(5)).toEqual("abc");
       expect(p.at(100)).toEqual("abc");
+
+      expect(p.at(-1)).toEqual("abc");
     });
   });
 

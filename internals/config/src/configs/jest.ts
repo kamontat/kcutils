@@ -25,7 +25,7 @@ const jest: ConfigBuilder<void, JestConfig> = {
       reporters: ["default", "jest-junit"],
       snapshotSerializers: [],
       collectCoverage: true,
-      collectCoverageFrom: ["**/*.{ts,tsx}"],
+      collectCoverageFrom: ["**/*.{ts,tsx}", "!_*/**/*.{ts,tsx}"],
       coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/"],
       coverageReporters: ["json", "lcov", "text", "clover"],
     };
