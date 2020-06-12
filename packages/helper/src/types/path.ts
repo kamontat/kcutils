@@ -83,9 +83,10 @@ export class Paths {
    * get directory name at num
    *
    * @example
-   *    at(2) of /a/b/c/d/e/f.txt -> d
-   *    at(1) of /a/b/c/d/e/f.txt -> e
-   *    at(0) of /a/b/c/d/e/f.txt -> f.txt
+   *    at(2)  of /a/b/c/d/e/f.txt -> d
+   *    at(1)  of /a/b/c/d/e/f.txt -> e
+   *    at(0)  of /a/b/c/d/e/f.txt -> f.txt
+   *    at(-1) of /a/b/c/d/e/f.txt -> a
    * @param num num
    */
   at(num: number) {
@@ -107,12 +108,12 @@ export class Paths {
    * @param num number of directory after regex
    * @param size zero mean 1 directory only
    */
-  after(regex: RegExp, num: number, size: number = 0): string {
+  after(regex: RegExp, num: number, size: number = 0): string | undefined {
     const n = num < 0 ? 0 : num;
 
     const index = this.dir.findIndex(v => regex.test(v));
     const targetdir = index < 0 ? this.dir[n] : this.dir[index + n];
-    if (size <= 0) return targetdir ?? this.at(-1);
+    if (size <= 0) return targetdir;
     else {
       const arr = [targetdir, this.after(regex, n + 1, size - 1)];
       return arr.filter(v => v !== undefined && v !== "").join(path.sep);

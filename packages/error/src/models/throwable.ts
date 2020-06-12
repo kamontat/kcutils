@@ -78,9 +78,9 @@ export default class Throwable extends Error {
       const name = `${typename}${funcname}`;
 
       const buildDir = (regex: RegExp, start: number) => {
-        const rootdir = s.path.after(regex, start);
+        const rootdir = s.path.after(regex, start) ?? s.path.at(-1);
         const dir = s.path.after(regex, start + 1);
-        if (rootdir === dir) return `<${rootdir}>`;
+        if (!dir) return `<${rootdir}>`;
         else return `<${rootdir}>/${dir}`;
       };
 
