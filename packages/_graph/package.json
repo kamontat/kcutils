@@ -11,9 +11,11 @@
     "clean": "icleaner",
     "test": "itester"
   },
+  "dependencies": {
+    "@kcinternal/graph": "0.2.1-rc.0"
+  },
   "devDependencies": {
-    "@kcinternal/commandline": "0.3.0-rc.0",
-    "@kcinternal/configuration": "0.3.0-rc.0",
-    "@kcinternal/graph": "0.2.0-rc.0"
+    "@kcinternal/commandline": "0.3.1-rc.0",
+    "@kcinternal/configuration": "0.3.1-rc.0"
   }
 }
