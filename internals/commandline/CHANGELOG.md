@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.3.5...@kcinternal/commandline@0.4.0) (2020-06-13)
+
+
+### Features
+
+* **core:** update new version of commandline ([4cd9261](https://github.com/kamontat/kcutils/commit/4cd926114803136027e0e46dfa34e83102752616))
+
+
+
+
+
 ## [0.3.5](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.3.4...@kcinternal/commandline@0.3.5) (2020-06-13)
 
 **Note:** Version bump only for package @kcinternal/commandline
