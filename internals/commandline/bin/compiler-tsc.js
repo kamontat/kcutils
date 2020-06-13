@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('../lib/compiler-tsc.js')
+require("../lib/compiler-tsc.js");
