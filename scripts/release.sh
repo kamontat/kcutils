@@ -11,6 +11,7 @@
 #/ -----------------------------------
 #/ How to:       release [dry=true] cmd=version type=[beta|alpha|rc|live]
 #/               release [dry=true] cmd=publish type=[beta|alpha|rc|live]
+#/               release [dry=true] cmd=updated
 #/ -----------------------------------
 #/ Create by:    Kamontat Chantrachirathumrong <developer@kamontat.net>
 #/ Since:        07/06/2020
@@ -45,6 +46,8 @@ publish_params=(
   "from-git"
 )
 
+params=()
+
 type=""
 cmd=""
 dry=""
@@ -65,7 +68,7 @@ on_type() {
   local t="$1"
   local prefn="$2"
   local livefn="$3"
-  local fn="$4"
+  local fn="${4:-$livefn}"
 
   if [[ "$t" == "alpha" ]] || [[ "$t" == "beta" ]] || [[ "$t" == "rc" ]]; then
     [[ "$t" == "alpha" ]] && fullname="alpha"
