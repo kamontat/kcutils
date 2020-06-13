@@ -87,6 +87,46 @@ commands:
             - run:
                 name: Install and links lerna project together
                 command: yarn bootstrap
+  compile-typescript:
+    description: compile code
+    parameters:
+      all:
+        description: compile all packages
+        type: boolean
+        default: true
+    steps:
+      - when:
+          condition: << parameters.all >>
+          steps:
+            - run:
+                name: Compile and build all packages application
+                command: yarn build:ci
+      - unless:
+          condition: << parameters.all >>
+          steps:
+            - run:
+                name: Compile and build only internal application
+                command: yarn build:init
+  build-start:
+    description: Build and Start package
+    parameters:
+      package-name:
+        description: script package name
+        type: string
+      build:
+        description: with build
+        type: boolean
+        default: true
+    steps:
+      - when:
+          condition: << parameters.build >>
+          steps:
+            - run:
+                name: Building << parameters.package-name >>
+                command: yarn build:<< parameters.package-name >>
+      - run:
+          name: Starting << parameters.package-name >>
+          command: yarn start:<< parameters.package-name >>
   publish:
     description: Publish new version
     parameters:
@@ -115,9 +155,6 @@ jobs:
       - checkout
       - install-dependencies
       - run:
-          name: "Compile and build application"
-          command: yarn build:ci
-      - run:
           name: "Test all unittest"
           command: yarn test:ci
       - sonarcloud/scan:
@@ -139,15 +176,10 @@ jobs:
       - install-aptget:
           package-name: graphviz
       - install-dependencies
-      - run:
-          name: Build compiler
-          command: yarn build:init
-      - run:
-          name: Build internal graph generator
-          command: yarn build:graph
-      - run:
-          name: "Build dependencies graph"
-          command: yarn start:graph
+      - compile-typescript:
+          all: false
+      - build-start:
+          package-name: graph
       - store_artifacts:
           path: ./packages/_graph/graph.pdf
           destination: result/graph.pdf
@@ -159,8 +191,9 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
-      - install-dependencies:
-          only-lerna: true
+      - install-dependencies
+      - compile-typescript:
+          all: true
       - publish:
           option: "type=beta"
       - git-cleanup
@@ -173,8 +206,9 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
-      - install-dependencies:
-          only-lerna: true
+      - install-dependencies
+      - compile-typescript:
+          all: true
       - publish:
           option: "type=rc"
       - git-cleanup
@@ -187,8 +221,9 @@ jobs:
       - checkout
       - gpg-setup
       - git-setup
-      - install-dependencies:
-          only-lerna: true
+      - install-dependencies
+      - compile-typescript:
+          all: true
       - publish:
           option: "type=live"
       - git-cleanup
