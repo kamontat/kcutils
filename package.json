@@ -13,6 +13,7 @@
     "clean:all": "lerna run clean -- --all",
     "build:graph": "scripts/runner.sh type=run cmd=build on=@kcutils/graph",
     "start:graph": "scripts/runner.sh type=exec cmd=start on=@kcutils/graph",
+    "release": "scripts/release.sh",
     "updated": "scripts/release.sh cmd=updated",
     "updated:ci": "scripts/release.sh cmd=updated CI=true",
     "version:local": "scripts/release.sh cmd=version",
