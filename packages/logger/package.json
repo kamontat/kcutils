@@ -18,6 +18,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "icompiler-webpack",
     "start": "irunner",

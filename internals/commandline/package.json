@@ -18,6 +18,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "bin",
+    "includes",
+    "lib"
+  ],
   "bin": {
     "icompiler-tsc": "bin/compiler-tsc.js",
     "icompiler-webpack": "bin/compiler-webpack.js",

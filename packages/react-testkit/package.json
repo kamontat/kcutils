@@ -1,6 +1,6 @@
 {
-  "name": "@kcinternal/react-testkit",
-  "description": "internal modules for kc monots projects",
+  "name": "@kcutils/react-testkit",
+  "description": "add enzyme and react utils code",
   "version": "0.2.5",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -18,6 +18,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "icompiler-tsc",
     "start": "irunner",
