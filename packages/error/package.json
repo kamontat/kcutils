@@ -28,7 +28,7 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.3.4"
+    "@kcutils/helper": "0.3.5"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.3.5",

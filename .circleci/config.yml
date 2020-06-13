@@ -154,6 +154,7 @@ jobs:
     steps:
       - checkout
       - install-dependencies
+      - compile-typescript
       - run:
           name: "Test all unittest"
           command: yarn test:ci
