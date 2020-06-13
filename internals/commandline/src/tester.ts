@@ -3,6 +3,7 @@ import { AsyncRunner, Commandline, Option } from ".";
 const option = new Option({ dirname: process.cwd(), input: process.argv.slice(2), transform: Option.transform });
 const transformer = new AsyncRunner(option, async ({ helper }) => {
   const jest = helper.root.nodeCommand("jest");
+
   const config = await helper.parent.pathEnsure("jest.config.js");
 
   if (config !== undefined) {
@@ -12,7 +13,8 @@ const transformer = new AsyncRunner(option, async ({ helper }) => {
 
     return args;
   } else {
-    return ["echo", `[skip] jest config not found (${config})`];
+    const conf = helper.parent.path("jest.config.js");
+    return ["echo", `[skip] jest config not found (${conf})`];
   }
 });
 
