@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.3...@kcinternal/graph@0.2.4) (2020-06-13)
+
+
+### Performance Improvements
+
+* **core:** include compiled file on deployment ([f1b1d84](https://github.com/kamontat/kcutils/commit/f1b1d8450f4108cc8495e29c9a49bc4a79f0041e))
+
+
+
+
+
 ## [0.2.3](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.2...@kcinternal/graph@0.2.3) (2020-06-13)
 
 **Note:** Version bump only for package @kcinternal/graph

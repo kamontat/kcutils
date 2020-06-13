@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.3.2...@kcutils/helper@0.3.3) (2020-06-13)
+
+
+### Performance Improvements
+
+* **core:** include compiled file on deployment ([f1b1d84](https://github.com/kamontat/kcutils/commit/f1b1d8450f4108cc8495e29c9a49bc4a79f0041e))
+
+
+
+
+
 ## [0.3.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.3.1...@kcutils/helper@0.3.2) (2020-06-13)
 
 **Note:** Version bump only for package @kcutils/helper
