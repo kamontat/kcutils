@@ -149,7 +149,7 @@ jobs:
           name: "Build dependencies graph"
           command: yarn start:graph
       - store_artifacts:
-          path: ./internals/graph/graph.pdf
+          path: ./packages/_graph/graph.pdf
           destination: result/graph.pdf
 
   release-beta:
@@ -190,7 +190,7 @@ jobs:
       - install-dependencies:
           only-lerna: true
       - publish:
-          option: ""
+          option: "type=live"
       - git-cleanup
       - gpg-cleanup
 
