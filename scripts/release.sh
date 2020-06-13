@@ -77,10 +77,11 @@ on_type() {
 
     $prefn "$t" "$fullname"
   elif [[ "$t" == "live" ]]; then
-    "$t" == "live" && fullname="live"
+    [[ "$t" == "live" ]] && fullname="live"
+
     $livefn "$t" "$fullname"
   else
-    $fn
+    $fn "$t" "unknown"
   fi
 }
 
