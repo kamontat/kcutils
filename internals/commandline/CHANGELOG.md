@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.4.0...@kcinternal/commandline@0.5.0) (2020-06-14)
+
+
+### Bug Fixes
+
+* **config:** dependencies version mismatch ([1f32cf3](https://github.com/kamontat/kcutils/commit/1f32cf3c5dc514f88496c16838860088733c1fc9))
+
+
+### Features
+
+* **core:** new command build for end user to build lerna ([ae7d728](https://github.com/kamontat/kcutils/commit/ae7d72835af85e6dcbe7253c4dd78f312012211c))
+
+
+### Performance Improvements
+
+* **model:** add more utils function to commandline helper ([e807f7d](https://github.com/kamontat/kcutils/commit/e807f7d4728617656fb3e95e7ede8c4784a3f7dc))
+
+
+
+
+
 # [0.4.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.3.5...@kcinternal/commandline@0.4.0) (2020-06-13)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.6...@kcinternal/graph@0.2.7) (2020-06-14)
+
+
+### Bug Fixes
+
+* **config:** dependencies version mismatch ([1f32cf3](https://github.com/kamontat/kcutils/commit/1f32cf3c5dc514f88496c16838860088733c1fc9))
+* **model:** now option classify will be use instead of default one ([98ea237](https://github.com/kamontat/kcutils/commit/98ea237272c0494b54a76380a5dfb59895dd8163))
+
+
+
+
+
 ## [0.2.6](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.5...@kcinternal/graph@0.2.6) (2020-06-13)
 
 **Note:** Version bump only for package @kcinternal/graph
