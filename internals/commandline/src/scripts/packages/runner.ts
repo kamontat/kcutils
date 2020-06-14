@@ -1,6 +1,4 @@
-import parser from "minimist";
-
-import { AsyncRunner, Commandline, Option } from ".";
+import { AsyncRunner, Commandline, Option } from "../..";
 
 type Settings = {
   index: string;
@@ -9,8 +7,8 @@ type Settings = {
 const option = new Option({
   dirname: process.cwd(),
   input: process.argv.slice(2),
-  transform: async ({ data }) => {
-    const argument = parser(data);
+  transform: async ({ data, helper }) => {
+    const argument = helper.parser(data);
 
     return {
       index: argument.index ?? "index.js",

@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require("../lib/compiler-webpack.js");
+require("../lib/scripts/packages/compiler-webpack.js");

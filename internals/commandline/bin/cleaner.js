@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require("../lib/cleaner.js");
+require("../lib/scripts/packages/cleaner.js");

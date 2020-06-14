@@ -1,7 +1,6 @@
 import del from "del";
-import parser from "minimist";
 
-import { AsyncRunner, Setting } from ".";
+import { AsyncRunner, Setting } from "../..";
 
 type Settings = {
   all: boolean;
@@ -10,8 +9,8 @@ type Settings = {
 const setting = new Setting({
   dirname: process.cwd(),
   input: process.argv.slice(2),
-  transform: async ({ data }) => {
-    const argument = parser(data);
+  transform: async ({ data, helper }) => {
+    const argument = helper.parser(data);
 
     return {
       all: argument.all ?? false,
