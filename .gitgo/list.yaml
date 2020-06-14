@@ -15,12 +15,14 @@ commit:
     - type: core
       value: Core application
     - type: model
-      value: Models
+      value: Application Models
+    - type: service
+      value: Application services
+    - type: utils
+      value: Application utilities
+    - type: test
+      value: Add, Modify or remove test
     - type: lint
-      value: Linter or Code Review
+      value: Code styles
     - type: config
       value: Configuration
-    - type: test
-      value: Testing both unittest and integration test
-    - type: dev
-      value: Development tools
