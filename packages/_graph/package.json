@@ -12,10 +12,10 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcinternal/graph": "0.2.5"
+    "@kcinternal/graph": "0.2.6"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.3.5",
-    "@kcinternal/configuration": "0.3.5"
+    "@kcinternal/commandline": "0.4.0",
+    "@kcinternal/configuration": "0.3.6"
   }
 }
