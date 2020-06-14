@@ -9,6 +9,9 @@ const internal = new Classify(internalModels, true);
 (async () => {
   const graph = await builder({ root: process.cwd(), name: "Deps", external, internal });
 
-  graph.engine("circo");
-  graph.toPDF("graph.png");
+  try {
+    await graph.toPDF("");
+  } catch (e) {
+    console.error(e);
+  }
 })();
