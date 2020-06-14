@@ -2,6 +2,10 @@ import { DependencyCategory } from "../dependencies/DependencyCategory";
 import { QueryValue, Query } from "./Query";
 
 export class QueryBuilder implements Query {
+  static empty() {
+    return new QueryBuilder();
+  }
+
   private mapper: Map<DependencyCategory, RegExp[]>;
 
   constructor() {

@@ -1,3 +1,5 @@
+import { isAbsolute, join } from "path";
+
 import graphviz from "graphviz";
 import { Node } from "./Node";
 import { Dependencies } from "./dependencies/Dependencies";
@@ -36,15 +38,33 @@ export class Graph {
     this._engine = engine;
   }
 
-  toPDF(filepath: string) {
-    console.log(`exporting to ${filepath}`);
-    // eslint-disable-next-line
-    this.graph.render({ type: "pdf", use: this._engine }, `${filepath}/graph.pdf`);
+  toPDF(dirpath: string = "", filename: string = "graph.pdf") {
+    return this.render({ type: "pdf" }, dirpath, filename);
   }
 
-  toPNG(filepath: string) {
-    console.log(`exporting to ${filepath}`);
-    // eslint-disable-next-line
-    this.graph.render({ type: "png:cairo:gd", use: this._engine }, `${filepath}/graph.png`);
+  toPNG(dirpath: string = "", filename: string = "graph.png") {
+    return this.render({ type: "png:cairo:gd" }, dirpath, filename);
+  }
+
+  render(opts: graphviz.RenderOptions, dirpath: string, filename: string) {
+    const filepath = this.getFilepath(dirpath, filename);
+
+    return new Promise<void>((res, rej) => {
+      this.graph.render(Object.assign({}, { use: this._engine }, opts), filepath, (code, out, err) => {
+        if (code === 0) {
+          console.log(`exported to ${filepath}`);
+          return res();
+        } else {
+          console.log(out);
+          console.error(err);
+          return rej(new Error(err));
+        }
+      });
+    });
+  }
+
+  private getFilepath(dirpath: string, filename: string) {
+    const abspath = isAbsolute(dirpath) ? dirpath : join(process.cwd(), dirpath);
+    return join(abspath, filename);
   }
 }
