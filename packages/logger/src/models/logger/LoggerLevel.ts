@@ -19,7 +19,7 @@ export class LoggerLevelBuilder implements LoggerLevel {
     this.stream = _stream;
   }
 
-  copy(stream: Writable) {
+  copy(stream: Writable): LoggerLevelBuilder {
     return new LoggerLevelBuilder(this.level, this.name, stream);
   }
 }

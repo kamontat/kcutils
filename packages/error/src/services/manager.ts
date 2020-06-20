@@ -40,18 +40,18 @@ export default class Manager extends AbstractManager {
     });
   }
 
-  reset() {
+  reset(): this {
     this.errors = [];
     return this;
   }
 
-  hasDeadly() {
+  hasDeadly(): boolean {
     return this.errors.some(v => {
       return v.deadly;
     });
   }
 
-  formatted() {
+  formatted(): string {
     if (this.size > 0) {
       let msg = "Errors: \n";
       msg += this.errors.map(e => `  - ${e.toString()}`);
@@ -59,7 +59,7 @@ export default class Manager extends AbstractManager {
     } else return "";
   }
 
-  get size() {
+  get size(): number {
     return this.errors.length;
   }
 

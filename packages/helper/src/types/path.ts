@@ -42,23 +42,23 @@ export class Paths {
         .filter(v => v !== "" && v !== "..");
   }
 
-  get isFileExist() {
+  get isFileExist(): boolean {
     return this.file.base !== "";
   }
 
-  get isDirectoryExist() {
+  get isDirectoryExist(): boolean {
     return this.dir.length === 1 && this.dir.includes(internal);
   }
 
-  get absolute() {
+  get absolute(): boolean {
     return this.absolutePath;
   }
 
-  get dirdeep() {
+  get dirdeep(): number {
     return this.dir.length;
   }
 
-  get filename() {
+  get filename(): string {
     return this.file.base;
   }
 
@@ -70,7 +70,7 @@ export class Paths {
    *    first(2) of /a/b/c/d.txt -> b/c/d.txt
    * @param num
    */
-  first(num: number) {
+  first(num: number): string {
     if (num <= 0) return this.filename;
     else
       return this.dir
@@ -89,7 +89,7 @@ export class Paths {
    *    at(-1) of /a/b/c/d/e/f.txt -> a
    * @param num num
    */
-  at(num: number) {
+  at(num: number): string {
     if (num >= this.dir.length || num < 0) return this.dir[0];
     else if (num === 0) return this.filename;
     else return this.dir[this.dir.length - num];
@@ -124,7 +124,7 @@ export class Paths {
    * check is input regex include in path
    * @param regex directory or file name
    */
-  includes(regex: RegExp) {
+  includes(regex: RegExp): boolean {
     if (regex.test(this.filename)) return true;
     else if (this.dir.some(d => regex.test(d))) return true;
     else return false;

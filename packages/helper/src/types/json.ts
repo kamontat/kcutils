@@ -14,7 +14,7 @@ type PossibleValues = PossibleValue | Record<string, PossibleValue>;
 
 type NestedJson = Partial<Record<string, PossibleValues>>;
 
-export const isObject = (obj: any) => {
+export const isObject = (obj: unknown): boolean => {
   if (obj === undefined || obj === null) return false;
   else return typeof obj === "object" && !Array.isArray(obj);
 };

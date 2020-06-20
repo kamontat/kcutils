@@ -9,3 +9,7 @@ export const builder = (opts: OptionalServiceOption) => {
 export * from "./models/query/Classify";
 export * from "./models/query/Query";
 export * from "./models/query/QueryBuilder";
+
+export * from "./models/dependencies/DependencyCategory";
+export * from "./models/dependencies/DependencyLink";
+export * from "./models/dependencies/DependencyType";

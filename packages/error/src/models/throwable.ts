@@ -13,7 +13,7 @@ export interface ThrowableStack {
 }
 
 export let projectName = "example";
-export const setProject = (name: string) => {
+export const setProject = (name: string): void => {
   projectName = name;
 };
 
@@ -124,11 +124,11 @@ export default class Throwable extends Error {
     return `${this.name}(${this.code}): ${this.message}`;
   }
 
-  equals(e: Throwable) {
+  equals(e: Throwable): boolean {
     return e.code === this.code && e.name === this.name;
   }
 
-  toString() {
+  toString(): string {
     if (env.isProduction()) return this.getProductionFormatted();
     else return this.getDevelopmentFormatted();
   }

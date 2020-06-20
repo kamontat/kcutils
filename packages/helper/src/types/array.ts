@@ -3,6 +3,6 @@ export const toArray = <T>(t: T | T[]): T[] => {
   else return [t];
 };
 
-export const flatmap = <T>(...arr: (T[] | T)[]) => {
+export const flatmap = <T>(...arr: (T[] | T)[]): T[] => {
   return arr.reduce((p: T[], c) => p.concat(...toArray(c)), []);
 };

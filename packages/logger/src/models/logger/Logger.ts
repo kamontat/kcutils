@@ -23,6 +23,7 @@ import { OutputMessageSuffix } from "../output/OutputMessageSuffix";
 import { InputMessage } from "../input/InputMessage";
 import { InputOption } from "../input/InputOptions";
 import { OutputMessage } from "../output/OutputMessage";
+import { LoggerLevel } from "./LoggerLevel";
 
 type Parameters = "longest-label";
 
@@ -67,19 +68,19 @@ export class Logger<T extends string = ""> {
   /**
    * all log levels
    */
-  get levels() {
+  get levels(): LoggerLevel[] {
     return levels;
   }
 
   /**
    * current scopes
    */
-  get scopes() {
+  get scopes(): string[] {
     return this._option.scopes;
   }
 
   // print logger message to stream
-  print(_type: DefaultKeyTypes | T, data: InputMessage | InputOption) {
+  print(_type: DefaultKeyTypes | T, data: InputMessage | InputOption): void {
     const type = this._types[_type];
     if (!this.shouldLog(type)) return;
 
@@ -114,7 +115,7 @@ export class Logger<T extends string = ""> {
     else return this.buildAsString(type, { metadata, prefix, data, suffix });
   }
 
-  startTimer(_label?: string) {
+  startTimer(_label?: string): string {
     const label = _label ?? `timer_${this._timers.size}`;
     this._timers.set(label, Date.now());
     this.print("start", { message: "Initialized timer...", label });
@@ -122,8 +123,8 @@ export class Logger<T extends string = ""> {
     return label;
   }
 
-  endTimer(label?: string) {
-    if (this._timers.size < 1) return { label, timestamp: 0 };
+  endTimer(label?: string): { label?: string; timestamp: number } {
+    if (this._timers.size < 1) return { label: label, timestamp: 0 };
 
     let _label = label;
     if (!_label) {
@@ -158,7 +159,7 @@ export class Logger<T extends string = ""> {
    *
    * @param message input string
    */
-  censor(message: string) {
+  censor(message: string): string {
     if (this._option.secrets.length === 0) return message;
 
     return this._option.secrets.reduce((msg, secret) => {
@@ -169,7 +170,7 @@ export class Logger<T extends string = ""> {
     }, message);
   }
 
-  isContainSecret(message: string) {
+  isContainSecret(message: string): boolean {
     if (this._option.secrets.length === 0) return false;
     return this._option.secrets.some(secret => {
       const regex = new RegExp(secret, "g");
@@ -181,7 +182,7 @@ export class Logger<T extends string = ""> {
    * merge and replace new options
    * @param option new partial option
    */
-  options(option: OptionalOption) {
+  options(option: OptionalOption): this {
     this.idebug("options parameters: ", option);
     this._option = json.deepMerge(this._option, option);
     this.idebug("new options: ", option);
@@ -192,7 +193,7 @@ export class Logger<T extends string = ""> {
    * merge and replace new settings
    * @param option new partial setting
    */
-  settings(setting: OptionalSetting) {
+  settings(setting: OptionalSetting): this {
     this.idebug("settings parameters: ", setting);
     this._setting = json.deepMerge(this._setting, setting);
     this.idebug("new settings: ", setting);
@@ -214,14 +215,14 @@ export class Logger<T extends string = ""> {
     return new Logger(o);
   }
 
-  isEnabled() {
+  isEnabled(): boolean {
     return !this._option.disabled;
   }
 
   /**
    * remove all scope on this logger
    */
-  unscope() {
+  unscope(): this {
     this._option.scopes = [];
     return this;
   }
@@ -229,7 +230,7 @@ export class Logger<T extends string = ""> {
   /**
    * remove all secret on this logger
    */
-  unsecret() {
+  unsecret(): this {
     this._option.secrets = [];
     return this;
   }
@@ -237,7 +238,7 @@ export class Logger<T extends string = ""> {
   /**
    * enable color
    */
-  color() {
+  color(): this {
     this._option.color = true;
     this._color.level = defaultColorLevel;
     return this;
@@ -246,7 +247,7 @@ export class Logger<T extends string = ""> {
   /**
    * disable color
    */
-  uncolor() {
+  uncolor(): this {
     this._option.color = true;
     this._color.level = 0;
     return this;
@@ -255,7 +256,7 @@ export class Logger<T extends string = ""> {
   /**
    * is color enabled
    */
-  isColor() {
+  isColor(): boolean {
     return this._color.level > 0 && this._option.color;
   }
 

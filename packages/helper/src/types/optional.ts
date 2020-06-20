@@ -11,26 +11,26 @@ export class Optional<T> {
     this.data = data as T;
   }
 
-  get() {
+  get(): T {
     if (this.empty) throw new Error("input data is empty");
     else return this.data;
   }
 
-  getOrElse(def: T) {
+  getOrElse(def: T): T {
     if (this.empty) return def;
     else return this.data;
   }
 
-  orUndefined() {
+  orUndefined(): T | undefined {
     if (this.empty) return undefined;
     else return this.data;
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.empty;
   }
 
-  isNotEmpty() {
+  isNotEmpty(): boolean {
     return !this.isEmpty();
   }
 }
