@@ -5,4 +5,4 @@ export { Option } from "./commands/Option";
 
 export { AsyncRunner } from "./commands/AsyncRunner";
 export { SyncRunner } from "./commands/SyncRunner";
-export { Commandline } from "./commands/Commandline";
+export { Commandline, CommandlineOption } from "./commands/Commandline";

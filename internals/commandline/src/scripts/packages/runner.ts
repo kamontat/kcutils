@@ -1,14 +1,14 @@
-import { AsyncRunner, Commandline, Option } from "../..";
+import { AsyncRunner, Commandline, CommandlineOption, Option } from "../..";
 
-type Settings = {
+interface Settings extends CommandlineOption {
   index: string;
-};
+}
 
 const option = new Option({
   dirname: process.cwd(),
   input: process.argv.slice(2),
   transform: async ({ data, helper }) => {
-    const argument = helper.parser(data);
+    const argument = helper.argument.parse(data);
 
     return {
       index: argument.index ?? "index.js",

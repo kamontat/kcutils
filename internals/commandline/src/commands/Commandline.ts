@@ -3,24 +3,53 @@ import { spawn, ChildProcess } from "child_process";
 import { DataChain } from "../models/async/DataChain";
 import { Command } from "../models/async/Command";
 import { DataProcess } from "../models/common/DataProcess";
+import { Helper } from "../models/common/Helper";
 
-export class Commandline<O> extends DataChain<O, string[], ChildProcess> implements Command<ChildProcess> {
-  constructor(data: DataProcess<O, Promise<string[]>>) {
-    super(data, async ({ data }) => {
+export interface CommandlineOption {
+  dryrun?: boolean;
+  arguments: string[];
+}
+
+export class Commandline<O extends CommandlineOption> extends DataChain<O, string[], ChildProcess>
+  implements Command<ChildProcess> {
+  constructor(root: DataProcess<Promise<O>, Promise<string[]>>) {
+    super(root, async ({ data, helper }) => {
+      const options = await Promise.resolve(this.previous.getData());
+
       const commands = data;
       const command = commands.shift() ?? "echo";
 
-      console.debug(`[debug] command: ${command} ${commands.join(" ")}`);
-      const proc = spawn(command, commands, { stdio: "inherit" });
-      proc.on("exit", (code, signal) => {
-        console.debug(`[debug] exit code: ${code} (signal=${signal})`);
+      helper.log.debug("command", `${command} ${commands.join(" ")}`);
 
-        const c = code ?? 1;
-        if (c > 0) process.exit(c);
-      });
-
-      return proc;
+      if (!options.dryrun) {
+        return this.exec(helper, command, commands);
+      } else {
+        return this.exec(helper, "exit", ["0"]);
+      }
     });
+  }
+
+  private exec(helper: Helper, command: string, args: string[]) {
+    const proc = spawn(command, args, { stdio: "inherit" });
+    proc.on("error", err => {
+      if (err) {
+        if (err.message.includes("spawn exit ENOENT")) return;
+      }
+
+      console.log(err.message);
+    });
+
+    proc.on("exit", (_code, signal) => {
+      const code = _code ?? -1;
+
+      if (signal) helper.log.debug("exit code", `${code} (signal=${signal})`);
+      else helper.log.debug("exit code", code);
+
+      if (code > 0) process.exit(code);
+      else process.exit(0);
+    });
+
+    return proc;
   }
 
   start() {

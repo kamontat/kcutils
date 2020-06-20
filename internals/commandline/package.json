@@ -24,7 +24,8 @@
     "lib"
   ],
   "bin": {
-    "root-build": "bin/build.js",
+    "root-build": "bin/root/build.js",
+    "root-test": "bin/root/test.js",
     "icompiler-tsc": "bin/compiler-tsc.js",
     "icompiler-webpack": "bin/compiler-webpack.js",
     "icleaner": "bin/cleaner.js",

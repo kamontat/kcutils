@@ -2,15 +2,15 @@ import del from "del";
 
 import { AsyncRunner, Setting } from "../..";
 
-type Settings = {
+interface Settings {
   all: boolean;
-};
+}
 
 const setting = new Setting({
   dirname: process.cwd(),
   input: process.argv.slice(2),
   transform: async ({ data, helper }) => {
-    const argument = helper.parser(data);
+    const argument = helper.argument.parse(data);
 
     return {
       all: argument.all ?? false,
