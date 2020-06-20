@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.4.0...@kcinternal/configuration@0.4.1) (2020-06-20)
+
+
+### Bug Fixes
+
+* **lint:** new linter rules on new version of typescripts ([a758a7f](https://github.com/kamontat/kcutils/commit/a758a7f878d8c8f4318472ad5cea93870c002a39))
+
+
+
+
+
 # [0.4.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.3.9...@kcinternal/configuration@0.4.0) (2020-06-20)
 
 

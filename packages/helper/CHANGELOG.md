@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.11](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.3.10...@kcutils/helper@0.3.11) (2020-06-20)
+
+
+### Bug Fixes
+
+* **lint:** new linter rules on new version of typescripts ([a758a7f](https://github.com/kamontat/kcutils/commit/a758a7f878d8c8f4318472ad5cea93870c002a39))
+
+
+
+
+
 ## [0.3.10](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.3.9...@kcutils/helper@0.3.10) (2020-06-20)
 
 **Note:** Version bump only for package @kcutils/helper
