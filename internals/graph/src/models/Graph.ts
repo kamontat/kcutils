@@ -64,7 +64,7 @@ export class Graph {
   }
 
   private getFilepath(dirpath: string, filename: string) {
-    const abspath = isAbsolute(dirpath) ? dirpath : join(process.cwd(), dirpath);
+    const abspath = dirpath !== "" && isAbsolute(dirpath) ? dirpath : join(process.cwd(), dirpath);
     return join(abspath, filename);
   }
 }
