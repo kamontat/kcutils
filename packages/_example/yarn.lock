@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-"@kcinternal/commandline@0.3.1-rc.1":
-  version "0.3.1-rc.1"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.3.1-rc.1.tgz#71472029d05e99c32af020a2b79fd7173c5c56e8"
-  integrity sha512-zMzptgpnyNkMOW9qwH0EQARRa8YywoVQWN+nW8uJL9YdVQ1h/U1rOL1CkYPKQuedw2Qbg95B9oYftSy5GTgJag==
+"@kcinternal/commandline@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.4.0.tgz#b1f94537d946fb4bf9c3046a9b6002ce998cb594"
+  integrity sha512-Aoo5YvojKbn2sZuyUpCYLW1QiP4cbVZ0Jcub9UU3WwiCVfRAMtLAFvA00UcHZBGc8Q4IhOtyjM135LP5/8FUuA==
   dependencies:
     del "5.1.0"
     minimist "1.2.5"
 
-"@kcinternal/configuration@0.3.1-rc.1":
-  version "0.3.1-rc.1"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.3.1-rc.1.tgz#503d83f7f027f6bc4f53b30478b262a932f68c76"
-  integrity sha512-7fHl3TB9o6pBlKGAewF9y8b9ijblbbnXV/h+ka75IB0nx5SbAzp33NtRLxeYkR+v8iTkxHsQ0dq1LQYGqtD2Yw==
+"@kcinternal/configuration@0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.3.6.tgz#48d649e3e18499762432473b34c300bc57e99fcc"
+  integrity sha512-bJ2bDrdd2yq3Vh3rPfa0TFnl/R0ywUzVZUzHSuTESV+VY+uvKzwP597donphcIZcrLh0MYXzJybWeUJ6vfUcRA==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
