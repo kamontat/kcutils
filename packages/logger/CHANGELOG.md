@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.2.6...@kcutils/logger@0.3.0) (2020-06-20)
+
+
+### Features
+
+* **model:** add abstract class for logger ([7280ffc](https://github.com/kamontat/kcutils/commit/7280ffc1fd1d362ef11ec4d194cd45cb565df462))
+
+
+
+
+
 ## [0.2.6](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.2.5...@kcutils/logger@0.2.6) (2020-06-14)
 
 **Note:** Version bump only for package @kcutils/logger

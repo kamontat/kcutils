@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.5.0...@kcinternal/commandline@0.6.0) (2020-06-20)
+
+
+### Features
+
+* **model:** support getting previous data from data chain ([52891ce](https://github.com/kamontat/kcutils/commit/52891ce0e7c8441e98c78cba54d01f2ed29aaab7))
+
+
+
+
+
 # [0.5.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.4.0...@kcinternal/commandline@0.5.0) (2020-06-14)
 
 
