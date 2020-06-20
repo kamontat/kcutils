@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.3.3...@kcutils/logger@0.3.4) (2020-06-20)
+
+
+### Bug Fixes
+
+* **model:** change default settings ([eef7b42](https://github.com/kamontat/kcutils/commit/eef7b4242685f29e0eae0736a5d5ab88c393301c))
+
+
+
+
+
 ## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.3.2...@kcutils/logger@0.3.3) (2020-06-20)
 
 
