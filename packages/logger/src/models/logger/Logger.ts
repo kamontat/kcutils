@@ -31,6 +31,10 @@ type Parameters = "longest-label";
 //* [YYYY-MM-DD] global  text.js    ↦           ¤       [label] this this a message (suffix)
 
 export class Logger<T extends string = ""> {
+  static create<T extends string = "">(opts?: OptionalLoggerOption<T>): Logger<T> {
+    return new Logger(opts);
+  }
+
   private _option: StrictOption;
   private _setting: StrictSetting;
 
