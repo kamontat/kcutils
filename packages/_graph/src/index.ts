@@ -10,7 +10,7 @@ const internal = new Classify(internalModels, true);
   const graph = await builder({ root: process.cwd(), name: "Deps", external, internal });
 
   try {
-    await graph.toPDF("");
+    await graph.toPDF();
   } catch (e) {
     console.error(e);
   }
