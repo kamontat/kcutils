@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.3.9...@kcinternal/configuration@0.4.0) (2020-06-20)
+
+
+### Features
+
+* **core:** upgrade dependencies and fix errors ([051dc60](https://github.com/kamontat/kcutils/commit/051dc60b1f88ab9b67b884d4fde7259dbcb8b322))
+
+
+
+
+
 ## [0.3.9](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.3.8...@kcinternal/configuration@0.3.9) (2020-06-20)
 
 **Note:** Version bump only for package @kcinternal/configuration
