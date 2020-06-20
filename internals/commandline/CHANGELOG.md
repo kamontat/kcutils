@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.6.0...@kcinternal/commandline@0.6.1) (2020-06-20)
+
+
+### Performance Improvements
+
+* **service:** support searching command from multiple level of application ([e02e4c1](https://github.com/kamontat/kcutils/commit/e02e4c1d17ae385ebe73fc71d2db5af11c0ce670))
+
+
+
+
+
 # [0.6.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.5.0...@kcinternal/commandline@0.6.0) (2020-06-20)
 
 
