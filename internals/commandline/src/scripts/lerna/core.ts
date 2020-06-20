@@ -30,7 +30,7 @@ export const lerna = (fn: DataTransformFn<string[], string[] | Promise<string[]>
 
   const transformer = new AsyncRunner(option, async ({ data, helper }) => {
     const config = await helper.root.pathEnsure("lerna.json");
-    const lerna = helper.root.nodeCommand("lerna");
+    const lerna = helper.path.nodeCommand("lerna");
 
     const args = Array.from(data.arguments);
     if (data.scopes)
@@ -47,11 +47,13 @@ export const lerna = (fn: DataTransformFn<string[], string[] | Promise<string[]>
         }, [] as string[])
       );
 
-    if (config !== undefined) {
-      return [lerna, ...args];
-    } else {
+    if (config === undefined) {
       const config = helper.root.path("lerna.json");
       return ["echo", `[skip] lerna config not found (${config})`];
+    } else if (lerna === undefined) {
+      return ["echo", `[skip] lerna command not found`];
+    } else {
+      return [lerna, ...args];
     }
   });
 

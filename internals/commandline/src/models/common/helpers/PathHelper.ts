@@ -18,7 +18,7 @@ export class PathHelper {
    * @param name commandline interface name
    */
   nodeCommand(name: string) {
-    return this.path("node_modules", ".bin", name);
+    return this.pathEnsureSync("node_modules", ".bin", name);
   }
 
   projectName(by: QueryType = "dirname", scope: boolean = true): string {
