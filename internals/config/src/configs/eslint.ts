@@ -89,12 +89,6 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
             argsIgnorePattern: "^_",
           },
         ],
-        "@typescript-eslint/class-name-casing": [
-          "warn",
-          {
-            allowUnderscorePrefix: true,
-          },
-        ],
         "@typescript-eslint/naming-convention": [
           "error",
           {

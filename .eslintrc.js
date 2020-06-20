@@ -55,12 +55,6 @@ module.exports = {
         argsIgnorePattern: "^_",
       },
     ],
-    "@typescript-eslint/class-name-casing": [
-      "warn",
-      {
-        allowUnderscorePrefix: true,
-      },
-    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
