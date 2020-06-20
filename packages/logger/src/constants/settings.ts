@@ -15,9 +15,9 @@ const build = <T>(t: T): StrictSettingObject & T => {
 };
 
 export const settings: StrictSetting = {
-  datetime: build({ type: "date", prefix: "[", suffix: "]" }),
+  datetime: build({ type: "datetime", prefix: "[", suffix: "]" }),
   scope: build({ underline: true, prefix: "[", suffix: "]" }),
-  filename: false,
+  filename: build({ italic: true }),
   seperator: build({}),
   badge: build({}),
   label: build({}),
