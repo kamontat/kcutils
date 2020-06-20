@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.11](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.10...@kcinternal/graph@0.2.11) (2020-06-20)
+
+
+### Bug Fixes
+
+* **lint:** new linter rules on new version of typescripts ([a758a7f](https://github.com/kamontat/kcutils/commit/a758a7f878d8c8f4318472ad5cea93870c002a39))
+
+
+
+
+
 ## [0.2.10](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.9...@kcinternal/graph@0.2.10) (2020-06-20)
 
 **Note:** Version bump only for package @kcinternal/graph
