@@ -115,15 +115,15 @@ export class Logger<T extends string = ""> {
     else return this.buildAsString(type, { metadata, prefix, data, suffix });
   }
 
-  startTimer(_label?: string): string {
+  startTimer(_label?: string, message?: string): string {
     const label = _label ?? `timer_${this._timers.size}`;
     this._timers.set(label, Date.now());
-    this.print("start", { message: "Initialized timer...", label });
+    this.print("start", { message: message ?? "Initialized timer...", label });
 
     return label;
   }
 
-  endTimer(label?: string): { label?: string; timestamp: number } {
+  endTimer(label?: string, message?: string): { label?: string; timestamp: number } {
     if (this._timers.size < 1) return { label: label, timestamp: 0 };
 
     let _label = label;
@@ -143,7 +143,7 @@ export class Logger<T extends string = ""> {
       this._timers.delete(_label);
 
       this.print("stop", {
-        message: "Timer run for: ",
+        message: message ?? "Timer run for: ",
         suffix: time,
         label: _label,
       });
