@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.3.4...@kcutils/logger@0.4.0) (2020-06-21)
+
+
+### Features
+
+* **model:** support custom message in start and end timer ([586f851](https://github.com/kamontat/kcutils/commit/586f851bb916b79e4e61907f082a9d22d856a999))
+
+
+
+
+
 ## [0.3.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.3.3...@kcutils/logger@0.3.4) (2020-06-20)
 
 
