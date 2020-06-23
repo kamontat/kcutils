@@ -10,19 +10,19 @@ const defaultSettings: StrictSettingObject = {
   suffix: "",
 };
 
-const build = <T>(t: T): StrictSettingObject & T => {
+export const settingBuilder = <T>(t: T): StrictSettingObject & T => {
   return json.deepMerge(defaultSettings, t);
 };
 
 export const settings: StrictSetting = {
-  datetime: build({ type: "datetime", prefix: "[", suffix: "]" }),
-  scope: build({ underline: true, prefix: "[", suffix: "]" }),
-  filename: build({ italic: true }),
-  seperator: build({}),
-  badge: build({}),
-  label: build({}),
-  message: build({}),
-  prefix: build({}),
-  suffix: build({}),
-  secret: build({ prefix: "[", suffix: "]" }),
+  datetime: settingBuilder({ prefix: "[", suffix: "]" }),
+  scope: settingBuilder({ underline: true, prefix: "[", suffix: "]" }),
+  filename: settingBuilder({ italic: true }),
+  seperator: settingBuilder({}),
+  badge: settingBuilder({}),
+  label: settingBuilder({}),
+  message: settingBuilder({}),
+  prefix: settingBuilder({}),
+  suffix: settingBuilder({}),
+  secret: settingBuilder({ prefix: "[", suffix: "]" }),
 };
