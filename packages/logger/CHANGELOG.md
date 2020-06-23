@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.0...@kcutils/logger@0.4.1) (2020-06-23)
+
+
+### Bug Fixes
+
+* **model:** never add formatting if message not found ([164abe2](https://github.com/kamontat/kcutils/commit/164abe2f981f1082bf5d93f4149485d20338f114))
+
+
+
+
+
 # [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.3.4...@kcutils/logger@0.4.0) (2020-06-21)
 
 
