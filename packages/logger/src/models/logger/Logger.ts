@@ -12,7 +12,7 @@ import { StrictOption, OptionalLoggerOption, OptionalOption } from "./LoggerOpti
 import { Types, LoggerType } from "./LoggerType";
 import { OptionalSetting, StrictSetting, StrictCommonSetting } from "./LoggerSetting";
 
-import { settings } from "../../constants/settings";
+import { settings, settingBuilder } from "../../constants/settings";
 import { types, DefaultKeyTypes } from "../../constants/types";
 import { options } from "../../constants/options";
 import { levels, toLevel } from "../../constants/levels";
@@ -422,10 +422,11 @@ export class Logger<T extends string = ""> {
    * @param settings formatting settings
    * @param color with color format
    */
-  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, censor: boolean = true) {
+  private format(input: string | string[], _settings: StrictCommonSetting, color?: Chalk, censor: boolean = true) {
     const msg = array.toArray(input).join(" ");
-    this.idebug(`formatting ${msg} by`, settings);
-    if (settings === undefined || settings === false) return "";
+    this.idebug(`formatting ${msg} by`, _settings);
+    if (_settings === undefined || _settings === false) return "";
+    const settings = settingBuilder(_settings);
 
     type Execute = [string, boolean, (s: string) => string];
     const executes: Execute[] = [
@@ -443,7 +444,7 @@ export class Logger<T extends string = ""> {
       const condition = c[1];
       const fn = c[2];
 
-      if (condition) {
+      if (condition && p !== "") {
         this.idebug(`start execute ${name}`);
         return fn(p);
       } else {
