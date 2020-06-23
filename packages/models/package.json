@@ -1,0 +1,37 @@
+{
+  "name": "@kcutils/models",
+  "version": "0.1.0",
+  "description": "custom models and helper class",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/models"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "icompiler-webpack",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester"
+  },
+  "dependencies": {
+    "@kcutils/helper": "0.3.13"
+  },
+  "devDependencies": {
+    "@kcinternal/commandline": "0.6.1",
+    "@kcinternal/configuration": "0.4.3"
+  }
+}
