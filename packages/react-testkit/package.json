@@ -1,7 +1,7 @@
 {
   "name": "@kcutils/react-testkit",
   "description": "add enzyme and react utils code",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -35,7 +35,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.6.1",
+    "@kcinternal/commandline": "0.6.2",
     "@types/enzyme": "3.10.5",
     "@types/enzyme-adapter-react-16": "1.0.6"
   }
