@@ -4,9 +4,9 @@ export type SchedulerEventName = "error" | "before-run" | "after-run";
 type Callback<T> = () => T;
 
 export class Scheduler {
-  private event: EventEmitter;
+  private readonly event: EventEmitter;
 
-  constructor(private interval: number, private delay: number = 0) {
+  constructor(private readonly interval: number, private readonly delay: number = 0) {
     this.event = new EventEmitter();
   }
 

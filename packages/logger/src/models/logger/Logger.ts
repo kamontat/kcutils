@@ -25,7 +25,9 @@ import { InputOption } from "../input/InputOptions";
 import { OutputMessage } from "../output/OutputMessage";
 import { LoggerLevel } from "./LoggerLevel";
 
-type Parameters = "longest-label";
+const longestLabel = "longest-label";
+
+type Parameters = typeof longestLabel;
 
 //* [ metadata                                ] [ prefix      ] [ data            ] [suffix]
 //* [datetime]   [scope] [filename] [separator] [badge] [label] [message]           [suffix]
@@ -62,7 +64,7 @@ export class Logger<T extends string = ""> {
     this._isPreviousLogInteractive = false;
 
     this._parameters = new Map();
-    this._parameters.set("longest-label", this.getLongestLabel());
+    this._parameters.set(longestLabel, this.getLongestLabel());
   }
 
   /**
@@ -323,7 +325,7 @@ export class Logger<T extends string = ""> {
     const separator = this.format(output.metadata.seperator.data, this._setting.seperator);
     const _paddingBadge = string.padEnd(output.prefix.badge.data, 2);
     const badge = this.format(_paddingBadge, this._setting.badge, type.color(this._color));
-    const _longestLabelLength = (this._parameters.get("longest-label") ?? "").length;
+    const _longestLabelLength = (this._parameters.get(longestLabel) ?? "").length;
     const _paddingLabel = string.padEnd(output.prefix.label.data, _longestLabelLength + 1);
     const label = this.format(_paddingLabel, this._setting.label, type.color(this._color));
     const customPrefix = this.format(output.prefix.custom.data, this._setting.prefix);

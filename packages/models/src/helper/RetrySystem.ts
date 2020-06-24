@@ -1,7 +1,7 @@
 type Callback<T> = () => Promise<T>;
 
 export class RetrySystem {
-  constructor(private delayMs: number) {}
+  constructor(private readonly delayMs: number) {}
 
   async try<T>(cb: Callback<T>, limit: number = 3): Promise<T> {
     try {
