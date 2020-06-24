@@ -1,8 +1,14 @@
 import { Setting } from "@kcinternal/commandline";
 import { ConfigBuilder } from "./ConfigBuilder";
 
-export class Config<C, R> extends Setting<C, R> {
-  constructor(builder: ConfigBuilder<C, R>, input?: C, dirpath: string = process.cwd()) {
-    super({ dirname: dirpath, input: input ?? builder.default, transform: builder.transformer });
+import { byDefault } from "../utils/helper";
+
+export class Config<C, R> extends Setting<Required<C>, R> {
+  constructor(builder: ConfigBuilder<C, R>, input?: Partial<C>, dirpath: string = process.cwd()) {
+    super({
+      dirname: dirpath,
+      input: byDefault({} as C, builder.default, input ?? {}) as Required<C>,
+      transform: builder.transformer,
+    });
   }
 }

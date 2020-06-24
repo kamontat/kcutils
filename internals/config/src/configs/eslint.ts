@@ -6,6 +6,11 @@ import { Config } from "../models/Config";
 
 const defaultConfig = {
   /**
+   * mark this as root configuration
+   */
+  root: false,
+
+  /**
    * add config to support react
    * @default false
    */
@@ -18,7 +23,7 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
   default: defaultConfig,
   transformer: ({ data, helper }) => {
     const autoDetect: Setting = {};
-    autoDetect.react = helper.parent.searchPackageJsonSync("dependencies", "react");
+    autoDetect.react = (data.root ? helper.current : helper.parent).searchPackageJsonSync("dependencies", "react");
 
     const options = byDefault(defaultConfig, autoDetect, data);
 
@@ -47,7 +52,7 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
       plugins,
       extends: extend,
       parserOptions: {
-        tsconfigRootDir: helper.parent.pwd,
+        tsconfigRootDir: options.root ? helper.current.pwd : helper.parent.pwd,
         ecmaFeatures: {
           jsx: options.react, // Allows for the parsing of JSX
         },

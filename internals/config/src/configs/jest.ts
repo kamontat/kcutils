@@ -14,22 +14,35 @@ interface JestConfig {
   coverageReporters: string[];
 }
 
-const jest: ConfigBuilder<void, JestConfig> = {
-  default: void 0,
-  transformer: ({ helper }) => {
+const defaultConfig = {
+  /**
+   * mark this as root configuration
+   */
+  root: false,
+};
+
+type Setting = typeof defaultConfig;
+
+const jest: ConfigBuilder<Setting, JestConfig> = {
+  default: defaultConfig,
+  transformer: ({ data, helper }) => {
+    const collectCoverageFrom = data.root
+      ? ["packages/**/*.{ts,tsx}", "!packages/_*/**/*.{ts,tsx}"]
+      : ["**/*.{ts,tsx}", "!_*/**/*.{ts,tsx}"];
+
     return {
       verbose: true,
-      rootDir: helper.parent.pwd,
+      rootDir: data.root ? helper.current.pwd : helper.parent.pwd,
       preset: "ts-jest",
       testEnvironment: "node",
       reporters: ["default", "jest-junit"],
       snapshotSerializers: [],
       collectCoverage: true,
-      collectCoverageFrom: ["**/*.{ts,tsx}", "!_*/**/*.{ts,tsx}"],
+      collectCoverageFrom,
       coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/"],
       coverageReporters: ["json", "lcov", "text", "clover"],
     };
   },
 };
 
-export default (dir?: string, input?: void) => new Config(jest, input, dir);
+export default (dir?: string, input?: Partial<Setting>): Config<Setting, JestConfig> => new Config(jest, input, dir);
