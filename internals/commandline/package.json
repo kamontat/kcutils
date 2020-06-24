@@ -28,7 +28,7 @@
     "root-run": "bin/root/run.js",
     "root-clean": "bin/root/clean.js",
     "root-release": "bin/root/release.js",
-    "root-test": "bin/root/test.js",
+    "root-tester": "bin/root/tester.js",
     "icompiler-tsc": "bin/compiler-tsc.js",
     "icompiler-webpack": "bin/compiler-webpack.js",
     "icleaner": "bin/cleaner.js",
