@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.6.1...@kcinternal/commandline@0.6.2) (2020-06-24)
+
+
+### Bug Fixes
+
+* **test:** change mislead name with test ([6dd9213](https://github.com/kamontat/kcutils/commit/6dd92138f9445a8a2b110c1ee8bc5b76a2886ded))
+
+
+### Performance Improvements
+
+* **core:** add root-build, root-run, root-clean, root-test, root-release command ([67ca907](https://github.com/kamontat/kcutils/commit/67ca90756171c09fcede93b8d6089c2be695c728))
+
+
+
+
+
 ## [0.6.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.6.0...@kcinternal/commandline@0.6.1) (2020-06-20)
 
 
