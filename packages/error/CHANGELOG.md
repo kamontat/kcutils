@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.20](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.19...@kcutils/error@0.2.20) (2020-06-24)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
 ## [0.2.19](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.18...@kcutils/error@0.2.19) (2020-06-24)
 
 **Note:** Version bump only for package @kcutils/error
