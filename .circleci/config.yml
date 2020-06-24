@@ -145,7 +145,7 @@ commands:
           command: git diff --color-words | cat
       - run:
           name: clean git repository
-          command: git restore .
+          command: git checkout .
       - run:
           name: "Release new package version"
           command: yarn release:ci << parameters.option >> || true
