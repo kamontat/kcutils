@@ -25,6 +25,9 @@
   ],
   "bin": {
     "root-build": "bin/root/build.js",
+    "root-run": "bin/root/run.js",
+    "root-clean": "bin/root/clean.js",
+    "root-release": "bin/root/release.js",
     "root-test": "bin/root/test.js",
     "icompiler-tsc": "bin/compiler-tsc.js",
     "icompiler-webpack": "bin/compiler-webpack.js",

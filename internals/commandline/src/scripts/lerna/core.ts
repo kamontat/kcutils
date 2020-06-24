@@ -1,35 +1,42 @@
 import { AsyncRunner, Commandline, CommandlineOption, Option, DataTransformFn } from "../..";
+import minimist from "minimist";
 
 interface Settings extends CommandlineOption {
   scopes: string[];
   ignores: string[];
   arguments: string[];
-  override: string[];
+  override: string[] | false;
 }
 
-export const lerna = (fn: DataTransformFn<string[], string[] | Promise<string[]>>) => {
+type TransformerOption = { arguments: string[]; override?: boolean };
+
+export const lerna = (
+  fn: DataTransformFn<minimist.ParsedArgs, TransformerOption | Promise<TransformerOption>>
+): Commandline<Settings> => {
   const option = new Option({
     dirname: process.cwd(),
     input: process.argv.slice(2),
     transform: async ({ data, helper }) => {
       const argument = helper.argument.parse(data, { default: { dry: false, scope: [], ignore: [] } });
-      const args = await Promise.resolve(fn({ data, helper }));
+      const args = await Promise.resolve(fn({ data: argument, helper }));
 
       const settings = {
         dryrun: argument.dry,
         scopes: Array.isArray(argument.scope) ? argument.scope : [argument.scope],
         ignores: Array.isArray(argument.ignore) ? argument.ignore : [argument.ignore],
-        arguments: args,
+        arguments: args.arguments,
+        override: args.override ? args.arguments : false,
       } as Settings;
-
-      helper.log.debug("arguments", JSON.stringify(settings));
 
       return settings;
     },
   });
 
   const transformer = new AsyncRunner(option, async ({ data, helper }) => {
-    const config = await helper.root.pathEnsure("lerna.json");
+    helper.log.debug("arguments", JSON.stringify(data));
+    if (data.override) return data.override;
+
+    const config = await helper.path.ensure("lerna.json");
     const lerna = helper.path.nodeCommand("lerna");
 
     const args = Array.from(data.arguments);
