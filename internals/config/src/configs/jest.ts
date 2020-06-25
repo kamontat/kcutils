@@ -34,12 +34,12 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
 
     return {
       verbose: true,
-      rootDir: data.root ? helper.current.pwd : helper.parent.pwd,
+      rootDir: helper.parent.pwd,
       preset: "ts-jest",
       testEnvironment: "node",
       reporters: ["default", "jest-junit"],
       snapshotSerializers: [],
-      testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
       testPathIgnorePatterns: ["/node_modules/"],
       collectCoverage: true,
       collectCoverageFrom,
