@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.5.7...@kcinternal/configuration@0.5.8) (2020-06-25)
+
+
+### Bug Fixes
+
+* **config:** change jest config to ignore node_modules and caches ([a7c7fe2](https://github.com/kamontat/kcutils/commit/a7c7fe23d9fe2c7d346d1fe7ba5de5c35f9b8bec))
+* **config:** parent already return root directory ([2be567d](https://github.com/kamontat/kcutils/commit/2be567d8bf0ca805e81067feeae760628e66ae11))
+
+
+
+
+
 ## [0.5.7](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.5.6...@kcinternal/configuration@0.5.7) (2020-06-25)
 
 **Note:** Version bump only for package @kcinternal/configuration
