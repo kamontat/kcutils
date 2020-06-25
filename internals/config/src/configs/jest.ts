@@ -8,6 +8,8 @@ interface JestConfig {
   testEnvironment: string;
   reporters: string[];
   snapshotSerializers: string[];
+  testMatch: string | string[];
+  testPathIgnorePatterns: string[];
   collectCoverage: boolean;
   collectCoverageFrom: string[];
   coveragePathIgnorePatterns: string[];
@@ -37,6 +39,8 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
       testEnvironment: "node",
       reporters: ["default", "jest-junit"],
       snapshotSerializers: [],
+      testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      testPathIgnorePatterns: ["/node_modules/"],
       collectCoverage: true,
       collectCoverageFrom,
       coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/"],
