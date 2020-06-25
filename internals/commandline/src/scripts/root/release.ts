@@ -1,7 +1,7 @@
 import { lerna } from "../lerna/core";
 import { Helper } from "../..";
 
-type CommandType = "updated" | "version" | "release";
+type CommandType = "updated" | "version" | "release" | "publish";
 
 type ReleaseName = "beta" | "alpha" | "rc" | "live" | "";
 
@@ -49,11 +49,11 @@ const onVersionType = (releaseName: ReleaseName, helper: Helper): string[] => {
   };
 
   const releaseCB: Callback = () => {
-    return ["--conventional-graduate", "--message", `chore(release): ${prefix}publish public version${suffix}`];
+    return ["--conventional-graduate", "--message", `chore(release): ${prefix}publish live version${suffix}`];
   };
 
   const cb: Callback = () => {
-    return ["--message", `chore(release): ${prefix}publish version${suffix}`];
+    return ["--message", `chore(release): ${prefix}publish new version${suffix}`];
   };
 
   return defaultArguments.concat(...onReleaseName(releaseName, preReleaseCB, releaseCB, cb));
@@ -77,14 +77,14 @@ const onReleaseType = (releaseName: ReleaseName, _helper: Helper): string[] => {
 const cli = lerna(({ data, helper }) => {
   const _type = data.type;
   if (!_type) throw new Error(`--type is required`);
-  if (_type !== "version" && _type !== "updated" && _type !== "release")
+  if (_type !== "version" && _type !== "updated" && _type !== "release" && _type !== "publish")
     throw new Error(`--type accepts only [updated, version, release], got ${_type}`);
 
   const type = _type as CommandType;
 
   const _releaseName = data.name ?? "";
   if (
-    (type === "version" || type === "release") &&
+    (type === "version" || type === "release" || type === "publish") &&
     _releaseName !== "beta" &&
     _releaseName !== "alpha" &&
     _releaseName !== "rc" &&
@@ -103,7 +103,8 @@ const cli = lerna(({ data, helper }) => {
     return {
       arguments: defaultArguments.concat(...onVersionType(releaseName, helper)),
     };
-  else if (type === "release") return { arguments: defaultArguments.concat(...onReleaseType(releaseName, helper)) };
+  else if (type === "release" || type === "publish")
+    return { arguments: defaultArguments.concat(...onReleaseType(releaseName, helper)) };
   else return { override: true, arguments: ["echo", "unknown type"] };
 });
 
