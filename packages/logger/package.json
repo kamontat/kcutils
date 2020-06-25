@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@kcutils/helper": "0.4.11",
-    "chalk": "4.0.0",
+    "chalk": "4.1.0",
     "figures": "3.2.0"
   },
   "devDependencies": {
