@@ -1,4 +1,4 @@
-export { TransformFn, DataTransformFn } from "./models/common/DataProcess";
+export { DataProcess, toInputWrapper, InputWrapper, TransformFn, DataTransformFn } from "./models/common/DataProcess";
 
 export { Setting } from "./commands/Setting";
 export { Option } from "./commands/Option";
