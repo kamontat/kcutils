@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.6.6",
-    "@types/graphviz": "0.2.3",
+    "@types/graphviz": "0.0.32",
     "@types/lerna__project": "0.2.3",
     "@types/package_json": "0.2.3"
   }

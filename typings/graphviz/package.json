@@ -1,7 +1,0 @@
-{
-  "name": "@types/graphviz",
-  "private": true,
-  "version": "0.2.3",
-  "description": "TypeScript definitions for graphviz v0.0.9",
-  "typings": "index.d.ts"
-}
