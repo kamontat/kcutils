@@ -1,25 +1,26 @@
 import { PathHelper } from "./PathHelper";
 
 export class PathManagementHelper {
-  constructor(private root: PathHelper, private parent: PathHelper, private current: PathHelper) {}
+  private paths: PathHelper[];
+
+  constructor(...paths: PathHelper[]) {
+    this.paths = paths;
+  }
+
+  private loop(cb: (p: PathHelper) => string | undefined) {
+    return this.paths.reduce((p, c) => {
+      if (p !== undefined) return p;
+
+      const cmd = cb(c);
+      return cmd ? cmd : p;
+    }, undefined as string | undefined);
+  }
 
   nodeCommand(command: string): string | undefined {
-    const current = this.current.nodeCommand(command);
-    if (current) return current;
-    const parent = this.parent.nodeCommand(command);
-    if (parent) return parent;
-    const root = this.root.nodeCommand(command);
-    if (root) return root;
-    return undefined;
+    return this.loop(c => c.nodeCommand(command));
   }
 
   ensure(...paths: string[]): string | undefined {
-    const current = this.current.pathEnsureSync(...paths);
-    if (current) return current;
-    const parent = this.parent.pathEnsureSync(...paths);
-    if (parent) return parent;
-    const root = this.root.pathEnsureSync(...paths);
-    if (root) return root;
-    return undefined;
+    return this.loop(c => c.pathEnsureSync(...paths));
   }
 }

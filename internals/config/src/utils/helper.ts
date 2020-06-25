@@ -6,7 +6,7 @@ export const byDefault = <T>(defaults: T, ...partials: Partial<T>[]): T => {
   }, defaults) as T;
 };
 
-export const getOrElse = <T extends string>(defaults: T, elses: T) => {
+export const getOrElse = <T extends string>(defaults: T, elses: T): T => {
   if (defaults === "") return elses;
   else return defaults;
 };

@@ -5,13 +5,12 @@ import { ArgumentHelper } from "./helpers/ArgumentHelper";
 import { EnvHelper } from "./helpers/EnvHelper";
 import { GeneralHelper } from "./helpers/GeneralHelper";
 
-type HelperOption = { root: string; parent: string; current: string };
+type HelperOption<T extends string> = Record<T, string>;
 
-export class Helper {
+export class Helper<T extends string> {
   private pathHelper: PathManagementHelper;
-  private rootHelper: PathHelper;
-  private parentHelper: PathHelper;
-  private currentHelper: PathHelper;
+
+  private subPathHelper: Map<T, PathHelper>;
 
   private generalHelper: GeneralHelper;
 
@@ -19,48 +18,43 @@ export class Helper {
   private argumentHelper: ArgumentHelper;
   private logHelper: LogHelper;
 
-  constructor(private opts: HelperOption) {
+  constructor(opts: HelperOption<T>) {
     this.generalHelper = new GeneralHelper();
+    this.subPathHelper = new Map();
 
-    this.rootHelper = new PathHelper(this.opts.root);
-    this.parentHelper = new PathHelper(this.opts.parent);
-    this.currentHelper = new PathHelper(this.opts.current);
-    this.pathHelper = new PathManagementHelper(this.root, this.parent, this.current);
+    (Object.keys(opts) as Array<T>).forEach(key => {
+      const value = opts[key];
+      this.subPathHelper.set(key, new PathHelper(value));
+    });
+
+    this.pathHelper = new PathManagementHelper(...Array.from(this.subPathHelper.values()));
 
     this.argumentHelper = new ArgumentHelper();
     this.logHelper = new LogHelper();
     this.envHelper = new EnvHelper();
   }
 
-  get general() {
+  get general(): GeneralHelper {
     return this.generalHelper;
   }
 
-  get env() {
+  get env(): EnvHelper {
     return this.envHelper;
   }
 
-  get argument() {
+  get argument(): ArgumentHelper {
     return this.argumentHelper;
   }
 
-  get log() {
+  get log(): LogHelper {
     return this.logHelper;
   }
 
-  get path() {
+  get path(): PathManagementHelper {
     return this.pathHelper;
   }
 
-  get root() {
-    return this.rootHelper;
-  }
-
-  get parent() {
-    return this.parentHelper;
-  }
-
-  get current() {
-    return this.currentHelper;
+  on(type: T): PathHelper {
+    return this.subPathHelper.get(type) ?? new PathHelper(process.cwd());
   }
 }

@@ -1,14 +1,15 @@
 import { DataProcess, TransformFn, InputWrapper, toInputWrapper } from "../common/DataProcess";
+import { Helper } from "../common/Helper";
 
-export class DataChain<I, P, R> implements DataProcess<P, R> {
-  constructor(private data: DataProcess<I, P>, private transform: TransformFn<InputWrapper<P>, R>) {}
+export class DataChain<I, P, R, H extends string> implements DataProcess<P, R, H> {
+  constructor(protected previous: DataProcess<I, P, H>, private transform: TransformFn<InputWrapper<P, H>, R>) {}
 
-  getData() {
-    return this.data.build();
+  getData(): P {
+    return this.previous.build();
   }
 
-  getHelper() {
-    return this.data.getHelper();
+  getHelper(): Helper<H> {
+    return this.previous.getHelper();
   }
 
   build(): R {

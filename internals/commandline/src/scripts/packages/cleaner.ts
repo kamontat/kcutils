@@ -19,21 +19,21 @@ const setting = new Setting({
 });
 
 const runner = new AsyncRunner(setting, async ({ helper, data }) => {
-  const logs = helper.parent.path("**/*.log");
-  const lib = helper.parent.path("lib");
+  const logs = helper.on("parent").path("**/*.log");
+  const lib = helper.on("parent").path("lib");
 
-  const tsbuildinfo = helper.parent.path("*.tsbuildinfo");
-  const buildinfo = helper.parent.path("*.buildinfo");
-  const build = helper.parent.path("*.build");
+  const tsbuildinfo = helper.on("parent").path("*.tsbuildinfo");
+  const buildinfo = helper.on("parent").path("*.buildinfo");
+  const build = helper.on("parent").path("*.build");
 
-  const coverage = helper.parent.path("coverage");
-  const junit = helper.parent.path("junit.xml");
-  const eslint = helper.parent.path("eslint.xml");
+  const coverage = helper.on("parent").path("coverage");
+  const junit = helper.on("parent").path("junit.xml");
+  const eslint = helper.on("parent").path("eslint.xml");
 
   const arr = [logs, lib, tsbuildinfo, buildinfo, build, coverage, junit, eslint];
   if (data.all) {
-    const nodeModules = helper.parent.path("node_modules");
-    const lock = helper.parent.path("yarn.lock");
+    const nodeModules = helper.on("parent").path("node_modules");
+    const lock = helper.on("parent").path("yarn.lock");
     arr.push(nodeModules, lock);
   }
 

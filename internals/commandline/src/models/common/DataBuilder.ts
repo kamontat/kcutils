@@ -9,11 +9,13 @@ const name = pjson.name.split("/");
 export interface DataBuilderOption<I, R> {
   dirname?: string;
   input: I;
-  transform: TransformFn<InputWrapper<I>, R>;
+  transform: TransformFn<InputWrapper<I, DataBuilderHelperString>, R>;
 }
 
-export class DataBuilder<I, R> extends Data<I, R> {
-  static build<I, R>(opts: DataBuilderOption<I, R>) {
+export type DataBuilderHelperString = "root" | "parent" | "current";
+
+export class DataBuilder<I, R> extends Data<I, R, DataBuilderHelperString> {
+  static build<I, R>(opts: DataBuilderOption<I, R>): Data<I, R, DataBuilderHelperString> {
     return new DataBuilder(opts);
   }
 

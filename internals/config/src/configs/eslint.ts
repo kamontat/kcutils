@@ -23,7 +23,7 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
   default: defaultConfig,
   transformer: ({ data, helper }) => {
     const autoDetect: Setting = {};
-    autoDetect.react = (data.root ? helper.current : helper.parent).searchPackageJsonSync("dependencies", "react");
+    autoDetect.react = helper.on("parent").searchPackageJsonSync("dependencies", "react");
 
     const options = byDefault(defaultConfig, autoDetect, data);
 
@@ -47,12 +47,12 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
     }
 
     return {
-      ignorePatterns: ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts"],
+      ignorePatterns: options.root ? ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts"] : ["**/*.d.ts"],
       parser: "@typescript-eslint/parser",
       plugins,
       extends: extend,
       parserOptions: {
-        tsconfigRootDir: options.root ? helper.current.pwd : helper.parent.pwd,
+        tsconfigRootDir: helper.on("parent").pwd,
         ecmaFeatures: {
           jsx: options.react, // Allows for the parsing of JSX
         },
@@ -159,4 +159,4 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
   },
 };
 
-export default (dir?: string, input?: Setting) => new Config(eslint, input, dir);
+export default (dir?: string, input?: Setting): Config<Setting, Linter.Config> => new Config(eslint, input, dir);

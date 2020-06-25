@@ -1,11 +1,11 @@
 import { Helper } from "./Helper";
 
-export interface InputWrapper<D> {
+export interface InputWrapper<D, H extends string> {
   data: D;
-  helper: Helper;
+  helper: Helper<H>;
 }
 
-export const toInputWrapper = <I, R>(proc: DataProcess<I, R>): InputWrapper<I> => {
+export const toInputWrapper = <I, R, H extends string>(proc: DataProcess<I, R, H>): InputWrapper<I, H> => {
   return {
     data: proc.getData(),
     helper: proc.getHelper(),
@@ -14,12 +14,12 @@ export const toInputWrapper = <I, R>(proc: DataProcess<I, R>): InputWrapper<I> =
 
 export type TransformFn<I, R> = (input: I) => R;
 
-export type DataTransformFn<I, R> = TransformFn<InputWrapper<I>, R>;
+export type DataTransformFn<I, R, H extends string> = TransformFn<InputWrapper<I, H>, R>;
 
-export interface DataProcess<I, R> {
+export interface DataProcess<I, R, H extends string> {
   getData(): I;
 
-  getHelper(): Helper;
+  getHelper(): Helper<H>;
 
   build(): R;
 }

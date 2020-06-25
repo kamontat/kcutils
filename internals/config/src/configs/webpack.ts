@@ -42,16 +42,16 @@ type Options = Partial<typeof defaultConfig>;
 const webpack: ConfigBuilder<Options, Configuration> = {
   default: defaultConfig,
   transformer: ({ helper, data }) => {
-    const base = helper.parent.projectName();
+    const base = helper.on("parent").projectName();
 
     const autoDetect: Options = {};
-    autoDetect.react = helper.parent.searchPackageJsonSync("dependencies", "react");
+    autoDetect.react = helper.on("parent").searchPackageJsonSync("dependencies", "react");
     autoDetect.index =
-      helper.parent.pathEnsureSync("src", "index.ts") ?? helper.parent.pathEnsureSync("src", "index.tsx");
+      helper.on("parent").pathEnsureSync("src", "index.ts") ?? helper.on("parent").pathEnsureSync("src", "index.tsx");
 
     const options = byDefault(defaultConfig, autoDetect, data);
 
-    const tsconfig = helper.parent.path("tsconfig.json");
+    const tsconfig = helper.on("parent").path("tsconfig.json");
 
     const target = getOrElse(options.target, options.react ? "web" : "node");
     const index = getOrElse(options.index, options.react ? "index.tsx" : "index.ts");
@@ -69,9 +69,9 @@ const webpack: ConfigBuilder<Options, Configuration> = {
     const plugins: Plugin[] = [];
     const externals: ExternalsElement[] = [];
 
-    const eslint = helper.parent.pathEnsureSync(".eslintrc.js");
+    const eslint = helper.on("parent").pathEnsureSync(".eslintrc.js");
     if (options.lint && eslint !== undefined) {
-      const report = helper.parent.path("eslint.xml");
+      const report = helper.on("parent").path("eslint.xml");
 
       rules.unshift({
         enforce: "pre",
@@ -132,11 +132,11 @@ const webpack: ConfigBuilder<Options, Configuration> = {
       mode: options.mode,
       target,
       entry: {
-        index: helper.parent.path("src", index),
+        index: helper.on("parent").path("src", index),
       },
       devtool: "source-map",
       output: {
-        path: helper.parent.path("lib"),
+        path: helper.on("parent").path("lib"),
         filename: "[name].js",
         library,
         libraryTarget: "umd",
@@ -154,4 +154,5 @@ const webpack: ConfigBuilder<Options, Configuration> = {
   },
 };
 
-export default (dir?: string, input?: Options) => new Config(webpack, input, dir);
+export default (dir?: string, input?: Options): Config<Partial<Options>, Configuration> =>
+  new Config(webpack, input, dir);

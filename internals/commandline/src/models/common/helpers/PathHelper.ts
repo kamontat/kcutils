@@ -17,7 +17,7 @@ export class PathHelper {
    *
    * @param name commandline interface name
    */
-  nodeCommand(name: string) {
+  nodeCommand(name: string): string | undefined {
     return this.pathEnsureSync("node_modules", ".bin", name);
   }
 
@@ -66,7 +66,7 @@ export class PathHelper {
     return input.name !== undefined;
   }
 
-  async searchPackageJson(key: "dependencies" | "devDependencies", searchText: string) {
+  async searchPackageJson(key: "dependencies" | "devDependencies", searchText: string): Promise<boolean> {
     const pjson = await this.packageJson();
     if (!this.isPackage(pjson)) {
       return false;
@@ -75,7 +75,7 @@ export class PathHelper {
     }
   }
 
-  searchPackageJsonSync(key: "dependencies" | "devDependencies", searchText: string) {
+  searchPackageJsonSync(key: "dependencies" | "devDependencies", searchText: string): boolean {
     const pjson = this.packageJsonSync();
     if (!this.isPackage(pjson)) {
       return false;
@@ -91,7 +91,7 @@ export class PathHelper {
    *
    * @param name folder or file name
    */
-  path(...name: string[]) {
+  path(...name: string[]): string {
     return resolve(this.filepath, ...name);
   }
 
@@ -101,7 +101,7 @@ export class PathHelper {
    *
    * @param name folder or file name
    */
-  async pathEnsure(...name: string[]) {
+  async pathEnsure(...name: string[]): Promise<string | undefined> {
     const p = this.path(...name);
     const is = await exists(p);
     if (is) return p;
@@ -114,7 +114,7 @@ export class PathHelper {
    *
    * @param name folder or file name
    */
-  pathEnsureSync(...name: string[]) {
+  pathEnsureSync(...name: string[]): string | undefined {
     const p = this.path(...name);
     if (existsSync(p)) return p;
     else return undefined;
@@ -123,7 +123,7 @@ export class PathHelper {
   /**
    * get current fullpath
    */
-  get pwd() {
+  get pwd(): string {
     return this.filepath;
   }
 }

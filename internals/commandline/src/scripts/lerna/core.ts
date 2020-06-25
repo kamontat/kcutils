@@ -1,5 +1,6 @@
 import { AsyncRunner, Commandline, CommandlineOption, Option, DataTransformFn } from "../..";
 import minimist from "minimist";
+import { DataBuilderHelperString } from "../../models/common/DataBuilder";
 
 interface Settings extends CommandlineOption {
   scopes: string[];
@@ -11,8 +12,8 @@ interface Settings extends CommandlineOption {
 type TransformerOption = { arguments: string[]; override?: boolean };
 
 export const lerna = (
-  fn: DataTransformFn<minimist.ParsedArgs, TransformerOption | Promise<TransformerOption>>
-): Commandline<Settings> => {
+  fn: DataTransformFn<minimist.ParsedArgs, TransformerOption | Promise<TransformerOption>, DataBuilderHelperString>
+): Commandline<Settings, DataBuilderHelperString> => {
   const option = new Option({
     dirname: process.cwd(),
     input: process.argv.slice(2),
@@ -55,7 +56,7 @@ export const lerna = (
       );
 
     if (config === undefined) {
-      const config = helper.root.path("lerna.json");
+      const config = helper.on("root").path("lerna.json");
       return ["echo", `[skip] lerna config not found (${config})`];
     } else if (lerna === undefined) {
       return ["echo", `[skip] lerna command not found`];

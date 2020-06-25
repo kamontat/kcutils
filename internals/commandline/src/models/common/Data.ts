@@ -1,17 +1,18 @@
 import { DataProcess, InputWrapper, TransformFn } from "./DataProcess";
+import { Helper } from "./Helper";
 
-export class Data<I, R> implements DataProcess<I, R> {
-  constructor(private input: InputWrapper<I>, private transform: TransformFn<InputWrapper<I>, R>) {}
+export class Data<I, R, H extends string> implements DataProcess<I, R, H> {
+  constructor(private input: InputWrapper<I, H>, private transform: TransformFn<InputWrapper<I, H>, R>) {}
 
-  getData() {
+  getData(): I {
     return this.input.data;
   }
 
-  getHelper() {
+  getHelper(): Helper<H> {
     return this.input.helper;
   }
 
-  build() {
+  build(): R {
     return this.transform(this.input);
   }
 }

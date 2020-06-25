@@ -1,5 +1,8 @@
 import { lerna } from "../lerna/core";
-import { Helper } from "../..";
+import { Helper as IHelper } from "../..";
+import { DataBuilderHelperString } from "../../models/common/DataBuilder";
+
+type Helper = IHelper<DataBuilderHelperString>;
 
 type CommandType = "updated" | "version" | "release" | "publish";
 

@@ -34,7 +34,7 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
 
     return {
       verbose: true,
-      rootDir: helper.parent.pwd,
+      rootDir: helper.on("parent").pwd,
       preset: "ts-jest",
       testEnvironment: "node",
       reporters: ["default", "jest-junit"],
