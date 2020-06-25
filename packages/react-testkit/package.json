@@ -19,7 +19,9 @@
     "access": "public"
   },
   "files": [
-    "lib"
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "data/**/*.json"
   ],
   "scripts": {
     "build": "icompiler-tsc",

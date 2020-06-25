@@ -21,7 +21,9 @@
   "files": [
     "bin",
     "includes",
-    "lib"
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "data/**/*.json"
   ],
   "bin": {
     "root-build": "bin/root/build.js",
