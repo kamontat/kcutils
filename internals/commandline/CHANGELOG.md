@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.7](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.6.6...@kcinternal/commandline@0.6.7) (2020-06-25)
+
+
+### Performance Improvements
+
+* **core:** add root typescript config file ([1085ad5](https://github.com/kamontat/kcutils/commit/1085ad54f594010adeae4190780c4ebb2b6668f4))
+
+
+
+
+
 ## [0.6.6](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.6.5...@kcinternal/commandline@0.6.6) (2020-06-24)
 
 **Note:** Version bump only for package @kcinternal/commandline

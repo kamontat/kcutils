@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/models",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "custom models and helper class",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -28,10 +28,10 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.4.5"
+    "@kcutils/helper": "0.4.6"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.6.6",
-    "@kcinternal/configuration": "0.5.4"
+    "@kcinternal/commandline": "0.6.7",
+    "@kcinternal/configuration": "0.5.5"
   }
 }

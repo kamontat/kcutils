@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/logger",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "another logger services base on signale",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -28,12 +28,12 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.4.5",
+    "@kcutils/helper": "0.4.6",
     "chalk": "4.0.0",
     "figures": "3.2.0"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.6.6",
-    "@kcinternal/configuration": "0.5.4"
+    "@kcinternal/commandline": "0.6.7",
+    "@kcinternal/configuration": "0.5.5"
   }
 }
