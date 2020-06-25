@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.7.0...@kcinternal/commandline@0.7.1) (2020-06-25)
+
+
+### Bug Fixes
+
+* **model:** support --type publish, update commit message on live and normal ([16634a8](https://github.com/kamontat/kcutils/commit/16634a88f942df0162429c36fbd7de57d23b1e34))
+* **utils:** remove --on from root-run, use scope instead ([76cd15a](https://github.com/kamontat/kcutils/commit/76cd15a0cbe873ecd40e08177a7ecc884e589a0b))
+
+
+
+
+
 # [0.7.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.6.7...@kcinternal/commandline@0.7.0) (2020-06-25)
 
 
