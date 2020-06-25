@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.8.0",
-    "@types/eslint": "6.8.0",
+    "@types/eslint": "7.2.0",
     "@types/webpack": "4.41.12"
   }
 }
