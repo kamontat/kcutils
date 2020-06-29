@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.15](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.14...@kcutils/logger@0.4.15) (2020-06-29)
+
+
+### Performance Improvements
+
+* **model:** export more interface and utils ([9534563](https://github.com/kamontat/kcutils/commit/953456334f25e465a35f24e6f80f792aee1dc3e7))
+
+
+
+
+
 ## [0.4.14](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.13...@kcutils/logger@0.4.14) (2020-06-25)
 
 **Note:** Version bump only for package @kcutils/logger
