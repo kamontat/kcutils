@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.0...@kcinternal/configuration@0.6.1) (2020-06-25)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+# [0.6.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.5.9...@kcinternal/configuration@0.6.0) (2020-06-25)
+
+
+### Features
+
+* **core:** update helper to support any size of paths ([6a0683f](https://github.com/kamontat/kcutils/commit/6a0683fe83c597dd37dd92c1f994808202983dc1))
+
+
+
+
+
 ## [0.5.9](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.5.8...@kcinternal/configuration@0.5.9) (2020-06-25)
 
 **Note:** Version bump only for package @kcinternal/configuration

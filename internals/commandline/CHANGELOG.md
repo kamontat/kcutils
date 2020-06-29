@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.7.3...@kcinternal/commandline@0.8.0) (2020-06-25)
+
+
+### Features
+
+* **core:** update helper to support any size of paths ([6a0683f](https://github.com/kamontat/kcutils/commit/6a0683fe83c597dd37dd92c1f994808202983dc1))
+
+
+
+
+
 ## [0.7.3](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.7.2...@kcinternal/commandline@0.7.3) (2020-06-25)
 
 
