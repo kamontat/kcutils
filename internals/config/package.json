@@ -30,6 +30,6 @@
   "devDependencies": {
     "@kcinternal/commandline": "0.8.1",
     "@types/eslint": "7.2.0",
-    "@types/webpack": "4.41.18"
+    "@types/webpack": "4.41.21"
   }
 }
