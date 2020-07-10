@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/helper",
-  "version": "0.4.15",
+  "version": "0.4.16",
   "description": "internal helper",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.8.1",
-    "@kcinternal/configuration": "0.6.4"
+    "@kcinternal/configuration": "0.6.5"
   }
 }

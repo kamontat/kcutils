@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.16](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.15...@kcutils/helper@0.4.16) (2020-07-10)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
 ## [0.4.15](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.14...@kcutils/helper@0.4.15) (2020-07-09)
 
 **Note:** Version bump only for package @kcutils/helper
