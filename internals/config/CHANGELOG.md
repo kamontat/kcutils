@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.7](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.6...@kcinternal/configuration@0.6.7) (2020-07-11)
+
+
+### Bug Fixes
+
+* **model:** helper current of commandline helper not resolve to configuration ([fa34b73](https://github.com/kamontat/kcutils/commit/fa34b7370a07df429fab11506412af595925bd03))
+
+
+### Performance Improvements
+
+* **model:** update more configuration value of jest ([e5d54e4](https://github.com/kamontat/kcutils/commit/e5d54e447ae927b72b4ad729d888300fbf70c4e3))
+
+
+
+
+
 ## [0.6.6](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.5...@kcinternal/configuration@0.6.6) (2020-07-11)
 
 **Note:** Version bump only for package @kcinternal/configuration

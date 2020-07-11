@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.2...@kcinternal/commandline@0.8.3) (2020-07-11)
+
+
+### Bug Fixes
+
+* **model:** DataBuilder didn't resolve current libraries ([1bee895](https://github.com/kamontat/kcutils/commit/1bee895904b7e7141333938c8ee23c1af1893064))
+
+
+
+
+
 ## [0.8.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.1...@kcinternal/commandline@0.8.2) (2020-07-11)
 
 
