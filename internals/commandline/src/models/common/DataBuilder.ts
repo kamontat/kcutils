@@ -8,6 +8,7 @@ const name = pjson.name.split("/");
 
 export interface DataBuilderOption<I, R> {
   dirname?: string;
+  current?: string[];
   input: I;
   transform: TransformFn<InputWrapper<I, DataBuilderHelperString>, R>;
 }
@@ -24,7 +25,7 @@ export class DataBuilder<I, R> extends Data<I, R, DataBuilderHelperString> {
 
     const parent = resolve(dirname);
     const root = resolve(parent, "..", "..");
-    const current = resolve(parent, "node_modules", ...name);
+    const current = resolve(parent, "node_modules", ...(opts.current && opts.current.length > 0 ? opts.current : name));
 
     const helper = new Helper({ root: root, parent: parent, current: current });
 
