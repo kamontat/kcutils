@@ -13,7 +13,7 @@ const transformer = new AsyncRunner(option, async ({ helper }) => {
   } else {
     const args = [jest, "--config", config, "--passWithNoTests"];
     const ci = process.env.CI === "true";
-    if (ci) args.push("--ci", "--runInband");
+    if (ci) args.push("--ci", "--runInBand");
 
     return args;
   }
