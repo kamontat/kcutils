@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.1...@kcinternal/commandline@0.8.2) (2020-07-11)
+
+
+### Bug Fixes
+
+* **utils:** itester command error with wrong options ([454d85a](https://github.com/kamontat/kcutils/commit/454d85a7c9fb791832f61ff7054fccfab0198abd))
+
+
+
+
+
 ## [0.8.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.0...@kcinternal/commandline@0.8.1) (2020-06-29)
 
 **Note:** Version bump only for package @kcinternal/commandline
