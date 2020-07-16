@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.3...@kcinternal/commandline@0.8.4) (2020-07-16)
+
+
+### Performance Improvements
+
+* **service:** add support custom command on root-run (default is start) ([237c3e1](https://github.com/kamontat/kcutils/commit/237c3e166681657a84df0a2dd1262dcd596cec4b))
+* **utils:** support dry, dryrun and dry-run option in all lerna helper ([8b695e9](https://github.com/kamontat/kcutils/commit/8b695e962de281bdea2c40753930a9af1d4ba3c4))
+
+
+
+
+
 ## [0.8.3](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.2...@kcinternal/commandline@0.8.3) (2020-07-11)
 
 
