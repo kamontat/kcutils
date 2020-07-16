@@ -18,11 +18,14 @@ export const lerna = (
     dirname: process.cwd(),
     input: process.argv.slice(2),
     transform: async ({ data, helper }) => {
-      const argument = helper.argument.parse(data, { default: { dry: false, scope: [], ignore: [] } });
+      const argument = helper.argument.parse(data, {
+        boolean: ["dry", "dryrun", "dry-run"],
+        default: { dry: false, dryrun: false, ["dry-run"]: false, scope: [], ignore: [] },
+      });
       const args = await Promise.resolve(fn({ data: argument, helper }));
 
       const settings = {
-        dryrun: argument.dry,
+        dryrun: argument.dry || argument.dryrun || argument["dry-run"],
         scopes: Array.isArray(argument.scope) ? argument.scope : [argument.scope],
         ignores: Array.isArray(argument.ignore) ? argument.ignore : [argument.ignore],
         arguments: args.arguments,
