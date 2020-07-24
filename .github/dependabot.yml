@@ -1,0 +1,15 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: friday
+    time: "02:00"
+    timezone: Asia/Bangkok
+  open-pull-requests-limit: 10
+  reviewers:
+  - kamontat
+  commit-message:
+    prefix: chore
+    include: scope
