@@ -47,26 +47,30 @@ This is a internal projects which contains all internal tools like compiler, esl
   - ``jest`` - support ``node`` and ``react``
 
 - graph_ - for generate dependencies graph for monots projects
-- `react-testkit`_ - add support enzyme and other testkit for react
 
 .. _`org/kcinternal`: https://www.npmjs.com/org/kcinternal
 .. _commandline: https://www.npmjs.com/package/@kcinternal/commandline
 .. _configuration: https://www.npmjs.com/package/@kcinternal/configuration
 .. _graph: https://www.npmjs.com/package/@kcinternal/graph
-.. _`react-testkit`: https://www.npmjs.com/package/@kcinternal/react-testkit
 
 @kcutils
 ^^^^^^^^
 
-THis is a utils projects for external projects to use
+This is a utilities projects for generic usecase
 
-- error_  - contains error management and custom throwable
-- logger_ - another logger services
-- helper_ - for kcutils and might handle for external user as well
+- error_           - Error management and custom error object
+- logger_          - Another logger services
+- helper_          - Functional utilities like lodash/ramda
+- models_          - Custom class models for multiple usecase like Optional
+- color_           - Color utilities and convertion
+- `react-testkit`_ - Enzyme support and React utilities function for react
 
 .. _error: https://www.npmjs.com/package/@kcutils/error
 .. _logger: https://www.npmjs.com/package/@kcutils/logger
 .. _helper: https://www.npmjs.com/package/@kcutils/helper
+.. _models: https://www.npmjs.com/package/@kcutils/models
+.. _color: https://www.npmjs.com/package/@kcutils/color
+.. _`react-testkit`: https://www.npmjs.com/package/@kcinternal/react-testkit
 
 For Contribution User
 ---------------------
