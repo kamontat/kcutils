@@ -179,4 +179,32 @@ describe("Path Helper", () => {
       expect(p.includes(/f\/text*/)).toEqual(false);
     });
   });
+
+  describe("path.fileExist", () => {
+    test.each([
+      ["/a/b/c/d/e/f.txt", true],
+      ["/a/b/c/d/e/f", true],
+      ["/a/b/c/", false],
+      ["a/b/c/", false],
+      ["/", false],
+      [undefined, false],
+    ])("when input is %s returns %s", (input, output) => {
+      const p = new Paths(input);
+      expect(p.isFileExist).toEqual(output);
+    });
+  });
+
+  describe("path.directoryExist", () => {
+    test.each([
+      ["/a/b/c/d/e/f.txt", true],
+      ["/a/b/c/d/e/f", true],
+      ["/a/b/c/", true],
+      ["a/b/c/", true],
+      ["/", false],
+      [undefined, false],
+    ])("when input is %s returns %s", (input, output) => {
+      const p = new Paths(input);
+      expect(p.isDirectoryExist).toEqual(output);
+    });
+  });
 });

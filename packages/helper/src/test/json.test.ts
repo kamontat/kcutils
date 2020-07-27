@@ -148,5 +148,15 @@ describe("Json Object Helper", () => {
 
       expect(result.circular.circular.a).toEqual("hello");
     });
+
+    test.each([
+      ["string", { s: "test" }, ["s"]],
+      [{ a: "test" }, 123, ["a"]],
+      [false, "string", []],
+    ])("merge '%p' with '%p'", (a: any, b: any, output) => {
+      const result = jsonHelper.deepMerge(a, b);
+      if (output.length <= 0) expect(result).toEqual({});
+      else output.forEach(e => expect(result).toHaveProperty(e));
+    });
   });
 });
