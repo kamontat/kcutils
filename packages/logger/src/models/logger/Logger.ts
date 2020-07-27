@@ -81,6 +81,13 @@ export class Logger<T extends string = ""> {
     return this._option.scopes;
   }
 
+  /**
+   * get current options as readonly
+   */
+  get option(): StrictOption {
+    return Object.assign(this._option);
+  }
+
   // print logger message to stream
   print(_type: DefaultKeyTypes | T, data: InputMessage | InputOption): void {
     const type = this._types[_type];
