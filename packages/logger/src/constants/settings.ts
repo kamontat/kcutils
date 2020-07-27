@@ -1,7 +1,7 @@
 import { StrictSetting, StrictSettingObject } from "../models/logger/LoggerSetting";
 import { json } from "@kcutils/helper";
 
-const defaultSettings: StrictSettingObject = {
+export const defaultSettings: StrictSettingObject = {
   uppercase: false,
   underline: false,
   bold: false,
