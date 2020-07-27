@@ -47,7 +47,7 @@ export class Paths {
   }
 
   get isDirectoryExist(): boolean {
-    return this.dir.length === 1 && this.dir.includes(internal);
+    return this.dir.length >= 1 && !this.dir.includes(internal);
   }
 
   get absolute(): boolean {
