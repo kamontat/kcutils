@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.19...@kcutils/helper@0.5.0-rc.0) (2020-07-27)
+
+
+### Bug Fixes
+
+* **model:** isDirectoryExist return incorrect results ([fb2ae95](https://github.com/kamontat/kcutils/commit/fb2ae95a8834a6f9c1d5f90eaf8b99b358e3fdab))
+* **utils:** deepMerge didn't handle when input data isn't object ([d0fbb46](https://github.com/kamontat/kcutils/commit/d0fbb461125422e75a86e8a8e7e52cdbc410cc6c))
+
+
+### Features
+
+* export all changes to external ([430a050](https://github.com/kamontat/kcutils/commit/430a050783eb4f40c9927128d4f54a562e076726))
+* **utils:** add equals for array ([78f9fb2](https://github.com/kamontat/kcutils/commit/78f9fb238774adcc393c15513c3a83f01b9b3707))
+* **utils:** add forceObject, equals, getObject and fix deepMerge with non obj in json ([3bb6180](https://github.com/kamontat/kcutils/commit/3bb6180a39ed0cdc288261680ee75a24120e620d))
+* **utils:** add new namespace for generic checker ([7464219](https://github.com/kamontat/kcutils/commit/7464219120fd9f37728d30d7c8db6499bb4fea91))
+
+
+### Performance Improvements
+
+* **core:** change compiler of all utilities modules to tsc instead of webpack ([0b5b2ad](https://github.com/kamontat/kcutils/commit/0b5b2ad047cd59fdebf8a3c20930ec7e1612799d))
+
+
+
+
+
 ## [0.4.19](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.18...@kcutils/helper@0.4.19) (2020-07-16)
 
 **Note:** Version bump only for package @kcutils/helper

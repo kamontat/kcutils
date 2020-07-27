@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.20-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.2.19...@kcutils/models@0.2.20-rc.0) (2020-07-27)
+
+
+### Performance Improvements
+
+* **core:** change compiler of all utilities modules to tsc instead of webpack ([0b5b2ad](https://github.com/kamontat/kcutils/commit/0b5b2ad047cd59fdebf8a3c20930ec7e1612799d))
+
+
+
+
+
 ## [0.2.19](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.2.18...@kcutils/models@0.2.19) (2020-07-16)
 
 **Note:** Version bump only for package @kcutils/models
