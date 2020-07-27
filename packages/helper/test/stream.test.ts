@@ -1,6 +1,6 @@
 import { Readable } from "stream";
 
-import { stream } from "..";
+import { stream } from "../src";
 
 class NumberStream extends Readable {
   private idx: number;

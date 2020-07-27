@@ -1,4 +1,4 @@
-import { string } from "..";
+import { string } from "../src";
 
 describe("String Helper", () => {
   describe("Padding start", () => {
