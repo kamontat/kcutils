@@ -28,9 +28,9 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/logger": "0.5.0-rc.0",
-    "@kcutils/helper": "0.5.0-rc.0",
-    "@kcutils/error": "0.2.36-rc.0"
+    "@kcutils/logger": "0.5.0-rc.1",
+    "@kcutils/helper": "0.5.0-rc.1",
+    "@kcutils/error": "0.2.36-rc.1"
   },
   "devDependencies": {
     "@kcinternal/commandline": "*",
