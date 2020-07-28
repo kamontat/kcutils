@@ -1,5 +1,6 @@
 import { nonEmpty, isString, isObject } from "./generic";
 import { array } from "..";
+import { Optional } from "../models/optional";
 
 export type JsonSortableData<T> = {
   index: number;
@@ -23,7 +24,7 @@ type NestedJson = Partial<Record<string, PossibleValues>>;
  * @param obj input any type
  * @param def default value if input is not object
  */
-export const forceObject = <T = unknown>(obj: T | undefined | null, def = {}): T => {
+export const forceObject = <T = unknown>(obj: Optional<T>, def = {}): T => {
   if (isObject(obj)) return Object.assign({}, obj);
   else return def as T;
 };

@@ -1,3 +1,5 @@
+import { Optional } from "../models/optional";
+
 /**
  * return true when match following condition
  *  1. is undefined or null
@@ -16,11 +18,11 @@ export const isEmpty = <T = unknown>(t: T): boolean => {
   return false;
 };
 
-export const isExist = <T = unknown>(t: T | undefined | null): t is T => {
+export const isExist = <T = unknown>(t: Optional<T>): t is T => {
   return t !== undefined && t !== null;
 };
 
-export const isTruthy = <T = unknown>(t: T | undefined | null): t is T => {
+export const isTruthy = <T = unknown>(t: Optional<T>): t is T => {
   if (t) return true;
   else return false;
 };
@@ -34,24 +36,24 @@ export const nonEmpty = <T = unknown>(t: T): boolean => {
   return !isEmpty(t);
 };
 
-export const noExist = <T = unknown>(t: T | undefined | null): boolean => {
+export const noExist = <T = unknown>(t: Optional<T>): boolean => {
   return t === undefined || t === null;
 };
 
-export const isFalsy = <T = unknown>(t: T | undefined | null): t is T => {
+export const isFalsy = <T = unknown>(t: Optional<T>): t is T => {
   if (t) return false;
   else return true;
 };
 
-export const isString = (t: any | undefined | null): t is string => {
+export const isString = (t: Optional<any>): t is string => {
   return isExist(t) && typeof t === "string";
 };
 
-export const isNumber = (t: any | undefined | null): t is number => {
+export const isNumber = (t: Optional<any>): t is number => {
   return isExist(t) && typeof t === "number";
 };
 
-export const isBoolean = (t: any | undefined | null): t is boolean => {
+export const isBoolean = (t: Optional<any>): t is boolean => {
   return isExist(t) && typeof t === "boolean";
 };
 
@@ -60,7 +62,7 @@ export const isBoolean = (t: any | undefined | null): t is boolean => {
  *
  * @param obj input of any type
  */
-export const isObject = <T = unknown>(obj: T | undefined | null): obj is T => {
+export const isObject = <T = unknown>(obj: Optional<T>): obj is T => {
   if (obj === undefined || obj === null) return false;
   else return typeof obj === "object" && !Array.isArray(obj);
 };
