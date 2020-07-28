@@ -134,6 +134,24 @@ describe("Json Object Helper", () => {
       expect(result.circular.circular.a).toEqual("hello");
     });
 
+    test("not merge when new object is undefined", () => {
+      const objA = { a: "test", b: "bbb", c: true };
+      const objB = { a: undefined as any, b: null as any, d: 999 };
+      const result = jsonHelper.deepMerge(objA, objB);
+
+      expect(Object.keys(result).length).toEqual(4);
+
+      expect(result).toHaveProperty("a");
+      expect(result).toHaveProperty("b");
+      expect(result).toHaveProperty("c");
+      expect(result).toHaveProperty("d");
+
+      expect(result.a).toEqual(objA.a);
+      expect(result.b).toEqual(objA.b);
+      expect(result.c).toEqual(objA.c);
+      expect(result.d).toEqual(objB.d);
+    });
+
     test.each([
       ["string", { s: "test" }, ["s"]],
       [{ a: "test" }, 123, ["a"]],
