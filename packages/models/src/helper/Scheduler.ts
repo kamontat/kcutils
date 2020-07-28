@@ -96,8 +96,8 @@ export class Scheduler {
    * stop schedule process and delay process
    */
   stop(): void {
-    this.onSchedule && clearInterval(this.onSchedule as number);
-    this.onDelay && clearTimeout(this.onDelay as number);
+    this.onSchedule && clearInterval(this.onSchedule as any);
+    this.onDelay && clearTimeout(this.onDelay as any);
     this.event.emit("stopped");
   }
 
