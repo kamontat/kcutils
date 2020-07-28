@@ -43,11 +43,7 @@ export const forceObject = <T = unknown>(obj: Optional<T>, def = {}): T => {
  *  equals({a: 2, b: 3}, {a: 2, b: 3}) - check all keys ('a' and 'b')
  *  equals({a: {aa: 1, ab: 2}}, {a: {aa: 2, bb: 3, cc: 1}, ["a.ab"]}) - check only 'b' key inside a object
  */
-export const equals = <T extends NestedJson>(
-  o1: T | undefined | null,
-  o2: T | undefined | null,
-  keys: string[] = []
-): boolean => {
+export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, keys: string[] = []): boolean => {
   // for deep equals object data
   if (isObject(o1) && isObject(o2)) {
     // checking all keys
@@ -60,7 +56,7 @@ export const equals = <T extends NestedJson>(
 
       return equals(o1, o2, keys1);
       // checking only specify keys
-    } else
+    } else {
       return keys.every(key => {
         const value1: any = getObject(o1 as T, key);
         const value2: any = getObject(o2 as T, key);
@@ -76,6 +72,7 @@ export const equals = <T extends NestedJson>(
         else if (equals(value1, value2)) return true;
         return false;
       });
+    }
 
     // normal datatype
   } else if (Array.isArray(o1) || Array.isArray(o2)) {
