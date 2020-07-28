@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.21...@kcutils/logger@0.5.0-rc.0) (2020-07-27)
+
+
+### Features
+
+* **model:** add equals and toString method to clean all mess ([6a8f4ec](https://github.com/kamontat/kcutils/commit/6a8f4ec82cf462db4f5871c861690bdd05ab4393))
+
+
+### Performance Improvements
+
+* **core:** change compiler of all utilities modules to tsc instead of webpack ([0b5b2ad](https://github.com/kamontat/kcutils/commit/0b5b2ad047cd59fdebf8a3c20930ec7e1612799d))
+* **model:** export logger option ([85b5b27](https://github.com/kamontat/kcutils/commit/85b5b273584b99cb272c0422c3ae2a5db21568e3))
+* **model:** export logger options to external use ([4c9c775](https://github.com/kamontat/kcutils/commit/4c9c775bb1e498d11b582e3286357d1efa44e774))
+
+
+
+
+
 ## [0.4.21](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.20...@kcutils/logger@0.4.21) (2020-07-16)
 
 **Note:** Version bump only for package @kcutils/logger
