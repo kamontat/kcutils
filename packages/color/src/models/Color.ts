@@ -1,13 +1,16 @@
-import { RGB } from "../typings/RGB";
-import { validateRGB } from "../utils/converter/color";
+import { json } from "@kcutils/helper";
 import { WithLogger, LoggerOption } from "@kcutils/logger";
+
 import { nonEmpty, boundAlpha, between } from "../utils/helper";
-import { HSL } from "../typings/HSL";
 import { rgbToHsl, rgbToHsv, rgbToHex, hslToRgb, hsvToRgb, toType } from "../utils/converter";
+import { validateRGB } from "../utils/converter/color";
+import { rgbToNamed, RGBHexOptions, rgbToRgb } from "../utils/converter/rgb";
+
+import { RGB } from "../typings/RGB";
+import { HSL } from "../typings/HSL";
 import { HSV } from "../typings/HSV";
 import { HEX } from "../typings/HEX";
 import { Named } from "../typings/Named";
-import { rgbToNamed, RGBHexOptions, rgbToRgb } from "../utils/converter/rgb";
 import { Type } from "../typings/NumberType";
 
 export class Color extends WithLogger {
@@ -24,9 +27,9 @@ export class Color extends WithLogger {
     const id = Color.counter++;
     super(Object.assign({ scopes: ["color", id], settings: { filename: false } }, loggerOptions));
 
-    if (validateRGB(rgb)) {
+    if (validateRGB(rgb, false)) {
       this.valid = true;
-      this.rgb = rgb;
+      this.rgb = json.deepMerge({ a: 1 }, rgb);
     } else {
       this.valid = false;
     }
