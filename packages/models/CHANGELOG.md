@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.2.20-rc.0...@kcutils/models@0.3.0-rc.0) (2020-07-28)
+
+
+### Features
+
+* **model:** add stop() and restart() and more event on scheduler object ([5ebfdf1](https://github.com/kamontat/kcutils/commit/5ebfdf10a232e488416b1c0b52347525762a1ab9))
+
+
+
+
+
 ## [0.2.20-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.2.19...@kcutils/models@0.2.20-rc.0) (2020-07-27)
 
 

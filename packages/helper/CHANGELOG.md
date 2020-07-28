@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.0...@kcutils/helper@0.5.0-rc.1) (2020-07-28)
+
+
+### Bug Fixes
+
+* **lint:** resolve sonar warning ([0c6856f](https://github.com/kamontat/kcutils/commit/0c6856f0b30e4150770059d09e8f9fd6371989d3))
+* **model:** import error cause all application to fails ([d0e0c51](https://github.com/kamontat/kcutils/commit/d0e0c5141097817f84824ec8c5452faeff98b060))
+
+
+### Performance Improvements
+
+* **model:** change piping type to defined type in models ([9bd6b29](https://github.com/kamontat/kcutils/commit/9bd6b29ad0ea21af5816469709fbae213b323f1f))
+
+
+
+
+
 # [0.5.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.19...@kcutils/helper@0.5.0-rc.0) (2020-07-27)
 
 
