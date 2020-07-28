@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.1...@kcutils/helper@0.5.0-rc.2) (2020-07-28)
+
+
+### Performance Improvements
+
+* **utils:** json.deepMerge will not merge undefined and null value ([39395a4](https://github.com/kamontat/kcutils/commit/39395a4193b99779c2cfa56c6d12dcc9de50fbc6))
+
+
+
+
+
 # [0.5.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.0...@kcutils/helper@0.5.0-rc.1) (2020-07-28)
 
 
