@@ -1,4 +1,4 @@
-import { nonEmpty, isString, isObject } from "./generic";
+import { nonEmpty, isString, isObject, isExist } from "./generic";
 import { array } from "..";
 import { Optional } from "../models/Optional";
 
@@ -128,7 +128,8 @@ export const deepMerge = <T extends NestedJson, U extends NestedJson>(
       } else if (isObject(pVal) && isObject(oVal) && size > 0) {
         prev[key] = deepMerge(pVal, oVal, size - 1);
       } else {
-        prev[key] = oVal;
+        // replace only when new value is exist
+        if (isExist(oVal)) prev[key] = oVal;
       }
     });
 
