@@ -1,6 +1,6 @@
 import { nonEmpty, isString, isObject } from "./generic";
 import { array } from "..";
-import { Optional } from "../models/optional";
+import { Optional } from "../models/Optional";
 
 export type JsonSortableData<T> = {
   index: number;

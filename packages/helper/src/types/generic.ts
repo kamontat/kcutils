@@ -1,4 +1,4 @@
-import { Optional } from "../models/optional";
+import { Optional } from "../models/Optional";
 
 /**
  * return true when match following condition
