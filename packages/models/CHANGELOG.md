@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.0...@kcutils/models@0.3.0-rc.1) (2020-07-28)
+
+
+### Performance Improvements
+
+* **model:** support event and updatable on delay time in RetrySystem ([691aa81](https://github.com/kamontat/kcutils/commit/691aa81d2972c44ca393350f299c58d44efe28d2))
+
+
+
+
+
 # [0.3.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.2.20-rc.0...@kcutils/models@0.3.0-rc.0) (2020-07-28)
 
 
