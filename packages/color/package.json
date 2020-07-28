@@ -1,8 +1,7 @@
 {
   "name": "@kcutils/color",
   "version": "0.1.0",
-  "private": true,
-  "description": "",
+  "description": "Color Transformer",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",

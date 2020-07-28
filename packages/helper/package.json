@@ -1,7 +1,7 @@
 {
   "name": "@kcutils/helper",
   "version": "0.5.0-rc.1",
-  "description": "internal helper",
+  "description": "Functional helper",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",

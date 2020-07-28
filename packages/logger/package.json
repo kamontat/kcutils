@@ -1,7 +1,7 @@
 {
   "name": "@kcutils/logger",
   "version": "0.5.0-rc.1",
-  "description": "another logger services base on signale",
+  "description": "Another Logger Service",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",

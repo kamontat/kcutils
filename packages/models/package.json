@@ -1,7 +1,7 @@
 {
   "name": "@kcutils/models",
   "version": "0.3.0-rc.0",
-  "description": "custom models and helper class",
+  "description": "Additional DataType and Models",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
