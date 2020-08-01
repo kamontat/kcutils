@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.3...@kcutils/helper@0.5.0-rc.4) (2020-08-01)
+
+
+### Performance Improvements
+
+* **model:** export optional typescript type as type ([a64a9a4](https://github.com/kamontat/kcutils/commit/a64a9a48bd533eb801a26a40e3e90a9ac33f9cea))
+
+
+
+
+
 # [0.5.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.2...@kcutils/helper@0.5.0-rc.3) (2020-07-28)
 
 **Note:** Version bump only for package @kcutils/helper

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.1...@kcutils/color@0.2.0-rc.2) (2020-08-01)
+
+
+### Features
+
+* **utils:** support undefined data or type in rgb color converter ([153b7ba](https://github.com/kamontat/kcutils/commit/153b7bad0b3beef0cb8489ad155a104095f456e6))
+
+
+### Performance Improvements
+
+* **model:** add some defined error models ([7cbfd8e](https://github.com/kamontat/kcutils/commit/7cbfd8e7ced6f04e46378814f8ee9991a27e75ab))
+* **model:** export more models and function, setup error exception ([3709be6](https://github.com/kamontat/kcutils/commit/3709be6da0aab5b44c0c3239e18193c64347f991))
+
+
+
+
+
 # [0.2.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.0...@kcutils/color@0.2.0-rc.1) (2020-07-28)
 
 

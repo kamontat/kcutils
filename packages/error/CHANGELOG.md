@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.36-rc.3...@kcutils/error@0.3.0-rc.0) (2020-08-01)
+
+
+### Features
+
+* **model:** add Throwable.fn() for reuse function to create same error data ([d314598](https://github.com/kamontat/kcutils/commit/d31459815e78d51ea2221ea2fb955eab4e0b499f))
+
+
+
+
+
 ## [0.2.36-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.36-rc.2...@kcutils/error@0.2.36-rc.3) (2020-07-28)
 
 **Note:** Version bump only for package @kcutils/error
