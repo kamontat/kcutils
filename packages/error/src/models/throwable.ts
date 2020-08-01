@@ -1,6 +1,7 @@
 import { sep } from "path";
-import { env, path, string } from "@kcutils/helper";
+import { format } from "util";
 
+import { env, path, string, type, generic } from "@kcutils/helper";
 import { ThrowState, ThrowStateType } from "./state";
 
 export interface ThrowableStack {
@@ -27,6 +28,13 @@ export default class Throwable extends Error {
       return (error as unknown) as Throwable;
 
     return new Throwable(-1, error.name, error.message, error.stack, deadly);
+  }
+
+  static fn(state: ThrowState, message?: string): (...a: type.Optional<string>[]) => Throwable {
+    const templates = message;
+    return (...args: type.Optional<string>[]) => {
+      return Throwable.build(state, templates ? format(templates, ...args.filter(v => generic.isExist(v))) : templates);
+    };
   }
 
   private readonly _stack: ThrowableStack[];
