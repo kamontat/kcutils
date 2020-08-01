@@ -1,24 +1,37 @@
-import { RGB } from "../../typings/RGB";
+import { noExist } from "@kcutils/helper/lib/types/generic";
+
 import { toType } from "./type";
+
+import { RGB } from "../../typings/RGB";
 import { HSL } from "../../typings/HSL";
 import { HSV } from "../../typings/HSV";
-import { pad2, percentage, nonEmpty, boundAlpha } from "../helper";
 import { Type } from "../../typings/NumberType";
 import { HEX } from "../../typings/HEX";
 import { Type as HexType } from "../../typings/HexType";
 import { Named } from "../../typings/Named";
+
 import { hexNames } from "../constants";
+import { pad2, percentage, nonEmpty, boundAlpha } from "../helper";
+
+export const defaultRGB: RGB = { r: 0, g: 0, b: 0, a: 1, type: "number" };
+
+export const enforceRGB = (rgb: RGB): RGB => {
+  if (noExist(rgb)) return defaultRGB;
+  return Object.assign(defaultRGB, rgb);
+};
 
 /**
  * Handle bounds / percentage checking to conform to CSS color spec
  * <http://www.w3.org/TR/css3-color/>
  *
- * @param rgb any type of rgb object
+ * @param rgb any type of rgb object or incompleted rgb object
  * @return number type of rgb object
  */
 export const rgbToRgb = (rgb: RGB, type: Type = "number"): RGB => {
   const _rgb = toType(type, rgb, { min: 0, max: 255 });
-  return { ..._rgb, a: boundAlpha(rgb.a) }; // force a to be [0-1]
+  const forceRGB = enforceRGB(_rgb);
+
+  return { ...forceRGB, a: boundAlpha(rgb.a) }; // force a to be [0-1]
 };
 
 /**

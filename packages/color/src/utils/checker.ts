@@ -17,7 +17,7 @@ export const isValidCSSUnit = (color: string): boolean => {
 };
 
 export const isType = (n: NumberType, type: Type): boolean => {
-  return n.type == type;
+  return n?.type == type;
 };
 
 /**

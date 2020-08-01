@@ -1,7 +1,10 @@
-import { NumberType, Type } from "../../typings/NumberType";
+import { TypeNotFoundError } from "../../errors/converter";
+
 import { isPercentage, isNumber, isDecimal } from "../checker";
 import { BetweenOption, bound01, percentage } from "../helper";
+
 import { C } from "../../typings/C";
+import { NumberType, Type } from "../../typings/NumberType";
 
 export type LoopFn = (n: number) => number;
 export const loop = <K extends string, V extends C<K>>(
@@ -25,7 +28,7 @@ export const toPercentage = <K extends string, V extends C<K>>(
   if (isPercentage(o)) return o;
   else if (isNumber(o)) return loop<K, V>(o, v => bound01(v, limit) * 100, "percent");
   else if (isDecimal(o)) return loop<K, V>(o, v => v * 100, "percent");
-  else throw new Error(`type(${o.type}) is not exist`);
+  else throw TypeNotFoundError(o?.type);
 };
 
 export const toNumber = <K extends string, V extends C<K>>(
@@ -35,7 +38,7 @@ export const toNumber = <K extends string, V extends C<K>>(
   if (isNumber(o)) return o;
   else if (isPercentage(o)) return loop<K, V>(o, v => percentage(v, limit), "number");
   else if (isDecimal(o)) return loop<K, V>(o, v => percentage(v, limit, true), "number");
-  else throw new Error(`type(${o.type}) is not exist`);
+  else throw TypeNotFoundError(o?.type);
 };
 
 export const toDecimal = <K extends string, V extends C<K>>(
@@ -45,7 +48,7 @@ export const toDecimal = <K extends string, V extends C<K>>(
   if (isDecimal(o)) return o;
   else if (isPercentage(o)) return loop<K, V>(o, v => bound01(v, { max: 100 }), "decimal");
   else if (isNumber(o)) return loop<K, V>(o, v => bound01(v, limit), "decimal");
-  else throw new Error(`type(${o.type}) is not exist`);
+  else throw TypeNotFoundError(o?.type);
 };
 
 export const toType = <K extends string, V extends C<K>>(
@@ -56,5 +59,5 @@ export const toType = <K extends string, V extends C<K>>(
   if (newType === "percent") return toPercentage(o, limit);
   else if (newType === "decimal") return toDecimal(o, limit);
   else if (newType === "number") return toNumber(o, limit);
-  else throw new Error(`type(${o.type}) is not exist`);
+  else throw TypeNotFoundError(o?.type);
 };
