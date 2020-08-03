@@ -7,6 +7,12 @@ export class PathManagementHelper {
     this.paths = paths;
   }
 
+  add(...paths: string[]): this {
+    this.paths.push(...paths.map(p => new PathHelper(p)));
+
+    return this;
+  }
+
   private loop(cb: (p: PathHelper) => string | undefined) {
     return this.paths.reduce((p, c) => {
       if (p !== undefined) return p;
