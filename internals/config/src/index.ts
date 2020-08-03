@@ -3,3 +3,6 @@ import webpack from "./configs/webpack";
 import eslint from "./configs/eslint";
 
 export { jest, webpack, eslint };
+
+export { Config } from "./models/Config";
+export type { ConfigBuilder } from "./models/ConfigBuilder";
