@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.4...@kcinternal/commandline@0.9.0-rc.0) (2020-08-04)
+
+
+### Bug Fixes
+
+* **utils:** getOrElse will return else when input is empty string ([46e2d38](https://github.com/kamontat/kcutils/commit/46e2d3812ff3718937fcf2f18ed8228bacef19d9))
+
+
+### Features
+
+* **utils:** itester will support require strker.conf.js file to run as well ([42bfd56](https://github.com/kamontat/kcutils/commit/42bfd569bfcb1fe5e94c145ebb4c25863ae60477))
+
+
+### Performance Improvements
+
+* **core:** add --stryker to itester but run only when @kcutils/testkit exist ([0709ac3](https://github.com/kamontat/kcutils/commit/0709ac3ba747909091ce68b32507a9aebd37cbf7))
+* **utils:** add searchPackageJSonSync api in global path helper ([c5e1ea2](https://github.com/kamontat/kcutils/commit/c5e1ea23263bd2827657a333e95d86ae81461fbd))
+* **utils:** introduce new method in helper.path add() for add new path for calculation ([c65951e](https://github.com/kamontat/kcutils/commit/c65951e7b514659cbdc8469b56ed5b7aee9982d4))
+
+
+
+
+
 ## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.3...@kcinternal/commandline@0.8.4) (2020-07-16)
 
 

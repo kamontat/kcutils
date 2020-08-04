@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.9-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.8...@kcinternal/configuration@0.6.9-rc.0) (2020-08-04)
+
+
+### Bug Fixes
+
+* **model:** compile error due to utils is moved ([9c85a20](https://github.com/kamontat/kcutils/commit/9c85a20cb87a79303a3f28402ffff90d3bdc58f3))
+
+
+### Performance Improvements
+
+* **model:** export Config and ConfigBuilder from @kcinternal/configuration modules ([3fe73a4](https://github.com/kamontat/kcutils/commit/3fe73a46ca6ff9b77e4566fc04858af4da26ea96))
+* **utils:** jest config support empty setup file by default ([3dadab0](https://github.com/kamontat/kcutils/commit/3dadab0d7e6092a58af5e81bff1e63f0843ae146))
+
+
+
+
+
 ## [0.6.8](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.7...@kcinternal/configuration@0.6.8) (2020-07-16)
 
 **Note:** Version bump only for package @kcinternal/configuration

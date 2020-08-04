@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.2...@kcutils/color@0.2.0-rc.3) (2020-08-04)
+
+
+### Bug Fixes
+
+* **utils:** toType will calculate result base on limit config ([f6324c7](https://github.com/kamontat/kcutils/commit/f6324c7e4d754dbf477c502ca86a37e8edab2444))
+
+
+### Features
+
+* **model:** export Named type to external ([250c262](https://github.com/kamontat/kcutils/commit/250c2621fe566181c6336e65f87d5631a3ebb680))
+
+
+### Performance Improvements
+
+* **utils:** fix a lot of rgb convert bug... ([0dfbd0a](https://github.com/kamontat/kcutils/commit/0dfbd0ac0d6466033318fe255f1491a344304c62))
+
+
+
+
+
 # [0.2.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.1...@kcutils/color@0.2.0-rc.2) (2020-08-01)
 
 

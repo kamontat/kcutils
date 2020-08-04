@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.29-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.28...@kcinternal/graph@0.2.29-rc.0) (2020-08-04)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
 ## [0.2.28](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.27...@kcinternal/graph@0.2.28) (2020-07-16)
 
 **Note:** Version bump only for package @kcinternal/graph
