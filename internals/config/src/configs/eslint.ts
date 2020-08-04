@@ -1,7 +1,6 @@
 import { Linter } from "eslint";
 
 import { ConfigBuilder } from "../models/ConfigBuilder";
-import { byDefault } from "../utils/helper";
 import { Config } from "../models/Config";
 
 const defaultConfig = {
@@ -25,7 +24,7 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
     const autoDetect: Setting = {};
     autoDetect.react = helper.on("parent").searchPackageJsonSync("dependencies", "react");
 
-    const options = byDefault(defaultConfig, autoDetect, data);
+    const options = helper.general.byDefault(defaultConfig, autoDetect, data);
 
     const plugins = ["prettier", "@typescript-eslint"];
     const extend = [
