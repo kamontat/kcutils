@@ -135,17 +135,17 @@ commands:
         type: string
     steps:
       - run:
-          name: "List all package will package"
-          command: yarn updated:ci || true
-      - run:
-          name: "Update version on package"
-          command: yarn version:ci << parameters.option >> || true
-      - run:
           name: check git status
           command: git diff --color-words | cat
       - run:
           name: clean git repository
           command: git checkout .
+      - run:
+          name: "List all package will package"
+          command: yarn updated:ci || true
+      - run:
+          name: "Update version on package"
+          command: yarn version:ci << parameters.option >> || true
       - run:
           name: "Release new package version"
           command: yarn release:ci << parameters.option >> || true
