@@ -306,3 +306,6 @@ $RECYCLE.BIN/
 graph.pdf
 
 *.stryker-tmp
+
+# report directory from stryker reports
+packages/**/reports
