@@ -11,13 +11,25 @@ import { Type as HexType } from "../../typings/HexType";
 import { Named } from "../../typings/Named";
 
 import { hexNames } from "../constants";
-import { pad2, percentage, nonEmpty, boundAlpha } from "../helper";
+import { pad2, percentage, nonEmpty, boundAlpha, duplicateChar, rounding } from "../helper";
 
 export const defaultRGB: RGB = { r: 0, g: 0, b: 0, a: 1, type: "number" };
 
 export const enforceRGB = (rgb: RGB): RGB => {
   if (noExist(rgb)) return defaultRGB;
-  return Object.assign(defaultRGB, rgb);
+  return Object.assign({}, defaultRGB, rgb);
+};
+
+export const roundedRGB = (rgb: RGB): RGB => {
+  if (rgb.type === "decimal") return rgb;
+  else
+    return {
+      type: rgb.type,
+      a: rgb.a,
+      r: rounding(rgb.r, 0),
+      g: rounding(rgb.g, 0),
+      b: rounding(rgb.b, 0),
+    };
 };
 
 /**
@@ -29,9 +41,11 @@ export const enforceRGB = (rgb: RGB): RGB => {
  */
 export const rgbToRgb = (rgb: RGB, type: Type = "number"): RGB => {
   const _rgb = toType(type, rgb, { min: 0, max: 255 });
-  const forceRGB = enforceRGB(_rgb);
 
-  return { ...forceRGB, a: boundAlpha(rgb.a) }; // force a to be [0-1]
+  const forceRGB = enforceRGB(_rgb);
+  const roundRGB = roundedRGB(forceRGB);
+
+  return { ...roundRGB, a: boundAlpha(rgb.a) }; // force a to be [0-1]
 };
 
 /**
@@ -125,26 +139,27 @@ export const rgbToHex = (rgb: RGB, opts?: RGBHexOptions): HEX => {
   const alpha = opts?.alpha ?? false;
 
   const _rgb = rgbToRgb(rgb);
-  const hex = [
-    pad2(Math.round(_rgb.r).toString(16)),
-    pad2(Math.round(_rgb.g).toString(16)),
-    pad2(Math.round(_rgb.b).toString(16)),
-  ];
 
-  if (alpha) hex.push(pad2(percentage(_rgb.a, { min: 0, max: 1 }, true).toString(16)));
+  const hex = {
+    r: pad2(_rgb.r.toString(16)),
+    g: pad2(_rgb.g.toString(16)),
+    b: pad2(_rgb.b.toString(16)),
+    a: alpha ? pad2(percentage(_rgb.a, { min: 0, max: 255, digit: 0 }, true).toString(16)) : undefined,
+  };
 
-  if (
-    minify &&
-    hex[0].charAt(0) == hex[0].charAt(1) &&
-    hex[1].charAt(0) == hex[1].charAt(1) &&
-    hex[2].charAt(0) == hex[2].charAt(1)
-  ) {
-    const init = hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);
-    if (alpha && hex[3].charAt(0) == hex[3].charAt(1)) result = init + hex[3].charAt(0);
-    else result = init;
+  if (minify) {
+    if (duplicateChar(hex.r) && duplicateChar(hex.g) && duplicateChar(hex.b)) {
+      hex.r = hex.r.charAt(0);
+      hex.g = hex.g.charAt(0);
+      hex.b = hex.b.charAt(0);
+    }
+
+    if (hex.a && duplicateChar(hex.a)) {
+      hex.a = hex.a.charAt(0);
+    }
   }
 
-  result = hex.join("");
+  result = hex.a ? `${hex.r}${hex.g}${hex.b}${hex.a}` : `${hex.r}${hex.g}${hex.b}`;
 
   let type: HexType = "hex";
 
@@ -165,7 +180,7 @@ export const rgbToHex = (rgb: RGB, opts?: RGBHexOptions): HEX => {
 
   return {
     x: result,
-    a: boundAlpha(rgb.a),
+    a: _rgb.a,
     type,
   };
 };
@@ -179,5 +194,5 @@ export const rgbToNamed = (rgb: RGB): Named | undefined => {
   const hex = rgbToHex(rgb, { alpha: false, minify: true });
   const name = hexNames[hex.x];
   if (!nonEmpty(name)) return undefined;
-  else return { n: name, a: boundAlpha(rgb.a) };
+  else return { n: name, a: hex.a };
 };

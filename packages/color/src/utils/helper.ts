@@ -31,6 +31,7 @@ export const bound01 = (n: number, opts?: Partial<BetweenOption>): number => {
 };
 
 /**
+ * convert percent type to number format
  *
  * @param percent number in format of [0-100] or [0-1] if set noparser to true
  * @param opts between options
@@ -62,6 +63,12 @@ export const boundAlpha = (a: number): number => {
  */
 export const pad2 = (c: string): string => {
   return c.length == 1 ? "0" + c : "" + c;
+};
+
+export const duplicateChar = (str: string): boolean => {
+  if (str.length <= 1) return false;
+  const init = str.charAt(0);
+  return str.split("").every(c => c === init);
 };
 
 //
