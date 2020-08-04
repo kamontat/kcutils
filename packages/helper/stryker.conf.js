@@ -1,3 +1,5 @@
+// TODO: Move everythings about stryker to testkit instead
+
 /**
  * @type {import('@stryker-mutator/api/core').StrykerOptions}
  */
