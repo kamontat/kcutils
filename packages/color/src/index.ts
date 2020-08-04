@@ -18,5 +18,8 @@ export type { RawHSV, HSV, OptionalHSV } from "./typings/HSV";
 export { isHex } from "./typings/HEX";
 export type { RawHEX, HEX, OptionalHEX } from "./typings/HEX";
 
+export { isNamed } from "./typings/Named";
+export type { RawNamed, Named, OptionalNamed } from "./typings/Named";
+
 export type { NumberType, Type as NumberTypeString } from "./typings/NumberType";
 export type { HexType, Type as HexTypeString } from "./typings/HexType";
