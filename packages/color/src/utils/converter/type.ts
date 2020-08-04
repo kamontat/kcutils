@@ -1,7 +1,7 @@
 import { TypeNotFoundError } from "../../errors/converter";
 
 import { isPercentage, isNumber, isDecimal } from "../checker";
-import { BetweenOption, bound01, percentage } from "../helper";
+import { BetweenOption, bound01, percentage, between } from "../helper";
 
 import { C } from "../../typings/C";
 import { NumberType, Type } from "../../typings/NumberType";
@@ -25,7 +25,7 @@ export const toPercentage = <K extends string, V extends C<K>>(
   o: V & NumberType,
   limit: Partial<BetweenOption>
 ): V & NumberType => {
-  if (isPercentage(o)) return o;
+  if (isPercentage(o)) return loop<K, V>(o, v => between(v, { max: 100, min: 0, digit: 0 }), "percent");
   else if (isNumber(o)) return loop<K, V>(o, v => bound01(v, limit) * 100, "percent");
   else if (isDecimal(o)) return loop<K, V>(o, v => v * 100, "percent");
   else throw TypeNotFoundError(o?.type);
@@ -35,7 +35,7 @@ export const toNumber = <K extends string, V extends C<K>>(
   o: V & NumberType,
   limit: Partial<BetweenOption>
 ): V & NumberType => {
-  if (isNumber(o)) return o;
+  if (isNumber(o)) return loop<K, V>(o, v => between(v, Object.assign(limit, { digit: 0 })), "number");
   else if (isPercentage(o)) return loop<K, V>(o, v => percentage(v, limit), "number");
   else if (isDecimal(o)) return loop<K, V>(o, v => percentage(v, limit, true), "number");
   else throw TypeNotFoundError(o?.type);
@@ -45,7 +45,7 @@ export const toDecimal = <K extends string, V extends C<K>>(
   o: V & NumberType,
   limit: Partial<BetweenOption>
 ): V & NumberType => {
-  if (isDecimal(o)) return o;
+  if (isDecimal(o)) return loop<K, V>(o, v => bound01(v, { max: 1, min: 0 }), "decimal");
   else if (isPercentage(o)) return loop<K, V>(o, v => bound01(v, { max: 100 }), "decimal");
   else if (isNumber(o)) return loop<K, V>(o, v => bound01(v, limit), "decimal");
   else throw TypeNotFoundError(o?.type);
