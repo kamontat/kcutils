@@ -12,10 +12,13 @@ const transformer = new AsyncRunner(option, async ({ helper, data }) => {
     helper.log.debug("stryker", "enable stryker test");
     const testkitPath = helper.on("parent").pathEnsureSync("node_modules", "@kcutils", "testkit");
     const strykerCli = (testkitPath ? helper.path.add(testkitPath) : helper.path).nodeCommand("stryker");
-    if (strykerCli !== undefined) {
+    const strykerConfig = await helper.on("parent").pathEnsure("stryker.conf.js");
+
+    if (strykerCli !== undefined && strykerConfig) {
       return [strykerCli, "run"];
     } else {
-      helper.log.debug("stryker", "cannot run because stryker path not found");
+      strykerCli === undefined && helper.log.debug("stryker", "stryker command is missing");
+      strykerConfig === undefined && helper.log.debug("stryker", "stryker configuration is missing");
     }
   }
 
