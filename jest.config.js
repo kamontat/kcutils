@@ -19,6 +19,6 @@ module.exports = {
     "!internals/**/*.{ts,tsx}",
     "!typings/**/*.{ts,tsx}",
   ],
-  coveragePathIgnorePatterns: ["/node_modules/", "/lib/", "/.stryker-tmp/"],
+  coveragePathIgnorePatterns: ["/node_modules/", "/lib/"],
   coverageReporters: ["json", "lcov", "text", "clover"],
 };

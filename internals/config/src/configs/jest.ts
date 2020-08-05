@@ -58,10 +58,10 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
       snapshotSerializers: [],
       testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
       transformIgnorePatterns: [],
-      testPathIgnorePatterns: ["/node_modules/", "/lib/", "/.stryker-tmp/"],
+      testPathIgnorePatterns: ["/node_modules/", "/lib/"],
       collectCoverage: true,
       collectCoverageFrom,
-      coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/", "<rootDir>/.stryker-tmp/"],
+      coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/"],
       coverageReporters: ["json", "lcov", "text", "clover"],
     };
 
