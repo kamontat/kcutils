@@ -64,6 +64,7 @@ This is a utilities projects for generic usecase
 - models_          - Custom class models for multiple usecase like Optional
 - color_           - Color utilities and convertion
 - `react-testkit`_ - Enzyme support and React utilities function for react
+- `testkit`_       - Stryker support with default configuration
 
 .. _error: https://www.npmjs.com/package/@kcutils/error
 .. _logger: https://www.npmjs.com/package/@kcutils/logger
@@ -71,6 +72,7 @@ This is a utilities projects for generic usecase
 .. _models: https://www.npmjs.com/package/@kcutils/models
 .. _color: https://www.npmjs.com/package/@kcutils/color
 .. _`react-testkit`: https://www.npmjs.com/package/@kcinternal/react-testkit
+.. _testkit: https://www.npmjs.com/package/@kcutils/testkit
 
 For Contribution User
 ---------------------
