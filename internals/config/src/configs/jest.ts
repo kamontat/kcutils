@@ -61,7 +61,7 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
       testPathIgnorePatterns: ["/node_modules/", "/lib/", "/.stryker-tmp/"],
       collectCoverage: true,
       collectCoverageFrom,
-      coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/"],
+      coveragePathIgnorePatterns: ["<rootDir>/lib/", "<rootDir>/node_modules/", "<rootDir>/.stryker-tmp/"],
       coverageReporters: ["json", "lcov", "text", "clover"],
     };
 

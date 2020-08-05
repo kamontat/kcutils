@@ -2,18 +2,34 @@ import { Config } from "@kcinternal/configuration";
 import { ConfigBuilder } from "@kcinternal/configuration";
 import { StrykerOptions, LogLevel } from "@stryker-mutator/api/core";
 
-const defaultConfig = {};
+const defaultConfig = {
+  /**
+   * enabled debug mode
+   */
+  debug: false,
+
+  /**
+   * enabled trace mode
+   */
+  trace: false,
+
+  /**
+   * jest timeout in millisecond
+   */
+  timeout: 60000,
+};
 
 type Setting = Partial<typeof defaultConfig>;
 const stryker: ConfigBuilder<Setting, Partial<StrykerOptions>> = {
   default: defaultConfig,
-  transformer: () => {
-    // const webpack = helper.path.searchPackageJsonSync("dependencies", "webpack");
-    // const config = helper.general.byDefault(defaultConfig, { webpack }, data);
+  transformer: ({ helper, data }) => {
+    const config = helper.general.byDefault(defaultConfig, data);
+
+    const level = config.trace ? ("trace" as LogLevel) : config.debug ? ("debug" as LogLevel) : ("info" as LogLevel);
 
     const initial: Partial<StrykerOptions> = {
-      logLevel: "info" as LogLevel,
-      timeoutMS: 60000,
+      logLevel: level,
+      timeoutMS: config.timeout,
       coverageAnalysis: "off",
 
       packageManager: "yarn",
@@ -25,7 +41,7 @@ const stryker: ConfigBuilder<Setting, Partial<StrykerOptions>> = {
 
       tsconfigFile: "tsconfig.json",
 
-      reporters: ["html", "clear-text", "progress", "dashboard"],
+      reporters: ["html", "clear-text", "progress"],
     };
 
     return initial;
