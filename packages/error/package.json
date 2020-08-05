@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.9.0-rc.0",
-    "@kcinternal/configuration": "0.6.9-rc.0"
+    "@kcinternal/configuration": "0.6.9-rc.0",
+    "@kcutils/testkit": "0.2.0-rc.0"
   }
 }
