@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.1...@kcutils/error@0.3.0-rc.2) (2020-08-05)
+
+
+### Performance Improvements
+
+* **test:** verify that error support stryker mutator ([21ecf89](https://github.com/kamontat/kcutils/commit/21ecf890edd77329f35c9fc8f118565a7bb5524f))
+
+
+
+
+
 # [0.3.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.0...@kcutils/error@0.3.0-rc.1) (2020-08-04)
 
 **Note:** Version bump only for package @kcutils/error

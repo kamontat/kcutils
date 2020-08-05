@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.5...@kcutils/logger@0.5.0-rc.6) (2020-08-05)
+
+
+### Bug Fixes
+
+* **test:** all import should come from src folder ([7aec4c0](https://github.com/kamontat/kcutils/commit/7aec4c0dfcafcb1f0cdae5dd86c1ece698e6e22b))
+* **test:** coverage will not collect from tmp files ([ab47c5e](https://github.com/kamontat/kcutils/commit/ab47c5e040236deeec655cd2bc23c2e80f3ec3bf))
+* **test:** logger will not support stryker because it check color ([52f2f79](https://github.com/kamontat/kcutils/commit/52f2f797efaf98c9689c808028a193543bf7bc34))
+
+
+
+
+
 # [0.5.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.4...@kcutils/logger@0.5.0-rc.5) (2020-08-04)
 
 **Note:** Version bump only for package @kcutils/logger

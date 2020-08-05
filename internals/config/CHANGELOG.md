@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.9-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.9-rc.0...@kcinternal/configuration@0.6.9-rc.1) (2020-08-05)
+
+
+### Bug Fixes
+
+* **test:** coverage will not collect from tmp files ([ab47c5e](https://github.com/kamontat/kcutils/commit/ab47c5e040236deeec655cd2bc23c2e80f3ec3bf))
+* **test:** ignore .stryker-tmp will ignore all stryker test ([c8cba1c](https://github.com/kamontat/kcutils/commit/c8cba1cbb412e1144b521ed0a5e0c9748350f65c))
+* **test:** jest shouldn't run stryker tmp test ([ad47484](https://github.com/kamontat/kcutils/commit/ad474847d9a28c7c7752746108667fe74ad70aec))
+
+
+
+
+
 ## [0.6.9-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.8...@kcinternal/configuration@0.6.9-rc.0) (2020-08-04)
 
 

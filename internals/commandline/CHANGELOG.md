@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.0...@kcinternal/commandline@0.9.0-rc.1) (2020-08-05)
+
+
+### Bug Fixes
+
+* **model:** changes static transformer on Option to support dryrun parameters ([f054656](https://github.com/kamontat/kcutils/commit/f054656b3af029effb15c32ab616843b57851a94))
+* **model:** lerna not support old commandline option ([346c6a7](https://github.com/kamontat/kcutils/commit/346c6a76d2c17dc54d2f8b5f124816a02e7ed456))
+
+
+### Performance Improvements
+
+* **model:** change commandline option structure cause break change ([6335e0d](https://github.com/kamontat/kcutils/commit/6335e0d5a3b144c53b1a0c207f2ee66da3a04f17))
+* **utils:** icleaner will also clean stryker files/folders ([4232025](https://github.com/kamontat/kcutils/commit/42320254c566ce256842f2394df02b3819b25c69))
+
+
+
+
+
 # [0.9.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.4...@kcinternal/commandline@0.9.0-rc.0) (2020-08-04)
 
 
