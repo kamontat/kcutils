@@ -7,8 +7,7 @@ import { DateTimeFormat } from "../src/models/logger/LoggerOption";
 import { error, warn, info, silly, silent, debug, Levels } from "../src/constants/levels";
 import { MockStream } from "../src/test/models/stream";
 import { LoggerLevelBuilder } from "../src/models/logger/LoggerLevel";
-import { DefaultKeyTypes } from "../src/constants/types";
-import { types } from "../lib/constants/types";
+import { DefaultKeyTypes, types } from "../src/constants/types";
 
 const newMockStream = () => {
   const fn = jest.fn();
