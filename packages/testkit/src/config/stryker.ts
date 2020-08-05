@@ -41,7 +41,7 @@ const stryker: ConfigBuilder<Setting, Partial<StrykerOptions>> = {
 
       tsconfigFile: "tsconfig.json",
 
-      reporters: ["html", "clear-text", "progress"],
+      reporters: ["html", "progress"],
     };
 
     return initial;
