@@ -29,13 +29,9 @@
     "clean": "icleaner",
     "test": "itester"
   },
-  "dependencies": {
-    "@stryker-mutator/core": "3.3.1"
-  },
   "devDependencies": {
     "@kcinternal/commandline": "0.9.0-rc.0",
     "@kcinternal/configuration": "0.6.9-rc.0",
-    "@stryker-mutator/jest-runner": "3.3.1",
-    "@stryker-mutator/typescript": "3.3.1"
+    "@kcutils/testkit": "0.2.0-rc.0"
   }
 }

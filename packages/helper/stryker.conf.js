@@ -1,21 +1,3 @@
-// TODO: Move everythings about stryker to testkit instead
-
-/**
- * @type {import('@stryker-mutator/api/core').StrykerOptions}
- */
-module.exports = {
-  logLevel: "info",
-  timeoutMS: 60000,
-  coverageAnalysis: "off",
-
-  packageManager: "yarn",
-
-  mutator: "typescript",
-  mutate: ["src/**/*.ts"],
-  transpilers: [],
-  testRunner: "jest",
-
-  tsconfigFile: "tsconfig.json",
-
-  reporters: ["html", "clear-text", "progress", "dashboard"],
-};
+const { stryker } = require("@kcutils/testkit");
+const config = stryker(__dirname).build();
+module.exports = config;
