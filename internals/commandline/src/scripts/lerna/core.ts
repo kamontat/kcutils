@@ -5,7 +5,6 @@ import { DataBuilderHelperString } from "../../models/common/DataBuilder";
 interface Settings extends CommandlineOption {
   scopes: string[];
   ignores: string[];
-  arguments: string[];
   override: string[] | false;
 }
 
@@ -17,22 +16,19 @@ export const lerna = (
   const option = new Option({
     dirname: process.cwd(),
     input: process.argv.slice(2),
-    transform: async ({ data, helper }) => {
-      const argument = helper.argument.parse(data, {
-        boolean: ["dry", "dryrun", "dry-run"],
-        default: { dry: false, dryrun: false, ["dry-run"]: false, scope: [], ignore: [] },
-      });
-      const args = await Promise.resolve(fn({ data: argument, helper }));
+    transform: async i => {
+      const baseSettings = await Option.transform(i);
+      const args = await Promise.resolve(fn({ data: baseSettings.arguments, helper: i.helper }));
 
-      const settings = {
-        dryrun: argument.dry || argument.dryrun || argument["dry-run"],
-        scopes: Array.isArray(argument.scope) ? argument.scope : [argument.scope],
-        ignores: Array.isArray(argument.ignore) ? argument.ignore : [argument.ignore],
-        arguments: args.arguments,
+      return Object.assign({}, baseSettings, {
+        scopes: Array.isArray(baseSettings.arguments.scope)
+          ? baseSettings.arguments.scope
+          : [baseSettings.arguments.scope],
+        ignores: Array.isArray(baseSettings.arguments.ignore)
+          ? baseSettings.arguments.ignore
+          : [baseSettings.arguments.ignore],
         override: args.override ? args.arguments : false,
-      } as Settings;
-
-      return settings;
+      }) as Settings;
     },
   });
 
@@ -43,7 +39,7 @@ export const lerna = (
     const config = await helper.path.ensure("lerna.json");
     const lerna = helper.path.nodeCommand("lerna");
 
-    const args = Array.from(data.arguments);
+    const args = Array.from(data.raw);
     if (data.scopes)
       args.push(
         ...data.scopes.reduce((p, c) => {
