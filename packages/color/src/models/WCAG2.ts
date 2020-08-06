@@ -8,7 +8,7 @@ export interface MostReadableOption extends WCAG2Param {
 
 export class WCAG2 {
   private base: Color;
-  constructor(private builder: ColorBuilder) {
+  constructor(private readonly builder: ColorBuilder) {
     this.base = builder.get();
   }
 

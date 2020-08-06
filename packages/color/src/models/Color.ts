@@ -15,16 +15,21 @@ import { Type } from "../typings/NumberType";
 
 export class Color extends WithLogger {
   private static counter: number = 0;
+  private static increaseCounter() {
+    Color.counter++;
+  }
 
   protected id: number;
 
   private valid: boolean;
   private rgb?: RGB;
 
-  private loggerOptions?: LoggerOption<"">;
+  private readonly loggerOptions?: LoggerOption<"">;
 
   constructor(rgb: RGB, loggerOptions?: LoggerOption<"">) {
-    const id = Color.counter++;
+    const id = Color.counter;
+    Color.increaseCounter();
+
     super(Object.assign({ scopes: ["color", id], settings: { filename: false } }, loggerOptions));
 
     if (validateRGB(rgb, false)) {
