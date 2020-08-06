@@ -9,8 +9,8 @@ import { OptionalHEX } from "../../typings/HEX";
 export const hexToRgb = (hex: OptionalHEX): RGB | undefined => {
   const a = hex.a ?? 1;
 
-  let match: RegExpExecArray | null;
-  if ((match = colorMatchers.hex8.exec(hex.x))) {
+  let match = colorMatchers.hex8.exec(hex.x);
+  if (match) {
     return {
       r: cParseInt(match[1], 16),
       g: cParseInt(match[2], 16),
@@ -20,7 +20,8 @@ export const hexToRgb = (hex: OptionalHEX): RGB | undefined => {
     };
   }
 
-  if ((match = colorMatchers.hex6.exec(hex.x))) {
+  match = colorMatchers.hex6.exec(hex.x);
+  if (match) {
     return {
       r: cParseInt(match[1], 16),
       g: cParseInt(match[2], 16),
@@ -30,7 +31,8 @@ export const hexToRgb = (hex: OptionalHEX): RGB | undefined => {
     };
   }
 
-  if ((match = colorMatchers.hex4.exec(hex.x))) {
+  match = colorMatchers.hex4.exec(hex.x);
+  if (match) {
     return {
       r: cParseInt(match[1] + match[1], 16),
       g: cParseInt(match[2] + match[2], 16),
@@ -40,7 +42,8 @@ export const hexToRgb = (hex: OptionalHEX): RGB | undefined => {
     };
   }
 
-  if ((match = colorMatchers.hex3.exec(hex.x))) {
+  match = colorMatchers.hex3.exec(hex.x);
+  if (match) {
     return {
       r: cParseInt(match[1] + match[1], 16),
       g: cParseInt(match[2] + match[2], 16),

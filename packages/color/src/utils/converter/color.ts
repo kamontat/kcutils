@@ -30,7 +30,7 @@ export const stringToInput = (color: string): Input | undefined => {
   color = color.replace(trimLeft, "").replace(trimRight, "").toLowerCase();
   if (colorNames[color]) {
     color = colorNames[color];
-  } else if (color == "transparent") {
+  } else if (color === "transparent") {
     return { r: 0, g: 0, b: 0, a: 0, type: "number" };
   }
 
@@ -38,11 +38,13 @@ export const stringToInput = (color: string): Input | undefined => {
   // Keep most of the number bounding out of this function - don't worry about [0,1] or [0,100] or [0,360]
   // Just return an object and let the conversion functions handle that.
   // This way the result will be the same whether the tinycolor is initialized with string or object.
-  let match;
-  if ((match = colorMatchers.rgb.exec(color))) {
+  let match = colorMatchers.rgb.exec(color);
+  if (match) {
     return { r: cParseFloat(match[1]), g: cParseFloat(match[2]), b: cParseFloat(match[3]), type: "number" };
   }
-  if ((match = colorMatchers.rgba.exec(color))) {
+
+  match = colorMatchers.rgba.exec(color);
+  if (match) {
     return {
       r: cParseFloat(match[1]),
       g: cParseFloat(match[2]),
@@ -52,10 +54,13 @@ export const stringToInput = (color: string): Input | undefined => {
     };
   }
 
-  if ((match = colorMatchers.hsl.exec(color))) {
+  match = colorMatchers.hsl.exec(color);
+  if (match) {
     return { h: cParseFloat(match[1]), s: cParseFloat(match[2]), l: cParseFloat(match[3]), type: "number" };
   }
-  if ((match = colorMatchers.hsla.exec(color))) {
+
+  match = colorMatchers.hsla.exec(color);
+  if (match) {
     return {
       h: cParseFloat(match[1]),
       s: cParseFloat(match[2]),
@@ -65,10 +70,13 @@ export const stringToInput = (color: string): Input | undefined => {
     };
   }
 
-  if ((match = colorMatchers.hsv.exec(color))) {
+  match = colorMatchers.hsv.exec(color);
+  if (match) {
     return { h: cParseFloat(match[1]), s: cParseFloat(match[2]), v: cParseFloat(match[3]), type: "number" };
   }
-  if ((match = colorMatchers.hsva.exec(color))) {
+
+  match = colorMatchers.hsva.exec(color);
+  if (match) {
     return {
       h: cParseFloat(match[1]),
       s: cParseFloat(match[2]),
@@ -77,7 +85,9 @@ export const stringToInput = (color: string): Input | undefined => {
       type: "number",
     };
   }
-  if ((match = colorMatchers.hex8.exec(color))) {
+
+  match = colorMatchers.hex8.exec(color);
+  if (match) {
     return {
       r: cParseInt(match[1], 16),
       g: cParseInt(match[2], 16),
@@ -86,7 +96,9 @@ export const stringToInput = (color: string): Input | undefined => {
       type: "number",
     };
   }
-  if ((match = colorMatchers.hex6.exec(color))) {
+
+  match = colorMatchers.hex6.exec(color);
+  if (match) {
     return {
       r: cParseInt(match[1], 16),
       g: cParseInt(match[2], 16),
@@ -94,7 +106,9 @@ export const stringToInput = (color: string): Input | undefined => {
       type: "number",
     };
   }
-  if ((match = colorMatchers.hex4.exec(color))) {
+
+  match = colorMatchers.hex4.exec(color);
+  if (match) {
     return {
       r: cParseInt(match[1] + match[1], 16),
       g: cParseInt(match[2] + match[2], 16),
@@ -103,7 +117,9 @@ export const stringToInput = (color: string): Input | undefined => {
       type: "number",
     };
   }
-  if ((match = colorMatchers.hex3.exec(color))) {
+
+  match = colorMatchers.hex3.exec(color);
+  if (match) {
     return {
       r: cParseInt(match[1] + match[1], 16),
       g: cParseInt(match[2] + match[2], 16),

@@ -9,7 +9,7 @@ import { colorMatchers } from "./constants";
  */
 export const isOnePointZero = (n: string | number): boolean => {
   if (typeof n === "number") return n === 1;
-  return n.indexOf(".") != -1 && parseFloat(n) === 1;
+  return n.indexOf(".") !== -1 && parseFloat(n) === 1;
 };
 
 export const isValidCSSUnit = (color: string): boolean => {
@@ -17,7 +17,7 @@ export const isValidCSSUnit = (color: string): boolean => {
 };
 
 export const isType = (n: NumberType, type: Type): boolean => {
-  return n?.type == type;
+  return n?.type === type;
 };
 
 /**

@@ -62,7 +62,7 @@ export class ColorBuilder {
     return ColorBuilder.fromRatio<RawRGB>({ r: Math.random(), g: Math.random(), b: Math.random() });
   }
 
-  private constructor(private color?: Color) {}
+  private constructor(private readonly color?: Color) {}
 
   get(): Color {
     if (this.color === undefined) throw new Error("cannot get color from color builder");

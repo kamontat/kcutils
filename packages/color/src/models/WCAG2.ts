@@ -59,11 +59,11 @@ export class WCAG2 {
     let bestColor: Color | undefined = undefined;
     let bestScore = 0;
 
-    for (let i = 0; i < colors.length; i++) {
-      const readabilityIndex = this.readability(colors[i]);
+    for (const color of colors) {
+      const readabilityIndex = this.readability(color);
       if (readabilityIndex > bestScore) {
         bestScore = readabilityIndex;
-        bestColor = colors[i];
+        bestColor = color;
       }
     }
 

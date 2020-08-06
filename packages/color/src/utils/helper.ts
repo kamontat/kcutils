@@ -1,3 +1,5 @@
+import { type } from "@kcutils/helper";
+
 const defaultMax = 1;
 const defaultMin = 0;
 
@@ -62,7 +64,7 @@ export const boundAlpha = (a: number): number => {
  * @param c input hex string
  */
 export const pad2 = (c: string): string => {
-  return c.length == 1 ? "0" + c : "" + c;
+  return c.length === 1 ? `0${c}` : c;
 };
 
 export const duplicateChar = (str: string): boolean => {
@@ -121,13 +123,13 @@ export const nonEmpty = <T = any>(a: any): a is T => {
   return a !== undefined && a !== null;
 };
 
-export const cleanObject = (obj: Record<string, string | number | boolean | undefined | null>): any => {
+export const cleanObject = <T = any>(obj: Record<string, type.Optional<T>>): Record<string, T> => {
   return Object.keys(obj)
-    .filter(key => nonEmpty(obj[key]))
+    .filter(key => nonEmpty<T>(obj[key]))
     .reduce((p, k) => {
-      const v = obj[k] as string | number | boolean;
+      const v = obj[k] as T;
       return { ...p, [k]: v };
-    }, {} as Record<string, string | number | boolean>);
+    }, {} as Record<string, T>);
 };
 
 export const mergeObject = <T extends Record<string, any>>(
