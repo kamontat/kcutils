@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.4...@kcutils/color@0.2.0-rc.5) (2020-08-06)
+
+
+### Bug Fixes
+
+* **lint:** fix another errors on sonarcloud ([3b95a67](https://github.com/kamontat/kcutils/commit/3b95a67bc2776ed14226ab202a34ce38bfeee3e4))
+* **lint:** fix sonar error in cloud ([12d8f9a](https://github.com/kamontat/kcutils/commit/12d8f9a522a19a180aa41abb2b1ff18b8996aed7))
+
+
+
+
+
 # [0.2.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.3...@kcutils/color@0.2.0-rc.4) (2020-08-05)
 
 **Note:** Version bump only for package @kcutils/color

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.5...@kcutils/models@0.3.0-rc.6) (2020-08-06)
+
+
+### Bug Fixes
+
+* **lint:** resolve duplicate all event name ([678bff3](https://github.com/kamontat/kcutils/commit/678bff31d73430d68923a64015d20d3776527a26))
+
+
+
+
+
 # [0.3.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.4...@kcutils/models@0.3.0-rc.5) (2020-08-05)
 
 **Note:** Version bump only for package @kcutils/models

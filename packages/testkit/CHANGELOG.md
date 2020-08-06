@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.2.0-rc.1...@kcutils/testkit@0.2.0-rc.2) (2020-08-06)
+
+
+### Bug Fixes
+
+* **model:** resolve lint of stryker config ([2f90961](https://github.com/kamontat/kcutils/commit/2f9096186f5468975d9bb247fabcea4bc081f3a4))
+
+
+
+
+
 # [0.2.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.2.0-rc.0...@kcutils/testkit@0.2.0-rc.1) (2020-08-05)
 
 
