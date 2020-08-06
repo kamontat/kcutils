@@ -1,7 +1,6 @@
 import { EventEmitter } from "events";
 import { generic } from "@kcutils/helper";
 
-export type SchedulerEventName = "error" | "before-run" | "after-run" | "stopped" | "starting";
 export type SchedulerEventMapping = {
   error: Error;
   "before-run": void;
@@ -9,6 +8,8 @@ export type SchedulerEventMapping = {
   stopped: void;
   starting: void;
 };
+
+export type SchedulerEventName = keyof SchedulerEventMapping;
 
 type Callback<T> = () => T;
 type ParamCallback<P, T> = (p: P) => T;

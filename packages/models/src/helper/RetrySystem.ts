@@ -1,6 +1,5 @@
 import { EventEmitter } from "events";
 
-export type RetrySystemEventName = "before-run" | "after-run" | "error" | "retry";
 export type RetrySystemEventMapping = {
   error: Error;
   retry: { error: Error; countdown: number };
@@ -8,11 +7,13 @@ export type RetrySystemEventMapping = {
   "after-run": void;
 };
 
+export type RetrySystemEventName = keyof RetrySystemEventMapping;
+
 type Callback<T> = () => Promise<T>;
 type ParamCallback<P, T> = (p: P) => T;
 
 export class RetrySystem {
-  private event: EventEmitter;
+  private readonly event: EventEmitter;
 
   constructor(private delayMs: number) {
     this.event = new EventEmitter();
