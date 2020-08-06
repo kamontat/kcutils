@@ -1,5 +1,4 @@
-import { Config } from "@kcinternal/configuration";
-import { ConfigBuilder } from "@kcinternal/configuration";
+import { Config, ConfigBuilder } from "@kcinternal/configuration";
 import { StrykerOptions, LogLevel } from "@stryker-mutator/api/core";
 
 const defaultConfig = {
@@ -27,7 +26,7 @@ const stryker: ConfigBuilder<Setting, Partial<StrykerOptions>> = {
 
     const level = config.trace ? ("trace" as LogLevel) : config.debug ? ("debug" as LogLevel) : ("info" as LogLevel);
 
-    const initial: Partial<StrykerOptions> = {
+    return {
       logLevel: level,
       timeoutMS: config.timeout,
       coverageAnalysis: "off",
@@ -43,8 +42,6 @@ const stryker: ConfigBuilder<Setting, Partial<StrykerOptions>> = {
 
       reporters: ["html", "progress"],
     };
-
-    return initial;
   },
 };
 
