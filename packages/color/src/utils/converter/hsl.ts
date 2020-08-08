@@ -1,11 +1,32 @@
-import { HSL } from "../../typings/HSL";
-import { C } from "../../typings/C";
-import { NumberType, Type } from "../../typings/NumberType";
+import { generic, json } from "@kcutils/helper";
+import { RGB, HSL, NumberType, NumberTypeString } from "../../..";
 
 import { toType } from "./type";
-import { isType } from "../checker";
-import { RGB } from "../../typings/RGB";
 import { rgbToRgb } from "./rgb";
+
+import { isType } from "../checker";
+import { boundAlpha, rounding } from "../helper";
+
+import { C } from "../../typings/C";
+
+export const defaultHSL: HSL = { h: 0, s: 0, l: 0, a: 1, type: "decimal" };
+
+export const enforceHSL = (hsl: Partial<HSL>): HSL => {
+  if (generic.noExist(hsl)) return defaultHSL;
+  return json.deepMerge(defaultHSL, hsl);
+};
+
+export const roundedHSL = (hsl: HSL): HSL => {
+  if (hsl.type === "decimal") return hsl;
+  else
+    return {
+      type: hsl.type,
+      a: hsl.a,
+      h: rounding(hsl.h, 0),
+      s: rounding(hsl.s, 0),
+      l: rounding(hsl.l, 0),
+    };
+};
 
 /**
  * convert hsl object to number type of hsl object
@@ -13,12 +34,14 @@ import { rgbToRgb } from "./rgb";
  * @param hsl any type of hsl object
  * @returns number of hsl object
  */
-export const hslToHsl = (hsl: HSL, type: Type = "number"): HSL => {
-  if (isType(hsl, type)) return hsl;
+export const hslToHsl = (hsl: HSL, type: NumberTypeString = "number"): HSL => {
+  if (isType(hsl, type)) return enforceHSL(hsl);
   const _h: C<"h", number> & NumberType = { h: hsl.h, type: hsl.type };
   const h = toType(type, _h, { max: 360, min: 0 });
   const sl = toType(type, hsl, { max: 100, min: 0 });
-  return { ...sl, h: h.h, a: hsl.a };
+  const result = Object.assign(sl, { h: h.h }, { a: boundAlpha(hsl.a) });
+
+  return enforceHSL(result); // fill all missing data
 };
 
 /**
