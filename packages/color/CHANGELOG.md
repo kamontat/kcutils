@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.6...@kcutils/color@0.2.0-rc.7) (2020-08-08)
+
+
+### Bug Fixes
+
+* **utils:** nonEmpty() has been moved to @kcutils/helper ([6ec5607](https://github.com/kamontat/kcutils/commit/6ec56077378dfc14a70f6fa765e1bf5cfe0175ee))
+
+
+### Performance Improvements
+
+* **model:** add check() to throw exception when object is not valid ([065b618](https://github.com/kamontat/kcutils/commit/065b6184314d607eda460b195777187419086ae0))
+* **utils:** make some improvement of all utils method for color ([7491a77](https://github.com/kamontat/kcutils/commit/7491a77adef585faa09a9ebc8ff756c1b491140f))
+
+
+
+
+
 # [0.2.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.5...@kcutils/color@0.2.0-rc.6) (2020-08-08)
 
 
