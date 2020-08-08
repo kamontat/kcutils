@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.7...@kcutils/color@0.2.0-rc.8) (2020-08-08)
+
+
+### Bug Fixes
+
+* fresh compile error due to import wrong path ([4cc5d0f](https://github.com/kamontat/kcutils/commit/4cc5d0fd974ccd66d2a5b0f6d01cc88cbb00cfb8))
+* **lint:** update color utils ([a5d6cef](https://github.com/kamontat/kcutils/commit/a5d6cef7de9f23506f7389f0a30fdc2a2a818612))
+* **utils:** rgbToRgb shouldn't round by default. ([445ddae](https://github.com/kamontat/kcutils/commit/445ddae4b6171d7d8c1285c7d5fecadd6141fca9))
+* **utils:** rounding(X.45, 0) should return X, not X + 1 ([40a5665](https://github.com/kamontat/kcutils/commit/40a56657dcb95a752357c4712ad48f96d66fabbd))
+
+
+### Performance Improvements
+
+* **utils:** add enforce object and rounding for HSL color ([9d1cb9c](https://github.com/kamontat/kcutils/commit/9d1cb9cd14c712d3f843b4a3c752da67ef73f521))
+
+
+
+
+
 # [0.2.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.6...@kcutils/color@0.2.0-rc.7) (2020-08-08)
 
 

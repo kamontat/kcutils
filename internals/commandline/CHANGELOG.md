@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.1...@kcinternal/commandline@0.9.0-rc.2) (2020-08-08)
+
+
+### Performance Improvements
+
+* **utils:** path helper will support nodeModules for getting node_modules modules ([f5e16ba](https://github.com/kamontat/kcutils/commit/f5e16ba6f108d5af9d1e9eec0e16d8b0d6980481))
+
+
+
+
+
 # [0.9.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.0...@kcinternal/commandline@0.9.0-rc.1) (2020-08-05)
 
 

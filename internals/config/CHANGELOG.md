@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.9-rc.2](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.9-rc.1...@kcinternal/configuration@0.6.9-rc.2) (2020-08-08)
+
+
+### Performance Improvements
+
+* **core:** jest will report as html bu default, (/reports/jest/index.html) ([5490763](https://github.com/kamontat/kcutils/commit/5490763d1a4624de99a84002774ffa34998c336f))
+
+
+
+
+
 ## [0.6.9-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.9-rc.0...@kcinternal/configuration@0.6.9-rc.1) (2020-08-05)
 
 

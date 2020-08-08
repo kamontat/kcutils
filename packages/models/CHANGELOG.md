@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.7...@kcutils/models@0.3.0-rc.8) (2020-08-08)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
 # [0.3.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.6...@kcutils/models@0.3.0-rc.7) (2020-08-08)
 
 **Note:** Version bump only for package @kcutils/models
