@@ -1,5 +1,5 @@
 import { generic, json } from "@kcutils/helper";
-import { RGB, HSL, NumberType, NumberTypeString } from "../../..";
+import { RGB, HSL, NumberType, NumberTypeString } from "../..";
 
 import { toType } from "./type";
 import { rgbToRgb } from "./rgb";
