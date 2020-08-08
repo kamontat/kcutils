@@ -1,3 +1,5 @@
+import { generic } from "@kcutils/helper";
+
 import { RGB, OptionalRGB, isRGB, RawRGB } from "../../typings/RGB";
 import { OptionalHSL, isHSL, RawHSL } from "../../typings/HSL";
 import { OptionalHSV, RawHSV, isHSV } from "../../typings/HSV";
@@ -6,7 +8,7 @@ import { OptionalNamed, RawNamed, isNamed } from "../../typings/Named";
 
 import { hslToRgb } from "./hsl";
 import { rgbToRgb } from "./rgb";
-import { nonEmpty, bound01, mergeObject } from "../helper";
+import { bound01, mergeObject } from "../helper";
 import { hsvToRgb } from "./hsv";
 import { trimLeft, trimRight, colorNames, colorMatchers } from "../constants";
 import { cParseFloat, cParseInt } from "../parser";
@@ -142,7 +144,7 @@ export const inputToRGB = (input: Input): RGB | undefined => {
 };
 
 export const validateRGB = (rgb: RGB | undefined, withAlpha: boolean = true): boolean => {
-  if (!nonEmpty(rgb)) return false;
+  if (!generic.nonEmpty(rgb)) return false;
   const _rgb = rgbToRgb(rgb as RGB, "number");
   const r = _rgb.r >= 0 && _rgb.r <= 255;
   const g = _rgb.g >= 0 && _rgb.g <= 255;

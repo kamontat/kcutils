@@ -1,4 +1,4 @@
-import { noExist } from "@kcutils/helper/lib/types/generic";
+import { generic } from "@kcutils/helper";
 
 import { toType } from "./type";
 
@@ -11,7 +11,9 @@ import { Type as HexType } from "../../typings/HexType";
 import { Named } from "../../typings/Named";
 
 import { hexNames } from "../constants";
-import { pad2, percentage, nonEmpty, boundAlpha, duplicateChar, rounding } from "../helper";
+import { pad2, percentage, boundAlpha, duplicateChar, rounding } from "../helper";
+
+const { noExist, nonEmpty } = generic;
 
 export const defaultRGB: RGB = { r: 0, g: 0, b: 0, a: 1, type: "number" };
 
