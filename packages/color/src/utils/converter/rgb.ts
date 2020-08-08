@@ -1,4 +1,4 @@
-import { generic } from "@kcutils/helper";
+import { generic, json } from "@kcutils/helper";
 
 import { toType } from "./type";
 
@@ -17,21 +17,22 @@ const { noExist, nonEmpty } = generic;
 
 export const defaultRGB: RGB = { r: 0, g: 0, b: 0, a: 1, type: "number" };
 
-export const enforceRGB = (rgb: RGB): RGB => {
+export const enforceRGB = (rgb: Partial<RGB>): RGB => {
   if (noExist(rgb)) return defaultRGB;
-  return Object.assign({}, defaultRGB, rgb);
+  return json.deepMerge(defaultRGB, rgb);
 };
 
-export const roundedRGB = (rgb: RGB): RGB => {
-  if (rgb.type === "decimal") return rgb;
-  else
-    return {
-      type: rgb.type,
-      a: rgb.a,
-      r: rounding(rgb.r, 0),
-      g: rounding(rgb.g, 0),
-      b: rounding(rgb.b, 0),
-    };
+export const roundedRGB = (rgb: RGB, digit?: number): RGB => {
+  const defaultDigit = rgb.type === "decimal" ? 3 : 0;
+  const _digit = generic.isNumber(digit) ? digit : defaultDigit;
+
+  return {
+    type: rgb.type,
+    a: rgb.a,
+    r: rounding(rgb.r, _digit),
+    g: rounding(rgb.g, _digit),
+    b: rounding(rgb.b, _digit),
+  };
 };
 
 /**
@@ -45,9 +46,9 @@ export const rgbToRgb = (rgb: RGB, type: Type = "number"): RGB => {
   const _rgb = toType(type, rgb, { min: 0, max: 255 });
 
   const forceRGB = enforceRGB(_rgb);
-  const roundRGB = roundedRGB(forceRGB);
+  // const roundRGB = roundedRGB(forceRGB);
 
-  return { ...roundRGB, a: boundAlpha(rgb.a) }; // force a to be [0-1]
+  return { ...forceRGB, a: boundAlpha(rgb.a) }; // force a to be [0-1]
 };
 
 /**
@@ -141,7 +142,7 @@ export const rgbToHex = (rgb: RGB, opts?: RGBHexOptions): HEX => {
   const minify = opts?.minify ?? false;
   const alpha = opts?.alpha ?? false;
 
-  const _rgb = rgbToRgb(rgb);
+  const _rgb = roundedRGB(rgbToRgb(rgb)); // rgb for hex shouldn't have digit
 
   const hex = {
     r: pad2(_rgb.r.toString(16)),
