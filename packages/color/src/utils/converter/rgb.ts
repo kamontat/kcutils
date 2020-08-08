@@ -55,7 +55,8 @@ export const rgbToRgb = (rgb: RGB, type: Type = "number"): RGB => {
  * @return decimal type of hsl object
  */
 export const rgbToHsl = (rgb: RGB): HSL => {
-  const _rgb = rgbToRgb(rgb);
+  const _rgb = rgbToRgb(rgb, "decimal");
+
   const max = Math.max(_rgb.r, _rgb.g, _rgb.b);
   const min = Math.min(_rgb.r, _rgb.g, _rgb.b);
 
@@ -81,7 +82,7 @@ export const rgbToHsl = (rgb: RGB): HSL => {
     h /= 6;
   }
 
-  return { h, s, l, a: boundAlpha(_rgb.a), type: "decimal" };
+  return { h: rounding(h, 2), s: rounding(s, 2), l: rounding(l, 2), a: boundAlpha(_rgb.a), type: "decimal" };
 };
 
 /**
