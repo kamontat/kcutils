@@ -145,7 +145,7 @@ export const inputToRGB = (input: Input): RGB | undefined => {
 
 export const validateRGB = (rgb: RGB | undefined, withAlpha: boolean = true): boolean => {
   if (!generic.nonEmpty(rgb)) return false;
-  const _rgb = rgbToRgb(rgb as RGB, "number");
+  const _rgb = rgbToRgb(rgb, "number");
   const r = _rgb.r >= 0 && _rgb.r <= 255;
   const g = _rgb.g >= 0 && _rgb.g <= 255;
   const b = _rgb.b >= 0 && _rgb.b <= 255;
