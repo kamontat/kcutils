@@ -1,4 +1,4 @@
-import { type } from "@kcutils/helper";
+import { type, generic } from "@kcutils/helper";
 
 const defaultMax = 1;
 const defaultMin = 0;
@@ -42,7 +42,7 @@ export const bound01 = (n: number, opts?: Partial<BetweenOption>): number => {
  */
 export const percentage = (percent: number, opts?: Partial<BetweenOption>, noparser: boolean = false): number => {
   const options = assignDefaultBetweenOption(opts);
-  const percentage = noparser ? percent : bound01(percent, { max: 100 });
+  const percentage = noparser ? bound01(percent, { digit: 5 }) : bound01(percent, { max: 100, digit: 5 });
 
   const result = options.min + (options.max - options.min) * percentage;
   return rounding(result, options.digit);
@@ -125,17 +125,18 @@ export const between = (val: number, opts?: Partial<BetweenOption>): number => {
   return Math.min(options.max, Math.max(options.min, val));
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const nonEmpty = <T = any>(a: any): a is T => {
-  return a !== undefined && a !== null;
-};
-
-export const cleanObject = <T = any>(obj: Record<string, type.Optional<T>>): Record<string, T> => {
-  return Object.keys(obj)
-    .filter(key => nonEmpty<T>(obj[key]))
-    .reduce((p, k) => {
+/**
+ * clean object mean remove undefined and null object
+ *
+ * @param obj massy object
+ */
+export const cleanObject = <T = any>(obj: type.Optional<Record<string, type.Optional<T>>>): Record<string, T> => {
+  if (generic.noExist(obj)) return {};
+  else
+    return Object.keys(obj).reduce((p, k) => {
       const v = obj[k] as T;
-      return { ...p, [k]: v };
+      if (generic.isExist<T>(v)) return { ...p, [k]: v };
+      else return p;
     }, {} as Record<string, T>);
 };
 
@@ -144,6 +145,6 @@ export const mergeObject = <T extends Record<string, any>>(
   ...obj: (Partial<T> | undefined)[]
 ): T | undefined => {
   if (base === undefined) return undefined;
-  const newObjectList = obj.filter(v => nonEmpty(v)).map(o => cleanObject(o as Partial<T>));
+  const newObjectList = obj.map(o => cleanObject(o as Partial<T>));
   return Object.assign(cleanObject(base), ...newObjectList);
 };

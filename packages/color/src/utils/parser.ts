@@ -1,22 +1,25 @@
-export const cParseInt = (val: string | number, radix: number = 10): number => {
-  if (typeof val === "string") return parseInt(val, radix);
-  else return parseInt(val.toFixed(0), radix);
+import { generic, type } from "@kcutils/helper";
+import { format } from "util";
+
+export const cParseString = (val: type.AnyOptional): string => {
+  if (generic.isString(val)) return val;
+  else if (generic.isNumber(val)) return val.toString();
+  else if (generic.isTruthy(val) && val.toString) return val.toString();
+  else return format("%s", val);
 };
 
-export const cParseFloat = (val: string | number): number => {
-  if (typeof val === "string") return parseFloat(val);
-  else return val;
+export const cParseInt = <T = unknown>(val: T, radix: number = 10): number => {
+  const str = cParseString(val);
+  const num = parseInt(str, radix);
+
+  if (isNaN(num) || !isFinite(num)) return 0;
+  else return num;
 };
 
-export const cParseString = (val: string | number): string => {
-  const f = cParseFloat(val);
-  return f.toString();
-};
+export const cParseFloat = (val: type.AnyOptional): number => {
+  const str = cParseString(val);
+  const num = parseFloat(str);
 
-/**
- * Converts a decimal to a hex value
- * @param val decimal number ([0-1])
- */
-export const cParseDecimalToHex = (val: number): string => {
-  return Math.round(val * 255).toString(16);
+  if (isNaN(num) || !isFinite(num)) return 0;
+  else return num;
 };
