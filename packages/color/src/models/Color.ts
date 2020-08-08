@@ -1,7 +1,7 @@
-import { json } from "@kcutils/helper";
+import { json, generic } from "@kcutils/helper";
 import { WithLogger, LoggerOption } from "@kcutils/logger";
 
-import { nonEmpty, boundAlpha, between } from "../utils/helper";
+import { boundAlpha, between } from "../utils/helper";
 import { rgbToHsl, rgbToHsv, rgbToHex, hslToRgb, hsvToRgb, toType } from "../utils/converter";
 import { validateRGB } from "../utils/converter/color";
 import { rgbToNamed, RGBHexOptions, rgbToRgb } from "../utils/converter/rgb";
@@ -125,10 +125,18 @@ export class Color extends WithLogger {
     return this.valid;
   }
 
+  check(): this {
+    if (this.isValid()) {
+      return this;
+    }
+
+    throw new Error("Invalidate color");
+  }
+
   // true only alpha is [0-1], exclusive 1
   hasAlpha(): boolean {
     const a = this.rgb?.a;
-    if (nonEmpty<number>(a) && a >= 0 && a < 1) return true;
+    if (generic.nonEmpty(a) && a >= 0 && a < 1) return true;
     else return false;
   }
 
