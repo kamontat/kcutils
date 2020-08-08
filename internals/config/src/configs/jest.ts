@@ -1,6 +1,8 @@
 import { ConfigBuilder } from "../models/ConfigBuilder";
 import { Config } from "../models/Config";
 
+type Reporter = string | [string, Record<string, string | number | boolean>];
+
 interface JestConfig {
   verbose: boolean;
   rootDir: string;
@@ -10,7 +12,7 @@ interface JestConfig {
   globals: Record<string, string>;
   moduleFileExtensions: string[];
   testEnvironment: string;
-  reporters: string[];
+  reporters: Reporter[];
   snapshotSerializers: string[];
   transformIgnorePatterns: string[];
   setupFiles: string[];
@@ -42,6 +44,8 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
     const collectCoverageFrom = data.root
       ? ["packages/**/*.{ts,tsx}", "!packages/_*/**/*.{ts,tsx}"]
       : ["**/*.{ts,tsx}", "!_*/**/*.{ts,tsx}"];
+
+    const htmlReporters = helper.on("current").nodeModules("jest-html-reporters");
 
     const initial: JestConfig = {
       verbose: true,
@@ -77,6 +81,18 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
       const parentSetupEachFile = helper.on("parent").pathEnsureSync("test", data.setupEachName);
       const setupEachFile = helper.general.getOrElse(parentSetupEachFile, defaultSetupEachFile);
       initial.setupFilesAfterEnv.push(setupEachFile);
+    }
+
+    if (htmlReporters) {
+      initial.reporters.push([
+        htmlReporters,
+        {
+          publicPath: "./reports/jest",
+          filename: "index.html",
+          expand: true,
+          pageTitle: "Test reports",
+        },
+      ]);
     }
 
     return initial;
