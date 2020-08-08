@@ -23,3 +23,5 @@ export type { RawNamed, Named, OptionalNamed } from "./typings/Named";
 
 export type { NumberType, Type as NumberTypeString } from "./typings/NumberType";
 export type { HexType, Type as HexTypeString } from "./typings/HexType";
+
+export * as converter from "./utils/converter";
