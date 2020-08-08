@@ -10,7 +10,19 @@ const readFile = promisify(_readFile);
 type QueryType = "dirname" | "json";
 
 export class PathHelper {
+  static nodeModules = "node_modules";
+  static bin = ".bin";
+
   constructor(private filepath: string) {}
+
+  /**
+   * this will get modules directory from node_modules folder
+   *
+   * @param name commandline interface name
+   */
+  nodeModules(name: string): string | undefined {
+    return this.pathEnsureSync(PathHelper.nodeModules, name);
+  }
 
   /**
    * this will get cli from .bin folder in node_modules
@@ -18,7 +30,7 @@ export class PathHelper {
    * @param name commandline interface name
    */
   nodeCommand(name: string): string | undefined {
-    return this.pathEnsureSync("node_modules", ".bin", name);
+    return this.pathEnsureSync(PathHelper.nodeModules, PathHelper.bin, name);
   }
 
   projectName(by: QueryType = "dirname", scope: boolean = true): string {
