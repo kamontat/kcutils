@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.7...@kcutils/helper@0.5.0-rc.8) (2020-08-08)
+
+
+### Performance Improvements
+
+* **utils:** add null datatype to support is keyword of typescript ([04eaa87](https://github.com/kamontat/kcutils/commit/04eaa876521e21e0cd6082ef8f6520093a3e8fb1))
+
+
+
+
+
 # [0.5.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.6...@kcutils/helper@0.5.0-rc.7) (2020-08-06)
 
 **Note:** Version bump only for package @kcutils/helper
