@@ -13,10 +13,10 @@ const assignDefaultBetweenOption = (o?: Partial<BetweenOption>): BetweenOption =
 };
 
 /**
- * Take input from [0, n] and return it as [0, 1]
+ * Take input from [n, m] and return it as [0, 1]
  *
  * @param n n variable
- * @param max maximum possible number
+ * @param opts possible data between
  */
 export const bound01 = (n: number, opts?: Partial<BetweenOption>): number => {
   const options = assignDefaultBetweenOption(opts);
@@ -27,9 +27,10 @@ export const bound01 = (n: number, opts?: Partial<BetweenOption>): number => {
     return 1; // return max
   }
 
-  // Convert into [0, 1] range if it isn't already
-  const result = (num % options.max) / options.max;
-  return rounding(result, options.digit);
+  const range = options.max - options.min;
+  const startValue = num - options.min;
+  const percentage = startValue / range;
+  return rounding(percentage, options.digit);
 };
 
 /**
@@ -54,8 +55,8 @@ export const percentage = (percent: number, opts?: Partial<BetweenOption>, nopar
  * @returns float number in range [0, 1]
  */
 export const boundAlpha = (a: number): number => {
-  if (isNaN(a) || a < 0 || a > 1) return 1;
-  else return rounding(a, 2);
+  if (isNaN(a) || !isFinite(a) || a < 0 || a > 1) return 1;
+  else return Math.abs(rounding(a, 2));
 };
 
 /**
@@ -64,13 +65,16 @@ export const boundAlpha = (a: number): number => {
  * @param c input hex string
  */
 export const pad2 = (c: string): string => {
-  return c.length === 1 ? `0${c}` : c;
+  return c.padStart(2, "0");
 };
 
 export const duplicateChar = (str: string): boolean => {
   if (str.length <= 1) return false;
-  const init = str.charAt(0);
-  return str.split("").every(c => c === init);
+  const init = str.charAt(0).toLowerCase();
+  return str
+    .toLowerCase()
+    .split("")
+    .every(c => c === init);
 };
 
 //
@@ -99,10 +103,13 @@ export const flip = <K extends string, V extends string>(o: Record<K, V>): Recor
  * @return number
  */
 export const rounding = (n: number, digit: number = 2): number => {
-  if (digit <= 0) return parseInt(n.toFixed(0));
+  const isZero = digit < 1;
+  const _digit = isZero ? 1 : Math.round(digit); // round digit to avoid unexpected error
+  const multiply = 10 ** _digit;
+  const fullNumber = Math.round(n * multiply) / multiply;
 
-  const str = n.toFixed(digit);
-  return parseFloat(str);
+  if (isZero) return parseInt(fullNumber.toFixed(0));
+  else return fullNumber;
 };
 
 /**
