@@ -172,6 +172,9 @@ jobs:
           path: ./coverage
           destination: reports/coverage
       - store_artifacts:
+          path: ./reports/jest/
+          destination: reports/jest
+      - store_artifacts:
           path: ./reports/junit/
           destination: reports/junit
 
