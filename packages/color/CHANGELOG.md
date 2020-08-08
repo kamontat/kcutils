@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.5...@kcutils/color@0.2.0-rc.6) (2020-08-08)
+
+
+### Bug Fixes
+
+* **utils:** fix some bug on pad2, boundAlpha, and bound01 ([f7f2311](https://github.com/kamontat/kcutils/commit/f7f23112431442ee36aa63516b8ba82c86df5f95))
+* **utils:** rgbToHsl not rounding the result cause error ([fb7b04a](https://github.com/kamontat/kcutils/commit/fb7b04a4e685c749fff1a242eb6695d0a935d55c))
+
+
+### Performance Improvements
+
+* **core:** export converter to external projects ([de9452e](https://github.com/kamontat/kcutils/commit/de9452e1acc75453bcad3264cd96871f95843852))
+
+
+
+
+
 # [0.2.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.4...@kcutils/color@0.2.0-rc.5) (2020-08-06)
 
 
