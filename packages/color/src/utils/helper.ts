@@ -106,7 +106,9 @@ export const rounding = (n: number, digit: number = 2): number => {
   const isZero = digit < 1;
   const _digit = isZero ? 1 : Math.round(digit); // round digit to avoid unexpected error
   const multiply = 10 ** _digit;
-  const fullNumber = Math.round(n * multiply) / multiply;
+
+  const fn = (n: number): number => (isZero ? Math.floor(n) : Math.round(n));
+  const fullNumber = fn(n * multiply) / multiply;
 
   if (isZero) return parseInt(fullNumber.toFixed(0));
   else return fullNumber;
