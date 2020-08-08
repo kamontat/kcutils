@@ -23,6 +23,7 @@ type NestedJson = Partial<Record<string, PossibleValues>>;
  *
  * @param obj input any type
  * @param def default value if input is not object
+ * @return always new object returned
  */
 export const forceObject = <T = unknown>(obj: Optional<T>, def = {}): T => {
   if (isObject(obj)) return Object.assign({}, obj);
