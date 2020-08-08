@@ -17,7 +17,7 @@ export type ColorCombinationFunc<V = number, R = Color> = ColorFunc<V, R>;
 // Thanks to less.js for some of the basics here
 // <https://github.com/cloudhead/less.js/blob/master/lib/less/functions.js>
 
-export const brighten: ColorModificationFunc<number> = (color, amount) => {
+export const brighten: ColorModificationFunc = (color, amount) => {
   const rgb = color.toRGB();
   rgb.r = Math.max(0, Math.min(255, rgb.r - Math.round(255 * -(amount / 100))));
   rgb.g = Math.max(0, Math.min(255, rgb.g - Math.round(255 * -(amount / 100))));
@@ -26,25 +26,25 @@ export const brighten: ColorModificationFunc<number> = (color, amount) => {
   return Object.assign(rgbToRgb(rgb), { a: rgb.a });
 };
 
-export const lighten: ColorModificationFunc<number> = (color, amount) => {
+export const lighten: ColorModificationFunc = (color, amount) => {
   const hsl = color.toHSL();
   hsl.l += bound01(amount, { max: 100 });
   return Object.assign(hslToRgb(hsl), { a: hsl.a });
 };
 
-export const darken: ColorModificationFunc<number> = (color, amount) => {
+export const darken: ColorModificationFunc = (color, amount) => {
   const hsl = color.toHSL();
   hsl.l -= bound01(amount, { max: 100 });
   return Object.assign(hslToRgb(hsl), { a: hsl.a });
 };
 
-export const desaturate: ColorModificationFunc<number> = (color, amount) => {
+export const desaturate: ColorModificationFunc = (color, amount) => {
   const hsl = color.toHSL();
   hsl.s -= bound01(amount, { max: 100 });
   return Object.assign(hslToRgb(hsl), { a: hsl.a });
 };
 
-export const saturate: ColorModificationFunc<number> = (color, amount) => {
+export const saturate: ColorModificationFunc = (color, amount) => {
   const hsl = color.toHSL();
   hsl.s += bound01(amount, { max: 100 });
   return Object.assign(hslToRgb(hsl), { a: hsl.a });
@@ -117,9 +117,11 @@ export const monochromatic: ColorCombinationFunc<Partial<MonochromaticOption>, C
   const ret = [];
   const modification = 1 / options.results;
 
-  while (options.results--) {
+  while (options.results >= 0) {
     ret.push(color.copyHSV({ v: v }));
     v = (v + modification) % 1;
+
+    options.results--;
   }
 
   return ret;
