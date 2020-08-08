@@ -85,7 +85,7 @@ describe("Utilities Converter", () => {
     });
   });
 
-  describe.only("RGB to HSL color", () => {
+  describe("RGB to HSL color", () => {
     const definedHSL = (input?: Partial<HSL>): HSL => {
       const defaultHSL: HSL = { a: 1, h: 0, l: 0, s: 0, type: "decimal" };
       if (input) return Object.assign({}, defaultHSL, input);

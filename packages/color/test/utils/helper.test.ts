@@ -1,6 +1,16 @@
-import { rounding, bound01, boundAlpha, pad2, duplicateChar, flip } from "../../src/utils/helper";
+import {
+  rounding,
+  bound01,
+  boundAlpha,
+  pad2,
+  duplicateChar,
+  flip,
+  cleanObject,
+  mergeObject,
+  percentage,
+} from "../../src/utils/helper";
 
-describe.only("Helper", () => {
+describe("Helper", () => {
   test.each([
     ["2.13579", undefined, "2.14"],
     ["3.1901", undefined, "3.19"],
@@ -125,5 +135,40 @@ describe.only("Helper", () => {
     [{ a: undefined, b: "a" }, { a: "b" }],
   ])("filp object %s to %s", (a, b) => {
     expect(flip<string, string>(a as any)).toEqual(b);
+  });
+
+  test.each([
+    [{ a: "b" }, { a: "b" }],
+    [{ b: "undefined" }, { b: "undefined" }],
+    [{ b: undefined, a: "aa" }, { a: "aa" }],
+    [{ a: null, b: "bb" }, { b: "bb" }],
+    [undefined, {}],
+  ])("clean object '%p' to '%p'", (a, b) => {
+    expect(cleanObject(a)).toEqual(b);
+  });
+
+  test.each([
+    [undefined, { a: "aa" }, undefined],
+    [{}, {}, {}],
+    [{ a: "a" }, { b: "b" }, { a: "a", b: "b" }],
+  ])("merge %p and %p to %p", (a, b, c) => {
+    expect(mergeObject<Record<string, string>>(a, b)).toEqual(c);
+  });
+
+  test.each([
+    [-5, { max: 10 }, undefined, 0],
+    [100, { max: 10 }, undefined, 10],
+    [-5, { min: -2, max: 5 }, undefined, -2],
+    [5, { min: -8, max: 10 }, undefined, -7.1], // 5% of -8 to 10
+
+    [0.12, { min: 100, max: 12 }, true, 22.56], // 12% of 12 to 100
+    [100, { max: 10 }, true, 10],
+    [-0.11, { min: -66, max: -12 }, true, -66],
+
+    [0.3241, { min: -94, max: 1023 }, false, -90.38],
+    [59, { min: 12, max: 99 }, false, 63.33],
+  ])("run percentage(%s, %p, %s) returns %s", (input, option, noparser, result) => {
+    if (noparser) expect(percentage(input, option, noparser)).toEqual(result);
+    else expect(percentage(input, option)).toEqual(result);
   });
 });
