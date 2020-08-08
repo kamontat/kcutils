@@ -1,4 +1,4 @@
-import { Optional } from "../models/Optional";
+import { Optional, Null } from "../models/Optional";
 
 /**
  * return true when match following condition
@@ -9,7 +9,7 @@ import { Optional } from "../models/Optional";
  *
  * @param t input on any data type
  */
-export const isEmpty = <T = unknown>(t: T): boolean => {
+export const isEmpty = <T = unknown>(t: Optional<T>): t is Null => {
   if (noExist(t)) return true;
   if (isObject(t) && isEmpty(Object.keys(t))) return true;
   else if (Array.isArray(t) && t.length <= 0) return true;
@@ -32,11 +32,11 @@ export const isTruthy = <T = unknown>(t: Optional<T>): t is T => {
  *
  * @param t input on any data type
  */
-export const nonEmpty = <T = unknown>(t: T): boolean => {
+export const nonEmpty = <T = unknown>(t: Optional<T>): t is T => {
   return !isEmpty(t);
 };
 
-export const noExist = <T = unknown>(t: Optional<T>): boolean => {
+export const noExist = <T = unknown>(t: Optional<T>): t is Null => {
   return t === undefined || t === null;
 };
 
