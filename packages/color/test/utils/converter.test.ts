@@ -1,6 +1,6 @@
-import { rgbToHex, enforceRGB, rgbToRgb, RGBHexOptions, rgbToNamed } from "../../src/utils/converter/rgb";
+import { RGB, HEX, Named, NumberTypeString, HexTypeString, HSL, converter } from "../../src";
 
-import { RGB, HEX, Named, NumberTypeString, HexTypeString } from "../../src";
+const { enforceRGB, rgbToRgb, rgbToHex, rgbToNamed, rgbToHsl } = converter;
 
 type EachType<O, T> = [RGB, O, T];
 type EachTypes<O, T> = EachType<O, T>[];
@@ -56,7 +56,7 @@ describe("Utilities Converter", () => {
     };
 
     test.each(
-      emptyArray<RGBHexOptions | undefined, HEX>(
+      emptyArray<converter.RGBHexOptions | undefined, HEX>(
         [{ type: "decimal" } as RGB, {}, { type: type.hex6, a: 1, x: "000000" }],
         [{ type: "decimal" } as RGB, undefined, { type: type.hex6, a: 1, x: "000000" }],
         [{ type: "decimal" } as RGB, { alpha: false }, { type: type.hex6, a: 1, x: "000000" }],
@@ -82,6 +82,21 @@ describe("Utilities Converter", () => {
       )
     )("convert RGB(%p, %p) to HEX(%p)", (rgb, type, result) => {
       expect(rgbToHex(rgb, type)).toEqual(result);
+    });
+  });
+
+  describe.only("RGB to HSL color", () => {
+    const definedHSL = (input?: Partial<HSL>): HSL => {
+      const defaultHSL: HSL = { a: 1, h: 0, l: 0, s: 0, type: "decimal" };
+      if (input) return Object.assign({}, defaultHSL, input);
+      else return Object.assign({}, defaultHSL);
+    };
+
+    test.each([
+      [{ r: 123, g: 234, b: 12, type: "number" } as RGB, definedHSL({ h: 0.25, s: 0.9, l: 0.49 })], // no alpha
+      [{ type: "number" } as RGB, definedHSL()],
+    ])("convert RGB(%p) to HSL(%p)", (rgb, hsl) => {
+      expect(rgbToHsl(rgb)).toEqual(hsl);
     });
   });
 
