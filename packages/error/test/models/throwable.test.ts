@@ -65,7 +65,7 @@ describe("Throwable object", () => {
     });
 
     test("Throwable.build() works the same as new Throwable()", () => {
-      const st = ThrowState(ThrowStateType.WARN, 12, "TEST");
+      const st = new ThrowState(ThrowStateType.WARN, 12, "TEST");
       const msg = "test";
 
       const t1 = new Throwable(st.code, st.name, msg, undefined, false);
@@ -75,7 +75,7 @@ describe("Throwable object", () => {
     });
 
     test("reuse exception message by Throwable.fn()", () => {
-      const st = ThrowState(ThrowStateType.WARN, 99, "UNK");
+      const st = new ThrowState(ThrowStateType.WARN, 99, "UNK");
       const msg = "abc";
 
       const fn = Throwable.fn(st, msg);
@@ -85,7 +85,7 @@ describe("Throwable object", () => {
     });
 
     test("string template via Throwable.fn()", () => {
-      const st = ThrowState(ThrowStateType.WARN, 99, "UNK");
+      const st = new ThrowState(ThrowStateType.WARN, 99, "UNK");
       const msg = "My %s is broken";
 
       const fn = Throwable.fn(st, msg);
@@ -95,7 +95,7 @@ describe("Throwable object", () => {
     });
 
     test("Throwable.fn(*, undefined) will return message as default message", () => {
-      const st = ThrowState(ThrowStateType.WARN, 99, "UNK");
+      const st = new ThrowState(ThrowStateType.WARN, 99, "UNK");
       const fn = Throwable.fn(st);
 
       expect(fn().message).toEqual("something went wrong");
@@ -103,7 +103,7 @@ describe("Throwable object", () => {
     });
 
     test("create throwable error with fn and throw by throw keyword", () => {
-      const st = ThrowState(ThrowStateType.ERROR, 2910, "EEE");
+      const st = new ThrowState(ThrowStateType.ERROR, 2910, "EEE");
       const msg = "unknown error";
 
       const fn = Throwable.fn(st, msg);

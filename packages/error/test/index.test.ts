@@ -3,7 +3,7 @@ import { ThrowState, Throwable, ThrowStateType, Manager, EventType } from "../sr
 describe("Error manager", () => {
   it("run normal result manager", () => {
     const hello = (): string => {
-      throw Throwable.build(ThrowState(ThrowStateType.WARN, 1, "Hello"), "this is a exception from hello function");
+      throw Throwable.build(new ThrowState(ThrowStateType.WARN, 1, "Hello"), "this is a exception from hello function");
     };
 
     const world = () => {
@@ -22,7 +22,7 @@ describe("Error manager", () => {
   it("throw exception when we want", () => {
     const manager = new Manager();
     manager.run(() => {
-      throw Throwable.build(ThrowState(ThrowStateType.ERROR, 2, "Exception"), "this is a exception message");
+      throw Throwable.build(new ThrowState(ThrowStateType.ERROR, 2, "Exception"), "this is a exception message");
     });
 
     expect(manager.size).toBe(1);
