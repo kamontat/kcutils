@@ -3,7 +3,7 @@ import { Color, RGB } from "../src";
 describe("Color object", () => {
   test("create empty color will throw exception", () => {
     expect(() => {
-      new Color({} as RGB).check();
+      new Color({} as RGB).throw();
     }).toThrow();
   });
 
