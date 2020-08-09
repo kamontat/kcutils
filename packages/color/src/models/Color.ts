@@ -13,6 +13,8 @@ import { HEX } from "../typings/HEX";
 import { Named } from "../typings/Named";
 import { Type } from "../typings/NumberType";
 
+import { InvalidateColorError } from "../errors/color";
+
 export class Color extends WithLogger {
   private static counter: number = 0;
   private static increaseCounter() {
@@ -23,6 +25,7 @@ export class Color extends WithLogger {
 
   private valid: boolean;
   private rgb?: RGB;
+  private raw: RGB;
 
   private readonly loggerOptions?: LoggerOption<"">;
 
@@ -39,6 +42,7 @@ export class Color extends WithLogger {
       this.valid = false;
     }
 
+    this.raw = rgb;
     this.id = id;
     this.loggerOptions = loggerOptions;
 
@@ -130,7 +134,7 @@ export class Color extends WithLogger {
       return this;
     }
 
-    throw new Error("Invalidate color");
+    throw InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
   }
 
   // true only alpha is [0-1], exclusive 1
@@ -141,7 +145,7 @@ export class Color extends WithLogger {
   }
 
   throw(): void {
-    if (!this.isValid()) throw new Error("invalid color object");
+    if (!this.isValid()) throw InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
   }
 
   toRGB(type: Type = "number"): RGB {

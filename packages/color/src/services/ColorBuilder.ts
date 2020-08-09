@@ -3,6 +3,8 @@ import { inputToRGB, RawInput, Input } from "../utils/converter/color";
 import { Color } from "../models/Color";
 import { RawRGB, RGB } from "../typings/RGB";
 
+import { ColorNotFoundError } from "../errors/color";
+
 import {
   ColorModificationFunc,
   ColorCombinationFunc,
@@ -65,7 +67,7 @@ export class ColorBuilder {
   private constructor(private readonly color?: Color) {}
 
   get(): Color {
-    if (this.color === undefined) throw new Error("cannot get color from color builder");
+    if (this.color === undefined) throw ColorNotFoundError();
     return this.color;
   }
 
