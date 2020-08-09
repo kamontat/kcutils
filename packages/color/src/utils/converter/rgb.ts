@@ -58,6 +58,7 @@ export const rgbToRgb = (rgb: RGB, type: Type = "number"): RGB => {
  * @return decimal type of hsl object
  */
 export const rgbToHsl = (rgb: RGB): HSL => {
+  const digit = 2;
   const _rgb = rgbToRgb(rgb, "decimal");
 
   const max = Math.max(_rgb.r, _rgb.g, _rgb.b);
@@ -85,7 +86,13 @@ export const rgbToHsl = (rgb: RGB): HSL => {
     h /= 6;
   }
 
-  return { h: rounding(h, 2), s: rounding(s, 2), l: rounding(l, 2), a: boundAlpha(_rgb.a), type: "decimal" };
+  return {
+    h: rounding(h, digit),
+    s: rounding(s, digit),
+    l: rounding(l, digit),
+    a: boundAlpha(_rgb.a),
+    type: "decimal",
+  };
 };
 
 /**
@@ -95,7 +102,8 @@ export const rgbToHsl = (rgb: RGB): HSL => {
  * @return decimal type of hsv object
  */
 export const rgbToHsv = (rgb: RGB): HSV => {
-  const _rgb = rgbToRgb(rgb);
+  const digit = 2;
+  const _rgb = rgbToRgb(rgb, "decimal");
 
   const max = Math.max(_rgb.r, _rgb.g, _rgb.b);
   const min = Math.min(_rgb.r, _rgb.g, _rgb.b);
@@ -124,7 +132,7 @@ export const rgbToHsv = (rgb: RGB): HSV => {
     h /= 6;
   }
 
-  return { h, s, v, a: boundAlpha(rgb.a), type: "decimal" };
+  return { h: rounding(h, digit), s: rounding(s, digit), v: rounding(v, digit), a: boundAlpha(rgb.a), type: "decimal" };
 };
 
 export type RGBHexOptions = { minify?: boolean; alpha?: boolean };
