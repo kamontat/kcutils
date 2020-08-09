@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.10](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.9...@kcutils/helper@0.5.0-rc.10) (2020-08-09)
+
+
+### Performance Improvements
+
+* **utils:** improve all isXXX() in generic ([b31a18b](https://github.com/kamontat/kcutils/commit/b31a18b416cd238912e972014ee94a8d27fc8dfe))
+
+
+
+
+
 # [0.5.0-rc.9](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.8...@kcutils/helper@0.5.0-rc.9) (2020-08-08)
 
 **Note:** Version bump only for package @kcutils/helper

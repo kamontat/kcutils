@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.5...@kcutils/error@0.3.0-rc.6) (2020-08-09)
+
+
+### Bug Fixes
+
+* **model:** ThrowState is now default class ([9d545bf](https://github.com/kamontat/kcutils/commit/9d545bfbed3df9584318bfade46a1842c0d7c80e))
+
+
+### Features
+
+* **model:** change ThrowState to class object for add some class logic ([e1c9246](https://github.com/kamontat/kcutils/commit/e1c92460b49a3c32706b9c433f4ba0f656e49930))
+
+
+
+
+
 # [0.3.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.4...@kcutils/error@0.3.0-rc.5) (2020-08-08)
 
 **Note:** Version bump only for package @kcutils/error
