@@ -129,14 +129,6 @@ export class Color extends WithLogger {
     return this.valid;
   }
 
-  check(): this {
-    if (this.isValid()) {
-      return this;
-    }
-
-    throw InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
-  }
-
   // true only alpha is [0-1], exclusive 1
   hasAlpha(): boolean {
     const a = this.rgb?.a;
@@ -144,8 +136,10 @@ export class Color extends WithLogger {
     else return false;
   }
 
-  throw(): void {
+  throw(): this {
     if (!this.isValid()) throw InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
+
+    return this;
   }
 
   toRGB(type: Type = "number"): RGB {
