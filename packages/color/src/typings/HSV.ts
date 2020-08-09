@@ -9,6 +9,8 @@ export type OptionalHSV = RawHSV & Partial<Alpha> & NumberType;
 export type HSV = RawHSV & Alpha & NumberType;
 
 export const isHSV = (c: C<string, any>): c is HSV => {
+  if (!generic.isObject(c)) return false;
+
   const hsv = c as HSV;
-  return generic.nonEmpty(hsv.h) && generic.nonEmpty(hsv.s) && generic.nonEmpty(hsv.v);
+  return generic.isNumber(hsv.h, true) && generic.isNumber(hsv.s, true) && generic.isNumber(hsv.v, true);
 };

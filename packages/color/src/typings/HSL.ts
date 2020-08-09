@@ -9,6 +9,8 @@ export type OptionalHSL = RawHSL & Partial<Alpha> & NumberType;
 export type HSL = RawHSL & Alpha & NumberType;
 
 export const isHSL = (c: C<string, any>): c is HSL => {
+  if (!generic.isObject(c)) return false;
+
   const hsl = c as HSL;
-  return generic.nonEmpty(hsl.h) && generic.nonEmpty(hsl.s) && generic.nonEmpty(hsl.l);
+  return generic.isNumber(hsl.h, true) && generic.isNumber(hsl.s, true) && generic.isNumber(hsl.l, true);
 };

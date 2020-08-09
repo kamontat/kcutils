@@ -9,6 +9,8 @@ export type OptionalRGB = RawRGB & Partial<Alpha> & NumberType;
 export type RGB = RawRGB & Alpha & NumberType;
 
 export const isRGB = (c: C<string, any>): c is RGB => {
+  if (!generic.isObject(c)) return false;
+
   const rgb = c as RGB;
-  return generic.nonEmpty(rgb.r) && generic.nonEmpty(rgb.g) && generic.nonEmpty(rgb.b);
+  return generic.isNumber(rgb.r, true) && generic.isNumber(rgb.g, true) && generic.isNumber(rgb.b, true);
 };

@@ -9,6 +9,8 @@ export type OptionalHEX<T extends Type = Type> = RawHEX & Partial<Alpha> & HexTy
 export type HEX<T extends Type = Type> = RawHEX & Alpha & HexType<T>;
 
 export const isHex = (c: C<string, any>): c is HEX => {
-  const hsl = c as HEX;
-  return generic.nonEmpty(hsl.x);
+  if (!generic.isObject(c)) return false;
+
+  const hex = c as HEX;
+  return generic.nonEmpty(hex.x) && generic.isString(hex.x);
 };
