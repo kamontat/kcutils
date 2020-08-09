@@ -90,7 +90,7 @@ const jest: ConfigBuilder<Setting, JestConfig> = {
           publicPath: "./reports/jest",
           filename: "index.html",
           expand: true,
-          pageTitle: "Test reports",
+          pageTitle: "Reporter",
         },
       ]);
     }

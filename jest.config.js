@@ -11,7 +11,19 @@ module.exports = {
   verbose: true,
   preset: "ts-jest",
   testEnvironment: "node",
-  reporters: ["default", "jest-junit"],
+  reporters: [
+    "default",
+    "jest-junit",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "./reports/jest",
+        filename: "index.html",
+        expand: true,
+        pageTitle: "Reporter",
+      },
+    ],
+  ],
   collectCoverage: true,
   collectCoverageFrom: [
     "packages/**/*.{ts,tsx}",
