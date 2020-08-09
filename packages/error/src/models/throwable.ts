@@ -2,7 +2,7 @@ import { sep } from "path";
 import { format } from "util";
 
 import { env, path, string, type, generic } from "@kcutils/helper";
-import { ThrowState, ThrowStateType } from "./state";
+import ThrowState, { ThrowStateType } from "./state";
 
 export interface ThrowableStack {
   path: path.Paths;
