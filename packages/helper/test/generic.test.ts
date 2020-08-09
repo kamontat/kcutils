@@ -132,14 +132,40 @@ describe("Generic checker", () => {
       [false, false],
       [0, true],
       [124, true],
+      [-124.88, true],
       [-124, true],
       [-0, true],
       ["", false],
       ["exist", false],
       [{}, false],
       [{ a: "test" }, false],
+
+      [NaN, true],
+      [Infinity, true],
     ])("called isNumber(%s) should returns %s", (a: any, b: boolean) => {
       expect(generic.isNumber(a)).toEqual(b);
+    });
+
+    test.each([
+      [undefined, false, false],
+      [null, false, false],
+      [false, false, false],
+      [0, false, true],
+      [124, false, true],
+      [124.23, false, true],
+      [-124, false, true],
+      [-0, false, true],
+      ["exist", false, false],
+      [{}, false, false],
+      [{ a: "test" }, false, false],
+
+      [NaN, false, true],
+      [Infinity, false, true],
+
+      [NaN, true, false],
+      [Infinity, true, false],
+    ])("called isNumber(%s, %s) should returns %s", (a: any, o: boolean, b: boolean) => {
+      expect(generic.isNumber(a, o)).toEqual(b);
     });
   });
 
