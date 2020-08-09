@@ -1,4 +1,4 @@
-import { Optional, Null } from "../models/Optional";
+import { Optional, Null, AnyOptional } from "../models/Optional";
 
 /**
  * return true when match following condition
@@ -45,15 +45,21 @@ export const isFalsy = <T = unknown>(t: Optional<T>): t is T => {
   else return true;
 };
 
-export const isString = (t: Optional<any>): t is string => {
+export const isString = (t: AnyOptional): t is string => {
   return isExist(t) && typeof t === "string";
 };
 
-export const isNumber = (t: Optional<any>): t is number => {
-  return isExist(t) && typeof t === "number";
+export const isNumber = (t: AnyOptional, includeSpecial: boolean = false): t is number => {
+  if (isExist(t)) {
+    if (typeof t === "number") {
+      if (!includeSpecial) return true;
+      else return !isNaN(t) && isFinite(t);
+    }
+  }
+  return false;
 };
 
-export const isBoolean = (t: Optional<any>): t is boolean => {
+export const isBoolean = (t: AnyOptional): t is boolean => {
   return isExist(t) && typeof t === "boolean";
 };
 
