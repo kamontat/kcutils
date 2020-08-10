@@ -156,6 +156,9 @@ describe("Json Object Helper", () => {
       ["string", { s: "test" }, ["s"]],
       [{ a: "test" }, 123, ["a"]],
       [false, "string", []],
+      [{ a: "a" }, null, ["a"]],
+      [undefined, { b: "b" }, ["b"]],
+      [null, undefined, ["b"]],
     ])("merge '%p' with '%p'", (a: any, b: any, output) => {
       const result = jsonHelper.deepMerge(a, b);
       if (output.length <= 0) expect(result).toEqual({});
