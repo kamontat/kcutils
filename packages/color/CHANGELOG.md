@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.9](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.8...@kcutils/color@0.2.0-rc.9) (2020-08-09)
+
+
+### Bug Fixes
+
+* **model:** remove check() of Color class ([50f271b](https://github.com/kamontat/kcutils/commit/50f271bb24a09e62d38fe75f377a8c3e404a8fab))
+* remove duplicate code on check() and throw() in Color ([45e9f5b](https://github.com/kamontat/kcutils/commit/45e9f5b3a9b6f8a5f52e949f59ecca822a06b667))
+* **utils:** fixes bugs on toType, toPercent, toNumber, toDecimal ([0a5a840](https://github.com/kamontat/kcutils/commit/0a5a840b200ea626ec12cedcb4f7bd4c54f12bfb))
+
+
+### Performance Improvements
+
+* **service:** new typo of error when type not exist ([8440e51](https://github.com/kamontat/kcutils/commit/8440e516d885a55ebb39fefd5783fd9123af79df))
+* **utils:** rounding result of rgbToHsl and rgbToHsv ([8298816](https://github.com/kamontat/kcutils/commit/82988168c523eae5f2e9ac2a0c5a28f3df2320c8))
+* **utils:** update isXXX for typings method ([8b378f9](https://github.com/kamontat/kcutils/commit/8b378f9aed53c225e942004f3c120e866e276641))
+
+
+
+
+
 # [0.2.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.7...@kcutils/color@0.2.0-rc.8) (2020-08-08)
 
 
