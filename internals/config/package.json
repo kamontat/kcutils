@@ -19,9 +19,20 @@
     "access": "public"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "lib/**/*.js",
     "lib/**/*.d.ts",
     "data/**/*.json"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcinternal",
+    "helper",
+    "kcutils",
+    "configuration",
+    "node",
+    "typescript"
   ],
   "scripts": {
     "build": "icompiler-tsc",

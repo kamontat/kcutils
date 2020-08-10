@@ -19,11 +19,22 @@
     "access": "public"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "bin",
     "includes",
     "lib/**/*.js",
     "lib/**/*.d.ts",
     "data/**/*.json"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcinternal",
+    "helper",
+    "kcutils",
+    "commandline",
+    "node",
+    "typescript"
   ],
   "bin": {
     "root-build": "bin/root/build.js",

@@ -20,6 +20,8 @@
     "access": "public"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "lib/**/*.js",
     "lib/**/*.d.ts",
     "**/*.json"

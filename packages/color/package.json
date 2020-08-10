@@ -19,8 +19,22 @@
     "access": "public"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "lib/**/*.js",
     "lib/**/*.d.ts"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcutils",
+    "libraries",
+    "helper",
+    "node",
+    "typescript",
+    "jest",
+    "eslint",
+    "color",
+    "tinycolor"
   ],
   "scripts": {
     "build": "icompiler-tsc",
