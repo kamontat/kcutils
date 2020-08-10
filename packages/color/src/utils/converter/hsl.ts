@@ -11,21 +11,22 @@ import { C } from "../../typings/C";
 
 export const defaultHSL: HSL = { h: 0, s: 0, l: 0, a: 1, type: "decimal" };
 
-export const enforceHSL = (hsl: Partial<HSL>): HSL => {
-  if (generic.noExist(hsl)) return defaultHSL;
+export const enforceHSL = (hsl?: Partial<HSL>): HSL => {
+  if (generic.isEmpty(hsl)) return json.deepMerge(defaultHSL);
   return json.deepMerge(defaultHSL, hsl);
 };
 
-export const roundedHSL = (hsl: HSL): HSL => {
-  if (hsl.type === "decimal") return hsl;
-  else
-    return {
-      type: hsl.type,
-      a: hsl.a,
-      h: rounding(hsl.h, 0),
-      s: rounding(hsl.s, 0),
-      l: rounding(hsl.l, 0),
-    };
+export const roundedHSL = (hsl: HSL, digit?: number): HSL => {
+  const defaultDigit = hsl.type === "decimal" ? 3 : 0;
+  const _digit = generic.isNumber(digit) ? digit : defaultDigit;
+
+  return {
+    type: hsl.type,
+    a: boundAlpha(hsl.a),
+    h: rounding(hsl.h, _digit),
+    s: rounding(hsl.s, _digit),
+    l: rounding(hsl.l, _digit),
+  };
 };
 
 /**

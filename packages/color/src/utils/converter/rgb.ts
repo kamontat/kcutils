@@ -13,12 +13,10 @@ import { Named } from "../../typings/Named";
 import { hexNames } from "../constants";
 import { pad2, percentage, boundAlpha, duplicateChar, rounding } from "../helper";
 
-const { noExist, nonEmpty } = generic;
-
 export const defaultRGB: RGB = { r: 0, g: 0, b: 0, a: 1, type: "number" };
 
-export const enforceRGB = (rgb: Partial<RGB>): RGB => {
-  if (noExist(rgb)) return defaultRGB;
+export const enforceRGB = (rgb?: Partial<RGB>): RGB => {
+  if (generic.isEmpty(rgb)) return json.deepMerge(defaultRGB);
   return json.deepMerge(defaultRGB, rgb);
 };
 
@@ -205,6 +203,6 @@ export const rgbToHex = (rgb: RGB, opts?: RGBHexOptions): HEX => {
 export const rgbToNamed = (rgb: RGB): Named | undefined => {
   const hex = rgbToHex(rgb, { alpha: false, minify: true });
   const name = hexNames[hex.x];
-  if (!nonEmpty(name)) return undefined;
+  if (!generic.nonEmpty(name)) return undefined;
   else return { n: name, a: hex.a };
 };

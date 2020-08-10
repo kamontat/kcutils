@@ -1,4 +1,5 @@
 import { RGB, HEX, Named, NumberTypeString, HexTypeString, HSL, converter, HSV } from "../../../src";
+import { defaultRGB } from "../../../src/utils/converter";
 const { enforceRGB, roundedRGB, rgbToRgb, rgbToHex, rgbToNamed, rgbToHsl, rgbToHsv } = converter;
 
 type EachType<O, T> = [RGB, O, T];
@@ -52,6 +53,10 @@ describe("RGB to RGB", () => {
     ],
   ])("roundedRGB(%p, %s) returns %p", (rgb, digit, result) => {
     expect(roundedRGB(rgb, digit)).toEqual(result);
+  });
+
+  test("check default rgb color should be the same", () => {
+    expect(defaultRGB).toEqual({ a: 1, r: 0, g: 0, b: 0, type: "number" } as RGB);
   });
 
   test("convert unknown type object cause exception", () => {

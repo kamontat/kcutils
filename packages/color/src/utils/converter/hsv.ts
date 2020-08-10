@@ -1,11 +1,35 @@
+import { generic, json } from "@kcutils/helper";
+
 import { HSV } from "../../typings/HSV";
 import { C } from "../../typings/C";
 import { NumberType, Type } from "../../typings/NumberType";
 
 import { toType } from "./type";
 import { isType } from "../checker";
+import { boundAlpha, rounding } from "../helper";
+
 import { RGB } from "../../typings/RGB";
 import { rgbToRgb } from "./rgb";
+
+export const defaultHSV: HSV = { h: 0, s: 0, v: 0, a: 1, type: "decimal" };
+
+export const enforceHSV = (hsv?: Partial<HSV>): HSV => {
+  if (generic.isEmpty(hsv)) return json.deepMerge(defaultHSV);
+  return json.deepMerge(defaultHSV, hsv);
+};
+
+export const roundedHSV = (hsv: HSV, digit?: number): HSV => {
+  const defaultDigit = hsv.type === "decimal" ? 3 : 0;
+  const _digit = generic.isNumber(digit) ? digit : defaultDigit;
+
+  return {
+    type: hsv.type,
+    a: boundAlpha(hsv.a),
+    h: rounding(hsv.h, _digit),
+    s: rounding(hsv.s, _digit),
+    v: rounding(hsv.v, _digit),
+  };
+};
 
 /**
  * convert hsl object to number type of hsl object
@@ -14,11 +38,13 @@ import { rgbToRgb } from "./rgb";
  * @returns number of hsl object
  */
 export const hsvToHsv = (hsv: HSV, type: Type = "number"): HSV => {
-  if (isType(hsv, type)) return hsv;
+  if (isType(hsv, type)) return enforceHSV(hsv);
   const _h: C<"h", number> & NumberType = { h: hsv.h, type: hsv.type };
   const h = toType(type, _h, { max: 360, min: 0 });
   const sl = toType(type, hsv, { max: 100, min: 0 });
-  return { ...sl, h: h.h, a: hsv.a };
+  const result = Object.assign(sl, { h: h.h }, { a: boundAlpha(hsv.a) });
+
+  return enforceHSV(result); // fill all missing data
 };
 
 /**
