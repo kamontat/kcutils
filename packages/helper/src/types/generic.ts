@@ -49,10 +49,10 @@ export const isString = (t: AnyOptional): t is string => {
   return isExist(t) && typeof t === "string";
 };
 
-export const isNumber = (t: AnyOptional, includeSpecial: boolean = false): t is number => {
+export const isNumber = (t: AnyOptional, ignoreSpecial: boolean = false): t is number => {
   if (isExist(t)) {
     if (typeof t === "number") {
-      if (!includeSpecial) return true;
+      if (ignoreSpecial) return true;
       else return !isNaN(t) && isFinite(t);
     }
   }
