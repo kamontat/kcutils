@@ -449,6 +449,10 @@ describe("logger modules", () => {
         this.s = stream;
       }
 
+      get id(): number {
+        return this.logger.id;
+      }
+
       override() {
         this.logger.options({ streams: [this.s], overrideStream: true });
       }
@@ -459,6 +463,10 @@ describe("logger modules", () => {
 
       options() {
         return this.logger.option;
+      }
+
+      update() {
+        this.updateLogger(l => l.options({ level: "silent" }));
       }
     }
 
@@ -477,6 +485,17 @@ describe("logger modules", () => {
         t.override();
         t.log();
         expect(t.fn).toBeCalled();
+      });
+
+      test("updateLogger will return new logger object", () => {
+        const t = new T();
+        const id = t.id;
+
+        t.update();
+
+        const nid = t.id;
+
+        expect(id).not.toEqual(nid);
       });
     });
   });
