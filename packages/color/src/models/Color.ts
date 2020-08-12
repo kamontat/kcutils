@@ -1,18 +1,15 @@
 import { json, generic } from "@kcutils/helper";
+import { Throwable } from "@kcutils/error";
 import { WithLogger, LoggerOption } from "@kcutils/logger";
 
-import { boundAlpha, between } from "../utils/helper";
+import { NumberTypeString, RGB, HSL, HSV, HEX, Named } from "..";
+
+import { boundAlpha, between, bound01, rounding } from "../utils/helper";
 import { rgbToHsl, rgbToHsv, rgbToHex, hslToRgb, hsvToRgb, toType } from "../utils/converter";
 import { validateRGB } from "../utils/converter/color";
 import { rgbToNamed, RGBHexOptions, rgbToRgb } from "../utils/converter/rgb";
 
-import { RGB } from "../typings/RGB";
-import { HSL } from "../typings/HSL";
-import { HSV } from "../typings/HSV";
-import { HEX } from "../typings/HEX";
-import { Named } from "../typings/Named";
-import { Type } from "../typings/NumberType";
-
+import { TypeNotFoundError } from "../errors/converter";
 import { InvalidateColorError } from "../errors/color";
 
 export class Color extends WithLogger {
@@ -23,8 +20,9 @@ export class Color extends WithLogger {
 
   protected id: number;
 
-  private valid: boolean;
   private rgb?: RGB;
+  private error?: Throwable;
+
   private raw: RGB;
 
   private readonly loggerOptions?: LoggerOption<"">;
@@ -35,18 +33,19 @@ export class Color extends WithLogger {
 
     super(Object.assign({ scopes: ["color", id], settings: { filename: false } }, loggerOptions));
 
-    if (validateRGB(rgb, false)) {
-      this.valid = true;
-      this.rgb = json.deepMerge({ a: 1 }, rgb);
-    } else {
-      this.valid = false;
-    }
-
-    this.raw = rgb;
     this.id = id;
+    this.raw = rgb;
     this.loggerOptions = loggerOptions;
 
-    this.logger.print("start", `initiaize color object (valid = ${this.valid})`);
+    if (validateRGB(rgb, false)) this.rgb = json.deepMerge({ a: 1 }, rgb);
+    else this.error = InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
+
+    this.logger.print("debug", `initiaize color object ${this.id} (valid = ${this.isValid()})`);
+  }
+
+  setLoggerOption(option: LoggerOption<"">): this {
+    this.updateLogger(l => l.copy(option));
+    return this;
   }
 
   setAlpha(a: number): this {
@@ -55,22 +54,23 @@ export class Color extends WithLogger {
 
   setRGB(rgb: Partial<RGB>): this {
     const oldRGB = this.toRGB("number");
-    let newRGB = oldRGB;
-    if (rgb.type) {
-      if (rgb.type === "number") {
-        newRGB = Object.assign({}, oldRGB, rgb);
-      } else {
-        this.setRGB(toType("number", rgb as RGB, { max: 255, min: 0 }));
-      }
-    } else {
-      newRGB = Object.assign({}, oldRGB, rgb);
-    }
 
-    if (validateRGB(newRGB)) {
-      this.valid = true;
-      this.rgb = newRGB;
-    } else {
-      this.valid = false;
+    try {
+      if (rgb.type !== "number")
+        return this.setRGB(
+          Object.assign(
+            {},
+            oldRGB,
+            toType("number", json.cleanObject(Object.assign({ type: "number" }, rgb)) as RGB, { min: 0, max: 255 })
+          )
+        );
+
+      const newRGB = Object.assign({}, oldRGB, rgb);
+      this.raw = newRGB;
+      this.rgb = newRGB; // impossible to be invalid color because toType already fix all invalid data
+    } catch (e) {
+      const throwable = Throwable.from(e, true);
+      this.error = throwable;
     }
 
     return this;
@@ -83,9 +83,14 @@ export class Color extends WithLogger {
   /**
    * http://www.w3.org/TR/AERT#color-contrast
    */
-  getBrightness(): number {
+  getBrightness(format: NumberTypeString = "number"): number {
     const rgb = this.toRGB();
-    return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    const result = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000; // 0 - 255
+
+    if (format === "number") return rounding(result, 3);
+    else if (format === "decimal") return bound01(result, { min: 0, max: 255, digit: 2 });
+    else if (format === "percent") return rounding(bound01(result, { min: 0, max: 255, digit: 4 }) * 100, 4);
+    else throw TypeNotFoundError(format);
   }
 
   /**
@@ -126,7 +131,7 @@ export class Color extends WithLogger {
   }
 
   isValid(): boolean {
-    return this.valid;
+    return generic.noExist(this.error);
   }
 
   // true only alpha is [0-1], exclusive 1
@@ -137,12 +142,11 @@ export class Color extends WithLogger {
   }
 
   throw(): this {
-    if (!this.isValid()) throw InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
-
+    if (generic.isExist(this.error)) throw this.error;
     return this;
   }
 
-  toRGB(type: Type = "number"): RGB {
+  toRGB(type: NumberTypeString = "number"): RGB {
     this.throw();
     return rgbToRgb(this.rgb as RGB, type);
   }
