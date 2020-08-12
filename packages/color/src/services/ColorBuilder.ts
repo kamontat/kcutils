@@ -23,12 +23,23 @@ import {
   MonochromaticOption,
   AnalogousOption,
 } from "../utils/color";
+import { generic } from "@kcutils/helper";
+import { enforceNamed } from "../utils/converter/named";
+import { NumberTypeString } from "..";
 
 const rawToInput = (r: RawInput, t: Type): Input => {
   return Object.assign({ type: t } as NumberType, r) as Input;
 };
 
 export class ColorBuilder {
+  static get numberType(): Record<NumberTypeString, NumberTypeString> {
+    return {
+      number: "number",
+      decimal: "decimal",
+      percent: "percent",
+    };
+  }
+
   static black(): Color {
     return ColorBuilder.fromPercentage<RawRGB>({ r: 0, g: 0, b: 0 }).get();
   }
@@ -37,31 +48,40 @@ export class ColorBuilder {
     return ColorBuilder.fromPercentage<RawRGB>({ r: 100, g: 100, b: 100 }).get();
   }
 
-  static fromType<I extends RawInput>(input: I, t: Type): ColorBuilder {
+  static fromType<I extends RawInput>(input: I, t: Type, alpha: number = -1): ColorBuilder {
     const _input = rawToInput(input, t);
     const rgb = inputToRGB(_input);
+    if (generic.isExist(rgb)) {
+      if (alpha >= 0) rgb.a = alpha;
+      return new ColorBuilder(new Color(rgb));
+    }
+    return new ColorBuilder();
+  }
+
+  static fromRatio<I extends RawInput>(input: I, alpha: number = -1): ColorBuilder {
+    return ColorBuilder.fromType(input, "decimal", alpha);
+  }
+
+  static fromPercentage<I extends RawInput>(input: I, alpha: number = -1): ColorBuilder {
+    return ColorBuilder.fromType(input, "percent", alpha);
+  }
+
+  static fromNumber<I extends RawInput>(input: I, alpha: number = -1): ColorBuilder {
+    return ColorBuilder.fromType(input, "number", alpha);
+  }
+
+  static fromNamed(input: string, alpha?: number): ColorBuilder {
+    const rgb = inputToRGB(enforceNamed({ n: input, a: alpha }));
     return new ColorBuilder(rgb && new Color(rgb));
   }
 
-  static fromRatio<I extends RawInput>(input: I): ColorBuilder {
-    return ColorBuilder.fromType(input, "decimal");
+  static fromColor(c: Color): ColorBuilder {
+    return new ColorBuilder(c);
   }
 
-  static fromPercentage<I extends RawInput>(input: I): ColorBuilder {
-    return ColorBuilder.fromType(input, "percent");
-  }
-
-  static fromNumber<I extends RawInput>(input: I): ColorBuilder {
-    return ColorBuilder.fromType(input, "number");
-  }
-
-  static fromNamed(input: string, a?: number): ColorBuilder {
-    const rgb = inputToRGB(Object.assign({}, a && { a }, { n: input }));
-    return new ColorBuilder(rgb && new Color(rgb));
-  }
-
-  static random(): ColorBuilder {
-    return ColorBuilder.fromRatio<RawRGB>({ r: Math.random(), g: Math.random(), b: Math.random() });
+  static random(includeAlpha: boolean = false): ColorBuilder {
+    const a = includeAlpha ? Math.random() : 1;
+    return ColorBuilder.fromRatio<RawRGB>({ r: Math.random(), g: Math.random(), b: Math.random() }, a);
   }
 
   private constructor(private readonly color?: Color) {}
