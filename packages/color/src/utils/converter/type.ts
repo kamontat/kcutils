@@ -16,7 +16,10 @@ export const loop = <K extends string, V extends C<K>>(
 ): V & NumberType => {
   const keys = Object.keys(k) as Array<K>;
   const obj = keys.reduce((p, key) => {
+    // exist in root object
     if (key === "type") return p;
+    // bypass fn
+    else if (key === "a") return { ...p, [key]: k[key] };
     else if (generic.isNumber(k[key])) return { ...p, [key]: fn(k[key]) };
     else return p;
   }, {} as V);

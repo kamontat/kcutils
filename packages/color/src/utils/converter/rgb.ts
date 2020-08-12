@@ -1,4 +1,4 @@
-import { generic, json } from "@kcutils/helper";
+import { generic, json, type } from "@kcutils/helper";
 
 import { toType } from "./type";
 
@@ -15,7 +15,7 @@ import { pad2, percentage, boundAlpha, duplicateChar, rounding } from "../helper
 
 export const defaultRGB: RGB = { r: 0, g: 0, b: 0, a: 1, type: "number" };
 
-export const enforceRGB = (rgb?: Partial<RGB>): RGB => {
+export const enforceRGB = (rgb?: type.Optional<Partial<RGB>>): RGB => {
   if (generic.isEmpty(rgb)) return json.deepMerge(defaultRGB);
   return json.deepMerge(defaultRGB, rgb);
 };
@@ -40,13 +40,11 @@ export const roundedRGB = (rgb: RGB, digit?: number): RGB => {
  * @param rgb any type of rgb object or incompleted rgb object
  * @return number type of rgb object
  */
-export const rgbToRgb = (rgb: RGB, type: Type = "number"): RGB => {
-  const _rgb = toType(type, rgb, { min: 0, max: 255 });
+export const rgbToRgb = (rgb: type.Optional<Partial<RGB>>, type: Type = "number"): RGB => {
+  const frgb = enforceRGB(rgb);
+  const result = toType(type, frgb, { min: 0, max: 255 });
 
-  const forceRGB = enforceRGB(_rgb);
-  // const roundRGB = roundedRGB(forceRGB);
-
-  return { ...forceRGB, a: boundAlpha(rgb.a) }; // force a to be [0-1]
+  return { ...result, a: boundAlpha(result.a) }; // force a to be [0-1]
 };
 
 /**

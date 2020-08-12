@@ -36,13 +36,15 @@ export const roundedHSL = (hsl: HSL, digit?: number): HSL => {
  * @returns number of hsl object
  */
 export const hslToHsl = (hsl: HSL, type: NumberTypeString = "number"): HSL => {
-  if (isType(hsl, type)) return enforceHSL(hsl);
-  const _h: C<"h", number> & NumberType = { h: hsl.h, type: hsl.type };
-  const h = toType(type, _h, { max: 360, min: 0 });
-  const sl = toType(type, hsl, { max: 100, min: 0 });
-  const result = Object.assign(sl, { h: h.h }, { a: boundAlpha(hsl.a) });
+  const _hsl = enforceHSL(hsl);
+  if (isType(_hsl, type)) return _hsl;
 
-  return enforceHSL(result); // fill all missing data
+  const _h: C<"h", number> & NumberType = { h: _hsl.h, type: _hsl.type };
+  const h = toType(type, _h, { max: 360, min: 0 });
+  const sl = toType(type, _hsl, { max: 100, min: 0 });
+  const result = Object.assign({}, sl, { h: h.h }, { a: boundAlpha(_hsl.a) });
+
+  return result; // fill all missing data
 };
 
 /**

@@ -1,4 +1,4 @@
-import { generic } from "@kcutils/helper";
+import { generic, type } from "@kcutils/helper";
 
 import { RGB, OptionalRGB, isRGB, RawRGB } from "../../typings/RGB";
 import { OptionalHSL, isHSL, RawHSL } from "../../typings/HSL";
@@ -8,16 +8,13 @@ import { OptionalNamed, RawNamed, isNamed } from "../../typings/Named";
 
 import { hslToRgb } from "./hsl";
 import { rgbToRgb } from "./rgb";
-import { bound01, mergeObject } from "../helper";
+import { bound01 } from "../helper";
 import { hsvToRgb } from "./hsv";
 import { trimLeft, trimRight, colorNames, colorMatchers } from "../constants";
 import { cParseFloat, cParseInt } from "../parser";
 import { hexToRgb } from "./hex";
 import { namedToRgb } from "./named";
-
-export const defaultAlpha = <T extends Input>(input: T): T => {
-  return Object.assign({ a: 1 }, input);
-};
+import { C } from "../../typings/C";
 
 export type Input = OptionalRGB | OptionalHSL | OptionalHSV | OptionalHEX | OptionalNamed;
 export type RawInput = RawRGB | RawHSL | RawHSV | RawHEX | RawNamed;
@@ -134,25 +131,64 @@ export const stringToInput = (color: string): Input | undefined => {
 };
 
 export const inputToRGB = (input: Input): RGB | undefined => {
-  if (isRGB(input)) return mergeObject<RGB>({ a: 1 }, rgbToRgb(input));
-  else if (isHSL(input)) return mergeObject<RGB>({ a: 1 }, hslToRgb(input));
-  else if (isHSV(input)) return mergeObject<RGB>({ a: 1 }, hsvToRgb(input));
-  else if (isHex(input)) return mergeObject<RGB>({ a: 1 }, hexToRgb(input));
-  else if (isNamed(input)) return mergeObject<RGB>({ a: 1 }, namedToRgb(input));
+  if (isRGB(input)) return rgbToRgb(input);
+  else if (isHSL(input)) return hslToRgb(input);
+  else if (isHSV(input)) return hsvToRgb(input);
+  else if (isHex(input)) return hexToRgb(input);
+  else if (isNamed(input)) return namedToRgb(input);
 
   return undefined;
 };
 
-export const validateRGB = (rgb: RGB | undefined, withAlpha: boolean = true): boolean => {
-  if (!generic.nonEmpty(rgb)) return false;
-  const _rgb = rgbToRgb(rgb, "number");
-  const r = _rgb.r >= 0 && _rgb.r <= 255;
-  const g = _rgb.g >= 0 && _rgb.g <= 255;
-  const b = _rgb.b >= 0 && _rgb.b <= 255;
+type Rule = {
+  type: "string" | "number" | "boolean";
+  range?: {
+    min: number;
+    max: number;
+  };
+};
 
-  const isRGB = r && g && b;
-  if (withAlpha) {
-    const a = _rgb.a >= 0 && _rgb.a <= 1;
-    return isRGB && a;
-  } else return isRGB;
+type Condition = Record<string, Rule>;
+
+export const validateRGB = (rgb: type.Optional<RGB>, withAlpha: boolean = true): boolean => {
+  const condition: Condition = {
+    r: {
+      type: "number",
+      range: { min: 0, max: 255 },
+    },
+    g: {
+      type: "number",
+      range: { min: 0, max: 255 },
+    },
+    b: {
+      type: "number",
+      range: { min: 0, max: 255 },
+    },
+  };
+
+  if (withAlpha) condition["a"] = { type: "number", range: { min: 0, max: 1 } };
+  return validateColorObject(rgb, condition);
+};
+
+export const validateColorObject = (obj: type.Optional<C<string, any>>, condition: Condition): boolean => {
+  if (generic.isEmpty(obj)) return false;
+
+  const arr = Object.keys(obj);
+  return arr.every(key => {
+    const value = obj[key];
+    const cond = condition[key];
+    if (generic.isEmpty(cond)) return true;
+
+    const type = cond.type;
+    if (type === "string" && !generic.isString(value)) return false;
+    if (type === "number" && !generic.isNumber(value)) return false;
+    if (type === "boolean" && !generic.isBoolean(value)) return false;
+
+    if (generic.isNumber(value) && generic.isExist(cond.range))
+      return value >= cond.range.min && value <= cond.range.max;
+    if (generic.isString(value) && generic.isExist(cond.range))
+      return value.length >= cond.range.min && value.length <= cond.range.max;
+
+    return false;
+  });
 };

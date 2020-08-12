@@ -12,5 +12,5 @@ export const isRGB = (c: C<string, any>): c is RGB => {
   if (!generic.isObject(c)) return false;
 
   const rgb = c as RGB;
-  return generic.isNumber(rgb.r, true) && generic.isNumber(rgb.g, true) && generic.isNumber(rgb.b, true);
+  return generic.isNumber(rgb.r) && generic.isNumber(rgb.g) && generic.isNumber(rgb.b);
 };

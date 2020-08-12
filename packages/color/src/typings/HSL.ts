@@ -12,5 +12,5 @@ export const isHSL = (c: C<string, any>): c is HSL => {
   if (!generic.isObject(c)) return false;
 
   const hsl = c as HSL;
-  return generic.isNumber(hsl.h, true) && generic.isNumber(hsl.s, true) && generic.isNumber(hsl.l, true);
+  return generic.isNumber(hsl.h) && generic.isNumber(hsl.s) && generic.isNumber(hsl.l);
 };
