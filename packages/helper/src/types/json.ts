@@ -1,4 +1,4 @@
-import { nonEmpty, isString, isObject, isExist } from "./generic";
+import { nonEmpty, isString, isObject, isExist, noExist } from "./generic";
 import { array } from "..";
 import { Optional } from "../models/Optional";
 
@@ -13,22 +13,12 @@ export type SortableJson = {
 
 export type OptionalSortableJson = Partial<SortableJson>;
 
-type PossibleValue = any | any[];
-type PossibleValues = PossibleValue | Record<string, PossibleValue>;
+type Value = any;
+type PossibleValue<T = Value> = T | T[];
+type PossibleValues<T = PossibleValue> = T | Record<string, T>;
 
-type NestedJson = Partial<Record<string, PossibleValues>>;
-
-/**
- * this will convert input to T object
- *
- * @param obj input any type
- * @param def default value if input is not object
- * @return always new object returned
- */
-export const forceObject = <T = unknown>(obj: Optional<T>, def = {}): T => {
-  if (isObject(obj)) return Object.assign({}, obj);
-  else return def as T;
-};
+type Json<T = Value> = Partial<Record<string, PossibleValue<T>>>;
+type NestedJson<T = Value> = Partial<Record<string, PossibleValues<PossibleValue<T>>>>;
 
 /**
  * deepEquals object data with specify keys
@@ -84,6 +74,18 @@ export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, k
 };
 
 /**
+ * this will convert input to T object
+ *
+ * @param obj input any type
+ * @param def default value if input is not object
+ * @return always new object returned
+ */
+export const forceObject = <T = unknown>(obj: Optional<T>, def = {}): T => {
+  if (isObject(obj)) return Object.assign({}, obj);
+  else return Object.assign({}, def as T);
+};
+
+/**
  *
  * @param obj input object to query
  * @param key object query statment (format as a.b.c)
@@ -111,9 +113,30 @@ export const getObject = <T extends NestedJson, R extends any>(
   }
 };
 
+/**
+ * clean object mean remove undefined and null object
+ *
+ * @param obj massy object
+ */
+export const cleanObject = <T = Value>(obj: Optional<Json<T>>): Record<string, PossibleValue<T>> => {
+  if (noExist(obj)) return {};
+  else
+    return Object.keys(obj).reduce((p, k) => {
+      const v = obj[k] as T;
+      if (isExist<T>(v)) return { ...p, [k]: v };
+      else return p;
+    }, {} as Record<string, T>);
+};
+
+export const merge = <T extends Json>(base: Optional<Partial<T>>, ...obj: Optional<Partial<T>>[]): T | undefined => {
+  if (noExist(base)) return undefined;
+  const newObjectList = obj.map(o => cleanObject(o));
+  return Object.assign(cleanObject(base), ...newObjectList);
+};
+
 export const deepMerge = <T extends NestedJson, U extends NestedJson>(
-  _jsonA?: T,
-  _jsonB?: U,
+  _jsonA?: Optional<T>,
+  _jsonB?: Optional<U>,
   size: number = 20
 ): T & U => {
   const jsonA: T = forceObject(_jsonA);
@@ -125,9 +148,9 @@ export const deepMerge = <T extends NestedJson, U extends NestedJson>(
       const oVal = obj[key];
 
       if (Array.isArray(pVal) && Array.isArray(oVal)) {
-        prev[key] = pVal.concat(...oVal);
+        prev[key] = pVal.concat(...oVal) as any;
       } else if (isObject(pVal) && isObject(oVal) && size > 0) {
-        prev[key] = deepMerge(pVal, oVal, size - 1);
+        prev[key] = deepMerge(pVal as NestedJson, oVal as NestedJson, size - 1) as any;
       } else {
         // replace only when new value is exist
         if (isExist(oVal)) prev[key] = oVal;
