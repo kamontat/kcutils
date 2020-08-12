@@ -1,14 +1,4 @@
-import {
-  rounding,
-  bound01,
-  boundAlpha,
-  pad2,
-  duplicateChar,
-  flip,
-  cleanObject,
-  mergeObject,
-  percentage,
-} from "../../src/utils/helper";
+import { rounding, bound01, boundAlpha, pad2, duplicateChar, flip, percentage } from "../../src/utils/helper";
 
 describe("Helper", () => {
   test.each([
@@ -148,24 +138,6 @@ describe("Helper", () => {
     [{ a: undefined, b: "a" }, { a: "b" }],
   ])("filp object %s to %s", (a, b) => {
     expect(flip<string, string>(a as any)).toEqual(b);
-  });
-
-  test.each([
-    [{ a: "b" }, { a: "b" }],
-    [{ b: "undefined" }, { b: "undefined" }],
-    [{ b: undefined, a: "aa" }, { a: "aa" }],
-    [{ a: null, b: "bb" }, { b: "bb" }],
-    [undefined, {}],
-  ])("clean object '%p' to '%p'", (a, b) => {
-    expect(cleanObject(a)).toEqual(b);
-  });
-
-  test.each([
-    [undefined, { a: "aa" }, undefined],
-    [{}, {}, {}],
-    [{ a: "a" }, { b: "b" }, { a: "a", b: "b" }],
-  ])("merge %p and %p to %p", (a, b, c) => {
-    expect(mergeObject<Record<string, string>>(a, b)).toEqual(c);
   });
 
   test.each([

@@ -1,5 +1,3 @@
-import { type, generic } from "@kcutils/helper";
-
 const defaultMax = 1;
 const defaultMin = 0;
 
@@ -125,28 +123,4 @@ export const rounding = (n: number, digit: number = 2): number => {
 export const between = (val: number, opts?: Partial<BetweenOption>): number => {
   const options = assignDefaultBetweenOption(opts);
   return Math.min(options.max, Math.max(options.min, val));
-};
-
-/**
- * clean object mean remove undefined and null object
- *
- * @param obj massy object
- */
-export const cleanObject = <T = any>(obj: type.Optional<Record<string, type.Optional<T>>>): Record<string, T> => {
-  if (generic.noExist(obj)) return {};
-  else
-    return Object.keys(obj).reduce((p, k) => {
-      const v = obj[k] as T;
-      if (generic.isExist<T>(v)) return { ...p, [k]: v };
-      else return p;
-    }, {} as Record<string, T>);
-};
-
-export const mergeObject = <T extends Record<string, any>>(
-  base: Partial<T> | undefined,
-  ...obj: (Partial<T> | undefined)[]
-): T | undefined => {
-  if (base === undefined) return undefined;
-  const newObjectList = obj.map(o => cleanObject(o as Partial<T>));
-  return Object.assign(cleanObject(base), ...newObjectList);
 };
