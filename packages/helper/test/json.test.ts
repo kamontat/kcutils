@@ -125,7 +125,7 @@ describe("Json Object Helper", () => {
 
       const objA = { b: "string" };
       const objB = new Foo("hello");
-      const result = jsonHelper.deepMerge(objA, objB);
+      const result = jsonHelper.deepMerge<any, any>(objA, objB);
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -158,7 +158,7 @@ describe("Json Object Helper", () => {
       [false, "string", []],
       [{ a: "a" }, null, ["a"]],
       [undefined, { b: "b" }, ["b"]],
-      [null, undefined, ["b"]],
+      [null, undefined, []],
     ])("merge '%p' with '%p'", (a: any, b: any, output) => {
       const result = jsonHelper.deepMerge(a, b);
       if (output.length <= 0) expect(result).toEqual({});
@@ -247,5 +247,27 @@ describe("Json Object Helper", () => {
     ])("forceObject(%s, %s) returns %s", (input: any, def: any, result: any) => {
       expect(jsonHelper.forceObject(input, def)).toEqual(result);
     });
+  });
+
+  describe("cleanObject", () => {
+    test.each([
+      [{ a: "b" }, { a: "b" }],
+      [{ b: "undefined" }, { b: "undefined" }],
+      [{ b: undefined, a: "aa" }, { a: "aa" }],
+      [{ a: null, b: "bb" }, { b: "bb" }],
+      [undefined, {}],
+    ])("clean object '%p' to '%p'", (a: any, b: any) => {
+      expect(jsonHelper.cleanObject(a)).toEqual(b);
+    });
+  });
+
+  test.each([
+    [undefined, { a: "aa" }, undefined],
+    [{}, {}, {}],
+    [{ a: "a" }, { b: "b" }, { a: "a", b: "b" }],
+    [{ a: "a" }, { a: "aa" }, { a: "aa" }],
+    [{ a: "a" }, { a: undefined }, { a: "a" }],
+  ])("merge %p and %p to %p", (a, b, c) => {
+    expect(jsonHelper.merge<Record<string, string>>(a, b)).toEqual(c);
   });
 });
