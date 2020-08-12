@@ -18,12 +18,13 @@ describe("HSL to HSL", () => {
     expect(converter.enforceHSL(undefined)).toEqual(definedHSL());
   });
 
-  test("convert unknown type object cause exception", () => {
-    expect(() => converter.hslToHsl(undefined as any, type.decimal)).toThrowError();
+  test("convert unknown type object to default color object", () => {
+    expect(converter.hslToHsl(undefined as any, type.decimal)).toEqual(definedHSL());
+    expect(converter.hslToHsl(null as any, type.number)).toEqual(definedHSL({ type: type.number }));
   });
 
   test("convert empty type object will throw exception", () => {
-    expect(() => converter.hslToHsl({} as HSL, type.percent)).toThrowError();
+    expect(converter.hslToHsl({} as HSL, type.percent)).toEqual(definedHSL({ type: type.percent }));
   });
 
   test("change hsl with default type", () => {

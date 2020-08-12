@@ -60,11 +60,11 @@ describe("RGB to RGB", () => {
   });
 
   test("convert unknown type object cause exception", () => {
-    expect(() => rgbToRgb(undefined as any, type.decimal)).toThrowError();
+    expect(rgbToRgb(undefined as any, type.decimal)).toEqual(enforceRGB({ type: type.decimal }));
   });
 
   test("convert empty type object will throw exception", () => {
-    expect(() => rgbToRgb({} as RGB, type.percent)).toThrowError();
+    expect(rgbToRgb({} as RGB, type.percent)).toEqual(enforceRGB({ type: type.percent }));
   });
 
   test.each(

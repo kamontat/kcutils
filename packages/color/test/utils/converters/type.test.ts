@@ -72,14 +72,14 @@ describe("toType()", () => {
   );
 
   test("Testcase Z1: change data with undefined or null", () => {
-    const a: C<string, any> = { a: 54, b: 23, c: undefined, d: null, e: 0, f: true, type: "number" };
-    const b = { a: 0.54, b: 0.23, e: 0, type: "decimal" };
+    const a: C<string, any> = { z: 54, b: 23, c: undefined, d: null, e: 0, f: true, type: "number" };
+    const b = { z: 0.54, b: 0.23, e: 0, type: "decimal" };
 
     expect(toType("decimal", a, { min: 0, max: 100 })).toEqual(b);
   });
 
   test("Testcase Z2: exception when type is not exist", () => {
-    const a: C<string, any> = { a: 54, type: "no-exist" };
+    const a: C<string, any> = { b: 54, type: "no-exist" };
     expect(() => toType("no-exist" as any, a, {})).toThrowError();
   });
 
