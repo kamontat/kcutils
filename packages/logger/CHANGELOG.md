@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.12](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.11...@kcutils/logger@0.5.0-rc.12) (2020-08-12)
+
+
+### Performance Improvements
+
+* **model:** add logger id ([0dee87b](https://github.com/kamontat/kcutils/commit/0dee87b61ac9dc478241156627d6f62d70ec8240))
+* **model:** add updateLogger for update new logger instance ([8946977](https://github.com/kamontat/kcutils/commit/89469776f157a3a614951d46548545649ca2353b))
+
+
+
+
+
 # [0.5.0-rc.11](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.10...@kcutils/logger@0.5.0-rc.11) (2020-08-10)
 
 **Note:** Version bump only for package @kcutils/logger

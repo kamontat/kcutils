@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.11](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.10...@kcutils/color@0.2.0-rc.11) (2020-08-12)
+
+
+### Bug Fixes
+
+* **utils:** update all color converter utilities to handle most of the case ([c56529b](https://github.com/kamontat/kcutils/commit/c56529bce6f811d8922015f22223f7fb17626a75))
+
+
+### Features
+
+* **core:** support alpha settings and fromColor method in ColorBuilder ([b520088](https://github.com/kamontat/kcutils/commit/b52008821d9247796749a50e7ec63fc660f31c52))
+
+
+### Performance Improvements
+
+* **model:** improve Color object on many location ([d6e9ac4](https://github.com/kamontat/kcutils/commit/d6e9ac4040d5a3ca5d95cef8a769775cfd5abf61))
+* **test:** remove cleanObject and mergeObject from color module ([ff225d5](https://github.com/kamontat/kcutils/commit/ff225d5e2890de707412a3be351b80485ee170ef))
+
+
+
+
+
 # [0.2.0-rc.10](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.9...@kcutils/color@0.2.0-rc.10) (2020-08-10)
 
 **Note:** Version bump only for package @kcutils/color
