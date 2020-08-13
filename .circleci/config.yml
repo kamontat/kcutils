@@ -47,14 +47,14 @@ commands:
     description: Git cleanup
     steps:
       - run:
-          name: "Add git user email"
-          command: git config --global user.email "user@example.com"
+          name: "Remove git user email"
+          command: git config --global user.email ""
       - run:
-          name: "Add git username"
-          command: git config --global user.name "example user"
+          name: "Remove git username"
+          command: git config --global user.name ""
       - run:
-          name: "Add git user signing key"
-          command: git config --global user.signingKey "abc"
+          name: "Remove git user signing key"
+          command: git config --global user.signingKey ""
   install-aptget:
     description: Install aptget package
     parameters:
