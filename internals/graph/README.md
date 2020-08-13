@@ -1,1 +1,4 @@
-# KCMono Graph generator
+# Graph generator
+
+## Graph syntax
+
