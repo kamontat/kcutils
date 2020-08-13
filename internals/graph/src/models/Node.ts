@@ -12,23 +12,26 @@ style.newStyle(DependencyType.EXTERNAL, { style: "dashed", fontcolor: "gray20" }
 style.newStyle(DependencyType.INTERNAL, { fontcolor: "blue" });
 
 // red
-style.newStyle(DependencyCategory.APPLICATION, { color: "red4" });
-
-// blue
-style.newStyle(DependencyCategory.CORE, { color: "lightsteelblue1" });
-// green
-style.newStyle(DependencyCategory.LIBRARY, { color: "palegreen" });
+style.newStyle(DependencyCategory.APPLICATION, { color: "red" });
 // orange
-style.newStyle(DependencyCategory.INTERNAL, { color: "orange4" });
-// pink
-style.newStyle(DependencyCategory.TYPE, { color: "lightpink" });
+style.newStyle(DependencyCategory.CORE, { color: "orange" });
+// purple
+style.newStyle(DependencyCategory.LIBRARY, { color: "purple" });
+// green
+style.newStyle(DependencyCategory.INTERNAL, { color: "mediumseagreen" });
+// blue
+style.newStyle(DependencyCategory.TYPE, { color: "lightskyblue" });
+// white
+style.newStyle(DependencyCategory.IGNORE, { color: "white" });
+// white
+style.newStyle(DependencyCategory.UNKNOWN, { color: "white" });
 
-// red
+// dependencies link
 style.newStyle(DependencyLink.DEP, { style: "bold", color: "black" });
-// black
-style.newStyle(DependencyLink.DEV, { style: "dashed", color: "black" });
-// gray
-style.newStyle(DependencyLink.PEER, { style: "dashed", color: "gray" });
+// devDependencies link
+style.newStyle(DependencyLink.DEV, { style: "normal", color: "gray" });
+// peerDependencies link
+style.newStyle(DependencyLink.PEER, { style: "normal", color: "gray" });
 
 export class Node {
   private node: graphviz.Node;
@@ -40,7 +43,7 @@ export class Node {
     this.node = this.graph.addNode(name, styles);
   }
 
-  build() {
+  build(): void {
     this.dependency.dependOns.forEach(dep =>
       this.graph.addEdge(this.node, new Node(this.graph, dep).node, style.getStyle(DependencyLink.DEP))
     );
@@ -52,11 +55,11 @@ export class Node {
     );
   }
 
-  get graphviz() {
+  get graphviz(): graphviz.Node {
     return this.node;
   }
 
-  get dependency() {
+  get dependency(): Dependency {
     return this.d;
   }
 }
