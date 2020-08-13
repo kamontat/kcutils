@@ -42,9 +42,8 @@ export const hslToHsl = (hsl: HSL, type: NumberTypeString = "number"): HSL => {
   const _h: C<"h", number> & NumberType = { h: _hsl.h, type: _hsl.type };
   const h = toType(type, _h, { max: 360, min: 0 });
   const sl = toType(type, _hsl, { max: 100, min: 0 });
-  const result = Object.assign({}, sl, { h: h.h }, { a: boundAlpha(_hsl.a) });
 
-  return result; // fill all missing data
+  return Object.assign({}, sl, { h: h.h }, { a: boundAlpha(_hsl.a) }); // fill all missing data
 };
 
 /**

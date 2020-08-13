@@ -22,9 +22,11 @@ const randomCode = () => {
 
 export default class ThrowState {
   private static counter: number = 0;
-  private static increase = () => ThrowState.counter++;
+  private static increase() {
+    ThrowState.counter++;
+  }
 
-  private id: number;
+  private readonly id: number;
 
   readonly type: ThrowStateType;
   readonly code: number;
