@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.12](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.11...@kcutils/helper@0.5.0-rc.12) (2020-08-12)
+
+
+### Features
+
+* **utils:** migrate mergeObject and cleanObject from @kcutils/color to @kcutils/helper ([9aaa5dd](https://github.com/kamontat/kcutils/commit/9aaa5dd0305ebdf66cf5fa6792367bb5a131c6a1))
+
+
+### Performance Improvements
+
+* **utils:** change confuse includeSpecial to ignoreSpecial ([0d4b8b6](https://github.com/kamontat/kcutils/commit/0d4b8b6d16296eb9978fa6137d18f23b0a3c8fe8))
+
+
+
+
+
 # [0.5.0-rc.11](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.10...@kcutils/helper@0.5.0-rc.11) (2020-08-10)
 
 **Note:** Version bump only for package @kcutils/helper
