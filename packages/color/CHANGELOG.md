@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-rc.15](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.14...@kcutils/color@0.2.0-rc.15) (2020-08-14)
+
+
+### Bug Fixes
+
+* **model:** minify hex color should check both rgb and alpha (if exist) ([3476216](https://github.com/kamontat/kcutils/commit/3476216cae3c23846a748881bab3d1f3a0693978))
+
+
+### Performance Improvements
+
+* **model:** add options to toHex method in Color and refactor some code ([49fe78d](https://github.com/kamontat/kcutils/commit/49fe78d504971bb028bd06ce344dd35c36c34758))
+* **service:** add fromHex to ColorBuilder ([b33f9c8](https://github.com/kamontat/kcutils/commit/b33f9c84c831a0c2cb05ea65158417fee10311c5))
+
+
+
+
+
 # [0.2.0-rc.14](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.13...@kcutils/color@0.2.0-rc.14) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/color

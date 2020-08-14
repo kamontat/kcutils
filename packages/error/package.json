@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/error",
-  "version": "0.3.0-rc.11",
+  "version": "0.3.0-rc.12",
   "description": "Error Management",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -43,12 +43,12 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.5.0-rc.15",
-    "@kcutils/models": "0.3.0-rc.14"
+    "@kcutils/helper": "0.5.0-rc.16",
+    "@kcutils/models": "0.3.0-rc.15"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.9.0-rc.4",
-    "@kcinternal/configuration": "0.6.9-rc.5",
-    "@kcutils/testkit": "0.2.0-rc.6"
+    "@kcinternal/commandline": "0.9.0-rc.5",
+    "@kcinternal/configuration": "0.6.9-rc.6",
+    "@kcutils/testkit": "0.2.0-rc.7"
   }
 }
