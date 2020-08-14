@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.1...@kcinternal/commandline@0.10.2) (2020-08-14)
+
+
+### Bug Fixes
+
+* **utils:** lerna command didn't add parameters to result ([f0a280b](https://github.com/kamontat/kcutils/commit/f0a280bab812d8ac6138f3b17bc405df159f369f))
+* **utils:** never pass all input to commandline ([5b98449](https://github.com/kamontat/kcutils/commit/5b984493e6b8961220daf8fa1a1c4a5b7b6dc367))
+* **utils:** root-build didn't work when no scope / ignore list ([13f315b](https://github.com/kamontat/kcutils/commit/13f315b5cdc3fd7f6b68cbdf691fd0b67b101e2d))
+
+
+
+
+
 ## [0.10.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.0...@kcinternal/commandline@0.10.1) (2020-08-14)
 
 **Note:** Version bump only for package @kcinternal/commandline
