@@ -2,9 +2,12 @@ import { lerna } from "../lerna/core";
 
 const cli = lerna(async ({ data }) => {
   if (data.build) require("./build");
-  const commands = data._;
-  const args: string[] = ["exec", "yarn", ...(commands.length > 0 ? commands : ["start"])];
-  return { arguments: args };
+
+  // ._ will be adding by default, so I add default value if it not exist
+  if (!data._) data._ = [];
+  if (data._.length <= 0) data._.push("start");
+
+  return { arguments: ["exec", "yarn"] };
 });
 
 cli.start();
