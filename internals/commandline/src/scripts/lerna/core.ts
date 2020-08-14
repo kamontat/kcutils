@@ -43,7 +43,7 @@ export const lerna = (
     const config = await helper.path.ensure("lerna.json");
     const lerna = helper.path.nodeCommand("lerna");
 
-    const args = Array.from(data.parameters).concat(data.raw);
+    const args = Array.from(data.parameters).concat(data.arguments._ ?? []);
     if (data.scopes.length > 0)
       args.push(
         ...data.scopes.reduce((p, c) => {
