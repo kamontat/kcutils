@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0...@kcutils/error@0.4.0) (2020-08-14)
+
+
+### Features
+
+* upgrade dependencies version ([d89d18b](https://github.com/kamontat/kcutils/commit/d89d18b8e1b0bde55739ea2ae5367da83788b03d))
+
+
+
+
+
 # [0.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.12...@kcutils/error@0.3.0) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/error
