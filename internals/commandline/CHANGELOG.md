@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.2...@kcinternal/commandline@0.11.0) (2020-08-14)
+
+
+### Bug Fixes
+
+* **utils:** remove --stream from root-build command ([4d65903](https://github.com/kamontat/kcutils/commit/4d65903b2f3d3791cee62c0e3d3d4f7c15f1a3eb))
+
+
+### Features
+
+* **utils:** `icompiler-tsc` is require tsconfig file or pass `--auto` ([c7c8a88](https://github.com/kamontat/kcutils/commit/c7c8a8815cb54aa7a79a4e81489354bb73f3ee57))
+
+
+### Performance Improvements
+
+* **utils:** add more parameters in icompiler-tsc ([5b93ee5](https://github.com/kamontat/kcutils/commit/5b93ee51b26d1f64ab8f267eb0cd2bd56c0424f2))
+
+
+
+
+
 ## [0.10.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.1...@kcinternal/commandline@0.10.2) (2020-08-14)
 
 
