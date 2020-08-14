@@ -20,13 +20,15 @@ export const lerna = (
       const baseSettings = await Option.transform(i);
       const args = await Promise.resolve(fn({ data: baseSettings.arguments, helper: i.helper }));
 
+      const scope = baseSettings.arguments.scope ?? [];
+      const scopes = Array.isArray(scope) ? scope : [scope];
+
+      const ignore = baseSettings.arguments.ignore ?? [];
+      const ignores = Array.isArray(ignore) ? ignore : [ignore];
+
       return Object.assign({}, baseSettings, {
-        scopes: Array.isArray(baseSettings.arguments.scope)
-          ? baseSettings.arguments.scope
-          : [baseSettings.arguments.scope],
-        ignores: Array.isArray(baseSettings.arguments.ignore)
-          ? baseSettings.arguments.ignore
-          : [baseSettings.arguments.ignore],
+        scopes,
+        ignores,
         override: args.override ? args.arguments : false,
       }) as Settings;
     },
@@ -40,14 +42,14 @@ export const lerna = (
     const lerna = helper.path.nodeCommand("lerna");
 
     const args = Array.from(data.raw);
-    if (data.scopes)
+    if (data.scopes.length > 0)
       args.push(
         ...data.scopes.reduce((p, c) => {
           return p.concat("--scope", c);
         }, [] as string[])
       );
 
-    if (data.ignores)
+    if (data.ignores.length > 0)
       args.push(
         ...data.ignores.reduce((p, c) => {
           return p.concat("--ignore", c);
