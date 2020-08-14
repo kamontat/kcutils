@@ -34,10 +34,13 @@ type Parameters = typeof longestLabel;
 //* [YYYY-MM-DD] global  text.js    ↦           ¤       [label] this this a message (suffix)
 
 export class Logger<T extends string = ""> {
+  private static counter: number = 0;
+
   static create<T extends string = "">(opts?: OptionalLoggerOption<T>): Logger<T> {
     return new Logger(opts);
   }
 
+  private readonly _id: number;
   private _option: StrictOption;
   private _setting: StrictSetting;
 
@@ -51,13 +54,17 @@ export class Logger<T extends string = ""> {
   private readonly _parameters: Map<Parameters, string>;
 
   constructor(opts?: OptionalLoggerOption<T>) {
+    this._id = Logger.counter;
+    Logger.counter++;
+
     this._option = json.deepMerge(options, opts);
     this._types = json.deepMerge(types, opts?.types);
     this._setting = json.deepMerge(settings, opts?.settings);
 
-    this.idebug("option:", this._option);
-    this.idebug("setting:", this._setting);
-    this.idebug("types:", this._types);
+    this.idebug(`create new logger (id = ${this._id})`);
+    this.idebug("option: ", JSON.stringify(this._option));
+    this.idebug("setting: ", JSON.stringify(this._setting));
+    this.idebug("types: ", JSON.stringify(this._types));
 
     this._timers = new Map();
     this._color = new ChalkInstance(this._option.color ? {} : { level: 0 });
@@ -65,6 +72,10 @@ export class Logger<T extends string = ""> {
 
     this._parameters = new Map();
     this._parameters.set(longestLabel, this.getLongestLabel());
+  }
+
+  get id(): number {
+    return this._id;
   }
 
   /**
@@ -79,6 +90,13 @@ export class Logger<T extends string = ""> {
    */
   get scopes(): string[] {
     return this._option.scopes;
+  }
+
+  /**
+   * get current options as readonly
+   */
+  get option(): StrictOption {
+    return Object.assign(this._option);
   }
 
   // print logger message to stream
@@ -260,6 +278,30 @@ export class Logger<T extends string = ""> {
    */
   isColor(): boolean {
     return this._color.level > 0 && this._option.color;
+  }
+
+  equals(l: Logger): boolean {
+    const keys = Object.keys(this.importantData()) as (keyof StrictOption)[];
+    return keys.every(k => {
+      const cond = json.equals(l.option[k] as Record<string, any>, this.option[k] as Record<string, any>);
+      if (!cond) this.idebug("input logger is not equals because '%s'(%s !== %s)", k, this.option[k], l.option[k]);
+      return cond;
+    });
+  }
+
+  toString(): string {
+    const data = this.importantData();
+    return `Logger(${(Object.keys(data) as (keyof StrictOption)[]).map(key => `${key}=${data[key]}`).join(", ")})`;
+  }
+
+  private importantData(): Partial<Record<keyof StrictOption, any>> {
+    return {
+      debug: this.option.debug,
+      level: this.option.level,
+      interactive: this.option.interactive,
+      color: this.option.color,
+      scopes: this.option.scopes,
+    };
   }
 
   /**

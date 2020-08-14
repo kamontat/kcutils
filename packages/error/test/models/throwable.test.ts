@@ -1,5 +1,5 @@
 import { env } from "@kcutils/helper";
-import { Throwable, setProject } from "../../src";
+import { Throwable, setProject, ThrowState, ThrowStateType } from "../../src";
 
 describe("Throwable object", () => {
   setProject("error");
@@ -62,6 +62,55 @@ describe("Throwable object", () => {
       expect(str).toContain("jest");
 
       env.setEnv("ENV", old);
+    });
+
+    test("Throwable.build() works the same as new Throwable()", () => {
+      const st = new ThrowState(ThrowStateType.WARN, 12, "TEST");
+      const msg = "test";
+
+      const t1 = new Throwable(st.code, st.name, msg, undefined, false);
+      const t2 = Throwable.build(st, msg);
+
+      expect(t1.equals(t2)).toEqual(true);
+    });
+
+    test("reuse exception message by Throwable.fn()", () => {
+      const st = new ThrowState(ThrowStateType.WARN, 99, "UNK");
+      const msg = "abc";
+
+      const fn = Throwable.fn(st, msg);
+
+      expect(fn().equals(fn())).toEqual(true);
+      expect(fn("null").message).toEqual("abc null");
+    });
+
+    test("string template via Throwable.fn()", () => {
+      const st = new ThrowState(ThrowStateType.WARN, 99, "UNK");
+      const msg = "My %s is broken";
+
+      const fn = Throwable.fn(st, msg);
+
+      expect(fn("pencil").message).toEqual("My pencil is broken");
+      expect(fn("abc").equals(fn("def"))).toEqual(true); // same error, different message
+    });
+
+    test("Throwable.fn(*, undefined) will return message as default message", () => {
+      const st = new ThrowState(ThrowStateType.WARN, 99, "UNK");
+      const fn = Throwable.fn(st);
+
+      expect(fn().message).toEqual("something went wrong");
+      expect(fn("abc").message).toEqual("something went wrong");
+    });
+
+    test("create throwable error with fn and throw by throw keyword", () => {
+      const st = new ThrowState(ThrowStateType.ERROR, 2910, "EEE");
+      const msg = "unknown error";
+
+      const fn = Throwable.fn(st, msg);
+
+      expect(() => {
+        throw fn();
+      }).toThrowError();
     });
   });
 });

@@ -1,3 +1,4 @@
+import minimist from "minimist";
 import { spawn, ChildProcess } from "child_process";
 
 import { DataChain } from "../models/async/DataChain";
@@ -7,7 +8,10 @@ import { Helper } from "../models/common/Helper";
 
 export interface CommandlineOption {
   dryrun?: boolean;
-  arguments: string[];
+
+  arguments: minimist.ParsedArgs;
+
+  raw: string[];
 }
 
 export class Commandline<O extends CommandlineOption, H extends string> extends DataChain<O, string[], ChildProcess, H>

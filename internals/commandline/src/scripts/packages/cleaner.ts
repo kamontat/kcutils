@@ -29,8 +29,10 @@ const runner = new AsyncRunner(setting, async ({ helper, data }) => {
   const coverage = helper.on("parent").path("coverage");
   const junit = helper.on("parent").path("junit.xml");
   const eslint = helper.on("parent").path("eslint.xml");
+  const stryker = helper.on("parent").path(".stryker-tmp");
+  const reports = helper.on("parent").path("reports");
 
-  const arr = [logs, lib, tsbuildinfo, buildinfo, build, coverage, junit, eslint];
+  const arr = [logs, lib, tsbuildinfo, buildinfo, build, coverage, junit, eslint, stryker, reports];
   if (data.all) {
     const nodeModules = helper.on("parent").path("node_modules");
     const lock = helper.on("parent").path("yarn.lock");

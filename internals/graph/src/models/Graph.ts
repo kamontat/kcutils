@@ -23,30 +23,31 @@ export class Graph {
     this._engine = "dot";
   }
 
-  visualize(ds: Dependencies) {
+  visualize(ds: Dependencies): void {
     ds.loop(d => {
       const node = new Node(this.graph, d);
       node.build();
     });
   }
 
-  toString() {
+  toString(): string {
     return this.graph.to_dot();
   }
 
-  engine(engine: graphviz.RenderEngine) {
+  engine(engine: graphviz.RenderEngine): this {
     this._engine = engine;
+    return this;
   }
 
-  toPDF(dirpath: string = "", filename: string = "graph.pdf") {
+  toPDF(dirpath: string = "", filename: string = "graph.pdf"): Promise<void> {
     return this.render({ type: "pdf" }, dirpath, filename);
   }
 
-  toPNG(dirpath: string = "", filename: string = "graph.png") {
+  toPNG(dirpath: string = "", filename: string = "graph.png"): Promise<void> {
     return this.render({ type: "png:cairo:gd" }, dirpath, filename);
   }
 
-  render(opts: graphviz.RenderOptions, dirpath: string, filename: string) {
+  render(opts: graphviz.RenderOptions, dirpath: string, filename: string): Promise<void> {
     const filepath = this.getFilepath(dirpath, filename);
 
     return new Promise<void>((res, rej) => {
@@ -63,7 +64,7 @@ export class Graph {
     });
   }
 
-  private getFilepath(dirpath: string, filename: string) {
+  private getFilepath(dirpath: string, filename: string): string {
     const abspath = dirpath !== "" && isAbsolute(dirpath) ? dirpath : join(process.cwd(), dirpath);
     return join(abspath, filename);
   }

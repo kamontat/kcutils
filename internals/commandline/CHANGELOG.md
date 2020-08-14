@@ -3,6 +3,85 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.4...@kcinternal/commandline@0.9.0-rc.5) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
+# [0.9.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.3...@kcinternal/commandline@0.9.0-rc.4) (2020-08-14)
+
+
+### Performance Improvements
+
+* add beta option builder ([40bbbfe](https://github.com/kamontat/kcutils/commit/40bbbfe0d2519cccee7db7ad3004260050e2871e))
+
+
+
+
+
+# [0.9.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.2...@kcinternal/commandline@0.9.0-rc.3) (2020-08-10)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
+# [0.9.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.1...@kcinternal/commandline@0.9.0-rc.2) (2020-08-08)
+
+
+### Performance Improvements
+
+* **utils:** path helper will support nodeModules for getting node_modules modules ([f5e16ba](https://github.com/kamontat/kcutils/commit/f5e16ba6f108d5af9d1e9eec0e16d8b0d6980481))
+
+
+
+
+
+# [0.9.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.0...@kcinternal/commandline@0.9.0-rc.1) (2020-08-05)
+
+
+### Bug Fixes
+
+* **model:** changes static transformer on Option to support dryrun parameters ([f054656](https://github.com/kamontat/kcutils/commit/f054656b3af029effb15c32ab616843b57851a94))
+* **model:** lerna not support old commandline option ([346c6a7](https://github.com/kamontat/kcutils/commit/346c6a76d2c17dc54d2f8b5f124816a02e7ed456))
+
+
+### Performance Improvements
+
+* **model:** change commandline option structure cause break change ([6335e0d](https://github.com/kamontat/kcutils/commit/6335e0d5a3b144c53b1a0c207f2ee66da3a04f17))
+* **utils:** icleaner will also clean stryker files/folders ([4232025](https://github.com/kamontat/kcutils/commit/42320254c566ce256842f2394df02b3819b25c69))
+
+
+
+
+
+# [0.9.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.4...@kcinternal/commandline@0.9.0-rc.0) (2020-08-04)
+
+
+### Bug Fixes
+
+* **utils:** getOrElse will return else when input is empty string ([46e2d38](https://github.com/kamontat/kcutils/commit/46e2d3812ff3718937fcf2f18ed8228bacef19d9))
+
+
+### Features
+
+* **utils:** itester will support require strker.conf.js file to run as well ([42bfd56](https://github.com/kamontat/kcutils/commit/42bfd569bfcb1fe5e94c145ebb4c25863ae60477))
+
+
+### Performance Improvements
+
+* **core:** add --stryker to itester but run only when @kcutils/testkit exist ([0709ac3](https://github.com/kamontat/kcutils/commit/0709ac3ba747909091ce68b32507a9aebd37cbf7))
+* **utils:** add searchPackageJSonSync api in global path helper ([c5e1ea2](https://github.com/kamontat/kcutils/commit/c5e1ea23263bd2827657a333e95d86ae81461fbd))
+* **utils:** introduce new method in helper.path add() for add new path for calculation ([c65951e](https://github.com/kamontat/kcutils/commit/c65951e7b514659cbdc8469b56ed5b7aee9982d4))
+
+
+
+
+
 ## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.8.3...@kcinternal/commandline@0.8.4) (2020-07-16)
 
 

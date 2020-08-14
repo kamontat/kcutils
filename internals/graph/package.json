@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/graph",
   "description": "internal modules for kc monots projects",
-  "version": "0.2.28",
+  "version": "0.2.29-rc.6",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -19,9 +19,21 @@
     "access": "public"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "lib/**/*.js",
     "lib/**/*.d.ts",
     "data/**/*.json"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcinternal",
+    "helper",
+    "kcutils",
+    "graph",
+    "graphviz",
+    "node",
+    "typescript"
   ],
   "scripts": {
     "build": "icompiler-tsc",
@@ -33,7 +45,7 @@
     "graphviz": "0.0.9"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.8.4",
+    "@kcinternal/commandline": "0.9.0-rc.5",
     "@types/graphviz": "0.0.32",
     "@types/lerna__project": "0.2.3",
     "@types/package_json": "0.2.3"

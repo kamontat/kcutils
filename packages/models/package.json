@@ -1,7 +1,7 @@
 {
   "name": "@kcutils/models",
-  "version": "0.2.19",
-  "description": "custom models and helper class",
+  "version": "0.3.0-rc.15",
+  "description": "Additional DataType and Models",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -19,21 +19,35 @@
     "access": "public"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "lib/**/*.js",
     "lib/**/*.d.ts",
     "data/**/*.json"
   ],
+  "keywords": [
+    "kcmono",
+    "kcutils",
+    "libraries",
+    "helper",
+    "node",
+    "typescript",
+    "jest",
+    "eslint",
+    "common",
+    "model"
+  ],
   "scripts": {
-    "build": "icompiler-webpack",
+    "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.4.19"
+    "@kcutils/helper": "0.5.0-rc.16"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.8.4",
-    "@kcinternal/configuration": "0.6.8"
+    "@kcinternal/commandline": "0.9.0-rc.5",
+    "@kcinternal/configuration": "0.6.9-rc.6"
   }
 }

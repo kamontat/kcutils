@@ -1,11 +1,13 @@
 import { string } from "@kcutils/helper";
 
-import { Logger } from "../src";
+import { Logger, LoggerOption, WithLogger, toLevel, settingBuilder } from "../src";
+
+import { defaultSettings } from "../src/constants/settings";
 import { DateTimeFormat } from "../src/models/logger/LoggerOption";
-import { error, warn, info, silly, silent, debug, toLevel, Levels } from "../src/constants/levels";
+import { error, warn, info, silly, silent, debug, Levels } from "../src/constants/levels";
 import { MockStream } from "../src/test/models/stream";
 import { LoggerLevelBuilder } from "../src/models/logger/LoggerLevel";
-import { DefaultKeyTypes } from "../src/constants/types";
+import { DefaultKeyTypes, types } from "../src/constants/types";
 
 const newMockStream = () => {
   const fn = jest.fn();
@@ -47,7 +49,14 @@ describe("logger modules", () => {
   });
 
   describe("Logger object", () => {
-    const def = new Logger();
+    const def = Logger.create(); // using logger create utils
+
+    test("Logger.create should equals to new Logger", () => {
+      const l1 = Logger.create();
+      const l2 = new Logger();
+
+      expect(l1.toString()).toEqual(l2.toString());
+    });
 
     test("create default logger", () => {
       const logger = def.copy();
@@ -115,21 +124,27 @@ describe("logger modules", () => {
       expect(chunkA).not.toEqual(chunkB);
     });
 
-    test("normal log message", () => {
-      const logger = def.copy({ color: false, json: true });
-      logger.print("note", "message");
-    });
+    test.each(Object.keys(types).map(v => [v]) as DefaultKeyTypes[][])(
+      "print '%s' type to stream and check",
+      (type: DefaultKeyTypes) => {
+        const typeObject = types[type];
 
-    test("log message to stream", () => {
+        const { stream, logger } = withCustomStream(def.copy({ level: "silly" }));
+        logger.print(type, { message: "hello world" });
+
+        expect(stream).toBeCalledTimes(1);
+
+        const chunk = getStreamChunk(stream);
+        expect(chunk).toContain("hello world");
+        expect(chunk).toContain(typeObject.label);
+      }
+    );
+
+    test("continue log message to same stream object", () => {
       const { stream, logger } = withCustomStream(def);
+
       logger.print("fav", { message: "hello world" });
-
       expect(stream).toBeCalledTimes(1);
-
-      const chunk = getStreamChunk(stream);
-      // [20-06-12] → ♥  favorite  hello world
-      expect(chunk).toContain("hello world");
-      expect(chunk).toContain("favorite");
 
       logger.print("wait", "second called");
       expect(stream).toBeCalledTimes(2);
@@ -206,6 +221,32 @@ describe("logger modules", () => {
       expect(chunk1).toEqual(chunk2);
     });
 
+    test("equals should check 'color' field", () => {
+      const l1 = def.copy({ color: true });
+      const l11 = def.copy({ color: true });
+
+      const l2 = def.copy({ color: false });
+
+      expect(l1.equals(l2)).toEqual(false);
+      expect(l11.equals(l1)).toEqual(true);
+    });
+
+    test("equals should check 'scopes' field", () => {
+      const scopes = ["fields"];
+      const l1 = def.copy({ scopes });
+      const l2 = def.copy({ scopes });
+
+      expect(l2.equals(l1)).toEqual(true);
+      expect(l2.equals(def)).toEqual(false);
+    });
+
+    test("equals should only some fields", () => {
+      const l1 = def.copy({ separator: "x" });
+      const l2 = def.copy();
+
+      expect(l1.equals(l2)).toEqual(true);
+    });
+
     describe.each([
       ["silly" as DefaultKeyTypes, "silly" as Levels, 1],
       ["debug" as DefaultKeyTypes, "silly" as Levels, 1],
@@ -250,7 +291,7 @@ describe("logger modules", () => {
       ["warn" as DefaultKeyTypes, "silent" as Levels, 0],
       ["error" as DefaultKeyTypes, "silent" as Levels, 0],
       ["fatal" as DefaultKeyTypes, "silent" as Levels, 0],
-    ])("run type($s) on level(%s) %s times", (type, level, expected) => {
+    ])("run type(%s) on level(%s) %s times", (type, level, expected) => {
       test("on print", () => {
         const message = { message: "hello world" };
 
@@ -392,6 +433,90 @@ describe("logger modules", () => {
       expect(newLevel.level).toEqual(level);
       expect(newLevel.name).toEqual(name);
       expect(newLevel.stream).toEqual(mockStream2);
+    });
+  });
+
+  describe("WithLogger object", () => {
+    class T extends WithLogger {
+      fn: jest.Mock<any, any>;
+      s: MockStream;
+
+      constructor(private o?: LoggerOption<"">) {
+        super(o);
+
+        const { fn, stream } = newMockStream();
+        this.fn = fn;
+        this.s = stream;
+      }
+
+      get id(): number {
+        return this.logger.id;
+      }
+
+      override() {
+        this.logger.options({ streams: [this.s], overrideStream: true });
+      }
+
+      log() {
+        this.logger.print("info", "print some message");
+      }
+
+      options() {
+        return this.logger.option;
+      }
+
+      update() {
+        this.updateLogger(l => l.options({ level: "silent" }));
+      }
+    }
+
+    describe("mock log object", () => {
+      test("option never by undefined after process", () => {
+        const t = new T();
+        expect(t.options()).not.toBeUndefined();
+      });
+
+      test("call internal logger from external class", () => {
+        const t = new T();
+
+        t.log();
+        expect(t.fn).not.toBeCalled();
+
+        t.override();
+        t.log();
+        expect(t.fn).toBeCalled();
+      });
+
+      test("updateLogger will return new logger object", () => {
+        const t = new T();
+        const id = t.id;
+
+        t.update();
+
+        const nid = t.id;
+
+        expect(id).not.toEqual(nid);
+      });
+    });
+  });
+
+  describe("Logger Settings", () => {
+    test.each([
+      [{}, {}],
+      [undefined, undefined],
+      [null, null],
+      ["string", "string"],
+    ])("settingBuilder(%s) shouldn't return %s", (a, b) => {
+      const d = settingBuilder(a);
+      expect(d).not.toEqual(b);
+    });
+
+    test.each([
+      [{}, defaultSettings],
+      ["setting", defaultSettings],
+    ])("settingBuilder(%s) should return %p", (a, b) => {
+      const d = settingBuilder(a);
+      expect(d).toEqual(b);
     });
   });
 });

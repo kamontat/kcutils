@@ -1,0 +1,54 @@
+{
+  "name": "@kcutils/color",
+  "version": "0.2.0-rc.15",
+  "description": "Color Transformer",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/color"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcutils",
+    "libraries",
+    "helper",
+    "node",
+    "typescript",
+    "jest",
+    "eslint",
+    "color",
+    "tinycolor"
+  ],
+  "scripts": {
+    "build": "icompiler-tsc",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester"
+  },
+  "dependencies": {
+    "@kcutils/error": "0.3.0-rc.12",
+    "@kcutils/helper": "0.5.0-rc.16",
+    "@kcutils/logger": "0.5.0-rc.16"
+  },
+  "devDependencies": {
+    "@kcinternal/commandline": "0.9.0-rc.5",
+    "@kcinternal/configuration": "0.6.9-rc.6"
+  }
+}

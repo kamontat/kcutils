@@ -11,7 +11,7 @@ export class LogHelper {
     }
   }
 
-  debug(title: string, message?: any) {
+  debug<T = unknown>(title: string, message?: T): void {
     return this.log("debug", title, message);
   }
 }

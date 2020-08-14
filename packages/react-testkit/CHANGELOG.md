@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.30-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.30-rc.3...@kcutils/react-testkit@0.3.30-rc.4) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.3.30-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.30-rc.2...@kcutils/react-testkit@0.3.30-rc.3) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.3.30-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.30...@kcutils/react-testkit@0.3.30-rc.2) (2020-08-13)
+
+
+### Bug Fixes
+
+* **config:** add linter and testing to react-testkit ([7c379bb](https://github.com/kamontat/kcutils/commit/7c379bbad232397dada4a361d7d226a6c31f26bd))
+
+
+
+
+
+
 ## [0.3.30](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.29...@kcutils/react-testkit@0.3.30) (2020-08-13)
 
 **Note:** Version bump only for package @kcutils/react-testkit
@@ -11,7 +39,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.3.29](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.28...@kcutils/react-testkit@0.3.29) (2020-08-13)
+## [0.3.26-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.7...@kcutils/react-testkit@0.3.26-rc.8) (2020-08-10)
 
 **Note:** Version bump only for package @kcutils/react-testkit
 
@@ -19,7 +47,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.3.28](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.27...@kcutils/react-testkit@0.3.28) (2020-08-13)
+## [0.3.26-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.6...@kcutils/react-testkit@0.3.26-rc.7) (2020-08-09)
 
 **Note:** Version bump only for package @kcutils/react-testkit
 
@@ -27,7 +55,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.3.27](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26...@kcutils/react-testkit@0.3.27) (2020-08-04)
+## [0.3.26-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.5...@kcutils/react-testkit@0.3.26-rc.6) (2020-08-08)
 
 **Note:** Version bump only for package @kcutils/react-testkit
 
@@ -35,7 +63,50 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [0.3.26](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.25...@kcutils/react-testkit@0.3.26) (2020-08-01)
+## [0.3.26-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.4...@kcutils/react-testkit@0.3.26-rc.5) (2020-08-05)
+
+
+### Bug Fixes
+
+* **config:** add linter and testing to react-testkit ([7c379bb](https://github.com/kamontat/kcutils/commit/7c379bbad232397dada4a361d7d226a6c31f26bd))
+
+
+
+
+
+## [0.3.26-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26...@kcutils/react-testkit@0.3.26-rc.4) (2020-08-04)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.3.26-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.2...@kcutils/react-testkit@0.3.26-rc.3) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.3.26-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.1...@kcutils/react-testkit@0.3.26-rc.2) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.3.26-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.26-rc.0...@kcutils/react-testkit@0.3.26-rc.1) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.3.26-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.25...@kcutils/react-testkit@0.3.26-rc.0) (2020-07-27)
 
 **Note:** Version bump only for package @kcutils/react-testkit
 

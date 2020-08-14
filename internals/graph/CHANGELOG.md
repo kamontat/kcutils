@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.29-rc.6](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.29-rc.5...@kcinternal/graph@0.2.29-rc.6) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
+## [0.2.29-rc.5](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.29-rc.4...@kcinternal/graph@0.2.29-rc.5) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
+## [0.2.29-rc.4](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.29-rc.3...@kcinternal/graph@0.2.29-rc.4) (2020-08-13)
+
+
+### Performance Improvements
+
+* **core:** update dependencies node and link styles ([7323d10](https://github.com/kamontat/kcutils/commit/7323d1045bbc5ccc3f6ca8b6e3afdfc30477b6f2))
+
+
+
+
+
+## [0.2.29-rc.3](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.29-rc.2...@kcinternal/graph@0.2.29-rc.3) (2020-08-10)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
+## [0.2.29-rc.2](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.29-rc.1...@kcinternal/graph@0.2.29-rc.2) (2020-08-08)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
+## [0.2.29-rc.1](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.29-rc.0...@kcinternal/graph@0.2.29-rc.1) (2020-08-05)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
+## [0.2.29-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.28...@kcinternal/graph@0.2.29-rc.0) (2020-08-04)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
 ## [0.2.28](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.27...@kcinternal/graph@0.2.28) (2020-07-16)
 
 **Note:** Version bump only for package @kcinternal/graph

@@ -47,14 +47,14 @@ commands:
     description: Git cleanup
     steps:
       - run:
-          name: "Add git user email"
-          command: git config --global user.email "user@example.com"
+          name: "Remove git user email"
+          command: git config --global user.email ""
       - run:
-          name: "Add git username"
-          command: git config --global user.name "example user"
+          name: "Remove git username"
+          command: git config --global user.name ""
       - run:
-          name: "Add git user signing key"
-          command: git config --global user.signingKey "abc"
+          name: "Remove git user signing key"
+          command: git config --global user.signingKey ""
   install-aptget:
     description: Install aptget package
     parameters:
@@ -135,17 +135,17 @@ commands:
         type: string
     steps:
       - run:
-          name: "List all package will package"
-          command: yarn updated:ci || true
-      - run:
-          name: "Update version on package"
-          command: yarn version:ci << parameters.option >> || true
-      - run:
           name: check git status
           command: git diff --color-words | cat
       - run:
           name: clean git repository
           command: git checkout .
+      - run:
+          name: "List all package will package"
+          command: yarn updated:ci || true
+      - run:
+          name: "Update version on package"
+          command: yarn version:ci << parameters.option >> || true
       - run:
           name: "Release new package version"
           command: yarn release:ci << parameters.option >> || true
@@ -171,6 +171,9 @@ jobs:
       - store_artifacts:
           path: ./coverage
           destination: reports/coverage
+      - store_artifacts:
+          path: ./reports/jest/
+          destination: reports/jest
       - store_artifacts:
           path: ./reports/junit/
           destination: reports/junit

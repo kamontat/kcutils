@@ -16,7 +16,7 @@ export class DependencyServices {
     this.options = Object.assign({}, options, opts);
   }
 
-  async graph() {
+  async graph(): Promise<Graph> {
     const packages = await getPackages(this.options.root);
     const dependencies = new Dependencies();
 

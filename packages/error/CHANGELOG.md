@@ -3,6 +3,159 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-rc.12](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.11...@kcutils/error@0.3.0-rc.12) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.11](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.10...@kcutils/error@0.3.0-rc.11) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.10](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.9...@kcutils/error@0.3.0-rc.10) (2020-08-13)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.9](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.8...@kcutils/error@0.3.0-rc.9) (2020-08-13)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.7...@kcutils/error@0.3.0-rc.8) (2020-08-12)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.6...@kcutils/error@0.3.0-rc.7) (2020-08-10)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.5...@kcutils/error@0.3.0-rc.6) (2020-08-09)
+
+
+### Bug Fixes
+
+* **model:** ThrowState is now default class ([9d545bf](https://github.com/kamontat/kcutils/commit/9d545bfbed3df9584318bfade46a1842c0d7c80e))
+
+
+### Features
+
+* **model:** change ThrowState to class object for add some class logic ([e1c9246](https://github.com/kamontat/kcutils/commit/e1c92460b49a3c32706b9c433f4ba0f656e49930))
+
+
+
+
+
+# [0.3.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.4...@kcutils/error@0.3.0-rc.5) (2020-08-08)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.3...@kcutils/error@0.3.0-rc.4) (2020-08-08)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.2...@kcutils/error@0.3.0-rc.3) (2020-08-06)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.1...@kcutils/error@0.3.0-rc.2) (2020-08-05)
+
+
+### Performance Improvements
+
+* **test:** verify that error support stryker mutator ([21ecf89](https://github.com/kamontat/kcutils/commit/21ecf890edd77329f35c9fc8f118565a7bb5524f))
+
+
+
+
+
+# [0.3.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.3.0-rc.0...@kcutils/error@0.3.0-rc.1) (2020-08-04)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+# [0.3.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.36-rc.3...@kcutils/error@0.3.0-rc.0) (2020-08-01)
+
+
+### Features
+
+* **model:** add Throwable.fn() for reuse function to create same error data ([d314598](https://github.com/kamontat/kcutils/commit/d31459815e78d51ea2221ea2fb955eab4e0b499f))
+
+
+
+
+
+## [0.2.36-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.36-rc.2...@kcutils/error@0.2.36-rc.3) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+## [0.2.36-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.36-rc.1...@kcutils/error@0.2.36-rc.2) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+## [0.2.36-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.36-rc.0...@kcutils/error@0.2.36-rc.1) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
+## [0.2.36-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.35...@kcutils/error@0.2.36-rc.0) (2020-07-27)
+
+
+### Performance Improvements
+
+* **core:** change compiler of all utilities modules to tsc instead of webpack ([0b5b2ad](https://github.com/kamontat/kcutils/commit/0b5b2ad047cd59fdebf8a3c20930ec7e1612799d))
+
+
+
+
+
 ## [0.2.35](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.2.34...@kcutils/error@0.2.35) (2020-07-16)
 
 **Note:** Version bump only for package @kcutils/error

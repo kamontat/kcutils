@@ -3,6 +3,188 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.16](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.15...@kcutils/helper@0.5.0-rc.16) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.15](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.14...@kcutils/helper@0.5.0-rc.15) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.14](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.13...@kcutils/helper@0.5.0-rc.14) (2020-08-13)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.13](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.12...@kcutils/helper@0.5.0-rc.13) (2020-08-13)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.12](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.11...@kcutils/helper@0.5.0-rc.12) (2020-08-12)
+
+
+### Features
+
+* **utils:** migrate mergeObject and cleanObject from @kcutils/color to @kcutils/helper ([9aaa5dd](https://github.com/kamontat/kcutils/commit/9aaa5dd0305ebdf66cf5fa6792367bb5a131c6a1))
+
+
+### Performance Improvements
+
+* **utils:** change confuse includeSpecial to ignoreSpecial ([0d4b8b6](https://github.com/kamontat/kcutils/commit/0d4b8b6d16296eb9978fa6137d18f23b0a3c8fe8))
+
+
+
+
+
+# [0.5.0-rc.11](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.10...@kcutils/helper@0.5.0-rc.11) (2020-08-10)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.10](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.9...@kcutils/helper@0.5.0-rc.10) (2020-08-09)
+
+
+### Performance Improvements
+
+* **utils:** improve all isXXX() in generic ([b31a18b](https://github.com/kamontat/kcutils/commit/b31a18b416cd238912e972014ee94a8d27fc8dfe))
+
+
+
+
+
+# [0.5.0-rc.9](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.8...@kcutils/helper@0.5.0-rc.9) (2020-08-08)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.7...@kcutils/helper@0.5.0-rc.8) (2020-08-08)
+
+
+### Performance Improvements
+
+* **utils:** add null datatype to support is keyword of typescript ([04eaa87](https://github.com/kamontat/kcutils/commit/04eaa876521e21e0cd6082ef8f6520093a3e8fb1))
+
+
+
+
+
+# [0.5.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.6...@kcutils/helper@0.5.0-rc.7) (2020-08-06)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.5...@kcutils/helper@0.5.0-rc.6) (2020-08-05)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.4...@kcutils/helper@0.5.0-rc.5) (2020-08-04)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.3...@kcutils/helper@0.5.0-rc.4) (2020-08-01)
+
+
+### Performance Improvements
+
+* **model:** export optional typescript type as type ([a64a9a4](https://github.com/kamontat/kcutils/commit/a64a9a48bd533eb801a26a40e3e90a9ac33f9cea))
+
+
+
+
+
+# [0.5.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.2...@kcutils/helper@0.5.0-rc.3) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.5.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.1...@kcutils/helper@0.5.0-rc.2) (2020-07-28)
+
+
+### Performance Improvements
+
+* **utils:** json.deepMerge will not merge undefined and null value ([39395a4](https://github.com/kamontat/kcutils/commit/39395a4193b99779c2cfa56c6d12dcc9de50fbc6))
+
+
+
+
+
+# [0.5.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.5.0-rc.0...@kcutils/helper@0.5.0-rc.1) (2020-07-28)
+
+
+### Bug Fixes
+
+* **lint:** resolve sonar warning ([0c6856f](https://github.com/kamontat/kcutils/commit/0c6856f0b30e4150770059d09e8f9fd6371989d3))
+* **model:** import error cause all application to fails ([d0e0c51](https://github.com/kamontat/kcutils/commit/d0e0c5141097817f84824ec8c5452faeff98b060))
+
+
+### Performance Improvements
+
+* **model:** change piping type to defined type in models ([9bd6b29](https://github.com/kamontat/kcutils/commit/9bd6b29ad0ea21af5816469709fbae213b323f1f))
+
+
+
+
+
+# [0.5.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.19...@kcutils/helper@0.5.0-rc.0) (2020-07-27)
+
+
+### Bug Fixes
+
+* **model:** isDirectoryExist return incorrect results ([fb2ae95](https://github.com/kamontat/kcutils/commit/fb2ae95a8834a6f9c1d5f90eaf8b99b358e3fdab))
+* **utils:** deepMerge didn't handle when input data isn't object ([d0fbb46](https://github.com/kamontat/kcutils/commit/d0fbb461125422e75a86e8a8e7e52cdbc410cc6c))
+
+
+### Features
+
+* export all changes to external ([430a050](https://github.com/kamontat/kcutils/commit/430a050783eb4f40c9927128d4f54a562e076726))
+* **utils:** add equals for array ([78f9fb2](https://github.com/kamontat/kcutils/commit/78f9fb238774adcc393c15513c3a83f01b9b3707))
+* **utils:** add forceObject, equals, getObject and fix deepMerge with non obj in json ([3bb6180](https://github.com/kamontat/kcutils/commit/3bb6180a39ed0cdc288261680ee75a24120e620d))
+* **utils:** add new namespace for generic checker ([7464219](https://github.com/kamontat/kcutils/commit/7464219120fd9f37728d30d7c8db6499bb4fea91))
+
+
+### Performance Improvements
+
+* **core:** change compiler of all utilities modules to tsc instead of webpack ([0b5b2ad](https://github.com/kamontat/kcutils/commit/0b5b2ad047cd59fdebf8a3c20930ec7e1612799d))
+
+
+
+
+
 ## [0.4.19](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.4.18...@kcutils/helper@0.4.19) (2020-07-16)
 
 **Note:** Version bump only for package @kcutils/helper

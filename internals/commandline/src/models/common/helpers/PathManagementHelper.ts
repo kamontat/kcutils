@@ -7,13 +7,19 @@ export class PathManagementHelper {
     this.paths = paths;
   }
 
-  private loop(cb: (p: PathHelper) => string | undefined) {
+  add(...paths: string[]): this {
+    this.paths.push(...paths.map(p => new PathHelper(p)));
+
+    return this;
+  }
+
+  private loop<T>(cb: (p: PathHelper) => T | undefined) {
     return this.paths.reduce((p, c) => {
       if (p !== undefined) return p;
 
       const cmd = cb(c);
       return cmd ? cmd : p;
-    }, undefined as string | undefined);
+    }, undefined as T | undefined);
   }
 
   nodeCommand(command: string): string | undefined {
@@ -22,5 +28,9 @@ export class PathManagementHelper {
 
   ensure(...paths: string[]): string | undefined {
     return this.loop(c => c.pathEnsureSync(...paths));
+  }
+
+  searchPackageJsonSync(key: "dependencies" | "devDependencies", searchText: string): boolean {
+    return this.loop(c => c.searchPackageJsonSync(key, searchText)) ?? false;
   }
 }

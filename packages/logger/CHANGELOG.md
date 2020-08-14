@@ -3,6 +3,161 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-rc.16](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.15...@kcutils/logger@0.5.0-rc.16) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.15](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.14...@kcutils/logger@0.5.0-rc.15) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.14](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.13...@kcutils/logger@0.5.0-rc.14) (2020-08-13)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.13](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.12...@kcutils/logger@0.5.0-rc.13) (2020-08-13)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.12](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.11...@kcutils/logger@0.5.0-rc.12) (2020-08-12)
+
+
+### Performance Improvements
+
+* **model:** add logger id ([0dee87b](https://github.com/kamontat/kcutils/commit/0dee87b61ac9dc478241156627d6f62d70ec8240))
+* **model:** add updateLogger for update new logger instance ([8946977](https://github.com/kamontat/kcutils/commit/89469776f157a3a614951d46548545649ca2353b))
+
+
+
+
+
+# [0.5.0-rc.11](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.10...@kcutils/logger@0.5.0-rc.11) (2020-08-10)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.10](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.9...@kcutils/logger@0.5.0-rc.10) (2020-08-09)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.9](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.8...@kcutils/logger@0.5.0-rc.9) (2020-08-08)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.8](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.7...@kcutils/logger@0.5.0-rc.8) (2020-08-08)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.6...@kcutils/logger@0.5.0-rc.7) (2020-08-06)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.6](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.5...@kcutils/logger@0.5.0-rc.6) (2020-08-05)
+
+
+### Bug Fixes
+
+* **test:** all import should come from src folder ([7aec4c0](https://github.com/kamontat/kcutils/commit/7aec4c0dfcafcb1f0cdae5dd86c1ece698e6e22b))
+* **test:** coverage will not collect from tmp files ([ab47c5e](https://github.com/kamontat/kcutils/commit/ab47c5e040236deeec655cd2bc23c2e80f3ec3bf))
+* **test:** logger will not support stryker because it check color ([52f2f79](https://github.com/kamontat/kcutils/commit/52f2f797efaf98c9689c808028a193543bf7bc34))
+
+
+
+
+
+# [0.5.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.4...@kcutils/logger@0.5.0-rc.5) (2020-08-04)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.3...@kcutils/logger@0.5.0-rc.4) (2020-08-01)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.2...@kcutils/logger@0.5.0-rc.3) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.2](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.1...@kcutils/logger@0.5.0-rc.2) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.0-rc.0...@kcutils/logger@0.5.0-rc.1) (2020-07-28)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.5.0-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.21...@kcutils/logger@0.5.0-rc.0) (2020-07-27)
+
+
+### Features
+
+* **model:** add equals and toString method to clean all mess ([6a8f4ec](https://github.com/kamontat/kcutils/commit/6a8f4ec82cf462db4f5871c861690bdd05ab4393))
+
+
+### Performance Improvements
+
+* **core:** change compiler of all utilities modules to tsc instead of webpack ([0b5b2ad](https://github.com/kamontat/kcutils/commit/0b5b2ad047cd59fdebf8a3c20930ec7e1612799d))
+* **model:** export logger option ([85b5b27](https://github.com/kamontat/kcutils/commit/85b5b273584b99cb272c0422c3ae2a5db21568e3))
+* **model:** export logger options to external use ([4c9c775](https://github.com/kamontat/kcutils/commit/4c9c775bb1e498d11b582e3286357d1efa44e774))
+
+
+
+
+
 ## [0.4.21](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.4.20...@kcutils/logger@0.4.21) (2020-07-16)
 
 **Note:** Version bump only for package @kcutils/logger

@@ -1,7 +1,6 @@
 import { Configuration, RuleSetRule, ProvidePlugin, Plugin, ExternalsElement } from "webpack";
 
 import { ConfigBuilder } from "../models/ConfigBuilder";
-import { byDefault, getOrElse } from "../utils/helper";
 import { Config } from "../models/Config";
 
 type Mode = "production" | "development" | "none";
@@ -49,13 +48,13 @@ const webpack: ConfigBuilder<Options, Configuration> = {
     autoDetect.index =
       helper.on("parent").pathEnsureSync("src", "index.ts") ?? helper.on("parent").pathEnsureSync("src", "index.tsx");
 
-    const options = byDefault(defaultConfig, autoDetect, data);
+    const options = helper.general.byDefault(defaultConfig, autoDetect, data);
 
     const tsconfig = helper.on("parent").path("tsconfig.json");
 
-    const target = getOrElse(options.target, options.react ? "web" : "node");
-    const index = getOrElse(options.index, options.react ? "index.tsx" : "index.ts");
-    const library = getOrElse(options.output, base);
+    const target = helper.general.getOrElse(options.target, options.react ? "web" : "node");
+    const index = helper.general.getOrElse(options.index, options.react ? "index.tsx" : "index.ts");
+    const library = helper.general.getOrElse(options.output, base);
 
     const rules: RuleSetRule[] = [
       {

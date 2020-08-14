@@ -1,12 +1,16 @@
+import { generic } from "@kcutils/helper";
+
 type Checking<I, O> = (t: I) => O;
+
+const alwaysTrue = () => true;
 
 export class Optional<T> {
   private readonly data: T;
   private readonly empty: boolean;
 
   constructor(data: T | undefined | null, extra?: Checking<T, boolean>) {
-    const checking = extra ?? (() => true);
-    const exist = data !== undefined && data !== null && checking(data);
+    const checking = extra ?? alwaysTrue;
+    const exist = generic.isExist(data) && checking(data);
     this.empty = !exist;
     this.data = data as T;
   }
