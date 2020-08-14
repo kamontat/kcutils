@@ -97,29 +97,30 @@ export class Color extends WithLogger {
    * http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
    */
   getLuminance(): number {
-    const rgb = this.toRGB();
+    const rgb = this.toRGB("decimal");
+
     let R: number, G: number, B: number;
 
-    const RsRGB = rgb.r / 255;
-    const GsRGB = rgb.g / 255;
-    const BsRGB = rgb.b / 255;
+    if (rgb.r <= 0.03928) {
+      R = rgb.r / 12.92;
+    } else {
+      R = Math.pow((rgb.r + 0.055) / 1.055, 2.4);
+    }
 
-    if (RsRGB <= 0.03928) {
-      R = RsRGB / 12.92;
+    if (rgb.g <= 0.03928) {
+      G = rgb.g / 12.92;
     } else {
-      R = Math.pow((RsRGB + 0.055) / 1.055, 2.4);
+      G = Math.pow((rgb.g + 0.055) / 1.055, 2.4);
     }
-    if (GsRGB <= 0.03928) {
-      G = GsRGB / 12.92;
+
+    if (rgb.b <= 0.03928) {
+      B = rgb.b / 12.92;
     } else {
-      G = Math.pow((GsRGB + 0.055) / 1.055, 2.4);
+      B = Math.pow((rgb.b + 0.055) / 1.055, 2.4);
     }
-    if (BsRGB <= 0.03928) {
-      B = BsRGB / 12.92;
-    } else {
-      B = Math.pow((BsRGB + 0.055) / 1.055, 2.4);
-    }
-    return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+
+    const result = 0.2126 * R + 0.7152 * G + 0.0722 * B;
+    return rounding(result, 4);
   }
 
   isDark(): boolean {
@@ -175,12 +176,12 @@ export class Color extends WithLogger {
     return this.hasAlpha() ? `hsva(${hsv.h},${hsv.s},${hsv.v},${hsv.a})` : `hsv(${hsv.h},${hsv.s},${hsv.v})`;
   }
 
-  toHex(): HEX {
-    return rgbToHex(this.toRGB());
+  toHex(opts?: RGBHexOptions): HEX {
+    return rgbToHex(this.toRGB(), opts);
   }
 
   toHexString(opts?: RGBHexOptions): string {
-    return rgbToHex(this.toRGB(), opts).x;
+    return this.toHex(opts).x;
   }
 
   toNamed(): Named | undefined {
