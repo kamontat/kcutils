@@ -5,6 +5,7 @@ import { DataBuilderHelperString } from "../../models/common/DataBuilder";
 interface Settings extends CommandlineOption {
   scopes: string[];
   ignores: string[];
+  parameters: string[];
   override: string[] | false;
 }
 
@@ -30,6 +31,7 @@ export const lerna = (
         scopes,
         ignores,
         override: args.override ? args.arguments : false,
+        parameters: args.arguments,
       }) as Settings;
     },
   });
@@ -41,7 +43,7 @@ export const lerna = (
     const config = await helper.path.ensure("lerna.json");
     const lerna = helper.path.nodeCommand("lerna");
 
-    const args = Array.from(data.raw);
+    const args = Array.from(data.parameters).concat(data.raw);
     if (data.scopes.length > 0)
       args.push(
         ...data.scopes.reduce((p, c) => {
