@@ -156,14 +156,14 @@ export const rgbToHex = (rgb: RGB, opts?: RGBHexOptions): HEX => {
   };
 
   if (minify) {
-    if (duplicateChar(hex.r) && duplicateChar(hex.g) && duplicateChar(hex.b)) {
+    const checker = duplicateChar(hex.r) && duplicateChar(hex.g) && duplicateChar(hex.b);
+    const alphaChecker = hex.a ? duplicateChar(hex.a) : true;
+
+    if (checker && alphaChecker) {
       hex.r = hex.r.charAt(0);
       hex.g = hex.g.charAt(0);
       hex.b = hex.b.charAt(0);
-    }
-
-    if (hex.a && duplicateChar(hex.a)) {
-      hex.a = hex.a.charAt(0);
+      if (hex.a) hex.a = hex.a.charAt(0);
     }
   }
 
