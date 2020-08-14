@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0-rc.4](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.3...@kcinternal/commandline@0.9.0-rc.4) (2020-08-14)
+
+
+### Performance Improvements
+
+* add beta option builder ([40bbbfe](https://github.com/kamontat/kcutils/commit/40bbbfe0d2519cccee7db7ad3004260050e2871e))
+
+
+
+
+
 # [0.9.0-rc.3](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.2...@kcinternal/commandline@0.9.0-rc.3) (2020-08-10)
 
 **Note:** Version bump only for package @kcinternal/commandline
