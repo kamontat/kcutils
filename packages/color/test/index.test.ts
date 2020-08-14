@@ -1,6 +1,7 @@
-import { Color, RGB, ColorBuilder, NumberTypeString } from "../src";
-import { hexToRgb } from "../src/utils/converter";
+import { Color, RGB, ColorBuilder, NumberTypeString, Named, HSL, HSV, HEX } from "../src";
+import { hexToRgb, enforceHSL, enforceHSV, enforceRGB, enforceHex } from "../src/utils/converter";
 import { generic } from "@kcutils/helper";
+import { enforceNamed } from "../src/utils/converter/named";
 
 const color = () => ColorBuilder.random().get().setLoggerOption({ level: "warn" });
 
@@ -214,7 +215,137 @@ describe("Color object", () => {
       if (generic.isExist(rgb)) expect(() => new Color(rgb).getBrightness("error" as any)).toThrowError();
       else fail("cannot get rgb data from hex");
     });
+
+    test.each([
+      ["#6A5ACD", false],
+      ["#778899", true],
+    ])("Testcase E%#: color(%s) lightness is %s", (c, t) => {
+      const rgb = hexToRgb({ type: "hex", x: c });
+      if (generic.isExist(rgb)) expect(new Color(rgb).isLight()).toEqual(t);
+      else fail("cannot get rgb data from hex");
+    });
+
+    test.each([
+      ["#4169E1", true],
+      ["FF8C00", false],
+    ])("Testcase F%#: color(%s) lightness is %s", (c, t) => {
+      const rgb = hexToRgb({ type: "hex", x: c });
+      if (generic.isExist(rgb)) expect(new Color(rgb).isDark()).toEqual(t);
+      else fail("cannot get rgb data from hex");
+    });
+
+    test.each([
+      ["#000", 0],
+      ["0000FF", 0.0722],
+      ["9400D3", 0.1102],
+      ["#FF0000", 0.2126],
+      ["FF6347", 0.3073],
+      ["E9967A", 0.4054],
+      ["EEDD82", 0.7181],
+      ["FF0", 0.9278],
+      ["#FFF", 1],
+    ])("Testcase G%#: color(%s) luminance is %s", (h, r) => {
+      expect(ColorBuilder.fromHex(h).get().getLuminance()).toEqual(r);
+    });
   });
+
+  describe("duplicate color object", () => {
+    test("clone() should return new object", () => {
+      const c1 = color().setAlpha(1);
+      const c2 = c1.clone();
+
+      expect(c1.getId()).not.toEqual(c2.getId());
+
+      c1.setAlpha(0.05);
+
+      expect(c1.hasAlpha()).toEqual(true);
+      expect(c2.hasAlpha()).toEqual(false);
+    });
+  });
+
+  type TestcaseK = { named: undefined | Named; rgb: RGB; hsl: HSL; hsls: string; hsv: HSV; hsvs: string; hex: HEX };
+
+  const testcaseK: Record<string, TestcaseK> = {
+    k1: {
+      rgb: enforceRGB({ r: 51, g: 88, b: 190, type: ColorBuilder.numberType.number, a: 0.045 }),
+      named: undefined,
+      hsl: enforceHSL({ h: 0.62, s: 0.58, l: 0.48, a: 0.05 }),
+      hsls: "hsla(0.62,0.58,0.48,0.05)",
+      hsv: enforceHSV({ h: 0.62, s: 0.73, v: 0.75, a: 0.05 }),
+      hsvs: "hsva(0.62,0.73,0.75,0.05)",
+      hex: enforceHex({ x: "3358be0d", type: "hex8", a: 0.05 }),
+    },
+    k2: {
+      rgb: enforceRGB({ r: 90, g: 120, b: 250, type: ColorBuilder.numberType.number, a: 0.77 }),
+      named: undefined,
+      hsl: enforceHSL({ h: 0.63, s: 0.94, l: 0.67, a: 0.77 }),
+      hsls: "hsla(0.63,0.94,0.67,0.77)",
+      hsv: enforceHSV({ h: 0.63, s: 0.64, v: 0.98, a: 0.77 }),
+      hsvs: "hsva(0.63,0.64,0.98,0.77)",
+      hex: enforceHex({ x: "5a78fac4", type: "hex8", a: 0.77 }),
+    },
+    k3: {
+      rgb: enforceRGB({ r: 0, g: 0, b: 0, type: ColorBuilder.numberType.decimal, a: 2 }),
+      named: enforceNamed({ n: "black" }),
+      hsl: enforceHSL({ h: 0, s: 0, l: 0 }),
+      hsls: "hsl(0,0,0)",
+      hsv: enforceHSV({ h: 0, s: 0, v: 0 }),
+      hsvs: "hsv(0,0,0)",
+      hex: enforceHex({ x: "000f", type: "hex4", a: 1 }),
+    },
+    k4: {
+      rgb: enforceRGB({ r: 255, g: 255, b: 255, type: ColorBuilder.numberType.decimal, a: 0.55 }),
+      named: enforceNamed({ n: "white", a: 0.55 }),
+      hsl: enforceHSL({ h: 0, s: 0, l: 1, a: 0.55 }),
+      hsls: "hsla(0,0,1,0.55)",
+      hsv: enforceHSV({ h: 0, s: 0, v: 1, a: 0.55 }),
+      hsvs: "hsva(0,0,1,0.55)",
+      hex: enforceHex({ x: "ffffff8c", type: "hex8", a: 0.55 }),
+    },
+  };
+
+  const testcaseKGen = (tc: Record<string, TestcaseK>): [RGB, Named | undefined, HSL, string, HSV, string, HEX][] => {
+    return Object.keys(tc).reduce((arr, key) => {
+      const testcase: TestcaseK = tc[key];
+
+      arr.push([testcase.rgb, testcase.named, testcase.hsl, testcase.hsls, testcase.hsv, testcase.hsvs, testcase.hex]);
+      return arr;
+    }, [] as [RGB, Named | undefined, HSL, string, HSV, string, HEX][]);
+  };
+
+  describe.each(testcaseKGen(testcaseK))(
+    "Testcase K%#: %s convertion RGB(%p)",
+    (rgb, named, hsl, hsls, hsv, hsvs, hex) => {
+      const c = new Color(rgb);
+
+      test(`To named(${JSON.stringify(named)})`, () => {
+        expect(c.toNamed()).toEqual(named);
+        expect(c.toNamedString()).toEqual(named?.n ?? "");
+      });
+
+      test(`To HSL(${JSON.stringify(hsl)})`, () => {
+        expect(c.toHSL()).toEqual(hsl);
+      });
+
+      test(`To ${hsls}`, () => {
+        expect(c.toHSLString()).toEqual(hsls);
+      });
+
+      test(`To HSV(${JSON.stringify(hsv)})`, () => {
+        expect(c.toHSV()).toEqual(hsv);
+      });
+
+      test(`To ${hsvs}`, () => {
+        expect(c.toHSVString()).toEqual(hsvs);
+      });
+
+      test(`To HEX(${JSON.stringify(hex)})`, () => {
+        const opt = { alpha: true, minify: true };
+        expect(c.toHex(opt)).toEqual(hex);
+        expect(c.toHexString(opt)).toEqual(hex.x);
+      });
+    }
+  );
 
   test.each([
     [{ type: "number", r: 24, g: 12, b: 100 } as RGB, "rgb(24,12,100)"],
