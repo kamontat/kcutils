@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0...@kcutils/color@0.3.0) (2020-08-14)
+
+
+### Features
+
+* upgrade dependencies version ([d89d18b](https://github.com/kamontat/kcutils/commit/d89d18b8e1b0bde55739ea2ae5367da83788b03d))
+
+
+
+
+
 # [0.2.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.15...@kcutils/color@0.2.0) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/color
