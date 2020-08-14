@@ -93,6 +93,18 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@kcutils/helper@0.5.0-rc.16":
+  version "0.5.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-0.5.0-rc.16.tgz#65047a5aab944de7f7d42834e27a597ea8bd5c33"
+  integrity sha512-S6e0VYbhwLhDUVJ8E/GE4DlCYzrIq0UdjIHtFFMQv9BbtFEEw0zblGNedpdawR0gWmei9HWSziZjoHARgyNlOw==
+
+"@kcutils/models@0.3.0-rc.15":
+  version "0.3.0-rc.15"
+  resolved "https://registry.yarnpkg.com/@kcutils/models/-/models-0.3.0-rc.15.tgz#8e90c45e94b90719776dbf68a1b4853ac844224e"
+  integrity sha512-Hsf6Wg+D2zCYFVi0/aNZjBm+oGgU5m9HpzE0/ro3BpoUtRNFWvsCX9wE/hIZ+cV99fQ2tTxg4tDg5iqWPqaMGA==
+  dependencies:
+    "@kcutils/helper" "0.5.0-rc.16"
+
 "@kcutils/testkit@0.2.0-rc.7":
   version "0.2.0-rc.7"
   resolved "https://registry.yarnpkg.com/@kcutils/testkit/-/testkit-0.2.0-rc.7.tgz#6ad249e38b07112eefd89b883cb65079b4aaa068"
