@@ -26,6 +26,7 @@ import {
 import { generic } from "@kcutils/helper";
 import { enforceNamed } from "../utils/converter/named";
 import { NumberTypeString } from "..";
+import { enforceHex } from "../utils/converter";
 
 const rawToInput = (r: RawInput, t: Type): Input => {
   return Object.assign({ type: t } as NumberType, r) as Input;
@@ -68,6 +69,11 @@ export class ColorBuilder {
 
   static fromNumber<I extends RawInput>(input: I, alpha: number = -1): ColorBuilder {
     return ColorBuilder.fromType(input, "number", alpha);
+  }
+
+  static fromHex(input: string, alpha?: number): ColorBuilder {
+    const rgb = inputToRGB(enforceHex({ x: input, a: alpha }));
+    return new ColorBuilder(rgb && new Color(rgb));
   }
 
   static fromNamed(input: string, alpha?: number): ColorBuilder {
