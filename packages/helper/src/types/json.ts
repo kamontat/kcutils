@@ -39,8 +39,8 @@ export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, k
   if (isObject(o1) && isObject(o2)) {
     // checking all keys
     if (keys.length <= 0) {
-      const keys1 = Object.keys(o1 as T);
-      const keys2 = Object.keys(o2 as T);
+      const keys1 = Object.keys(o1);
+      const keys2 = Object.keys(o2);
 
       if (keys1.length !== keys2.length) return false; // force not equals when keys is not equals
       if (keys1.length <= 0 && keys2.length <= 0) return true; // force equals when empty object passed
@@ -49,8 +49,8 @@ export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, k
       // checking only specify keys
     } else {
       return keys.every(key => {
-        const value1: any = getObject(o1 as T, key);
-        const value2: any = getObject(o2 as T, key);
+        const value1: any = getObject(o1, key);
+        const value2: any = getObject(o2, key);
 
         // recusive object again
         if (isObject(value1) && isObject(value2))
@@ -148,7 +148,7 @@ export const deepMerge = <T extends NestedJson, U extends NestedJson>(
       const oVal = obj[key];
 
       if (Array.isArray(pVal) && Array.isArray(oVal)) {
-        prev[key] = pVal.concat(...oVal) as any;
+        prev[key] = pVal.concat(...oVal);
       } else if (isObject(pVal) && isObject(oVal) && size > 0) {
         prev[key] = deepMerge(pVal as NestedJson, oVal as NestedJson, size - 1) as any;
       } else {
