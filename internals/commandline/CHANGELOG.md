@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.11.0...@kcinternal/commandline@0.11.1) (2020-08-14)
+
+
+### Bug Fixes
+
+* **utils:** root-run insert duplicate parameters to commandline ([addfa85](https://github.com/kamontat/kcutils/commit/addfa857dabd5f8989bc15d7bbb8c286a56653bc))
+
+
+
+
+
 # [0.11.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.2...@kcinternal/commandline@0.11.0) (2020-08-14)
 
 
