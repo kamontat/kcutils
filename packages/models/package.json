@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/models",
-  "version": "0.3.0-rc.15",
+  "version": "0.3.1",
   "description": "Additional DataType and Models",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
