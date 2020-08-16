@@ -1,4 +1,5 @@
 import { string } from "../src";
+import { MaskOption } from "../src/types/string";
 
 describe("String Helper", () => {
   describe("Padding start", () => {
@@ -67,6 +68,18 @@ describe("String Helper", () => {
       ["not-empty", true],
     ])("when input is '%s' should return %s", (a, expected) => {
       expect(string.isNotEmpty(a)).toBe(expected);
+    });
+  });
+
+  describe("Mask string", () => {
+    test.each([
+      ["very very long string", {} as Partial<MaskOption>, "ver***************ing"],
+      ["s", {} as Partial<MaskOption>, "*"],
+      ["hello", { front: 100, back: 0 } as Partial<MaskOption>, "hello"],
+      ["hello", { front: 0, back: 100 } as Partial<MaskOption>, "hello"],
+      [undefined, {} as Partial<MaskOption>, ""],
+    ])("Mask '%s' with options %p returns '%s'", (input, option, output) => {
+      expect(string.mask(input, option)).toEqual(output);
     });
   });
 });
