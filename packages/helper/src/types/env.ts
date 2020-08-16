@@ -1,3 +1,5 @@
+import { generic } from "..";
+
 type Data = string;
 
 const check = (...d: Data[]) => {
@@ -29,4 +31,10 @@ export const setEnv = (name: string, value: string | undefined): string | undefi
   const old = process.env[name];
   process.env[name] = value;
   return old;
+};
+
+export const read = (name: string, def: string): string => {
+  const env = process.env[name];
+  if (generic.isExist(env)) return env;
+  else return def;
 };

@@ -93,6 +93,19 @@ describe("Environment Helper", () => {
     setCI(old);
   });
 
+  test("read unknown variable in environment", () => {
+    expect(env.read("UNKNOWN", "default")).toEqual("default");
+  });
+
+  test("read exist variable in environment", () => {
+    const envName = "HELLO_WORLD";
+
+    const old = env.setEnv(envName, "testing");
+    expect(env.read(envName, "default")).toEqual("testing");
+
+    env.setEnv(envName, old);
+  });
+
   test("can set environment value", () => {
     process.env.SOMETHING_NOT_RELATE = "this";
     expect(process.env.SOMETHING_NOT_RELATE).toEqual("this");
