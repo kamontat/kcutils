@@ -268,7 +268,7 @@ export class Logger<T extends string = ""> {
    * disable color
    */
   uncolor(): this {
-    this._option.color = true;
+    this._option.color = false;
     this._color.level = 0;
     return this;
   }
