@@ -26,7 +26,7 @@
     "**/*.json"
   ],
   "scripts": {
-    "build": "icompiler-tsc",
+    "build": "icompiler-tsc -- --skipLibCheck",
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester"
