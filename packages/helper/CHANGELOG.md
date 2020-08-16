@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.7.1...@kcutils/helper@0.8.0) (2020-08-16)
+
+
+### Features
+
+* **utils:** add new method in string, string.mask(string, options) ([b077e07](https://github.com/kamontat/kcutils/commit/b077e07d123aa366e0ac018fd39c30628d164a3a))
+
+
+
+
+
 ## [0.7.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.7.0...@kcutils/helper@0.7.1) (2020-08-16)
 
 **Note:** Version bump only for package @kcutils/helper
