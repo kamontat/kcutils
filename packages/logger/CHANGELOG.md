@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.5...@kcutils/logger@0.6.0) (2020-08-16)
+
+
+### Bug Fixes
+
+* **model:** default color option should be true ([ffe1883](https://github.com/kamontat/kcutils/commit/ffe18837a1ebb9d33f3fa34f82e66854b561f06a))
+* **test:** update test to support new generic value of logger level ([0fd1bf6](https://github.com/kamontat/kcutils/commit/0fd1bf640e7ee6df2e16f8d95277ebc8067e5f16))
+
+
+### Features
+
+* **model:** Logger option now support environment variable prefix with KCUTILS_ ([b6707ce](https://github.com/kamontat/kcutils/commit/b6707ce0c3a98a795feb2e6b76e1119086d65d10))
+
+
+### Performance Improvements
+
+* **model:** update LoggerLevels only accepts only Levels string ([a054eea](https://github.com/kamontat/kcutils/commit/a054eeaf21103c87e4163eee99b98c3bb9fe4247))
+* **service:** logger level able to custom level name base on generic value ([84326ad](https://github.com/kamontat/kcutils/commit/84326ade903e00fbfc1df30653f8a3f13a8f6a4e))
+
+
+
+
+
 ## [0.5.5](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.5.4...@kcutils/logger@0.5.5) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/logger

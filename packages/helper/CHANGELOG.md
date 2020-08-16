@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.6.4...@kcutils/helper@0.7.0) (2020-08-16)
+
+
+### Features
+
+* **utils:** env.read(name, default) will return environment value or default ([c8846a3](https://github.com/kamontat/kcutils/commit/c8846a32474407b28065e3a797eadba8c282b17a))
+
+
+
+
+
 ## [0.6.4](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.6.3...@kcutils/helper@0.6.4) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/helper
