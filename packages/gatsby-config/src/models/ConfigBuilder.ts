@@ -58,7 +58,7 @@ export class ConfigBuilder<M extends StringRecord<any> = StringRecord<any>> exte
   }
 
   disablePlugin<K extends keyof M, O extends M[K]>(key: K, _options?: O): ConfigBuilder<M> {
-    console.log(`disabled: ${key}`);
+    this.logger.print("info", `disabled plugin: ${key}`);
 
     if (generic.noExist(this.config.plugins)) return this;
     if (this.config.plugins.length <= 0) return this;
