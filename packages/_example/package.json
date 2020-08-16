@@ -27,7 +27,7 @@
     "**/*.json"
   ],
   "scripts": {
-    "build": "icompiler-tsc",
+    "build": "icompiler-webpack",
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester"

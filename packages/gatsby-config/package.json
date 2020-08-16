@@ -38,6 +38,9 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "*",
-    "@kcinternal/configuration": "*"
+    "@kcinternal/configuration": "*",
+    "@types/react": "16.9.46",
+    "@types/react-dom": "16.9.8",
+    "gatsby": "2.22.17"
   }
 }
