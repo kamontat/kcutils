@@ -422,7 +422,7 @@ describe("logger modules", () => {
       const mockWriteStreamFn2 = jest.fn();
       const mockStream2 = new MockStream(mockWriteStreamFn2);
 
-      const old = new LoggerLevelBuilder(level, name, mockStream);
+      const old = new LoggerLevelBuilder<string>(level, name, mockStream);
 
       expect(old.level).toEqual(level);
       expect(old.name).toEqual(name);
