@@ -13,7 +13,7 @@ export const options: StrictOption = {
   json: env.read(prefix + "JSON", "false") === "true",
   interactive: env.read(prefix + "INTERACTIVE", "false") === "true",
   disabled: env.read(prefix + "DISABLED", "false") === "true",
-  color: env.read(prefix + "COLORS", "false") === "true",
+  color: env.read(prefix + "COLORS", "true") === "true",
   level: toLevel(env.read(prefix + "LEVEL", "info")).name,
   datetime: "date",
   censor: () => "secure",
