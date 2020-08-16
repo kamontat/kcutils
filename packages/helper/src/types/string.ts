@@ -1,3 +1,5 @@
+import { generic } from "..";
+
 export const padEnd = (str: string, length: number, fill: string = " "): string => {
   if (str.length >= length) return str.slice(0, length);
   return str.padEnd(length, fill);
@@ -9,8 +11,6 @@ export const padStart = (str: string, size: number, fill: string = " "): string 
 };
 
 export const isNotEmpty = (str: string | undefined | null): str is string => {
-  if (str === undefined) return false;
-  if (str === null) return false;
-
-  return str !== "";
+  if (generic.isExist(str)) return str !== "";
+  else return false;
 };
