@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.2.0...@kcutils/gatsby-config@0.2.1) (2020-08-16)
+
+
+### Performance Improvements
+
+* **model:** change console.log to use @kcutils/logger instead ([37f3ed9](https://github.com/kamontat/kcutils/commit/37f3ed9d6758e8e5d10609fb8d246ed5c3521dc2))
+
+
+
+
+
 # 0.2.0 (2020-08-16)
 
 
