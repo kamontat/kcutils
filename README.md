@@ -39,6 +39,7 @@ This is a utilities projects for generic usecase
 - [color][kcutils_color_gh]              - Color utilities and convertion
 - [react-testkit][kcutils_react_test_gh] - Enzyme support and React utilities function for react
 - [testkit][kcutils_test_gh]             - Stryker support with default configuration
+- [gatsby-config][kcutils_gsb_conf_gh]   - Gatsby Configuration Builder for Typescript project
 
 ### Private
 
@@ -82,3 +83,4 @@ This project hold CC-BY-SA 4.0 more information found [here](./LICENSE)
 [kcutils_color_gh]: ./packages/color
 [kcutils_react_test_gh]: ./packages/react-testkit
 [kcutils_test_gh]: ./packages/testkit
+[kcutils_gsb_conf_gh]: ./packages/gatsby-config
