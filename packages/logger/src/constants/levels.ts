@@ -1,6 +1,6 @@
 import { stream } from "@kcutils/helper";
 
-import { LoggerLevelBuilder, LoggerLevel } from "../models/logger/LoggerLevel";
+import { LoggerLevelBuilder, LoggerLevel, Levels } from "../models/logger/LoggerLevel";
 
 export const silent: LoggerLevel = new LoggerLevelBuilder(0, "silent", stream.null);
 export const error: LoggerLevel = new LoggerLevelBuilder(1, "error", process.stderr);
@@ -19,9 +19,10 @@ const _levels = new Map([
 ]);
 
 export const levels = Array.from(_levels.values());
-export type Levels = "silent" | "error" | "warn" | "info" | "debug" | "silly";
 
 export const toLevel = (level: string): LoggerLevel => {
   if (_levels.has(level)) return _levels.get(level) as LoggerLevel;
   else return info;
 };
+
+export type { Levels };
