@@ -43,6 +43,7 @@
     "root-release": "bin/root/release.js",
     "root-tester": "bin/root/tester.js",
     "icompiler-tsc": "bin/compiler-tsc.js",
+    "icompiler-babel": "bin/compiler-babel.js",
     "icompiler-webpack": "bin/compiler-webpack.js",
     "icleaner": "bin/cleaner.js",
     "itester": "bin/tester.js",
