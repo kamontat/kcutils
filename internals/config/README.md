@@ -7,7 +7,15 @@
 
 <!-- BODY SECTION -->
 
-...
+## Webpack config
+
+Required: 
+1. 2 libraries installed at root project `webpack` and `webpack-cli`
+
+```javascript
+const { webpack } = require("@kcinternal/configuration");
+module.exports = webpack(__dirname).build();
+```
 
 <!-- IMAGE SECTION -->
 
