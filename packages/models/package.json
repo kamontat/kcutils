@@ -38,7 +38,7 @@
     "model"
   ],
   "scripts": {
-    "build": "icompiler-tsc",
+    "build": "icompiler-babel",
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester"
