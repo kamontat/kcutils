@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.11.1...@kcinternal/commandline@0.12.0) (2020-08-17)
+
+
+### Bug Fixes
+
+* **model:** export Multiple runner ([910f2a5](https://github.com/kamontat/kcutils/commit/910f2a58e9f5b06d4951ac025aaf25ceff64b6a8))
+
+
+### Features
+
+* **core:** add icompiler-babel with support generate typescript .d.ts files ([4ceca90](https://github.com/kamontat/kcutils/commit/4ceca900460b00836af4c24b78e82bee90ab90f0))
+* **model:** add MultiRunner to support run runner by 1 command ([5cd4a2e](https://github.com/kamontat/kcutils/commit/5cd4a2eb8b49f836744e166dcf18851396604c70))
+
+
+### Performance Improvements
+
+* **utils:** update searchPackageJsonSync() to support all type and regex string ([a3f7f20](https://github.com/kamontat/kcutils/commit/a3f7f20d93fda8b93bfbe7b177bd44fe5c80ef6d))
+
+
+
+
+
 ## [0.11.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.11.0...@kcinternal/commandline@0.11.1) (2020-08-14)
 
 

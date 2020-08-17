@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.10...@kcutils/models@0.4.0) (2020-08-17)
+
+
+### Features
+
+* **core:** test compile module by babel ([2ba8d3f](https://github.com/kamontat/kcutils/commit/2ba8d3f64f3ec5850a67d032ec9e1757e3de8dcf))
+* add babel and dependencies ([3845df1](https://github.com/kamontat/kcutils/commit/3845df17105432a6fc3fd1fdf9b1d7d79a11951e))
+
+
+
+
+
 ## [0.3.10](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.9...@kcutils/models@0.3.10) (2020-08-16)
 
 **Note:** Version bump only for package @kcutils/models

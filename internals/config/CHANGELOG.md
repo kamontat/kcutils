@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.14...@kcinternal/configuration@0.7.0) (2020-08-17)
+
+
+### Features
+
+* **utils:** add babel configuration generator ([609b942](https://github.com/kamontat/kcutils/commit/609b94226c30b4759ca891cfa6d2e8c832959618))
+
+
+
+
+
 ## [0.6.14](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.13...@kcinternal/configuration@0.6.14) (2020-08-14)
 
 **Note:** Version bump only for package @kcinternal/configuration

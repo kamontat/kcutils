@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.8.0...@kcutils/helper@0.8.1) (2020-08-17)
+
+
+### Bug Fixes
+
+* **lint:** compile error due to lint check ([f6471f7](https://github.com/kamontat/kcutils/commit/f6471f7d6df2fe2332197dd68710be87f00218da))
+
+
+
+
+
 # [0.8.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.7.1...@kcutils/helper@0.8.0) (2020-08-16)
 
 
