@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.7.0...@kcinternal/configuration@0.7.1) (2020-08-18)
+
+
+### Performance Improvements
+
+* **model:** add support babel runtime in babel configuration ([11ce1f5](https://github.com/kamontat/kcutils/commit/11ce1f5fb64f9f67aa8dee12140cac4f05bb04f1))
+
+
+
+
+
 # [0.7.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.14...@kcinternal/configuration@0.7.0) (2020-08-17)
 
 

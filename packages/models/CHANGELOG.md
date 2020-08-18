@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.0...@kcutils/models@0.4.1) (2020-08-18)
+
+
+### Bug Fixes
+
+* **core:** revert compiler from babel back to tsc ([116332d](https://github.com/kamontat/kcutils/commit/116332d306150ec6a1ef41a209d2a1ce7f961f06))
+
+
+
+
+
 # [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.10...@kcutils/models@0.4.0) (2020-08-17)
 
 
