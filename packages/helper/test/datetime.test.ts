@@ -77,15 +77,15 @@ describe("Datetime", () => {
   });
 
   test.each([
-    [new Date("2011/05/01"), 1304182800000, undefined],
-    ["2011/05/01", 1304182800000, undefined],
-    [new Date("2011/05/01"), 1304182800000, "millisecond" as datetime.TimestampType],
-    [new Date("2011/05/01"), 1304182800, "second" as datetime.TimestampType],
+    [new Date("2011/05/01 GMT+0700"), 1304182800000, undefined],
+    ["2011/05/01 GMT+0700", 1304182800000, undefined],
+    [new Date("2011/05/01 GMT+0700"), 1304182800000, "millisecond" as datetime.TimestampType],
+    [new Date("2011/05/01 GMT+0700"), 1304182800, "second" as datetime.TimestampType],
 
-    [new Date("2012/11/11 12:05:10"), 1352610310000, "millisecond" as datetime.TimestampType],
-    ["2012/11/11 12:05:12", 1352610312, "second" as datetime.TimestampType],
-    [new Date("2012/05/19 00:00:01"), 1337360401000, "millisecond" as datetime.TimestampType],
-    [new Date("2012/05/18 00:00:01"), 1337274001, "second" as datetime.TimestampType],
+    [new Date("2012/11/11 12:05:10 GMT+0700"), 1352610310000, "millisecond" as datetime.TimestampType],
+    ["2012/11/11 12:05:12 GMT+0700", 1352610312, "second" as datetime.TimestampType],
+    [new Date("2012/05/19 00:00:01 GMT+0700"), 1337360401000, "millisecond" as datetime.TimestampType],
+    [new Date("2012/05/18 00:00:01 GMT+0700"), 1337274001, "second" as datetime.TimestampType],
     [1258192312412, 1258192312412, "millisecond" as datetime.TimestampType],
     [1337274001000, 1337274001, "second" as datetime.TimestampType],
   ])("convert Date(%s) to timestamp(%s, %s)", (date, timestamp, type) => {
@@ -100,12 +100,12 @@ describe("Datetime", () => {
     ["NaN", undefined],
 
     [-1, new Date("Thu Jan 01 1970 06:59:59 GMT+0700 (Indochina Time)")],
-    [1304182800000, new Date("2011/05/01")],
-    [1352610310000, new Date("2012/11/11 12:05:10")],
-    [1337360401000, new Date("2012/05/19 00:00:01")],
-    [1352610312000, new Date("2012/11/11 12:05:12")],
-    ["1352610312000", new Date("2012/11/11 12:05:12")],
-  ])("convert Timestamp(%s, %s) to Date(%s)", (timestamp, date) => {
+    [1304182800000, new Date("2011/05/01 GMT+0700")],
+    [1352610310000, new Date("2012/11/11 12:05:10 GMT+0700")],
+    [1337360401000, new Date("2012/05/19 00:00:01 GMT+0700")],
+    [1352610312000, new Date("2012/11/11 12:05:12 GMT+0700")],
+    ["1352610312000", new Date("2012/11/11 12:05:12 GMT+0700")],
+  ])("convert Timestamp(%s) to Date(%s)", (timestamp, date) => {
     const d = datetime.getDateFromTimestamp(timestamp);
     if (d === undefined && date !== undefined) return fail(`expected(${date}) but received undefined`);
     else if (d !== undefined && date === undefined) return fail(`expected(undefined) but received ${d}`);
