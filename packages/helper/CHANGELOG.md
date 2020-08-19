@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.8.2...@kcutils/helper@0.9.0) (2020-08-19)
+
+
+### Bug Fixes
+
+* **test:** update timezone in testcase ([6c3beb0](https://github.com/kamontat/kcutils/commit/6c3beb0005ea6935a52ff0b96b4f8b8ecdaa088e))
+
+
+### Features
+
+* **utils:** add datetime namespace with many helper methods ([4d742cc](https://github.com/kamontat/kcutils/commit/4d742cc5d6658997970b3ef00369babc342c58b6))
+
+
+
+
+
 ## [0.8.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.8.1...@kcutils/helper@0.8.2) (2020-08-18)
 
 **Note:** Version bump only for package @kcutils/helper
