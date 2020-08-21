@@ -33,7 +33,7 @@
     "eslint-plugin-react": "7.20.6",
     "jest": "26.4.0",
     "jest-html-reporters": "2.0.2",
-    "jest-junit": "11.0.1",
+    "jest-junit": "11.1.0",
     "lerna": "3.22.1",
     "prettier": "2.0.5",
     "ts-jest": "26.2.0",
