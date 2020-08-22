@@ -59,11 +59,11 @@ describe("RGB to RGB", () => {
     expect(defaultRGB).toEqual({ a: 1, r: 0, g: 0, b: 0, type: "number" } as RGB);
   });
 
-  test("convert unknown type object cause exception", () => {
+  test("convert unknown type object will return default value", () => {
     expect(rgbToRgb(undefined as any, type.decimal)).toEqual(enforceRGB({ type: type.decimal }));
   });
 
-  test("convert empty type object will throw exception", () => {
+  test("convert empty type object will return default value", () => {
     expect(rgbToRgb({} as RGB, type.percent)).toEqual(enforceRGB({ type: type.percent }));
   });
 

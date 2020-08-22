@@ -18,12 +18,12 @@ describe("HSV color", () => {
     expect(converter.enforceHSV(undefined)).toEqual(definedHSV());
   });
 
-  test("convert unknown type object cause exception", () => {
-    expect(() => converter.hsvToHsv(undefined as any, type.decimal)).toThrowError();
+  test("convert unknown type object will return default value", () => {
+    expect(converter.hsvToHsv(undefined as any, type.decimal)).toEqual(converter.enforceHSV({ type: type.decimal }));
   });
 
-  test("convert empty type object will throw exception", () => {
-    expect(() => converter.hsvToHsv({} as HSV, type.percent)).toThrowError();
+  test("convert empty type object will return default value", () => {
+    expect(converter.hsvToHsv({} as HSV, type.decimal)).toEqual(converter.enforceHSV({ type: type.decimal }));
   });
 
   test("change hsv with default type", () => {
