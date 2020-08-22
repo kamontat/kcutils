@@ -80,6 +80,10 @@ export class Color extends WithLogger {
     return this.id;
   }
 
+  getAlpha(): number {
+    return this.rgb?.a ?? 1;
+  }
+
   /**
    * http://www.w3.org/TR/AERT#color-contrast
    */
