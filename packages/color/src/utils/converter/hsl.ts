@@ -35,7 +35,7 @@ export const roundedHSL = (hsl: HSL, digit?: number): HSL => {
  * @param hsl any type of hsl object
  * @returns number of hsl object
  */
-export const hslToHsl = (hsl: HSL, type: NumberTypeString = "number"): HSL => {
+export const hslToHsl = (hsl: Partial<HSL>, type: NumberTypeString = "number"): HSL => {
   const _hsl = enforceHSL(hsl);
   if (isType(_hsl, type)) return _hsl;
 
