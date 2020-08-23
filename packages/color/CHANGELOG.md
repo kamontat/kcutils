@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.11](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.10...@kcutils/color@0.3.11) (2020-08-22)
+
+
+### Bug Fixes
+
+* **test:** update hsvToHsv() not throw exception anymore ([9aa6322](https://github.com/kamontat/kcutils/commit/9aa63225a3da8cc2bc8e8d335e3549f84e433593))
+* **utils:** update 'hsvToHsv' and 'hslToHsl' to support partial object ([b6d7a10](https://github.com/kamontat/kcutils/commit/b6d7a101b239351e3d8fe81e36bda88a76f846d6))
+
+
+### Performance Improvements
+
+* **model:** add getAlpha in Color models ([59bc1be](https://github.com/kamontat/kcutils/commit/59bc1becb50d9f57c65fe6d1ecb74a9c8a9d58b5))
+
+
+
+
+
 ## [0.3.10](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.9...@kcutils/color@0.3.10) (2020-08-19)
 
 **Note:** Version bump only for package @kcutils/color
