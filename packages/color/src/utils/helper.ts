@@ -52,9 +52,9 @@ export const percentage = (percent: number, opts?: Partial<BetweenOption>, nopar
  * @param a string or number
  * @returns float number in range [0, 1]
  */
-export const boundAlpha = (a: number): number => {
+export const boundAlpha = (a: number, digit: number = 6): number => {
   if (isNaN(a) || !isFinite(a) || a < 0 || a > 1) return 1;
-  else return Math.abs(rounding(a, 2));
+  else return Math.abs(rounding(a, digit));
 };
 
 /**
