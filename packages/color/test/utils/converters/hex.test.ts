@@ -20,7 +20,7 @@ describe("Hex color", () => {
 
   test.each([
     [definedHex(), enforceRGB()],
-    [definedHex({ a: 0.6659 }), enforceRGB({ a: 0.67 })],
+    [definedHex({ a: 0.6659417 }), enforceRGB({ a: 0.665942 })],
 
     [definedHex({ a: 20 }), enforceRGB({ a: 1 })],
     [definedHex({ type: "hex6" }), enforceRGB()],

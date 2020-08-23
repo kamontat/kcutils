@@ -41,8 +41,8 @@ describe("HSV color", () => {
 
   test.each([
     [
-      definedHSV({ a: 0.5123, h: 0.3155, s: 0.1142, v: 0.33, type: type.decimal }),
-      definedHSV({ a: 0.51, h: 0.316, s: 0.114, v: 0.33, type: type.decimal }),
+      definedHSV({ a: 0.5123456, h: 0.3155, s: 0.1142, v: 0.33, type: type.decimal }),
+      definedHSV({ a: 0.512346, h: 0.316, s: 0.114, v: 0.33, type: type.decimal }),
     ],
     [
       definedHSV({ h: 123, s: 222.45, v: 8.5102, type: type.number }),
@@ -53,7 +53,7 @@ describe("HSV color", () => {
   });
 
   test.each([
-    [definedHSV({ a: 0.59481, type: type.percent }), 3, definedHSV({ a: 0.59, type: type.percent })],
+    [definedHSV({ a: 0.59481, type: type.percent }), 3, definedHSV({ a: 0.59481, type: type.percent })],
     [definedHSV({ a: 100, type: type.number }), 3, definedHSV({ a: 1, type: type.number })],
     [
       definedHSV({ a: 0.2, h: 0.3155, s: 0.1142, v: 0.33, type: type.decimal }),
@@ -81,7 +81,7 @@ describe("HSV color", () => {
     [enforceHSV({ h: 70, s: 20, v: 30, type: "percent" }), enforceRGB({ r: 76.5, g: 71.91, b: 61.2 })],
 
     [enforceHSV({ h: 300, s: 120, v: 100, a: 100, type: "number" }), enforceRGB({ r: 255, g: 211.65, b: 0, a: 1 })],
-    [enforceHSV({ h: 0.95, s: 0.65, v: 0.6, a: 0.003 }), enforceRGB({ r: 153, g: 148.03, b: 53.55, a: 0 })],
+    [enforceHSV({ h: 0.95, s: 0.65, v: 0.6, a: 0.003 }), enforceRGB({ r: 153, g: 148.03, b: 53.55, a: 0.003 })],
   ])("convert HSV(%p) to RGB(%p)", (hsv, rgb) => {
     expect(converter.hsvToRgb(hsv)).toEqual(rgb);
   });
