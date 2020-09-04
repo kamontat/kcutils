@@ -44,7 +44,7 @@
   "devDependencies": {
     "@kcinternal/commandline": "0.12.0",
     "@types/eslint": "7.2.2",
-    "@types/webpack": "4.41.21",
+    "@types/webpack": "4.41.22",
     "jest-html-reporters": "2.0.2"
   }
 }
