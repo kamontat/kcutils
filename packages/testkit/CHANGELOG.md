@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.13](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.12...@kcutils/testkit@0.3.13) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
 ## [0.3.12](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.11...@kcutils/testkit@0.3.12) (2020-09-05)
 
 **Note:** Version bump only for package @kcutils/testkit

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.2...@kcinternal/configuration@0.8.3) (2020-09-05)
+
+
+### Bug Fixes
+
+* **core:** add webpack to avoid runtime error ([7ee99c5](https://github.com/kamontat/kcutils/commit/7ee99c5b2b786002f26cba366f49b9081361a64a))
+
+
+
+
+
 ## [0.8.2](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.1...@kcinternal/configuration@0.8.2) (2020-09-05)
 
 **Note:** Version bump only for package @kcinternal/configuration

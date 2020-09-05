@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/color",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "description": "Color Transformer",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -43,12 +43,12 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/error": "0.4.16",
-    "@kcutils/helper": "0.9.6",
-    "@kcutils/logger": "0.6.11"
+    "@kcutils/error": "0.4.17",
+    "@kcutils/helper": "0.9.7",
+    "@kcutils/logger": "0.6.12"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.13.2",
-    "@kcinternal/configuration": "0.8.2"
+    "@kcinternal/configuration": "0.8.3"
   }
 }
