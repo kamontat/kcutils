@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/logger",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "description": "Another Logger Service",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -44,12 +44,12 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.9.3",
+    "@kcutils/helper": "0.9.4",
     "chalk": "4.1.0",
     "figures": "3.2.0"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.12.0",
-    "@kcinternal/configuration": "0.7.4"
+    "@kcinternal/commandline": "0.13.0",
+    "@kcinternal/configuration": "0.8.0"
   }
 }
