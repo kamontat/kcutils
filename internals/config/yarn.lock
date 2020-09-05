@@ -320,10 +320,10 @@ is-path-inside@^3.0.1:
   resolved "https://registry.yarnpkg.com/is-path-inside/-/is-path-inside-3.0.2.tgz#f5220fc82a3e233757291dddc9c5877f2a1f3017"
   integrity sha512-/2UGPSgmtqwo1ktx8NDHjuPwZWmHhO+gj0f93EkhLB5RgW9RZevWYYlIkS6zePc6U2WpOdQYIwHe9YC4DWEBVg==
 
-jest-html-reporters@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.0.2.tgz#1d11ecaf5392a89ba858676b4777a757ba2b0db2"
-  integrity sha512-XegLoHryJcxelU+E93dwWH5Rq1dX1AZxJNZb4b5Awjk+CvEOy0Oa2GjmCGB1NWTyfcWoTc4We0weqCHKYaIT+w==
+jest-html-reporters@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.0.3.tgz#b4926224b5c24c1fded454a157ba2b297aadbbc3"
+  integrity sha512-TlJtC1ex35L+5FduD9jE0dKBPIL7CmkgEroTlIs45S/1aGn20iOgovjqmVigge/TJq0wiUm/j9fBfPb8ztGi2g==
   dependencies:
     fs-extra "^9.0.1"
 
