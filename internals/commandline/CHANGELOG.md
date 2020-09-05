@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.12.0...@kcinternal/commandline@0.13.0) (2020-09-05)
+
+
+### Features
+
+* **core:** change all dependencies to production scope ([c5a95cb](https://github.com/kamontat/kcutils/commit/c5a95cbb296e17f5ca9f126f72da1c19e1468746))
+
+
+
+
+
 # [0.12.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.11.1...@kcinternal/commandline@0.12.0) (2020-08-17)
 
 

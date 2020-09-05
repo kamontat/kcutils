@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.15](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.14...@kcutils/color@0.3.15) (2020-09-05)
+
+
+### Performance Improvements
+
+* **utils:** changes default digit of boundAlpha() to 6 and configable ([a8c65c6](https://github.com/kamontat/kcutils/commit/a8c65c6c616299781db408eb51d0b5dadcba5c41))
+
+
+
+
+
 ## [0.3.14](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.13...@kcutils/color@0.3.14) (2020-09-05)
 
 **Note:** Version bump only for package @kcutils/color
