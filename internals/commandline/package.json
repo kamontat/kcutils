@@ -54,12 +54,10 @@
     "clean:cli": "trash lib *.tsbuildinfo"
   },
   "dependencies": {
-    "del": "5.1.0",
-    "minimist": "1.2.5"
-  },
-  "devDependencies": {
     "@types/minimist": "1.2.0",
     "@types/package_json": "0.2.3",
+    "del": "5.1.0",
+    "minimist": "1.2.5",
     "trash-cli": "3.0.0"
   }
 }
