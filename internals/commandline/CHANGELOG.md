@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.13.1...@kcinternal/commandline@0.13.2) (2020-09-05)
+
+
+### Bug Fixes
+
+* **core:** remove [@types](https://github.com/types) from production dependencies to avoid error ([bb40719](https://github.com/kamontat/kcutils/commit/bb40719fd8ac66e27e5c1b319008c1f5d27627b3))
+
+
+
+
+
 ## [0.13.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.13.0...@kcinternal/commandline@0.13.1) (2020-09-05)
 
 **Note:** Version bump only for package @kcinternal/commandline
