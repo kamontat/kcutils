@@ -7,6 +7,22 @@
 
 <!-- BODY SECTION -->
 
+## Eslint config
+
+Required:
+1. `eslint`, `prettier` and `typescript` installed in root project / current project
+2. `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser` for support typescript parser in eslint
+3. `eslint-config-prettier` and `eslint-plugin-prettier` for enable default config of eslint
+
+Optional:
+1. `eslint-plugin-react` if you want to support react
+
+```javascript
+const { eslint } = require("@kcinternal/configuration");
+const config = eslint(__dirname).build();
+module.exports = config
+```
+
 ## Webpack config
 
 Required: 
@@ -14,7 +30,8 @@ Required:
 
 ```javascript
 const { webpack } = require("@kcinternal/configuration");
-module.exports = webpack(__dirname).build();
+const config = webpack(__dirname).build();
+module.exports = config
 ```
 
 ## Babel config
