@@ -42,6 +42,7 @@
     "@kcinternal/commandline": "0.13.2",
     "@types/eslint": "7.2.2",
     "@types/webpack": "4.41.22",
+    "webpack": "4.44.1",
     "jest-html-reporters": "2.0.3"
   }
 }
