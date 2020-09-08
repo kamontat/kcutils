@@ -20,9 +20,9 @@ const _levels = new Map([
 
 export const levels = Array.from(_levels.values());
 
-export const toLevel = (level: string): LoggerLevel => {
+export const toLevel = (level: string, def: LoggerLevel = info): LoggerLevel => {
   if (_levels.has(level)) return _levels.get(level) as LoggerLevel;
-  else return info;
+  else return def;
 };
 
 export type { Levels };
