@@ -8,13 +8,12 @@ import { json, string, array } from "@kcutils/helper";
 import { Chalk, Instance as ChalkInstance, level as defaultColorLevel } from "chalk";
 import * as Badge from "figures";
 
-import { StrictOption, OptionalLoggerOption, OptionalOption } from "./LoggerOption";
+import { StrictOption, OptionalOption, LoggerOption } from "./LoggerOption";
 import { Types, LoggerType } from "./LoggerType";
 import { OptionalSetting, StrictSetting, StrictCommonSetting } from "./LoggerSetting";
 
-import { settings, settingBuilder } from "../../constants/settings";
+import { settings } from "../../constants/settings";
 import { types, DefaultKeyTypes } from "../../constants/types";
-import { options } from "../../constants/options";
 import { levels, toLevel } from "../../constants/levels";
 import { OutputMessageMetadata } from "../output/OutputMessageMetadata";
 import { OutputMessagePrefix } from "../output/OutputMessagePrefix";
@@ -24,6 +23,7 @@ import { InputMessage } from "../input/InputMessage";
 import { InputOption } from "../input/InputOptions";
 import { OutputMessage } from "../output/OutputMessage";
 import { LoggerLevel } from "./LoggerLevel";
+import { LoggerOptionBuilder } from "../../builder/LoggerOptionBuilder";
 
 const longestLabel = "longest-label";
 
@@ -36,12 +36,12 @@ type Parameters = typeof longestLabel;
 export class Logger<T extends string = ""> {
   private static counter: number = 0;
 
-  static create<T extends string = "">(opts?: OptionalLoggerOption<T>): Logger<T> {
-    return new Logger(opts);
+  static create<T extends string = "">(builder: LoggerOptionBuilder<T> = LoggerOptionBuilder.initial()): Logger<T> {
+    return new Logger(builder.get());
   }
 
   private readonly _id: number;
-  private _option: StrictOption;
+  private _option: LoggerOption<T>;
   private _setting: StrictSetting;
 
   private _color: Chalk;
@@ -53,13 +53,20 @@ export class Logger<T extends string = ""> {
 
   private readonly _parameters: Map<Parameters, string>;
 
-  constructor(opts?: OptionalLoggerOption<T>) {
+  /**
+   * @deprecated Never create Logger object directly,
+   * Please use LoggerBuilder instead
+   *
+   * @param option logger option
+   */
+  constructor(option: LoggerOption<T>) {
     this._id = Logger.counter;
     Logger.counter++;
 
-    this._option = json.deepMerge(options, opts);
-    this._types = json.deepMerge(types, opts?.types);
-    this._setting = json.deepMerge(settings, opts?.settings);
+    this._option = option;
+
+    this._types = json.deepMerge(types, this._option.getTypes());
+    this._setting = json.deepMerge(settings, this._option.getSettings());
 
     this.idebug(`create new logger (id = ${this._id})`);
     this.idebug("option: ", JSON.stringify(this._option));
@@ -67,7 +74,7 @@ export class Logger<T extends string = ""> {
     this.idebug("types: ", JSON.stringify(this._types));
 
     this._timers = new Map();
-    this._color = new ChalkInstance(this._option.color ? {} : { level: 0 });
+    this._color = new ChalkInstance(this._option.isColor() ? {} : { level: 0 });
     this._isPreviousLogInteractive = false;
 
     this._parameters = new Map();
@@ -89,7 +96,7 @@ export class Logger<T extends string = ""> {
    * current scopes
    */
   get scopes(): string[] {
-    return this._option.scopes;
+    return this._option.getScopes();
   }
 
   /**
@@ -108,7 +115,7 @@ export class Logger<T extends string = ""> {
 
     const inputOption = typeof data === "string" ? { message: data } : data;
 
-    const _stream = this._option.overrideStream ? this._option.streams : level.stream;
+    const _stream = this._option.isOverrideStream() ? this._option.getOverrideStream() : level.stream;
     let _streams = array.toArray(_stream);
     if (inputOption.stream) {
       const streams = array.toArray(inputOption.stream);
@@ -131,7 +138,7 @@ export class Logger<T extends string = ""> {
     const data = this.buildMessage(inputOption.message);
     const suffix = this.buildSuffix(inputOption.suffix);
 
-    if (this._option.json) return this.buildAsJson(type, { metadata, prefix, data, suffix });
+    if (this._option.isJson()) return this.buildAsJson(type, { metadata, prefix, data, suffix });
     else return this.buildAsString(type, { metadata, prefix, data, suffix });
   }
 
@@ -180,19 +187,22 @@ export class Logger<T extends string = ""> {
    * @param message input string
    */
   censor(message: string): string {
-    if (this._option.secrets.length === 0) return message;
+    const secrets = this._option.getSecrets();
+    if (secrets.length === 0) return message;
 
-    return this._option.secrets.reduce((msg, secret) => {
+    return secrets.reduce((msg, secret) => {
       const regex = new RegExp(secret, "gi");
-      const s = this._option.censor(secret);
+      const s = this._option.onCensor(secret);
       const formatting = this.format(s, this._setting.secret, undefined, false);
       return msg.replace(regex, formatting);
     }, message);
   }
 
   isContainSecret(message: string): boolean {
-    if (this._option.secrets.length === 0) return false;
-    return this._option.secrets.some(secret => {
+    const secrets = this._option.getSecrets();
+
+    if (secrets.length === 0) return false;
+    return secrets.some(secret => {
       const regex = new RegExp(secret, "g");
       return regex.test(message);
     });
@@ -227,23 +237,19 @@ export class Logger<T extends string = ""> {
    * @param type new type merged with current type
    */
   copy<U extends string = "">(option?: OptionalOption, setting?: OptionalSetting, type?: Types<U>): Logger<T | U> {
-    const options = json.deepMerge(this._option, option);
-    const settings = json.deepMerge(this._setting, setting);
-    const types = json.deepMerge(this._types, type);
-
-    const o = { ...options, settings, types };
-    return new Logger(o);
+    const options = this._option.copy(option, { types: type, settings: setting });
+    return new Logger(options);
   }
 
   isEnabled(): boolean {
-    return !this._option.disabled;
+    return !this._option.isDisabled();
   }
 
   /**
    * remove all scope on this logger
    */
   unscope(): this {
-    this._option.scopes = [];
+    this._option.set("scopes", []);
     return this;
   }
 
@@ -251,7 +257,7 @@ export class Logger<T extends string = ""> {
    * remove all secret on this logger
    */
   unsecret(): this {
-    this._option.secrets = [];
+    this._option.set("secrets", []);
     return this;
   }
 
@@ -259,7 +265,7 @@ export class Logger<T extends string = ""> {
    * enable color
    */
   color(): this {
-    this._option.color = true;
+    this._option.set("color", true);
     this._color.level = defaultColorLevel;
     return this;
   }
@@ -268,7 +274,7 @@ export class Logger<T extends string = ""> {
    * disable color
    */
   uncolor(): this {
-    this._option.color = false;
+    this._option.set("color", false);
     this._color.level = 0;
     return this;
   }
@@ -277,7 +283,7 @@ export class Logger<T extends string = ""> {
    * is color enabled
    */
   isColor(): boolean {
-    return this._color.level > 0 && this._option.color;
+    return this._color.level > 0 && this._option.isColor();
   }
 
   equals(l: Logger): boolean {
@@ -382,17 +388,19 @@ export class Logger<T extends string = ""> {
 
   private buildMetadata() {
     let d: string;
-    if (this._option.datetime === "time") d = this.time;
-    else if (this._option.datetime === "date") d = this.date;
-    else if (this._option.datetime === "datetime") d = this.datetime;
-    else if (this._option.datetime === "timestamp") d = this.timestamp;
+    const datetimeType = this._option.getDatetime();
+
+    if (datetimeType === "time") d = this.time;
+    else if (datetimeType === "date") d = this.date;
+    else if (datetimeType === "datetime") d = this.datetime;
+    else if (datetimeType === "timestamp") d = this.timestamp;
     else d = this.date; // default
 
     const datetime = { index: 1, data: d };
 
-    const scopes = { index: 2, data: this._option.scopes };
+    const scopes = { index: 2, data: this._option.getScopes() };
     const filename = { index: 3, data: this.filename };
-    const seperator = { index: 4, data: this._option.separator };
+    const seperator = { index: 4, data: this._option.getSeparator() };
 
     const metadata: OutputMessageMetadata = { datetime, scopes, filename, seperator };
     this.idebug("build metadata object: ", metadata);
@@ -434,7 +442,7 @@ export class Logger<T extends string = ""> {
    * @param type log type
    */
   private shouldLog(type: LoggerType) {
-    const level = toLevel(this._option.level);
+    const level = toLevel(this._option.getLevel());
     const typeLevel = toLevel(type.level);
 
     let msg = `${type.label}(${typeLevel.name}) type for log level ${level.name}`;
@@ -466,11 +474,10 @@ export class Logger<T extends string = ""> {
    * @param settings formatting settings
    * @param color with color format
    */
-  private format(input: string | string[], _settings: StrictCommonSetting, color?: Chalk, censor: boolean = true) {
+  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, censor: boolean = true) {
     const msg = array.toArray(input).join(" ");
-    this.idebug(`formatting ${msg} by`, _settings);
-    if (_settings === undefined || _settings === false) return "";
-    const settings = settingBuilder(_settings);
+    this.idebug(`formatting ${msg} by`, settings);
+    if (settings === undefined || settings === false) return "";
 
     type Execute = [string, boolean, (s: string) => string];
     const executes: Execute[] = [
@@ -508,14 +515,14 @@ export class Logger<T extends string = ""> {
 
     this.idebug(`write message to ${streams.length} output`);
     streams.forEach(stream => {
-      if (this._option.interactive && this._isPreviousLogInteractive) {
+      if (this._option.isInteractive() && this._isPreviousLogInteractive) {
         moveCursor(stream, 0, -1);
         clearLine(stream, 0);
         cursorTo(stream, 0);
       }
 
       stream.write(`${message}\n`);
-      this._isPreviousLogInteractive = this._option.interactive;
+      this._isPreviousLogInteractive = this._option.isInteractive();
     });
   }
 
@@ -526,11 +533,8 @@ export class Logger<T extends string = ""> {
    * @param data message data
    */
   private idebug(formatter: string, ...data: any[]) {
-    if (this._option.debug)
+    if (this._option.isDebug())
       if (data.length === 1) console.log(format(formatter, inspect(data[0], false, 1, false)));
       else console.log(format(formatter, ...data));
   }
 }
-
-const l = new Logger();
-l.options({ secrets: ["new secret"] }).options({ secrets: [""] });
