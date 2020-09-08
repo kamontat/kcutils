@@ -5,8 +5,15 @@ export class LoggerBuilder<T extends string> {
   static initial<T extends string = "">(): LoggerBuilder<T> {
     return new LoggerBuilder<T>();
   }
+
   static default(): Logger {
     return LoggerBuilder.initial().get();
+  }
+
+  static load<T extends string>(logger: Logger<T>): LoggerBuilder<T> {
+    return LoggerBuilder.initial().withOption(
+      LoggerOptionBuilder.load(logger.option).withRawType(logger.type).withRawSetting(logger.setting)
+    );
   }
 
   private builder: LoggerOptionBuilder<string>;
@@ -30,6 +37,6 @@ export class LoggerBuilder<T extends string> {
   }
 
   get(): Logger<T> {
-    return Logger.create<T>();
+    return Logger.create<T>(this.builder);
   }
 }
