@@ -1,11 +1,11 @@
 import { Logger } from "../models/logger/Logger";
-import { OptionalLoggerOption } from "../models/logger/LoggerOption";
+import { LoggerBuilder } from "../builder/LoggerBuilder";
 
 export abstract class WithLogger<T extends string = ""> {
   protected logger: Logger<T>;
 
-  constructor(loggerOptions?: OptionalLoggerOption<T>) {
-    this.logger = new Logger(loggerOptions);
+  constructor(builder: LoggerBuilder<T> = LoggerBuilder.initial()) {
+    this.logger = builder.get();
   }
 
   /**
