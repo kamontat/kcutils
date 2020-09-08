@@ -106,6 +106,14 @@ export class Logger<T extends string = ""> {
     return Object.assign(this._option);
   }
 
+  get setting(): StrictSetting {
+    return Object.assign({}, this._setting);
+  }
+
+  get type(): Types<DefaultKeyTypes | T> {
+    return Object.assign({}, this._types);
+  }
+
   // print logger message to stream
   print(_type: DefaultKeyTypes | T, data: InputMessage | InputOption): void {
     const type = this._types[_type];
