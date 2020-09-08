@@ -1,9 +1,15 @@
-import { StrictSettingObject } from "../models/logger/LoggerSetting";
+import { StrictCommonSetting } from "../models/logger/LoggerSetting";
 
 export class LoggerSettingBuilder {
   static initial(): LoggerSettingBuilder {
     return new LoggerSettingBuilder();
   }
+
+  static disabled(): LoggerSettingBuilder {
+    return LoggerSettingBuilder.initial().withDisabled();
+  }
+
+  private disabled: boolean;
 
   private uppercase: boolean;
   private underline: boolean;
@@ -19,6 +25,8 @@ export class LoggerSettingBuilder {
     this.italic = false;
     this.prefix = "";
     this.suffix = "";
+
+    this.disabled = false;
   }
 
   withUpperCase(toggle: boolean = true): this {
@@ -51,7 +59,18 @@ export class LoggerSettingBuilder {
     return this;
   }
 
-  get(): StrictSettingObject {
+  withEnabled(): this {
+    this.disabled = false;
+    return this;
+  }
+
+  withDisabled(): this {
+    this.disabled = true;
+    return this;
+  }
+
+  get(): StrictCommonSetting {
+    if (this.disabled) return false;
     return {
       uppercase: this.uppercase,
       underline: this.underline,
