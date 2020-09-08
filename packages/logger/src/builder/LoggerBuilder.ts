@@ -5,6 +5,9 @@ export class LoggerBuilder<T extends string> {
   static initial<T extends string = "">(): LoggerBuilder<T> {
     return new LoggerBuilder<T>();
   }
+  static default(): Logger {
+    return LoggerBuilder.initial().get();
+  }
 
   private builder: LoggerOptionBuilder<string>;
 
