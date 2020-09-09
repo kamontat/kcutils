@@ -187,7 +187,12 @@ export class LoggerOption<T extends string> {
   ): T[] {
     if (generic.isExist(override)) return override;
 
-    const output = env.read(`${LoggerOption.envPrefix}_${envName}`, "").split(",").filter(filterFn).map(mapFn);
+    const output = env
+      .read(`${LoggerOption.envPrefix}_${envName}`, "")
+      .split(",")
+      .filter(generic.nonEmpty)
+      .filter(filterFn)
+      .map(mapFn);
     const defaultOutput = (this.option[key] as unknown) as T[];
 
     if (output.length > 0) return output;
@@ -203,7 +208,12 @@ export class LoggerOption<T extends string> {
   ): T[] {
     if (generic.isExist(override)) return override;
 
-    const output = env.read(`${LoggerOption.envPrefix}_${envName}`, "").split(",").filter(filterFn).map(mapFn);
+    const output = env
+      .read(`${LoggerOption.envPrefix}_${envName}`, "")
+      .split(",")
+      .filter(generic.nonEmpty)
+      .filter(filterFn)
+      .map(mapFn);
     const defaultOutput = (this.option[key] as unknown) as T[];
 
     const base = defaultOutput ?? [];
