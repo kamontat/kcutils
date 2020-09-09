@@ -1,6 +1,10 @@
 import { Logger } from "../models/logger/Logger";
 import { LoggerOptionBuilder } from "./LoggerOptionBuilder";
 
+export type UpdateOptionFn<T extends string, R extends string> = (
+  b: LoggerOptionBuilder<T>
+) => LoggerOptionBuilder<T | R>;
+
 export class LoggerBuilder<T extends string> {
   static initial<T extends string = "">(): LoggerBuilder<T> {
     return new LoggerBuilder<T>();
@@ -27,9 +31,7 @@ export class LoggerBuilder<T extends string> {
     return this as LoggerBuilder<R>;
   }
 
-  updateOption<R extends string>(
-    builder: (b: LoggerOptionBuilder<T>) => LoggerOptionBuilder<T | R>
-  ): LoggerBuilder<T | R> {
+  updateOption<R extends string>(builder: UpdateOptionFn<T, R>): LoggerBuilder<T | R> {
     const newBuilder = builder(this.builder);
     this.builder = newBuilder;
 
