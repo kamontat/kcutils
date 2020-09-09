@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.7.0-beta.0...@kcutils/logger@0.7.0-beta.1) (2020-09-09)
+
+
+### Bug Fixes
+
+* **model:** clean duplicate code ([cce686b](https://github.com/kamontat/kcutils/commit/cce686bdbd063372f4fb25c0fd45e2397c239298))
+
+
+
+
+
 # [0.7.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.6.12...@kcutils/logger@0.7.0-beta.0) (2020-09-09)
 
 
