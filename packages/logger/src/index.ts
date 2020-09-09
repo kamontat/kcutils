@@ -19,11 +19,11 @@ export {
 
 // type
 
+export type { UpdateOptionFn } from "./builder/LoggerBuilder";
+
 export type { Level } from "./models/logger/LoggerLevel";
 export type { StrictSettingObject } from "./models/logger/LoggerSetting";
 export type { DefaultKeyTypes } from "./constants/types";
-
-export type { OptionalLoggerOption as LoggerOption } from "./models/logger/LoggerOption";
 
 export type { InputMessage } from "./models/input/InputMessage";
 export type { InputOption } from "./models/input/InputOptions";
