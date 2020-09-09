@@ -70,7 +70,7 @@ export class LoggerOptionBuilder<T extends string> {
     this.color = true;
     this.level = "info";
     this.datetime = "date";
-    this.censor = () => "censor";
+    this.censor = () => "secure";
     this.separator = arrowRight;
     this.scopes = [];
     this.secrets = [];
@@ -167,9 +167,9 @@ export class LoggerOptionBuilder<T extends string> {
     return this as LoggerOptionBuilder<T | R>;
   }
 
-  withRawType<T extends string>(types: Types<T>): LoggerOptionBuilder<T> {
+  withRawType<N extends string>(types: Types<N>): LoggerOptionBuilder<N> {
     this.types = types;
-    return this as LoggerOptionBuilder<T>;
+    return this as LoggerOptionBuilder<N>;
   }
 
   withSetting<R extends keyof StrictSetting>(name: R, builder: LoggerSettingBuilder): this {
