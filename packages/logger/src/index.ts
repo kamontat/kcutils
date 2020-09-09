@@ -19,7 +19,7 @@ export {
 
 // type
 
-export type { LoggerLevel } from "./models/logger/LoggerLevel";
+export type { Level } from "./models/logger/LoggerLevel";
 export type { StrictSettingObject } from "./models/logger/LoggerSetting";
 export type { DefaultKeyTypes } from "./constants/types";
 
