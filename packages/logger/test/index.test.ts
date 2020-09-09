@@ -1,34 +1,12 @@
-import { string } from "@kcutils/helper";
+import { Writable } from "stream";
 
 import { Logger, WithLogger, LoggerBuilder, LoggerOptionBuilder } from "../src";
 
 import { DateTimeFormat } from "../src/models/logger/LoggerOption";
 import { Levels } from "../src/constants/levels";
-import { MockStream } from "../src/test/models/stream";
 import { DefaultKeyTypes, types } from "../src/constants/types";
-import { LoggerLevel } from "../src/models/logger/LoggerLevel";
 
-const newMockStream = () => {
-  const fn = jest.fn();
-  const stream = new MockStream(fn);
-
-  return { fn, stream };
-};
-
-const withCustomStream = (_logger: Logger) => {
-  const s = newMockStream();
-  const logger = _logger.copy({ streams: [s.stream], overrideStream: true });
-
-  return { logger, stream: s.fn };
-};
-
-const getStreamChunk = (stream: jest.Mock<any, any>, times: number = 1) => {
-  const length = stream.mock.calls.length;
-  const _times = times > length ? length - 1 : times - 1;
-
-  const buffer = stream.mock.calls[_times][0] as Buffer;
-  return buffer.toString();
-};
+import { newMockStream, withCustomStream, getStreamChunk } from "./stream";
 
 describe("logger modules", () => {
   describe("Logger object", () => {
@@ -253,7 +231,6 @@ describe("logger modules", () => {
 
       ["silly" as DefaultKeyTypes, "warn" as Levels, 0],
       ["debug" as DefaultKeyTypes, "warn" as Levels, 0],
-      ["await" as DefaultKeyTypes, "warn" as Levels, 0],
       ["warn" as DefaultKeyTypes, "warn" as Levels, 1],
       ["error" as DefaultKeyTypes, "warn" as Levels, 1],
 
@@ -276,7 +253,7 @@ describe("logger modules", () => {
       test("on print", () => {
         const message = { message: "hello world" };
 
-        const { logger, stream } = withCustomStream(def.copy({ level }));
+        const { logger, stream } = withCustomStream(def.copy({ debug: false, level }));
         logger.print(type, message);
 
         expect(stream).toBeCalledTimes(expected);
@@ -323,29 +300,6 @@ describe("logger modules", () => {
       expect(chunk1).not.toEqual(chunk2);
     });
 
-    test.each([
-      [
-        { secrets: ["hello", "new", "man"] },
-        "hello, I'm become a new woman after I meet man like you",
-        "[secure], I'm become a [secure] wo[secure] after I meet [secure] like you",
-      ],
-      [
-        { secrets: ["hello", "new", "man"], censor: (s: string) => string.padEnd("", s.length, "*") },
-        "hello, I'm become a new woman after I meet man like you",
-        "[*****], I'm become a [***] wo[***] after I meet [***] like you",
-      ],
-      [
-        {},
-        "hello, I'm become a new woman after I meet man like you",
-        "hello, I'm become a new woman after I meet man like you",
-      ],
-    ])("censor message with config %p", (settings, original, expected) => {
-      const logger = def.copy(settings, { secret: { prefix: "[", suffix: "]" } });
-      const censored = logger.censor(original);
-
-      expect(censored).toEqual(expected);
-    });
-
     test("start and end timer with default label", () => {
       const a = withCustomStream(def);
 
@@ -378,49 +332,12 @@ describe("logger modules", () => {
       a.logger.endTimer(label);
       expect(a.stream).toBeCalledTimes(0);
     });
-
-    test("remove all secret words", () => {
-      const logger = def.copy({ secrets: ["data"] });
-
-      const censored = logger.censor("new data");
-      expect(censored).toEqual("new [secure]");
-
-      logger.unsecret();
-
-      const censored2 = logger.censor("new data");
-      expect(censored2).toEqual("new data");
-    });
-  });
-
-  describe("Logger level", () => {
-    test("custom level stream", () => {
-      const level = -1;
-      const name = "custom";
-
-      const mockWriteStreamFn = jest.fn();
-      const mockStream = new MockStream(mockWriteStreamFn);
-
-      const mockWriteStreamFn2 = jest.fn();
-      const mockStream2 = new MockStream(mockWriteStreamFn2);
-
-      const old = new LoggerLevel<string>(level, name, mockStream);
-
-      expect(old.level).toEqual(level);
-      expect(old.name).toEqual(name);
-      expect(old.stream).toEqual(mockStream);
-
-      const newLevel = old.copy(mockStream2);
-
-      expect(newLevel.level).toEqual(level);
-      expect(newLevel.name).toEqual(name);
-      expect(newLevel.stream).toEqual(mockStream2);
-    });
   });
 
   describe("WithLogger object", () => {
     class T extends WithLogger {
       fn: jest.Mock<any, any>;
-      s: MockStream;
+      s: Writable;
 
       constructor(option: LoggerOptionBuilder<""> = LoggerOptionBuilder.initial()) {
         super(LoggerBuilder.initial().withOption(option));

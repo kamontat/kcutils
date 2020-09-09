@@ -1,5 +1,8 @@
 import * as level from "../src/constants/levels";
+
 import { LoggerLevelBuilder } from "../src";
+
+import { newMockStream } from "./stream";
 
 describe("Logger level", () => {
   describe("convert string to Level", () => {
@@ -30,5 +33,25 @@ describe("Logger level", () => {
   ])("Checking level in LoggerLevelBuilder must match to constants, (level=%s)", (lv1, lv2) => {
     expect(lv1.name).toEqual(lv2.name);
     expect(lv1.level).toEqual(lv2.level);
+  });
+
+  test("custom writable stream", () => {
+    const level = -1;
+    const name = "custom";
+
+    const mock1 = newMockStream();
+    const mock2 = newMockStream();
+
+    const old = LoggerLevelBuilder.new().withLevel(level).withName(name).withStream(mock1.stream).get();
+
+    expect(old.level).toEqual(level);
+    expect(old.name).toEqual(name);
+    expect(old.stream).toEqual(mock1.stream);
+
+    const newLevel = old.copy(mock2.stream);
+
+    expect(newLevel.level).toEqual(level);
+    expect(newLevel.name).toEqual(name);
+    expect(newLevel.stream).toEqual(mock2.stream);
   });
 });
