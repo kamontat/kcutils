@@ -1,3 +1,5 @@
+import { Writable } from "stream";
+
 import { silent, error, warn, info, debug, silly, toLevel } from "../constants/levels";
 import { LoggerLevel } from "../models/logger/LoggerLevel";
 
@@ -11,6 +13,10 @@ export class LoggerLevelBuilder {
       LoggerLevelBuilder.cached = new LoggerLevelBuilder();
       return LoggerLevelBuilder.cached;
     }
+  }
+
+  static new<L extends string>(level: number, name: L, stream: Writable): LoggerLevel<L> {
+    return new LoggerLevel<L>(level, name, stream);
   }
 
   get silent(): LoggerLevel {
