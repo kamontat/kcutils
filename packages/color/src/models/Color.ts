@@ -1,6 +1,6 @@
 import { json, generic } from "@kcutils/helper";
 import { Throwable } from "@kcutils/error";
-import { WithLogger, LoggerOption, LoggerBuilder, LoggerSettingBuilder, LoggerOptionBuilder } from "@kcutils/logger";
+import { WithLogger, LoggerOption, LoggerBuilder, LoggerSettingBuilder } from "@kcutils/logger";
 
 import { NumberTypeString, RGB, HSL, HSV, HEX, Named } from "..";
 
