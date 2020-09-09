@@ -15,8 +15,8 @@ export class LoggerLevelBuilder {
     }
   }
 
-  static new<L extends string>(level: number, name: L, stream: Writable): LoggerLevel<L> {
-    return new LoggerLevel<L>(level, name, stream);
+  static new<T extends string = "">(): LoggerNewLevelBuilder<T> {
+    return new LoggerNewLevelBuilder<T>();
   }
 
   get silent(): LoggerLevel {
@@ -45,5 +45,36 @@ export class LoggerLevelBuilder {
 
   withName(str: string, def: LoggerLevel = info): LoggerLevel {
     return toLevel(str, def);
+  }
+}
+
+export class LoggerNewLevelBuilder<T extends string> {
+  private level: number;
+  private name: string;
+  private stream: Writable;
+
+  constructor() {
+    this.level = -1;
+    this.name = "" as T;
+    this.stream = process.stdout;
+  }
+
+  withLevel(lv: number): this {
+    this.level = lv;
+    return this;
+  }
+
+  withName<N extends string>(name: N): LoggerNewLevelBuilder<N> {
+    this.name = name;
+    return (this as unknown) as LoggerNewLevelBuilder<N>;
+  }
+
+  withStream(writer: Writable): this {
+    this.stream = writer;
+    return this;
+  }
+
+  get(): LoggerLevel<T> {
+    return new LoggerLevel<T>(this.level, this.name as T, this.stream);
   }
 }
