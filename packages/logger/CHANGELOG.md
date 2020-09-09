@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.6.12...@kcutils/logger@0.7.0-beta.0) (2020-09-09)
+
+
+### Bug Fixes
+
+* **core:** update compile error ([6eeb4c5](https://github.com/kamontat/kcutils/commit/6eeb4c5e61c7247d7dac875096abc80343731a85))
+* **model:** change default censor string from `censor` to `secure` ([7027e42](https://github.com/kamontat/kcutils/commit/7027e42280959b2a39ddad62a7725e33cc697e19))
+* **model:** change old LoggerLevelBuilder to LoggerLevel ([9b79346](https://github.com/kamontat/kcutils/commit/9b793467f7fdd9ec3450c4589df1fc763273cf30))
+* **model:** export type of level instead of LoggerLevel ([e87fc6a](https://github.com/kamontat/kcutils/commit/e87fc6adaf69037c713275887f70c6a8872c3037))
+* **model:** remove all empty string in array output ([e9b21c0](https://github.com/kamontat/kcutils/commit/e9b21c06d34caa285b164f6bc7038565dc1c9eab))
+* **model:** update how option update and return ([364e9f6](https://github.com/kamontat/kcutils/commit/364e9f60ad8a4e04c2796f2fb40b46ab1b31f1fd))
+* **test:** move test and refactor them ([39a2cfc](https://github.com/kamontat/kcutils/commit/39a2cfc649ebcc609666a48593a5df71861b48cd))
+
+
+### Features
+
+* **core:** change export to export only builder object and types ([5e83e20](https://github.com/kamontat/kcutils/commit/5e83e204d64752a05a93d7ea9f89866946182688))
+* **model:** add LoggerBuilder to make logger easier to create ([947c5f5](https://github.com/kamontat/kcutils/commit/947c5f5e55d698019232cc7bb0d9472a6e1a15f4))
+* **service:** LoggerSettingBuilder now support disabled feature ([95e5118](https://github.com/kamontat/kcutils/commit/95e5118a0d2099547574d831bb81cb064fe1632d))
+
+
+### Performance Improvements
+
+* **model:** add LoggerBuilder.default() to create default log ([ac67d32](https://github.com/kamontat/kcutils/commit/ac67d32d18111db3c6a3b775ac539dd390460199))
+* **model:** change LoggerOption from json object to js object ([6eab83b](https://github.com/kamontat/kcutils/commit/6eab83b161e26eaf24f78b0b835c6cc84b8ef9e9))
+* **model:** create LoggerOptionBuilder instead of create option object ([b3c7620](https://github.com/kamontat/kcutils/commit/b3c762069131de6040d26c26381a71d317b37e9c))
+* **model:** create LoggerSettingBuilder instead of manually calculate ([4a72e0e](https://github.com/kamontat/kcutils/commit/4a72e0e94bddea7379f0d22c71e31b333b694570))
+* **model:** create new LoggerTypeBuilder, instead of manually create ([69f6cf9](https://github.com/kamontat/kcutils/commit/69f6cf974596f938d91dfd6f79f94b94c5f2ad74))
+* **model:** export setting and type to public from Logger ([e6b2315](https://github.com/kamontat/kcutils/commit/e6b2315f46a0b68e02d7cbe14868b3e0589bd64c))
+* **model:** move logger level to builder ([870da09](https://github.com/kamontat/kcutils/commit/870da09d830780f1a01813367337b10356d78fdf))
+* **model:** update logger object to use all builder syntax ([e471f7a](https://github.com/kamontat/kcutils/commit/e471f7a65a120a2eab552705367efbd580eeda9e))
+* **model:** update WithLogger to use LoggerBuilder syntax ([5fa2de5](https://github.com/kamontat/kcutils/commit/5fa2de52801924212ec33d859b3eeabc1bdadf56))
+* **service:** add LoggerLevelBuilder.new() for new level ([5d60263](https://github.com/kamontat/kcutils/commit/5d6026320f0319a5325ece36c89b1d2748ce28fb))
+* **service:** LoggerBuilder support load from logger object ([0952646](https://github.com/kamontat/kcutils/commit/0952646f29524aa553d6df7b17373a9fd8cccdf0))
+* **service:** LoggerOptionBuilder support load from option json object ([807a49a](https://github.com/kamontat/kcutils/commit/807a49ad72cb365179fe4560ea4a65be42c24084))
+* **service:** now you can create new level by LoggerLevelBuilder.new() ([02437ee](https://github.com/kamontat/kcutils/commit/02437eeb644fca90a3ba943445eb57ee535faf13))
+
+
+
+
+
 ## [0.6.12](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.6.11...@kcutils/logger@0.6.12) (2020-09-05)
 
 **Note:** Version bump only for package @kcutils/logger
