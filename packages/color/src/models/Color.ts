@@ -1,6 +1,6 @@
 import { json, generic } from "@kcutils/helper";
 import { Throwable } from "@kcutils/error";
-import { WithLogger, LoggerOption, LoggerBuilder, LoggerSettingBuilder } from "@kcutils/logger";
+import { WithLogger, LoggerBuilder, LoggerSettingBuilder, UpdateOptionFn } from "@kcutils/logger";
 
 import { NumberTypeString, RGB, HSL, HSV, HEX, Named } from "..";
 
@@ -44,8 +44,8 @@ export class Color extends WithLogger {
     this.logger.print("debug", `initiaize color object ${this.id} (valid = ${this.isValid()})`);
   }
 
-  setLoggerOption(option: LoggerOption<"">): this {
-    this.updateLogger(l => l.copy(option));
+  setLoggerOption(fn: UpdateOptionFn<"", "">): this {
+    this.updateLoggerOption(fn);
     return this;
   }
 
