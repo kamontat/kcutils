@@ -34,8 +34,10 @@ export interface StrictOption {
   censor: (input: string) => string;
 }
 
+export type OptionalOption = Partial<StrictOption>;
+
 /**
- * @deprecated
+ * @deprecated Please use LoggerOptionBuilder instead
  */
 export interface StrictLoggerOption<T extends string> extends StrictOption {
   types: Types<T>;
@@ -43,12 +45,7 @@ export interface StrictLoggerOption<T extends string> extends StrictOption {
 }
 
 /**
- * @deprecated
- */
-export type OptionalOption = Partial<StrictOption>;
-
-/**
- * @deprecated
+ * @deprecated Please use LoggerOptionBuilder instead
  */
 export type OptionalLoggerOption<T extends string> = Partial<StrictLoggerOption<T>>;
 
@@ -56,9 +53,9 @@ export type StrictExtraLoggerOption<T extends string> = { types: Types<T>; setti
 export type OptionalExtraLoggerOption<T extends string> = Partial<StrictExtraLoggerOption<T>>;
 
 export class LoggerOption<T extends string> {
-  private static envPrefix = "KCUTILS";
+  private static readonly envPrefix = "KCUTILS";
 
-  constructor(private option: StrictOption, private extra?: OptionalExtraLoggerOption<T>) {}
+  constructor(private option: StrictOption, private readonly extra?: OptionalExtraLoggerOption<T>) {}
 
   set<K extends keyof StrictOption, V extends StrictOption[K] = StrictOption[K]>(key: K, value: V): void {
     this.option[key] = value;
