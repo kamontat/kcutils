@@ -233,4 +233,8 @@ export class LoggerOption<T extends string> {
 
     return new LoggerOption(option, extra);
   }
+
+  toStrictOption(): StrictOption {
+    return this.option;
+  }
 }

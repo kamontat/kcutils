@@ -103,7 +103,7 @@ export class Logger<T extends string = ""> {
    * get current options as readonly
    */
   get option(): StrictOption {
-    return Object.assign(this._option);
+    return this._option.toStrictOption();
   }
 
   get setting(): StrictSetting {
@@ -222,7 +222,7 @@ export class Logger<T extends string = ""> {
    */
   options(option: OptionalOption): this {
     this.idebug("options parameters: ", option);
-    this._option = json.deepMerge(this._option, option);
+    this._option = this._option.copy(option);
     this.idebug("new options: ", option);
     return this;
   }
