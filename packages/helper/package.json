@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/helper",
-  "version": "0.10.0-beta.0",
+  "version": "0.10.0-beta.1",
   "description": "Functional helper",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
