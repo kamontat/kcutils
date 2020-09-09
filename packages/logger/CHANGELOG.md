@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.7.0-beta.1...@kcutils/logger@0.7.0-beta.2) (2020-09-09)
+
+
+### Performance Improvements
+
+* **core:** remove export deprecated field and add update fn of logger builder ([f05164e](https://github.com/kamontat/kcutils/commit/f05164eff6563170ea6e2f58b34e945e1fb6bcce))
+* **utils:** deprecated the old way to update logger option ([4e0b4df](https://github.com/kamontat/kcutils/commit/4e0b4dfb7108f9b7406b619d367c33206e43fe7f))
+
+
+
+
+
 # [0.7.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.7.0-beta.0...@kcutils/logger@0.7.0-beta.1) (2020-09-09)
 
 
