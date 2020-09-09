@@ -119,26 +119,29 @@ export class LoggerOption<T extends string> {
       "output",
       v => v === "file" || v === "console",
       t => t as OutputType,
+      this.onlyExistArray,
       override
     );
   }
 
   getScopes(override?: string[]): string[] {
-    return this.appendArray(
+    return this.getArray(
       "SCOPES",
       "scopes",
       () => true,
       s => s,
+      this.appendArray,
       override
     );
   }
 
   getSecrets(override?: string[]): string[] {
-    return this.appendArray(
+    return this.getArray(
       "SECRETS",
       "secrets",
       () => true,
       s => s,
+      this.appendArray,
       override
     );
   }
@@ -183,6 +186,7 @@ export class LoggerOption<T extends string> {
     key: K,
     filterFn: (t: string) => boolean,
     mapFn: (t: string) => T,
+    selectFn: (t1: T[], t2: T[]) => T[],
     override?: T[]
   ): T[] {
     if (generic.isExist(override)) return override;
@@ -195,29 +199,21 @@ export class LoggerOption<T extends string> {
       .map(mapFn);
     const defaultOutput = (this.option[key] as unknown) as T[];
 
-    if (output.length > 0) return output;
-    else return defaultOutput;
+    return selectFn(defaultOutput, output);
   }
 
-  private appendArray<K extends keyof StrictOption = keyof StrictOption, T = unknown>(
-    envName: string,
-    key: K,
-    filterFn: (t: string) => boolean,
-    mapFn: (t: string) => T,
-    override?: T[]
-  ): T[] {
-    if (generic.isExist(override)) return override;
+  private onlyExistArray<T>(t1?: T[], t2?: T[]): T[] {
+    const tt1 = generic.nonEmpty(t1) ? t1 : [];
+    const tt2 = generic.nonEmpty(t2) ? t2 : [];
 
-    const output = env
-      .read(`${LoggerOption.envPrefix}_${envName}`, "")
-      .split(",")
-      .filter(generic.nonEmpty)
-      .filter(filterFn)
-      .map(mapFn);
-    const defaultOutput = (this.option[key] as unknown) as T[];
+    if (tt2.length > 0) return tt2;
+    else return tt1;
+  }
 
-    const base = defaultOutput ?? [];
-    return base.concat(output);
+  private appendArray<T>(t1?: T[], t2?: T[]): T[] {
+    const tt1 = generic.nonEmpty(t1) ? t1 : [];
+    const tt2 = generic.nonEmpty(t2) ? t2 : [];
+    return tt1.concat(tt2);
   }
 
   copy<R extends string = T>(inOpt?: OptionalOption, inExt?: OptionalExtraLoggerOption<R>): LoggerOption<T | R> {
