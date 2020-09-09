@@ -54,12 +54,12 @@ export class Logger<T extends string = ""> {
   private readonly _parameters: Map<Parameters, string>;
 
   /**
-   * @deprecated Never create Logger object directly,
-   * Please use LoggerBuilder instead
+   * Never create Logger object directly,
+   * Please use LoggerBuilder or Logger.create() instead
    *
    * @param option logger option
    */
-  constructor(option: LoggerOption<T>) {
+  private constructor(option: LoggerOption<T>) {
     this._id = Logger.counter;
     Logger.counter++;
 
