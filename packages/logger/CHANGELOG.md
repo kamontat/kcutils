@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0-beta.3](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.7.0-beta.2...@kcutils/logger@0.7.0-beta.3) (2020-09-10)
+
+
+### Performance Improvements
+
+* **model:** remove fav in predefined types list ([2de5c41](https://github.com/kamontat/kcutils/commit/2de5c418aad369acb58a33abb21d500049f250c7))
+* **service:** getType() in LoggerTypeBuilder to create json types ([c716d5f](https://github.com/kamontat/kcutils/commit/c716d5f2aff3d20a102741bfa344d9416a8d2ddb))
+
+
+
+
+
 # [0.7.0-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.7.0-beta.1...@kcutils/logger@0.7.0-beta.2) (2020-09-09)
 
 
