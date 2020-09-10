@@ -82,6 +82,19 @@ describe("logger modules", () => {
       expect(chunkA).not.toEqual(chunkB);
     });
 
+    test("new logger by builder.load", () => {
+      const loggerA = def.copy({ secrets: ["after", "coding"] });
+      const loggerB = LoggerBuilder.load(loggerA)
+        .updateOption(b => b.withJson(true))
+        .get();
+
+      expect(loggerA.id).not.toEqual(loggerB.id);
+
+      expect(loggerA.option.separator).toEqual(loggerB.option.separator);
+      expect(loggerA.option.json).not.toEqual(loggerB.option.json);
+      expect(loggerA.option.secrets).toEqual(loggerB.option.secrets);
+    });
+
     test.each(Object.keys(types).map(v => [v]) as DefaultKeyTypes[][])(
       "print '%s' type to stream and check",
       (type: DefaultKeyTypes) => {

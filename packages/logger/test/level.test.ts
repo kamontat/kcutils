@@ -4,21 +4,28 @@ import * as level from "../src/constants/levels";
 import { newMockStream } from "./utils/stream";
 
 describe("Logger level", () => {
-  describe("convert string to Level", () => {
+  describe("Level builder", () => {
     test.each([
-      ["error", level.error],
-      ["warn", level.warn],
-      ["info", level.info],
-      ["debug", level.debug],
-      ["silly", level.silly],
-      ["silent", level.silent],
-      ["not_found", level.info],
-      ["", level.info],
-    ])("convert %s to level %p", (input, expected) => {
-      const l = LoggerLevelBuilder.get().withName(input);
+      [LoggerLevelBuilder.get().error, level.error],
+      [LoggerLevelBuilder.get().withName("error"), level.error],
+      [LoggerLevelBuilder.get().warn, level.warn],
+      [LoggerLevelBuilder.get().withName("warn"), level.warn],
+      [LoggerLevelBuilder.get().info, level.info],
+      [LoggerLevelBuilder.get().withName("info"), level.info],
+      [LoggerLevelBuilder.get().debug, level.debug],
+      [LoggerLevelBuilder.get().withName("debug"), level.debug],
+      [LoggerLevelBuilder.get().silly, level.silly],
+      [LoggerLevelBuilder.get().withName("silly"), level.silly],
+      [LoggerLevelBuilder.get().silent, level.silent],
+      [LoggerLevelBuilder.get().withName("silent"), level.silent],
+      [LoggerLevelBuilder.get().withName("silent", level.error), level.silent],
 
-      expect(l.name).toEqual(expected.name);
-      expect(l.level).toEqual(expected.level);
+      [LoggerLevelBuilder.get().withName(""), level.info],
+      [LoggerLevelBuilder.get().withName("not_found"), level.info],
+      [LoggerLevelBuilder.get().withName("not_found", undefined), level.info],
+      [LoggerLevelBuilder.get().withName("unknown", level.silent), level.silent],
+    ])("builder of '%p' is level '%p'", (actual, expected) => {
+      expect(actual).toEqual(expected);
     });
   });
 
