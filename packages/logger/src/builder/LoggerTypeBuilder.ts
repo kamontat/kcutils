@@ -1,4 +1,4 @@
-import { BadgeFn, ColorFn, LoggerType } from "../models/logger/LoggerType";
+import { BadgeFn, ColorFn, LoggerType, Types } from "../models/logger/LoggerType";
 import { Levels } from "../constants/levels";
 
 /**
@@ -49,5 +49,11 @@ export class LoggerTypeBuilder {
       label: this.label,
       level: this.level,
     };
+  }
+
+  getType<N extends string>(name: N): Types<N> {
+    return {
+      [name]: this.get(),
+    } as Types<N>;
   }
 }
