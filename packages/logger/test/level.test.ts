@@ -1,8 +1,7 @@
-import * as level from "../src/constants/levels";
-
 import { LoggerLevelBuilder } from "../src";
 
-import { newMockStream } from "./stream";
+import * as level from "../src/constants/levels";
+import { newMockStream } from "./utils/stream";
 
 describe("Logger level", () => {
   describe("convert string to Level", () => {

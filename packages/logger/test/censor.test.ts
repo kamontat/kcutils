@@ -1,4 +1,5 @@
 import { string } from "@kcutils/helper";
+
 import { LoggerBuilder } from "../src";
 
 describe("Logger censor", () => {
