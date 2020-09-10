@@ -1,7 +1,7 @@
 import { Writable } from "stream";
 
 import { Logger } from "../../src";
-import { MockStream } from "../../src/test/models/stream";
+import { MockStream } from "../models/stream";
 
 export type JestStream = { fn: jest.Mock<any, any>; stream: Writable };
 export type LoggerJestStream = { stream: jest.Mock<any, any>; logger: Logger<""> };
