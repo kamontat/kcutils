@@ -20,12 +20,6 @@ export const types = {
     .withNewBadge(b => b.warning)
     .withNewColor(c => c.yellow)
     .get(),
-  fav: LoggerTypeBuilder.initial()
-    .withLabel("favorite")
-    .withLevel("info")
-    .withNewBadge(b => b.heart)
-    .withNewColor(c => c.magenta)
-    .get(),
   success: LoggerTypeBuilder.initial()
     .withLabel("success")
     .withLevel("info")
