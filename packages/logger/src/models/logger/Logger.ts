@@ -201,7 +201,7 @@ export class Logger<T extends string = ""> {
     return secrets.reduce((msg, secret) => {
       const regex = new RegExp(secret, "gi");
       const s = this._option.onCensor(secret);
-      const formatting = this.format(s, this._setting.secret, undefined, false);
+      const formatting = this.format(s, this._setting.secret, undefined, ["censor"]);
       return msg.replace(regex, formatting);
     }, message);
   }
@@ -482,7 +482,7 @@ export class Logger<T extends string = ""> {
    * @param settings formatting settings
    * @param color with color format
    */
-  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, censor: boolean = true) {
+  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, disabledList: string[] = []) {
     const msg = array.toArray(input).join(" ");
     this.idebug(`formatting ${msg} by`, settings);
     if (settings === undefined || settings === false) return "";
@@ -495,14 +495,20 @@ export class Logger<T extends string = ""> {
       ["bold", settings.bold, m => this._color.bold(m)],
       ["italic", settings.italic, m => this._color.italic(m)],
       ["color", color !== undefined, m => (color as Chalk)(m)],
-      ["censor", this.isContainSecret(msg) && censor, m => this.censor(m)],
+      ["censor", this.isContainSecret(msg), m => this.censor(m)],
     ];
 
     return executes.reduce((p, c) => {
       const name = c[0];
       const condition = c[1];
-      const fn = c[2];
 
+      // disabled
+      if (disabledList.includes(name)) {
+        this.idebug(`disabled execute ${name}`);
+        return p;
+      }
+
+      const fn = c[2];
       if (condition && p !== "") {
         this.idebug(`start execute ${name}`);
         return fn(p);
