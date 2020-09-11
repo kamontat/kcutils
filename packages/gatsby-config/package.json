@@ -39,7 +39,7 @@
   "devDependencies": {
     "@kcinternal/commandline": "0.13.2",
     "@kcinternal/configuration": "0.8.3",
-    "@types/react": "16.9.46",
+    "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
     "gatsby": "2.24.57"
   },
