@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.19-beta.4](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.3...@kcutils/color@0.3.19-beta.4) (2020-09-10)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.19-beta.3](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.2...@kcutils/color@0.3.19-beta.3) (2020-09-10)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.19-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.1...@kcutils/color@0.3.19-beta.2) (2020-09-09)
+
+
+### Bug Fixes
+
+* **model:** update code to support new logger version ([d8d7884](https://github.com/kamontat/kcutils/commit/d8d78843a0af3853030e8cad38f43ec021a94351))
+
+
+
+
+
+## [0.3.19-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.0...@kcutils/color@0.3.19-beta.1) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.19-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.18...@kcutils/color@0.3.19-beta.0) (2020-09-09)
+
+
+### Bug Fixes
+
+* **core:** compile error due to @kcutils/logger changes ([58a93fd](https://github.com/kamontat/kcutils/commit/58a93fd51a5b4d15a14fadf4b9fb7ef4540da2f2))
+
+
+
+
+
 ## [0.3.18](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.17...@kcutils/color@0.3.18) (2020-09-05)
 
 **Note:** Version bump only for package @kcutils/color

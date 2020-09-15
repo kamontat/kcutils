@@ -2,15 +2,15 @@ import { Writable } from "stream";
 
 export type Levels = "silent" | "error" | "warn" | "info" | "debug" | "silly";
 
-export interface LoggerLevel<L extends string = Levels> {
+export interface Level<L extends string = Levels> {
   readonly name: L;
   readonly level: number;
   stream: Writable;
 
-  copy(stream: Writable): LoggerLevel<L>;
+  copy(stream: Writable): Level<L>;
 }
 
-export class LoggerLevelBuilder<L extends string = Levels> implements LoggerLevel<L> {
+export class LoggerLevel<L extends string = Levels> implements Level<L> {
   readonly name: L;
   readonly level: number;
   stream: Writable;
@@ -21,7 +21,7 @@ export class LoggerLevelBuilder<L extends string = Levels> implements LoggerLeve
     this.stream = _stream;
   }
 
-  copy(stream: Writable): LoggerLevelBuilder<L> {
-    return new LoggerLevelBuilder(this.level, this.name, stream);
+  copy(stream: Writable): LoggerLevel<L> {
+    return new LoggerLevel(this.level, this.name, stream);
   }
 }

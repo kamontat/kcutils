@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/logger",
-  "version": "0.6.12",
+  "version": "0.7.0-beta.4",
   "description": "Another Logger Service",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -44,7 +44,7 @@
     "test": "itester"
   },
   "dependencies": {
-    "@kcutils/helper": "0.9.7",
+    "@kcutils/helper": "0.10.0-beta.2",
     "chalk": "4.1.0",
     "figures": "3.2.0"
   },

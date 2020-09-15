@@ -1,114 +1,80 @@
-import { LoggerType, Types } from "../models/logger/LoggerType";
+import { LoggerTypeBuilder } from "../builder/LoggerTypeBuilder";
+import { Types } from "../models/logger/LoggerType";
 
 export const types = {
-  fatal: {
-    label: "fatal",
-    badge: b => b.cross,
-    color: c => c.red,
-    level: "error",
-  } as LoggerType,
-  error: {
-    label: "error",
-    badge: b => b.cross,
-    color: c => c.red,
-    level: "error",
-  } as LoggerType,
-  warn: {
-    label: "warn",
-    badge: b => b.warning,
-    color: c => c.yellow,
-    level: "warn",
-  } as LoggerType,
-  fav: {
-    label: "favorite",
-    badge: b => b.heart,
-    color: c => c.magenta,
-    level: "info",
-  } as LoggerType,
-  info: {
-    label: "info",
-    badge: b => b.info,
-    color: c => c.blue,
-    level: "info",
-  } as LoggerType,
-  star: {
-    label: "star",
-    badge: b => b.star,
-    color: c => c.yellow,
-    level: "info",
-  } as LoggerType,
-  success: {
-    label: "success",
-    badge: b => b.tick,
-    color: c => c.green,
-    level: "info",
-  } as LoggerType,
-  wait: {
-    label: "waiting",
-    badge: b => b.ellipsis,
-    color: c => c.blue,
-    level: "info",
-  } as LoggerType,
-  complete: {
-    label: "complete",
-    badge: b => b.checkboxOn,
-    color: c => c.cyan,
-    level: "info",
-  } as LoggerType,
-  pending: {
-    label: "pending",
-    badge: b => b.checkboxOff,
-    color: c => c.magenta,
-    level: "info",
-  } as LoggerType,
-  note: {
-    label: "note",
-    badge: b => b.bullet,
-    color: c => c.blue,
-    level: "info",
-  } as LoggerType,
-  start: {
-    label: "start",
-    badge: b => b.play,
-    color: c => c.green,
-    level: "info",
-  } as LoggerType,
-  stop: {
-    label: "stop",
-    badge: b => b.squareSmallFilled,
-    color: c => c.yellow,
-    level: "info",
-  } as LoggerType,
-  await: {
-    label: "awaiting",
-    badge: b => b.ellipsis,
-    color: c => c.blue,
-    level: "info",
-  } as LoggerType,
-  watch: {
-    label: "watching",
-    badge: b => b.ellipsis,
-    color: c => c.yellow,
-    level: "info",
-  } as LoggerType,
-  log: {
-    label: "",
-    badge: _b => "",
-    color: c => c.reset,
-    level: "info",
-  } as LoggerType,
-  debug: {
-    label: "debug",
-    badge: b => b.circleCircle,
-    color: c => c.gray,
-    level: "debug",
-  } as LoggerType,
-  silly: {
-    label: "silly",
-    badge: b => b.circleCircle,
-    color: c => c.gray,
-    level: "silly",
-  } as LoggerType,
+  fatal: LoggerTypeBuilder.initial()
+    .withLabel("fatal")
+    .withLevel("error")
+    .withNewBadge(b => b.cross)
+    .withNewColor(c => c.red)
+    .get(),
+  error: LoggerTypeBuilder.initial()
+    .withLabel("error")
+    .withLevel("error")
+    .withNewBadge(b => b.cross)
+    .withNewColor(c => c.red)
+    .get(),
+  warn: LoggerTypeBuilder.initial()
+    .withLabel("warn")
+    .withLevel("warn")
+    .withNewBadge(b => b.warning)
+    .withNewColor(c => c.yellow)
+    .get(),
+  success: LoggerTypeBuilder.initial()
+    .withLabel("success")
+    .withLevel("info")
+    .withNewBadge(b => b.tick)
+    .withNewColor(c => c.green)
+    .get(),
+  wait: LoggerTypeBuilder.initial()
+    .withLabel("waiting")
+    .withLevel("info")
+    .withNewBadge(b => b.ellipsis)
+    .withNewColor(c => c.blue)
+    .get(),
+  complete: LoggerTypeBuilder.initial()
+    .withLabel("complete")
+    .withLevel("info")
+    .withNewBadge(b => b.checkboxOn)
+    .withNewColor(c => c.cyan)
+    .get(),
+  start: LoggerTypeBuilder.initial()
+    .withLabel("start")
+    .withLevel("info")
+    .withNewBadge(b => b.play)
+    .withNewColor(c => c.green)
+    .get(),
+  stop: LoggerTypeBuilder.initial()
+    .withLabel("stop")
+    .withLevel("info")
+    .withNewBadge(b => b.squareSmallFilled)
+    .withNewColor(c => c.yellow)
+    .get(),
+  watch: LoggerTypeBuilder.initial()
+    .withLabel("watching")
+    .withLevel("info")
+    .withNewBadge(b => b.ellipsis)
+    .withNewColor(c => c.yellow)
+    .get(),
+  info: LoggerTypeBuilder.initial()
+    .withLabel("info")
+    .withLevel("info")
+    .withNewBadge(b => b.info)
+    .withNewColor(c => c.blue)
+    .get(),
+  log: LoggerTypeBuilder.initial().get(),
+  debug: LoggerTypeBuilder.initial()
+    .withLabel("debug")
+    .withLevel("debug")
+    .withNewBadge(b => b.circleCircle)
+    .withNewColor(c => c.gray)
+    .get(),
+  silly: LoggerTypeBuilder.initial()
+    .withLabel("silly")
+    .withLevel("silly")
+    .withNewBadge(b => b.circleCircle)
+    .withNewColor(c => c.gray)
+    .get(),
 };
 
 export type DefaultKeyTypes = keyof typeof types;

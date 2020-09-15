@@ -1,14 +1,29 @@
-export { Logger } from "./models/logger/Logger";
+// v2
+
+export { LoggerLevelBuilder } from "./builder/LoggerLevelBuilder";
+export { LoggerTypeBuilder } from "./builder/LoggerTypeBuilder";
+export { LoggerSettingBuilder } from "./builder/LoggerSettingBuilder";
+export { LoggerOptionBuilder } from "./builder/LoggerOptionBuilder";
+export { LoggerBuilder } from "./builder/LoggerBuilder";
+
 export { WithLogger } from "./services/WithLogger";
 
-export { settingBuilder } from "./constants/settings";
-export { toLevel } from "./constants/levels";
+// v1
 
-export type { LoggerLevel } from "./models/logger/LoggerLevel";
+export {
+  /**
+   * @deprecated please use LoggerBuilder instead
+   */
+  Logger,
+} from "./models/logger/Logger";
+
+// type
+
+export type { UpdateOptionFn } from "./builder/LoggerBuilder";
+
+export type { Level } from "./models/logger/LoggerLevel";
 export type { StrictSettingObject } from "./models/logger/LoggerSetting";
 export type { DefaultKeyTypes } from "./constants/types";
-
-export type { OptionalLoggerOption as LoggerOption } from "./models/logger/LoggerOption";
 
 export type { InputMessage } from "./models/input/InputMessage";
 export type { InputOption } from "./models/input/InputOptions";

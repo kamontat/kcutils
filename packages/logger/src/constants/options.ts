@@ -7,6 +7,9 @@ import { toLevel } from "./levels";
 
 export const prefix = "KCUTILS_";
 
+/**
+ * @deprecated
+ */
 export const options: StrictOption = {
   debug: env.read(prefix + "DEBUG", "false") === "true",
   output: ["file", "console"],
