@@ -8,15 +8,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 **Note:** Version bump only for package @kcutils/gatsby-config
 
 
-
-
-
 ## [0.2.14-beta.3](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.2.14-beta.2...@kcutils/gatsby-config@0.2.14-beta.3) (2020-09-10)
 
 **Note:** Version bump only for package @kcutils/gatsby-config
-
-
-
 
 
 ## [0.2.14-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.2.14-beta.1...@kcutils/gatsby-config@0.2.14-beta.2) (2020-09-09)
@@ -41,9 +35,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * **core:** compile error due to @kcutils/logger changes ([a107abe](https://github.com/kamontat/kcutils/commit/a107abed82f8740ae824b38994dfc4dde9ba66ad))
-
-
-
 
 
 ## [0.2.13](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.2.12...@kcutils/gatsby-config@0.2.13) (2020-09-05)
