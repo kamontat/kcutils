@@ -72,3 +72,67 @@ export const isObject = <T = unknown>(obj: Optional<T>): obj is T => {
   if (obj === undefined || obj === null) return false;
   else return typeof obj === "object" && !Array.isArray(obj);
 };
+
+/**
+ * Cast input to string. This supporting by listed below
+ *
+ * 1. undefined | null => return undefined
+ * 2. boolean | string => return as string
+ * 3. number           => return as fix digit not more than 6
+ * 4. array            => return as array syntax without space
+ * 5. object           => return by JSON.stringify()
+ *
+ * @param input input data on any type
+ */
+export const toString = <T extends any = unknown>(input: T): string | undefined => {
+  if (noExist(input)) return undefined;
+  else if (isString(input)) return input;
+  else if (isBoolean(input)) return input ? "true" : "false";
+  else if (isNumber(input)) return input.toString(10);
+  else if (Array.isArray(input)) return `[${input.join(",")}]`;
+  else if (isObject(input)) return JSON.stringify(input);
+  else return undefined;
+};
+
+/**
+ * Cast input to number, This supported by list below
+ *
+ * 1. undefined | null  => return undefined
+ * 2. boolean           => return 1 if true; otherwise, return 0
+ * 3. string            => return by converter function
+ *
+ * @param input input data on any type
+ * @param converter parseFloat or parseInt, applied only when input is string. (default is parseFloat())
+ */
+export const toNumber = <T extends any = unknown>(
+  input: T,
+  converter: (s: string) => number = parseFloat
+): number | undefined => {
+  if (noExist(input)) return undefined;
+  else if (isNumber(input)) return input;
+  else if (isBoolean(input)) return input ? 1 : 0;
+  else if (isString(input)) {
+    const n = converter(input);
+    return isFinite(n) ? n : undefined;
+  } else return undefined;
+};
+
+export const toBoolean = <T extends any = unknown>(input: T): boolean | undefined => {
+  if (noExist(input)) return undefined;
+  else if (isBoolean(input)) return input;
+  else if (isNumber(input)) {
+    const isTrue = input === 1;
+    const isFalse = input === 0;
+
+    if (isTrue) return true;
+    else if (isFalse) return false;
+    else return undefined;
+  } else if (isString(input)) {
+    const isTrue = input === "true" || input === "1";
+    const isFalse = input === "false" || input === "0";
+
+    if (isTrue) return true;
+    else if (isFalse) return false;
+    else return undefined;
+  } else return undefined;
+};

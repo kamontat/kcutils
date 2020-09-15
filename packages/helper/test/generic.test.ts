@@ -196,8 +196,92 @@ describe("Generic checker", () => {
       [["array"], false],
       [{ data: true }, true],
       [new Map(), true],
-    ])("called isEmpty(%s) should returns %s", (input, expected) => {
+    ])("of '%s' should returns %s", (input, expected) => {
       expect(generic.isObject(input)).toEqual(expected);
+    });
+  });
+
+  describe("generic.toString(any)", () => {
+    test.each([
+      [undefined, undefined],
+      [null, undefined],
+      ["string", "string"],
+      [12, "12"],
+      [15.5545, "15.5545"],
+      [0.9998999, "0.9998999"],
+      [0.1234561, "0.1234561"],
+      [true, "true"],
+      [false, "false"],
+      [["array"], "[array]"],
+      [["multiple", "element"], "[multiple,element]"],
+      [{ data: true }, '{"data":true}'],
+      [new Map(), "{}"],
+      [new Error("helo world"), "{}"],
+    ])("of '%s' should returns %s", (input, expected) => {
+      expect(generic.toString(input)).toEqual(expected);
+    });
+  });
+
+  describe("generic.toNumber(any)", () => {
+    test.each([
+      [undefined, undefined],
+      [null, undefined],
+      ["string", undefined],
+      ["12", 12],
+      ["8.99", 8.99],
+      [15.5545, 15.5545],
+      [0.9998999, 0.9998999],
+      [0.1234561, 0.1234561],
+      [true, 1],
+      [false, 0],
+      [["array"], undefined],
+      [["multiple", "element"], undefined],
+      [{ data: true }, undefined],
+      [new Map(), undefined],
+      [new Error("helo world"), undefined],
+    ])("of '%s' should returns %s", (input, expected) => {
+      expect(generic.toNumber(input)).toEqual(expected);
+    });
+
+    test.each([
+      ["144", parseInt, 144],
+      ["321.111", parseInt, 321],
+      ["321.789", parseInt, 321],
+      ["321.111", parseFloat, 321.111],
+      [998.22, parseFloat, 998.22],
+      [998.22, parseInt, 998.22],
+      [NaN, parseInt, undefined],
+      [Infinity, parseFloat, undefined],
+    ])("of ('%s', '%p') should returns %s", (input, converter, expected) => {
+      expect(generic.toNumber(input, converter)).toEqual(expected);
+    });
+  });
+
+  describe("generic.toBoolean(any)", () => {
+    test.each([
+      [undefined, undefined],
+      [null, undefined],
+      ["string", undefined],
+      ["12", undefined],
+      ["8.99", undefined],
+      ["false", false],
+      ["true", true],
+      ["0", false],
+      ["1", true],
+      [15.5545, undefined],
+      [0.9998999, undefined],
+      [0.1234561, undefined],
+      [1, true],
+      [0, false],
+      [true, true],
+      [false, false],
+      [["array"], undefined],
+      [["multiple", "element"], undefined],
+      [{ data: true }, undefined],
+      [new Map(), undefined],
+      [new Error("helo world"), undefined],
+    ])("of '%s' should returns %s", (input, expected) => {
+      expect(generic.toBoolean(input)).toEqual(expected);
     });
   });
 });

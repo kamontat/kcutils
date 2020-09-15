@@ -37,3 +37,6 @@ export interface OptionalSetting {
   suffix?: OptionalCommonSetting;
   secret?: OptionalCommonSetting;
 }
+
+export type StrictSettingObjectKey = keyof StrictSettingObject;
+export type StrictSettingKey = keyof StrictSetting;
