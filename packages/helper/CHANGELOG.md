@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.10.0-beta.1...@kcutils/helper@0.10.0-beta.2) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.10.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.10.0-beta.0...@kcutils/helper@0.10.0-beta.1) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.10.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.9.7...@kcutils/helper@0.10.0-beta.0) (2020-09-09)
+
+
+### Features
+
+* **utils:** add toString(), toNumber() and toBoolean() ([e30e317](https://github.com/kamontat/kcutils/commit/e30e317fc7df4b6fb57394c974c936aba3e4e295))
+
+
+
+
+
 ## [0.9.7](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.9.6...@kcutils/helper@0.9.7) (2020-09-05)
 
 **Note:** Version bump only for package @kcutils/helper

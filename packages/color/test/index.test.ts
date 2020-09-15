@@ -3,7 +3,10 @@ import { hexToRgb, enforceHSL, enforceHSV, enforceRGB, enforceHex } from "../src
 import { generic } from "@kcutils/helper";
 import { enforceNamed } from "../src/utils/converter/named";
 
-const color = () => ColorBuilder.random().get().setLoggerOption({ level: "warn" });
+const color = () =>
+  ColorBuilder.random()
+    .get()
+    .setLoggerOption(b => b.withLevel("warn"));
 
 describe("Color object", () => {
   test("create empty color will no throw exception on default", () => {

@@ -1,5 +1,5 @@
 import { generic } from "@kcutils/helper";
-import { WithLogger, LoggerOption } from "@kcutils/logger";
+import { WithLogger, LoggerBuilder } from "@kcutils/logger";
 
 import { ConfigObject, AnyConfigObject, MetaValue } from "./ConfigObject";
 
@@ -10,8 +10,8 @@ type StringRecord<V extends any = any> = {
 export class ConfigBuilder<M extends StringRecord<any> = StringRecord<any>> extends WithLogger {
   private config: ConfigObject & AnyConfigObject;
 
-  constructor(config: ConfigObject & AnyConfigObject = {}, loggerOption?: LoggerOption<"">) {
-    super(loggerOption);
+  constructor(config: ConfigObject & AnyConfigObject = {}, loggerBuilder?: LoggerBuilder<"">) {
+    super(loggerBuilder);
 
     this.config = generic.noExist(config) ? { siteMetadata: {} } : config;
     if (generic.noExist(this.config.siteMetadata)) this.config.siteMetadata = {};
