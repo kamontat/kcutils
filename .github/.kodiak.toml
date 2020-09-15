@@ -13,14 +13,14 @@ version = 1
 
 # By default, Kodiak will only act on PRs that have this label. You can disable
 # this requirement via `merge.require_automerge_label`.
-automerge_label = "dependencies" # default: "automerge"
+# automerge_label = "dependencies" # default: "automerge"
 
 # Require that the automerge label (`merge.automerge_label`) be set for Kodiak
 # to merge a PR.
 #
 # When disabled, Kodiak will immediately attempt to merge any PR that passes all
 # GitHub branch protection requirements.
-require_automerge_label = true
+require_automerge_label = false
 
 # If a PR's title matches this regex, Kodiak will not merge the PR. This is
 # useful to prevent merging work-in-progress PRs.
