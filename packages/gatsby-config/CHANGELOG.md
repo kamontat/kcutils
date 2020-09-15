@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.2.14...@kcutils/gatsby-config@0.3.0) (2020-09-15)
+
+
+### Features
+
+* **core:** update core implementation of logger. ([#72](https://github.com/kamontat/kcutils/issues/72)) ([1141f09](https://github.com/kamontat/kcutils/commit/1141f091669a532c9894d49ab619e893991e16d8))
+
+
+
+
+
 ## [0.2.16-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.2.14...@kcutils/gatsby-config@0.2.16-beta.0) (2020-09-15)
 
 

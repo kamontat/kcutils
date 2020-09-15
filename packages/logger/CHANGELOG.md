@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.6.12...@kcutils/logger@0.7.0) (2020-09-15)
+
+
+### Features
+
+* **core:** update core implementation of logger. ([#72](https://github.com/kamontat/kcutils/issues/72)) ([1141f09](https://github.com/kamontat/kcutils/commit/1141f091669a532c9894d49ab619e893991e16d8))
+
+
+
+
+
 # [0.7.0-beta.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.7.0-beta.3...@kcutils/logger@0.7.0-beta.4) (2020-09-10)
 
 **Note:** Version bump only for package @kcutils/logger

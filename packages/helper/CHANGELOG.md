@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.9.7...@kcutils/helper@0.10.0) (2020-09-15)
+
+
+### Features
+
+* **core:** update core implementation of logger. ([#72](https://github.com/kamontat/kcutils/issues/72)) ([1141f09](https://github.com/kamontat/kcutils/commit/1141f091669a532c9894d49ab619e893991e16d8))
+
+
+
+
+
 # [0.10.0-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.10.0-beta.1...@kcutils/helper@0.10.0-beta.2) (2020-09-09)
 
 **Note:** Version bump only for package @kcutils/helper
