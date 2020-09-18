@@ -5202,10 +5202,10 @@ jest-haste-map@^26.3.0:
   optionalDependencies:
     fsevents "^2.1.2"
 
-jest-html-reporters@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.0.3.tgz#b4926224b5c24c1fded454a157ba2b297aadbbc3"
-  integrity sha512-TlJtC1ex35L+5FduD9jE0dKBPIL7CmkgEroTlIs45S/1aGn20iOgovjqmVigge/TJq0wiUm/j9fBfPb8ztGi2g==
+jest-html-reporters@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.0.4.tgz#af22c489a64370e3cd18434b41f05706ff256adf"
+  integrity sha512-RIu6rgPExSnmgZYxpdwiYnmhI7mIlPyOdfLdS5eooR6wfeuXYIUh8tElC7SkWQG7kgEgqQ8dLXVj1NvCmiceLw==
   dependencies:
     fs-extra "^9.0.1"
 
@@ -8441,10 +8441,10 @@ trim-off-newlines@^1.0.0:
   resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
   integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
 
-ts-jest@26.2.0:
-  version "26.2.0"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.2.0.tgz#7ec22faceb05ee1467fdb5265d1b33c27441f163"
-  integrity sha512-9+y2qwzXdAImgLSYLXAb/Rhq9+K4rbt0417b8ai987V60g2uoNWBBmMkYgutI7D8Zhu+IbCSHbBtrHxB9d7xyA==
+ts-jest@26.3.0:
+  version "26.3.0"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.3.0.tgz#6b2845045347dce394f069bb59358253bc1338a9"
+  integrity sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
   dependencies:
     "@types/jest" "26.x"
     bs-logger "0.x"
