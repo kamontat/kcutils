@@ -41,7 +41,8 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.13.2",

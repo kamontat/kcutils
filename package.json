@@ -9,6 +9,8 @@
     "build:init": "scripts/runner.sh type=run cmd=build on=@kcinternal/*",
     "test": "lerna exec yarn test --ignore '@types/*' --ignore '@kcinternal/*'",
     "test:ci": "jest --ci --runInBand",
+    "lint": "scripts/runner.sh type=run cmd=lint",
+    "lint:ci": "scripts/runner.sh type=run cmd=lint CI=true",
     "clean": "lerna run clean && lerna run clean:cli",
     "clean:all": "lerna run clean -- --all",
     "build:graph": "scripts/runner.sh type=run cmd=build on=@kcutils/graph",

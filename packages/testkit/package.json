@@ -42,7 +42,8 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "dependencies": {
     "@stryker-mutator/core": "3.3.1",

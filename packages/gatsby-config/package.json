@@ -29,7 +29,8 @@
     "build": "icompiler-tsc -- --skipLibCheck",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "dependencies": {
     "@kcutils/helper": "0.10.1",
