@@ -1,6 +1,6 @@
 import { json, generic } from "@kcutils/helper";
 import { Throwable } from "@kcutils/error";
-import { WithLogger, LoggerOption } from "@kcutils/logger";
+import { WithLogger, LoggerBuilder, LoggerSettingBuilder, UpdateOptionFn } from "@kcutils/logger";
 
 import { NumberTypeString, RGB, HSL, HSV, HEX, Named } from "..";
 
@@ -25,17 +25,18 @@ export class Color extends WithLogger {
 
   private raw: RGB;
 
-  private readonly loggerOptions?: LoggerOption<"">;
-
-  constructor(rgb: RGB, loggerOptions?: LoggerOption<"">) {
+  constructor(rgb: RGB, loggerBuilder?: LoggerBuilder<"">) {
     const id = Color.counter;
     Color.increaseCounter();
 
-    super(Object.assign({ scopes: ["color", id], settings: { filename: false } }, loggerOptions));
+    super(
+      loggerBuilder?.updateOption(b =>
+        b.withScopes(["color", id.toString(10)]).withSetting("filename", LoggerSettingBuilder.disabled())
+      )
+    );
 
     this.id = id;
     this.raw = rgb;
-    this.loggerOptions = loggerOptions;
 
     if (validateRGB(rgb, false)) this.rgb = json.deepMerge({ a: 1 }, rgb);
     else this.error = InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
@@ -43,8 +44,8 @@ export class Color extends WithLogger {
     this.logger.print("debug", `initiaize color object ${this.id} (valid = ${this.isValid()})`);
   }
 
-  setLoggerOption(option: LoggerOption<"">): this {
-    this.updateLogger(l => l.copy(option));
+  setLoggerOption(fn: UpdateOptionFn<"", "">): this {
+    this.updateLoggerOption(fn);
     return this;
   }
 
@@ -78,6 +79,10 @@ export class Color extends WithLogger {
 
   getId(): number {
     return this.id;
+  }
+
+  getAlpha(): number {
+    return this.rgb?.a ?? 1;
   }
 
   /**
@@ -195,21 +200,21 @@ export class Color extends WithLogger {
   }
 
   clone(): Color {
-    return new Color(this.toRGB(), this.loggerOptions);
+    return new Color(this.toRGB(), LoggerBuilder.load(this.logger));
   }
 
   copyRGB(rgb: Partial<RGB>): Color {
-    return new Color(Object.assign({}, this.toRGB(), rgb), this.loggerOptions);
+    return new Color(Object.assign({}, this.toRGB(), rgb), LoggerBuilder.load(this.logger));
   }
 
   copyHSL(hsl: Partial<HSL>): Color {
     const newHSL = Object.assign({}, this.toHSL(), hsl);
-    return new Color(hslToRgb(newHSL), this.loggerOptions);
+    return new Color(hslToRgb(newHSL), LoggerBuilder.load(this.logger));
   }
 
   copyHSV(hsv: Partial<HSV>): Color {
     const newHSV = Object.assign({}, this.toHSV(), hsv);
-    return new Color(hsvToRgb(newHSV), this.loggerOptions);
+    return new Color(hsvToRgb(newHSV), LoggerBuilder.load(this.logger));
   }
 
   toString(): string {
@@ -229,6 +234,6 @@ export class Color extends WithLogger {
       type: rgb1.type,
     };
 
-    return new Color(rgb, this.loggerOptions);
+    return new Color(rgb, LoggerBuilder.load(this.logger));
   }
 }

@@ -3,6 +3,146 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.3...@kcinternal/configuration@0.8.4) (2020-09-18)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.8.3](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.2...@kcinternal/configuration@0.8.3) (2020-09-05)
+
+
+### Bug Fixes
+
+* **core:** add webpack to avoid runtime error ([7ee99c5](https://github.com/kamontat/kcutils/commit/7ee99c5b2b786002f26cba366f49b9081361a64a))
+
+
+
+
+
+## [0.8.2](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.1...@kcinternal/configuration@0.8.2) (2020-09-05)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.8.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.0...@kcinternal/configuration@0.8.1) (2020-09-05)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+# [0.8.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.7.4...@kcinternal/configuration@0.8.0) (2020-09-05)
+
+
+### Features
+
+* **core:** change all dependencies to production scope ([c5a95cb](https://github.com/kamontat/kcutils/commit/c5a95cbb296e17f5ca9f126f72da1c19e1468746))
+
+
+
+
+
+## [0.7.4](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.7.3...@kcinternal/configuration@0.7.4) (2020-09-05)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.7.3](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.7.2...@kcinternal/configuration@0.7.3) (2020-09-04)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.7.2](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.7.1...@kcinternal/configuration@0.7.2) (2020-08-28)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.7.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.7.0...@kcinternal/configuration@0.7.1) (2020-08-18)
+
+
+### Performance Improvements
+
+* **model:** add support babel runtime in babel configuration ([11ce1f5](https://github.com/kamontat/kcutils/commit/11ce1f5fb64f9f67aa8dee12140cac4f05bb04f1))
+
+
+
+
+
+# [0.7.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.14...@kcinternal/configuration@0.7.0) (2020-08-17)
+
+
+### Features
+
+* **utils:** add babel configuration generator ([609b942](https://github.com/kamontat/kcutils/commit/609b94226c30b4759ca891cfa6d2e8c832959618))
+
+
+
+
+
+## [0.6.14](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.13...@kcinternal/configuration@0.6.14) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.6.13](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.12...@kcinternal/configuration@0.6.13) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.6.12](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.11...@kcinternal/configuration@0.6.12) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.6.11](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.10...@kcinternal/configuration@0.6.11) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.6.10](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.9...@kcinternal/configuration@0.6.10) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.6.9](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.9-rc.6...@kcinternal/configuration@0.6.9) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
 ## [0.6.9-rc.6](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.6.9-rc.5...@kcinternal/configuration@0.6.9-rc.6) (2020-08-14)
 
 **Note:** Version bump only for package @kcinternal/configuration

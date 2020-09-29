@@ -54,12 +54,12 @@ describe("HSL to HSL", () => {
   });
 
   test.each([
-    [definedHSL({ a: 0.59481, type: type.number }), 3, definedHSL({ a: 0.59, type: type.number })],
+    [definedHSL({ a: 0.5948114, type: type.number }), 3, definedHSL({ a: 0.594811, type: type.number })],
     [definedHSL({ a: 100, type: type.decimal }), 3, definedHSL({ a: 1, type: type.decimal })],
     [
       definedHSL({ a: 0.5123, h: 0.3155, s: 0.1142, l: 0.33, type: type.decimal }),
       2,
-      definedHSL({ a: 0.51, h: 0.32, s: 0.11, l: 0.33, type: type.decimal }),
+      definedHSL({ a: 0.5123, h: 0.32, s: 0.11, l: 0.33, type: type.decimal }),
     ],
     [
       definedHSL({ h: 123, s: 222.45, l: 8.5102, type: type.number }),
@@ -77,7 +77,7 @@ describe("HSL to HSL", () => {
     [enforceHSL({ h: 70, s: 20, l: 30, type: "percent" }), enforceRGB({ r: 67.32, g: 61.2, b: 91.8 })],
 
     [enforceHSL({ h: 300, s: 120, l: 100, a: 100, type: "number" }), enforceRGB({ r: 255, g: 255, b: 255, a: 1 })],
-    [enforceHSL({ h: 0.95, s: 0.65, l: 0.6, a: 0.003 }), enforceRGB({ r: 219.3, g: 86.7, b: 126.48, a: 0 })],
+    [enforceHSL({ h: 0.95, s: 0.65, l: 0.6, a: 0.004 }), enforceRGB({ r: 219.3, g: 86.7, b: 126.48, a: 0.004 })],
   ])("convert HSL(%p) to RGB(%p)", (hsl, rgb) => {
     expect(converter.hslToRgb(hsl)).toEqual(rgb);
   });

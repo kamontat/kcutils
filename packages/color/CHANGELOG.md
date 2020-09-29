@@ -3,6 +3,246 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.4.0...@kcutils/color@0.4.1) (2020-09-18)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.18...@kcutils/color@0.4.0) (2020-09-15)
+
+
+### Features
+
+* **core:** update core implementation of logger. ([#72](https://github.com/kamontat/kcutils/issues/72)) ([1141f09](https://github.com/kamontat/kcutils/commit/1141f091669a532c9894d49ab619e893991e16d8))
+
+
+
+
+
+## [0.3.19-beta.4](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.3...@kcutils/color@0.3.19-beta.4) (2020-09-10)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.19-beta.3](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.2...@kcutils/color@0.3.19-beta.3) (2020-09-10)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.19-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.1...@kcutils/color@0.3.19-beta.2) (2020-09-09)
+
+
+### Bug Fixes
+
+* **model:** update code to support new logger version ([d8d7884](https://github.com/kamontat/kcutils/commit/d8d78843a0af3853030e8cad38f43ec021a94351))
+
+
+
+
+
+## [0.3.19-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.19-beta.0...@kcutils/color@0.3.19-beta.1) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.19-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.18...@kcutils/color@0.3.19-beta.0) (2020-09-09)
+
+
+### Bug Fixes
+
+* **core:** compile error due to @kcutils/logger changes ([58a93fd](https://github.com/kamontat/kcutils/commit/58a93fd51a5b4d15a14fadf4b9fb7ef4540da2f2))
+
+
+
+
+
+## [0.3.18](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.17...@kcutils/color@0.3.18) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.17](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.16...@kcutils/color@0.3.17) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.16](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.15...@kcutils/color@0.3.16) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.15](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.14...@kcutils/color@0.3.15) (2020-09-05)
+
+
+### Performance Improvements
+
+* **utils:** changes default digit of boundAlpha() to 6 and configable ([a8c65c6](https://github.com/kamontat/kcutils/commit/a8c65c6c616299781db408eb51d0b5dadcba5c41))
+
+
+
+
+
+## [0.3.14](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.13...@kcutils/color@0.3.14) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.13](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.12...@kcutils/color@0.3.13) (2020-09-04)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.12](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.11...@kcutils/color@0.3.12) (2020-08-28)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.11](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.10...@kcutils/color@0.3.11) (2020-08-22)
+
+
+### Bug Fixes
+
+* **test:** update hsvToHsv() not throw exception anymore ([9aa6322](https://github.com/kamontat/kcutils/commit/9aa63225a3da8cc2bc8e8d335e3549f84e433593))
+* **utils:** update 'hsvToHsv' and 'hslToHsl' to support partial object ([b6d7a10](https://github.com/kamontat/kcutils/commit/b6d7a101b239351e3d8fe81e36bda88a76f846d6))
+
+
+### Performance Improvements
+
+* **model:** add getAlpha in Color models ([59bc1be](https://github.com/kamontat/kcutils/commit/59bc1becb50d9f57c65fe6d1ecb74a9c8a9d58b5))
+
+
+
+
+
+## [0.3.10](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.9...@kcutils/color@0.3.10) (2020-08-19)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.9](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.8...@kcutils/color@0.3.9) (2020-08-18)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.8](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.7...@kcutils/color@0.3.8) (2020-08-17)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.7](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.6...@kcutils/color@0.3.7) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.6](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.5...@kcutils/color@0.3.6) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.5](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.4...@kcutils/color@0.3.5) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.4](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.3...@kcutils/color@0.3.4) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.2...@kcutils/color@0.3.3) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.2](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.1...@kcutils/color@0.3.2) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+## [0.3.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.3.0...@kcutils/color@0.3.1) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
+# [0.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0...@kcutils/color@0.3.0) (2020-08-14)
+
+
+### Features
+
+* upgrade dependencies version ([d89d18b](https://github.com/kamontat/kcutils/commit/d89d18b8e1b0bde55739ea2ae5367da83788b03d))
+
+
+
+
+
+# [0.2.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.15...@kcutils/color@0.2.0) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
 # [0.2.0-rc.15](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.2.0-rc.14...@kcutils/color@0.2.0-rc.15) (2020-08-14)
 
 

@@ -3,7 +3,10 @@ import { hexToRgb, enforceHSL, enforceHSV, enforceRGB, enforceHex } from "../src
 import { generic } from "@kcutils/helper";
 import { enforceNamed } from "../src/utils/converter/named";
 
-const color = () => ColorBuilder.random().get().setLoggerOption({ level: "warn" });
+const color = () =>
+  ColorBuilder.random()
+    .get()
+    .setLoggerOption(b => b.withLevel("warn"));
 
 describe("Color object", () => {
   test("create empty color will no throw exception on default", () => {
@@ -269,11 +272,11 @@ describe("Color object", () => {
     k1: {
       rgb: enforceRGB({ r: 51, g: 88, b: 190, type: ColorBuilder.numberType.number, a: 0.045 }),
       named: undefined,
-      hsl: enforceHSL({ h: 0.62, s: 0.58, l: 0.48, a: 0.05 }),
-      hsls: "hsla(0.62,0.58,0.48,0.05)",
-      hsv: enforceHSV({ h: 0.62, s: 0.73, v: 0.75, a: 0.05 }),
-      hsvs: "hsva(0.62,0.73,0.75,0.05)",
-      hex: enforceHex({ x: "3358be0d", type: "hex8", a: 0.05 }),
+      hsl: enforceHSL({ h: 0.62, s: 0.58, l: 0.48, a: 0.045 }),
+      hsls: "hsla(0.62,0.58,0.48,0.045)",
+      hsv: enforceHSV({ h: 0.62, s: 0.73, v: 0.75, a: 0.045 }),
+      hsvs: "hsva(0.62,0.73,0.75,0.045)",
+      hex: enforceHex({ x: "3358be0b", type: "hex8", a: 0.045 }),
     },
     k2: {
       rgb: enforceRGB({ r: 90, g: 120, b: 250, type: ColorBuilder.numberType.number, a: 0.77 }),

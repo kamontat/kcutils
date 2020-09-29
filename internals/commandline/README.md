@@ -15,8 +15,16 @@
 
 ## icompiler-tsc
 
+Condition:
+
+1. required `tsconfig.json` file on same directory with package.json
+
 ```bash
-$ yarn icompiler-tsc [parameters] # all parameters are the same as tsc command
+$ yarn icompiler-tsc \
+  [--dry-run] \ # dry run mean output the command to execute without executed
+  [--auto] \ # this will use tsconfig.json file in commandline includes folder
+  [parameters] \ # all parameters are the same as tsc command
+
 ```
 
 ## icompiler-webpack
@@ -29,6 +37,7 @@ Condition:
 
 1. required `webpack` command installed
 2. required `webpack.config.js` file on same directory with package.json
+3. required `tsconfig.json` file on same directory with package.json
 
 ```bash
 $ yarn icompiler-webpack \

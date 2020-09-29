@@ -37,12 +37,13 @@ export const roundedHSV = (hsv: HSV, digit?: number): HSV => {
  * @param hsl any type of hsl object
  * @returns number of hsl object
  */
-export const hsvToHsv = (hsv: HSV, type: Type = "number"): HSV => {
-  if (isType(hsv, type)) return enforceHSV(hsv);
-  const _h: C<"h", number> & NumberType = { h: hsv.h, type: hsv.type };
+export const hsvToHsv = (hsv: Partial<HSV>, type: Type = "number"): HSV => {
+  const _hsv = enforceHSV(hsv);
+  if (isType(_hsv, type)) return _hsv;
+  const _h: C<"h", number> & NumberType = { h: _hsv.h, type: _hsv.type };
   const h = toType(type, _h, { max: 360, min: 0 });
-  const sl = toType(type, hsv, { max: 100, min: 0 });
-  const result = Object.assign(sl, { h: h.h }, { a: boundAlpha(hsv.a) });
+  const sl = toType(type, _hsv, { max: 100, min: 0 });
+  const result = Object.assign(sl, { h: h.h }, { a: boundAlpha(_hsv.a) });
 
   return enforceHSV(result); // fill all missing data
 };

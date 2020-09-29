@@ -30,6 +30,7 @@ const transformer = new AsyncRunner(option, async ({ helper, data }) => {
     const ci = process.env.CI === "true";
     if (ci) args.push("--ci", "--runInBand");
 
+    args.push(...data.raw);
     return args;
   }
 });

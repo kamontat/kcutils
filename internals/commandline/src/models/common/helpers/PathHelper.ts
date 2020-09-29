@@ -87,12 +87,18 @@ export class PathHelper {
     }
   }
 
-  searchPackageJsonSync(key: "dependencies" | "devDependencies", searchText: string): boolean {
+  searchPackageJsonSync(key: "dependencies" | "devDependencies" | "all", searchText: string | RegExp): boolean {
     const pjson = this.packageJsonSync();
     if (!this.isPackage(pjson)) {
       return false;
     } else {
-      return Object.keys(pjson[key] ?? {}).includes(searchText);
+      const arr =
+        key === "all"
+          ? Object.keys(pjson.dependencies ?? {}).concat(Object.keys(pjson.devDependencies ?? {}))
+          : Object.keys(pjson[key] ?? {});
+
+      if (typeof searchText === "string") return arr.includes(searchText);
+      else return arr.some(dep => searchText.test(dep));
     }
   }
 

@@ -3,6 +3,169 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.18](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.17...@kcutils/react-testkit@0.4.18) (2020-09-18)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.17](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.16...@kcutils/react-testkit@0.4.17) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.16](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.15...@kcutils/react-testkit@0.4.16) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.15](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.14...@kcutils/react-testkit@0.4.15) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.14](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.13...@kcutils/react-testkit@0.4.14) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.13](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.12...@kcutils/react-testkit@0.4.13) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.12](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.11...@kcutils/react-testkit@0.4.12) (2020-09-04)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.11](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.10...@kcutils/react-testkit@0.4.11) (2020-08-28)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.10](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.9...@kcutils/react-testkit@0.4.10) (2020-08-18)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.9](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.8...@kcutils/react-testkit@0.4.9) (2020-08-17)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.8](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.7...@kcutils/react-testkit@0.4.8) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.7](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.6...@kcutils/react-testkit@0.4.7) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.6](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.5...@kcutils/react-testkit@0.4.6) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.5](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.4...@kcutils/react-testkit@0.4.5) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.4](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.3...@kcutils/react-testkit@0.4.4) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.3](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.2...@kcutils/react-testkit@0.4.3) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.2](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.1...@kcutils/react-testkit@0.4.2) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+## [0.4.1](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.0...@kcutils/react-testkit@0.4.1) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.32...@kcutils/react-testkit@0.4.0) (2020-08-14)
+
+
+### Features
+
+* upgrade dependencies version ([d89d18b](https://github.com/kamontat/kcutils/commit/d89d18b8e1b0bde55739ea2ae5367da83788b03d))
+
+
+
+
+
+## [0.3.32](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.30-rc.4...@kcutils/react-testkit@0.3.32) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
 ## [0.3.30-rc.4](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.3.30-rc.3...@kcutils/react-testkit@0.3.30-rc.4) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/react-testkit

@@ -3,6 +3,130 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.13.1...@kcinternal/commandline@0.13.2) (2020-09-05)
+
+
+### Bug Fixes
+
+* **core:** remove [@types](https://github.com/types) from production dependencies to avoid error ([bb40719](https://github.com/kamontat/kcutils/commit/bb40719fd8ac66e27e5c1b319008c1f5d27627b3))
+
+
+
+
+
+## [0.13.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.13.0...@kcinternal/commandline@0.13.1) (2020-09-05)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
+# [0.13.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.12.0...@kcinternal/commandline@0.13.0) (2020-09-05)
+
+
+### Features
+
+* **core:** change all dependencies to production scope ([c5a95cb](https://github.com/kamontat/kcutils/commit/c5a95cbb296e17f5ca9f126f72da1c19e1468746))
+
+
+
+
+
+# [0.12.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.11.1...@kcinternal/commandline@0.12.0) (2020-08-17)
+
+
+### Bug Fixes
+
+* **model:** export Multiple runner ([910f2a5](https://github.com/kamontat/kcutils/commit/910f2a58e9f5b06d4951ac025aaf25ceff64b6a8))
+
+
+### Features
+
+* **core:** add icompiler-babel with support generate typescript .d.ts files ([4ceca90](https://github.com/kamontat/kcutils/commit/4ceca900460b00836af4c24b78e82bee90ab90f0))
+* **model:** add MultiRunner to support run runner by 1 command ([5cd4a2e](https://github.com/kamontat/kcutils/commit/5cd4a2eb8b49f836744e166dcf18851396604c70))
+
+
+### Performance Improvements
+
+* **utils:** update searchPackageJsonSync() to support all type and regex string ([a3f7f20](https://github.com/kamontat/kcutils/commit/a3f7f20d93fda8b93bfbe7b177bd44fe5c80ef6d))
+
+
+
+
+
+## [0.11.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.11.0...@kcinternal/commandline@0.11.1) (2020-08-14)
+
+
+### Bug Fixes
+
+* **utils:** root-run insert duplicate parameters to commandline ([addfa85](https://github.com/kamontat/kcutils/commit/addfa857dabd5f8989bc15d7bbb8c286a56653bc))
+
+
+
+
+
+# [0.11.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.2...@kcinternal/commandline@0.11.0) (2020-08-14)
+
+
+### Bug Fixes
+
+* **utils:** remove --stream from root-build command ([4d65903](https://github.com/kamontat/kcutils/commit/4d65903b2f3d3791cee62c0e3d3d4f7c15f1a3eb))
+
+
+### Features
+
+* **utils:** `icompiler-tsc` is require tsconfig file or pass `--auto` ([c7c8a88](https://github.com/kamontat/kcutils/commit/c7c8a8815cb54aa7a79a4e81489354bb73f3ee57))
+
+
+### Performance Improvements
+
+* **utils:** add more parameters in icompiler-tsc ([5b93ee5](https://github.com/kamontat/kcutils/commit/5b93ee51b26d1f64ab8f267eb0cd2bd56c0424f2))
+
+
+
+
+
+## [0.10.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.1...@kcinternal/commandline@0.10.2) (2020-08-14)
+
+
+### Bug Fixes
+
+* **utils:** lerna command didn't add parameters to result ([f0a280b](https://github.com/kamontat/kcutils/commit/f0a280bab812d8ac6138f3b17bc405df159f369f))
+* **utils:** never pass all input to commandline ([5b98449](https://github.com/kamontat/kcutils/commit/5b984493e6b8961220daf8fa1a1c4a5b7b6dc367))
+* **utils:** root-build didn't work when no scope / ignore list ([13f315b](https://github.com/kamontat/kcutils/commit/13f315b5cdc3fd7f6b68cbdf691fd0b67b101e2d))
+
+
+
+
+
+## [0.10.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.10.0...@kcinternal/commandline@0.10.1) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
+# [0.10.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0...@kcinternal/commandline@0.10.0) (2020-08-14)
+
+
+### Features
+
+* upgrade dependencies version ([d89d18b](https://github.com/kamontat/kcutils/commit/d89d18b8e1b0bde55739ea2ae5367da83788b03d))
+
+
+
+
+
+# [0.9.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.5...@kcinternal/commandline@0.9.0) (2020-08-14)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
 # [0.9.0-rc.5](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.9.0-rc.4...@kcinternal/commandline@0.9.0-rc.5) (2020-08-14)
 
 **Note:** Version bump only for package @kcinternal/commandline

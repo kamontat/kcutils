@@ -3,6 +3,137 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.14](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.13...@kcutils/testkit@0.3.14) (2020-09-18)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.13](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.12...@kcutils/testkit@0.3.13) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.12](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.11...@kcutils/testkit@0.3.12) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.11](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.10...@kcutils/testkit@0.3.11) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.10](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.9...@kcutils/testkit@0.3.10) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.9](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.8...@kcutils/testkit@0.3.9) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.8](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.7...@kcutils/testkit@0.3.8) (2020-09-04)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.7](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.6...@kcutils/testkit@0.3.7) (2020-08-28)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.6](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.5...@kcutils/testkit@0.3.6) (2020-08-18)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.5](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.4...@kcutils/testkit@0.3.5) (2020-08-17)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.4](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.3...@kcutils/testkit@0.3.4) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.2...@kcutils/testkit@0.3.3) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.2](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.1...@kcutils/testkit@0.3.2) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+## [0.3.1](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.3.0...@kcutils/testkit@0.3.1) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
+# [0.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.2.2...@kcutils/testkit@0.3.0) (2020-08-14)
+
+
+### Features
+
+* upgrade dependencies version ([d89d18b](https://github.com/kamontat/kcutils/commit/d89d18b8e1b0bde55739ea2ae5367da83788b03d))
+
+
+
+
+
+## [0.2.2](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.2.0-rc.7...@kcutils/testkit@0.2.2) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/testkit
+
+
+
+
+
 # [0.2.0-rc.7](https://github.com/kamontat/kcutils/compare/@kcutils/testkit@0.2.0-rc.6...@kcutils/testkit@0.2.0-rc.7) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/testkit

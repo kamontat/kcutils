@@ -59,11 +59,11 @@ describe("RGB to RGB", () => {
     expect(defaultRGB).toEqual({ a: 1, r: 0, g: 0, b: 0, type: "number" } as RGB);
   });
 
-  test("convert unknown type object cause exception", () => {
+  test("convert unknown type object will return default value", () => {
     expect(rgbToRgb(undefined as any, type.decimal)).toEqual(enforceRGB({ type: type.decimal }));
   });
 
-  test("convert empty type object will throw exception", () => {
+  test("convert empty type object will return default value", () => {
     expect(rgbToRgb({} as RGB, type.percent)).toEqual(enforceRGB({ type: type.percent }));
   });
 
@@ -152,8 +152,8 @@ describe("RGB to HSL color", () => {
     [{ type: "number" } as RGB, definedHSL()],
     [{ r: 123, g: 234, b: 12, type: "number" } as RGB, definedHSL({ h: 0.25, s: 0.9, l: 0.49 })], // no alpha
     [{ r: 36, g: 0, b: 194, type: "number" } as RGB, definedHSL({ h: 0.7, s: 1, l: 0.38 })],
-    [{ r: 222, g: 51, b: 1, a: 0.555, type: "number" } as RGB, definedHSL({ h: 0.04, s: 1, l: 0.44, a: 0.56 })],
-    [{ r: 222, g: 99, b: 111, a: 0.003, type: "number" } as RGB, definedHSL({ h: 0.98, s: 0.65, l: 0.63, a: 0 })],
+    [{ r: 222, g: 51, b: 1, a: 0.5554445, type: "number" } as RGB, definedHSL({ h: 0.04, s: 1, l: 0.44, a: 0.555445 })],
+    [{ r: 222, g: 99, b: 111, a: 0.003, type: "number" } as RGB, definedHSL({ h: 0.98, s: 0.65, l: 0.63, a: 0.003 })],
   ])("convert RGB(%p) to HSL(%p)", (rgb, hsl) => {
     expect(rgbToHsl(rgb)).toEqual(hsl);
   });
@@ -170,8 +170,8 @@ describe("RGB to HSV color", () => {
     [{ type: "number" } as RGB, definedHSV()],
     [{ r: 123, g: 234, b: 12, type: "number" } as RGB, definedHSV({ h: 0.25, s: 0.95, v: 0.92 })], // no alpha
     [{ r: 36, g: 0, b: 194, type: "number" } as RGB, definedHSV({ h: 0.7, s: 1, v: 0.76 })],
-    [{ r: 222, g: 51, b: 1, a: 0.555, type: "number" } as RGB, definedHSV({ h: 0.04, s: 1, v: 0.87, a: 0.56 })],
-    [{ r: 222, g: 99, b: 111, a: 0.003, type: "number" } as RGB, definedHSV({ h: 0.98, s: 0.55, v: 0.87, a: 0 })],
+    [{ r: 222, g: 51, b: 1, a: 0.5555556, type: "number" } as RGB, definedHSV({ h: 0.04, s: 1, v: 0.87, a: 0.555556 })],
+    [{ r: 222, g: 99, b: 111, a: 0.003, type: "number" } as RGB, definedHSV({ h: 0.98, s: 0.55, v: 0.87, a: 0.003 })],
   ])("convert RGB(%p) to HSV(%p)", (rgb, hsv) => {
     expect(rgbToHsv(rgb)).toEqual(hsv);
   });

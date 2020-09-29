@@ -3,6 +3,208 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.5.0...@kcutils/models@0.5.1) (2020-09-18)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+# [0.5.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.9...@kcutils/models@0.5.0) (2020-09-15)
+
+
+### Features
+
+* **core:** update core implementation of logger. ([#72](https://github.com/kamontat/kcutils/issues/72)) ([1141f09](https://github.com/kamontat/kcutils/commit/1141f091669a532c9894d49ab619e893991e16d8))
+
+
+
+
+
+## [0.4.10-beta.2](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.10-beta.1...@kcutils/models@0.4.10-beta.2) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.10-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.10-beta.0...@kcutils/models@0.4.10-beta.1) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.10-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.9...@kcutils/models@0.4.10-beta.0) (2020-09-09)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.9](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.8...@kcutils/models@0.4.9) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.8](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.7...@kcutils/models@0.4.8) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.7](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.6...@kcutils/models@0.4.7) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.6](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.5...@kcutils/models@0.4.6) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.5](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.4...@kcutils/models@0.4.5) (2020-09-05)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.4](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.3...@kcutils/models@0.4.4) (2020-09-04)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.3](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.2...@kcutils/models@0.4.3) (2020-08-28)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.2](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.1...@kcutils/models@0.4.2) (2020-08-19)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.4.1](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.4.0...@kcutils/models@0.4.1) (2020-08-18)
+
+
+### Bug Fixes
+
+* **core:** revert compiler from babel back to tsc ([116332d](https://github.com/kamontat/kcutils/commit/116332d306150ec6a1ef41a209d2a1ce7f961f06))
+
+
+
+
+
+# [0.4.0](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.10...@kcutils/models@0.4.0) (2020-08-17)
+
+
+### Features
+
+* **core:** test compile module by babel ([2ba8d3f](https://github.com/kamontat/kcutils/commit/2ba8d3f64f3ec5850a67d032ec9e1757e3de8dcf))
+* add babel and dependencies ([3845df1](https://github.com/kamontat/kcutils/commit/3845df17105432a6fc3fd1fdf9b1d7d79a11951e))
+
+
+
+
+
+## [0.3.10](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.9...@kcutils/models@0.3.10) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.9](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.8...@kcutils/models@0.3.9) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.8](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.7...@kcutils/models@0.3.8) (2020-08-16)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.7](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.6...@kcutils/models@0.3.7) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.6](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.5...@kcutils/models@0.3.6) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.5](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.4...@kcutils/models@0.3.5) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.4](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.3...@kcutils/models@0.3.4) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.2...@kcutils/models@0.3.3) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
+## [0.3.2](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.15...@kcutils/models@0.3.2) (2020-08-14)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
 # [0.3.0-rc.15](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.3.0-rc.14...@kcutils/models@0.3.0-rc.15) (2020-08-14)
 
 **Note:** Version bump only for package @kcutils/models

@@ -30,7 +30,7 @@ export class PathManagementHelper {
     return this.loop(c => c.pathEnsureSync(...paths));
   }
 
-  searchPackageJsonSync(key: "dependencies" | "devDependencies", searchText: string): boolean {
+  searchPackageJsonSync(key: "dependencies" | "devDependencies" | "all", searchText: string | RegExp): boolean {
     return this.loop(c => c.searchPackageJsonSync(key, searchText)) ?? false;
   }
 }
