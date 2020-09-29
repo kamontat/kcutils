@@ -41,7 +41,8 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "lerna run lint"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.9.0-rc.5",

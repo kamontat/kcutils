@@ -30,7 +30,8 @@
     "build": "icompiler-webpack",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "devDependencies": {
     "@kcinternal/commandline": "*",

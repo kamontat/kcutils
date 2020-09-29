@@ -46,7 +46,9 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
     }
 
     return {
-      ignorePatterns: options.root ? ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts"] : ["**/*.d.ts"],
+      ignorePatterns: options.root
+        ? ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts"]
+        : ["**/*.d.ts", "node_modules/**", "lib/**"],
       parser: "@typescript-eslint/parser",
       plugins,
       extends: extend,

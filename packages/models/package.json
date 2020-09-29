@@ -41,7 +41,8 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "lerna run lint"
   },
   "dependencies": {
     "@kcutils/helper": "0.5.0-rc.16"

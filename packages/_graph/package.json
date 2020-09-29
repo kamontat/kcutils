@@ -9,7 +9,8 @@
     "build": "icompiler-webpack",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "lerna run lint"
   },
   "dependencies": {
     "@kcinternal/graph": "*"

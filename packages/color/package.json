@@ -40,7 +40,8 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "lerna run lint"
   },
   "dependencies": {
     "@kcutils/error": "0.3.0-rc.12",

@@ -162,7 +162,10 @@ jobs:
       - install-dependencies
       - compile-typescript
       - run:
-          name: "Test all unittest"
+          name: "Linting all source code"
+          command: yarn lint:ci
+      - run:
+          name: "Testing all unittest"
           command: yarn test:ci
       - sonarcloud/scan:
           cache_version: 1
