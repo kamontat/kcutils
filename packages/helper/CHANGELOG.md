@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.10.2-rc.0...@kcutils/helper@0.11.0-beta.0) (2020-09-29)
+
+
+### Bug Fixes
+
+* **lint:** remove unused code ([c226050](https://github.com/kamontat/kcutils/commit/c226050d308d6a64b3798d36901b5e08d081bdc9))
+
+
+### Features
+
+* **module:** add new ilinter for run eslint command ([d2fda92](https://github.com/kamontat/kcutils/commit/d2fda9271bad4813b243c219eddd26ca4c86d81b))
+
+
+
+
+
 ## [0.10.2-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.10.1...@kcutils/helper@0.10.2-rc.0) (2020-09-29)
 
 **Note:** Version bump only for package @kcutils/helper
