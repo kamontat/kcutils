@@ -1,4 +1,4 @@
-import { json, generic, string } from "..";
+import { json, generic } from "..";
 
 type Day = [string, string, string, string, string, string, string];
 type Month = [string, string, string, string, string, string, string, string, string, string, string, string];
