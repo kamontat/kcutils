@@ -141,7 +141,7 @@ commands:
           name: clean git repository
           command: git checkout .
       - run:
-          name: "List all package will package"
+          name: "List all package will publish"
           command: yarn updated:ci || true
       - run:
           name: "Update version on package"
