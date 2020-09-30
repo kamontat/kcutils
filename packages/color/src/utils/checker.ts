@@ -1,3 +1,4 @@
+import { generic } from "@kcutils/helper";
 import { NumberType, Type } from "../typings/NumberType";
 import { colorMatchers } from "./constants";
 
@@ -5,8 +6,9 @@ export const isValidCSSUnit = (color: string): boolean => {
   return colorMatchers.cssUnit.test(color);
 };
 
-export const isType = (n: NumberType, type: Type): boolean => {
-  return n?.type === type;
+export const isType = (n?: NumberType, type?: Type): boolean => {
+  if (generic.isEmpty(n) || generic.isEmpty(type)) return false;
+  else return n.type === type;
 };
 
 /**

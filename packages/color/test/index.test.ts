@@ -1,5 +1,5 @@
 import { Color, RGB, ColorBuilder, NumberTypeString, Named, HSL, HSV, HEX } from "../src";
-import { hexToRgb, enforceHSL, enforceHSV, enforceRGB, enforceHex } from "../src/utils/converter";
+import { hexToRgb, enforceHSL, enforceHSV, enforceRGB, enforceHex, rgbToRgb } from "../src/utils/converter";
 import { generic } from "@kcutils/helper";
 import { enforceNamed } from "../src/utils/converter/named";
 
@@ -129,6 +129,21 @@ describe("Color object", () => {
     ])("return %s on hasAlpha() when alpha is %s", (result, alpha) => {
       const c = color().setAlpha(alpha);
       expect(c.hasAlpha()).toEqual(result);
+    });
+
+    test.each([
+      [1, undefined],
+      [0, 0],
+      [0.05, 0.05],
+      [1, 1],
+      [1, 5],
+    ])("return %s on getAlpha() when alpha is %s", (expected, actual) => {
+      const c = new Color({ a: (actual as unknown) as number, r: 0, g: 0, b: 0, type: "number" });
+      expect(c.getAlpha()).toEqual(expected);
+    });
+
+    test("return 1 on getAlpha() even rgb not exist", () => {
+      expect(new Color((undefined as unknown) as RGB).getAlpha()).toEqual(1);
     });
 
     test("non alpha color is a non alpha on hasAlpha()", () => {
@@ -357,5 +372,75 @@ describe("Color object", () => {
   ])("create '%s' color should equals to '%s'", (input: RGB, output: string) => {
     const c = new Color(input);
     expect(c.toString()).toEqual(output);
+  });
+
+  describe("Copying color", () => {
+    const baseColor = new Color({ a: 1, r: 0, g: 0, b: 0, type: "number" });
+    test.each([
+      [{ r: 10, g: 10 } as Partial<RGB>, new Color({ a: 1, r: 10, g: 10, b: 0, type: "number" })],
+      [{ r: 100, b: 255, g: 255 } as Partial<RGB>, new Color({ a: 1, r: 100, g: 255, b: 255, type: "number" })],
+      [{ type: "percent" } as Partial<RGB>, new Color({ a: 1, r: 0, g: 0, b: 0, type: "number" })],
+    ])("Copy as RGB(%p)", (rgb, expected) => {
+      expect(baseColor.copyRGB(rgb).toRGB("number")).toEqual(expected.toRGB("number"));
+    });
+
+    test.each([
+      [
+        { h: 10, s: 5, l: 99, type: "number" } as Partial<HSL>,
+        new Color({ a: 1, r: 252.58, g: 252.37, b: 252.32, type: "number" }),
+      ],
+      [{ h: 50, s: 99, type: "percent" } as Partial<HSL>, new Color({ a: 1, r: 0, g: 0, b: 0, type: "number" })],
+      [{ type: "percent" } as Partial<HSL>, new Color({ a: 1, r: 0, g: 0, b: 0, type: "number" })],
+    ])("Copy as HSL(%p)", (hsl, expected) => {
+      expect(baseColor.copyHSL(hsl).toRGB("number")).toEqual(expected.toRGB("number"));
+    });
+
+    test.each([
+      [{ h: 10, v: 20, type: "number" } as Partial<HSV>, new Color({ a: 1, r: 51, g: 51, b: 51, type: "number" })],
+      [
+        { h: 4, s: 99, v: 12, type: "percent" } as Partial<HSV>,
+        new Color({ a: 1, r: 30.6, g: 1.52, b: 0.31, type: "number" }),
+      ],
+      [{ type: "decimal" } as Partial<HSV>, new Color({ a: 1, r: 0, g: 0, b: 0, type: "number" })],
+    ])("Copy as HSV(%p)", (hsv, expected) => {
+      expect(baseColor.copyHSV(hsv).toRGB("number")).toEqual(expected.toRGB("number"));
+    });
+  });
+
+  describe("Mixup", () => {
+    test.each([
+      [
+        new Color(rgbToRgb({}, "number")),
+        new Color(rgbToRgb({}, "number")),
+        undefined,
+        new Color(rgbToRgb({}, "number")),
+      ],
+      [
+        new Color(rgbToRgb({ r: 255, g: 255, b: 255 }, "number")),
+        new Color(rgbToRgb({ r: 255, g: 255, b: 255 }, "number")),
+        50,
+        new Color(rgbToRgb({ r: 255, g: 255, b: 255 }, "number")),
+      ],
+      [
+        new Color(rgbToRgb({ r: 123, g: 222, b: 187 }, "number")),
+        new Color(rgbToRgb({ r: 222, g: 187, b: 123 }, "number")),
+        50,
+        new Color(rgbToRgb({ r: 172.5, g: 204.5, b: 155 }, "number")),
+      ],
+      [
+        new Color(rgbToRgb({ r: 123, g: 222, b: 187 }, "number")),
+        new Color(rgbToRgb({ r: 222, g: 187, b: 123 }, "number")),
+        25,
+        new Color(rgbToRgb({ r: 147.75, g: 213.25, b: 171 }, "number")),
+      ],
+      [
+        new Color(rgbToRgb({ r: 123, g: 222, b: 187 }, "number")),
+        new Color(rgbToRgb({ r: 222, g: 187, b: 123 }, "number")),
+        75,
+        new Color(rgbToRgb({ r: 197.25, g: 195.75, b: 139 }, "number")),
+      ],
+    ])("mix %s and %s with (%s) should return %s", (a, b, percent, ab) => {
+      expect(a.mix(b, percent).toRGB("number")).toEqual(ab.toRGB("number"));
+    });
   });
 });
