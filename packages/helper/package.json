@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/helper",
-  "version": "0.10.1",
+  "version": "0.11.0-beta.1",
   "description": "Functional helper",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -41,11 +41,12 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.13.2",
-    "@kcinternal/configuration": "0.8.4",
+    "@kcinternal/commandline": "0.14.0-beta.1",
+    "@kcinternal/configuration": "0.8.5-beta.1",
     "@kcutils/testkit": "0.2.0-rc.7"
   }
 }

@@ -11,13 +11,13 @@ export const prefix = "KCUTILS_";
  * @deprecated
  */
 export const options: StrictOption = {
-  debug: env.read(prefix + "DEBUG", "false") === "true",
+  debug: env.read(`${prefix}DEBUG`, "false") === "true",
   output: ["file", "console"],
-  json: env.read(prefix + "JSON", "false") === "true",
-  interactive: env.read(prefix + "INTERACTIVE", "false") === "true",
-  disabled: env.read(prefix + "DISABLED", "false") === "true",
-  color: env.read(prefix + "COLORS", "true") === "true",
-  level: toLevel(env.read(prefix + "LEVEL", "info")).name,
+  json: env.read(`${prefix}JSON`, "false") === "true",
+  interactive: env.read(`${prefix}INTERACTIVE`, "false") === "true",
+  disabled: env.read(`${prefix}DISABLED`, "false") === "true",
+  color: env.read(`${prefix}COLORS`, "true") === "true",
+  level: toLevel(env.read(`${prefix}LEVEL`, "info")).name,
   datetime: "date",
   censor: () => "secure",
   separator: arrowRight,

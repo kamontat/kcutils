@@ -38,7 +38,10 @@ for i in "$@"; do
     key="${i%=*}"
     value="${i#*=}"
 
-    if [[ $key == "on" ]] || [[ $key == "cmd" ]] || [[ $key == "type" ]]; then
+    if [[ "$key" == "on" ]] ||
+      [[ "$key" == "cmd" ]] ||
+      [[ "$key" == "type" ]] ||
+      [[ "$key" == "CI" ]]; then
       eval "${key}=${value}"
     else
       echo "unknown key $key: add as parameters instead"

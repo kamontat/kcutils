@@ -141,7 +141,7 @@ commands:
           name: clean git repository
           command: git checkout .
       - run:
-          name: "List all package will package"
+          name: "List all package will publish"
           command: yarn updated:ci || true
       - run:
           name: "Update version on package"
@@ -162,7 +162,10 @@ jobs:
       - install-dependencies
       - compile-typescript
       - run:
-          name: "Test all unittest"
+          name: "Linting all source code"
+          command: yarn lint:ci
+      - run:
+          name: "Testing all unittest"
           command: yarn test:ci
       - sonarcloud/scan:
           cache_version: 1

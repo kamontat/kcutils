@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.5-beta.0...@kcinternal/configuration@0.8.5-beta.1) (2020-09-30)
+
+
+### Performance Improvements
+
+* **config:** enabled linter all internal modules ([cf503dd](https://github.com/kamontat/kcutils/commit/cf503dd19e0ecb3b2cee49b87a435628378e413a))
+
+
+
+
+
+## [0.8.5-beta.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.5-rc.0...@kcinternal/configuration@0.8.5-beta.0) (2020-09-29)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
+## [0.8.5-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.4...@kcinternal/configuration@0.8.5-rc.0) (2020-09-29)
+
+**Note:** Version bump only for package @kcinternal/configuration
+
+
+
+
+
 ## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.3...@kcinternal/configuration@0.8.4) (2020-09-18)
 
 **Note:** Version bump only for package @kcinternal/configuration

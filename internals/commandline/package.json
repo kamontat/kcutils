@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/commandline",
   "description": "internal modules for kc monots projects",
-  "version": "0.13.2",
+  "version": "0.14.0-beta.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -47,11 +47,13 @@
     "icompiler-webpack": "bin/compiler-webpack.js",
     "icleaner": "bin/cleaner.js",
     "itester": "bin/tester.js",
-    "irunner": "bin/runner.js"
+    "irunner": "bin/runner.js",
+    "ilinter": "bin/linter.js"
   },
   "scripts": {
     "build": "tsc",
-    "clean:cli": "trash lib *.tsbuildinfo"
+    "clean:cli": "trash lib *.tsbuildinfo",
+    "lint": "eslint ."
   },
   "dependencies": {
     "del": "5.1.0",

@@ -12,43 +12,43 @@ export abstract class Dependency {
     protected _peerDependencies: Dependency[] = []
   ) {}
 
-  addDependOn(d: Dependency) {
+  addDependOn(d: Dependency): void {
     this._dependencies.push(d);
   }
 
-  addDevDependOn(d: Dependency) {
+  addDevDependOn(d: Dependency): void {
     this._devDependencies.push(d);
   }
 
-  addPeerDependOn(d: Dependency) {
+  addPeerDependOn(d: Dependency): void {
     this._peerDependencies.push(d);
   }
 
-  get name() {
+  get name(): string {
     return this._name;
   }
 
-  get version() {
+  get version(): string {
     return this._version;
   }
 
-  get type() {
+  get type(): DependencyType {
     return this._type;
   }
 
-  get category() {
+  get category(): DependencyCategory {
     return this._category;
   }
 
-  get dependOns() {
+  get dependOns(): Dependency[] {
     return this._dependencies;
   }
 
-  get devDependOns() {
+  get devDependOns(): Dependency[] {
     return this._devDependencies;
   }
 
-  get peerDependOns() {
+  get peerDependOns(): Dependency[] {
     return this._peerDependencies;
   }
 }

@@ -7,7 +7,7 @@ export class Dependencies {
     this.deps = new Map();
   }
 
-  add(d: Dependency) {
+  add(d: Dependency): void {
     this.deps.set(d.name, d);
   }
 
@@ -15,7 +15,7 @@ export class Dependencies {
     return this.deps.get(name);
   }
 
-  loop(fn: (d: Dependency) => void) {
+  loop(fn: (d: Dependency) => void): void {
     this.deps.forEach(d => fn(d));
   }
 }

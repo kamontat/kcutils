@@ -14,7 +14,8 @@ export interface CommandlineOption {
   raw: string[];
 }
 
-export class Commandline<O extends CommandlineOption, H extends string> extends DataChain<O, string[], ChildProcess, H>
+export class Commandline<O extends CommandlineOption, H extends string>
+  extends DataChain<O, string[], ChildProcess, H>
   implements Command<ChildProcess> {
   constructor(root: DataProcess<Promise<O>, Promise<string[]>, H>) {
     super(root, async ({ data, helper }) => {

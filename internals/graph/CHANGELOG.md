@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.39-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.39-beta.0...@kcinternal/graph@0.2.39-beta.1) (2020-09-30)
+
+
+### Bug Fixes
+
+* **lint:** fix lint warning ([59ae32b](https://github.com/kamontat/kcutils/commit/59ae32bf11de3abca087fe20a6410a66303835dd))
+
+
+### Performance Improvements
+
+* **config:** enabled linter all internal modules ([cf503dd](https://github.com/kamontat/kcutils/commit/cf503dd19e0ecb3b2cee49b87a435628378e413a))
+
+
+
+
+
+## [0.2.39-beta.0](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.39-rc.0...@kcinternal/graph@0.2.39-beta.0) (2020-09-29)
+
+
+### Bug Fixes
+
+* **graph:** cannot compile graph because types missing ([f2b38ff](https://github.com/kamontat/kcutils/commit/f2b38ff0a9e22c43f162b8d7a3f5de6b52c3385c))
+
+
+
+
+
+## [0.2.39-rc.0](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.38...@kcinternal/graph@0.2.39-rc.0) (2020-09-29)
+
+**Note:** Version bump only for package @kcinternal/graph
+
+
+
+
+
 ## [0.2.38](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.37...@kcinternal/graph@0.2.38) (2020-09-05)
 
 **Note:** Version bump only for package @kcinternal/graph

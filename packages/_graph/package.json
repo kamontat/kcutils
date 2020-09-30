@@ -9,13 +9,15 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "dependencies": {
     "@kcinternal/graph": "*"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "*",
-    "@kcinternal/configuration": "*"
+    "@types/graphviz": "0.0.32",
+    "@kcinternal/commandline": "0.14.0-beta.0",
+    "@kcinternal/configuration": "0.8.5-beta.0"
   }
 }

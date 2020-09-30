@@ -5,7 +5,7 @@ import { Dependencies } from "../models/dependencies/Dependencies";
 import { InternalDependencies } from "../models/dependencies/InternalDependency";
 import { ExternalDependencies } from "../models/dependencies/ExternalDependency";
 
-import { ServiceOption, OptionalServiceOption } from "./models/Option";
+import { ServiceOption, OptionalServiceOption } from "./models/ServiceOption";
 
 import { options } from "./constants/option";
 
