@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.19-rc.0...@kcutils/react-testkit@0.5.0-beta.0) (2020-09-29)
+
+
+### Features
+
+* **module:** add new ilinter for run eslint command ([d2fda92](https://github.com/kamontat/kcutils/commit/d2fda9271bad4813b243c219eddd26ca4c86d81b))
+
+
+
+
+
+## [0.4.19-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.18...@kcutils/react-testkit@0.4.19-rc.0) (2020-09-29)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
 ## [0.4.18](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.4.17...@kcutils/react-testkit@0.4.18) (2020-09-18)
 
 **Note:** Version bump only for package @kcutils/react-testkit

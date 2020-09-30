@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.3.2-rc.0...@kcutils/gatsby-config@0.4.0-beta.0) (2020-09-29)
+
+
+### Bug Fixes
+
+* **config:** remove local eslint and use root instead ([a028871](https://github.com/kamontat/kcutils/commit/a0288716663ec36b52e83e98a152f1005dfb1f1c))
+
+
+### Features
+
+* **module:** add new ilinter for run eslint command ([d2fda92](https://github.com/kamontat/kcutils/commit/d2fda9271bad4813b243c219eddd26ca4c86d81b))
+
+
+
+
+
+## [0.3.2-rc.0](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.3.1...@kcutils/gatsby-config@0.3.2-rc.0) (2020-09-29)
+
+**Note:** Version bump only for package @kcutils/gatsby-config
+
+
+
+
+
 ## [0.3.1](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.3.0...@kcutils/gatsby-config@0.3.1) (2020-09-18)
 
 **Note:** Version bump only for package @kcutils/gatsby-config

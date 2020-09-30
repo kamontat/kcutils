@@ -30,10 +30,11 @@
     "build": "icompiler-tsc",
     "start": "irunner",
     "clean": "icleaner",
-    "test": "itester"
+    "test": "itester",
+    "lint": "ilinter"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "*",
-    "@kcinternal/configuration": "*"
+    "@kcinternal/commandline": "0.13.3-rc.0",
+    "@kcinternal/configuration": "0.8.5-rc.0"
   }
 }
