@@ -52,7 +52,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "clean:cli": "trash lib *.tsbuildinfo"
+    "clean:cli": "trash lib *.tsbuildinfo",
+    "lint": "eslint ."
   },
   "dependencies": {
     "del": "5.1.0",

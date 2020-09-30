@@ -38,7 +38,8 @@
   "scripts": {
     "build": "icompiler-tsc",
     "start": "irunner",
-    "clean": "icleaner"
+    "clean": "icleaner",
+    "lint": "ilinter"
   },
   "dependencies": {
     "@lerna/project": "3.18.0",

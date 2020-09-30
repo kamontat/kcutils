@@ -36,7 +36,8 @@
   ],
   "scripts": {
     "build": "icompiler-tsc",
-    "clean": "icleaner"
+    "clean": "icleaner",
+    "lint": "ilinter"
   },
   "dependencies": {
     "@kcinternal/commandline": "0.14.0-beta.0",
