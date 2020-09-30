@@ -7,7 +7,7 @@ type StringRecord<V extends any = any> = {
   [k: string]: V;
 };
 
-export class ConfigBuilder<M extends StringRecord<any> = StringRecord<any>> extends WithLogger {
+export class ConfigBuilder<M extends StringRecord = StringRecord> extends WithLogger {
   private config: ConfigObject & AnyConfigObject;
 
   constructor(config: ConfigObject & AnyConfigObject = {}, loggerBuilder?: LoggerBuilder<"">) {
