@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.0-beta.1...@kcutils/color@0.5.0) (2020-09-30)
+
+
+### Bug Fixes
+
+* **lint:** update all code small  ([2b95ba9](https://github.com/kamontat/kcutils/commit/2b95ba9b9e1d16842ae9bfff0e7202db061de8e2))
+* **test:** add more test in color models ([18a2d01](https://github.com/kamontat/kcutils/commit/18a2d01827c033941deb9dc7f75a497f4a2ecf46))
+
+
+
+
+
 # [0.5.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.0-beta.0...@kcutils/color@0.5.0-beta.1) (2020-09-30)
 
 **Note:** Version bump only for package @kcutils/color
