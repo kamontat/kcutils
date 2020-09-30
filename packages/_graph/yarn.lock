@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@kcinternal/commandline@0.13.3-rc.0":
-  version "0.13.3-rc.0"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.13.3-rc.0.tgz#d7e0419419b1174e72c8fae849b1eec5f8db14bb"
-  integrity sha512-1Z+R9L3QPeavNCmYmJ/9RpBP0mm3N6fjsWW2pMtooktTWrBtdfn/uuSUieMTA2Y0d5nt08BWaG1TBazu03ldaA==
+"@kcinternal/commandline@0.14.0-beta.0":
+  version "0.14.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.14.0-beta.0.tgz#c561df8c413906b5b81e12f490888d6195b10388"
+  integrity sha512-44YewaByVTt/NGmC4nGNMeMLLjwuP+l3k6Wro1qGZHdp+x7lNvMx7sSvABseonl7YH5VDnhtqw6RfoeFOr6aaA==
   dependencies:
     del "5.1.0"
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.5-rc.0":
-  version "0.8.5-rc.0"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.5-rc.0.tgz#0843d67f995c4b58c72abde24781d181d7ed6601"
-  integrity sha512-9DDKKW79dVRScZHRE1/uysPHlrlgaOjH0xXX2EkbK587B5P6ofDrHI+kuPIdKixL6YldSjvRBAnlTu9PqZg6zA==
+"@kcinternal/configuration@0.8.5-beta.0":
+  version "0.8.5-beta.0"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.5-beta.0.tgz#dc623006d4fb23c85744422687c5f48cfd1dcc8a"
+  integrity sha512-KS1qzi4jW00oFZbyx6k4T9Fg/iV4bR65kV8bxl9pdvq+lMoifAKt8D8XlImeCyYFZORTkkKGIVSdXOaj6SmLNQ==
   dependencies:
-    "@kcinternal/commandline" "0.13.3-rc.0"
+    "@kcinternal/commandline" "0.14.0-beta.0"
     "@types/eslint" "7.2.2"
     "@types/webpack" "4.41.22"
     jest-html-reporters "2.0.4"
