@@ -7,7 +7,7 @@ export class Stylist {
     this.map = new Map();
   }
 
-  newStyle(name: string, obj: StyleObject) {
+  newStyle(name: string, obj: StyleObject): void {
     this.map.set(name, obj);
   }
 

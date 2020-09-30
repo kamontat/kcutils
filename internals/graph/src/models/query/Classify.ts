@@ -3,7 +3,7 @@ import { DependencyCategory } from "../dependencies/DependencyCategory";
 import { QueryBuilder } from "./QueryBuilder";
 
 export class Classify {
-  static empty() {
+  static empty(): Classify {
     return new Classify(QueryBuilder.empty());
   }
 

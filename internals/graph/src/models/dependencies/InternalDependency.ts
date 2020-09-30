@@ -13,7 +13,7 @@ export class InternalDependency extends Dependency {
 }
 
 export class InternalDependencies {
-  static from(classify: Classify, p: Package) {
+  static from(classify: Classify, p: Package): InternalDependency {
     return new InternalDependency(p.name, p.version, classify.type(p.name, p.version));
   }
 }
