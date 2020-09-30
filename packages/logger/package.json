@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/logger",
-  "version": "0.8.0-beta.0",
+  "version": "0.8.0-beta.1",
   "description": "Another Logger Service",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -45,12 +45,12 @@
     "lint": "ilinter"
   },
   "dependencies": {
-    "@kcutils/helper": "0.11.0-beta.0",
+    "@kcutils/helper": "0.11.0-beta.1",
     "chalk": "4.1.0",
     "figures": "3.2.0"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.14.0-beta.0",
-    "@kcinternal/configuration": "0.8.5-beta.0"
+    "@kcinternal/commandline": "0.14.0-beta.1",
+    "@kcinternal/configuration": "0.8.5-beta.1"
   }
 }
