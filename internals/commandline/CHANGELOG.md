@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.14.0-beta.0...@kcinternal/commandline@0.14.0-beta.1) (2020-09-30)
+
+
+### Bug Fixes
+
+* **lint:** fix lint error ([1fac8af](https://github.com/kamontat/kcutils/commit/1fac8af856a3521a96f9c7a5b91a524d5334dac6))
+
+
+### Performance Improvements
+
+* **config:** enabled linter all internal modules ([cf503dd](https://github.com/kamontat/kcutils/commit/cf503dd19e0ecb3b2cee49b87a435628378e413a))
+
+
+
+
+
 # [0.14.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.13.3-rc.0...@kcinternal/commandline@0.14.0-beta.0) (2020-09-29)
 
 

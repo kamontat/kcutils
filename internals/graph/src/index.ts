@@ -1,7 +1,8 @@
+import { Graph } from "./models/Graph";
 import { DependencyServices } from "./services/DependencyService";
-import { OptionalServiceOption } from "./services/models/Option";
+import { OptionalServiceOption } from "./services/models/ServiceOption";
 
-export const builder = (opts: OptionalServiceOption) => {
+export const builder = (opts: OptionalServiceOption): Promise<Graph> => {
   const serv = new DependencyServices(opts);
   return serv.graph();
 };
