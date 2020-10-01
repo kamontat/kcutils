@@ -144,6 +144,9 @@ commands:
           name: "List all package will publish"
           command: yarn updated:ci || true
       - run:
+          name: "Update documentation on package"
+          command: yarn doc:ci || true
+      - run:
           name: "Update version on package"
           command: yarn version:ci << parameters.option >> || true
       - run:
