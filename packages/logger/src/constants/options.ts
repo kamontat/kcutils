@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Constants
+ */
+
 import { arrowRight } from "figures";
 import { Writable } from "stream";
 import { env } from "@kcutils/helper";

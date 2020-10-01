@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Builders
+ */
+
 import { StrictCommonSetting } from "../models/logger/LoggerSetting";
 
 export class LoggerSettingBuilder {

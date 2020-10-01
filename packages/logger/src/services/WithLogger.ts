@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Services
+ */
+
 import { Logger } from "../models/logger/Logger";
 import { LoggerBuilder, UpdateOptionFn } from "../builder/LoggerBuilder";
 
