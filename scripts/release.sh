@@ -39,6 +39,7 @@ version_params=(
   "--sign-git-commit"            # sign git commit
   "--sign-git-tag"               # sign git tag
   "--no-private"                 # ignore private packages
+  "--no-ignore-changes"          # include all changes to release commit
 )
 
 publish_params=(
@@ -53,14 +54,19 @@ cmd=""
 dry=""
 
 run_lerna() {
+  if [[ "$CI" == "true" ]]; then
+    params+=("--loglevel" "silly")
+  fi
+
   printf "[debug] cmd = %s" "$lerna"
   for i in "$@"; do
     printf " '%s'" "$i"
   done
+  echo "${params[*]}"
   echo
 
   if test -z "$dry"; then
-    $lerna "$@"
+    $lerna "$@" "${params[@]}"
   fi
 }
 
