@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0-beta.1...@kcinternal/commandline@0.15.0) (2020-10-01)
+
+
+### Performance Improvements
+
+* **core:** add --preversion to idocumentator for add docs to lerna version ([100ea92](https://github.com/kamontat/kcutils/commit/100ea920ce0f1d73b3067317cb24b23874c26a20))
+
+
+
+
+
 # [0.15.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0-beta.0...@kcinternal/commandline@0.15.0-beta.1) (2020-10-01)
 
 **Note:** Version bump only for package @kcinternal/commandline

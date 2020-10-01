@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/error",
-  "version": "0.6.1-beta.1",
+  "version": "0.6.1",
   "description": "Error Management",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -44,12 +44,12 @@
     "lint": "ilinter"
   },
   "dependencies": {
-    "@kcutils/helper": "0.11.1-beta.1",
+    "@kcutils/helper": "0.11.1",
     "@kcutils/models": "0.3.0-rc.15"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.15.0-beta.1",
-    "@kcinternal/configuration": "0.8.6-beta.1",
+    "@kcinternal/commandline": "0.15.0",
+    "@kcinternal/configuration": "0.8.6",
     "@kcutils/testkit": "0.2.0-rc.7"
   }
 }

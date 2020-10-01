@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.1-beta.1...@kcutils/logger@0.8.1) (2020-10-01)
+
+
+### Performance Improvements
+
+* **core:** update document to support tsdoc syntax ([7152b26](https://github.com/kamontat/kcutils/commit/7152b261dfd267a964692c4ccd6e5b3a73db4592))
+
+
+
+
+
 ## [0.8.1-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.1-beta.0...@kcutils/logger@0.8.1-beta.1) (2020-10-01)
 
 **Note:** Version bump only for package @kcutils/logger

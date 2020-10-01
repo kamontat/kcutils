@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.6](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.6-beta.1...@kcinternal/configuration@0.8.6) (2020-10-01)
+
+
+### Bug Fixes
+
+* **core:** make eslint support disable tsdoc in programming ([3938f03](https://github.com/kamontat/kcutils/commit/3938f03b8c3e7511310d6142f8d0de38ca581ad7))
+
+
+
+
+
 ## [0.8.6-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.6-beta.0...@kcinternal/configuration@0.8.6-beta.1) (2020-10-01)
 
 **Note:** Version bump only for package @kcinternal/configuration
