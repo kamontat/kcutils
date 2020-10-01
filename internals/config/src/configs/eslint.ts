@@ -13,6 +13,11 @@ const defaultConfig = {
    * enabled debug log the content of eslint config
    */
   debug: false,
+
+  /**
+   * disabled tsdoc linter
+   */
+  tsdoc: false,
 };
 
 type Setting = Partial<typeof defaultConfig>;
@@ -158,7 +163,9 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
     }
 
     const config: Linter.Config = {
-      ignorePatterns: options.root ? ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts"] : ["**/*.d.ts"],
+      ignorePatterns: options.root
+        ? ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts", "docs"]
+        : ["**/*.d.ts", "docs"],
       parser,
       plugins,
       extends: extend,
