@@ -41,6 +41,7 @@ export class Color extends WithLogger {
     if (validateRGB(rgb, false)) this.rgb = json.deepMerge({ a: 1 }, rgb);
     else this.error = InvalidateColorError(this.getId().toString(), JSON.stringify(this.raw));
 
+    if (this.rgb) this.rgb.a = boundAlpha(this.rgb.a);
     this.logger.print("debug", `initiaize color object ${this.id} (valid = ${this.isValid()})`);
   }
 
