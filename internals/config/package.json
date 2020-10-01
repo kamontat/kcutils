@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/configuration",
   "description": "internal modules for kc monots projects",
-  "version": "0.8.5",
+  "version": "0.8.6-beta.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -40,7 +40,7 @@
     "lint": "ilinter"
   },
   "dependencies": {
-    "@kcinternal/commandline": "0.14.0",
+    "@kcinternal/commandline": "0.15.0-beta.0",
     "@types/eslint": "7.2.2",
     "@types/webpack": "4.41.22",
     "jest-html-reporters": "2.0.4",
