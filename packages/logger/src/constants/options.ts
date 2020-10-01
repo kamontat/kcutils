@@ -13,7 +13,7 @@ import { toLevel } from "./levels";
 export const prefix = "KCUTILS_";
 
 /**
- * @deprecated
+ * @deprecated Please use LoggerOptionBuilder instead
  */
 export const options: StrictOption = {
   debug: env.read(`${prefix}DEBUG`, "false") === "true",
