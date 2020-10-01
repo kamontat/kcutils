@@ -48,7 +48,8 @@
     "icleaner": "bin/cleaner.js",
     "itester": "bin/tester.js",
     "irunner": "bin/runner.js",
-    "ilinter": "bin/linter.js"
+    "ilinter": "bin/linter.js",
+    "idocumentor": "bin/documentor.js"
   },
   "scripts": {
     "build": "tsc",

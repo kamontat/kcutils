@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Constants
+ */
+
 import { StrictSetting } from "../models/logger/LoggerSetting";
 import { LoggerSettingBuilder } from "../builder/LoggerSettingBuilder";
 

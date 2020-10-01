@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Builders
+ */
+
 import { Writable } from "stream";
 
 import { silent, error, warn, info, debug, silly, toLevel } from "../constants/levels";

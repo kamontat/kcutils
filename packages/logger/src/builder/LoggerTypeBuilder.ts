@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Builders
+ */
+
 import { BadgeFn, ColorFn, LoggerType, Types } from "../models/logger/LoggerType";
 import { Levels } from "../constants/levels";
 

@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Constants
+ */
+
 import { LoggerTypeBuilder } from "../builder/LoggerTypeBuilder";
 import { Types } from "../models/logger/LoggerType";
 

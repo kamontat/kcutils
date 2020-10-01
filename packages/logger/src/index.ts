@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Externals
+ */
+
 // v2
 
 export { LoggerLevelBuilder } from "./builder/LoggerLevelBuilder";
