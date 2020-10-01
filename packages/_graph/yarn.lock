@@ -2,32 +2,33 @@
 # yarn lockfile v1
 
 
-"@kcinternal/commandline@0.14.0-beta.0":
-  version "0.14.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.14.0-beta.0.tgz#c561df8c413906b5b81e12f490888d6195b10388"
-  integrity sha512-44YewaByVTt/NGmC4nGNMeMLLjwuP+l3k6Wro1qGZHdp+x7lNvMx7sSvABseonl7YH5VDnhtqw6RfoeFOr6aaA==
+"@kcinternal/commandline@*", "@kcinternal/commandline@0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.14.0.tgz#51431f479ec6f26d24ed8edcd97433b03c7c9f1c"
+  integrity sha512-SpEJ1z9xKaLIFt7yEvV65lk3BiIXLVFjUlNP6CNaVq/MWvY6+HvJzAtye6LVTvKVAuqotvGcDqfK9eyG0mt9hg==
   dependencies:
     del "5.1.0"
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.5-beta.0":
-  version "0.8.5-beta.0"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.5-beta.0.tgz#dc623006d4fb23c85744422687c5f48cfd1dcc8a"
-  integrity sha512-KS1qzi4jW00oFZbyx6k4T9Fg/iV4bR65kV8bxl9pdvq+lMoifAKt8D8XlImeCyYFZORTkkKGIVSdXOaj6SmLNQ==
+"@kcinternal/configuration@*":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.5.tgz#9609a98a79b3177eaeea427875ffc8a721cd0415"
+  integrity sha512-ToaMClHEV2saXQIj5kDgShDaAdAuR7h1bQDsFXxxVtdsQp+fsb/VzP1t1BbMTW39ImYwpRiobcQEYUCU0IdJbw==
   dependencies:
-    "@kcinternal/commandline" "0.14.0-beta.0"
+    "@kcinternal/commandline" "0.14.0"
     "@types/eslint" "7.2.2"
     "@types/webpack" "4.41.22"
     jest-html-reporters "2.0.4"
     webpack "4.44.1"
 
 "@kcinternal/graph@*":
-  version "0.2.38"
-  resolved "https://registry.yarnpkg.com/@kcinternal/graph/-/graph-0.2.38.tgz#8a838a23b5d58d6cffb79cf20abea7342e46c01a"
-  integrity sha512-cY4rfoxt7Ad3aIBuyLyuylvEHJ+cBfj92I3dgR/blsvrzF/nq16RAbpqFbf/8c1aNzPJ0PKnB4JuUCaaGBzxOw==
+  version "0.2.39"
+  resolved "https://registry.yarnpkg.com/@kcinternal/graph/-/graph-0.2.39.tgz#033dccbc416800ae14afb7c6bdc9ce80d2ba5841"
+  integrity sha512-Fq5VcunZySw+DYDqQ0p4mcccwwbotxrwXXSCqHrEhFFPgHGLwrBB2wY9tkisaaH1jTj6GjsaZezraCw3XSk4gw==
   dependencies:
     "@lerna/project" "3.18.0"
+    "@types/graphviz" "0.0.32"
     graphviz "0.0.9"
 
 "@lerna/package@3.16.0":
@@ -184,16 +185,16 @@
   integrity sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
 
 "@types/uglify-js@*":
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.9.3.tgz#d94ed608e295bc5424c9600e6b8565407b6b4b6b"
-  integrity sha512-KswB5C7Kwduwjj04Ykz+AjvPcfgv/37Za24O2EDzYNbwyzOo8+ydtvzUfZ5UMguiVu29Gx44l1A6VsPPcmYu9w==
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.11.0.tgz#2868d405cc45cd9dc3069179052103032c33afbc"
+  integrity sha512-I0Yd8TUELTbgRHq2K65j8rnDPAzAP+DiaF/syLem7yXwYLsHZhPd+AM2iXsWmf9P2F2NlFCgl5erZPQx9IbM9Q==
   dependencies:
     source-map "^0.6.1"
 
 "@types/webpack-sources@*":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-1.4.2.tgz#5d3d4dea04008a779a90135ff96fb5c0c9e6292c"
-  integrity sha512-77T++JyKow4BQB/m9O96n9d/UUHWLQHlcqXb9Vsf4F1+wKNrrlWNFPDLKNT92RJnCSL6CieTc+NDXtCVZswdTw==
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-2.0.0.tgz#08216ab9be2be2e1499beaebc4d469cec81e82a7"
+  integrity sha512-a5kPx98CNFRKQ+wqawroFunvFqv7GHm/3KOI52NY9xWADgc8smu4R6prt4EU/M4QfVjvgBkMqU4fBhw3QfMVkg==
   dependencies:
     "@types/node" "*"
     "@types/source-list-map" "*"

@@ -57,7 +57,7 @@ export class Logger<T extends string = ""> {
    * Never create Logger object directly,
    * Please use LoggerBuilder or Logger.create() instead
    *
-   * @param option logger option
+   * @param option - logger option
    */
   private constructor(option: LoggerOption<T>) {
     this._id = Logger.counter;
@@ -192,7 +192,7 @@ export class Logger<T extends string = ""> {
   /**
    * remove all secret found in input string
    *
-   * @param message input string
+   * @param message - input string
    */
   censor(message: string): string {
     const secrets = this._option.getSecrets();
@@ -218,7 +218,7 @@ export class Logger<T extends string = ""> {
 
   /**
    * merge and replace new options
-   * @param option new partial option
+   * @param option - new partial option
    */
   options(option: OptionalOption): this {
     this.idebug("options parameters: ", option);
@@ -229,7 +229,7 @@ export class Logger<T extends string = ""> {
 
   /**
    * merge and replace new settings
-   * @param option new partial setting
+   * @param option - new partial setting
    */
   settings(setting: OptionalSetting): this {
     this.idebug("settings parameters: ", setting);
@@ -240,9 +240,9 @@ export class Logger<T extends string = ""> {
 
   /**
    * create new logger base on current configuration
-   * @param option new option merged with current option
-   * @param setting new setting merged with current setting
-   * @param type new type merged with current type
+   * @param option - new option merged with current option
+   * @param setting - new setting merged with current setting
+   * @param type - new type merged with current type
    */
   copy<U extends string = "">(option?: OptionalOption, setting?: OptionalSetting, type?: Types<U>): Logger<T | U> {
     const options = this._option.copy(option, { types: type, settings: setting });
@@ -447,7 +447,7 @@ export class Logger<T extends string = ""> {
 
   /**
    * check log type should be log or not
-   * @param type log type
+   * @param type - log type
    */
   private shouldLog(type: LoggerType) {
     const level = toLevel(this._option.getLevel());
@@ -478,9 +478,9 @@ export class Logger<T extends string = ""> {
   /**
    * format msg with settings
    *
-   * @param msg message to format
-   * @param settings formatting settings
-   * @param color with color format
+   * @param msg - message to format
+   * @param settings - formatting settings
+   * @param color - with color format
    */
   private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, disabledList: string[] = []) {
     const msg = array.toArray(input).join(" ");
@@ -521,8 +521,8 @@ export class Logger<T extends string = ""> {
 
   /**
    * write message to stream
-   * @param stream writable stream
-   * @param message message
+   * @param stream - writable stream
+   * @param message - message
    */
   private writing(stream: Writable | Writable[], message: string) {
     const streams = array.toArray(stream);
@@ -543,8 +543,8 @@ export class Logger<T extends string = ""> {
   /**
    * internal debug log with debug is enabled
    *
-   * @param formatter format string
-   * @param data message data
+   * @param formatter - format string
+   * @param data - message data
    */
   private idebug(formatter: string, ...data: any[]) {
     if (this._option.isDebug())

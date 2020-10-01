@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Constants
+ */
+
 import { arrowRight } from "figures";
 import { Writable } from "stream";
 import { env } from "@kcutils/helper";
@@ -8,7 +13,7 @@ import { toLevel } from "./levels";
 export const prefix = "KCUTILS_";
 
 /**
- * @deprecated
+ * @deprecated Please use LoggerOptionBuilder instead
  */
 export const options: StrictOption = {
   debug: env.read(`${prefix}DEBUG`, "false") === "true",

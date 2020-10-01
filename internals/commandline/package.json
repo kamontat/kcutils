@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/commandline",
   "description": "internal modules for kc monots projects",
-  "version": "0.14.0",
+  "version": "0.15.0-beta.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -48,7 +48,8 @@
     "icleaner": "bin/cleaner.js",
     "itester": "bin/tester.js",
     "irunner": "bin/runner.js",
-    "ilinter": "bin/linter.js"
+    "ilinter": "bin/linter.js",
+    "idocumentor": "bin/documentor.js"
   },
   "scripts": {
     "build": "tsc",

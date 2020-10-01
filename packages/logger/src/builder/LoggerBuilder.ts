@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Builders
+ */
+
 import { Logger } from "../models/logger/Logger";
 import { LoggerOptionBuilder } from "./LoggerOptionBuilder";
 

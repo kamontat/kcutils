@@ -136,13 +136,13 @@ commands:
     steps:
       - run:
           name: check git status
-          command: git diff --color-words | cat
+          command: git status --short
       - run:
           name: clean git repository
           command: git checkout .
       - run:
-          name: "List all package will publish"
-          command: yarn updated:ci || true
+          name: "Update documentation on package"
+          command: yarn doc:ci || true
       - run:
           name: "Update version on package"
           command: yarn version:ci << parameters.option >> || true

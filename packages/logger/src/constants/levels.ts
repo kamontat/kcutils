@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Constants
+ */
+
 import { stream } from "@kcutils/helper";
 
 import { LoggerLevel, Levels } from "../models/logger/LoggerLevel";

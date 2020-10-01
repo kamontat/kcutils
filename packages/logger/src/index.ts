@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Externals
+ */
+
 // v2
 
 export { LoggerLevelBuilder } from "./builder/LoggerLevelBuilder";
@@ -12,7 +17,7 @@ export { WithLogger } from "./services/WithLogger";
 
 export {
   /**
-   * @deprecated please use LoggerBuilder instead
+   * @deprecated Please use LoggerBuilder instead
    */
   Logger,
 } from "./models/logger/Logger";
