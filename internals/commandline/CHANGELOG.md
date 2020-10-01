@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.14.0...@kcinternal/commandline@0.15.0-beta.0) (2020-10-01)
+
+
+### Features
+
+* **core:** add new `idocumentor` script for create docs in docs folder ([87c457e](https://github.com/kamontat/kcutils/commit/87c457e10bae7333ff2800fdc56e7be57fe96e72))
+
+
+
+
+
 # [0.14.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.14.0-beta.1...@kcinternal/commandline@0.14.0) (2020-09-30)
 
 **Note:** Version bump only for package @kcinternal/commandline
