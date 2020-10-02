@@ -42,7 +42,7 @@
     "jest-junit": "11.1.0",
     "lerna": "3.22.1",
     "prettier": "2.1.2",
-    "ts-jest": "26.4.0",
+    "ts-jest": "26.4.1",
     "ts-loader": "8.0.4",
     "typedoc": "0.19.2",
     "typedoc-plugin-external-module-name": "4.0.3",
