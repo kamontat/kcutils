@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.3...@kcutils/logger@0.8.4) (2020-10-05)
+
+
+### Bug Fixes
+
+* fix deployment in cd is not work because docs generator, disabled doc. ([0ae97be](https://github.com/kamontat/kcutils/commit/0ae97bec73154a10dcf20b042fe998a3d6e3e53c))
+
+
+
+
+
 ## [0.8.3](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.2...@kcutils/logger@0.8.3) (2020-10-02)
 
 **Note:** Version bump only for package @kcutils/logger
