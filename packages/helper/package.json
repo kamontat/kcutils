@@ -42,7 +42,9 @@
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester",
-    "lint": "ilinter"
+    "lint": "ilinter",
+    "doc": "idocumentor",
+    "postdoc": "idocumentor --publish github"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.16.0",
