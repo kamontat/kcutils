@@ -12,7 +12,7 @@
     "lint": "scripts/runner.sh type=run cmd=lint",
     "lint:ci": "scripts/runner.sh type=run cmd=lint CI=true",
     "doc": "scripts/runner.sh type=run cmd=doc",
-    "doc:ci": "scripts/runner.sh type=run cmd=doc CI=test",
+    "doc:ci": "scripts/runner.sh type=run cmd=doc CI=true",
     "clean": "lerna run clean && lerna run clean:cli && yarn run clean:root",
     "clean:root": "trash lib *.tsbuildinfo lerna-debug.log junit.xml reports coverage",
     "clean:all": "lerna run clean -- --all",
