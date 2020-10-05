@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.16.0...@kcinternal/commandline@0.17.0) (2020-10-05)
+
+
+### Features
+
+* **helper:** add new question helper for asking couple of question ([b510929](https://github.com/kamontat/kcutils/commit/b510929970c00e1fa610e52fec4bc0c5421d5b81))
+
+
+### Performance Improvements
+
+* **core:** ask before publish in non-ci environment ([26874fa](https://github.com/kamontat/kcutils/commit/26874fa9905adac69d0ad08775f5edcc052992b9))
+
+
+
+
+
 # [0.16.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.1...@kcinternal/commandline@0.16.0) (2020-10-05)
 
 
