@@ -43,7 +43,6 @@
     "clean": "icleaner",
     "test": "itester",
     "lint": "ilinter",
-    "preversion": "idocumentor --preversion",
     "doc": "idocumentor"
   },
   "dependencies": {

@@ -119,7 +119,6 @@ Steps:
 ```json
 {
   "scripts": {
-    "preversion": "idocumentor --preversion",
     "doc": "idocumentor"
   }
 }

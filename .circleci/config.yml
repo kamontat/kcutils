@@ -141,9 +141,6 @@ commands:
           name: clean git repository
           command: git checkout .
       - run:
-          name: "Update documentation on package"
-          command: yarn doc:ci || true
-      - run:
           name: "Update version on package"
           command: yarn version:ci << parameters.option >> || true
       - run:

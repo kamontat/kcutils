@@ -39,7 +39,6 @@ version_params=(
   "--sign-git-commit"            # sign git commit
   "--sign-git-tag"               # sign git tag
   "--no-private"                 # ignore private packages
-  "--no-ignore-changes"          # include all changes to release commit
 )
 
 publish_params=(
