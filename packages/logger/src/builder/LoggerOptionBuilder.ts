@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Logger.Builders
+ */
+
 import { arrowRight } from "figures";
 import { Writable } from "stream";
 

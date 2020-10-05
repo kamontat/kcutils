@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.1...@kcutils/logger@0.9.2) (2020-10-05)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.9.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.0...@kcutils/logger@0.9.1) (2020-10-05)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+# [0.9.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.4...@kcutils/logger@0.9.0) (2020-10-05)
+
+
+### Features
+
+* **core:** support publish document to gh pages after package been published ([3b439ce](https://github.com/kamontat/kcutils/commit/3b439cefe980a7615e1a232a973253358a3bf0d0))
+
+
+
+
+
+## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.3...@kcutils/logger@0.8.4) (2020-10-05)
+
+
+### Bug Fixes
+
+* fix deployment in cd is not work because docs generator, disabled doc. ([0ae97be](https://github.com/kamontat/kcutils/commit/0ae97bec73154a10dcf20b042fe998a3d6e3e53c))
+
+
+
+
+
+## [0.8.3](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.2...@kcutils/logger@0.8.3) (2020-10-02)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.8.2](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.1...@kcutils/logger@0.8.2) (2020-10-02)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.8.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.1-beta.1...@kcutils/logger@0.8.1) (2020-10-01)
+
+
+### Performance Improvements
+
+* **core:** update document to support tsdoc syntax ([7152b26](https://github.com/kamontat/kcutils/commit/7152b261dfd267a964692c4ccd6e5b3a73db4592))
+
+
+
+
+
+## [0.8.1-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.1-beta.0...@kcutils/logger@0.8.1-beta.1) (2020-10-01)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.8.1-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.0...@kcutils/logger@0.8.1-beta.0) (2020-10-01)
+
+
+### Performance Improvements
+
+* **docs:** add module name in each logger files ([5af4800](https://github.com/kamontat/kcutils/commit/5af48003bfa287c8e4ccc14504570107a3afc673))
+
+
+
+
+
 # [0.8.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.0-beta.1...@kcutils/logger@0.8.0) (2020-09-30)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/helper",
-  "version": "0.11.0",
+  "version": "0.12.1",
   "description": "Functional helper",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -42,11 +42,13 @@
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester",
-    "lint": "ilinter"
+    "lint": "ilinter",
+    "doc": "idocumentor",
+    "postdoc": "idocumentor --publish github"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.14.0",
-    "@kcinternal/configuration": "0.8.5",
+    "@kcinternal/commandline": "0.17.1",
+    "@kcinternal/configuration": "0.8.10",
     "@kcutils/testkit": "0.2.0-rc.7"
   }
 }

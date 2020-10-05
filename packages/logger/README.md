@@ -7,7 +7,11 @@
 
 <!-- BODY SECTION -->
 
-This source code base on `signale`([1](https://github.com/klaussinani/signale)) by Klaus Sinani and Mario Sinani
+This source code base on `signale`([1](https://github.com/klaussinani/signale)) by Klaus Sinani and Mario Sinani.
+
+## Documentation
+
+This package `enabled` auto update documentation website, you can look on deep detail at https://kcutils.kamontat.net/logger
 
 <!-- IMAGE SECTION -->
 

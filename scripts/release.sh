@@ -53,14 +53,19 @@ cmd=""
 dry=""
 
 run_lerna() {
+  if [[ "$CI" == "true" ]]; then
+    params+=("--loglevel" "silly")
+  fi
+
   printf "[debug] cmd = %s" "$lerna"
   for i in "$@"; do
     printf " '%s'" "$i"
   done
+  echo "${params[*]}"
   echo
 
   if test -z "$dry"; then
-    $lerna "$@"
+    $lerna "$@" "${params[@]}"
   fi
 }
 

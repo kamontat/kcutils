@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.12.0...@kcutils/helper@0.12.1) (2020-10-05)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+# [0.12.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.3...@kcutils/helper@0.12.0) (2020-10-05)
+
+
+### Features
+
+* **doc:** introduce documentation in error and helper modules ([997d935](https://github.com/kamontat/kcutils/commit/997d9351fac1ecc7bc846e9d58da0238c2e2d946))
+
+
+
+
+
+## [0.11.3](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.2...@kcutils/helper@0.11.3) (2020-10-05)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+## [0.11.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.1...@kcutils/helper@0.11.2) (2020-10-05)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+## [0.11.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.1-beta.1...@kcutils/helper@0.11.1) (2020-10-01)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+## [0.11.1-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.1-beta.0...@kcutils/helper@0.11.1-beta.1) (2020-10-01)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
+## [0.11.1-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.0...@kcutils/helper@0.11.1-beta.0) (2020-10-01)
+
+**Note:** Version bump only for package @kcutils/helper
+
+
+
+
+
 # [0.11.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.11.0-beta.1...@kcutils/helper@0.11.0) (2020-09-30)
 
 **Note:** Version bump only for package @kcutils/helper

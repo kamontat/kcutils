@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.17.0...@kcinternal/commandline@0.17.1) (2020-10-05)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
+# [0.17.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.16.0...@kcinternal/commandline@0.17.0) (2020-10-05)
+
+
+### Features
+
+* **helper:** add new question helper for asking couple of question ([b510929](https://github.com/kamontat/kcutils/commit/b510929970c00e1fa610e52fec4bc0c5421d5b81))
+
+
+### Performance Improvements
+
+* **core:** ask before publish in non-ci environment ([26874fa](https://github.com/kamontat/kcutils/commit/26874fa9905adac69d0ad08775f5edcc052992b9))
+
+
+
+
+
+# [0.16.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.1...@kcinternal/commandline@0.16.0) (2020-10-05)
+
+
+### Features
+
+* **core:** support publish document to gh pages after package been published ([3b439ce](https://github.com/kamontat/kcutils/commit/3b439cefe980a7615e1a232a973253358a3bf0d0))
+
+
+
+
+
+## [0.15.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0...@kcinternal/commandline@0.15.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* fix deployment in cd is not work because docs generator, disabled doc. ([0ae97be](https://github.com/kamontat/kcutils/commit/0ae97bec73154a10dcf20b042fe998a3d6e3e53c))
+
+
+
+
+
+# [0.15.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0-beta.1...@kcinternal/commandline@0.15.0) (2020-10-01)
+
+
+### Performance Improvements
+
+* **core:** add --preversion to idocumentator for add docs to lerna version ([100ea92](https://github.com/kamontat/kcutils/commit/100ea920ce0f1d73b3067317cb24b23874c26a20))
+
+
+
+
+
+# [0.15.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0-beta.0...@kcinternal/commandline@0.15.0-beta.1) (2020-10-01)
+
+**Note:** Version bump only for package @kcinternal/commandline
+
+
+
+
+
+# [0.15.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.14.0...@kcinternal/commandline@0.15.0-beta.0) (2020-10-01)
+
+
+### Features
+
+* **core:** add new `idocumentor` script for create docs in docs folder ([87c457e](https://github.com/kamontat/kcutils/commit/87c457e10bae7333ff2800fdc56e7be57fe96e72))
+
+
+
+
+
 # [0.14.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.14.0-beta.1...@kcinternal/commandline@0.14.0) (2020-09-30)
 
 **Note:** Version bump only for package @kcinternal/commandline

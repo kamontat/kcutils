@@ -32,21 +32,21 @@ This namespace is for project which use internally, all of them should install a
 
 This is a utilities projects for generic usecase
 
-- [error][kcutils_err_gh]                - Error management and custom error object
-- [logger][kcutils_log_gh]               - Another logger services
-- [helper][kcutils_helper_gh]            - Functional utilities like lodash/ramda
-- [models][kcutils_models_gh]            - Custom class models for multiple usecase like Optional
-- [color][kcutils_color_gh]              - Color utilities and convertion
-- [react-testkit][kcutils_react_test_gh] - Enzyme support and React utilities function for react
-- [testkit][kcutils_test_gh]             - Stryker support with default configuration
-- [gatsby-config][kcutils_gsb_conf_gh]   - Gatsby Configuration Builder for Typescript project
+- [@kcutils/error][kcutils_err_gh]                - Error management and custom error object
+- [@kcutils/logger][kcutils_log_gh]               - Another logger services
+- [@kcutils/helper][kcutils_helper_gh]            - Functional utilities like lodash/ramda
+- [@kcutils/models][kcutils_models_gh]            - Custom class models for multiple usecase like Optional
+- [@kcutils/color][kcutils_color_gh]              - Color utilities and convertion
+- [@kcutils/react-testkit][kcutils_react_test_gh] - Enzyme support and React utilities function for react
+- [@kcutils/testkit][kcutils_test_gh]             - Stryker support with default configuration
+- [@kcutils/gatsby-config][kcutils_gsb_conf_gh]   - Gatsby Configuration Builder for Typescript project
 
 ### Private
 
 This is a private project which never publish to npm
 
-- [example][kcutils_eg_gh]           - Example project for give idea how to create new module in this repository
-- [graph][kcutils_graph_gh]           - Application project for generate dependencies for this repository
+- [@kcutils/example][kcutils_eg_gh]           - Example project for give idea how to create new module in this repository
+- [@kcutils/graph][kcutils_graph_gh]           - Application project for generate dependencies for this repository
 
 ## For Contribution User
 
