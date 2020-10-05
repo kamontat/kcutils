@@ -17,7 +17,7 @@ export { WithLogger } from "./services/WithLogger";
 
 export {
   /**
-   * @deprecated please use LoggerBuilder instead
+   * @deprecated Please use LoggerBuilder instead
    */
   Logger,
 } from "./models/logger/Logger";

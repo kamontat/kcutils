@@ -14,10 +14,10 @@ export abstract class WithLogger<T extends string = ""> {
   }
 
   /**
-   * @deprecated
+   * @deprecated Please use updateLoggerOption instead, it's adapted logger builder
    * update current logger object
    *
-   * @param fn perform anything you needs to create new logger object, logger in parameters has no side effect
+   * @param fn - perform anything you needs to create new logger object, logger in parameters has no side effect
    */
   protected updateLogger(fn: (newObject: Logger<T>) => Logger<T>): void {
     this.logger = fn(this.logger.copy());
@@ -26,7 +26,7 @@ export abstract class WithLogger<T extends string = ""> {
   /**
    * update logger options and settings
    *
-   * @param fn update logger option via builder
+   * @param fn - update logger option via builder
    */
   protected updateLoggerOption<R extends string>(fn: UpdateOptionFn<T, R>): void {
     this.builder = this.builder.updateOption(fn);

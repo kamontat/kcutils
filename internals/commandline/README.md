@@ -12,6 +12,7 @@
 - [itester](#itester)
 - [irunner](#irunner)
 - [icleaner](#icleaner)
+- [idocumentor](#idocumentor)
 
 ## icompiler-tsc
 
@@ -89,6 +90,39 @@ Feature:
 ```bash
 $ yarn icleaner \
   [--all] # delete all files include node_modules and yarn.lock
+```
+
+## idocumentor
+
+Feature:
+
+1. create document page in html in `docs` folder
+2. support update when increase new version via `lerna version`
+
+Condition:
+
+1. add `@kcinternal/configuration` for **tsdoc.json** file
+2. add `typedoc` installed in dev dependencies in root `package.json`
+3. add **tsdoc.json** for eslint, disabled by add `{ tsdoc: false }` in eslint option
+
+Steps:
+
+1. create tsdoc.json in package module
+```json
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+  "extends": ["./node_modules/@kcinternal/configuration/includes/tsdoc.json"]
+}
+```
+
+2. add 2 more scripts in `scripts` key in **package.json** file
+```json
+{
+  "scripts": {
+    "preversion": "idocumentor --preversion",
+    "doc": "idocumentor"
+  }
+}
 ```
 
 <!-- IMAGE SECTION -->
