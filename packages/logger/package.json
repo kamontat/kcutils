@@ -43,7 +43,8 @@
     "clean": "icleaner",
     "test": "itester",
     "lint": "ilinter",
-    "doc": "idocumentor"
+    "doc": "idocumentor",
+    "postdoc": "idocumentor --publish github"
   },
   "dependencies": {
     "@kcutils/helper": "0.11.1",
