@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0...@kcinternal/commandline@0.15.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* fix deployment in cd is not work because docs generator, disabled doc. ([0ae97be](https://github.com/kamontat/kcutils/commit/0ae97bec73154a10dcf20b042fe998a3d6e3e53c))
+
+
+
+
+
 # [0.15.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.15.0-beta.1...@kcinternal/commandline@0.15.0) (2020-10-01)
 
 
