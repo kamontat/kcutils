@@ -146,6 +146,12 @@ commands:
       - run:
           name: "Release new package version"
           command: yarn release:ci << parameters.option >> || true
+  release-docs:
+    description: Publish documentation to gh-pages
+    steps:
+      - run:
+          name: build documentation pages
+          command: NODE_DEBUG=gh-pages yarn doc:ci
 
 jobs:
   main:
@@ -236,6 +242,7 @@ jobs:
           all: true
       - publish:
           option: "type=live"
+      - release-docs
       - git-cleanup
       - gpg-cleanup
 
