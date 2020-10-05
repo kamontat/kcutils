@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.4...@kcutils/logger@0.9.0) (2020-10-05)
+
+
+### Features
+
+* **core:** support publish document to gh pages after package been published ([3b439ce](https://github.com/kamontat/kcutils/commit/3b439cefe980a7615e1a232a973253358a3bf0d0))
+
+
+
+
+
 ## [0.8.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.8.3...@kcutils/logger@0.8.4) (2020-10-05)
 
 
