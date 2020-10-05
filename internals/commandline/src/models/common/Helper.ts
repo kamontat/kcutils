@@ -4,6 +4,7 @@ import { LogHelper } from "./helpers/LogHelper";
 import { ArgumentHelper } from "./helpers/ArgumentHelper";
 import { EnvHelper } from "./helpers/EnvHelper";
 import { GeneralHelper } from "./helpers/GeneralHelper";
+import { QuestionHelper } from "./helpers/QuestionHelper";
 
 type HelperOption<T extends string> = Record<T, string>;
 
@@ -17,6 +18,7 @@ export class Helper<T extends string> {
   private envHelper: EnvHelper;
   private argumentHelper: ArgumentHelper;
   private logHelper: LogHelper;
+  private questionHelper: QuestionHelper;
 
   constructor(opts: HelperOption<T>) {
     this.generalHelper = new GeneralHelper();
@@ -32,6 +34,7 @@ export class Helper<T extends string> {
     this.argumentHelper = new ArgumentHelper();
     this.logHelper = new LogHelper();
     this.envHelper = new EnvHelper();
+    this.questionHelper = new QuestionHelper();
   }
 
   get general(): GeneralHelper {
@@ -56,5 +59,9 @@ export class Helper<T extends string> {
 
   on(type: T): PathHelper {
     return this.subPathHelper.get(type) ?? new PathHelper(process.cwd());
+  }
+
+  get question(): QuestionHelper {
+    return this.questionHelper;
   }
 }
