@@ -21,7 +21,7 @@ const transformer = new AsyncRunner(option, async ({ helper, data }) => {
           ghpages,
           "--add",
           "--message",
-          "chore(release): publish new documentation website [skip ci]",
+          `chore(release): publish ${name} document [skip ci]`,
           "--dist",
           "docs",
           "--dest",
