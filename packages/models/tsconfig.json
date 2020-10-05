@@ -1,0 +1,6 @@
+{
+  "extends": "./node_modules/@kcinternal/commandline/includes/tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": true
+  }
+}

@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: friday
+      time: "18:00"
+      timezone: Asia/Bangkok
+    versioning-strategy: auto
+    rebase-strategy: auto
+    open-pull-requests-limit: 5
+    reviewers:
+      - "kamontat"
+    commit-message:
+      prefix: chore
+      include: scope
+    pull-request-branch-name:
+      separator: "/"

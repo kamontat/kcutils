@@ -1,0 +1,57 @@
+{
+  "name": "@kcutils/testkit",
+  "version": "0.4.2",
+  "description": "Add Stryker dependencies and config to @kcmono projects",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/testkit"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "**/*.json"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcutils",
+    "libraries",
+    "tester",
+    "node",
+    "typescript",
+    "jest",
+    "eslint",
+    "common",
+    "testkit",
+    "stryker"
+  ],
+  "scripts": {
+    "build": "icompiler-tsc",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester",
+    "lint": "ilinter"
+  },
+  "dependencies": {
+    "@stryker-mutator/core": "3.3.1",
+    "@stryker-mutator/jest-runner": "3.3.1",
+    "@stryker-mutator/typescript": "3.3.1"
+  },
+  "devDependencies": {
+    "@kcinternal/commandline": "0.15.1",
+    "@kcinternal/configuration": "0.8.7"
+  }
+}

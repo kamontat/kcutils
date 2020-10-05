@@ -1,0 +1,18 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "packages": ["packages/*", "internals/*", "typings/*"],
+  "command": {
+    "init": {
+      "exact": true
+    },
+    "version": {
+      "allowBranch": ["master", "develop", "feature/*"],
+      "message": "chore(release): publish %s"
+    },
+    "publish": {
+      "graphType": "all",
+      "message": "chore(release): publish"
+    }
+  }
+}

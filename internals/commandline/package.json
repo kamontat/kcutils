@@ -1,0 +1,68 @@
+{
+  "name": "@kcinternal/commandline",
+  "description": "internal modules for kc monots projects",
+  "version": "0.15.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "internals/commandline"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "bin",
+    "includes",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "data/**/*.json"
+  ],
+  "keywords": [
+    "kcmono",
+    "kcinternal",
+    "helper",
+    "kcutils",
+    "commandline",
+    "node",
+    "typescript"
+  ],
+  "bin": {
+    "root-build": "bin/root/build.js",
+    "root-run": "bin/root/run.js",
+    "root-clean": "bin/root/clean.js",
+    "root-release": "bin/root/release.js",
+    "root-tester": "bin/root/tester.js",
+    "icompiler-tsc": "bin/compiler-tsc.js",
+    "icompiler-babel": "bin/compiler-babel.js",
+    "icompiler-webpack": "bin/compiler-webpack.js",
+    "icleaner": "bin/cleaner.js",
+    "itester": "bin/tester.js",
+    "irunner": "bin/runner.js",
+    "ilinter": "bin/linter.js",
+    "idocumentor": "bin/documentor.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean:cli": "trash lib *.tsbuildinfo",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "del": "5.1.0",
+    "minimist": "1.2.5",
+    "trash-cli": "3.0.0"
+  },
+  "devDependencies": {
+    "@types/minimist": "1.2.0",
+    "@types/package_json": "0.2.3"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@kcutils/graph",
+  "version": "0.1.0",
+  "private": true,
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "icompiler-tsc",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester",
+    "lint": "ilinter"
+  },
+  "dependencies": {
+    "@kcinternal/graph": "*"
+  },
+  "devDependencies": {
+    "@types/graphviz": "0.0.32",
+    "@kcinternal/commandline": "*",
+    "@kcinternal/configuration": "*"
+  }
+}

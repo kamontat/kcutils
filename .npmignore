@@ -1,0 +1,23 @@
+# typescript source code
+src
+
+# excluding code coverage report
+coverage
+
+# eslint configuration
+.eslintrc.js
+
+# jest configuration
+jest.config.js
+
+# tsconfig configuration
+tsconfig.json
+
+# webpack configuration
+webpack.config.js
+
+*.map
+
+*.tsbuildinfo
+*.buildinfo
+*.info
