@@ -4,13 +4,17 @@ const option = new Option({ dirname: process.cwd(), input: process.argv.slice(2)
 const transformer = new AsyncRunner(option, async ({ helper, data }) => {
   if (data.arguments.publish) {
     const publishTo = data.arguments.publish;
+    const name = helper.on("parent").projectName("dirname", false);
+
     helper.log.debug("Publish", `starting publish to ${publishTo}`);
 
-    const name = helper.on("parent").projectName(undefined, false);
-
-    const ghpages = helper.path.nodeCommand("gh-pages");
+    if (!helper.env.isCI()) {
+      const answer = await helper.question.askBoolean("Are you sure to publish document to Github Pages?");
+      if (!answer) return ["echo", `[skip] don't want to publish documents`];
+    }
 
     if (publishTo === "github") {
+      const ghpages = helper.path.nodeCommand("gh-pages");
       if (ghpages === undefined) return ["echo", "[skip] gh-pages command missing"];
       else
         return [
