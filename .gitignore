@@ -311,4 +311,4 @@ graph.pdf
 packages/**/reports
 reports
 
-docs
+packages/**/docs
