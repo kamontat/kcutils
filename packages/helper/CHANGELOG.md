@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.12.1...@kcutils/helper@0.12.2) (2020-10-05)
+
+
+### Performance Improvements
+
+* **docs:** add new document section point to docs website ([e6f4fe4](https://github.com/kamontat/kcutils/commit/e6f4fe4e0c17f544fcf54dc96c933ab43e2b40b9))
+
+
+
+
+
 ## [0.12.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.12.0...@kcutils/helper@0.12.1) (2020-10-05)
 
 **Note:** Version bump only for package @kcutils/helper
