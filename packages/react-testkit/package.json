@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/react-testkit",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Add React utilities and Enzyme support",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
