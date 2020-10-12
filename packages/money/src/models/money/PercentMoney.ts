@@ -75,7 +75,7 @@ export class PercentMoney implements Money {
     return `${this.percent}${this.unit}`;
   }
 
-  toFixString(digit: number): string {
+  toFixString(digit: number = 3): string {
     return `${this.percent.toFixed(digit)}${this.unit}`;
   }
 }

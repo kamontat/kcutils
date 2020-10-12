@@ -58,4 +58,8 @@ export abstract class Transaction {
   toString(): string {
     return `${this.name}: ${this.money.toString()}`;
   }
+
+  toFixString(digit: number = 2): string {
+    return `${this.name}: ${this.money.toFixString(digit)}`;
+  }
 }

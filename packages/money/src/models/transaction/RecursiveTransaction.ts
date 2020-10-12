@@ -5,6 +5,8 @@ import { TransactionType } from "./TransactionType";
 import { RecursiveUnit } from "../datetime/RecursiveUnit";
 
 export abstract class RecursiveTransaction extends Transaction {
+  protected readonly weekdayNumber: number;
+
   constructor(
     name: string,
     money: Money,
@@ -14,6 +16,9 @@ export abstract class RecursiveTransaction extends Transaction {
     protected readonly year: number | RecursiveUnit.Yearly = RecursiveUnit.Yearly
   ) {
     super(name, money);
+
+    if (weekday === RecursiveUnit.Weekly && date !== RecursiveUnit.Daily) this.weekdayNumber = date;
+    else this.weekdayNumber = -1;
   }
 
   abstract getType(): TransactionType;

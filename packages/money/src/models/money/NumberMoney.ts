@@ -76,7 +76,7 @@ export class NumberMoney implements Money {
     return `${this.amount} ${this.unit}`;
   }
 
-  toFixString(digit: number): string {
+  toFixString(digit: number = 2): string {
     return `${this.amount.toFixed(digit)} ${this.unit}`;
   }
 }

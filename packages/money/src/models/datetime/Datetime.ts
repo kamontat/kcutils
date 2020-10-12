@@ -8,6 +8,15 @@ export interface DatetimeObject {
 }
 
 export class Datetime {
+  static now(): Datetime {
+    const now = Luxon.local();
+    return new Datetime({
+      year: now.year,
+      month: now.month,
+      day: now.day,
+    });
+  }
+
   private defaultDT: Luxon;
   private dt: Luxon;
 
@@ -32,6 +41,10 @@ export class Datetime {
   next(unit: RecursiveUnit | DurationObject): this {
     this.dt = this.dt.plus(RecursiveUnits.convert(unit));
     return this;
+  }
+
+  newNext(unit: RecursiveUnit | DurationObject): Datetime {
+    return this.copy().next(unit);
   }
 
   reset(): void {

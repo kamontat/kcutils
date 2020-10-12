@@ -26,5 +26,5 @@ export interface Money {
 
   toString(): string;
 
-  toFixString(digit: number): string;
+  toFixString(digit?: number): string;
 }

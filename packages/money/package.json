@@ -34,6 +34,7 @@
     "lint": "ilinter"
   },
   "dependencies": {
+    "@kcutils/logger": "0.9.3",
     "luxon": "1.25.0"
   },
   "devDependencies": {
