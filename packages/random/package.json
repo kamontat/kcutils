@@ -1,0 +1,41 @@
+{
+  "name": "@kcutils/random",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/random"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "**/*.json"
+  ],
+  "scripts": {
+    "build": "icompiler-tsc",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester",
+    "lint": "ilinter"
+  },
+  "devDependencies": {
+    "@kcinternal/commandline": "*",
+    "@kcinternal/configuration": "*",
+    "@kcutils/testkit": "0.4.7"
+  }
+}
