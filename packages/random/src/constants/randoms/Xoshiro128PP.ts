@@ -31,4 +31,8 @@ export class Xoshiro128PP extends Random {
     this.d = (this.d << 11) | (this.d >>> 21);
     return (r >>> 0) / 4294967296;
   }
+
+  copy(s?: Seed): Random {
+    return new Xoshiro128PP(s ?? this.seed);
+  }
 }

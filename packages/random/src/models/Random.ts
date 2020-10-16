@@ -58,4 +58,5 @@ export abstract class Random {
   }
 
   abstract pseudo(): number;
+  abstract copy(seed?: Seed): Random;
 }

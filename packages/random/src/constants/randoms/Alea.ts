@@ -47,4 +47,8 @@ export class Alea extends Random {
 
     return (this.c = this.y - (this.x = this.y | 0));
   }
+
+  copy(s?: Seed): Random {
+    return new Alea(s ?? this.seed);
+  }
 }
