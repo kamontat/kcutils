@@ -46,7 +46,7 @@ export abstract class Random {
 
     const min = Math.min(option.min, option.max);
     const max = Math.max(option.min, option.max);
-    const diff = max - min + (option.inclusiveMax ? 1 : 0);
+    const diff = max - min + (option.inclusiveMax && !option.integer ? 1 : 0);
 
     const r = this.pseudo() * diff + min;
     if (option.integer) return Math.round(r);
