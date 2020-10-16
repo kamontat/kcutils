@@ -13,6 +13,10 @@ Add more functionality to @kcmono test
 
 1. Add Stryker mutator and default config, example setup at @kcutils/helper project
 
+### Stryker setup
+
+> On hold because Stryker v4 is not stable yet!!
+
 <!-- IMAGE SECTION -->
 
 [nlatest]: https://www.npmjs.com/package/@kcutils/testkit/v/latest

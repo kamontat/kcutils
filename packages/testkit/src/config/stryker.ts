@@ -24,24 +24,27 @@ const stryker: ConfigBuilder<Setting, Partial<StrykerOptions>> = {
   transformer: ({ helper, data }) => {
     const config = helper.general.byDefault(defaultConfig, data);
 
-    const level = config.trace ? ("trace" as LogLevel) : config.debug ? ("debug" as LogLevel) : ("info" as LogLevel);
-
-    return {
-      logLevel: level,
+    const result: Partial<StrykerOptions> = {
       timeoutMS: config.timeout,
       coverageAnalysis: "off",
-
       packageManager: "yarn",
-
       mutator: "typescript",
       mutate: ["src/**/*.ts"],
       transpilers: [],
       testRunner: "jest",
-
-      tsconfigFile: "tsconfig.json",
-
       reporters: ["html", "progress"],
     };
+
+    result.logLevel = config.trace
+      ? ("trace" as LogLevel)
+      : config.debug
+      ? ("debug" as LogLevel)
+      : ("info" as LogLevel);
+
+    if (config.trace || config.debug) result.fileLogLevel = "trace" as LogLevel;
+
+    console.log(result);
+    return result;
   },
 };
 
