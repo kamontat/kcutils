@@ -38,8 +38,9 @@ This is a utilities projects for generic usecase
 - [@kcutils/models][kcutils_models_gh]            - Custom class models for multiple usecase like Optional
 - [@kcutils/color][kcutils_color_gh]              - Color utilities and convertion
 - [@kcutils/react-testkit][kcutils_react_test_gh] - Enzyme support and React utilities function for react
-- [@kcutils/testkit][kcutils_test_gh]             - Stryker support with default configuration
+- [@kcutils/testkit][kcutils_test_gh]             - Stryker support with default configuration (Deprecated)
 - [@kcutils/gatsby-config][kcutils_gsb_conf_gh]   - Gatsby Configuration Builder for Typescript project
+- [@kcutils/random][kcutils_random_gh]            - Pseudorandom number generators
 
 ### Private
 
@@ -84,3 +85,4 @@ This project hold CC-BY-SA 4.0 more information found [here](./LICENSE)
 [kcutils_react_test_gh]: ./packages/react-testkit
 [kcutils_test_gh]: ./packages/testkit
 [kcutils_gsb_conf_gh]: ./packages/gatsby-config
+[kcutils_random_gh]: ./packages/random
