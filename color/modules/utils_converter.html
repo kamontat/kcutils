@@ -1,0 +1,1556 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>utils/converter | @kcutils/color</title>
+	<meta name="description" content="Documentation for @kcutils/color">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@kcutils/color</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="utils_converter.html">utils/converter</a>
+				</li>
+			</ul>
+			<h1>Module utils/converter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>References</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#rgbhexoptions" class="tsd-kind-icon">RGBHex<wbr>Options</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#defaultrgb" class="tsd-kind-icon">defaultRGB</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#enforcehsl" class="tsd-kind-icon">enforceHSL</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#enforcehsv" class="tsd-kind-icon">enforceHSV</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#enforcehex" class="tsd-kind-icon">enforce<wbr>Hex</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#enforcergb" class="tsd-kind-icon">enforceRGB</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#hextorgb" class="tsd-kind-icon">hex<wbr>ToRgb</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#hsltohsl" class="tsd-kind-icon">hsl<wbr>ToHsl</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#hsltorgb" class="tsd-kind-icon">hsl<wbr>ToRgb</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#hsvtohsv" class="tsd-kind-icon">hsv<wbr>ToHsv</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#hsvtorgb" class="tsd-kind-icon">hsv<wbr>ToRgb</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#namedtorgb" class="tsd-kind-icon">named<wbr>ToRgb</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#rgbtohex" class="tsd-kind-icon">rgb<wbr>ToHex</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#rgbtohsl" class="tsd-kind-icon">rgb<wbr>ToHsl</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#rgbtohsv" class="tsd-kind-icon">rgb<wbr>ToHsv</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#rgbtonamed" class="tsd-kind-icon">rgb<wbr>ToNamed</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#rgbtorgb" class="tsd-kind-icon">rgb<wbr>ToRgb</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#roundedhsl" class="tsd-kind-icon">roundedHSL</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#roundedhsv" class="tsd-kind-icon">roundedHSV</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#roundedrgb" class="tsd-kind-icon">roundedRGB</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#todecimal" class="tsd-kind-icon">to<wbr>Decimal</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#tonumber" class="tsd-kind-icon">to<wbr>Number</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#topercentage" class="tsd-kind-icon">to<wbr>Percentage</a></li>
+								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="utils_converter.html#totype" class="tsd-kind-icon">to<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="utils_converter.html#condition" class="tsd-kind-icon">Condition</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="utils_converter.html#input" class="tsd-kind-icon">Input</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="utils_converter.html#loopfn" class="tsd-kind-icon">Loop<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="utils_converter.html#rgbhexoptions-1" class="tsd-kind-icon">RGBHex<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="utils_converter.html#rawinput" class="tsd-kind-icon">Raw<wbr>Input</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported"><a href="utils_converter.html#rule" class="tsd-kind-icon">Rule</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#enforcehsl-1" class="tsd-kind-icon">enforceHSL</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#enforcehsv-1" class="tsd-kind-icon">enforceHSV</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#enforcehex-1" class="tsd-kind-icon">enforce<wbr>Hex</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#enforcenamed" class="tsd-kind-icon">enforce<wbr>Named</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#enforcergb-1" class="tsd-kind-icon">enforceRGB</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#hextorgb-1" class="tsd-kind-icon">hex<wbr>ToRgb</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#hsltohsl-1" class="tsd-kind-icon">hsl<wbr>ToHsl</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#hsltorgb-1" class="tsd-kind-icon">hsl<wbr>ToRgb</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#hsvtohsv-1" class="tsd-kind-icon">hsv<wbr>ToHsv</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#hsvtorgb-1" class="tsd-kind-icon">hsv<wbr>ToRgb</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#inputtorgb" class="tsd-kind-icon">input<wbr>ToRGB</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converter.html#loop" class="tsd-kind-icon">loop</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#namedtorgb-1" class="tsd-kind-icon">named<wbr>ToRgb</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#rgbtohex-1" class="tsd-kind-icon">rgb<wbr>ToHex</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#rgbtohsl-1" class="tsd-kind-icon">rgb<wbr>ToHsl</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#rgbtohsv-1" class="tsd-kind-icon">rgb<wbr>ToHsv</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#rgbtonamed-1" class="tsd-kind-icon">rgb<wbr>ToNamed</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#rgbtorgb-1" class="tsd-kind-icon">rgb<wbr>ToRgb</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#roundedhsl-1" class="tsd-kind-icon">roundedHSL</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#roundedhsv-1" class="tsd-kind-icon">roundedHSV</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#roundedrgb-1" class="tsd-kind-icon">roundedRGB</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#stringtoinput" class="tsd-kind-icon">string<wbr>ToInput</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converter.html#todecimal-1" class="tsd-kind-icon">to<wbr>Decimal</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converter.html#tonumber-1" class="tsd-kind-icon">to<wbr>Number</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converter.html#topercentage-1" class="tsd-kind-icon">to<wbr>Percentage</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converter.html#totype-1" class="tsd-kind-icon">to<wbr>Type</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#validatecolorobject" class="tsd-kind-icon">validate<wbr>Color<wbr>Object</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converter.html#validatergb" class="tsd-kind-icon">validateRGB</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="utils_converter.html#defaulthsl" class="tsd-kind-icon">defaultHSL</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="utils_converter.html#defaulthsv" class="tsd-kind-icon">defaultHSV</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="utils_converter.html#defaulthex" class="tsd-kind-icon">default<wbr>Hex</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="utils_converter.html#defaultnamed" class="tsd-kind-icon">default<wbr>Named</a></li>
+								<li class="tsd-kind-object-literal tsd-parent-kind-module"><a href="utils_converter.html#defaultrgb-1" class="tsd-kind-icon">defaultRGB</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>References</h2>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rgbhexoptions" class="tsd-anchor"></a>
+					<h3>RGBHex<wbr>Options</h3>
+					Re-exports <a href="utils_converter.html#rgbhexoptions-1">RGBHexOptions</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="defaultrgb" class="tsd-anchor"></a>
+					<h3>defaultRGB</h3>
+					Re-exports <a href="utils_converter.html#defaultrgb-1">defaultRGB</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="enforcehsl" class="tsd-anchor"></a>
+					<h3>enforceHSL</h3>
+					Re-exports <a href="utils_converter.html#enforcehsl-1">enforceHSL</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="enforcehsv" class="tsd-anchor"></a>
+					<h3>enforceHSV</h3>
+					Re-exports <a href="utils_converter.html#enforcehsv-1">enforceHSV</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="enforcehex" class="tsd-anchor"></a>
+					<h3>enforce<wbr>Hex</h3>
+					Re-exports <a href="utils_converter.html#enforcehex-1">enforceHex</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="enforcergb" class="tsd-anchor"></a>
+					<h3>enforceRGB</h3>
+					Re-exports <a href="utils_converter.html#enforcergb-1">enforceRGB</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="hextorgb" class="tsd-anchor"></a>
+					<h3>hex<wbr>ToRgb</h3>
+					Re-exports <a href="utils_converter.html#hextorgb-1">hexToRgb</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="hsltohsl" class="tsd-anchor"></a>
+					<h3>hsl<wbr>ToHsl</h3>
+					Re-exports <a href="utils_converter.html#hsltohsl-1">hslToHsl</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="hsltorgb" class="tsd-anchor"></a>
+					<h3>hsl<wbr>ToRgb</h3>
+					Re-exports <a href="utils_converter.html#hsltorgb-1">hslToRgb</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="hsvtohsv" class="tsd-anchor"></a>
+					<h3>hsv<wbr>ToHsv</h3>
+					Re-exports <a href="utils_converter.html#hsvtohsv-1">hsvToHsv</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="hsvtorgb" class="tsd-anchor"></a>
+					<h3>hsv<wbr>ToRgb</h3>
+					Re-exports <a href="utils_converter.html#hsvtorgb-1">hsvToRgb</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="namedtorgb" class="tsd-anchor"></a>
+					<h3>named<wbr>ToRgb</h3>
+					Re-exports <a href="utils_converter.html#namedtorgb-1">namedToRgb</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rgbtohex" class="tsd-anchor"></a>
+					<h3>rgb<wbr>ToHex</h3>
+					Re-exports <a href="utils_converter.html#rgbtohex-1">rgbToHex</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rgbtohsl" class="tsd-anchor"></a>
+					<h3>rgb<wbr>ToHsl</h3>
+					Re-exports <a href="utils_converter.html#rgbtohsl-1">rgbToHsl</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rgbtohsv" class="tsd-anchor"></a>
+					<h3>rgb<wbr>ToHsv</h3>
+					Re-exports <a href="utils_converter.html#rgbtohsv-1">rgbToHsv</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rgbtonamed" class="tsd-anchor"></a>
+					<h3>rgb<wbr>ToNamed</h3>
+					Re-exports <a href="utils_converter.html#rgbtonamed-1">rgbToNamed</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="rgbtorgb" class="tsd-anchor"></a>
+					<h3>rgb<wbr>ToRgb</h3>
+					Re-exports <a href="utils_converter.html#rgbtorgb-1">rgbToRgb</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="roundedhsl" class="tsd-anchor"></a>
+					<h3>roundedHSL</h3>
+					Re-exports <a href="utils_converter.html#roundedhsl-1">roundedHSL</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="roundedhsv" class="tsd-anchor"></a>
+					<h3>roundedHSV</h3>
+					Re-exports <a href="utils_converter.html#roundedhsv-1">roundedHSV</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="roundedrgb" class="tsd-anchor"></a>
+					<h3>roundedRGB</h3>
+					Re-exports <a href="utils_converter.html#roundedrgb-1">roundedRGB</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="todecimal" class="tsd-anchor"></a>
+					<h3>to<wbr>Decimal</h3>
+					Re-exports <a href="utils_converter.html#todecimal-1">toDecimal</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="tonumber" class="tsd-anchor"></a>
+					<h3>to<wbr>Number</h3>
+					Re-exports <a href="utils_converter.html#tonumber-1">toNumber</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="topercentage" class="tsd-anchor"></a>
+					<h3>to<wbr>Percentage</h3>
+					Re-exports <a href="utils_converter.html#topercentage-1">toPercentage</a>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
+					<a name="totype" class="tsd-anchor"></a>
+					<h3>to<wbr>Type</h3>
+					Re-exports <a href="utils_converter.html#totype-1">toType</a>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="condition" class="tsd-anchor"></a>
+					<h3>Condition</h3>
+					<div class="tsd-signature tsd-kind-icon">Condition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="utils_converter.html#rule" class="tsd-signature-type">Rule</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L151">color/src/utils/converter/color.ts:151</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="input" class="tsd-anchor"></a>
+					<h3>Input</h3>
+					<div class="tsd-signature tsd-kind-icon">Input<span class="tsd-signature-symbol">:</span> <a href="typings.html#optionalrgb" class="tsd-signature-type">OptionalRGB</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#optionalhsl" class="tsd-signature-type">OptionalHSL</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#optionalhsv" class="tsd-signature-type">OptionalHSV</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#optionalhex" class="tsd-signature-type">OptionalHEX</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#optionalnamed" class="tsd-signature-type">OptionalNamed</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L19">color/src/utils/converter/color.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="loopfn" class="tsd-anchor"></a>
+					<h3>Loop<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">Loop<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/type.ts#L11">color/src/utils/converter/type.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>n: <span class="tsd-signature-type">number</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="rgbhexoptions-1" class="tsd-anchor"></a>
+					<h3>RGBHex<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">RGBHex<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>alpha<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>minify<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L134">color/src/utils/converter/rgb.ts:134</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> alpha<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> minify<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="rawinput" class="tsd-anchor"></a>
+					<h3>Raw<wbr>Input</h3>
+					<div class="tsd-signature tsd-kind-icon">Raw<wbr>Input<span class="tsd-signature-symbol">:</span> <a href="typings.html#rawrgb" class="tsd-signature-type">RawRGB</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#rawhsl" class="tsd-signature-type">RawHSL</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#rawhsv" class="tsd-signature-type">RawHSV</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#rawhex" class="tsd-signature-type">RawHEX</a><span class="tsd-signature-symbol"> | </span><a href="typings.html#rawnamed" class="tsd-signature-type">RawNamed</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L20">color/src/utils/converter/color.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+					<a name="rule" class="tsd-anchor"></a>
+					<h3>Rule</h3>
+					<div class="tsd-signature tsd-kind-icon">Rule<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>range<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"string"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"number"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"boolean"</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L143">color/src/utils/converter/color.ts:143</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> range<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"string"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"number"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"boolean"</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="enforcehsl-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> enforceHSL</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">enforceHSL<span class="tsd-signature-symbol">(</span>hsl<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L14">color/src/utils/converter/hsl.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> hsl: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsl" class="tsd-signature-type">HSL</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="enforcehsv-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> enforceHSV</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">enforceHSV<span class="tsd-signature-symbol">(</span>hsv<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L16">color/src/utils/converter/hsv.ts:16</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> hsv: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsv" class="tsd-signature-type">HSV</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="enforcehex-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> enforce<wbr>Hex</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">enforce<wbr>Hex<span class="tsd-signature-symbol">(</span>hex<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hex" class="tsd-signature-type">HEX</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hex" class="tsd-signature-type">HEX</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hex.ts#L13">color/src/utils/converter/hex.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> hex: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hex" class="tsd-signature-type">HEX</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hex" class="tsd-signature-type">HEX</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="enforcenamed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> enforce<wbr>Named</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">enforce<wbr>Named<span class="tsd-signature-symbol">(</span>named<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#named" class="tsd-signature-type">Named</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#named" class="tsd-signature-type">Named</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/named.ts#L12">color/src/utils/converter/named.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> named: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#named" class="tsd-signature-type">Named</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#named" class="tsd-signature-type">Named</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="enforcergb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> enforceRGB</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">enforceRGB<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L18">color/src/utils/converter/rgb.ts:18</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> rgb: <span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hextorgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hex<wbr>ToRgb</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">hex<wbr>ToRgb<span class="tsd-signature-symbol">(</span>hex<span class="tsd-signature-symbol">?: </span><a href="typings.html#optionalhex" class="tsd-signature-type">OptionalHEX</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hex.ts#L23">color/src/utils/converter/hex.ts:23</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> hex: <a href="typings.html#optionalhex" class="tsd-signature-type">OptionalHEX</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hsltohsl-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hsl<wbr>ToHsl</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">hsl<wbr>ToHsl<span class="tsd-signature-symbol">(</span>hsl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a><span class="tsd-signature-symbol">&gt;</span>, type<span class="tsd-signature-symbol">?: </span><a href="reflection-852.reflection-808.html#numbertypestring" class="tsd-signature-type">NumberTypeString</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L38">color/src/utils/converter/hsl.ts:38</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>convert hsl object to number type of hsl object</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hsl: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of hsl object</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> type: <a href="reflection-852.reflection-808.html#numbertypestring" class="tsd-signature-type">NumberTypeString</a><span class="tsd-signature-symbol"> = &quot;number&quot;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsl" class="tsd-signature-type">HSL</a></h4>
+							<p>number of hsl object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hsltorgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hsl<wbr>ToRgb</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">hsl<wbr>ToRgb<span class="tsd-signature-symbol">(</span>hsl<span class="tsd-signature-symbol">: </span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L56">color/src/utils/converter/hsl.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts an HSL color value to RGB.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hsl: <a href="typings.html#hsl" class="tsd-signature-type">HSL</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of hsl object</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h4>
+							<p>rgb object with number 0-255</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hsvtohsv-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hsv<wbr>ToHsv</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">hsv<wbr>ToHsv<span class="tsd-signature-symbol">(</span>hsv<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a><span class="tsd-signature-symbol">&gt;</span>, type<span class="tsd-signature-symbol">?: </span><a href="typings.html#type" class="tsd-signature-type">Type</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L40">color/src/utils/converter/hsv.ts:40</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>convert hsl object to number type of hsl object</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hsv: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> type: <a href="typings.html#type" class="tsd-signature-type">Type</a><span class="tsd-signature-symbol"> = &quot;number&quot;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsv" class="tsd-signature-type">HSV</a></h4>
+							<p>number of hsl object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hsvtorgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hsv<wbr>ToRgb</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">hsv<wbr>ToRgb<span class="tsd-signature-symbol">(</span>hsl<span class="tsd-signature-symbol">: </span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L58">color/src/utils/converter/hsv.ts:58</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts an HSL color value to RGB.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hsl: <a href="typings.html#hsv" class="tsd-signature-type">HSV</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of hsl object</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h4>
+							<p>rgb object with number 0-255</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="inputtorgb" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> input<wbr>ToRGB</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">input<wbr>ToRGB<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><a href="utils_converter.html#input" class="tsd-signature-type">Input</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L133">color/src/utils/converter/color.ts:133</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <a href="utils_converter.html#input" class="tsd-signature-type">Input</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="loop" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> loop</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">loop&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>k<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a>, fn<span class="tsd-signature-symbol">: </span><a href="utils_converter.html#loopfn" class="tsd-signature-type">LoopFn</a>, newType<span class="tsd-signature-symbol">: </span><a href="typings.html#type" class="tsd-signature-type">Type</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/type.ts#L12">color/src/utils/converter/type.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+								</li>
+								<li>
+									<h4>V<span class="tsd-signature-symbol">: </span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>k: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h5>
+								</li>
+								<li>
+									<h5>fn: <a href="utils_converter.html#loopfn" class="tsd-signature-type">LoopFn</a></h5>
+								</li>
+								<li>
+									<h5>newType: <a href="typings.html#type" class="tsd-signature-type">Type</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="namedtorgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> named<wbr>ToRgb</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">named<wbr>ToRgb<span class="tsd-signature-symbol">(</span>named<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#named" class="tsd-signature-type">Named</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/named.ts#L19">color/src/utils/converter/named.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> named: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#named" class="tsd-signature-type">Named</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rgbtohex-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> rgb<wbr>ToHex</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rgb<wbr>ToHex<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a>, opts<span class="tsd-signature-symbol">?: </span><a href="utils_converter.html#rgbhexoptions" class="tsd-signature-type">RGBHexOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hex" class="tsd-signature-type">HEX</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L144">color/src/utils/converter/rgb.ts:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts an RGBA color plus alpha transparency to hex
+										Assumes r, g, b are contained in the set [0, 255] and
+									a in [0, 1]. Returns a 4 or 8 character rgba hex</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of rgb object</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> opts: <a href="utils_converter.html#rgbhexoptions" class="tsd-signature-type">RGBHexOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>options</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hex" class="tsd-signature-type">HEX</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rgbtohsl-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> rgb<wbr>ToHsl</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rgb<wbr>ToHsl<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L56">color/src/utils/converter/rgb.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts an RGB color value to HSL.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of rgb object</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsl" class="tsd-signature-type">HSL</a></h4>
+							<p>decimal type of hsl object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rgbtohsv-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> rgb<wbr>ToHsv</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rgb<wbr>ToHsv<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L100">color/src/utils/converter/rgb.ts:100</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts an RGB color value to HSV.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of rgb object</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsv" class="tsd-signature-type">HSV</a></h4>
+							<p>decimal type of hsv object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rgbtonamed-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> rgb<wbr>ToNamed</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rgb<wbr>ToNamed<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#named" class="tsd-signature-type">Named</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L201">color/src/utils/converter/rgb.ts:201</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts an RGB color to Named if exist, or undefined</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of rgb object</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#named" class="tsd-signature-type">Named</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="rgbtorgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> rgb<wbr>ToRgb</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">rgb<wbr>ToRgb<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, type<span class="tsd-signature-symbol">?: </span><a href="typings.html#type" class="tsd-signature-type">Type</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L43">color/src/utils/converter/rgb.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Handle bounds / percentage checking to conform to CSS color spec
+									<a href="http://www.w3.org/TR/css3-color/">http://www.w3.org/TR/css3-color/</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>any type of rgb object or incompleted rgb object</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> type: <a href="typings.html#type" class="tsd-signature-type">Type</a><span class="tsd-signature-symbol"> = &quot;number&quot;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h4>
+							<p>number type of rgb object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="roundedhsl-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> roundedHSL</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">roundedHSL<span class="tsd-signature-symbol">(</span>hsl<span class="tsd-signature-symbol">: </span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a>, digit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsl" class="tsd-signature-type">HSL</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L19">color/src/utils/converter/hsl.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hsl: <a href="typings.html#hsl" class="tsd-signature-type">HSL</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> digit: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsl" class="tsd-signature-type">HSL</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="roundedhsv-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> roundedHSV</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">roundedHSV<span class="tsd-signature-symbol">(</span>hsv<span class="tsd-signature-symbol">: </span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a>, digit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#hsv" class="tsd-signature-type">HSV</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L21">color/src/utils/converter/hsv.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hsv: <a href="typings.html#hsv" class="tsd-signature-type">HSV</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> digit: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#hsv" class="tsd-signature-type">HSV</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="roundedrgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> roundedRGB</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">roundedRGB<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a>, digit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L23">color/src/utils/converter/rgb.ts:23</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> digit: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="typings.html#rgb" class="tsd-signature-type">RGB</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="stringtoinput" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> string<wbr>ToInput</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">string<wbr>ToInput<span class="tsd-signature-symbol">(</span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="utils_converter.html#input" class="tsd-signature-type">Input</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L28">color/src/utils/converter/color.ts:28</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Permissive string parsing.  Take in a number of formats, and output an object
+									based on detected format.  Returns <code>{ r, g, b }</code> or <code>{ h, s, l }</code> or <code>{ h, s, v}</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>color: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>string color</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="utils_converter.html#input" class="tsd-signature-type">Input</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="todecimal-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Decimal</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Decimal&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a>, limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/type.ts#L54">color/src/utils/converter/type.ts:54</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+								</li>
+								<li>
+									<h4>V<span class="tsd-signature-symbol">: </span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>o: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h5>
+								</li>
+								<li>
+									<h5>limit: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="tonumber-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Number</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Number&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a>, limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/type.ts#L44">color/src/utils/converter/type.ts:44</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+								</li>
+								<li>
+									<h4>V<span class="tsd-signature-symbol">: </span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>o: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h5>
+								</li>
+								<li>
+									<h5>limit: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="topercentage-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Percentage</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Percentage&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a>, limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/type.ts#L29">color/src/utils/converter/type.ts:29</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+								</li>
+								<li>
+									<h4>V<span class="tsd-signature-symbol">: </span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>o: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h5>
+								</li>
+								<li>
+									<h5>limit: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="totype-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Type&lt;K, V&gt;<span class="tsd-signature-symbol">(</span>newType<span class="tsd-signature-symbol">: </span><a href="typings.html#type" class="tsd-signature-type">Type</a>, o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a>, limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/type.ts#L65">color/src/utils/converter/type.ts:65</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+								</li>
+								<li>
+									<h4>V<span class="tsd-signature-symbol">: </span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>newType: <a href="typings.html#type" class="tsd-signature-type">Type</a></h5>
+								</li>
+								<li>
+									<h5>o: <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h5>
+								</li>
+								<li>
+									<h5>limit: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="utils.html#betweenoption" class="tsd-signature-type">BetweenOption</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol"> &amp; </span><a href="typings.html#numbertype" class="tsd-signature-type">NumberType</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="validatecolorobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> validate<wbr>Color<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">validate<wbr>Color<wbr>Object<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, condition<span class="tsd-signature-symbol">: </span><a href="utils_converter.html#condition" class="tsd-signature-type">Condition</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L173">color/src/utils/converter/color.ts:173</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#c" class="tsd-signature-type">C</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>condition: <a href="utils_converter.html#condition" class="tsd-signature-type">Condition</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="validatergb" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> validateRGB</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">validateRGB<span class="tsd-signature-symbol">(</span>rgb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">&gt;</span>, withAlpha<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/color.ts#L153">color/src/utils/converter/color.ts:153</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>rgb: <span class="tsd-signature-type">type.Optional</span><span class="tsd-signature-symbol">&lt;</span><a href="typings.html#rgb" class="tsd-signature-type">RGB</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> withAlpha: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="defaulthsl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> defaultHSL</h3>
+					<div class="tsd-signature tsd-kind-icon">defaultHSL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L12">color/src/utils/converter/hsl.ts:12</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsl.a" class="tsd-anchor"></a>
+						<h3>a</h3>
+						<div class="tsd-signature tsd-kind-icon">a<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L12">color/src/utils/converter/hsl.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsl.h" class="tsd-anchor"></a>
+						<h3>h</h3>
+						<div class="tsd-signature tsd-kind-icon">h<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L12">color/src/utils/converter/hsl.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsl.l" class="tsd-anchor"></a>
+						<h3>l</h3>
+						<div class="tsd-signature tsd-kind-icon">l<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L12">color/src/utils/converter/hsl.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsl.s" class="tsd-anchor"></a>
+						<h3>s</h3>
+						<div class="tsd-signature tsd-kind-icon">s<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L12">color/src/utils/converter/hsl.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsl.type-1" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"decimal"</span><span class="tsd-signature-symbol"> = &quot;decimal&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsl.ts#L12">color/src/utils/converter/hsl.ts:12</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="defaulthsv" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> defaultHSV</h3>
+					<div class="tsd-signature tsd-kind-icon">defaultHSV<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L14">color/src/utils/converter/hsv.ts:14</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsv.a-1" class="tsd-anchor"></a>
+						<h3>a</h3>
+						<div class="tsd-signature tsd-kind-icon">a<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L14">color/src/utils/converter/hsv.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsv.h-1" class="tsd-anchor"></a>
+						<h3>h</h3>
+						<div class="tsd-signature tsd-kind-icon">h<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L14">color/src/utils/converter/hsv.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsv.s-1" class="tsd-anchor"></a>
+						<h3>s</h3>
+						<div class="tsd-signature tsd-kind-icon">s<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L14">color/src/utils/converter/hsv.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsv.type-2" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"decimal"</span><span class="tsd-signature-symbol"> = &quot;decimal&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L14">color/src/utils/converter/hsv.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthsv.v" class="tsd-anchor"></a>
+						<h3>v</h3>
+						<div class="tsd-signature tsd-kind-icon">v<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hsv.ts#L14">color/src/utils/converter/hsv.ts:14</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="defaulthex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Hex</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Hex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hex.ts#L11">color/src/utils/converter/hex.ts:11</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthex.a-2" class="tsd-anchor"></a>
+						<h3>a</h3>
+						<div class="tsd-signature tsd-kind-icon">a<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hex.ts#L11">color/src/utils/converter/hex.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthex.type-3" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"hex"</span><span class="tsd-signature-symbol"> = &quot;hex&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hex.ts#L11">color/src/utils/converter/hex.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaulthex.x" class="tsd-anchor"></a>
+						<h3>x</h3>
+						<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;000000&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/hex.ts#L11">color/src/utils/converter/hex.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="defaultnamed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Named</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Named<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/named.ts#L10">color/src/utils/converter/named.ts:10</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultnamed.a-3" class="tsd-anchor"></a>
+						<h3>a</h3>
+						<div class="tsd-signature tsd-kind-icon">a<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/named.ts#L10">color/src/utils/converter/named.ts:10</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultnamed.n" class="tsd-anchor"></a>
+						<h3>n</h3>
+						<div class="tsd-signature tsd-kind-icon">n<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/named.ts#L10">color/src/utils/converter/named.ts:10</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-module">
+					<a name="defaultrgb-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> defaultRGB</h3>
+					<div class="tsd-signature tsd-kind-icon">defaultRGB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L16">color/src/utils/converter/rgb.ts:16</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultrgb-1.a-4" class="tsd-anchor"></a>
+						<h3>a</h3>
+						<div class="tsd-signature tsd-kind-icon">a<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L16">color/src/utils/converter/rgb.ts:16</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultrgb-1.b" class="tsd-anchor"></a>
+						<h3>b</h3>
+						<div class="tsd-signature tsd-kind-icon">b<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L16">color/src/utils/converter/rgb.ts:16</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultrgb-1.g" class="tsd-anchor"></a>
+						<h3>g</h3>
+						<div class="tsd-signature tsd-kind-icon">g<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L16">color/src/utils/converter/rgb.ts:16</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultrgb-1.r" class="tsd-anchor"></a>
+						<h3>r</h3>
+						<div class="tsd-signature tsd-kind-icon">r<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L16">color/src/utils/converter/rgb.ts:16</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultrgb-1.type-4" class="tsd-anchor"></a>
+						<h3>type</h3>
+						<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"number"</span><span class="tsd-signature-symbol"> = &quot;number&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/kamontat/kcutils/blob/17323a1/packages/color/src/utils/converter/rgb.ts#L16">color/src/utils/converter/rgb.ts:16</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="reflection-852.html">&lt;em&gt;<wbr>Module&lt;/em&gt;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="errors.html">errors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="models.html">models</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services.html">services</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="typings.html">typings</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="utils.html">utils</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="utils_converter.html">utils/converter</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
