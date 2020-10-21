@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.1.0-beta.0...@kcutils/random@0.1.0-beta.1) (2020-10-21)
+
+
+### Bug Fixes
+
+* **lint:** fixing all linter which is code styles ([f8cd54d](https://github.com/kamontat/kcutils/commit/f8cd54dd1eea35dc76c7ec737a6eecb7d3cb0429))
+
+
+
+
+
 # 0.1.0-beta.0 (2020-10-21)
 
 
