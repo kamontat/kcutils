@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/gatsby-config",
-  "version": "0.4.11",
+  "version": "0.4.11-beta.1",
   "description": "for build autocompleted gatsby-config into configuration builder format",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -33,13 +33,13 @@
     "lint": "ilinter"
   },
   "dependencies": {
-    "@kcutils/helper": "0.12.4",
-    "@kcutils/logger": "0.9.5",
+    "@kcutils/helper": "0.12.4-beta.1",
+    "@kcutils/logger": "0.9.5-beta.1",
     "gatsby-plugin-ts-config": "1.0.0"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.17.2",
-    "@kcinternal/configuration": "0.8.13",
+    "@kcinternal/configuration": "0.8.13-beta.1",
     "@types/react": "16.9.51",
     "@types/react-dom": "16.9.8",
     "gatsby": "2.24.72"
