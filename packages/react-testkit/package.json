@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/react-testkit",
-  "version": "0.5.9-beta.1",
+  "version": "0.5.10",
   "description": "Add React utilities and Enzyme support",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.18.0",
-    "@kcinternal/configuration": "0.8.13-beta.1",
+    "@kcinternal/configuration": "0.8.14",
     "@types/enzyme": "3.10.6",
     "@types/enzyme-adapter-react-16": "1.0.6"
   }

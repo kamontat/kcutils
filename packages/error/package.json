@@ -46,11 +46,11 @@
     "postdoc": "idocumentor --publish github"
   },
   "dependencies": {
-    "@kcutils/helper": "0.12.5",
+    "@kcutils/helper": "1.0.0",
     "@kcutils/models": "0.3.0-rc.15"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.18.0",
-    "@kcinternal/configuration": "0.8.13-beta.1"
+    "@kcinternal/configuration": "0.8.14"
   }
 }

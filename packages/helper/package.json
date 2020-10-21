@@ -1,7 +1,7 @@
 {
   "name": "@kcutils/helper",
-  "version": "0.12.5",
-  "description": "Functional helper",
+  "version": "1.0.0",
+  "description": "functional programming utilities",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -48,6 +48,6 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.18.0",
-    "@kcinternal/configuration": "0.8.13-beta.1"
+    "@kcinternal/configuration": "0.8.14"
   }
 }
