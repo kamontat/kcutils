@@ -47,9 +47,10 @@ export class Alea extends Random {
     this.y = this.x * 2.3283064365386963e-10 + this.a * 2091639;
     this.a = this.b;
     this.b = this.c;
-
     this.x = this.y | 0;
-    return (this.c = this.y - this.x);
+    this.c = this.y - this.x;
+
+    return this.c;
   }
 
   copy(s?: Seed): Random {
