@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.12](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.11...@kcinternal/configuration@0.8.12) (2020-10-16)
+
+
+### Bug Fixes
+
+* **config:** coverage will ignore test and stryker-tmp folder ([294e703](https://github.com/kamontat/kcutils/commit/294e70376897caaaf35d0569d22ea271a90a2c8b))
+
+
+
+
+
 ## [0.8.11](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.10...@kcinternal/configuration@0.8.11) (2020-10-05)
 
 **Note:** Version bump only for package @kcinternal/configuration
