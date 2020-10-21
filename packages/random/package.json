@@ -1,8 +1,7 @@
 {
   "name": "@kcutils/random",
   "version": "0.1.0",
-  "private": true,
-  "description": "",
+  "description": "PRNGs (Pseudorandom number generators)",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -16,6 +15,12 @@
     "email": "developer@kamontat.net",
     "url": "https://github.com/kamontat"
   },
+  "maintainers": [
+    {
+      "name": "Natcha Triratchatchawan",
+      "email": "pprangnt.0512@gmail.com"
+    }
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -35,6 +40,6 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "*",
-    "@kcinternal/configuration": "*"
+    "@kcinternal/configuration": "0.8.13"
   }
 }
