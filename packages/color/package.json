@@ -41,7 +41,9 @@
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester",
-    "lint": "ilinter"
+    "lint": "ilinter",
+    "doc": "idocumentor",
+    "postdoc": "idocumentor --publish github"
   },
   "dependencies": {
     "@kcutils/error": "0.7.4",
