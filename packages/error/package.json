@@ -50,7 +50,7 @@
     "@kcutils/models": "0.3.0-rc.15"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.17.2",
+    "@kcinternal/commandline": "0.18.0",
     "@kcinternal/configuration": "0.8.13-beta.1"
   }
 }
