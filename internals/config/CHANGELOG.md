@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.8.13](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.13-beta.0...@kcinternal/configuration@0.8.13) (2020-10-21)
+## [0.8.13-beta.1](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.13-beta.0...@kcinternal/configuration@0.8.13-beta.1) (2020-10-21)
 
 **Note:** Version bump only for package @kcinternal/configuration
 

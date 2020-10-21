@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/logger",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Another Logger Service",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -47,12 +47,12 @@
     "postdoc": "idocumentor --publish github"
   },
   "dependencies": {
-    "@kcutils/helper": "0.12.4",
+    "@kcutils/helper": "0.12.5",
     "chalk": "4.1.0",
     "figures": "3.2.0"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.17.2",
-    "@kcinternal/configuration": "0.8.13"
+    "@kcinternal/configuration": "0.8.13-beta.1"
   }
 }
