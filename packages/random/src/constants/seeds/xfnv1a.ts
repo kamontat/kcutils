@@ -15,7 +15,8 @@ export const xfnv1a: SeedGenerator = input => {
     h ^= h >>> 7;
     h += h << 3;
     h ^= h >>> 17;
-    return (h += h << 5) >>> 0;
+    h += h << 5;
+    return h >>> 0;
   };
 };
 

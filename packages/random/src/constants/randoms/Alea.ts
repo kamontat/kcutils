@@ -33,10 +33,13 @@ export class Alea extends Random {
     let s;
     let f;
     const e = 0.02519603282416938;
-    for (let u = 0; u < seed.length; u++)
-      (s = seed.charCodeAt(u)),
-        (f = e * (this.n += s) - ((this.n * e) | 0)),
-        (this.n = 4294967296 * ((t = f * ((e * this.n) | 0)) - (t | 0)) + (t | 0));
+    for (let u = 0; u < seed.length; u++) {
+      s = seed.charCodeAt(u);
+      this.n += s;
+      f = e * this.n - ((this.n * e) | 0);
+      t = f * ((e * this.n) | 0);
+      this.n = 4294967296 * (t - (t | 0)) + (t | 0);
+    }
     return (this.n | 0) * 2.3283064365386963e-10;
   }
 
@@ -45,7 +48,8 @@ export class Alea extends Random {
     this.a = this.b;
     this.b = this.c;
 
-    return (this.c = this.y - (this.x = this.y | 0));
+    this.x = this.y | 0;
+    return (this.c = this.y - this.x);
   }
 
   copy(s?: Seed): Random {
