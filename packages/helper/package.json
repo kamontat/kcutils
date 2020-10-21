@@ -48,6 +48,6 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.17.2",
-    "@kcinternal/configuration": "0.8.13"
+    "@kcinternal/configuration": "0.8.13-beta.1"
   }
 }
