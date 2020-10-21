@@ -3,7 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.5.10-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.10-beta.0...@kcutils/color@0.5.10-beta.1) (2020-10-21)
+## [0.5.11](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.10...@kcutils/color@0.5.11) (2020-10-21)
+
+
+### Performance Improvements
+
+* **docs:** enabled auto documentation update website ([627d507](https://github.com/kamontat/kcutils/commit/627d5070eecc0a52661cba100a7fa43c3ce2495d))
+
+
+
+
+
+## [0.5.10](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.10-beta.0...@kcutils/color@0.5.10) (2020-10-21)
 
 **Note:** Version bump only for package @kcutils/color
 
