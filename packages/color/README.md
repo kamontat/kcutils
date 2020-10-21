@@ -9,6 +9,10 @@
 
 This source code base on `TinyColor`([1](https://github.com/bgrins/TinyColor)) by Brian Grinstead
 
+## Documentation
+
+This package `enabled` auto update documentation website, you can look on deep detail at https://kcutils.kamontat.net/error
+
 <!-- IMAGE SECTION -->
 
 [nlatest]: https://www.npmjs.com/package/@kcutils/color/v/latest
