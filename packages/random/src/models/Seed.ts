@@ -3,9 +3,9 @@ export type SeedGenerator = (input: string) => SeedFn;
 export type SeedPatch = (n: number) => number;
 
 export class Seed {
-  private seedFn: SeedFn;
+  private readonly seedFn: SeedFn;
 
-  constructor(input: string, private seedGenerator: SeedGenerator) {
+  constructor(input: string, private readonly seedGenerator: SeedGenerator) {
     this.seedFn = seedGenerator(input);
   }
 
