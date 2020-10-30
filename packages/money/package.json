@@ -38,8 +38,9 @@
     "luxon": "1.25.0"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.14.0-beta.0",
-    "@kcinternal/configuration": "0.8.5-beta.0",
+    "@kcinternal/commandline": "0.18.0",
+    "@kcinternal/configuration": "0.8.14",
+    "@kcutils/random": "0.2.0",
     "@types/luxon": "1.25.0"
   }
 }
