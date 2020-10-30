@@ -8,6 +8,9 @@ import {
 
 export type Level = "debug" | "info" | "warn" | "error";
 
+/**
+ * Customization Logger for Money models
+ */
 export abstract class SupportLogger extends WithLogger {
   constructor(level: Level, scope: string) {
     super(
