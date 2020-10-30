@@ -64,6 +64,10 @@ export class NumberMoney implements Money {
     return this.moneyUnit.name;
   }
 
+  get unitObject(): MoneyUnit {
+    return this.moneyUnit;
+  }
+
   getAmount(): number {
     return this.amount;
   }
