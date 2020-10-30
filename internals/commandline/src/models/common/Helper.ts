@@ -32,8 +32,8 @@ export class Helper<T extends string> {
     this.pathHelper = new PathManagementHelper(...Array.from(this.subPathHelper.values()));
 
     this.argumentHelper = new ArgumentHelper();
-    this.logHelper = new LogHelper();
     this.envHelper = new EnvHelper();
+    this.logHelper = new LogHelper(this.envHelper);
     this.questionHelper = new QuestionHelper();
   }
 
