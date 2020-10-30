@@ -13,7 +13,7 @@ const transformer = new AsyncRunner(option, async ({ helper, data }) => {
     const strykerConfig = await helper.on("parent").pathEnsure("stryker.conf.js");
 
     if (strykerCli !== undefined && strykerConfig) {
-      return [strykerCli, "run"];
+      return [strykerCli, "run"].concat(data.arguments["--"] ?? []);
     } else {
       strykerCli === undefined && helper.log.debug("stryker", "stryker command is missing");
       strykerConfig === undefined && helper.log.debug("stryker", "stryker configuration is missing");
