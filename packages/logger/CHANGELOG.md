@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.6](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.5...@kcutils/logger@0.9.6) (2020-10-21)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.9.5](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.5-beta.0...@kcutils/logger@0.9.5) (2020-10-21)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.9.5-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.4...@kcutils/logger@0.9.5-beta.0) (2020-10-21)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
+## [0.9.4](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.3...@kcutils/logger@0.9.4) (2020-10-16)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
 ## [0.9.3](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.2...@kcutils/logger@0.9.3) (2020-10-05)
 
 

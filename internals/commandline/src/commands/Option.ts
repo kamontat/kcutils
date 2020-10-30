@@ -9,7 +9,7 @@ export class Option<O = string[]> extends DataBuilder<string[], O> {
     data,
     helper,
   }) => {
-    const args = helper.argument.parse(data, { alias: { dryrun: ["dry", "dryrun", "dry-run", "d"] } });
+    const args = helper.argument.parse(data, { alias: { dryrun: ["dry", "dryrun", "dry-run", "d"] }, "--": true });
     const dryrun = args.dry || args.dryrun || args["dry-run"] || args._.includes("dry");
 
     return Promise.resolve({ dryrun: dryrun, arguments: args, raw: data });
