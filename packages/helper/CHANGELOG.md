@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.12.5...@kcutils/helper@1.0.1-beta.0) (2020-10-30)
+
+
+### Bug Fixes
+
+* **core:** manually upgrade version ([be888a5](https://github.com/kamontat/kcutils/commit/be888a5d383c189347b71bfeb94fdcda8059f675))
+
+
+
+
+
 ## [0.12.5](https://github.com/kamontat/kcutils/compare/@kcutils/helper@0.12.4...@kcutils/helper@0.12.5) (2020-10-21)
 
 **Note:** Version bump only for package @kcutils/helper

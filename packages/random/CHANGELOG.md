@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-beta.0](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.1.0-beta.1...@kcutils/random@0.3.0-beta.0) (2020-10-30)
+
+
+### Bug Fixes
+
+* **core:** manually upgrade version ([be888a5](https://github.com/kamontat/kcutils/commit/be888a5d383c189347b71bfeb94fdcda8059f675))
+* **lint:** mark seed functions as readonly ([9adec6a](https://github.com/kamontat/kcutils/commit/9adec6ab17a4a2fe2f32f3a956380b44b7ad69eb))
+
+
+### Features
+
+* **core:** extract code for easier to read ([917ec54](https://github.com/kamontat/kcutils/commit/917ec541b85b9ddc5e962cbde2082ea5e5453642))
+
+
+
+
+
 # [0.1.0-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.1.0-beta.0...@kcutils/random@0.1.0-beta.1) (2020-10-21)
 
 
