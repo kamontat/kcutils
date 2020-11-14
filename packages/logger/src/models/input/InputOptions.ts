@@ -7,4 +7,6 @@ export interface InputOption {
   message: string | string[];
   stream?: Writable | Writable[];
   appendStream?: boolean;
+  scopes?: string[];
+  timestamp?: string;
 }

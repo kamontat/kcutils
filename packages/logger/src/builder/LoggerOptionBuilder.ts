@@ -40,7 +40,6 @@ export class LoggerOptionBuilder<T extends string> {
     if (generic.isExist(option.censor)) builder.withCensor(option.censor);
     if (generic.isExist(option.separator)) builder.withSeparator(option.separator);
     if (generic.isExist(option.scopes)) builder.withScopes(option.scopes);
-    if (generic.isExist(option.scopes)) builder.withScopes(option.scopes);
     if (generic.isExist(option.secrets)) builder.withSecrets(option.secrets);
     if (generic.isExist(option.streams)) builder.withOverrideStream(array.toArray(option.streams));
 

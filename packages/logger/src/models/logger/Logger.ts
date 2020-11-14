@@ -141,7 +141,7 @@ export class Logger<T extends string = ""> {
 
     const inputOption = typeof input === "string" ? { message: input } : input;
 
-    const metadata = this.buildMetadata();
+    const metadata = this.buildMetadata(inputOption.timestamp, inputOption.scopes);
     const prefix = this.buildPrefix(type, inputOption.label, inputOption.prefix);
     const data = this.buildMessage(inputOption.message);
     const suffix = this.buildSuffix(inputOption.suffix);
@@ -394,11 +394,12 @@ export class Logger<T extends string = ""> {
     return `${metadata}${withSpace(prefix)}${withSpace(message)}${withSpace(suffix)}`;
   }
 
-  private buildMetadata() {
+  private buildMetadata(timestamp?: string, cusScope?: string[]) {
     let d: string;
     const datetimeType = this._option.getDatetime();
 
-    if (datetimeType === "time") d = this.time;
+    if (timestamp) d = timestamp;
+    else if (datetimeType === "time") d = this.time;
     else if (datetimeType === "date") d = this.date;
     else if (datetimeType === "datetime") d = this.datetime;
     else if (datetimeType === "timestamp") d = this.timestamp;
@@ -406,7 +407,7 @@ export class Logger<T extends string = ""> {
 
     const datetime = { index: 1, data: d };
 
-    const scopes = { index: 2, data: this._option.getScopes() };
+    const scopes = { index: 2, data: this._option.getScopes().concat(cusScope ?? []) };
     const filename = { index: 3, data: this.filename };
     const seperator = { index: 4, data: this._option.getSeparator() };
 
