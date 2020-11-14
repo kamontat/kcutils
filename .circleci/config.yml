@@ -272,19 +272,19 @@ workflows:
                 - master
           requires:
             - build-graph
-      - release-rc:
-          context: monots-release
-          filters:
-            branches:
-              only:
-                - develop
-          requires:
-            - main
-      - release-beta:
-          context: monots-release
-          filters:
-            branches:
-              only:
-                - /feature\/.*/
-          requires:
-            - main
+#       - release-rc:
+#           context: monots-release
+#           filters:
+#             branches:
+#               only:
+#                 - develop
+#           requires:
+#             - main
+#       - release-beta:
+#           context: monots-release
+#           filters:
+#             branches:
+#               only:
+#                 - /feature\/.*/
+#           requires:
+#             - main
