@@ -45,5 +45,6 @@
     "@types/webpack": "4.41.22",
     "jest-html-reporters": "2.0.4",
     "webpack": "4.44.1"
-  }
+  },
+  "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }

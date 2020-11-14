@@ -53,5 +53,6 @@
   "devDependencies": {
     "@kcinternal/commandline": "0.19.0",
     "@kcinternal/configuration": "0.8.15"
-  }
+  },
+  "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }
