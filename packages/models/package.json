@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/models",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "Additional DataType and Models",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -45,11 +45,11 @@
     "lint": "ilinter"
   },
   "dependencies": {
-    "@kcutils/helper": "1.0.2"
+    "@kcutils/helper": "1.0.3"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.19.4",
-    "@kcinternal/configuration": "0.8.16"
+    "@kcinternal/configuration": "0.8.17"
   },
   "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }
