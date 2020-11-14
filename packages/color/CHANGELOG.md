@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.12](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.11...@kcutils/color@0.5.12) (2020-11-14)
+
+
+### Bug Fixes
+
+* **core:** manually upgrade version ([be888a5](https://github.com/kamontat/kcutils/commit/be888a5d383c189347b71bfeb94fdcda8059f675))
+
+
+
+
+
 ## [0.5.11](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.10...@kcutils/color@0.5.11) (2020-10-21)
 
 

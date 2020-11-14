@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.7](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.6...@kcutils/logger@0.9.7) (2020-11-14)
+
+
+### Bug Fixes
+
+* **builder:** remove duplicate line ([410b585](https://github.com/kamontat/kcutils/commit/410b585232b782a343a66b0c8283541811c7450e))
+* **core:** manually upgrade version ([be888a5](https://github.com/kamontat/kcutils/commit/be888a5d383c189347b71bfeb94fdcda8059f675))
+
+
+### Performance Improvements
+
+* **core:** add 2 new field in build/print. timestamp and scopes ([7d4cc71](https://github.com/kamontat/kcutils/commit/7d4cc71299d1d745c30cb44a682017a3f02773ef))
+* **model:** timestamp will replace existing, but scope will append ([e5e0c18](https://github.com/kamontat/kcutils/commit/e5e0c18caa499d3f2cc37f1279e40e69a68eaa38))
+
+
+
+
+
 ## [0.9.6](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.5...@kcutils/logger@0.9.6) (2020-10-21)
 
 **Note:** Version bump only for package @kcutils/logger

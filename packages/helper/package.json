@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "functional programming utilities",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -47,7 +47,7 @@
     "postdoc": "idocumentor --publish github"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.18.0",
-    "@kcinternal/configuration": "0.8.14"
+    "@kcinternal/commandline": "0.19.0",
+    "@kcinternal/configuration": "0.8.15"
   }
 }

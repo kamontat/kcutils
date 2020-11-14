@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.17.2...@kcinternal/commandline@0.19.0) (2020-11-14)
+
+
+### Bug Fixes
+
+* **script:** pass argument after -- to stryker command ([97b1b19](https://github.com/kamontat/kcutils/commit/97b1b199bb860579b4fabd156bc4fada17f63ad9))
+
+
+### Features
+
+* **core:** force released ([e07a58b](https://github.com/kamontat/kcutils/commit/e07a58b23c478f23f4e662fdcd728d6141f468b0))
+* **helper:** log helper is log only when DEBUG is exist or in CI ([ac9f9dd](https://github.com/kamontat/kcutils/commit/ac9f9ddd31a2824e843860b78759fb714fb510f9))
+
+
+### Performance Improvements
+
+* **model:** option is support -- in models level ([035cda8](https://github.com/kamontat/kcutils/commit/035cda84635311dd3a78c3eaf48434addc7d426f))
+
+
+
+
+
 ## [0.17.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.17.1...@kcinternal/commandline@0.17.2) (2020-10-05)
 
 **Note:** Version bump only for package @kcinternal/commandline

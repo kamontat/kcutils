@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.11](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.5.9-beta.1...@kcutils/react-testkit@0.5.11) (2020-11-14)
+
+
+### Bug Fixes
+
+* **core:** manually upgrade version ([be888a5](https://github.com/kamontat/kcutils/commit/be888a5d383c189347b71bfeb94fdcda8059f675))
+
+
+
+
+
 ## [0.5.9-beta.1](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.5.9-beta.0...@kcutils/react-testkit@0.5.9-beta.1) (2020-10-21)
 
 **Note:** Version bump only for package @kcutils/react-testkit
