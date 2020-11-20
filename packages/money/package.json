@@ -1,0 +1,48 @@
+{
+  "name": "@kcutils/money",
+  "version": "0.1.0",
+  "private": true,
+  "description": "money module for calculate spending",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/money"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "**/*.json"
+  ],
+  "scripts": {
+    "build": "icompiler-tsc",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester",
+    "lint": "ilinter"
+  },
+  "dependencies": {
+    "@kcutils/error": "0.7.5",
+    "@kcutils/helper": "1.0.1-beta.0",
+    "@kcutils/logger": "0.9.3",
+    "luxon": "1.25.0"
+  },
+  "devDependencies": {
+    "@kcinternal/commandline": "0.19.0-beta.0",
+    "@kcinternal/configuration": "0.8.15-beta.0",
+    "@kcutils/random": "0.3.0-beta.0",
+    "@types/luxon": "1.25.0"
+  }
+}
