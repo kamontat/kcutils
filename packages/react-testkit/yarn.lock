@@ -2,22 +2,22 @@
 # yarn lockfile v1
 
 
-"@kcinternal/commandline@0.17.2":
-  version "0.17.2"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.17.2.tgz#7abfe290cffb19f64e5fa96bfee9aaa20317ace2"
-  integrity sha512-8oGS1wKkt9yVANM/ss6RRpa2vLD+5wF+IFie6xNBcNntKmIqRNvY5RpxHViBwHhQBH4XljWO1OFcSJDvGFYCIA==
+"@kcinternal/commandline@0.19.4":
+  version "0.19.4"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.19.4.tgz#f3f0816d04b2736bd0d59cdbb2bc62e6f4629a0d"
+  integrity sha512-djToOQa438Myh6+rAfnqO0xn7hWG05nJ4VMkQd4u0/cEXKRqB+a2K9c5EG+C4fIiCjHpCLHVJEaiJN3K6o2brQ==
   dependencies:
     del "5.1.0"
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.11":
-  version "0.8.11"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.11.tgz#d75fbe265c6a94beba6c21694e104a6366d99382"
-  integrity sha512-K95icbcAIVvK/HWJyeHsnzTnl2UScqRjFah+e4qJ2WbFvYARynXt2dH+b1yZRurNBv6Ln7hexOENRWnIkYLbOg==
+"@kcinternal/configuration@0.8.17":
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.17.tgz#d82b2dd02a4b2489ce650cb7f9a997c307115074"
+  integrity sha512-0L/kQ/dohJRlFL0oHIGFHdDtZP+MyB+Gj+cuFQSALHMyLCJZRDL8zylaGcejC2eV8DlwR3xukVVB9tcBJzwX8g==
   dependencies:
-    "@kcinternal/commandline" "0.17.2"
-    "@types/eslint" "7.2.2"
+    "@kcinternal/commandline" "0.19.4"
+    "@types/eslint" "7.2.4"
     "@types/webpack" "4.41.22"
     jest-html-reporters "2.0.4"
     webpack "4.44.1"
@@ -99,10 +99,10 @@
     "@types/cheerio" "*"
     "@types/react" "*"
 
-"@types/eslint@7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.2.tgz#c88426b896efeb0b2732a92431ce8aa7ec0dee61"
-  integrity sha512-psWuwNXuKR2e6vMU5d2qH0Kqzrb2Zxwk+uBCF2LsyEph+Nex3lFIPMJXwxfGesdtJM2qtjKoCYsyh76K3x9wLg==
+"@types/eslint@7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.4.tgz#d12eeed7741d2491b69808576ac2d20c14f74c41"
+  integrity sha512-YCY4kzHMsHoyKspQH+nwSe+70Kep7Vjt2X+dZe5Vs2vkRudqtoFoUIv1RlJmZB8Hbp7McneupoZij4PadxsK5Q==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -3288,10 +3288,10 @@ rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
-  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
+react-dom@16.14.0:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
