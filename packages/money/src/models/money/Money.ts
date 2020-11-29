@@ -1,4 +1,3 @@
-import { MoneyUnits } from "../../constants";
 import { AutoPercent } from "./AutoPercent";
 import { MoneyUnit } from "./MoneyUnit";
 import { Percentage } from "./Percentage";
