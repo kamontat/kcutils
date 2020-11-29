@@ -24,6 +24,11 @@ export abstract class Random {
     return this.seed.getSeed(p);
   }
 
+  pick<T>(array: T[]): T {
+    const index = this.number({ min: 0, max: array.length, inclusiveMax: false, integer: true });
+    return array[index];
+  }
+
   string(opt: Partial<RandomStringOption>): string {
     const option = Object.assign(
       {

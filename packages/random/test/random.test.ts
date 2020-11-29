@@ -62,4 +62,13 @@ describe("Random", () => {
     const t = new T(new Fixed(i));
     expect(t.string(o)).toEqual(s);
   });
+
+  test.each([
+    [0.55, [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 7],
+    [3, [1, 2], 2],
+    [100, [9], 9],
+  ])("When random return %s, pick up element from %p should be %s", (i, arr, o) => {
+    const t = new T(new Fixed(i));
+    expect(t.pick(arr)).toEqual(o);
+  });
 });
