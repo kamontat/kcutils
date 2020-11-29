@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.16](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.15...@kcutils/color@0.5.16) (2020-11-29)
+
+**Note:** Version bump only for package @kcutils/color
+
+
+
+
+
 ## [0.5.15](https://github.com/kamontat/kcutils/compare/@kcutils/color@0.5.14...@kcutils/color@0.5.15) (2020-11-29)
 
 **Note:** Version bump only for package @kcutils/color

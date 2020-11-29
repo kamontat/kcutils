@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.2.1...@kcutils/random@0.2.2) (2020-11-29)
+
+
+### Bug Fixes
+
+* **model:** random number when length is 0 or 1 is wrong ([4844a37](https://github.com/kamontat/kcutils/commit/4844a37f13fd5eb292b255a6a1097eeb2fa82226))
+
+
+### Performance Improvements
+
+* **model:** add .pick(<array>) for pick some element in array ([2b484f0](https://github.com/kamontat/kcutils/commit/2b484f076b7e332ed660af831fb2660cdf633e2d))
+
+
+
+
+
 ## [0.2.1](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.2.0...@kcutils/random@0.2.1) (2020-11-29)
 
 **Note:** Version bump only for package @kcutils/random
