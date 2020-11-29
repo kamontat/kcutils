@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.9](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.7.8...@kcutils/error@0.7.9) (2020-11-29)
+
+**Note:** Version bump only for package @kcutils/error
+
+
+
+
+
 ## [0.7.8](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.7.7...@kcutils/error@0.7.8) (2020-11-14)
 
 **Note:** Version bump only for package @kcutils/error
