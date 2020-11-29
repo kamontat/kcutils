@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.1.4...@kcutils/random@0.2.0) (2020-11-29)
+
+
+### Features
+
+* **core:** add Seeds.Timestamp for create seed as timestamp ([702b71f](https://github.com/kamontat/kcutils/commit/702b71f33706b9276aa6e48ad1772a2bb96656ed))
+
+
+
+
+
 ## [0.1.4](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.1.3...@kcutils/random@0.1.4) (2020-11-14)
 
 **Note:** Version bump only for package @kcutils/random

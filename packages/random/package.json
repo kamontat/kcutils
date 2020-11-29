@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/random",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "PRNGs (Pseudorandom number generators)",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
