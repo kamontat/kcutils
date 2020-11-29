@@ -39,10 +39,21 @@ describe("Random", () => {
   });
 
   test.each([
-    [0.55, { min: 0, max: 10, inclusiveMax: false, integer: false } as RandomNumberOption, 5.5],
-    [0.55, { min: 0, max: 10, inclusiveMax: false, integer: true } as RandomNumberOption, 6],
-    [0.55, { min: 0, max: 10, inclusiveMax: true, integer: false } as RandomNumberOption, 6.05],
+    [0.55, { min: 0, max: 10, inclusiveMax: false, integer: false } as RandomNumberOption, 4.95],
+    [0.55, { min: 0, max: 10, inclusiveMax: false, integer: true } as RandomNumberOption, 5],
+    [0.55, { min: 0, max: 10, inclusiveMax: true, integer: false } as RandomNumberOption, 5.5],
     [0.55, { min: 0, max: 10, inclusiveMax: true, integer: true } as RandomNumberOption, 6],
+    [0.55, { min: 0, max: 0, inclusiveMax: true, integer: true } as RandomNumberOption, 0],
+    [0.55, { min: 0, max: 0, inclusiveMax: false, integer: true } as RandomNumberOption, 0],
+    [0.03, { min: 0, max: 1, inclusiveMax: true, integer: true } as RandomNumberOption, 0],
+    [0.97, { min: 0, max: 1, inclusiveMax: true, integer: true } as RandomNumberOption, 1],
+    [0.03, { min: 0, max: 1, inclusiveMax: false, integer: true } as RandomNumberOption, 0],
+    [0.97, { min: 0, max: 1, inclusiveMax: false, integer: true } as RandomNumberOption, 0],
+    [0.55, { min: 0, max: 1, inclusiveMax: false, integer: true } as RandomNumberOption, 0],
+    [0.03, { min: 0, max: 1, inclusiveMax: true, integer: false } as RandomNumberOption, 0.03],
+    [0.97, { min: 0, max: 1, inclusiveMax: true, integer: false } as RandomNumberOption, 0.97],
+    [0.03, { min: 0, max: 1, inclusiveMax: false, integer: false } as RandomNumberOption, 0],
+    [0.97, { min: 0, max: 1, inclusiveMax: false, integer: false } as RandomNumberOption, 0],
   ])("When random return %s, number option %p should be %s", (i, o, n) => {
     const t = new T(new Fixed(i));
     expect(t.number(o)).toBeCloseTo(n, 2);
@@ -52,11 +63,11 @@ describe("Random", () => {
     [0.33, {} as RandomStringOption, "uuuuuuuuuu"],
     [0.123, {} as RandomStringOption, "iiiiiiiiii"],
 
-    [0.3, { length: 1 } as RandomStringOption, "t"],
+    [0.3, { length: 1 } as RandomStringOption, "s"],
     [0.32, { length: 1 } as RandomStringOption, "u"],
     [0.34, { length: 1 } as RandomStringOption, "v"],
     [0.5, { length: 1 } as RandomStringOption, "F"],
-    [0.53, { length: 1 } as RandomStringOption, "H"],
+    [0.53, { length: 1 } as RandomStringOption, "G"],
     [0.55, { length: 1 } as RandomStringOption, "I"],
   ])(`When random return %s, string option %p should be %s`, (i, o, s) => {
     const t = new T(new Fixed(i));
@@ -64,9 +75,9 @@ describe("Random", () => {
   });
 
   test.each([
-    [0.55, [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 7],
-    [3, [1, 2], 2],
-    [100, [9], 9],
+    [0.55, [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], 6],
+    [0.03, [1, 2], 1],
+    [0.9999, [9], 9],
   ])("When random return %s, pick up element from %p should be %s", (i, arr, o) => {
     const t = new T(new Fixed(i));
     expect(t.pick(arr)).toEqual(o);
