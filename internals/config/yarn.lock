@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@kcinternal/commandline@0.17.2":
-  version "0.17.2"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.17.2.tgz#7abfe290cffb19f64e5fa96bfee9aaa20317ace2"
-  integrity sha512-8oGS1wKkt9yVANM/ss6RRpa2vLD+5wF+IFie6xNBcNntKmIqRNvY5RpxHViBwHhQBH4XljWO1OFcSJDvGFYCIA==
+"@kcinternal/commandline@0.19.4":
+  version "0.19.4"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.19.4.tgz#f3f0816d04b2736bd0d59cdbb2bc62e6f4629a0d"
+  integrity sha512-djToOQa438Myh6+rAfnqO0xn7hWG05nJ4VMkQd4u0/cEXKRqB+a2K9c5EG+C4fIiCjHpCLHVJEaiJN3K6o2brQ==
   dependencies:
     del "5.1.0"
     minimist "1.2.5"
@@ -128,10 +128,10 @@
     "@types/source-list-map" "*"
     source-map "^0.7.3"
 
-"@types/webpack@4.41.22":
-  version "4.41.22"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.22.tgz#ff9758a17c6bd499e459b91e78539848c32d0731"
-  integrity sha512-JQDJK6pj8OMV9gWOnN1dcLCyU9Hzs6lux0wBO4lr1+gyEhIBR9U3FMrz12t2GPkg110XAxEAw2WHF6g7nZIbRQ==
+"@types/webpack@4.41.25":
+  version "4.41.25"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.25.tgz#4d3b5aecc4e44117b376280fbfd2dc36697968c4"
+  integrity sha512-cr6kZ+4m9lp86ytQc1jPOJXgINQyz3kLLunZ57jznW+WIAL0JqZbGubQk4GlD42MuQL5JGOABrxdpqqWeovlVQ==
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
