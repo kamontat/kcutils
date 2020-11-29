@@ -12,11 +12,13 @@ export {
 import { Fixed } from "./constants/seeds/fixed";
 import { Xfnv1a } from "./constants/seeds/xfnv1a";
 import { Xmur3 } from "./constants/seeds/xmur3";
+import { Timestamp } from "./constants/seeds/timestamp";
 
 const Seeds = {
   Fixed, // eslint-disable-line @typescript-eslint/naming-convention
   Xfnv1a, // eslint-disable-line @typescript-eslint/naming-convention
   Xmur3, // eslint-disable-line @typescript-eslint/naming-convention
+  Timestamp, // eslint-disable-line @typescript-eslint/naming-convention
 };
 
 import { Alea } from "./constants/randoms/Alea";
