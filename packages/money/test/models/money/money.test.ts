@@ -109,7 +109,7 @@ describe("Money", () => {
 
     test(`using .apply() for auto apply`, () => {
       const p1 = new Baht(a);
-      const p2 = new AutoPercent(b, "increase");
+      const p2 = new AutoPercent(b, "increase", "test");
 
       expect(p1.apply(p2).getAmount()).toEqual(c);
     });
