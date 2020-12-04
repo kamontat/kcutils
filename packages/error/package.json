@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/error",
-  "version": "0.7.10",
+  "version": "0.7.11",
   "description": "Error Management",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -46,12 +46,12 @@
     "postdoc": "idocumentor --publish github"
   },
   "dependencies": {
-    "@kcutils/helper": "1.0.5",
+    "@kcutils/helper": "1.0.6",
     "@kcutils/models": "0.3.0-rc.15"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.19.4",
-    "@kcinternal/configuration": "0.8.19"
+    "@kcinternal/configuration": "0.8.20"
   },
   "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }
