@@ -5326,10 +5326,10 @@ jest-haste-map@^26.6.2:
   optionalDependencies:
     fsevents "^2.1.2"
 
-jest-html-reporters@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.0.4.tgz#af22c489a64370e3cd18434b41f05706ff256adf"
-  integrity sha512-RIu6rgPExSnmgZYxpdwiYnmhI7mIlPyOdfLdS5eooR6wfeuXYIUh8tElC7SkWQG7kgEgqQ8dLXVj1NvCmiceLw==
+jest-html-reporters@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.1.1.tgz#dc442a09589a09216919a46faf5402e57164ba03"
+  integrity sha512-SVp3ayXdiD0HphQEBVzYCGceHsBrAhbh3pAH6A0wkxMt4H0/xVI/kSv2a9/R8+fWSfoWd804lzRbmxSI6v2NGw==
   dependencies:
     fs-extra "^9.0.1"
 
