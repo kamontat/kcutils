@@ -284,4 +284,18 @@ describe("Generic checker", () => {
       expect(generic.toBoolean(input)).toEqual(expected);
     });
   });
+
+  describe("generic.toOptional(any)", () => {
+    test.each([
+      [undefined, undefined],
+      [null, undefined],
+      ["string", "string"],
+      ["12", "12"],
+      [33, 33],
+      [new Map(), new Map()],
+      [new Error("helo world"), new Error("helo world")],
+    ])("of '%s' should return '%s'", (input, expected) => {
+      expect(generic.toOptional(input)).toEqual(expected);
+    });
+  });
 });

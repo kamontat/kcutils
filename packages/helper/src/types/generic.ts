@@ -136,3 +136,13 @@ export const toBoolean = <T extends any = unknown>(input: T): boolean | undefine
     else return undefined;
   } else return undefined;
 };
+
+/**
+ * remove null possiblity and return as undefined instead
+ *
+ * @param input input as any type and undefined | null
+ * @return input if input is exist; otherwise, return undefined. This function will never return null
+ */
+export const toOptional = <T extends any = unknown>(input: Optional<T>): T | undefined => {
+  return isExist(input) ? input : undefined;
+};
