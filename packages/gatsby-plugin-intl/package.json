@@ -36,7 +36,7 @@
     "gatsby-browser.js"
   ],
   "scripts": {
-    "build": "icompiler-tsc",
+    "build": "icompiler-tsc -- --skipLibCheck",
     "start": "irunner",
     "clean": "icleaner",
     "test": "itester",
@@ -58,6 +58,7 @@
     "gatsby": "2.28.0"
   },
   "peerDependencies": {
-    "gatsby": "^2.27.0"
+    "gatsby": "~2.x.x",
+    "typescript": "~3.x.x"
   }
 }
