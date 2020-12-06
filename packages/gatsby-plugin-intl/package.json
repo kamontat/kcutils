@@ -1,0 +1,63 @@
+{
+  "name": "@kcutils/gatsby-plugin-intl",
+  "version": "0.0.1",
+  "private": true,
+  "description": "gatsby plugin with support react-intl",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/gatsby-plugin-intl"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "kcutils",
+    "kamontat"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "**/*.json",
+    "gatsby-node.js",
+    "gatsby-ssr.js",
+    "gatsby-browser.js"
+  ],
+  "scripts": {
+    "build": "icompiler-tsc",
+    "start": "irunner",
+    "clean": "icleaner",
+    "test": "itester",
+    "lint": "ilinter"
+  },
+  "dependencies": {
+    "@formatjs/intl-pluralrules": "4.0.0",
+    "@formatjs/intl-relativetimeformat": "8.0.0",
+    "@kcutils/error": "0.7.9",
+    "@kcutils/helper": "1.0.4",
+    "intl": "1.2.5",
+    "react-intl": "5.10.6"
+  },
+  "devDependencies": {
+    "@kcinternal/commandline": "*",
+    "@kcinternal/configuration": "*",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "gatsby": "2.28.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.27.0"
+  }
+}
