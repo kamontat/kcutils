@@ -93,24 +93,24 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@kcinternal/commandline@0.17.2":
-  version "0.17.2"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.17.2.tgz#7abfe290cffb19f64e5fa96bfee9aaa20317ace2"
-  integrity sha512-8oGS1wKkt9yVANM/ss6RRpa2vLD+5wF+IFie6xNBcNntKmIqRNvY5RpxHViBwHhQBH4XljWO1OFcSJDvGFYCIA==
+"@kcinternal/commandline@0.19.4":
+  version "0.19.4"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.19.4.tgz#f3f0816d04b2736bd0d59cdbb2bc62e6f4629a0d"
+  integrity sha512-djToOQa438Myh6+rAfnqO0xn7hWG05nJ4VMkQd4u0/cEXKRqB+a2K9c5EG+C4fIiCjHpCLHVJEaiJN3K6o2brQ==
   dependencies:
     del "5.1.0"
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.11":
-  version "0.8.11"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.11.tgz#d75fbe265c6a94beba6c21694e104a6366d99382"
-  integrity sha512-K95icbcAIVvK/HWJyeHsnzTnl2UScqRjFah+e4qJ2WbFvYARynXt2dH+b1yZRurNBv6Ln7hexOENRWnIkYLbOg==
+"@kcinternal/configuration@0.8.21":
+  version "0.8.21"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.21.tgz#c05877f87a67e54ec3bbd44a668a2d5309d6393c"
+  integrity sha512-Ok8GM9svYpD1vYz2bN3Gyae27aL97MBIDjnL0Cd1GQfvWu3+konT3AK6jxVtfPgelP4S3n7JtUgBBX3OivsDwQ==
   dependencies:
-    "@kcinternal/commandline" "0.17.2"
-    "@types/eslint" "7.2.2"
-    "@types/webpack" "4.41.22"
-    jest-html-reporters "2.0.4"
+    "@kcinternal/commandline" "0.19.4"
+    "@types/eslint" "7.2.4"
+    "@types/webpack" "4.41.25"
+    jest-html-reporters "2.1.1"
     webpack "4.44.1"
 
 "@nodelib/fs.scandir@2.1.3":
@@ -231,10 +231,10 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
-"@types/eslint@7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.2.tgz#c88426b896efeb0b2732a92431ce8aa7ec0dee61"
-  integrity sha512-psWuwNXuKR2e6vMU5d2qH0Kqzrb2Zxwk+uBCF2LsyEph+Nex3lFIPMJXwxfGesdtJM2qtjKoCYsyh76K3x9wLg==
+"@types/eslint@7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.4.tgz#d12eeed7741d2491b69808576ac2d20c14f74c41"
+  integrity sha512-YCY4kzHMsHoyKspQH+nwSe+70Kep7Vjt2X+dZe5Vs2vkRudqtoFoUIv1RlJmZB8Hbp7McneupoZij4PadxsK5Q==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -293,10 +293,10 @@
     "@types/source-list-map" "*"
     source-map "^0.7.3"
 
-"@types/webpack@4.41.22":
-  version "4.41.22"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.22.tgz#ff9758a17c6bd499e459b91e78539848c32d0731"
-  integrity sha512-JQDJK6pj8OMV9gWOnN1dcLCyU9Hzs6lux0wBO4lr1+gyEhIBR9U3FMrz12t2GPkg110XAxEAw2WHF6g7nZIbRQ==
+"@types/webpack@4.41.25":
+  version "4.41.25"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.25.tgz#4d3b5aecc4e44117b376280fbfd2dc36697968c4"
+  integrity sha512-cr6kZ+4m9lp86ytQc1jPOJXgINQyz3kLLunZ57jznW+WIAL0JqZbGubQk4GlD42MuQL5JGOABrxdpqqWeovlVQ==
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
@@ -2288,10 +2288,10 @@ istanbul-lib-instrument@~3.3.0:
     istanbul-lib-coverage "^2.0.5"
     semver "^6.0.0"
 
-jest-html-reporters@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.0.4.tgz#af22c489a64370e3cd18434b41f05706ff256adf"
-  integrity sha512-RIu6rgPExSnmgZYxpdwiYnmhI7mIlPyOdfLdS5eooR6wfeuXYIUh8tElC7SkWQG7kgEgqQ8dLXVj1NvCmiceLw==
+jest-html-reporters@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.1.1.tgz#dc442a09589a09216919a46faf5402e57164ba03"
+  integrity sha512-SVp3ayXdiD0HphQEBVzYCGceHsBrAhbh3pAH6A0wkxMt4H0/xVI/kSv2a9/R8+fWSfoWd804lzRbmxSI6v2NGw==
   dependencies:
     fs-extra "^9.0.1"
 
