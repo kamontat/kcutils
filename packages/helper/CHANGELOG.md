@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@1.0.6...@kcutils/helper@1.1.0) (2020-12-07)
+
+
+### Bug Fixes
+
+* **test:** promise.resolve() require parameter ([aa89ca3](https://github.com/kamontat/kcutils/commit/aa89ca34438e2886ea48a2d1dffd633ee1bb2f55))
+
+
+### Features
+
+* **core:** add new generic.toOptional() to remove null value ([ca7f96c](https://github.com/kamontat/kcutils/commit/ca7f96ccf2aa38d4026893e24ccdaf38acc364c0))
+
+
+
+
+
 ## [1.0.6](https://github.com/kamontat/kcutils/compare/@kcutils/helper@1.0.5...@kcutils/helper@1.0.6) (2020-12-04)
 
 **Note:** Version bump only for package @kcutils/helper

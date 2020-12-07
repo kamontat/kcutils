@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.19](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.4.18...@kcutils/gatsby-config@0.4.19) (2020-12-07)
+
+
+### Performance Improvements
+
+* **dep:** upgrade some of dependencies ([d51aa8e](https://github.com/kamontat/kcutils/commit/d51aa8e96ebcf92acc8f888ca0cf7a1ea0876f2e))
+
+
+
+
+
 ## [0.4.18](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.4.17...@kcutils/gatsby-config@0.4.18) (2020-12-04)
 
 **Note:** Version bump only for package @kcutils/gatsby-config
