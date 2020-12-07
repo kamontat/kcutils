@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.17](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.6.16...@kcutils/models@0.6.17) (2020-12-07)
+
+**Note:** Version bump only for package @kcutils/models
+
+
+
+
+
 ## [0.6.16](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.6.15...@kcutils/models@0.6.16) (2020-12-07)
 
 **Note:** Version bump only for package @kcutils/models
