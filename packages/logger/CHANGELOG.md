@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.14](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.13...@kcutils/logger@0.9.14) (2020-12-07)
+
+**Note:** Version bump only for package @kcutils/logger
+
+
+
+
+
 ## [0.9.13](https://github.com/kamontat/kcutils/compare/@kcutils/logger@0.9.12...@kcutils/logger@0.9.13) (2020-12-07)
 
 **Note:** Version bump only for package @kcutils/logger

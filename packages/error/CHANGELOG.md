@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.7.12...@kcutils/error@1.1.0) (2020-12-07)
+
+
+### Features
+
+* **core:** release major version, this not include any change. ([c7f9a19](https://github.com/kamontat/kcutils/commit/c7f9a19b5a62e786869a7df155ab3b739ee563aa))
+
+
+
+
+
 ## [0.7.12](https://github.com/kamontat/kcutils/compare/@kcutils/error@0.7.11...@kcutils/error@0.7.12) (2020-12-07)
 
 **Note:** Version bump only for package @kcutils/error
