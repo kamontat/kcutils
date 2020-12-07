@@ -1,7 +1,6 @@
 {
   "name": "@kcutils/money",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
   "description": "money module for calculate spending",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
