@@ -29,7 +29,7 @@ describe("Stream Helper", () => {
         })
         .on("end", () => {
           expect(data).toHaveLength(3);
-          res();
+          res(void 0);
         });
     });
   });
@@ -41,7 +41,7 @@ describe("Stream Helper", () => {
       numbers
         .on("end", () => {
           expect(data).toHaveLength(0);
-          res();
+          res(void 0);
         })
         .pipe(stream.null)
         .on("data", function (d) {
