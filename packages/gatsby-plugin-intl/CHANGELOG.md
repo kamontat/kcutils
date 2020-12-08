@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-plugin-intl@0.1.0...@kcutils/gatsby-plugin-intl@0.1.1) (2020-12-08)
+
+
+### Bug Fixes
+
+* change code to support es5 or more ([b2494ba](https://github.com/kamontat/kcutils/commit/b2494ba7b070d8bc85a2f5152fe699bfb9163266))
+
+
+
+
+
 # 0.1.0 (2020-12-07)
 
 
