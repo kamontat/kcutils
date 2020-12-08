@@ -162,10 +162,13 @@ const eslint: ConfigBuilder<Setting, Linter.Config> = {
       rules["tsdoc/syntax"] = "warn";
     }
 
+    const tempIgnorePatterns = ["**/lib/**", "**/*.d.ts", "docs"];
+    const ignorePatterns = options.root
+      ? tempIgnorePatterns.concat("packages/**/lib/**", "internals/**/lib/**")
+      : tempIgnorePatterns;
+
     const config: Linter.Config = {
-      ignorePatterns: options.root
-        ? ["packages/**/lib/**", "internals/**/lib/**", "**/*.d.ts", "docs"]
-        : ["**/*.d.ts", "docs"],
+      ignorePatterns,
       parser,
       plugins,
       extends: extend,
