@@ -2,7 +2,7 @@
   "name": "@kcutils/gatsby-plugin-intl",
   "version": "0.1.0",
   "description": "gatsby plugin with support react-intl",
-  "main": "lib/index.js",
+  "main": "index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -30,6 +30,7 @@
     "lib/**/*.js",
     "lib/**/*.d.ts",
     "**/*.json",
+    "index.js",
     "gatsby-node.js",
     "gatsby-ssr.js",
     "gatsby-browser.js"

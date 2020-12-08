@@ -1,2 +1,2 @@
-import { pageWrapper } from "./lib/";
-export const wrapPageElement = pageWrapper;
+const lib = require("./lib/");
+exports.wrapPageElement = lib.pageWrapper;

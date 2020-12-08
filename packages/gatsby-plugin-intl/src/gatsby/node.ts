@@ -7,3 +7,7 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = (): vo
 export const onCreatePage: GatsbyNode["onCreatePage"] = (): void => {
   console.log("test");
 };
+
+export const onPreInit: GatsbyNode["onPreInit"] = () => {
+  console.log("Loaded @kcutils/gatsby-plugin-intl");
+};
