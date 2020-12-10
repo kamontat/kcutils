@@ -1,7 +1,12 @@
 {
   "version": "independent",
   "npmClient": "yarn",
-  "packages": ["packages/*", "internals/*", "typings/*"],
+  "packages": [
+    "packages/*",
+    "internals/*",
+    "typings/lerna_project",
+    "typings/package_json"
+  ],
   "command": {
     "init": {
       "exact": true
