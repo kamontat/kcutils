@@ -16,7 +16,7 @@ export interface CompareResult {
 }
 
 export class FinanceComparision<K extends string> extends SupportLogger {
-  constructor(private reports: Record<K, FinanceReport<K>>, private option: FinanceComparisionOption) {
+  constructor(private readonly reports: Record<K, FinanceReport<K>>, readonly option: FinanceComparisionOption) {
     super(option.logLevel, "finance-comparision");
   }
 

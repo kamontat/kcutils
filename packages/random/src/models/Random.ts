@@ -65,7 +65,6 @@ export abstract class Random {
     const diff = max - min;
     const r = this.pseudo() * diff + min;
 
-    // console.log(`min: ${min}, max: ${max}, diff: ${diff}, random: ${r}`);
     if (option.integer) return Math.round(r);
     else return r;
   }

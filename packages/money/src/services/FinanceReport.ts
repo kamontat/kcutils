@@ -34,7 +34,6 @@ export class FinanceReport<T extends string> extends SupportLogger {
     const stopMoney = this.summary(duration);
 
     this.debug(`start money: ${startMoney.toFixString()} | stop money: ${stopMoney.toFixString()}`);
-    const money = stopMoney.minus(startMoney).divide(duration.duration.as(unit));
-    return money;
+    return stopMoney.minus(startMoney).divide(duration.duration.as(unit));
   }
 }
