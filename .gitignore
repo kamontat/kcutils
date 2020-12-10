@@ -309,6 +309,8 @@ graph.pdf
 
 # report directory from stryker reports
 packages/**/reports
+internals/**/reports
 reports
 
-docs
+packages/**/docs
+internals/**/docs

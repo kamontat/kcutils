@@ -51,7 +51,7 @@ This is a private project which never publish to npm
 
 ## For Contribution User
 
-I have [CONTRIBUTING.md](./CONTRIBUTING.md) guideline for setup, and maintain project.
+I have [CONTRIBUTING.md](./docs/CONTRIBUTING.md) guideline for setup, and maintain project.
 
 ## For License
 
