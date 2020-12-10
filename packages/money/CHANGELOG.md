@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.1.0...@kcutils/money@0.1.1) (2020-12-10)
+
+
+### Bug Fixes
+
+* **lint:** add readonly to readonly field ([d2b608e](https://github.com/kamontat/kcutils/commit/d2b608ef4ae245293018d41645c61950fd3bf8e1))
+* upgrade all beta dependencies to stable ([48270ed](https://github.com/kamontat/kcutils/commit/48270ede11c8a5cd6513cedb9b1fc4797f592ad8))
+
+
+
+
+
 # 0.1.0 (2020-12-07)
 
 

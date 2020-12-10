@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/testkit",
-  "version": "0.4.18",
+  "version": "0.4.19",
   "description": "Add Stryker dependencies and config to @kcmono projects",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -51,8 +51,8 @@
     "@stryker-mutator/typescript": "4.0.0"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.19.4",
-    "@kcinternal/configuration": "0.8.22"
+    "@kcinternal/commandline": "0.20.0",
+    "@kcinternal/configuration": "0.8.23"
   },
   "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.23](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.22...@kcinternal/configuration@0.8.23) (2020-12-10)
+
+
+### Bug Fixes
+
+* **config:** add eslintrc config to missing dependencies ([2e76ffa](https://github.com/kamontat/kcutils/commit/2e76ffa0ef922dbf4bf68fd83bf4339f2b1efd55))
+
+
+
+
+
 ## [0.8.22](https://github.com/kamontat/kcutils/compare/@kcinternal/configuration@0.8.21...@kcinternal/configuration@0.8.22) (2020-12-07)
 
 **Note:** Version bump only for package @kcinternal/configuration

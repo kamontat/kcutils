@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.6](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.2.5...@kcutils/random@0.2.6) (2020-12-10)
+
+
+### Bug Fixes
+
+* **lint:** add readonly to readonly field ([d2b608e](https://github.com/kamontat/kcutils/commit/d2b608ef4ae245293018d41645c61950fd3bf8e1))
+
+
+
+
+
 ## [0.2.5](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.2.4...@kcutils/random@0.2.5) (2020-12-07)
 
 **Note:** Version bump only for package @kcutils/random

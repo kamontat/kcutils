@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.19.4...@kcinternal/commandline@0.20.0) (2020-12-10)
+
+
+### Bug Fixes
+
+* **config:** add eslintrc config to missing dependencies ([2e76ffa](https://github.com/kamontat/kcutils/commit/2e76ffa0ef922dbf4bf68fd83bf4339f2b1efd55))
+* **core:** source code not found in version 0.19 ([ff61b95](https://github.com/kamontat/kcutils/commit/ff61b956c5e5fbb275e584b6f0871907b7df78b7))
+
+
+### Features
+
+* **core:** trigger new version and resume build source code again ([d7a74af](https://github.com/kamontat/kcutils/commit/d7a74af683a363a0d23b294e8c69092104299b42))
+
+
+
+
+
 ## [0.19.4](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.19.2...@kcinternal/commandline@0.19.4) (2020-11-14)
 
 **Note:** Version bump only for package @kcinternal/commandline

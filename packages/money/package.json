@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/money",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "money module for calculate spending",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -34,14 +34,14 @@
   },
   "dependencies": {
     "@kcutils/error": "0.7.5",
-    "@kcutils/helper": "1.1.1",
+    "@kcutils/helper": "1.1.2",
     "@kcutils/logger": "0.9.3",
     "luxon": "1.25.0"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.17.2",
-    "@kcinternal/configuration": "0.8.22",
-    "@kcutils/random": "0.2.5",
+    "@kcinternal/configuration": "0.8.23",
+    "@kcutils/random": "0.2.6",
     "@types/luxon": "1.25.0"
   }
 }

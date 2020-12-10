@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.49](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.48...@kcinternal/graph@0.2.49) (2020-12-10)
+
+
+### Bug Fixes
+
+* **config:** add eslintrc config to missing dependencies ([2e76ffa](https://github.com/kamontat/kcutils/commit/2e76ffa0ef922dbf4bf68fd83bf4339f2b1efd55))
+
+
+
+
+
 ## [0.2.48](https://github.com/kamontat/kcutils/compare/@kcinternal/graph@0.2.47...@kcinternal/graph@0.2.48) (2020-11-14)
 
 **Note:** Version bump only for package @kcinternal/graph
