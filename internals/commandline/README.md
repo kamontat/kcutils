@@ -7,6 +7,8 @@
 
 <!-- BODY SECTION -->
 
+> DO NOT INSTALL VERSION 0.19. The source code is not included in package.
+
 - [icompiler-tsc](#icompiler-tsc)
 - [icompiler-webpack](#icompiler-webpack)
 - [itester](#itester)
