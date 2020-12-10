@@ -19,7 +19,7 @@ export type TransactionLoopingFn = (
 ) => Money;
 
 export class Person<T extends string> extends SupportLogger {
-  constructor(private config: PersonConfig<T>) {
+  constructor(private readonly config: PersonConfig<T>) {
     super(config.logLevel, "person");
 
     this.debug(`creating person ${config.id} with ${config.money.toFixString()}`);
