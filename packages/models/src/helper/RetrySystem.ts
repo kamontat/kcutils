@@ -48,9 +48,7 @@ export class RetrySystem {
    * @param ms input delay time in millisecond
    */
   updateTime(ms: number): void {
-    this.delayMs = ms;
-
-    if (this.delayMs < 0) this.updateTime(0);
+    this.delayMs = ms < 0 ? 0 : ms;
   }
 
   async try<T>(cb: Callback<T>, limit: number = 3): Promise<T> {
