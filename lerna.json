@@ -3,7 +3,6 @@
   "npmClient": "yarn",
   "packages": [
     "modules/private/generator",
-    "modules/private/commandline-builder",
 
     "packages/*",
     "internals/*",
