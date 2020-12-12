@@ -22,6 +22,10 @@ run_node_module_bin() {
 
   log_debug "${command_name}" "$" "${command_path}" "${command_args[*]}"
   if ! is_dry; then
-    "${command_path}" "${command_args[*]}"
+    if "${command_path}" "${command_args[*]}"; then
+      return 0
+    else
+      exit 1
+    fi
   fi
 }

@@ -12,7 +12,7 @@ on_root_directory
 
 args=()
 
-is_ci && args+=("--ci" "--runInBand")
+is_ci && args+=("--ci") && args+=("--runInBand")
 run_node_module_bin "jest" "${args[@]}"
 
 go_back

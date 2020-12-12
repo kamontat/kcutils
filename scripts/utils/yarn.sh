@@ -19,6 +19,10 @@ run_yarn() {
 
   log_debug "Yarn" "$" "yarn" "${args[@]}"
   if ! is_dry; then
-    yarn "${args[@]}"
+    if yarn "${args[@]}"; then
+      return 0
+    else
+      return 1
+    fi
   fi
 }
