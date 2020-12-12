@@ -33,7 +33,7 @@ esac
 
 # Step 2: Defined command parameters and custom base on environment
 args=("from-git")
-is_ci && args+=("--yes")
+is_ci && args+=("--yes" "--no-verify-access")
 
 # Step 3: Run command with custom parameters
 run_xlerna "publish" \
