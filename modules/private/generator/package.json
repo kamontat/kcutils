@@ -1,0 +1,11 @@
+{
+  "name": "@kcprivate/generator",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "hygen module new"
+  },
+  "devDependencies": {
+    "hygen": "6.0.4"
+  }
+}
