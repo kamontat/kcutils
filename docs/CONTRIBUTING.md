@@ -5,8 +5,8 @@ We want to make contributing to this project as approachable and transparent as 
 ## Setup project
 
 1. Install required dependencies on root project by run `yarn install`
-2. Install all mono-repository dependencies by run `yarn bootstrap`
-3. Get start with `yarn test`
+2. Install all mono-repository dependencies by run `yarn modules bootstrap`
+3. Get start with `yarn modules test`
 
 ### Create new package
 

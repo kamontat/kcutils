@@ -86,7 +86,7 @@ commands:
           steps:
             - run:
                 name: Install and links lerna project together
-                command: yarn bootstrap
+                command: yarn modules bootstrap
   compile-typescript:
     description: compile code
     parameters:
@@ -100,13 +100,13 @@ commands:
           steps:
             - run:
                 name: Compile and build all packages application
-                command: yarn build:ci
+                command: yarn modules build
       - unless:
           condition: << parameters.all >>
           steps:
             - run:
                 name: Compile and build only internal application
-                command: yarn build:init
+                command: yarn modules build --scope "@kcinternal/*"
   build-start:
     description: Build and Start package
     parameters:
@@ -123,10 +123,10 @@ commands:
           steps:
             - run:
                 name: Building << parameters.package-name >>
-                command: yarn build:<< parameters.package-name >>
+                command: yarn module << parameters.package-name >> build
       - run:
           name: Starting << parameters.package-name >>
-          command: yarn start:<< parameters.package-name >>
+          command: yarn module << parameters.package-name >> start
   publish:
     description: Publish new version
     parameters:
@@ -142,16 +142,16 @@ commands:
           command: git checkout .
       - run:
           name: "Update version on package"
-          command: yarn version:ci << parameters.option >> || true
+          command: yarn modules version << parameters.option >> || true
       - run:
           name: "Release new package version"
-          command: yarn release:ci << parameters.option >> || true
+          command: yarn modules publish << parameters.option >> || true
   release-docs:
     description: Publish documentation to gh-pages
     steps:
       - run:
           name: build documentation pages
-          command: NODE_DEBUG=gh-pages yarn doc:ci
+          command: NODE_DEBUG=gh-pages yarn modules doc
 
 jobs:
   main:
@@ -160,16 +160,17 @@ jobs:
     environment:
       ENV: "ci"
       JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+      DEBUG: "true"
     steps:
       - checkout
       - install-dependencies
       - compile-typescript
       - run:
           name: "Linting all source code"
-          command: yarn lint:ci
+          command: yarn modules lint
       - run:
           name: "Testing all unittest"
-          command: yarn test:ci
+          command: yarn modules test
       - sonarcloud/scan:
           cache_version: 1
       - store_test_results:
@@ -195,7 +196,7 @@ jobs:
       - compile-typescript:
           all: false
       - build-start:
-          package-name: graph
+          package-name: "@kcutils/graph"
       - store_artifacts:
           path: ./packages/_graph/graph.pdf
           destination: result/graph.pdf
@@ -211,7 +212,7 @@ jobs:
       - compile-typescript:
           all: true
       - publish:
-          option: "type=beta"
+          option: "beta"
       - git-cleanup
       - gpg-cleanup
 
@@ -226,7 +227,7 @@ jobs:
       - compile-typescript:
           all: true
       - publish:
-          option: "type=rc"
+          option: "rc"
       - git-cleanup
       - gpg-cleanup
 
@@ -241,7 +242,7 @@ jobs:
       - compile-typescript:
           all: true
       - publish:
-          option: "type=live"
+          option: "live"
       - release-docs
       - git-cleanup
       - gpg-cleanup

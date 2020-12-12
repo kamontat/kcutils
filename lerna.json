@@ -2,6 +2,9 @@
   "version": "independent",
   "npmClient": "yarn",
   "packages": [
+    "modules/private/generator",
+    "modules/private/commandline-builder",
+
     "packages/*",
     "internals/*",
     "typings/lerna_project",
