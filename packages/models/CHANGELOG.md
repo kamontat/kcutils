@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.19](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.6.18...@kcutils/models@0.6.19) (2020-12-12)
+
+
+### Performance Improvements
+
+* **service:** reduce recursive in updateTime in Retry system ([58bda5f](https://github.com/kamontat/kcutils/commit/58bda5f38dae7b8ece8c327160e813f45b0202e4))
+
+
+
+
+
 ## [0.6.18](https://github.com/kamontat/kcutils/compare/@kcutils/models@0.6.17...@kcutils/models@0.6.18) (2020-12-10)
 
 **Note:** Version bump only for package @kcutils/models
