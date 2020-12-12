@@ -37,6 +37,7 @@
   },
   "resolutions": {
     "node-fetch": "2.6.1",
-    "highlight.js": "10.4.1"
+    "highlight.js": "10.4.1",
+    "ini": "1.3.6"
   }
 }

@@ -65,5 +65,8 @@
     "@types/minimist": "1.2.0",
     "@types/package_json": "0.2.3"
   },
+  "resolutions": {
+    "ini": "1.3.6"
+  },
   "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }
