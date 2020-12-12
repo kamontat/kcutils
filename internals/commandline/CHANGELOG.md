@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.20.0...@kcinternal/commandline@0.20.1) (2020-12-12)
+
+
+### Bug Fixes
+
+* try to fix publish command is failed because 401 ([bce1408](https://github.com/kamontat/kcutils/commit/bce14081e3a3750395c0f6edf1008f6773043c3b))
+
+
+
+
+
 # [0.20.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.19.4...@kcinternal/commandline@0.20.0) (2020-12-10)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/graph",
   "description": "internal modules for kc monots projects",
-  "version": "0.2.49",
+  "version": "0.2.50",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
@@ -47,7 +47,7 @@
     "graphviz": "0.0.9"
   },
   "devDependencies": {
-    "@kcinternal/commandline": "0.20.0",
+    "@kcinternal/commandline": "0.20.1",
     "@types/lerna__project": "0.2.3",
     "@types/package_json": "0.2.3"
   },
