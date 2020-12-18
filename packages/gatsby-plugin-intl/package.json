@@ -48,7 +48,7 @@
     "@kcutils/error": "1.1.3",
     "@kcutils/helper": "1.1.3",
     "intl": "1.2.5",
-    "react-intl": "5.10.6"
+    "react-intl": "5.10.9"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.20.1",
