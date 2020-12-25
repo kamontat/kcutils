@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/random",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "PRNGs (Pseudorandom number generators)",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.20.1",
-    "@kcinternal/configuration": "0.8.25"
+    "@kcinternal/configuration": "0.8.26"
   },
   "gitHead": "23625cec945388cd659f63e2ffdf1b9217a0cc6e"
 }
