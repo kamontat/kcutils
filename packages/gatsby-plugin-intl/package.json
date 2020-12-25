@@ -43,7 +43,7 @@
     "lint": "ilinter"
   },
   "dependencies": {
-    "@formatjs/intl-pluralrules": "4.0.0",
+    "@formatjs/intl-pluralrules": "4.0.1",
     "@formatjs/intl-relativetimeformat": "8.0.0",
     "@kcutils/error": "1.1.3",
     "@kcutils/helper": "1.1.3",
