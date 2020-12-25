@@ -1042,14 +1042,6 @@
     "@formatjs/ecma402-abstract" "1.5.0"
     tslib "^2.0.1"
 
-"@formatjs/intl-relativetimeformat@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-8.0.0.tgz#e7234f165932a22ca6faf015b53bf7a53dbe5350"
-  integrity sha512-GKJvd2+Sx0BJqsKt2rBbkgGAwfBjKVnvlRTZQ+OhgSEOeRBHOtaub1jUx8ScQoS5Xe0RFLvTLL2LSnajg6EXkw==
-  dependencies:
-    "@formatjs/ecma402-abstract" "1.5.0"
-    tslib "^2.0.1"
-
 "@formatjs/intl-relativetimeformat@8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-8.0.1.tgz#9fcad0dba673cf0e21b4b9f83dab22ca6b482901"
@@ -1271,23 +1263,23 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.24":
-  version "0.8.24"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.24.tgz#53f0f110f58fde478c4247a7110d855b42b27c31"
-  integrity sha512-wn5FORxKuPEaetcrWXCosfAnMuWPIr/aQ6Fgi/lZIdvrZsY4Nm7v9EP/3hLZ8cZpwyugUSxDLPd0vjw6EEcWbA==
+"@kcinternal/configuration@0.8.25":
+  version "0.8.25"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.25.tgz#0693de95f53fb55ff70a6002f1b2011c7daceea1"
+  integrity sha512-LJDVh1KsN4mrRu9r1VGJNEsvYH02EnefCBGAtq9Fy/yuxSOu1OC+BwwNcquKdC8GY4QM1vOjLyRNnoj1GK+SmQ==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.4"
     "@types/webpack" "4.41.25"
-    jest-html-reporters "2.1.1"
+    jest-html-reporters "2.1.2"
     webpack "4.44.1"
 
-"@kcutils/error@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@kcutils/error/-/error-1.1.3.tgz#141814049d3ad7779f0e76062cbda1e788dfb206"
-  integrity sha512-oC5jgQVoLV0oWG6W3nsDxRPDs6Q/jVC3P03hAnG0Vhiw9Ga7AD0UqbZE2mgW6N1zP6PqUK5wcj7X1GB2z8VwVQ==
+"@kcutils/error@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@kcutils/error/-/error-1.1.4.tgz#98d0d80ea0e9cf93dc8e6123a954ebd36cea4cc3"
+  integrity sha512-1no6XRPCw17h0kGAjJibDelztHOGEQE9E7wXcKcUKejkH0MncbY667DKpWo6LfbxqcGvMl1QkoIhdUgAljbA6A==
   dependencies:
-    "@kcutils/helper" "1.1.3"
+    "@kcutils/helper" "1.1.4"
     "@kcutils/models" "0.3.0-rc.15"
 
 "@kcutils/helper@0.5.0-rc.16":
@@ -1295,10 +1287,10 @@
   resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-0.5.0-rc.16.tgz#65047a5aab944de7f7d42834e27a597ea8bd5c33"
   integrity sha512-S6e0VYbhwLhDUVJ8E/GE4DlCYzrIq0UdjIHtFFMQv9BbtFEEw0zblGNedpdawR0gWmei9HWSziZjoHARgyNlOw==
 
-"@kcutils/helper@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.3.tgz#bb9ae63d4e00c37ac90c14eba425965a9eb97caf"
-  integrity sha512-72moYN2+WWVGOMB83SkRxwAS1/vdzEXuD6PqWnxynCJt9A8vq8JEmx6/6ebuR3obfDql1LalFOt+SvF69vg/Mg==
+"@kcutils/helper@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.4.tgz#819c06c439ce271bc1523277d21b212b2b9e854b"
+  integrity sha512-qqie8P9Y/QBhghnaCbP7pUw6h2s//xadiBQVRrmuC4lh698Hteir7/vIHaVkPFAdsCxD0ysZZW/3DmHb3MUrHQ==
 
 "@kcutils/models@0.3.0-rc.15":
   version "0.3.0-rc.15"
@@ -7191,10 +7183,10 @@ jest-get-type@^25.2.6:
   resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-25.2.6.tgz#0b0a32fab8908b44d508be81681487dbabb8d877"
   integrity sha512-DxjtyzOHjObRM+sM1knti6or+eOgcGU4xVSb2HNP1TqO4ahsT+rqZg+nyqHWJSvWgKC5cG3QjGFBqxLghiF/Ig==
 
-jest-html-reporters@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.1.1.tgz#dc442a09589a09216919a46faf5402e57164ba03"
-  integrity sha512-SVp3ayXdiD0HphQEBVzYCGceHsBrAhbh3pAH6A0wkxMt4H0/xVI/kSv2a9/R8+fWSfoWd804lzRbmxSI6v2NGw==
+jest-html-reporters@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.1.2.tgz#fccf52d3d0effd90523e4c427d41076b961692c7"
+  integrity sha512-Y0lgCWvwctiL5XeIdIDsfxVQHOlAFQwA1Nk5e0SJO3cqWxMp9i6lROwf41HdD/XOOSYGQB4aS7jpxpobThJy1g==
   dependencies:
     fs-extra "^9.0.1"
 
