@@ -44,7 +44,7 @@
     "@types/eslint": "7.2.6",
     "@types/webpack": "4.41.25",
     "jest-html-reporters": "2.1.2",
-    "webpack": "4.44.1"
+    "webpack": "5.11.1"
   },
   "gitHead": "e5ec9c465855874c42c170777c7593674725f7e6"
 }
