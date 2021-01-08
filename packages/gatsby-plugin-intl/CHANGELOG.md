@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-plugin-intl@0.1.8...@kcutils/gatsby-plugin-intl@0.1.9) (2021-01-08)
+
+**Note:** Version bump only for package @kcutils/gatsby-plugin-intl
+
+
+
+
+
 ## [0.1.8](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-plugin-intl@0.1.7...@kcutils/gatsby-plugin-intl@0.1.8) (2021-01-01)
 
 **Note:** Version bump only for package @kcutils/gatsby-plugin-intl
