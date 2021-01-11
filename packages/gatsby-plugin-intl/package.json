@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@formatjs/intl-pluralrules": "4.0.5",
-    "@formatjs/intl-relativetimeformat": "8.0.0",
+    "@formatjs/intl-relativetimeformat": "8.0.3",
     "@kcutils/error": "1.1.5",
     "@kcutils/helper": "1.1.5",
     "intl": "1.2.5",
