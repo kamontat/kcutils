@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/gatsby-config",
-  "version": "0.4.28",
+  "version": "0.4.29",
   "description": "for build autocompleted gatsby-config into configuration builder format",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
