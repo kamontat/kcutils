@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/gatsby-plugin-intl",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "gatsby plugin with support react-intl",
   "main": "index.js",
   "typings": "lib/index.d.ts",
