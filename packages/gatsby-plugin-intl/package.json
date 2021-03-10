@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/gatsby-plugin-intl",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "gatsby plugin with support react-intl",
   "main": "index.js",
   "typings": "lib/index.d.ts",
@@ -45,14 +45,14 @@
   "dependencies": {
     "@formatjs/intl-pluralrules": "4.0.5",
     "@formatjs/intl-relativetimeformat": "8.0.4",
-    "@kcutils/error": "1.1.6",
-    "@kcutils/helper": "1.1.6",
+    "@kcutils/error": "1.1.7",
+    "@kcutils/helper": "1.1.7",
     "intl": "1.2.5",
     "react-intl": "5.12.2"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.20.1",
-    "@kcinternal/configuration": "0.8.27",
+    "@kcinternal/configuration": "0.8.28",
     "@types/react": "17.0.1",
     "@types/react-dom": "17.0.0",
     "gatsby": "2.32.9"
