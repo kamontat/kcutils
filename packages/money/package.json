@@ -36,7 +36,7 @@
     "@kcutils/error": "0.7.5",
     "@kcutils/helper": "1.1.7",
     "@kcutils/logger": "0.9.3",
-    "luxon": "1.25.0"
+    "luxon": "1.26.0"
   },
   "devDependencies": {
     "@kcinternal/commandline": "0.17.2",
