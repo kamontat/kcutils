@@ -1365,10 +1365,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.27":
-  version "0.8.27"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.27.tgz#8da6eed52198a14063275e7af9536253244b305a"
-  integrity sha512-wEZN7xYfcYswGkFJ4joMc1/uRjHEF2shNmJz4/8PIHAsbeQjkbC9ASHlr8+u1ve9b3xBiy9nzFh2VTx3Rse6mw==
+"@kcinternal/configuration@0.8.28":
+  version "0.8.28"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.28.tgz#c26beb4a88cf494b1b6888d6b53630a611556078"
+  integrity sha512-mDzia90CF2TbtyvAikQ7eoLCDlJ5fLHvU5Km2ZlKj/AzTbAau2vDJ+uSSONg5C4ZnQ98QJfoqZ+91MZ30Abzrg==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -1376,17 +1376,17 @@
     jest-html-reporters "2.1.2"
     webpack "4.44.1"
 
-"@kcutils/helper@1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.6.tgz#40bab2b91b9ddc228e819251fb7241e9e7d6c6ea"
-  integrity sha512-uxhIb/yEGic8dPSrLd+iqL89Rz5Sdhgi3ItsuX8SY6FTWabWsYSzcV8KogmZ3hSA/+TtWf/y1V2PtZ1uKpqPBQ==
+"@kcutils/helper@1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.7.tgz#cab8e85ad34d721ca5a94f36bcc3c84a56e35424"
+  integrity sha512-DZvlCc4jlAzGVcQDFnIRnoT8BIb+CYvy99f1e2AKhnacZq8EBzVFTiW2h8cMfz41UUEutdP3ww21VaHyBL/JbA==
 
-"@kcutils/logger@0.9.19":
-  version "0.9.19"
-  resolved "https://registry.yarnpkg.com/@kcutils/logger/-/logger-0.9.19.tgz#15b59d07e6a239fb4785ecaad0844174fcb35f10"
-  integrity sha512-was4sEsyA4FST5j1bVYRM71GVEAi3KeBaGYkkjf6pkHFwWRWrf7vwMnIkuq6Z/ZjULGPi18LbdZGp/wR823xlg==
+"@kcutils/logger@0.9.20":
+  version "0.9.20"
+  resolved "https://registry.yarnpkg.com/@kcutils/logger/-/logger-0.9.20.tgz#0b0895590c74425891dcf6051bdc6b534ca46198"
+  integrity sha512-0ogkWphxCpZ6SP1B8G35Rg/IcgGTk4qa7guuGFCuhd4wpPWfqz8ojuNuCnQ7XUOBfh4rfkaSrDGRmFZ4GGK4jw==
   dependencies:
-    "@kcutils/helper" "1.1.6"
+    "@kcutils/helper" "1.1.7"
     chalk "4.1.0"
     figures "3.2.0"
 
@@ -1704,10 +1704,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@17.0.0":
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.0.tgz#b3b691eb956c4b3401777ee67b900cb28415d95a"
-  integrity sha512-lUqY7OlkF/RbNtD5nIq7ot8NquXrdFrjSOR6+w9a9RFQevGi1oZO1dcJbXMeONAPKtZ2UrZOEJ5UOCVsxbLk/g==
+"@types/react-dom@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.2.tgz#35654cf6c49ae162d5bc90843d5437dc38008d43"
+  integrity sha512-Icd9KEgdnFfJs39KyRyr0jQ7EKhq8U6CcHRMGAS45fp5qgUvxL3ujUCfWFttUK2UErqZNj97t9gsVPNAqcwoCg==
   dependencies:
     "@types/react" "*"
 
