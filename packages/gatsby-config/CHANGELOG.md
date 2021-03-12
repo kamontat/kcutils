@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.34](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.4.33...@kcutils/gatsby-config@0.4.34) (2021-03-12)
+
+**Note:** Version bump only for package @kcutils/gatsby-config
+
+
+
+
+
 ## [0.4.33](https://github.com/kamontat/kcutils/compare/@kcutils/gatsby-config@0.4.32...@kcutils/gatsby-config@0.4.33) (2021-03-10)
 
 **Note:** Version bump only for package @kcutils/gatsby-config
