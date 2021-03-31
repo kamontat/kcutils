@@ -16,4 +16,5 @@ echo "
 3. lerna-exec <module_name> - run command using lerna exec
 4. yarn <module_name>       - run command using normal yarn
 5. <module_name>            - run command using normal yarn (alias)
+6. run <module_name>        - run build and start with normal yarn
 "

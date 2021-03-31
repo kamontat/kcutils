@@ -13,7 +13,7 @@ export interface DataBuilderOption<I, R> {
   transform: TransformFn<InputWrapper<I, DataBuilderHelperString>, R>;
 }
 
-export type DataBuilderHelperString = "root" | "parent" | "current";
+export type DataBuilderHelperString = "newRoot" | "root" | "parent" | "current";
 
 export class DataBuilder<I, R> extends Data<I, R, DataBuilderHelperString> {
   static build<I, R>(opts: DataBuilderOption<I, R>): Data<I, R, DataBuilderHelperString> {
@@ -25,9 +25,10 @@ export class DataBuilder<I, R> extends Data<I, R, DataBuilderHelperString> {
 
     const parent = resolve(dirname);
     const root = resolve(parent, "..", "..");
+    const newRoot = resolve(parent, "..", "..", "..");
     const current = resolve(parent, "node_modules", ...(opts.current && opts.current.length > 0 ? opts.current : name));
 
-    const helper = new Helper({ root: root, parent: parent, current: current });
+    const helper = new Helper({ root: root, newRoot: newRoot, parent: parent, current: current });
 
     super({ data: opts.input, helper: helper }, opts.transform);
   }

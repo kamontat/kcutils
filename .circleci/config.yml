@@ -196,9 +196,9 @@ jobs:
       - compile-typescript:
           all: false
       - build-start:
-          package-name: "@kcutils/graph"
+          package-name: "@kcprivate/graph"
       - store_artifacts:
-          path: ./packages/_graph/graph.pdf
+          path: ./modules/private/graph/graph.pdf
           destination: result/graph.pdf
 
   release-beta:

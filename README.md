@@ -47,7 +47,7 @@ This is a utilities projects for generic usecase
 This is a private project which never publish to npm
 
 - [@kcutils/example][kcutils_eg_gh]           - Example project for give idea how to create new module in this repository
-- [@kcutils/graph][kcutils_graph_gh]           - Application project for generate dependencies for this repository
+- [@kcprivate/graph][kcprivate_graph_gh]      - Application project for generate dependencies for this repository
 
 ## For Contribution User
 
@@ -75,8 +75,9 @@ This project hold CC-BY-SA 4.0 more information found [here](./LICENSE)
 [kcinternal_config_gh]: ./internals/config
 [kcinternal_graph_gh]: ./internals/graph
 
+[kcprivate_graph_gh]: ./modules/private/graph
+
 [kcutils_eg_gh]: ./packages/_example
-[kcutils_graph_gh]: ./packages/_graph
 [kcutils_err_gh]: ./packages/error
 [kcutils_log_gh]: ./packages/logger
 [kcutils_helper_gh]: ./packages/helper

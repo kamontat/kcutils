@@ -8,17 +8,6 @@
 # set -v #VERBOSE - Display shell input lines as they are read.
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
-#/ -----------------------------------
-#/ How to:
-#/ -----------------------------------
-#/ Create by:    Kamontat Chantrachirathumrong <developer@kamontat.net>
-#/ Since:        10/12/2020
-#/ -----------------------------------
-#/ Error code    1      -- unknown error
-#/ Error code    2      -- path not found
-#/ Error code    3      -- common not found
-#/ -----------------------------------
-
 export COMMAND_NAME="kcutils-commander"
 export COMMAND_VERSION="0.1.0"
 export COMMAND_LAST_UPDATED="11 Dec 2020"

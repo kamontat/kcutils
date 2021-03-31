@@ -1,0 +1,38 @@
+{
+  "name": "@kcprivate/compiler",
+  "version": "0.0.1",
+  "private": true,
+  "description": "kcutils compiler only",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "modules/private/compiler"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts",
+    "**/*.json"
+  ],
+  "scripts": {
+    "build": "",
+    "start": "",
+    "lint": "",
+    "test": "",
+    "clean": ""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

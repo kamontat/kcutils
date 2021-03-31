@@ -3,6 +3,9 @@
   "npmClient": "yarn",
   "packages": [
     "modules/private/generator",
+    "modules/private/graph",
+
+    "modules/internal/command-builder",
 
     "packages/*",
     "internals/*",
