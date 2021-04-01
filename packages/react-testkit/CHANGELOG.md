@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.27](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.5.26...@kcutils/react-testkit@0.5.27) (2021-04-01)
+
+**Note:** Version bump only for package @kcutils/react-testkit
+
+
+
+
+
 ## [0.5.26](https://github.com/kamontat/kcutils/compare/@kcutils/react-testkit@0.5.25...@kcutils/react-testkit@0.5.26) (2021-03-10)
 
 **Note:** Version bump only for package @kcutils/react-testkit
