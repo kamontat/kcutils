@@ -42,7 +42,7 @@
     "@kcinternal/configuration": "0.8.29",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
-    "gatsby": "2.32.11"
+    "gatsby": "2.32.12"
   },
   "peerDependencies": {
     "gatsby": "~2.x.x",
