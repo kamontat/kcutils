@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@formatjs/intl-pluralrules": "4.0.13",
-    "@formatjs/intl-relativetimeformat": "8.0.4",
+    "@formatjs/intl-relativetimeformat": "8.1.4",
     "@kcutils/error": "1.1.8",
     "@kcutils/helper": "1.1.8",
     "intl": "1.2.5",
@@ -55,7 +55,7 @@
     "@kcinternal/configuration": "0.8.29",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.3",
-    "gatsby": "2.32.11"
+    "gatsby": "2.32.12"
   },
   "peerDependencies": {
     "gatsby": "~2.x.x",
