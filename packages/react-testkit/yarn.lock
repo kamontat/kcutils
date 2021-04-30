@@ -11,10 +11,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.27":
-  version "0.8.27"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.27.tgz#8da6eed52198a14063275e7af9536253244b305a"
-  integrity sha512-wEZN7xYfcYswGkFJ4joMc1/uRjHEF2shNmJz4/8PIHAsbeQjkbC9ASHlr8+u1ve9b3xBiy9nzFh2VTx3Rse6mw==
+"@kcinternal/configuration@0.8.29":
+  version "0.8.29"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.29.tgz#76cbad0de385653b5db542fd31ff06eba44cc0f7"
+  integrity sha512-/7xVLPKRBtmPG3vJSrKiRzo8qersWegZhPJsnAIlKq2a4gYjYNzrksHEDOqGhSuz7J1FhC2YfJmam723uO2sgg==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -3810,9 +3810,9 @@ split-string@^3.0.1, split-string@^3.0.2:
     extend-shallow "^3.0.0"
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
-  integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
+  integrity sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   dependencies:
     figgy-pudding "^3.5.1"
 
