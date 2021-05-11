@@ -11,10 +11,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.29":
-  version "0.8.29"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.29.tgz#76cbad0de385653b5db542fd31ff06eba44cc0f7"
-  integrity sha512-/7xVLPKRBtmPG3vJSrKiRzo8qersWegZhPJsnAIlKq2a4gYjYNzrksHEDOqGhSuz7J1FhC2YfJmam723uO2sgg==
+"@kcinternal/configuration@0.8.30":
+  version "0.8.30"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.30.tgz#fe9408e52041768fd9c0e7c52a7da3b9a3d9b66e"
+  integrity sha512-fGwEocTqKsYWycZcZl5l93s54G4Tvz1Y/zY8j3Bu7IwmIogr6YCOZ9eMxsWLqPA3ig0aL3gqiu6rs0e2/K1WpQ==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -2509,9 +2509,9 @@ lodash.isequal@^4.5.0:
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
 
 lodash@^4.15.0, lodash@^4.17.15:
-  version "4.17.20"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
