@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/configuration",
   "description": "internal modules for kc monots projects",
-  "version": "0.8.31",
+  "version": "0.8.32",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
