@@ -20,10 +20,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.28":
-  version "0.8.28"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.28.tgz#c26beb4a88cf494b1b6888d6b53630a611556078"
-  integrity sha512-mDzia90CF2TbtyvAikQ7eoLCDlJ5fLHvU5Km2ZlKj/AzTbAau2vDJ+uSSONg5C4ZnQ98QJfoqZ+91MZ30Abzrg==
+"@kcinternal/configuration@0.8.31":
+  version "0.8.31"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.31.tgz#e956e7c8e8ef035c34d25576437c1cb030304a23"
+  integrity sha512-2ALr44Gxo9/+X5tAVL50tsb6/+w+d8xHKfmP0uPET9ObGREAkjULAjZLXgoVYt14F55Ob1vjh2HIteYpGMJMoQ==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -54,10 +54,10 @@
   resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-0.5.0-rc.16.tgz#65047a5aab944de7f7d42834e27a597ea8bd5c33"
   integrity sha512-S6e0VYbhwLhDUVJ8E/GE4DlCYzrIq0UdjIHtFFMQv9BbtFEEw0zblGNedpdawR0gWmei9HWSziZjoHARgyNlOw==
 
-"@kcutils/helper@1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.7.tgz#cab8e85ad34d721ca5a94f36bcc3c84a56e35424"
-  integrity sha512-DZvlCc4jlAzGVcQDFnIRnoT8BIb+CYvy99f1e2AKhnacZq8EBzVFTiW2h8cMfz41UUEutdP3ww21VaHyBL/JbA==
+"@kcutils/helper@1.1.10":
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.10.tgz#3cc7e8a00e70d8a26ad9058b931edb2945b3d39c"
+  integrity sha512-BlkfNXyG6r2ftXsTdKz22MeUCQuXhRpy9HA5IGO6ZudogFqiRxMU13DCQ/5yFwW4dQmD3lLcmVnmGneHpD2UvQ==
 
 "@kcutils/logger@0.9.3":
   version "0.9.3"
@@ -75,10 +75,10 @@
   dependencies:
     "@kcutils/helper" "0.5.0-rc.16"
 
-"@kcutils/random@0.2.11":
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/@kcutils/random/-/random-0.2.11.tgz#164e8722d8a90b0b154e908000aaf123255ca5d9"
-  integrity sha512-DaaT3cI4PlpCoe8hMYMtb7r4dMEVny7GG5hVrVe8ZAtdwVUiYU+z0TyUUkUV+wMCn5SnQMAZ8OSaCVjRktWJmA==
+"@kcutils/random@0.2.14":
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/@kcutils/random/-/random-0.2.14.tgz#40278c687316d230ed819bb0654ae04626ec61f8"
+  integrity sha512-jaswdxC6bcuTnfrwFGzGR0ZKSfVUQNVs3Jvw4BcnwVbfB7f28QDfwJqdQkokXaRwa3Ga8xttrWGYluv8UfdiQA==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -3266,9 +3266,9 @@ split-string@^3.0.1, split-string@^3.0.2:
     extend-shallow "^3.0.0"
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
-  integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
+  integrity sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   dependencies:
     figgy-pudding "^3.5.1"
 
