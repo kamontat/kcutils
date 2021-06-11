@@ -11,10 +11,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.30":
-  version "0.8.30"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.30.tgz#fe9408e52041768fd9c0e7c52a7da3b9a3d9b66e"
-  integrity sha512-fGwEocTqKsYWycZcZl5l93s54G4Tvz1Y/zY8j3Bu7IwmIogr6YCOZ9eMxsWLqPA3ig0aL3gqiu6rs0e2/K1WpQ==
+"@kcinternal/configuration@0.8.31":
+  version "0.8.31"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.31.tgz#e956e7c8e8ef035c34d25576437c1cb030304a23"
+  integrity sha512-2ALr44Gxo9/+X5tAVL50tsb6/+w+d8xHKfmP0uPET9ObGREAkjULAjZLXgoVYt14F55Ob1vjh2HIteYpGMJMoQ==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -2866,9 +2866,9 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
 normalize-url@^4.1.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
-  integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
+  integrity sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==
 
 npm-run-path@^1.0.0:
   version "1.0.0"
