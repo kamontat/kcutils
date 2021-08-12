@@ -11,10 +11,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.31":
-  version "0.8.31"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.31.tgz#e956e7c8e8ef035c34d25576437c1cb030304a23"
-  integrity sha512-2ALr44Gxo9/+X5tAVL50tsb6/+w+d8xHKfmP0uPET9ObGREAkjULAjZLXgoVYt14F55Ob1vjh2HIteYpGMJMoQ==
+"@kcinternal/configuration@0.8.32":
+  version "0.8.32"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.32.tgz#e19bc2d4146358b48acb78296b9bbf34680c9735"
+  integrity sha512-nHovrTOUaXDPjpa9Yj9qFc4Xf1h67dvA8kB9BejXwy4k0GrRsfYmSEF+0owWOvw8YR5pRI3Y7Hvkk6hRost+rQ==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -3131,9 +3131,9 @@ path-key@^2.0.0:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-type@^1.0.0:
   version "1.1.0"
