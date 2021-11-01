@@ -26,7 +26,7 @@
     "jest-html-reporters": "2.1.2",
     "jest-junit": "12.0.0",
     "lerna": "4.0.0",
-    "prettier": "2.2.1",
+    "prettier": "2.4.1",
     "ts-jest": "26.5.4",
     "ts-loader": "8.1.0",
     "typedoc": "0.20.34",
