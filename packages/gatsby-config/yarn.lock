@@ -1365,10 +1365,10 @@
     minimist "1.2.5"
     trash-cli "3.0.0"
 
-"@kcinternal/configuration@0.8.31":
-  version "0.8.31"
-  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.31.tgz#e956e7c8e8ef035c34d25576437c1cb030304a23"
-  integrity sha512-2ALr44Gxo9/+X5tAVL50tsb6/+w+d8xHKfmP0uPET9ObGREAkjULAjZLXgoVYt14F55Ob1vjh2HIteYpGMJMoQ==
+"@kcinternal/configuration@0.8.32":
+  version "0.8.32"
+  resolved "https://registry.yarnpkg.com/@kcinternal/configuration/-/configuration-0.8.32.tgz#e19bc2d4146358b48acb78296b9bbf34680c9735"
+  integrity sha512-nHovrTOUaXDPjpa9Yj9qFc4Xf1h67dvA8kB9BejXwy4k0GrRsfYmSEF+0owWOvw8YR5pRI3Y7Hvkk6hRost+rQ==
   dependencies:
     "@kcinternal/commandline" "0.20.1"
     "@types/eslint" "7.2.6"
@@ -1376,17 +1376,17 @@
     jest-html-reporters "2.1.2"
     webpack "4.44.1"
 
-"@kcutils/helper@1.1.10":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.10.tgz#3cc7e8a00e70d8a26ad9058b931edb2945b3d39c"
-  integrity sha512-BlkfNXyG6r2ftXsTdKz22MeUCQuXhRpy9HA5IGO6ZudogFqiRxMU13DCQ/5yFwW4dQmD3lLcmVnmGneHpD2UvQ==
+"@kcutils/helper@1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@kcutils/helper/-/helper-1.1.11.tgz#46f1038fee0ea03bfa46ece38f01b25855625740"
+  integrity sha512-HdfsnhHyfEPO6j6jM1CTvGRbqTjgqEajRXWdKsya00daDcmPi00mSK4evv3k8FT5eJrnsALoi3mX0t83oNJhMQ==
 
-"@kcutils/logger@0.9.23":
-  version "0.9.23"
-  resolved "https://registry.yarnpkg.com/@kcutils/logger/-/logger-0.9.23.tgz#262d5d669a0a6eea6680dae2ab24227414b914bf"
-  integrity sha512-8LiSQ/MMKxEwLporkVPQC4E7EtN/878AoKStxaEe62YVT5B/CQqHzjxoO5MaixR3VRcC5sPcUxL/vB94eYUOKA==
+"@kcutils/logger@0.9.24":
+  version "0.9.24"
+  resolved "https://registry.yarnpkg.com/@kcutils/logger/-/logger-0.9.24.tgz#100d8f8a1e3bfa63a0ad16cf0e8293c5881d0a52"
+  integrity sha512-AGGZ68IwbGyzvGC1vfXOA4mp1cNS2I/c65vdxTRXAhMp54Nq9UqCJjGqPFYn2N1abdN1I8VQGBpvnUIrspC3nQ==
   dependencies:
-    "@kcutils/helper" "1.1.10"
+    "@kcutils/helper" "1.1.11"
     chalk "4.1.0"
     figures "3.2.0"
 
@@ -2398,11 +2398,11 @@ axe-core@^3.5.4:
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
 
 axios@^0.21.0, axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
   dependencies:
-    follow-redirects "^1.10.0"
+    follow-redirects "^1.14.0"
 
 axobject-query@^2.1.2:
   version "2.2.0"
@@ -5237,10 +5237,10 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0, follow-redirects@^1.10.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
-  integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
+follow-redirects@^1.0.0, follow-redirects@^1.14.0:
+  version "1.14.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
+  integrity sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==
 
 for-in@^1.0.2:
   version "1.0.2"
