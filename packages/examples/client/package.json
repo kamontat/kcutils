@@ -1,0 +1,47 @@
+{
+  "name": "@kcexample/client",
+  "description": "example client project",
+  "version": "0.0.1",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/examples/client"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "keywords": [
+    "kcmono",
+    "kcinternal",
+    "helper",
+    "kcutils",
+    "configuration",
+    "node",
+    "typescript"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "",
+    "doc": "",
+    "lint": "",
+    "start": "node lib/index.js",
+    "test": ""
+  },
+  "dependencies": {
+    "@kcexample/tsc": "*"
+  },
+  "devDependencies": {
+    "typescript": "4.4.4"
+  }
+}
