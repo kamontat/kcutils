@@ -304,8 +304,8 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/vim,web,node,linux,macos,windows,typings,intellij+iml,visualstudiocode
 
 graph.pdf
-
 *.stryker-tmp
+.parcel-cache
 
 # report directory from stryker reports
 packages/**/reports

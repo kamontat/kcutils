@@ -2,12 +2,7 @@
   "version": "independent",
   "npmClient": "yarn",
   "packages": [
-    "modules/private/generator",
-
-    "packages/*",
-    "internals/*",
-    "typings/lerna_project",
-    "typings/package_json"
+    "packages/typings/*"
   ],
   "command": {
     "init": {
