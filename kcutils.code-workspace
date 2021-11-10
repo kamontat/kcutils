@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "path": "packages/public"
+    },
+    {
+      "path": "packages/internal"
+    },
+    {
+      "path": "packages/typings"
+    },
+    {
+      "name": "examples/tsc",
+      "path": "packages/examples/tsc"
+    },
+    {
+      "name": "examples/client",
+      "path": "packages/examples/client"
+    },
+    {
+      "name": "root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.packageManager": "yarn"
+  }
+}
