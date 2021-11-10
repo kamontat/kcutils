@@ -1,6 +1,6 @@
 {
-  "name": "@kcexample/tsc",
-  "description": "example project using tsc as compiler",
+  "name": "@kcexample/tsc-typedoc",
+  "description": "example project using typedoc as documentation",
   "version": "0.0.1",
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/examples/tsc"
+    "directory": "packages/examples/tsc-typedoc"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -33,15 +33,13 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf reports lib coverage junit.xml temp dist",
-    "doc": "",
+    "doc": "typedoc .",
     "lint": "eslint .",
     "start": "node lib/index.js",
     "test": "jest",
     "test:mutator": "stryker run"
   },
   "devDependencies": {
-    "@microsoft/api-documenter": "7.13.68",
-    "@microsoft/api-extractor": "7.18.19",
     "@stryker-mutator/core": "5.4.1",
     "@stryker-mutator/jest-runner": "5.4.1",
     "@types/jest": "27.0.2",

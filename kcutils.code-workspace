@@ -14,6 +14,10 @@
       "path": "packages/examples/tsc"
     },
     {
+      "name": "examples/tsc-typedoc",
+      "path": "packages/examples/tsc-typedoc"
+    },
+    {
       "name": "examples/client",
       "path": "packages/examples/client"
     },
