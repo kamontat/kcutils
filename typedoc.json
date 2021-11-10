@@ -1,0 +1,23 @@
+{
+  "entryPointStrategy": "packages",
+  "plugin": [],
+  "logger": "console",
+  "logLevel": "Verbose",
+  "exclude": [],
+  "excludeExternals": false,
+  "excludeNotDocumented": false,
+  "excludeInternal": false,
+  "excludePrivate": false,
+  "excludeProtected": false,
+  "disableSources": false,
+  "preserveWatchOutput": false,
+  "includeVersion": false,
+  "theme": "default",
+  "lightHighlightTheme": "light-plus",
+  "darkHighlightTheme": "dark-plus",
+  "gaID": "",
+  "gaSite": "auto",
+  "githubPages": true,
+  "cleanOutputDir": true,
+  "readme": "README.md"
+}
