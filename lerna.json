@@ -2,7 +2,8 @@
   "version": "independent",
   "npmClient": "yarn",
   "packages": [
-    "packages/typings/*"
+    "packages/typings/*",
+    "packages/examples/*"
   ],
   "command": {
     "init": {
