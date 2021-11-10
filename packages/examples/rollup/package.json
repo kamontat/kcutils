@@ -1,6 +1,6 @@
 {
-  "name": "@kcexample/tsc",
-  "description": "example project using tsc as compiler",
+  "name": "@kcexample/rollup",
+  "description": "example project using rollup as compiler",
   "version": "0.0.1",
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/examples/tsc"
+    "directory": "packages/examples/rollup"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -26,21 +26,21 @@
     "typescript"
   ],
   "files": [
-    "lib/**/*.js",
-    "lib/**/*.d.ts",
-    "package.json",
+    "CHANGELOG.md",
     "README.md",
-    "CHANGELOG.md"
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
   ],
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo",
+    "build": "rollup --config",
+    "clean": "rimraf reports lib coverage junit.xml temp dist",
     "lint": "eslint .",
     "start": "node lib/index.js",
     "test": "jest",
     "test:mutator": "stryker run"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "8.3.0",
     "@stryker-mutator/core": "5.4.1",
     "@stryker-mutator/jest-runner": "5.4.1",
     "@types/jest": "27.0.2",
@@ -51,6 +51,7 @@
     "eslint-plugin-tsdoc": "0.2.14",
     "jest": "27.3.1",
     "jest-junit": "13.0.0",
+    "rollup": "2.59.0",
     "ts-jest": "27.0.7",
     "typescript": "4.4.4"
   }

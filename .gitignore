@@ -306,6 +306,7 @@ $RECYCLE.BIN/
 graph.pdf
 *.stryker-tmp
 .parcel-cache
+.rollup.cache
 
 # report directory from stryker reports
 packages/**/reports

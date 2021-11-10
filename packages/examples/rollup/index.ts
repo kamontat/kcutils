@@ -30,7 +30,7 @@ class Example {
   }
 
   calculate(): string {
-    const constant = 18;
+    const constant = 12;
     return this._name + constant;
   }
 

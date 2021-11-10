@@ -4,7 +4,12 @@
       "path": "packages/public"
     },
     {
-      "path": "packages/internal"
+      "name": "internal/runners",
+      "path": "packages/internal/runners"
+    },
+    {
+      "name": "internal/commandline",
+      "path": "packages/internal/commandline"
     },
     {
       "path": "packages/typings"
@@ -14,8 +19,12 @@
       "path": "packages/examples/tsc"
     },
     {
-      "name": "examples/tsc-typedoc",
-      "path": "packages/examples/tsc-typedoc"
+      "name": "examples/parcel",
+      "path": "packages/examples/parcel"
+    },
+    {
+      "name": "examples/rollup",
+      "path": "packages/examples/rollup"
     },
     {
       "name": "examples/client",

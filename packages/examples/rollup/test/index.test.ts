@@ -1,4 +1,4 @@
-import { Example } from "../index";
+import { Example } from "..";
 
 describe("default", () => {
   test("hello world", () => {

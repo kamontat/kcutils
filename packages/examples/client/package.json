@@ -39,7 +39,9 @@
     "test": ""
   },
   "dependencies": {
-    "@kcexample/tsc": "*"
+    "@kcexample/tsc": "*",
+    "@kcexample/parcel": "*",
+    "@kcexample/rollup": "*"
   },
   "devDependencies": {
     "typescript": "4.4.4"

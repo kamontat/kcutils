@@ -29,6 +29,11 @@ class Example {
     this._name = name;
   }
 
+  calculate(): string {
+    const constant = 12;
+    return this._name + constant;
+  }
+
   toString(): string {
     return this._name;
   }
