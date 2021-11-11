@@ -1,15 +1,14 @@
 {
-  "name": "@kcexample/tsc",
-  "description": "example project using tsc as compiler",
-  "version": "0.0.1",
-  "private": true,
+  "name": "@kcinternal/commandline",
+  "description": "simplify commandline for kcmono repositories",
+  "version": "0.20.1",
   "license": "SEE LICENSE IN LICENSE",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/examples/tsc"
+    "directory": "packages/internal/runners"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -23,10 +22,6 @@
     "example"
   ],
   "files": [
-    "lib/index.js",
-    "lib/index.js.map",
-    "lib/index.d.ts",
-    "lib/index.d.ts.map",
     "lib/src/**/*.js",
     "lib/src/**/*.js.map",
     "lib/src/**/*.d.ts",
@@ -35,19 +30,23 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "bin": {
+    "kcmono": "bin/core.js"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo",
     "lint": "eslint .",
-    "start": "node lib/index.js",
     "test": "jest",
     "test:mutator": "stryker run"
   },
   "devDependencies": {
+    "@kcinternal/runners": "*",
     "@stryker-mutator/core": "5.4.1",
     "@stryker-mutator/jest-runner": "5.4.1",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
+    "@types/package_json": "0.2.3",
     "@typescript-eslint/eslint-plugin": "5.3.1",
     "@typescript-eslint/parser": "5.3.1",
     "eslint": "8.2.0",

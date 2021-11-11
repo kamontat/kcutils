@@ -1,3 +1,5 @@
+import { Extra } from "./src/extra";
+
 /**
  * @public
  * Returns the average of two numbers.
@@ -31,7 +33,7 @@ class Example {
 
   calculate(): string {
     const constant = 18;
-    return this._name + constant;
+    return Extra.NEW + this._name + constant;
   }
 
   toString(): string {

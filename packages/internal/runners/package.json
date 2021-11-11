@@ -1,15 +1,14 @@
 {
-  "name": "@kcexample/tsc",
-  "description": "example project using tsc as compiler",
+  "name": "@kcinternal/runners",
+  "description": "runner apis for chain (with commandline included)",
   "version": "0.0.1",
-  "private": true,
   "license": "SEE LICENSE IN LICENSE",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/examples/tsc"
+    "directory": "packages/internal/runners"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -39,7 +38,6 @@
     "build": "tsc",
     "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo",
     "lint": "eslint .",
-    "start": "node lib/index.js",
     "test": "jest",
     "test:mutator": "stryker run"
   },
@@ -48,6 +46,7 @@
     "@stryker-mutator/jest-runner": "5.4.1",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
+    "@types/package_json": "0.2.3",
     "@typescript-eslint/eslint-plugin": "5.3.1",
     "@typescript-eslint/parser": "5.3.1",
     "eslint": "8.2.0",
