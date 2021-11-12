@@ -20,8 +20,8 @@
 #/ -----------------------------------
 
 export COMMAND_NAME="kcutils-commander"
-export COMMAND_VERSION="0.1.0"
-export COMMAND_LAST_UPDATED="11 Dec 2020"
+export COMMAND_VERSION="0.2.0"
+export COMMAND_LAST_UPDATED="12 Nov 2021"
 
 export TMP_DIRECTORY="$PWD"
 cd "$(dirname "$0")/.." || exit 2
@@ -31,15 +31,15 @@ export SCRIPT_PATH="${ROOT_PATH}/scripts"
 export COMMAND_PATH="${SCRIPT_PATH}/commands"
 export COMMON_PATH="${SCRIPT_PATH}/utils"
 
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 source "$COMMON_PATH/base.sh" || exit 3
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 source "$COMMON_PATH/yarn.sh" || exit 3
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 source "$COMMON_PATH/node-modules.sh" || exit 3
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 source "$COMMON_PATH/lerna.sh" || exit 3
-# shellcheck disable=SC1090
+# shellcheck disable=SC1091
 source "$COMMON_PATH/location.sh" || exit 3
 
 command_rawpath="$(

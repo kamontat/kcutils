@@ -31,6 +31,10 @@
       "path": "packages/examples/client"
     },
     {
+      "name": "scripts",
+      "path": "scripts"
+    },
+    {
       "name": "root",
       "path": "."
     }

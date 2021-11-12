@@ -9,13 +9,13 @@
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
 echo "
-# Help for Modules command
+# Help for Multiple Packages command
 
-1. bootstrap  - bootstrap all module together, same as lerna bootstrap
-2. test       - run test on every module and combine the result
-3. lint       - run lint on each module via 'lerna run' command
+1. bootstrap  - bootstrap all package together, same as lerna bootstrap
+2. test       - run test on every package and combine the result
+3. lint       - run lint on each package via 'lerna run' command
 4. publish    - publish latest tag to npm registry using lerna publish command
 5. version    - create git tag and Github release
-6. updated    - list all changed modules
-7. <yarn_cmd> - run yarn command on each module by 'lerna run' command
+6. updated    - list all changed packages
+7. <yarn_cmd> - run yarn command on each package by 'lerna run' command
 "

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "general": "scripts/command.sh general",
-    "modules": "scripts/command.sh modules",
-    "module": "scripts/command.sh module"
+    "packages": "scripts/command.sh packages",
+    "package": "scripts/command.sh package"
   },
   "devDependencies": {
     "gh-pages": "3.1.0",
