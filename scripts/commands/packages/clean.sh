@@ -10,10 +10,8 @@
 
 on_root_directory
 
-is_all="$(test -n "$1")"
-
 args=()
-if $is_all; then
+if test -n "$1"; then
   args+=("--" "--all")
 fi
 
@@ -22,7 +20,7 @@ run_xlerna_run "clean" "${args[@]}"
 run_xlerna_run "clean:after" "${args[@]}"
 
 cleanup_paths=("*.tsbuildinfo" "lib" "lerna-debug.log" "junit.xml" "reports" "coverage")
-if $is_all; then
+if test -n "$1"; then
   cleanup_paths+=("node_modules" "yarn.lock")
 fi
 
