@@ -60,10 +60,8 @@ source "$COMMON_PATH/alias.sh" || exit 3
 # Setup
 ########################################
 
-command_rawpath="$(
-  IFS="/"
-  echo "$*"
-)"
+command_rawpath="$(resolve_alias "$@")"
+log_debug "Path" "final command path: ${command_rawpath}"
 
 is_ci && log_warn "Message" "You running in CI mode"
 is_dry && log_warn "Message" "You running in Dry mode"

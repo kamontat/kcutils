@@ -54,8 +54,6 @@ find_command_file() {
   last="$(dirname "$last")"               # /a/b
 
   while [[ "$next" != "scripts" ]]; do
-    next="$(resolve_alias "$next")"       # find to find alias of next position
-    current="$(resolve_alias "$current")" # find to find alias of current position
     command_path="$last/$next/$current.sh"
 
     log_debug "Loop" "last directory    : $last"
@@ -143,4 +141,6 @@ export cleanup
 cleanup() {
   unset COMMAND_NAME COMMAND_VERSION COMMAND_LAST_UPDATED
   unset TMP_DIRECTORY ROOT_PATH SCRIPT_PATH CONSTANTS_PATH COMMAND_PATH COMMON_PATH
+
+  __clean_alias_mapper
 }

@@ -13,20 +13,66 @@
 #/ Since:        21/11/2021
 #/ -----------------------------------
 
-export resolve_alias
-resolve_alias() {
-  local key value input="$1"
+__build_alias_mapper() {
+  local size="${#COMMAND_ALIAS[@]}"
+  log_debug "Alias" "building alias mapper size: '$size'"
 
-  log_debug "Alias" "searching alias data for '$input'"
   for i in "${COMMAND_ALIAS[@]}"; do
     key="${i%%=*}"
     value="${i##*=}"
-    if [[ "$input" == "$key" ]]; then
-      log_debug "found alias $key => $value"
-      echo "$value"
-      return 0
+    eval "export __command_alias__${key//@/asign__}=\"$value\""
+  done
+}
+
+__clean_alias_mapper() {
+  local size="${#COMMAND_ALIAS[@]}"
+  log_debug "Alias" "removing alias mapper size: '$size'"
+
+  for i in "${COMMAND_ALIAS[@]}"; do
+    key="${i%%=*}"
+    eval "unset __command_alias__${key//@/asign__}"
+  done
+}
+
+__resolve_alias() {
+  local value input="$1"
+
+  log_debug "Alias" "searching alias data for '$input'"
+  eval "value=\"\${__command_alias__${input//@/asign__}}\""
+
+  if test -n "$value"; then
+    log_debug "found alias $input => $value"
+    echo "$value"
+  else
+    echo "$input"
+  fi
+
+  ## manually searching
+  # for i in "${COMMAND_ALIAS[@]}"; do
+  #   key="${i%%=*}"
+  #   value="${i##*=}"
+  #   if [[ "$input" == "$key" ]]; then
+  #     log_debug "found alias $key => $value"
+  #     echo "$value"
+  #     return 0
+  #   fi
+  # done
+
+  # echo "$input"
+}
+
+export resolve_alias
+resolve_alias() {
+  local output="" cmd
+
+  __build_alias_mapper
+  for input in "$@"; do
+    cmd=""
+    if test -n "$output"; then
+      cmd="/"
     fi
+    output="$output$cmd$(__resolve_alias "$input")"
   done
 
-  echo "$input"
+  echo "$output"
 }
