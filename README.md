@@ -4,23 +4,28 @@
 | ------------------------ | -------------------------- | ------------------------- | ------------------- |
 | [![quality][q_img]][sdb] | [![violation][sv_img]][sv] | [![coverage][sc_img]][sc] | [![test][t_img]][t] |
 
-This project adapted concept from mono-repository which contains utilities for kcmono projects. Some of the project here adapted from very old libraries that didn't maintain anymore.
+This project adapted concept from mono-repository which contains all utilities for my personal projects.
 
-- [For End User](#for-end-user)
-  - [@kcinternal](#kcinternal)
-  - [@kcutils](#kcutils)
-  - [Private](#private)
-- [For Contribution User](#for-contribution-user)
-- [For License](#for-license)
+- [Basic concept](#basic-concept)
+- [User (old)](#user-old)
+  - [@kcinternal (old)](#kcinternal-old)
+  - [@kcutils (old)](#kcutils-old)
+  - [Private (old)](#private-old)
+- [Contributor](#contributor)
+- [License](#license)
 
-## For End User
+## Basic concept
+
+This repository created using lerna for manage mono-repository and `typescript` as programming language as core programming language. We use `tsc` as primary compiler with optional `parcel` or `rollup` can be use on some project as well, `jest` as primary testing tools with `stryker` mutator supported, `typedoc` as documentation website generator, and `eslint` as primary linter.
+
+## User (old)
 
 This is a utilties project for another typescript repositories.
 This include compiler for `typescript`, testing framework like `jest`,
 frontend like `react` and code style / linter as `eslint`.
 I separate the modules into 2 namespace `@kcinternal` and `@kcutils` (+ `private`).
 
-### @kcinternal
+### @kcinternal (old)
 
 This namespace is for project which use internally, all of them should install as devDependencies in package.json.
 
@@ -28,7 +33,7 @@ This namespace is for project which use internally, all of them should install a
 - [@kcinternal/config][kcinternal_config_gh]   - contains useful configuration for commandline and more
 - [@kcinternal/graph][kcinternal_graph_gh]     - generates dependencies graph for kcmono project
 
-### @kcutils
+### @kcutils (old)
 
 This is a utilities projects for generic usecase
 
@@ -42,20 +47,21 @@ This is a utilities projects for generic usecase
 - [@kcutils/gatsby-config][kcutils_gsb_conf_gh]   - Gatsby Configuration Builder for Typescript project
 - [@kcutils/random][kcutils_random_gh]            - Pseudorandom number generators
 
-### Private
+### Private (old)
 
 This is a private project which never publish to npm
 
 - [@kcutils/example][kcutils_eg_gh]           - Example project for give idea how to create new module in this repository
 - [@kcutils/graph][kcutils_graph_gh]           - Application project for generate dependencies for this repository
 
-## For Contribution User
+## Contributor
 
 I have [CONTRIBUTING.md](./docs/CONTRIBUTING.md) guideline for setup, and maintain project.
 
-## For License
+## License
 
-This project hold CC-BY-SA 4.0 more information found [here](./LICENSE)
+This repository hold CC-BY-SA 4.0 License. On each package might contains different license. 
+More information found [here](./LICENSE)
 
 <!-- BANNER SECTION -->
 
