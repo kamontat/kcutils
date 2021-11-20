@@ -19,9 +19,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
           cache: yarn
       - run: yarn install
-      - run: yarn modules bootstrap
-      - run: yarn modules lint
-      - run: yarn modules test
+      - run: yarn packages bootstrap
+      - run: yarn packages lint
+      - run: yarn packages test
