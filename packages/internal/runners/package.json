@@ -2,9 +2,9 @@
   "name": "@kcinternal/runners",
   "description": "runner apis for chain (with commandline included)",
   "version": "0.0.1",
-  "license": "SEE LICENSE IN LICENSE",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
@@ -18,39 +18,36 @@
   "keywords": [
     "kcmono",
     "typescript",
-    "node",
-    "example"
+    "node"
   ],
   "files": [
-    "lib/index.js",
-    "lib/index.js.map",
-    "lib/index.d.ts",
-    "lib/index.d.ts.map",
-    "lib/src/**/*.js",
-    "lib/src/**/*.js.map",
-    "lib/src/**/*.d.ts",
-    "lib/src/**/*.d.ts.map",
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
     "package.json",
     "README.md",
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.prod.json",
     "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo",
     "lint": "eslint .",
     "test": "jest",
     "test:mutator": "stryker run"
   },
+  "dependencies": {
+    "minimist": "1.2.5"
+  },
   "devDependencies": {
+    "@kcinternal/configuration": "0.9.0",
+    "@kcinternal/eslint-config": "0.0.1",
     "@stryker-mutator/core": "5.4.1",
     "@stryker-mutator/jest-runner": "5.4.1",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@types/package_json": "0.2.3",
-    "@typescript-eslint/eslint-plugin": "5.3.1",
-    "@typescript-eslint/parser": "5.3.1",
     "eslint": "8.2.0",
-    "eslint-plugin-tsdoc": "0.2.14",
     "jest": "27.3.1",
     "jest-junit": "13.0.0",
     "ts-jest": "27.0.7",
