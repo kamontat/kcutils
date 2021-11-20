@@ -54,6 +54,8 @@ find_command_file() {
   last="$(dirname "$last")"               # /a/b
 
   while [[ "$next" != "scripts" ]]; do
+    next="$(resolve_alias "$next")"       # find to find alias of next position
+    current="$(resolve_alias "$current")" # find to find alias of current position
     command_path="$last/$next/$current.sh"
 
     log_debug "Loop" "last directory    : $last"
@@ -83,8 +85,23 @@ find_command_file() {
     arguments=("$argument" "${arguments[@]}")
   done
 
-  # just need to mark as error, real code number is in caller
+  # just need to mark as error, caller will decide actual exit code
   return 1
+}
+
+export source_command_file
+source_command_file() {
+  local command_path="$1"
+  shift 1
+  local command_arguments=("$@")
+  # to remove all argument from root command
+  shift "$#"
+
+  log_debug "Initial" "Found running script at $command_path"
+  log_debug "Initial" "$" "source" "$command_path" "${command_arguments[@]}"
+
+  # shellcheck disable=SC1090
+  source "$command_path" "${command_arguments[@]}"
 }
 
 log() {
@@ -120,4 +137,10 @@ log_error() {
 export log_warn
 log_warn() {
   log "warn" "$@"
+}
+
+export cleanup
+cleanup() {
+  unset COMMAND_NAME COMMAND_VERSION COMMAND_LAST_UPDATED
+  unset TMP_DIRECTORY ROOT_PATH SCRIPT_PATH CONSTANTS_PATH COMMAND_PATH COMMON_PATH
 }

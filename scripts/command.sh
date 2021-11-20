@@ -20,50 +20,57 @@
 #/ -----------------------------------
 
 export COMMAND_NAME="kcutils-commander"
-export COMMAND_VERSION="0.2.0"
-export COMMAND_LAST_UPDATED="12 Nov 2021"
+export COMMAND_VERSION="0.2.1"
+export COMMAND_LAST_UPDATED="21 Nov 2021"
 
 export TMP_DIRECTORY="$PWD"
 cd "$(dirname "$0")/.." || exit 2
 
 export ROOT_PATH="$PWD"
 export SCRIPT_PATH="${ROOT_PATH}/scripts"
+export CONSTANTS_PATH="${SCRIPT_PATH}/constants"
 export COMMAND_PATH="${SCRIPT_PATH}/commands"
 export COMMON_PATH="${SCRIPT_PATH}/utils"
 
+########################################
+# Download constants
+########################################
+
 # shellcheck disable=SC1091
-source "$COMMON_PATH/base.sh" || exit 3
+source "$CONSTANTS_PATH/alias.sh" || exit 3
+
+########################################
+# Download libraries
+########################################
+
 # shellcheck disable=SC1091
-source "$COMMON_PATH/yarn.sh" || exit 3
+source "$COMMON_PATH/base.sh" || exit 4
 # shellcheck disable=SC1091
-source "$COMMON_PATH/node-modules.sh" || exit 3
+source "$COMMON_PATH/yarn.sh" || exit 4
 # shellcheck disable=SC1091
-source "$COMMON_PATH/lerna.sh" || exit 3
+source "$COMMON_PATH/node-modules.sh" || exit 4
 # shellcheck disable=SC1091
-source "$COMMON_PATH/location.sh" || exit 3
+source "$COMMON_PATH/lerna.sh" || exit 4
+# shellcheck disable=SC1091
+source "$COMMON_PATH/location.sh" || exit 4
+# shellcheck disable=SC1091
+source "$COMMON_PATH/alias.sh" || exit 3
+
+########################################
+# Setup
+########################################
 
 command_rawpath="$(
   IFS="/"
   echo "$*"
 )"
 
-export source_command_file
-source_command_file() {
-  local command_path="$1"
-  shift 1
-  local command_arguments=("$@")
-  # to remove all argument from root command
-  shift "$#"
-
-  log_debug "Initial" "Found running script at $command_path"
-  log_debug "Initial" "$" "source" "$command_path" "${command_arguments[@]}"
-
-  # shellcheck disable=SC1090
-  source "$command_path" "${command_arguments[@]}"
-}
-
 is_ci && log_warn "Message" "You running in CI mode"
 is_dry && log_warn "Message" "You running in Dry mode"
+
+########################################
+# Core execution
+########################################
 
 if ! find_command_file source_command_file "${COMMAND_PATH}/${command_rawpath}"; then
   exitcode="5"
@@ -72,4 +79,9 @@ if ! find_command_file source_command_file "${COMMAND_PATH}/${command_rawpath}";
   exit "$exitcode"
 fi
 
+########################################
+# Cleanup
+########################################
+
 go_back
+cleanup
