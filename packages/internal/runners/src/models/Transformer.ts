@@ -1,18 +1,7 @@
 import { Context } from "../contexts";
 
-export type ProcessorOption<V> = {
-  input: V;
+export type Transformer<I, O, P = unknown> = {
+  previous?: Transformer<P, I>;
+  name: string;
+  transform: (input: I, context: Context) => O;
 };
-
-export abstract class Transformer<I, O> {
-  abstract readonly _name: string;
-  protected readonly _input: I;
-  protected readonly _context: Context;
-
-  constructor(input: I, context: Context) {
-    this._input = input;
-    this._context = context;
-  }
-
-  abstract transform(): O;
-}

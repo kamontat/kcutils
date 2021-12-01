@@ -4,10 +4,16 @@ import { format } from "util";
 import { EnvContext } from "./EnvContext";
 
 export class LogContext {
-  constructor(private _envContext: EnvContext) {}
+  private _debugMode: boolean;
+  private _ciMode: boolean;
+
+  constructor(envContext: EnvContext) {
+    this._debugMode = envContext.isDebug(true);
+    this._ciMode = envContext.isCI(true);
+  }
 
   private log(key: string, title: string, message?: any) {
-    if (!this.isDebug() && !this._envContext.isCI(true)) return;
+    if (!this._debugMode && !this._ciMode) return;
 
     if (message === undefined || message === null || message === "")
       console.log(format("[%s] %s", key, title));
@@ -20,8 +26,16 @@ export class LogContext {
     }
   }
 
+  setDebug(toggle: boolean) {
+    this._debugMode = toggle;
+  }
+
+  setCI(toggle: boolean) {
+    this._ciMode = toggle;
+  }
+
   isDebug(): boolean {
-    return this._envContext.is("DEBUG", true);
+    return this._debugMode;
   }
 
   /**

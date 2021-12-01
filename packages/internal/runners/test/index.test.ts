@@ -1,49 +1,50 @@
-import { Chain } from "../src/models/Chain";
-import { Transformer } from "../src/models/Transformer";
-
-class Option extends Transformer<string[], Record<string, string>> {
-  readonly _name: string = "option";
-
-  transform(): Record<string, string> {
-    return {
-      value: this._input[0],
-      next: "true",
-      context: this._context.general.getOrElse(this._input[10], "unknown"),
-    };
-  }
-}
-
-class Action extends Transformer<Record<string, string>, number> {
-  readonly _name: string = "action";
-
-  transform(): number {
-    return Object.keys(this._input).length;
-  }
-}
-
-class Commandline extends Transformer<number, boolean> {
-  readonly _name: string = "commandline";
-
-  transform(): boolean {
-    const argument = this._context.history.getInput("option");
-    console.log(argument);
-    return this._input === 3;
-  }
-}
+import { Commandline, Option, OptionBuilder, Chain, ActionBuilder } from "..";
 
 describe("test", () => {
-  test("example", () => {
+  test("example #1", () => {
     console.log(
-      Chain.with(Option)
-        .with(Action)
-        .with(Commandline)
-        .withFn({
-          name: "custom",
-          apply: (input, context) => {
-            return context.history.getOutput<number>("test");
+      Chain.with<string[], number>({
+        name: "option",
+        transform: (data) => {
+          return data.length;
+        },
+      })
+        .with({
+          name: "action",
+          transform: (data) => {
+            return data.toFixed(2);
           },
         })
-        .start(process.argv)
+        .with({
+          name: "test",
+          transform: (data, context) => {
+            return data === context.history.getOutput<string>("action");
+          },
+        })
+        .start(["1", "2"])
     );
+  });
+
+  test("example #2", () => {
+    const option = OptionBuilder.build({
+      test: {
+        defaultValue: false,
+        fn: Option.toBoolean,
+      },
+      hello: {
+        defaultValue: 0,
+        fn: Option.toInt,
+      },
+    }).build();
+
+    const action = ActionBuilder.build(option, (_option, _context) => {
+      const base = "yarn";
+      const args = [base];
+      args.push(..._option.raw);
+
+      return args;
+    }).build();
+
+    Commandline.build(action).start(["test", "--dry"]);
   });
 });

@@ -1,12 +1,21 @@
 export class GeneralContext {
   /**
+   * check data for null/undefined value
+   * @param data data
+   * @returns true if data exist
+   */
+  exist<T>(data: T | undefined | null): data is T {
+    return data !== undefined && data !== null;
+  }
+
+  /**
    * get data only when data is not null, undefined or empty string
    *
    * @param data data
    * @param def else data
    */
   getOrElse<T>(data: T | undefined | null, def: T): T {
-    if (data === undefined || data === null) return def;
+    if (!this.exist(data)) return def;
     else if (typeof data === "string" && data === "") return def;
     else return data;
   }

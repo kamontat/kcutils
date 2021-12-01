@@ -19,9 +19,13 @@ export class EnvContext {
   }
 
   regex(name: string, regex: RegExp): boolean {
-    if (this.is(name, true)) return false;
+    if (this.is(name, false)) return false;
     const env = this.get(name);
     return regex.test(env);
+  }
+
+  isDebug(checking: boolean | string = "true"): boolean {
+    return this.is("DEBUG", checking);
   }
 
   isCI(checking: boolean | string = "true"): boolean {
@@ -29,10 +33,12 @@ export class EnvContext {
   }
 
   isDev(key: string = "ENV"): boolean {
+    // either 'dev', 'develop', 'development'
     return this.regex(key, /d[(ev)(evelop)(evelopment)]/);
   }
 
   isProd(key: string = "ENV"): boolean {
+    // either 'prod', 'product', 'production'
     return this.regex(key, /p[(rod)(roduct)(roduction)]/);
   }
 }

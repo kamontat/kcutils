@@ -1,5 +1,5 @@
 {
   "extends": "@kcinternal/configuration/includes/ts/default.json",
   "include": ["**/*.ts"],
-  "exclude": ["lib"]
+  "exclude": ["lib", "test"]
 }
