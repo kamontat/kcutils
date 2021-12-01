@@ -16,7 +16,8 @@ export interface CommandlineOption {
 
 export class Commandline<O extends CommandlineOption, H extends string>
   extends DataChain<O, string[], ChildProcess, H>
-  implements Command<ChildProcess> {
+  implements Command<ChildProcess>
+{
   constructor(root: DataProcess<Promise<O>, Promise<string[]>, H>) {
     super(root, async ({ data, helper }) => {
       const options = await Promise.resolve(this.previous.getData());
@@ -36,7 +37,7 @@ export class Commandline<O extends CommandlineOption, H extends string>
 
   private exec(helper: Helper<H>, command: string, args: string[]) {
     const proc = spawn(command, args, { stdio: "inherit" });
-    proc.on("error", err => {
+    proc.on("error", (err) => {
       if (err) {
         if (err.message.includes("spawn exit ENOENT")) return;
       }
