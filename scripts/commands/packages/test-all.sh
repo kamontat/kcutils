@@ -12,6 +12,7 @@ on_root_directory
 
 args=()
 
+# @deprecated - we testing each package individually instead
 is_ci && args+=("--ci" "--runInBand")
 run_node_module_bin "jest" "${args[@]}"
 
