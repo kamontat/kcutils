@@ -1,11 +1,12 @@
 {
   "folders": [
     {
-      "path": "packages/public"
-    },
-    {
       "name": "internal/runners",
       "path": "packages/internal/runners"
+    },
+    {
+      "name": "internal/configuration",
+      "path": "packages/internal/configuration"
     },
     {
       "name": "internal/commandline",
