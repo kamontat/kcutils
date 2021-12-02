@@ -47,7 +47,6 @@ jobs:
       - name: Bootstrap package together
         run: yarn packages bootstrap
       - name: Linter and check style
-        if: ${{ matrix.node-version == '16.x' }}
         run: yarn packages lint
       - name: Testing unittest
         run: yarn packages test
