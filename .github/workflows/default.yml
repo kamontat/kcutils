@@ -5,18 +5,14 @@ on:
   pull_request:
 
 jobs:
-  build:
+  # this should contains only unit testing on several node version to ensure backward compatible
+  test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+        node-version: [12, 14, 17]
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -28,15 +24,39 @@ jobs:
         run: yarn install
       - name: Bootstrap package together
         run: yarn packages bootstrap
+      - name: Testing unittest
+        run: yarn packages test
+
+  # run buildflow on latest node lts version only
+  # this should contains whole flow of lint, test, build, and deploy package
+  buildflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
+          cache: yarn
+          cache-dependency-path: "**/yarn.lock"
+      - name: Install dependencies
+        run: yarn install
+      - name: Bootstrap package together
+        run: yarn packages bootstrap
       - name: Linter and check style
+        if: ${{ matrix.node-version == '16.x' }}
         run: yarn packages lint
       - name: Testing unittest
         run: yarn packages test
       - name: Testing mutator test
         run: yarn packages test:mutator
+        env:
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
       - name: Scan sourcecode
         uses: SonarSource/sonarcloud-github-action@master
-        if: ${{ matrix.node-version == '16.x' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
