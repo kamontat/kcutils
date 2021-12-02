@@ -35,7 +35,15 @@ __clean_alias_mapper() {
 }
 
 __resolve_alias() {
-  local value input="$1"
+  local value="" input="$1"
+  if [[ "$input" =~ "-" ]]; then
+    log_debug "Alias" "disabled searching '$input' because dash is found"
+
+    # `-`` is not support in alias
+    # To avoid unintent action, I will skip resolving if input found dash
+    echo "$input"
+    return
+  fi
 
   log_debug "Alias" "searching alias data for '$input'"
   eval "value=\"\${__command_alias__${input//@/asign__}}\""
