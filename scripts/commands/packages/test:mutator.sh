@@ -10,10 +10,9 @@
 
 on_root_directory
 
-args=()
+args=("test")
 
-is_ci && args+=("--ci" "--runInBand")
-
-# run yarn test on every module
-run_xlerna_run "test" -- "${args[@]}" "$@" &&
+is_ci && args+=("--logLevel" "debug" "--concurrency" "1")
+# run yarn test:mutator on every module
+run_xlerna_run "test:mutator" -- "${args[@]}" "$@" &&
   go_back

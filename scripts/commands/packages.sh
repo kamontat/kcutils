@@ -10,8 +10,6 @@
 
 log_warn "Modules" "You using default command, which is 'lerna run' execution"
 
-on_root_directory
-
-run_xlerna_run "$@"
-
-go_back
+on_root_directory &&
+  run_xlerna_run "$@" &&
+  go_back
