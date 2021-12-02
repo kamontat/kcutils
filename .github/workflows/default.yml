@@ -15,6 +15,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -22,7 +24,18 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           cache: yarn
           cache-dependency-path: "**/yarn.lock"
-      - run: yarn install
-      - run: yarn packages bootstrap
-      - run: yarn packages lint
-      - run: yarn packages test
+      - name: Install dependencies
+        run: yarn install
+      - name: Bootstrap package together
+        run: yarn packages bootstrap
+      - name: Linter and check style
+        run: yarn packages lint
+      - name: Testing unittest
+        run: yarn packages test
+      - name: Testing mutator test
+        run: yarn packages test:mutator
+      - name: Scan sourcecode
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
