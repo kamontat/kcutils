@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.prod.json",
-    "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo",
+    "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo .stryker-tmp",
     "lint": "eslint .",
     "test": "jest",
     "test:mutator": "stryker run"
@@ -44,6 +44,7 @@
     "@kcinternal/eslint-config": "0.0.1",
     "@stryker-mutator/core": "5.4.1",
     "@stryker-mutator/jest-runner": "5.4.1",
+    "@stryker-mutator/typescript-checker": "5.5.0",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@types/package_json": "0.2.3",
