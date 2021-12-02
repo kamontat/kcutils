@@ -36,6 +36,7 @@ jobs:
         run: yarn packages test:mutator
       - name: Scan sourcecode
         uses: SonarSource/sonarcloud-github-action@master
+        if: ${{ matrix.node-version == '16.x' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
