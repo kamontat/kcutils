@@ -1,5 +1,8 @@
 {
   "extends": "@kcinternal/configuration/includes/ts/default.json",
   "include": ["**/*.ts"],
-  "exclude": ["lib", "test"]
+  "exclude": ["lib", "test"],
+  "compilerOptions": {
+    "outDir": "lib"
+  }
 }
