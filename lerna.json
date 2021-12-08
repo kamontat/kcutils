@@ -2,9 +2,11 @@
   "version": "independent",
   "npmClient": "yarn",
   "packages": [
-    "packages/internal/*",
+    "packages/examples/*",
     "packages/typings/*",
-    "packages/examples/*"
+    "packages/configs/*",
+    "packages/internal/*",
+    "packages/public/*"
   ],
   "command": {
     "init": {
