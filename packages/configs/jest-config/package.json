@@ -1,0 +1,34 @@
+{
+  "name": "@kcconfig/jest-config",
+  "description": "personal jest configuration",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/configs/jest-config"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "kcmono",
+    "typescript",
+    "config"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "README.md",
+    "includes/*.json",
+    "*.js"
+  ],
+  "dependencies": {
+    "ts-jest": ">= 27"
+  }
+}

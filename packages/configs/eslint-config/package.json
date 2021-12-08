@@ -1,5 +1,5 @@
 {
-  "name": "@kcinternal/eslint-config",
+  "name": "@kcconfig/eslint-config",
   "description": "personal eslint configuration",
   "version": "0.0.1",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/internal/eslint-config"
+    "directory": "packages/configs/eslint-config"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -25,6 +25,7 @@
   "files": [
     "CHANGELOG.md",
     "README.md",
+    "includes/*.json",
     "*.js"
   ],
   "dependencies": {
