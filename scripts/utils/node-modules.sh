@@ -20,6 +20,8 @@ run_node_module_bin() {
   local command_args=("$@")
   local command_path="${ROOT_PATH}/node_modules/.bin/${command_name}"
 
+  log_warn "deprecated" "should not use this, please use run_yarn() instead"
+
   log_debug "${command_name}" "$" "${command_path}" "${command_args[*]}"
   if ! is_dry; then
     if "${command_path}" "${command_args[@]}"; then
