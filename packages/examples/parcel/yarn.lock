@@ -1381,6 +1381,15 @@
     mutation-testing-report-schema "1.7.4"
     tslib "~2.3.0"
 
+"@stryker-mutator/api@5.5.1":
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-5.5.1.tgz#8d33cf3b5c638b42086a0b55e2bcd573ea94d05a"
+  integrity sha512-B7o2wM2IDWT+90sy8ygmB9RjTS+VasN2assqtoiLch6ncYHD5ojtJL9cDKTI7oiZPmJiTO4EkpnJnJhtOFYB4w==
+  dependencies:
+    mutation-testing-metrics "1.7.6"
+    mutation-testing-report-schema "1.7.6"
+    tslib "~2.3.0"
+
 "@stryker-mutator/core@5.4.1":
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/@stryker-mutator/core/-/core-5.4.1.tgz#d504a49193c7d93ca9bdf7a6ad1542262bfbbdd4"
@@ -1442,10 +1451,26 @@
     semver "~7.3.5"
     tslib "~2.3.0"
 
+"@stryker-mutator/typescript-checker@5.5.1":
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript-checker/-/typescript-checker-5.5.1.tgz#057428dcf55cbb631a7889db314a8aed804770f3"
+  integrity sha512-LJPGQxu3mWwkITBQAePNmYccqkPrlsrh8n42QFyP+4n7QTafjRWE/zQcvAf5W8lavdZft75ioCI65D1tJlq+Bg==
+  dependencies:
+    "@stryker-mutator/api" "5.5.1"
+    "@stryker-mutator/util" "5.5.1"
+    semver "~7.3.2"
+
 "@stryker-mutator/util@5.4.1":
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-5.4.1.tgz#211c07bb477a825d86f3767d6b8987ac1800c4de"
   integrity sha512-G0IaLUO15Rk7otvSz8/ayAuUW9AvGRxQZNZnNut44YKR0J1dk3rI1sFhQwaAh3gKFElm6FntToDoChI4eGZElg==
+  dependencies:
+    lodash.flatmap "~4.5.0"
+
+"@stryker-mutator/util@5.5.1":
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-5.5.1.tgz#2e286cd70345e8b54303560081978107ded2deea"
+  integrity sha512-+g1FKS6zFpjidvRMBaqN1Cpjt2BwD5mPrkQ+Ry3cDg7ezZ7Ml3fHS0zrB1cVHfwsp1NWhzvo8FgVDFXD146J/w==
   dependencies:
     lodash.flatmap "~4.5.0"
 
@@ -5024,10 +5049,22 @@ mutation-testing-metrics@1.7.5:
   dependencies:
     mutation-testing-report-schema "1.7.4"
 
+mutation-testing-metrics@1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/mutation-testing-metrics/-/mutation-testing-metrics-1.7.6.tgz#f923f7af2b40e51db05595265938370860466ef0"
+  integrity sha512-jaKkt18XcPfN+YU/yhduxjjiEDykMfOfiw2ZMNMR4jL80rp85lrlGRdb77wx/8XDR9Lhbyt0fBn1AjNWYU2c1A==
+  dependencies:
+    mutation-testing-report-schema "1.7.6"
+
 mutation-testing-report-schema@1.7.4:
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.7.4.tgz#a4049215e64afabc2a498dee40f1b5ae92fbc85d"
   integrity sha512-69CxAaIBprkxvHkZ/1zDJesFOxiXAKUpOeK6xUHAmfqMW3zYfb+nPae40GwTQt9WFFCHj56O6d6GJzR7Qm2ZwQ==
+
+mutation-testing-report-schema@1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.7.6.tgz#05171b8be9ed68d81976fd0857cbeaef3c0c91d6"
+  integrity sha512-tqV1IBkMatB4qljqFnlMV5y8fM48wTGdnZg0wKt3GEfEt77bUHGo3xng4JD8/0TPOg+sYhOt79VyizfZeZD48Q==
 
 mute-stream@0.0.8:
   version "0.0.8"
@@ -6149,7 +6186,7 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-semver@7.x, semver@^7.2.1, semver@^7.3.2, semver@^7.3.5, semver@~7.3.5:
+semver@7.x, semver@^7.2.1, semver@^7.3.2, semver@^7.3.5, semver@~7.3.2, semver@~7.3.5:
   version "7.3.5"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.5.tgz#0b621c879348d8998e4b0e4be94b3f12e6018ef7"
   integrity sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
