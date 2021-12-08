@@ -5,15 +5,8 @@
       "path": "packages/internal/runners"
     },
     {
-      "name": "internal/configuration",
-      "path": "packages/internal/configuration"
-    },
-    {
       "name": "internal/commandline",
       "path": "packages/internal/commandline"
-    },
-    {
-      "path": "packages/typings"
     },
     {
       "name": "examples/tsc",
