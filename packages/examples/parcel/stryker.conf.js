@@ -1,3 +1,3 @@
 const config = require("@kcconfig/stryker-config/utils");
 
-module.exports = config("@kcinternal/runners");
+module.exports = config("@kcexample/parcel");

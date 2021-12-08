@@ -19,9 +19,6 @@ const config = {
       testPathIgnorePatterns: ["/node_modules/", "/lib/", "/coverage/"],
     },
   },
-  dashboard: {
-    module: "@kcinternal/runners",
-  },
 };
 
 module.exports = config;
