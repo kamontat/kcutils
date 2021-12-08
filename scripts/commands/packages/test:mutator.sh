@@ -10,7 +10,7 @@
 
 on_root_directory
 
-args=("test")
+args=()
 
 is_ci && args+=("--logLevel" "debug" "--concurrency" "1")
 # run yarn test:mutator on every module
