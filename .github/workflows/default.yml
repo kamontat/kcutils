@@ -3,6 +3,22 @@ name: Default
 on:
   push:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: manually release packages with type
+        required: false
+        default: live
+        type: choice
+        options:
+          - live
+          - rc
+          - beta
+          - alpha
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   # this should contains only unit testing on several node version to ensure backward compatible
@@ -29,13 +45,13 @@ jobs:
 
   # run buildflow on latest node lts version only
   # this should contains whole flow of lint, test, build, and deploy package
-  buildflow:
+  default:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js v16 (LTS)
         uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -44,13 +60,15 @@ jobs:
           cache-dependency-path: "**/yarn.lock"
       - name: Install dependencies
         run: yarn install
-      - name: Bootstrap package together
+      - name: Bootstrap packages
         run: yarn packages bootstrap
-      - name: Linter and check style
+      - name: Compile and build packages
+        run: yarn packages build
+      - name: Check style
         run: yarn packages lint
-      - name: Testing unittest
+      - name: Run unit test
         run: yarn packages test
-      - name: Testing mutator test
+      - name: Run mutator test
         run: yarn packages test:mutator
         env:
           STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
@@ -59,3 +77,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Check git status
+        run: git status --short
+        if: github.ref_name == 'main' && github.repository == 'kamontat/kcutils'
+      - name: Cleanup all changes
+        run: git checkout .
+        if: github.ref_name == 'main' && github.repository == 'kamontat/kcutils'
