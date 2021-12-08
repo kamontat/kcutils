@@ -9,7 +9,6 @@
   "testPathIgnorePatterns": [
     "/node_modules/",
     "/lib/",
-    "/stryker-tmp/",
     "/.stryker-tmp/",
     "/coverage/"
   ],
