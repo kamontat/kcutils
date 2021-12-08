@@ -42,6 +42,7 @@
     "test:mutator": "stryker run"
   },
   "devDependencies": {
+    "@kcconfig/stryker-config": "0.0.1",
     "@parcel/packager-ts": "2.0.1",
     "@parcel/transformer-typescript-types": "2.0.1",
     "@stryker-mutator/core": "5.4.1",

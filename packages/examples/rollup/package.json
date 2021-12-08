@@ -40,6 +40,7 @@
     "test:mutator": "stryker run"
   },
   "devDependencies": {
+    "@kcconfig/stryker-config": "0.0.1",
     "@rollup/plugin-typescript": "8.3.0",
     "@stryker-mutator/core": "5.4.1",
     "@stryker-mutator/jest-runner": "5.4.1",
