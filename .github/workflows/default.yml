@@ -28,32 +28,34 @@ jobs:
       matrix:
         node-version: [12, 14, 17]
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
         with:
           with_build: true
           node_version: ${{ matrix.node-version }}
-      - name: Testing unittest
-        run: yarn packages test
+      - uses: ./.github/actions/testflow
+        with:
+          with_unittest: true
 
   # run buildflow on latest node lts version only
   # this should contains whole flow of lint, test, build, and deploy package
   default:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: ./.github/actions/setup
         with:
-          shallow_clone: false
           with_build: true
-          node_version: "16"
+          node_version: 16
+      - uses: ./.github/actions/testflow
+        with:
+          apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+          with_lint: true
+          with_unittest: true
+          with_mutator_test: true
 
-      - name: Check style
-        run: yarn packages lint
-      - name: Run unit test
-        run: yarn packages test
-      - name: Run mutator test
-        run: yarn packages test:mutator
-        env:
-          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
       - name: Scan sourcecode
         uses: SonarSource/sonarcloud-github-action@master
         env:

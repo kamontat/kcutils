@@ -1,0 +1,37 @@
+name: "Testflow"
+description: "For check style, and testing"
+inputs:
+  apikey:
+    description: "Stryker APIKey to connect with dashboard apis"
+    required: false
+    default: ""
+  with_lint:
+    description: "Start checking code style"
+    required: false
+    default: "false"
+  with_unittest:
+    description: "Start unit test"
+    required: false
+    default: "false"
+  with_mutator_test:
+    description: "Start mutator test"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check style
+      run: yarn packages lint
+      if: ${{ inputs.with_lint == "true" }}
+      shell: bash
+    - name: Run unit test
+      run: yarn packages test
+      if: ${{ inputs.with_unittest == "true" }}
+      shell: bash
+    - name: Run mutator test
+      run: yarn packages test:mutator
+      if: ${{ inputs.with_mutator_test == "true" }}
+      shell: bash
+      env:
+        STRYKER_DASHBOARD_API_KEY: ${{ inputs.apikey }}
