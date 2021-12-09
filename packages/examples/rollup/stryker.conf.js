@@ -1,3 +1,4 @@
 const config = require("@kcconfig/stryker-config/utils");
+const pkg = require("./package.json");
 
-module.exports = config("@kcexample/rollup");
+module.exports = config(pkg.name);
