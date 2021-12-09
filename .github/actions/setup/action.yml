@@ -1,0 +1,41 @@
+name: "Setup Project"
+description: "For download and install project dependencies"
+inputs:
+  shallow_clone: # id of input
+    description: "Shallow clone repository from Github"
+    required: false
+    default: "true"
+  node_version:
+    description: "Specify nodejs version"
+    required: true
+  with_build:
+    description: "Build packages"
+    required: false
+    default: "true"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+      if: ${{ inputs.shallow_clone == "true" }}
+    - uses: actions/checkout@v2
+      if: ${{ inputs.shallow_clone == "false" }}
+      with:
+        fetch-depth: 0
+    - name: Use Node.js ${{ inputs.node_version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ inputs.node_version }}
+        registry-url: "https://registry.npmjs.org"
+        cache: yarn
+        cache-dependency-path: "**/yarn.lock"
+    - name: Install dependencies
+      run: yarn install
+      shell: bash
+    - name: Bootstrap packages
+      run: yarn packages bootstrap
+      shell: bash
+    - name: Compile and build packages
+      if: ${{ inputs.with_build == "true" }}
+      run: yarn packages build
+      shell: bash
