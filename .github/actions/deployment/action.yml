@@ -1,0 +1,69 @@
+name: "Deployment"
+description: "For deploy changed packages"
+inputs:
+  with_git:
+    description: "Update git settings"
+    required: false
+    default: "false"
+  git_username:
+    description: "username of git user"
+    required: false
+    default: ""
+  git_email:
+    description: "Email of git user"
+    required: false
+    default: ""
+  with_gpg:
+    description: "Update GPG settings"
+    required: false
+    default: "false"
+  gpg_private_key_base64:
+    description: "Private key of GPG in base64"
+    required: false
+    default: ""
+  gpg_signing_key:
+    description: "Signing key of GPG"
+    required: false
+    default: ""
+  gpg_identify_key:
+    description: "Identify key of GPG"
+    required: false
+    default: ""
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check git status
+      run: git status --short
+      shell: bash
+    - name: Cleanup all changes
+      run: git checkout .
+      shell: bash
+
+    - name: Setup GPG
+      if: ${{ inputs.with_gpg == 'true' }}
+      run: ${{ github.action_path }}/setup_gpg.sh
+      shell: bash
+      env:
+        GPG_PRIVATE_KEY_BASE64: ${{ inputs.gpg_private_key_base64 }}
+        GPG_SIGNING_KEY: ${{ inputs.gpg_signing_key }}
+
+    - name: Setup git
+      if: ${{ inputs.with_git == 'true' }}
+      run: ${{ github.action_path }}/setup_git.sh
+      shell: bash
+      env:
+        GIT_USERNAME: ${{ inputs.git_username }}
+        GIT_EMAIL: ${{ inputs.git_email }}
+
+    - name: Cleanup git
+      if: ${{ inputs.with_git == 'true' }}
+      run: ${{ github.action_path }}/cleanup_git.sh
+      shell: bash
+
+    - name: Cleanup GPG
+      if: ${{ inputs.with_gpg == 'true' }}
+      run: ${{ github.action_path }}/cleanup_gpg.sh
+      shell: bash
+      env:
+        GPG_IDENTIFY_KEY: ${{ inputs.gpg_identify_key }}

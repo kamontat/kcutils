@@ -62,10 +62,14 @@ jobs:
           with_sonar: true
           github_apikey: ${{ secrets.GITHUB_TOKEN }}
           sonar_apikey: ${{ secrets.SONAR_TOKEN }}
-
-      - name: Check git status
-        run: git status --short
+      - name: Deployment
+        uses: ./.github/actions/deployment
         if: github.ref_name == 'main' && github.repository == 'kamontat/kcutils'
-      - name: Cleanup all changes
-        run: git checkout .
-        if: github.ref_name == 'main' && github.repository == 'kamontat/kcutils'
+        with:
+          with_git: true
+          git_username: ${{ secrets.GIT_USERNAME }}
+          git_email: ${{ secrets.GIT_EMAIL }}
+          with_gpg: true
+          gpg_privatekey_base64: ${{ secrets.GPG_PRIVATE_KEY_BASE64 }}
+          gpg_signing_key: ${{ secrets.GPG_SIGNING_KEY }}
+          gpg_identify_key: ${{ secrets.GPG_IDENTIFY_KEY }}
