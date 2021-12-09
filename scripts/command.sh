@@ -20,8 +20,8 @@
 #/ -----------------------------------
 
 export COMMAND_NAME="kcutils-commander"
-export COMMAND_VERSION="0.2.1"
-export COMMAND_LAST_UPDATED="21 Nov 2021"
+export COMMAND_VERSION="0.2.2"
+export COMMAND_LAST_UPDATED="09 Dec 2021"
 
 export TMP_DIRECTORY="$PWD"
 cd "$(dirname "$0")/.." || exit 2

@@ -8,11 +8,8 @@
 # set -v #VERBOSE - Display shell input lines as they are read.
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
-echo "
-# Help for General command
+on_root_directory
 
-1. version - print current version
-2. test    - immediately output the input arguments
-3. alias   - list all alias available
-4. info    - print lerna infomation
-"
+run_lerna "info"
+
+go_back
