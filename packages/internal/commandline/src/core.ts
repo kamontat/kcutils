@@ -1,8 +1,4 @@
-// import { AsyncRunner, Commandline, Option } from "@kcinternal/runners";
+import { Context } from "@kcinternal/runners";
 
-// const option = new Option({
-//   input: process.argv,
-//   transform: Option.transformV2,
-// });
-
-// const transformer = new AsyncRunner();
+const context = Context.build();
+context.question.askBoolean("Do you love me?");
