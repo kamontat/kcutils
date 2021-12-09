@@ -56,7 +56,6 @@ runs:
     - name: Scan sourcecode
       uses: SonarSource/sonarcloud-github-action@master
       if: ${{ inputs.with_sonar == 'true' && inputs.github_apikey && inputs.sonar_apikey }}
-      shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.github_apikey }}
         SONAR_TOKEN: ${{ inputs.sonar_apikey }}
