@@ -3,12 +3,13 @@
   "description": "simplify commandline for kcmono repositories",
   "version": "0.20.1",
   "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/internal/commandline",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/internal/runners"
+    "directory": "packages/internal/commandline"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
