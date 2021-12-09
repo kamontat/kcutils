@@ -29,11 +29,13 @@ jobs:
         node-version: [12, 14, 17]
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup
+      - name: Setup project
+        uses: ./.github/actions/setup
         with:
           with_build: true
           node_version: ${{ matrix.node-version }}
-      - uses: ./.github/actions/testflow
+      - name: Start testflow
+        uses: ./.github/actions/testflow
         with:
           with_unittest: true
 
@@ -45,22 +47,22 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/setup
+      - name: Setup project
+        uses: ./.github/actions/setup
         with:
           with_build: true
           node_version: 16
-      - uses: ./.github/actions/testflow
+      - name: Start testflow
+        uses: ./.github/actions/testflow
         with:
-          apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
           with_lint: true
           with_unittest: true
           with_mutator_test: true
+          mutator_apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+          with_sonar: true
+          github_apikey: ${{ secrets.GITHUB_TOKEN }}
+          sonar_apikey: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Scan sourcecode
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Check git status
         run: git status --short
         if: github.ref_name == 'main' && github.repository == 'kamontat/kcutils'
