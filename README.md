@@ -1,8 +1,10 @@
 # KCUtils (Kamontat Utilities)
 
-| Quality                  | Violation                  | Code Coverage             | Test                |
-| ------------------------ | -------------------------- | ------------------------- | ------------------- |
-| [![quality][q_img]][sdb] | [![violation][sv_img]][sv] | [![coverage][sc_img]][sc] | [![test][t_img]][t] |
+| Name     | Badge #1                 | Badge #2                   |
+| -------- | ------------------------ | -------------------------- |
+| Analysis | [![quality][q_img]][sdb] | [![violation][sv_img]][sv] |
+| Test     | [![test][t_img]][t]      | [![coverage][sc_img]][sc]  |
+| Mutator  | [![mutator][mt_img]][mt] |
 
 This project adapted concept from mono-repository which contains all utilities for my personal projects.
 
@@ -16,7 +18,7 @@ This project adapted concept from mono-repository which contains all utilities f
 
 ## Basic concept
 
-This repository created using lerna for manage mono-repository and `typescript` as programming language as core programming language. We use `tsc` as primary compiler with optional `parcel` or `rollup` can be use on some project as well, `jest` as primary testing tools with `stryker` mutator supported, `typedoc` as documentation website generator, and `eslint` as primary linter.
+Mono-repository managed by [lerna][lerna_link]. [Typescript][ts_link] is primary language but some packages still using [Javascript][js_link]. We use `tsc` as primary compiler with optional `parcel` or `rollup` can be use on some project as well, `jest` as primary testing tools with `stryker` mutator supported, `typedoc` as documentation website generator, and `eslint` as primary linter.
 
 ## User (old)
 
@@ -68,12 +70,20 @@ More information found [here](./LICENSE)
 [q_img]: https://img.shields.io/sonar/quality_gate/kamontat_kcutils?server=https%3A%2F%2Fsonarcloud.io&style=flat-square
 [sv_img]: https://img.shields.io/sonar/violations/kamontat_kcutils?format=long&server=https%3A%2F%2Fsonarcloud.io&style=flat-square
 [sc_img]: https://img.shields.io/sonar/coverage/kamontat_kcutils?server=https%3A%2F%2Fsonarcloud.io&style=flat-square
-[t_img]: https://img.shields.io/circleci/build/github/kamontat/kcutils?style=flat-square
+[t_img]: https://img.shields.io/github/workflow/status/kamontat/kcutils/Default/main?style=flat-square
+[mt_img]: https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fkamontat%2Fkcutils%2Fmain
 
 [sdb]: https://sonarcloud.io/dashboard?id=kamontat_kcutils
 [sv]: https://sonarcloud.io/project/issues?id=kamontat_kcutils&resolved=false&types=VULNERABILITY
 [sc]: https://sonarcloud.io/component_measures?id=kamontat_kcutils&metric=coverage&view=list
-[t]: https://app.circleci.com/pipelines/github/kamontat/kcutils
+[t]: https://github.com/kamontat/kcutils/actions
+[mt]: https://dashboard.stryker-mutator.io/reports/github.com/kamontat/kcutils/main
+
+<!-- USEFUL LINK SECTION -->
+
+[lerna_link]: https://lerna.js.org/
+[js_link]: https://www.javascript.com/
+[ts_link]: https://www.typescriptlang.org/
 
 <!-- GITHUB SECTION -->
 
