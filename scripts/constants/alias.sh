@@ -22,4 +22,5 @@ export COMMAND_ALIAS=(
   "b=bootstrap"
   "B=build"
   "h=help"
+  "c=clean"
 )
