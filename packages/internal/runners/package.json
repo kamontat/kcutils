@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/internal/runners",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
