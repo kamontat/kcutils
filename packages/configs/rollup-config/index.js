@@ -1,33 +1,51 @@
+const rollup = require("rollup");
 const constants = require("./constants");
-const { buildUnscopedName } = require("./utils");
+const { buildUnscopedName, buildFormat } = require("./utils");
 
 /**
  * @argument {{
  *    pkg: any
  *    format: "umd" | "cjs" | "es"
- *    input?: string
+ *    extraFormat?: "umd" | "cjs" | "es"
  *    map?: boolean
+ *    compact?: boolean
  * }} opt
  * @return {import("rollup").RollupOptions}
  */
 function build(opt) {
   const name = buildUnscopedName(opt.pkg.name);
-  const filename = opt.pkg.browser
-    ? opt.pkg.browser
-    : `lib/index.${opt.format}.js`;
   const sourcemap = opt.map ? opt.map : true;
+  const compact = opt.compact ? opt.compact : true;
+  const format = buildFormat(opt.pkg, opt.format);
 
-  const input = opt.input ? opt.input : "input.ts";
+  const input = opt.pkg.sourcecode;
+  if (!input) {
+    throw new Error(`Input cannot be undefined (type=${format.id})`);
+  }
 
   /**
-   * @type {import("rollup").OutputOptions}
+   * @type {import("rollup").OutputOptions[]}
    */
-  const output = {
+  const output = [];
+  output.push({
     name,
-    file: filename,
-    format: opt.format,
+    file: format.outfile,
+    format: format.id,
     sourcemap,
-  };
+    compact,
+  });
+
+  if (opt.extraFormat) {
+    const extraFormat = buildFormat(opt.pkg, opt.extraFormat);
+    output.push({
+      name,
+      file: extraFormat.outfile,
+      format: extraFormat.id,
+      sourcemap,
+      compact,
+    });
+  }
+
   const plugins =
     opt.format === "umd"
       ? constants.pluginsDefaultMinify
@@ -46,21 +64,59 @@ function build(opt) {
  * @param {any} pkg package.json content
  */
 function buildBrowser(pkg) {
-  return build({ pkg, format: "umd", input: pkg.browser, map: true });
+  return build({ pkg, format: "umd", map: true, compact: true });
 }
 
 /**
  * @param {any} pkg package.json content
  */
 function buildCommonJS(pkg) {
-  return build({ pkg, format: "cjs", input: pkg.main, map: true });
+  return build({
+    pkg,
+    format: "cjs",
+    map: true,
+    compact: true,
+  });
 }
 
 /**
  * @param {any} pkg package.json content
  */
 function buildModuleJS(pkg) {
-  return build({ pkg, format: "es", input: pkg.module, map: true });
+  return build({
+    pkg,
+    format: "es",
+    map: true,
+    compact: true,
+  });
 }
 
-module.exports = { buildBrowser, buildCommonJS, buildModuleJS };
+/**
+ * @param {any} pkg package.json content
+ */
+function buildCommonJSModuleJS(pkg) {
+  return build({
+    pkg,
+    format: "cjs",
+    extraFormat: "es",
+    map: true,
+    compact: true,
+  });
+}
+
+/**
+ *
+ * @param {import("rollup").RollupOptions[]} options
+ * @returns {import("rollup").RollupOptions[]}
+ */
+function defineConfigs(...options) {
+  return rollup.defineConfig(options);
+}
+
+module.exports = {
+  buildBrowser,
+  buildCommonJS,
+  buildModuleJS,
+  buildCommonJSModuleJS,
+  defineConfigs,
+};
