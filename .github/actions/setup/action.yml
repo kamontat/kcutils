@@ -26,6 +26,6 @@ runs:
       run: yarn packages bootstrap
       shell: bash
     - name: Compile and build packages
-      if: ${{ inputs.with_build == "true" }}
+      if: ${{ inputs.with_build == 'true' }}
       run: yarn packages build
       shell: bash

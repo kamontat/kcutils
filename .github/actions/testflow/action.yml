@@ -23,15 +23,15 @@ runs:
   steps:
     - name: Check style
       run: yarn packages lint
-      if: ${{ inputs.with_lint == "true" }}
+      if: ${{ inputs.with_lint == 'true' }}
       shell: bash
     - name: Run unit test
       run: yarn packages test
-      if: ${{ inputs.with_unittest == "true" }}
+      if: ${{ inputs.with_unittest == 'true' }}
       shell: bash
     - name: Run mutator test
       run: yarn packages test:mutator
-      if: ${{ inputs.with_mutator_test == "true" }}
+      if: ${{ inputs.with_mutator_test == 'true' }}
       shell: bash
       env:
         STRYKER_DASHBOARD_API_KEY: ${{ inputs.apikey }}
