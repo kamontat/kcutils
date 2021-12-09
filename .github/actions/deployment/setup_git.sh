@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-echo '##### Global config #####'
-git config --global --list
-echo '##### Local config (Before change) #####'
+echo '##### Config (Before change) #####'
 git config --local --list
 
 if test -n "$GIT_USERNAME"; then
@@ -19,5 +17,5 @@ else
   exit 1
 fi
 
-echo '##### Local config (After change) #####'
+echo '##### Config (After change) #####'
 git config --local --list
