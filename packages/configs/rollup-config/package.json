@@ -1,14 +1,14 @@
 {
-  "name": "@kcconfig/ts-config",
-  "description": "personal typescript configuration",
+  "name": "@kcconfig/rollup-config",
+  "description": "personal rollup configuration",
   "version": "0.0.1",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/ts-config",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/rollup-config",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/configs/ts-config"
+    "directory": "packages/configs/rollup-config"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -29,5 +29,14 @@
     "includes/*.json",
     "*.js"
   ],
-  "dependencies": {}
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "21.0.1",
+    "@rollup/plugin-node-resolve": "13.0.6",
+    "@rollup/plugin-typescript": "8.3.0",
+    "rollup": "2.59.0",
+    "rollup-plugin-terser": "7.0.2"
+  }
 }
