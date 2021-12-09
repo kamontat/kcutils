@@ -70,6 +70,6 @@ jobs:
           git_username: ${{ secrets.GIT_USERNAME }}
           git_email: ${{ secrets.GIT_EMAIL }}
           with_gpg: true
-          gpg_privatekey_base64: ${{ secrets.GPG_PRIVATE_KEY_BASE64 }}
+          gpg_private_key_base64: ${{ secrets.GPG_PRIVATE_KEY_BASE64 }}
           gpg_signing_key: ${{ secrets.GPG_SIGNING_KEY }}
           gpg_identify_key: ${{ secrets.GPG_IDENTIFY_KEY }}
