@@ -10,10 +10,15 @@
 
 on_root_directory
 
-args=()
+args=("$@")
 
 # Add this arguments to enabled debug mode: "--logLevel" "debug" 
 is_ci && args+=("--concurrency" "1")
+
+if [[ "${#args[@]}" -gt 0 ]]; then
+  args=("--" "${args[@]}")
+fi
+
 # run yarn test:mutator on every module
-run_xlerna_run "test:mutator" -- "${args[@]}" "$@" &&
+run_xlerna_run "test:mutator" "${args[@]}" &&
   go_back
