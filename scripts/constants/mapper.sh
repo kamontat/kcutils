@@ -13,9 +13,7 @@
 #/ Since:        10/12/2020
 #/ -----------------------------------
 
-export run_yarn
-run_yarn() {
-  local args=("$@")
-
-  run_cmd "yarn" "${args[@]}"
-}
+# Support only [A-Z, a-z, @, -, :]
+export COMMAND_MAPPER=(
+  "test:mutator=test__mutator"
+)

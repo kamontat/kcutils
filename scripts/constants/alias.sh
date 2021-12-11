@@ -13,7 +13,7 @@
 #/ Since:        10/12/2020
 #/ -----------------------------------
 
-# Support only [A-Z, a-z, @]
+# Support only [A-Z, a-z, @, -, :]
 export COMMAND_ALIAS=(
   "@kcr=@kcinternal/runners"
   "g=general"

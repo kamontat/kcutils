@@ -17,14 +17,7 @@ export LERNA_PATH="${ROOT_PATH}/node_modules/.bin/lerna"
 
 export run_lerna
 run_lerna() {
-  log_debug "Lerna" "$" "$LERNA_PATH" "$@"
-  if ! is_dry; then
-    if "$LERNA_PATH" "$@"; then
-      return 0
-    else
-      return 1
-    fi
-  fi
+  run_cmd "$LERNA_PATH" "$@"
 }
 
 export run_xlerna

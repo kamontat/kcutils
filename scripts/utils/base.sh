@@ -29,6 +29,7 @@ is_dry() {
     [[ "$DRYRUN" == "true" ]]
 }
 
+export not_dry
 not_dry() {
   if is_dry; then
     export DDRY="true"
@@ -36,9 +37,52 @@ not_dry() {
   fi
 }
 
+export revert_dry
 revert_dry() {
   if test -n "$DDRY"; then
     export DRY="$DDRY"
+  fi
+}
+
+export run_cmd
+run_cmd() {
+  if is_dry; then
+    log_info "cmd" "$" "$@"
+    return
+  else
+    log_debug "cmd" "$" "$@"
+  fi
+
+  local cmd="$1" && shift
+  local args=("$@") exitcode=-1
+
+  "$cmd" "${args[@]}"
+  exitcode="$?"
+
+  if [[ "$exitcode" != 0 ]]; then
+    log_error "cmd" "command $cmd exit code is $exitcode"
+    return $exitcode
+  fi
+}
+
+export run_source
+run_source() {
+  if is_dry; then
+    log_info "source" "$" "source $*"
+  else
+    log_debug "source" "$" "source $*"
+  fi
+
+  local cmd="$1" && shift
+  local args=("$@") exitcode=-1
+
+  # shellcheck disable=SC1090
+  source "$cmd" "${args[@]}"
+  exitcode="$?"
+
+  if [[ "$exitcode" != 0 ]]; then
+    log_error "source" "source file ($cmd) exit code is $exitcode"
+    return $exitcode
   fi
 }
 
@@ -95,11 +139,7 @@ source_command_file() {
   # to remove all argument from root command
   shift "$#"
 
-  log_debug "Initial" "Found running script at $command_path"
-  log_debug "Initial" "$" "source" "$command_path" "${command_arguments[@]}"
-
-  # shellcheck disable=SC1090
-  source "$command_path" "${command_arguments[@]}"
+  run_source "$command_path" "${command_arguments[@]}"
 }
 
 log() {
@@ -125,6 +165,11 @@ log_debug() {
   if is_debug; then
     log "debug" "$@"
   fi
+}
+
+export log_info
+log_info() {
+  log "info" "$@"
 }
 
 export log_error
