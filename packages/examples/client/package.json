@@ -32,11 +32,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "clean": "",
-    "doc": "",
-    "lint": "",
-    "start": "node lib/index.js",
-    "test": ""
+    "start": "node lib/index.js"
   },
   "dependencies": {
     "@kcexample/rollup": "*"
