@@ -39,8 +39,6 @@
     "test": ""
   },
   "dependencies": {
-    "@kcexample/tsc": "*",
-    "@kcexample/parcel": "*",
     "@kcexample/rollup": "*"
   },
   "devDependencies": {

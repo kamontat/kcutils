@@ -1,4 +1,4 @@
-import { Example } from "@kcexample/tsc";
+import { AString } from "@kcexample/rollup";
 
-const example = new Example("test");
+const example = new AString("test");
 console.log(example.toString());
