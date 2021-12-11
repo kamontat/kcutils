@@ -1,8 +1,8 @@
-import { Example } from "..";
+import { AString } from "..";
 
 describe("default", () => {
   test("hello world", () => {
-    const hw = Example.HelloWorld();
-    expect(hw.customName).toEqual("hello world");
+    const hw = AString.HelloWorld();
+    expect(hw.raw).toEqual("hello world");
   });
 });
