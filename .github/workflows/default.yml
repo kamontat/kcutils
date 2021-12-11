@@ -41,7 +41,7 @@ jobs:
 
   # run buildflow on latest node lts version only
   # this should contains whole flow of lint, test, build, and deploy package
-  default:
+  buildflow:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

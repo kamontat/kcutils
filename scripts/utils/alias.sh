@@ -14,39 +14,48 @@
 #/ -----------------------------------
 
 __build_alias_mapper() {
-  local size="${#COMMAND_ALIAS[@]}"
+  local db=("${COMMAND_ALIAS[@]}")
+  db+=("${COMMAND_MAPPER[@]}")
+
+  local size="${#db[@]}" key key1 key2 key3 value
   log_debug "Alias" "building alias mapper size: '$size'"
 
-  for i in "${COMMAND_ALIAS[@]}"; do
+  for i in "${db[@]}"; do
     key="${i%%=*}"
     value="${i##*=}"
-    eval "export __command_alias__${key//@/asign__}=\"$value\""
+
+    key1="${key//@/asign__}"
+    key2="${key1//:/colon__}"
+    key3="${key2//-/dash__}"
+    eval "export __command_alias__$key3=\"$value\""
   done
 }
 
 __clean_alias_mapper() {
-  local size="${#COMMAND_ALIAS[@]}"
+  local db=("${COMMAND_ALIAS[@]}")
+  db+=("${COMMAND_MAPPER[@]}")
+  
+  local size="${#db[@]}" key key1 key2 key3
   log_debug "Alias" "removing alias mapper size: '$size'"
 
-  for i in "${COMMAND_ALIAS[@]}"; do
+  for i in "${db[@]}"; do
     key="${i%%=*}"
-    eval "unset __command_alias__${key//@/asign__}"
+    key1="${key//@/asign__}"
+    key2="${key1//:/colon__}"
+    key3="${key2//-/dash__}"
+    eval "unset __command_alias__$key3"
   done
 }
 
 __resolve_alias() {
-  local value="" input="$1"
-  if [[ "$input" =~ "-" ]]; then
-    log_debug "Alias" "disabled searching '$input' because dash is found"
+  local value="" input="$1" input1 input2 input3
 
-    # `-`` is not support in alias
-    # To avoid unintent action, I will skip resolving if input found dash
-    echo "$input"
-    return
-  fi
+  input1="${input//@/asign__}"
+  input2="${input1//:/colon__}"
+  input3="${input2//-/dash__}"
 
   log_debug "Alias" "searching alias data for '$input'"
-  eval "value=\"\${__command_alias__${input//@/asign__}}\""
+  eval "value=\"\${__command_alias__$input3}\""
 
   if test -n "$value"; then
     log_debug "found alias $input => $value"
@@ -54,19 +63,6 @@ __resolve_alias() {
   else
     echo "$input"
   fi
-
-  ## manually searching
-  # for i in "${COMMAND_ALIAS[@]}"; do
-  #   key="${i%%=*}"
-  #   value="${i##*=}"
-  #   if [[ "$input" == "$key" ]]; then
-  #     log_debug "found alias $key => $value"
-  #     echo "$value"
-  #     return 0
-  #   fi
-  # done
-
-  # echo "$input"
 }
 
 export resolve_alias
