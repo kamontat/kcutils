@@ -13,6 +13,8 @@
 #/ Since:        10/12/2020
 #/ -----------------------------------
 
+# Syntax [{scoped_name}]>{alias_key}={alias_value}
+# Command name: "packages" | "package" | "general"
 # Support only [A-Z, a-z, @, -, :]
 export COMMAND_ALIAS=(
   "@kcr=@kcinternal/runners"
@@ -22,5 +24,7 @@ export COMMAND_ALIAS=(
   "b=bootstrap"
   "B=build"
   "h=help"
+  "--help=help"
+  "-h=help"
   "c=clean"
 )

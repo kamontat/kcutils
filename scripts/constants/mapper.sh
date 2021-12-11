@@ -13,7 +13,9 @@
 #/ Since:        10/12/2020
 #/ -----------------------------------
 
+# Syntax [{scoped_name}]>{alias_key}={alias_value}
+# Command name: "packages" | "package" | "general"
 # Support only [A-Z, a-z, @, -, :]
 export COMMAND_MAPPER=(
-  "test:mutator=test__mutator"
+  "packages>test:mutator=test__mutator"
 )
