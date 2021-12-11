@@ -9,20 +9,8 @@
       "path": "packages/internal/commandline"
     },
     {
-      "name": "examples/tsc",
-      "path": "packages/examples/tsc"
-    },
-    {
-      "name": "examples/parcel",
-      "path": "packages/examples/parcel"
-    },
-    {
       "name": "examples/rollup",
       "path": "packages/examples/rollup"
-    },
-    {
-      "name": "examples/client",
-      "path": "packages/examples/client"
     },
     {
       "name": "scripts",
