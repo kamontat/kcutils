@@ -1,6 +1,6 @@
 const rollup = require("rollup");
-const constants = require("./constants");
-const { buildUnscopedName, buildFormat } = require("./utils");
+const constants = require("./src/constants");
+const { buildUnscopedName, buildFormat } = require("./src/utils");
 
 /**
  * @argument {{
@@ -109,7 +109,7 @@ function buildCommonJSModuleJS(pkg) {
  * @param {import("rollup").RollupOptions[]} options
  * @returns {import("rollup").RollupOptions[]}
  */
-function defineConfigs(...options) {
+function initial(...options) {
   return rollup.defineConfig(options);
 }
 
@@ -118,5 +118,5 @@ module.exports = {
   buildCommonJS,
   buildModuleJS,
   buildCommonJSModuleJS,
-  defineConfigs,
+  initial,
 };

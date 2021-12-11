@@ -20,14 +20,14 @@
   },
   "keywords": [
     "kcmono",
-    "typescript",
-    "config"
+    "config",
+    "typescript"
   ],
   "files": [
     "CHANGELOG.md",
     "README.md",
     "includes/*.json",
-    "*.js"
-  ],
-  "dependencies": {}
+    "*.js",
+    "src/*.js"
+  ]
 }
