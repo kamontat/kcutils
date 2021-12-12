@@ -1,19 +1,23 @@
 {
-  "name": "@kcexample/rollup",
+  "name": "@kcprivate/rollup",
   "description": "example project using rollup as compiler",
   "version": "0.0.1",
   "private": true,
-  "license": "SEE LICENSE IN LICENSE",
   "sourcecode": "index.ts",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.umd.js",
-  "bundle": "lib/bundle.min.js",
   "types": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/private/rollup",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/examples/rollup"
+    "directory": "packages/private/rollup"
+  },
+  "bugs": {
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat/kcutils/issues"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -30,10 +34,13 @@
     "typescript"
   ],
   "files": [
+    "package.json",
     "CHANGELOG.md",
     "README.md",
     "lib/**/*.js",
-    "lib/**/*.d.ts"
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map"
   ],
   "scripts": {
     "build": "rollup --config",

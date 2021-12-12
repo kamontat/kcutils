@@ -3,6 +3,7 @@
   "include": ["**/*.ts", "package.json"],
   "exclude": ["lib"],
   "compilerOptions": {
-    "outDir": "lib"
+    "outDir": "lib",
+    "declarationDir": "."
   }
 }
