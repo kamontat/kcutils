@@ -18,7 +18,7 @@ run_node_module_bin() {
   local command_name="$1"
   shift
   local command_args=("$@")
-  local command_path="${ROOT_PATH}/node_modules/.bin/${command_name}"
+  local command_path="$PWD/node_modules/.bin/${command_name}"
 
   log_warn "deprecated" "should not use this, please use run_yarn() instead"
 
