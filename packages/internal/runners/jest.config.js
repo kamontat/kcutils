@@ -1,3 +1,3 @@
-const config = require("@kcconfig/jest-config/utils");
+const config = require("@kcconfig/jest-config");
 
-module.exports = config();
+module.exports = config.initial();
