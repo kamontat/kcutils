@@ -9,8 +9,8 @@
       "path": "packages/internal/commandline"
     },
     {
-      "name": "examples/rollup",
-      "path": "packages/examples/rollup"
+      "name": "private/rollup",
+      "path": "packages/private/rollup"
     },
     {
       "name": "scripts",
