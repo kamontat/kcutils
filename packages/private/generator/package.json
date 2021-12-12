@@ -1,0 +1,12 @@
+{
+  "name": "@kcprivate/generator",
+  "description": "help contributor create new package easier with project conversion",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "hygen"
+  },
+  "devDependencies": {
+    "hygen": "6.1.0"
+  }
+}
