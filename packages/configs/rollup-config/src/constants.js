@@ -3,7 +3,7 @@ const commonjs = require("@rollup/plugin-commonjs");
 const typescript = require("@rollup/plugin-typescript");
 const terser = require("rollup-plugin-terser");
 
-const ts = typescript({ outputToFilesystem: true }); // so Rollup can convert typescript
+const ts = typescript({ outputToFilesystem: true, tsconfig: "./tsconfig.json" }); // so Rollup can convert typescript
 const rs = resolve.default(); // so Rollup can find `library`
 const cjs = commonjs(); // so Rollup can convert `library` to an ES module
 const tsr = terser.terser(); // so Rollup can minify code via terser algorithm
