@@ -59,6 +59,9 @@ runs:
         GIT_USERNAME: ${{ inputs.git_username }}
         GIT_EMAIL: ${{ inputs.git_email }}
 
+    - name: Check package to deploy
+      run: packages change
+      shell: yarn
     - name: Increase new package version
       run: packages version ${{ inputs.release_type }}
       shell: yarn
