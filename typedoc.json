@@ -1,9 +1,11 @@
 {
   "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/internal/runners"
+  ],
   "plugin": [],
   "logger": "console",
-  "logLevel": "Verbose",
-  "exclude": [],
+  "logLevel": "Warn",
   "excludeExternals": false,
   "excludeNotDocumented": false,
   "excludeInternal": false,

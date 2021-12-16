@@ -1,6 +1,10 @@
 name: "Deployment"
 description: "For deploy changed packages"
 inputs:
+  release_type:
+    description: "Release type"
+    required: false
+    default: "live"
   with_git:
     description: "Update git settings"
     required: false
@@ -47,7 +51,6 @@ runs:
       env:
         GPG_PRIVATE_KEY_BASE64: ${{ inputs.gpg_private_key_base64 }}
         GPG_SIGNING_KEY: ${{ inputs.gpg_signing_key }}
-
     - name: Setup git
       if: ${{ inputs.with_git == 'true' }}
       run: ${{ github.action_path }}/setup_git.sh
@@ -56,11 +59,22 @@ runs:
         GIT_USERNAME: ${{ inputs.git_username }}
         GIT_EMAIL: ${{ inputs.git_email }}
 
+    - name: Increase new package version
+      run: packages version ${{ inputs.release_type }}
+      shell: yarn
+    - name: Publish new package
+      run: packages publish ${{ inputs.release_type }}
+      shell: yarn
+    - name: Publish documentation
+      run: packages doc
+      shell: yarn
+      env:
+        NODE_DEBUG: gh-pages
+
     - name: Cleanup git
       if: ${{ inputs.with_git == 'true' }}
       run: ${{ github.action_path }}/cleanup_git.sh
       shell: bash
-
     - name: Cleanup GPG
       if: ${{ inputs.with_gpg == 'true' }}
       run: ${{ github.action_path }}/cleanup_gpg.sh

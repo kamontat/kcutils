@@ -10,8 +10,9 @@
 
 on_root_directory
 
-args=("--long")
+args=("--listInvalidSymbolLinks" "--treatWarningsAsErrors")
 
-run_xlerna "updated" "${args[@]}"
+is_ci && args=("--logLevel" "Verbose")
 
-go_back
+run_yarn "typedoc" "${args[@]}" &&
+  go_back

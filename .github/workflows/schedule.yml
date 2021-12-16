@@ -37,11 +37,12 @@ jobs:
         with:
           with_lint: true
           with_unittest: true
-          with_mutator_test: true
+          with_mutator_test: false # TODO: disable this due to fix didn't deploy yet. https://github.com/stryker-mutator/stryker-js/pull/3313
           mutator_apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
       - name: Deployment
         uses: ./.github/actions/deployment
         with:
+          release_type: ${{ inputs.release_type }}
           with_git: true
           git_username: ${{ secrets.GIT_USERNAME }}
           git_email: ${{ secrets.GIT_EMAIL }}
