@@ -11,11 +11,14 @@
 echo "
 # Help for Multiple Packages command
 
-1. bootstrap  - bootstrap all package together, same as lerna bootstrap
-2. test       - run test on every package and combine the result
-3. lint       - run lint on each package via 'lerna run' command
-4. publish    - publish latest tag to npm registry using lerna publish command
-5. version    - create git tag and Github release
-6. updated    - list all changed packages
-7. <yarn_cmd> - run yarn command on each package by 'lerna run' command
+1.  bootstrap    - install and bootstrap all package (included dependencies)
+2.  change       - list all change and exit zero code if has package to deploy
+3.  clean [all]  - clean all generate files/folders, if all exist remove node_module as well
+4.  docs         - generate and publish document website
+5.  publish      - publish latest tag to npm registry using lerna publish command
+6.  test:mutator - run mutation test on every packages
+7.  test         - run test on every package and combine the result
+8.  upgrade      - run upgrade interactive wizard (via lernaupdate command)
+9.  version      - update version, create git tag and Github release
+10. <yarn_cmd>   - run yarn command on each package by 'lerna run' command
 "

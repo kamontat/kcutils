@@ -15,9 +15,7 @@ if test -n "$1"; then
   args+=("--" "--all")
 fi
 
-run_xlerna_run "clean:before" "${args[@]}"
 run_xlerna_run "clean" "${args[@]}"
-run_xlerna_run "clean:after" "${args[@]}"
 
 cleanup_paths=("*.tsbuildinfo" "lib" "lerna-debug.log" "junit.xml" "reports" "coverage")
 if test -n "$1"; then
