@@ -3,27 +3,36 @@ name: Default
 on:
   push:
   pull_request:
-  workflow_dispatch:
-    inputs:
-      release_type:
-        description: manually release packages with type
-        required: false
-        default: live
-        type: choice
-        options:
-          - live
-          - rc
-          - beta
-          - alpha
 
 defaults:
   run:
     shell: bash
 
 jobs:
-  # this should contains only unit testing on several node version to ensure backward compatible
+  # Test and report result in sonarqube (run only primary node version)
+  testflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup project
+        uses: ./.github/actions/setup
+        with:
+          with_build: true
+          node_version: 16
+      - name: Start testflow
+        uses: ./.github/actions/testflow
+        with:
+          with_lint: true
+          with_unittest: true
+          with_sonar: true
+          github_apikey: ${{ secrets.GITHUB_TOKEN }}
+          sonar_apikey: ${{ secrets.SONAR_TOKEN }}
+
+  # Test on different node version to ensure backward compatible
   test:
     runs-on: ubuntu-latest
+    needs:
+      - testflow
     strategy:
       matrix:
         node-version: [12, 14, 17]
@@ -38,38 +47,3 @@ jobs:
         uses: ./.github/actions/testflow
         with:
           with_unittest: true
-
-  # run buildflow on latest node lts version only
-  # this should contains whole flow of lint, test, build, and deploy package
-  buildflow:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Setup project
-        uses: ./.github/actions/setup
-        with:
-          with_build: true
-          node_version: 16
-      - name: Start testflow
-        uses: ./.github/actions/testflow
-        with:
-          with_lint: true
-          with_unittest: true
-          with_mutator_test: true
-          mutator_apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
-          with_sonar: true
-          github_apikey: ${{ secrets.GITHUB_TOKEN }}
-          sonar_apikey: ${{ secrets.SONAR_TOKEN }}
-      - name: Deployment
-        uses: ./.github/actions/deployment
-        if: github.ref_name == 'main' && github.repository == 'kamontat/kcutils'
-        with:
-          with_git: true
-          git_username: ${{ secrets.GIT_USERNAME }}
-          git_email: ${{ secrets.GIT_EMAIL }}
-          with_gpg: true
-          gpg_private_key_base64: ${{ secrets.GPG_PRIVATE_KEY_BASE64 }}
-          gpg_signing_key: ${{ secrets.GPG_SIGNING_KEY }}
-          gpg_identify_key: ${{ secrets.GPG_IDENTIFY_KEY }}
