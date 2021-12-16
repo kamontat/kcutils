@@ -3,7 +3,7 @@
   "description": "example project using rollup as compiler",
   "version": "0.0.1",
   "private": true,
-  "sourcecode": "index.ts",
+  "typedocMain": "index.ts",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.umd.js",

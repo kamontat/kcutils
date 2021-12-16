@@ -18,7 +18,7 @@ function build(opt) {
   const compact = opt.compact ? opt.compact : true;
   const format = buildFormat(opt.pkg, opt.format);
 
-  const input = opt.pkg.sourcecode;
+  const input = opt.pkg.typedocMain;
   if (!input) {
     throw new Error(`Input cannot be undefined (type=${format.id})`);
   }

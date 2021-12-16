@@ -7,7 +7,7 @@ to: <%= h.location.buildPath(type, name, "package.json") %>
   "description": "<%= description %>",
   "version": "<%= version %>",
   "private": "<%= h.package.isPrivate(type) %>",
-  "sourcecode": "index.ts",
+  "typedocMain": "index.ts",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.umd.js",
