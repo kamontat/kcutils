@@ -43,7 +43,7 @@ run_xlerna_run() {
 export run_xlerna_exec
 run_xlerna_exec() {
   local args=("--stream" "$@")
-  run_xlerna "exec" "yarn" "${args[@]}"
+  run_xlerna "exec" "--" "yarn" "${args[@]}"
 }
 
 export run_xlerna_add

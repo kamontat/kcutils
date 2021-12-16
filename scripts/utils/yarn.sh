@@ -19,3 +19,17 @@ run_yarn() {
 
   run_cmd "yarn" "${args[@]}"
 }
+
+export run_yarn_workspace
+run_yarn_workspace() {
+  local package_name="$1"
+  shift
+  local args=("$@")
+  run_yarn "workspace" "$package_name" "$@"
+}
+
+export run_yarn_workspaces
+run_yarn_workspaces() {
+  local args=("$@")
+  run_yarn "workspaces" "run" "$@"
+}
