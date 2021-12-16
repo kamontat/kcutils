@@ -13,6 +13,15 @@ automerge_label = "" # default: "Trigger: automerge"
 # GitHub branch protection requirements.
 require_automerge_label = false # default: true
 
+# If a PR's title matches this regex, Kodiak will not merge the PR. This is
+# useful to prevent merging work-in-progress PRs.
+#
+# Setting `merge.blocking_title_regex = ""` disables this option.
+blocking_title_regex = "^WIP:.*" # default: "^WIP:.*", options: "" (disables regex), a regex string (e.g. ".*DONT\s*MERGE.*")
+
+# Kodiak will not merge a PR with any of these labels.
+blocking_labels = ["wip"] # default: [], options: list of label names (e.g. ["wip"])
+
 # Don't wait for in-progress status checks on a PR to finish before updating the
 # branch.
 optimistic_updates = false # default: true

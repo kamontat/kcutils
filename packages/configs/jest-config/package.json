@@ -29,7 +29,8 @@
     "includes/*.json",
     "*.js"
   ],
-  "dependencies": {
+  "peerDependencies": {
+    "jest-junit": ">= 13",
     "ts-jest": ">= 27"
   }
 }

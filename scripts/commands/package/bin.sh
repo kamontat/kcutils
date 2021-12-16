@@ -8,8 +8,11 @@
 # set -v #VERBOSE - Display shell input lines as they are read.
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
-on_root_directory
+module_name="$1"
+shift
 
-! is_ci && run_xlerna_exec "install" "--prefer-offline" # run `yarn install` on every package
-run_xlerna "bootstrap" &&                               # bootstrap it together
-  go_back
+on_module_directory "$module_name"
+
+run_node_module_bin "$@"
+
+go_back

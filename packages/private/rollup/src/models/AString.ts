@@ -1,3 +1,4 @@
+import path from "path";
 import { plus } from "../utils/string";
 
 /**
@@ -31,8 +32,8 @@ export class AString {
     this._str = input;
   }
 
-  join(input: string) {
-    this._str = plus(this._str, input);
+  join(...input: string[]) {
+    this._str = plus(this._str, path.join(...input));
   }
 
   size(): number {

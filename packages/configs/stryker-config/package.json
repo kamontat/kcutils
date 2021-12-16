@@ -31,7 +31,7 @@
     "src/*.js"
   ],
   "dependencies": {
-    "@stryker-mutator/core": "5.4.1"
+    "@stryker-mutator/core": "5.5.1"
   },
   "peerDependencies": {
     "@stryker-mutator/core": ">= 5",
