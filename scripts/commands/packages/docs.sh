@@ -10,7 +10,8 @@
 
 on_root_directory
 
-args=("--listInvalidSymbolLinks" "--treatWarningsAsErrors")
+# "--treatWarningsAsErrors"
+args=()
 
 is_ci && args=("--logLevel" "Verbose")
 

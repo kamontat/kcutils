@@ -1,7 +1,8 @@
 {
   "entryPointStrategy": "packages",
   "entryPoints": [
-    "packages/internal/runners"
+    "packages/internal/runners",
+    "packages/private/rollup"
   ],
   "plugin": [],
   "logger": "console",
@@ -12,7 +13,6 @@
   "excludePrivate": false,
   "excludeProtected": false,
   "disableSources": false,
-  "preserveWatchOutput": false,
   "includeVersion": false,
   "theme": "default",
   "lightHighlightTheme": "light-plus",
@@ -21,5 +21,8 @@
   "gaSite": "auto",
   "githubPages": true,
   "cleanOutputDir": true,
-  "readme": "README.md"
+  "readme": "README.md",
+  "validation": {
+    "invalidLink": true
+  }
 }
