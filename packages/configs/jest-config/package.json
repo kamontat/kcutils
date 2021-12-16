@@ -30,7 +30,7 @@
     "*.js"
   ],
   "peerDependencies": {
-    "ts-jest": ">= 27",
-    "jest-junit": ">= 13"
+    "jest-junit": ">= 13",
+    "ts-jest": ">= 27"
   }
 }
