@@ -5,7 +5,7 @@ pull_request_rules:
       - base=main
       - -closed
       - check-success=Analyze (javascript)
-      - check-success=buildflow
+      - check-success=testflow
       - check-success=test (12)
       - check-success=test (14)
       - check-success=test (17)
