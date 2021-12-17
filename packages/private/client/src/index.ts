@@ -1,4 +1,3 @@
-import { AString } from "@kcprivate/rollup";
+import { HelloWorld } from "@kcprivate/rollup";
 
-const example = new AString("test");
-console.log(example.toString());
+console.log(HelloWorld.toString());
