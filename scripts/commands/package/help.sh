@@ -13,8 +13,9 @@ echo "
 
 1. new                          - create new package
 2. add <package_name> <library> - add new library to specify package
-3. lerna-run <package_name>     - run command using lerna run
-4. lerna-exec <package_name>    - run command using lerna exec
-5. yarn <package_name>          - run command using normal yarn
-6. <package_name>               - run command using normal yarn (alias)
+3. lint <package_name>          - run linter in specify package
+4. lerna-run <package_name>     - run command using lerna run
+5. lerna-exec <package_name>    - run command using lerna exec
+6. yarn <package_name>          - run command using normal yarn
+7. <package_name>               - run command using normal yarn (alias)
 "

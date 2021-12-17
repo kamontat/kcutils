@@ -10,6 +10,6 @@
 
 on_root_directory
 
-! is_ci && run_xlerna_exec "install" "--prefer-offline" # run `yarn install` on every package
-run_xlerna "bootstrap" &&                               # bootstrap it together
+! is_ci && run_xlerna_exec "--" "yarn" "install" "--prefer-offline" # run `yarn install` on every package
+run_xlerna "bootstrap" &&                                           # bootstrap it together
   go_back
