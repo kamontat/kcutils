@@ -29,4 +29,15 @@ module.exports = [
     message: "What's new package initial version?",
     initial: "1.0.0-alpha.1",
   },
+  {
+    type: "list",
+    name: "keywords",
+    message: "What's new package keywords (comma-separated keywords)",
+  },
+  {
+    type: "confirm",
+    name: "browser",
+    message: "Is browser supported",
+    initial: false,
+  }
 ];

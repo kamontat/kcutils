@@ -1,0 +1,7 @@
+---
+to: <%= h.location.buildPath(type, name, "jest.config.js") %>
+---
+
+const config = require("@kcconfig/jest-config");
+
+module.exports = config.initial();

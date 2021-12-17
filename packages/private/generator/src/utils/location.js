@@ -1,7 +1,8 @@
 const path = require("path");
 
 const url = {
-  GITHUB: "https://github.com/kamontat/kcutils",
+  GITHUB: "https://github.com/kamontat",
+  GITHUB_REPO: "https://github.com/kamontat/kcutils",
 };
 
 /**
@@ -20,7 +21,7 @@ const buildPath = (type, name, ...args) =>
  * @param {string} name package name
  * @returns {string} packages path
  */
-const buildPackagePath = (type, name) => `packages/${type}/${name}`
+const buildPackagePath = (type, name) => `packages/${type}/${name}`;
 
 /**
  * build homepage url

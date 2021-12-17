@@ -1,0 +1,8 @@
+---
+to: <%= h.location.buildPath(type, name, "stryker.conf.js") %>
+---
+
+const config = require("@kcconfig/stryker-config");
+const pkg = require("./package.json");
+
+module.exports = config.initial(pkg.name);

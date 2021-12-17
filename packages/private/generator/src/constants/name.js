@@ -42,8 +42,8 @@ const validateNamespace = (namespace) => {
  * @returns {string} safe name to add in package
  */
 const toSafeName = (name) => {
-  return name.replace(/ /g, "-").toLowerCase()
-}
+  return name.replace(/ /g, "-").toLowerCase();
+};
 
 /**
  *
@@ -71,7 +71,7 @@ const toNamespace = (type) => {
  * @param {string} name package name
  * @returns safe normalize package name
  */
- const toPackageName = (type, name) => `@${toNamespace(type)}/${name}`;
+const toPackageName = (type, name) => `@${toNamespace(type)}/${name}`;
 
 module.exports = {
   types,
