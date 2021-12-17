@@ -2,7 +2,7 @@
 to: <%= h.location.buildPath(type, name, "test", "index.test.ts") %>
 ---
 
-import Demo, { HelloWorld, mergeDemo } from "..";
+import { Demo, HelloWorld, mergeDemo } from "..";
 
 describe("Demo", () => {
   test("static demo must be hello world", () => {

@@ -1,4 +1,4 @@
-import Demo, { HelloWorld, mergeDemo } from "..";
+import { Demo, HelloWorld, mergeDemo } from "..";
 
 describe("Demo", () => {
   test("static demo must be hello world", () => {
