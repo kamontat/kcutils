@@ -12,6 +12,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
   ],
   rules: {
+    semi: ["error", "always"],
+    quotes: ["error", "double"],
     "no-tabs": [
       "error",
       {
