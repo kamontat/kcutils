@@ -10,6 +10,6 @@
 
 on_module_directory "@kcprivate/generator"
 
-run_yarn "start"
+run_yarn "start" "package" "default" "$@"
 
 go_back
