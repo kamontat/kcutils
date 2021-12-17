@@ -10,7 +10,7 @@ export type {
 
 export { Commandline } from "./src/commandline/Commandline";
 
-export { Context } from "./src/contexts";
+export * from "./src/contexts";
 
 export { Chain } from "./src/models/Chain";
 

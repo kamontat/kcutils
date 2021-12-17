@@ -50,3 +50,12 @@ export class Context {
     return this._historyContext;
   }
 }
+
+export {
+  ArgumentContext,
+  EnvContext,
+  GeneralContext,
+  LogContext,
+  QuestionContext,
+  HistoryContext,
+};
