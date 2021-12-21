@@ -60,17 +60,17 @@ runs:
         GIT_EMAIL: ${{ inputs.git_email }}
 
     - name: Check package to deploy
-      run: packages change
-      shell: yarn
+      run: yarn packages change
+      shell: bash
     - name: Increase new package version
-      run: packages version ${{ inputs.release_type }}
-      shell: yarn
+      run: yarn packages version ${{ inputs.release_type }}
+      shell: bash
     - name: Publish new package
-      run: packages publish ${{ inputs.release_type }}
-      shell: yarn
+      run: yarn packages publish ${{ inputs.release_type }}
+      shell: bash
     - name: Publish documentation
-      run: packages doc
-      shell: yarn
+      run: yarn packages doc
+      shell: bash
       env:
         NODE_DEBUG: gh-pages
 
