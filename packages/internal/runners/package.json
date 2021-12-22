@@ -2,6 +2,7 @@
   "name": "@kcinternal/runners",
   "description": "runner apis for chain (with commandline included)",
   "version": "0.0.1",
+  "typedocMain": "index.ts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",

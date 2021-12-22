@@ -1,9 +1,9 @@
-import { ArgumentContext } from "./ArgumentContext";
+import { DefaultArgument, ArgumentContext } from "./ArgumentContext";
 import { EnvContext } from "./EnvContext";
 import { GeneralContext } from "./GeneralContext";
 import { LogContext } from "./LogContext";
 import { QuestionContext } from "./QuestionContext";
-import { HistoryContext } from "./HistoryContext";
+import { HistoryData, HistoryContext } from "./HistoryContext";
 
 export class Context {
   static build(): Context {
@@ -59,3 +59,5 @@ export {
   QuestionContext,
   HistoryContext,
 };
+
+export type { DefaultArgument, HistoryData };
