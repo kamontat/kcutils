@@ -1,8 +1,8 @@
 import { Demo, HelloWorld, mergeDemo } from "..";
 
 describe("Demo", () => {
-  test("static demo must be hello world", () => {
-    expect(HelloWorld.toString()).toEqual("0: hello world");
+  test("static demo must be hello @kcprivate/tsc", () => {
+    expect(HelloWorld.toString()).toEqual("0: hello, @kcprivate/tsc");
   });
 
   test("correct id and default message in demo object", () => {

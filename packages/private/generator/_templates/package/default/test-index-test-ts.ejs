@@ -5,8 +5,8 @@ to: <%= h.location.buildPath(category, locals.name, "test", "index.test.ts") %>
 import { Demo, HelloWorld, mergeDemo } from "..";
 
 describe("Demo", () => {
-  test("static demo must be hello world", () => {
-    expect(HelloWorld.toString()).toEqual("0: hello world");
+  test("static demo must be hello <%= h.name.toPackageName(category, name) %>", () => {
+    expect(HelloWorld.toString()).toEqual("0: hello, <%= h.name.toPackageName(category, name) %>");
   });
 
   test("correct id and default message in demo object", () => {
