@@ -15,5 +15,5 @@ args=()
 
 is_ci && args=("--logLevel" "Verbose")
 
-run_yarn "typedoc" "${args[@]}" &&
+run_yarn "typedoc" "${args[@]}" "$@" &&
   go_back
