@@ -30,7 +30,6 @@ jobs:
       - name: Setup project
         uses: ./.github/actions/setup
         with:
-          with_build: true
           node_version: 16
       - name: Start testflow
         uses: ./.github/actions/testflow
@@ -42,6 +41,7 @@ jobs:
       - name: Deployment
         uses: ./.github/actions/deployment
         with:
+          with_build: true
           release_type: ${{ inputs.release_type }}
           with_git: true
           git_username: ${{ secrets.GIT_USERNAME }}
