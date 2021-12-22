@@ -2,8 +2,8 @@ const { toNamespace, toPackageName } = require("../constants/name");
 const { buildHomepage, url, buildPackagePath } = require("../utils/location");
 const { isPrivate } = require("../utils/package");
 
-const getBuildCmd = (type) => {
-  switch (type) {
+const getBuildCmd = (compiler) => {
+  switch (compiler) {
     case "tsc":
       return "tsc --project tsconfig.prod.json";
     case "rollup":
@@ -13,7 +13,7 @@ const getBuildCmd = (type) => {
   }
 };
 
-const getDevDeps = (type) => {
+const getDevDeps = (compiler) => {
   const base = {
     "@kcconfig/eslint-config": "0.0.1",
     "@kcconfig/jest-config": "0.0.1",
@@ -34,7 +34,7 @@ const getDevDeps = (type) => {
     typescript: "4.4.4",
   };
 
-  if (type === "rollup") {
+  if (compiler === "rollup") {
     base["@kcconfig/rollup-config"] = "0.0.1";
     base["rollup"] = "2.59.0";
   }
@@ -46,7 +46,7 @@ const getDevDeps = (type) => {
  * build package.json content
  *
  * @param {{
- *    type: "tsc" | "rollup",
+ *    compiler: "tsc" | "rollup",
  *    category: string,
  *    name: string,
  *    description: string,
@@ -72,8 +72,8 @@ const build = (option) => {
     "lib/**/*.d.ts.map",
   ];
 
-  const devDependencies = getDevDeps(option.type);
-  const buildCmd = getBuildCmd(option.type);
+  const devDependencies = getDevDeps(option.compiler);
+  const buildCmd = getBuildCmd(option.compiler);
   const pkg = {
     name: toPackageName(option.category, option.name),
     version: option.version,
@@ -109,12 +109,12 @@ const build = (option) => {
     devDependencies,
   };
 
-  if (option.type === "rollup") {
+  if (option.compiler === "rollup") {
     pkg["main"] = "lib/index.cjs.js";
     pkg["module"] = "lib/index.esm.js";
     pkg["browser"] = "lib/index.umd.js";
     pkg["types"] = "lib/index.d.ts";
-  } else if (option.type === "tsc") {
+  } else if (option.compiler === "tsc") {
     pkg["main"] = "lib/index.js";
     pkg["types"] = "lib/index.d.ts";
   }

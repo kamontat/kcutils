@@ -1,8 +1,8 @@
 ---
-to: <%= h.location.skipIf(type === "rollup", h.location.buildPath(category, name, "tsconfig.prod.json")) %>
+to: <%= h.location.skipIf(compiler === "rollup", h.location.buildPath(category, name, "tsconfig.prod.json")) %>
 ---
 
 <%- h.tsconfig.build({
-  type,
+  compiler,
   mode: "production"
 }) %>

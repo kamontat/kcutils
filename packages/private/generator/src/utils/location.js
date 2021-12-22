@@ -6,7 +6,7 @@ const url = {
 };
 
 /**
- * you should use this on this syntax `skipIf(type === "tsc", buildPath(category, name, "README.md"))`
+ * you should use this on this syntax `skipIf(compiler === "tsc", buildPath(category, name, "README.md"))`
  * @param {boolean} checker if true will return null, otherwise, return path out
  * @param {string} path package path to skip
  */

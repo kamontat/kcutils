@@ -7,8 +7,8 @@ const { mustNotEmpty } = require("../../../src/utils/validate");
 module.exports = [
   {
     type: "autocomplete",
-    name: "type",
-    message: "What's new package type?",
+    name: "compiler",
+    message: "What's new package compiler?",
     choices: ["tsc", "rollup"],
     initial: "rollup",
   },
