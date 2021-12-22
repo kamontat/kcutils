@@ -1,28 +1,32 @@
-import { ChildProcess, spawn } from "child_process";
-import { Context } from "../contexts";
-
 import { Chain } from "../models/Chain";
 import { Starter } from "../models/Starter";
 import { Transformer } from "../models/Transformer";
 import { OptionData } from "./Option";
+import { Execution, defaultExecution } from "./Execution";
 
-export class Commandline<O extends OptionData> implements Starter<string[]> {
-  static build<O extends OptionData>(
-    action: Transformer<O, string[], string[]>
-  ): Commandline<O> {
+export class Commandline<O extends OptionData, T> implements Starter<string[]> {
+  static initial<O extends OptionData, T>(
+    action: Transformer<O, string[], string[]>,
+    execution?: Execution<T>
+  ): Commandline<O, T> {
     if (!action.previous) {
       throw new Error("cannot found option parser");
     }
 
-    return new Commandline(action.previous!, action);
+    return new Commandline<O, any>(
+      action.previous,
+      action,
+      execution ?? defaultExecution
+    );
   }
 
   private constructor(
-    private _option: Transformer<string[], O>,
-    private _action: Transformer<O, string[]>
+    private readonly _option: Transformer<string[], O>,
+    private readonly _action: Transformer<O, string[]>,
+    private readonly _execution: Execution<T>
   ) {}
 
-  start(input: string[]): Promise<ChildProcess> {
+  start(input: string[]): Promise<T> {
     return Chain.with(this._option)
       .with(this._action)
       .with({
@@ -37,35 +41,12 @@ export class Commandline<O extends OptionData> implements Starter<string[]> {
           context.log.debug("command", `${command} ${commands.join(" ")}`);
 
           if (options?.dryrun) {
-            return this.exec(context, "exit", ["0"]);
+            return this._execution(context, "exit", ["0"]);
           } else {
-            return this.exec(context, command, commands);
+            return this._execution(context, command, commands);
           }
         },
       })
       .start(input);
-  }
-
-  private exec(context: Context, command: string, args: string[]) {
-    const proc = spawn(command, args, { stdio: "inherit" });
-    proc.on("error", (err) => {
-      if (err) {
-        if (err.message.includes("spawn exit ENOENT")) return;
-      }
-
-      console.log(err.message);
-    });
-
-    proc.on("exit", (_code, signal) => {
-      const code = _code ?? -1;
-
-      if (signal) context.log.debug("exit code", `${code} (signal=${signal})`);
-      else context.log.debug("exit code", code);
-
-      if (code > 0) process.exit(code);
-      else process.exit(0);
-    });
-
-    return proc;
   }
 }
