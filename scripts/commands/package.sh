@@ -13,6 +13,7 @@ log_warn "Module" "You using default command, which is yarn execution"
 module_name="$1"
 shift
 
+log_info "Module" "Running on '$module_name'"
 on_module_directory "$module_name" &&
   run_yarn "$@" &&
   go_back
