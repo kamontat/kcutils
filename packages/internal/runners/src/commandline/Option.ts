@@ -5,10 +5,12 @@ import { Transformer } from "../models/Transformer";
 export type OptionData = {
   dryrun: boolean;
   debug: boolean;
-  raw: string[];
+  raw: string[]; // all argument without option
+  extraRaw: string[]; // argument after --
 };
 
 export type OptionTransformer<T> = {
+  alias?: string[];
   defaultValue: T;
   fn: (value: string, def: T) => T;
 };
@@ -20,7 +22,7 @@ export type OptionMapper<O> = {
 export class OptionBuilder<O>
   implements Builder<Transformer<string[], OptionData & O>>
 {
-  static build<O>(def: OptionMapper<O>): OptionBuilder<O> {
+  static initial<O>(def: OptionMapper<O>): OptionBuilder<O> {
     return new OptionBuilder(def);
   }
 
@@ -30,31 +32,48 @@ export class OptionBuilder<O>
     return {
       name: "option",
       transform: (_args, context) => {
-        const args = context.argument.parse<ParsedArgs>(_args, {
-          alias: {
-            dryrun: ["dry", "dr", "dry-run"],
-          },
-        });
         const mapper = context.general.byDefault<OptionMapper<OptionData>>(
           {
             dryrun: {
               defaultValue: false,
-              fn: (value) => value !== "false",
+              fn: Option.toBoolean,
+              alias: ["d", "dry", "dry-run"],
             },
             debug: {
               defaultValue: false,
-              fn: (value) => value !== "false",
+              fn: Option.toBoolean,
+              alias: ["D"],
             },
             raw: {
-              defaultValue: args._,
-              fn: () => args._,
+              defaultValue: [],
+              fn: () => [],
+            },
+            extraRaw: {
+              defaultValue: [],
+              fn: () => [],
             },
           },
           this._valueMapper
         );
 
-        context.log.debug("Arguments", args);
+        const alias = Object.keys(mapper).reduce((obj, key) => {
+          const _alias = mapper[key as keyof typeof mapper].alias;
+          if (_alias) {
+            obj[key] = _alias;
+          }
 
+          return obj;
+        }, {} as Record<string, string[]>);
+
+        const args = context.argument.parse<ParsedArgs>(_args, {
+          "--": true,
+          alias,
+        });
+
+        mapper.raw.fn = () => args._;
+        mapper.extraRaw.fn = () => args["--"] ?? [];
+
+        context.log.debug("Arguments", args);
         const result: Record<string, unknown> = {};
 
         for (const key in mapper) {
@@ -71,8 +90,10 @@ export class OptionBuilder<O>
 }
 
 export class Option {
-  static toBoolean(value: string) {
-    return value !== "false";
+  static toBoolean(value: string | boolean, def: boolean) {
+    if (value === true || value === "true") return true;
+    else if (value === false || value === "false") return false;
+    else return def;
   }
 
   static toInt(value: string, def: number) {
