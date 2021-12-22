@@ -102,7 +102,6 @@ const build = (option) => {
       build: buildCmd,
       clean: "rimraf reports lib coverage junit.xml temp dist .rollup.cache",
       lint: "eslint .",
-      start: "node lib/index.js",
       test: "jest",
       "test:mutator": "stryker run",
     },

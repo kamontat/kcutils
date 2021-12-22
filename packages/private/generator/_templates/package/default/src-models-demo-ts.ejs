@@ -26,6 +26,6 @@ export default class Demo {
   }
 }
 
-const HelloWorld = new Demo(0, "hello world");
+const HelloWorld = new Demo(0, "hello, <%= h.name.toPackageName(category, name) %>");
 
 export { HelloWorld };
