@@ -26,8 +26,5 @@ export COMMAND_ALIAS=(
   "packages>b=bootstrap"
   "packages>B=build"
   "package>b=build"
-  "h=help"
-  "--help=help"
-  "-h=help"
   "c=clean"
 )
