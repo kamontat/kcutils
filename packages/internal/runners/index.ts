@@ -9,6 +9,7 @@ export type {
 } from "./src/commandline/Option";
 
 export { Commandline } from "./src/commandline/Commandline";
+export type { Execution } from "./src/commandline/Execution";
 
 export * from "./src/contexts";
 
