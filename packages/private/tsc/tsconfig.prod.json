@@ -1,0 +1,14 @@
+{
+  "extends": "@kcconfig/ts-config/includes/default.json",
+  "include": [
+    "**/*.ts",
+    "package.json"
+  ],
+  "exclude": [
+    "lib",
+    "test"
+  ],
+  "compilerOptions": {
+    "outDir": "lib"
+  }
+}
