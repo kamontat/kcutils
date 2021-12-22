@@ -1,11 +1,11 @@
-const { types } = require("../constants/name");
+const { categories } = require("../constants/name");
 
 /**
- * return true if package type must be private
+ * return true if package is private category
  *
- * @param {string} type package type
- * @returns if input type is private package
+ * @param {string} category package category
+ * @returns true if category is private
  */
-const isPrivate = (type) => types.PRIVATE === type;
+const isPrivate = (category) => categories.PRIVATE === category;
 
 module.exports = { isPrivate };

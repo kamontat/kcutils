@@ -1,0 +1,8 @@
+---
+to: <%= h.location.skipIf(type === "rollup", h.location.buildPath(category, name, "tsconfig.prod.json")) %>
+---
+
+<%- h.tsconfig.build({
+  type,
+  mode: "production"
+}) %>

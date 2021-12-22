@@ -9,6 +9,13 @@ module.exports = [
     type: "autocomplete",
     name: "type",
     message: "What's new package type?",
+    choices: ["tsc", "rollup"],
+    initial: "rollup",
+  },
+  {
+    type: "autocomplete",
+    name: "category",
+    message: "What's new package category?",
     choices: ["public", "internal", "private", "configs", "typings"],
   },
   {
@@ -18,10 +25,11 @@ module.exports = [
     format: toSafeName,
     result: toSafeName,
     validate: mustNotEmpty,
-  },{
+  },
+  {
     type: "input",
     name: "description",
-    message: "What's new package description?"
+    message: "What's new package description?",
   },
   {
     type: "input",
@@ -39,5 +47,5 @@ module.exports = [
     name: "browser",
     message: "Is browser supported",
     initial: false,
-  }
+  },
 ];

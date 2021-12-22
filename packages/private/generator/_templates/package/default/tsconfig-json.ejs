@@ -1,13 +1,8 @@
 ---
-to: <%= h.location.buildPath(type, name, "tsconfig.json") %>
+to: <%= h.location.buildPath(category, name, "tsconfig.json") %>
 ---
 
-{
-  "extends": "@kcconfig/ts-config/includes/default.json",
-  "include": ["**/*.ts", "package.json"],
-  "exclude": ["lib"],
-  "compilerOptions": {
-    "outDir": "lib",
-    "declarationDir": "."
-  }
-}
+
+<%- h.tsconfig.build({
+  type,
+}) %>

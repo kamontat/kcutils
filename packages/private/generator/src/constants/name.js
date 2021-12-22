@@ -1,4 +1,4 @@
-const types = {
+const categories = {
   CONFIG: "configs",
   TYPE: "typings",
   PRIVATE: "private",
@@ -15,19 +15,19 @@ const namespaces = {
 };
 
 /**
- * return true if input type is valid
- * @param {string} type package type
+ * return true if input category is valid
+ * @param {string} category package category
  * @returns {boolean} true or false
  */
-const validateType = (type) => {
-  return Object.keys(types).some((key) => {
-    return types[key] === type;
+const validateCategory = (category) => {
+  return Object.keys(categories).some((key) => {
+    return categories[key] === category;
   });
 };
 
 /**
  * return true if input namespace is valid
- * @param {string} namespace package scoped
+ * @param {string} namespace package namespace (scoped name in nodejs)
  * @returns {boolean} true or false
  */
 const validateNamespace = (namespace) => {
@@ -47,38 +47,38 @@ const toSafeName = (name) => {
 
 /**
  *
- * @param {string} type package type
- * @returns namespace to input type
+ * @param {string} category package category
+ * @returns package namespace (use in nodejs package)
  */
-const toNamespace = (type) => {
-  switch (type) {
-    case types.PRIVATE:
+const toNamespace = (category) => {
+  switch (category) {
+    case categories.PRIVATE:
       return namespaces.PRIVATE;
-    case types.TYPE:
+    case categories.TYPE:
       return namespaces.TYPE;
-    case types.CONFIG:
+    case categories.CONFIG:
       return namespaces.CONFIG;
-    case types.INTERNAL:
+    case categories.INTERNAL:
       return namespaces.INTERNAL;
-    case types.PUBLIC:
+    case categories.PUBLIC:
       return namespaces.PUBLIC;
   }
 };
 
 /**
  * convert package information to name
- * @param {string} type package type
+ * @param {string} category package categories
  * @param {string} name package name
  * @returns safe normalize package name
  */
-const toPackageName = (type, name) => `@${toNamespace(type)}/${name}`;
+const toPackageName = (category, name) => `@${toNamespace(category)}/${name}`;
 
 module.exports = {
-  types,
+  categories,
   namespaces,
   toSafeName,
   toNamespace,
   toPackageName,
-  validateType,
+  validateCategory,
   validateNamespace,
 };

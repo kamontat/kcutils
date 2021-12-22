@@ -1,5 +1,5 @@
 ---
-to: <%= h.location.buildPath(type, name, "rollup.config.js") %>
+to: <%= h.location.skipIf(type === "tsc", h.location.buildPath(category, name, "rollup.config.js")) %>
 ---
 
 const config = require("@kcconfig/rollup-config");

@@ -1,10 +1,11 @@
 ---
-to: <%= h.location.buildPath(type, name, "package.json") %>
+to: <%= h.location.buildPath(category, locals.name, "package.json") %>
 sh: cd <%= cwd %> && yarn install
 ---
 
 <%- h.pkg.build({
   type,
+  category,
   name,
   description,
   version,

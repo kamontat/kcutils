@@ -6,30 +6,40 @@ const url = {
 };
 
 /**
- *
- * @param {string} type package type
+ * you should use this on this syntax `skipIf(type === "tsc", buildPath(category, name, "README.md"))`
+ * @param {boolean} checker if true will return null, otherwise, return path out
+ * @param {string} path package path to skip
+ */
+const skipIf = (checker, path) => {
+  if (checker) return null;
+  return path;
+};
+
+/**
+ * build file/directory relative path from input package information
+ * @param {string} category package category
  * @param {string} name package name
  * @param  {...string[]} args filepath from package location
  * @returns {string} relative path from generator to input filepath
  */
-const buildPath = (type, name, ...args) =>
-  path.join("..", "..", type, name, ...args);
+const buildPath = (category, name, ...args) =>
+  path.join("..", "..", category, name, ...args);
 
 /**
- * build package path from root directory
- * @param {string} type package type
+ * build package relative path from root directory
+ * @param {string} category package category
  * @param {string} name package name
  * @returns {string} packages path
  */
-const buildPackagePath = (type, name) => `packages/${type}/${name}`;
+const buildPackagePath = (category, name) => `packages/${category}/${name}`;
 
 /**
- * build homepage url
- * @param {string} type package type
+ * build homepage url (in Github)
+ * @param {string} category package category
  * @param {string} name package name
  * @returns {string} github homepage
  */
-const buildHomepage = (type, name) =>
-  `${url.GITHUB}/tree/main/${buildPackagePath(type, name)}`;
+const buildHomepage = (category, name) =>
+  `${url.GITHUB}/tree/main/${buildPackagePath(category, name)}`;
 
-module.exports = { url, buildPath, buildPackagePath, buildHomepage };
+module.exports = { url, skipIf, buildPath, buildPackagePath, buildHomepage };
