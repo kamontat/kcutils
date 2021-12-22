@@ -55,7 +55,7 @@ describe("commandline", () => {
     }).toThrow();
   });
 
-  test.only("normal commandline with option and action", () => {
+  test("normal commandline with option and action", () => {
     const option = OptionBuilder.initial({
       test: {
         defaultValue: false,
