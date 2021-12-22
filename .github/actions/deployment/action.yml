@@ -1,6 +1,10 @@
 name: "Deployment"
 description: "For deploy changed packages"
 inputs:
+  with_build:
+    description: "Build packages"
+    required: false
+    default: "true"
   release_type:
     description: "Release type"
     required: false
@@ -37,6 +41,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Compile and build packages
+      if: ${{ inputs.with_build == 'true' }}
+      run: yarn packages build
+      shell: bash
+
     - name: Check git status
       run: git status --short
       shell: bash

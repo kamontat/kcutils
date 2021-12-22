@@ -6,8 +6,9 @@ inputs:
     required: true
   with_build:
     description: "Build packages"
+    deprecationMessage: "This build will cause coverage report to report wrongly result, use with_build in deployment instead"
     required: false
-    default: "true"
+    default: "false"
 
 runs:
   using: "composite"
