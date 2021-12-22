@@ -5,8 +5,7 @@ inputs:
     description: "Specify nodejs version"
     required: true
   with_build:
-    description: "Build packages"
-    deprecationMessage: "This build will cause coverage report to report wrongly result, use with_build in deployment instead"
+    description: "Build packages, you SHOULD NOT USE if you plan to collect coverage report"
     required: false
     default: "false"
 
