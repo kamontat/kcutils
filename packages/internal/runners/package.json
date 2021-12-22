@@ -32,7 +32,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.prod.json",
+    "build": "tsc --project tsconfig.prod.json",
     "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo .stryker-tmp .rollup.cache",
     "lint": "eslint .",
     "test": "jest",

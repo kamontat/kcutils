@@ -1,6 +1,6 @@
 {
   "name": "@kcprivate/rollup",
-  "description": "example project using rollup as compiler",
+  "description": "example package with rollup as compiler",
   "version": "0.0.1",
   "private": true,
   "typedocMain": "index.ts",
@@ -26,12 +26,8 @@
   },
   "keywords": [
     "kcmono",
-    "kcinternal",
-    "helper",
-    "kcutils",
-    "configuration",
-    "node",
-    "typescript"
+    "example",
+    "rollup"
   ],
   "files": [
     "package.json",
