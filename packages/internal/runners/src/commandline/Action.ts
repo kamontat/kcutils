@@ -8,7 +8,7 @@ export type Action<O> = (option: O, context: Context) => string[];
 export class ActionBuilder<O extends OptionData>
   implements Builder<Transformer<O, string[]>>
 {
-  static build<O extends OptionData>(
+  static initial<O extends OptionData>(
     option: Transformer<string[], O>,
     fn: Action<O>
   ): ActionBuilder<O> {
