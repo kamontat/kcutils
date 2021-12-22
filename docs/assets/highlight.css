@@ -1,6 +1,6 @@
 :root {
-    --light-code-background: #FFFFFF;
-    --dark-code-background: #1E1E1E;
+    --light-code-background: #FDF6E3;
+    --dark-code-background: #002B36;
 }
 
 @media (prefers-color-scheme: light) { :root {
