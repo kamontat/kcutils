@@ -25,16 +25,17 @@ const build = (option) => {
     exclude.push("test");
   }
 
-  return JSON.stringify(
-    {
-      extends: "@kcconfig/ts-config/includes/default.json",
-      include: ["**/*.ts", "package.json"],
-      exclude,
-      compilerOptions,
-    },
-    null,
-    "  "
-  );
+  const pkg = {
+    extends: "@kcconfig/ts-config/includes/default.json",
+    exclude,
+    compilerOptions,
+  };
+
+  if (option.compiler === "rollup") {
+    pkg.include.push("**/*.ts", "package.json");
+  }
+
+  return JSON.stringify(pkg, null, "  ");
 };
 
 module.exports = { build };
