@@ -35,7 +35,8 @@
     "start": "node lib/index.js"
   },
   "dependencies": {
-    "@kcprivate/rollup": "*"
+    "@kcprivate/rollup": "*",
+    "@kcprivate/tsc": "*"
   },
   "devDependencies": {
     "typescript": "4.4.4"
