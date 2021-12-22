@@ -12,7 +12,7 @@ on_root_directory
 
 args=()
 
-is_ci && args+=("--ci" "--runInBand")
+is_ci && args+=("--runInBand")
 
 # run yarn test on every module
 run_xlerna_run "test" -- "${args[@]}" "$@" &&
