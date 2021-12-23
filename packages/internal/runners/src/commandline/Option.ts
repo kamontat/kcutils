@@ -3,6 +3,7 @@ import { Builder } from "../models/Builder";
 import { Transformer } from "../models/Transformer";
 
 export type OptionData = {
+  help: boolean;
   dryrun: boolean;
   debug: boolean;
   raw: string[]; // all argument without option
@@ -26,6 +27,10 @@ export class OptionBuilder<O>
     return new OptionBuilder(def);
   }
 
+  static empty(): OptionBuilder<{}> {
+    return new OptionBuilder({});
+  }
+
   private constructor(private _valueMapper: OptionMapper<O>) {}
 
   build(): Transformer<string[], OptionData & O> {
@@ -34,6 +39,11 @@ export class OptionBuilder<O>
       transform: (_args, context) => {
         const mapper = context.general.byDefault<OptionMapper<OptionData>>(
           {
+            help: {
+              defaultValue: false,
+              fn: Option.toBoolean,
+              alias: ["h"],
+            },
             dryrun: {
               defaultValue: false,
               fn: Option.toBoolean,
