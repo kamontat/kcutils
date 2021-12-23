@@ -62,50 +62,13 @@ const build = (option) => {
   };
   const keywords = ["kcmono"];
   keywords.push(...option.keywords);
-  const files = [
-    "package.json",
-    "CHANGELOG.md",
-    "README.md",
-    "lib/**/*.js",
-    "lib/**/*.js.map",
-    "lib/**/*.d.ts",
-    "lib/**/*.d.ts.map",
-  ];
 
-  const devDependencies = getDevDeps(option.compiler);
-  const buildCmd = getBuildCmd(option.compiler);
   const pkg = {
     name: toPackageName(option.category, option.name),
     version: option.version,
     description: option.description,
     private: isPrivate(option.category),
     typedocMain: "index.ts",
-    license: "SEE LICENSE IN LICENSE",
-    homepage: buildHomepage(option.category, option.name),
-    repository: {
-      type: "git",
-      url: url.GITHUB_REPO,
-      directory: buildPackagePath(option.category, option.name),
-    },
-    bugs: {
-      email: contact.email,
-      url: `${url.GITHUB_REPO}/issues`,
-    },
-    author: {
-      name: contact.name,
-      email: contact.email,
-      url: url.GITHUB,
-    },
-    keywords,
-    files,
-    scripts: {
-      build: buildCmd,
-      clean: "rimraf reports lib coverage junit.xml temp dist .rollup.cache",
-      lint: "eslint .",
-      test: "jest",
-      "test:mutator": "stryker run",
-    },
-    devDependencies,
   };
 
   if (option.compiler === "rollup") {
@@ -117,6 +80,42 @@ const build = (option) => {
     pkg["main"] = "lib/index.js";
     pkg["types"] = "lib/index.d.ts";
   }
+
+  pkg["license"] = "SEE LICENSE IN LICENSE";
+  pkg["homepage"] = buildHomepage(option.category, option.name);
+  pkg["repository"] = {
+    type: "git",
+    url: url.GITHUB_REPO,
+    directory: buildPackagePath(option.category, option.name),
+  };
+  pkg["bugs"] = {
+    email: contact.email,
+    url: `${url.GITHUB_REPO}/issues`,
+  };
+  pkg["author"] = {
+    name: contact.name,
+    email: contact.email,
+    url: url.GITHUB,
+  };
+  pkg["keywords"] = keywords;
+  pkg["files"] = [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+  ];
+  pkg["scripts"] = {
+    build: getBuildCmd(option.compiler),
+    clean: "rimraf reports lib coverage junit.xml temp dist .rollup.cache",
+    lint: "eslint .",
+    test: "jest",
+    "test:mutator": "stryker run",
+  };
+  pkg["dependencies"] = {};
+  pkg["devDependencies"] = getDevDeps(option.compiler);
 
   return JSON.stringify(pkg, null, "  ");
 };
