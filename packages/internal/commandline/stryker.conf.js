@@ -1,3 +1,4 @@
-const config = require("@kcconfig/stryker-config/utils");
+const config = require("@kcconfig/stryker-config");
+const pkg = require("./package.json");
 
-module.exports = config("@kcinternal/commandline");
+module.exports = config.initial(pkg.name);

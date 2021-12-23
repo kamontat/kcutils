@@ -1,15 +1,24 @@
 {
   "name": "@kcinternal/commandline",
-  "description": "simplify commandline for kcmono repositories",
-  "version": "0.20.1",
-  "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/internal/commandline",
+  "version": "0.21.0",
+  "description": "simplify commandline for kamontat repositories",
+  "private": false,
+  "typedocMain": "index.ts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/kamontat/tree/main/packages/internal/commandline",
+  "bin": {
+    "kc-core": "bin/core.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
     "directory": "packages/internal/commandline"
+  },
+  "bugs": {
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat/kcutils/issues"
   },
   "author": {
     "name": "Kamontat Chantrachirathumrong",
@@ -18,45 +27,45 @@
   },
   "keywords": [
     "kcmono",
-    "typescript",
-    "node",
-    "example"
+    "commandline",
+    "bash"
   ],
   "files": [
-    "lib/src/**/*.js",
-    "lib/src/**/*.js.map",
-    "lib/src/**/*.d.ts",
-    "lib/src/**/*.d.ts.map",
     "package.json",
+    "CHANGELOG.md",
     "README.md",
-    "CHANGELOG.md"
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map"
   ],
-  "bin": {
-    "kcmono": "bin/core.js"
-  },
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf reports lib coverage junit.xml temp dist tsconfig.tsbuildinfo",
+    "build": "tsc --project tsconfig.prod.json",
+    "clean": "rimraf reports lib coverage junit.xml temp dist .rollup.cache",
     "lint": "eslint .",
     "test": "jest",
     "test:mutator": "stryker run"
   },
+  "dependencies": {
+    "@kcinternal/runners": "0.0.1"
+  },
   "devDependencies": {
+    "@kcconfig/eslint-config": "0.0.1",
+    "@kcconfig/jest-config": "0.0.1",
     "@kcconfig/stryker-config": "0.0.1",
-    "@kcinternal/runners": "*",
+    "@kcconfig/ts-config": "0.0.1",
     "@stryker-mutator/core": "5.5.1",
-    "@stryker-mutator/jest-runner": "5.4.1",
+    "@stryker-mutator/jest-runner": "5.5.1",
     "@stryker-mutator/typescript-checker": "5.5.1",
     "@types/jest": "27.0.2",
-    "@types/node": "17.0.2",
-    "@types/package_json": "0.2.3",
-    "@typescript-eslint/eslint-plugin": "5.8.0",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "5.3.1",
     "eslint": "8.2.0",
     "eslint-plugin-tsdoc": "0.2.14",
     "jest": "27.3.1",
     "jest-junit": "13.0.0",
-    "ts-jest": "27.1.2",
+    "ts-jest": "27.0.7",
     "typescript": "4.4.4"
   }
 }
