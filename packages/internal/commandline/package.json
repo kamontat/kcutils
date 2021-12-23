@@ -3,13 +3,10 @@
   "version": "0.21.0",
   "description": "simplify commandline for kamontat repositories",
   "private": false,
-  "typedocMain": "index.ts",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/tree/main/packages/internal/commandline",
   "bin": {
-    "kc-core": "bin/core.js"
+    "kc-clean": "./bin/clean.js"
   },
   "repository": {
     "type": "git",
@@ -47,7 +44,8 @@
     "test:mutator": "stryker run"
   },
   "dependencies": {
-    "@kcinternal/runners": "0.0.1"
+    "@kcinternal/runners": "0.0.1",
+    "del": "6.0.0"
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.0.1",

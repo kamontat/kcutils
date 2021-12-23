@@ -1,5 +1,3 @@
-import Demo from "./src/models/Demo";
+import clean from "./src/scripts/clean";
 
-export { Demo };
-export * from "./src/models/Demo";
-export * from "./src/utils/merger";
+export { clean };
