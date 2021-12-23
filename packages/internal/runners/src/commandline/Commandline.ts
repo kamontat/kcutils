@@ -7,7 +7,7 @@ import { Execution, defaultExecution } from "./Execution";
 export class Commandline<O extends OptionData, T> implements Starter<string[]> {
   static initial<O extends OptionData, T>(
     action: Transformer<O, string[] | Promise<string[]>, string[]>,
-    execution?: Execution<T>
+    execution?: Execution<T, O>
   ): Commandline<O, T> {
     if (!action.previous) {
       throw new Error("cannot found option parser");
@@ -23,28 +23,35 @@ export class Commandline<O extends OptionData, T> implements Starter<string[]> {
   private constructor(
     private readonly _option: Transformer<string[], O>,
     private readonly _action: Transformer<O, string[] | Promise<string[]>>,
-    private readonly _execution: Execution<T>
+    private readonly _execution: Execution<T, O>
   ) {}
 
-  start(input: string[]): Promise<T> {
+  start(input: string[]): Promise<T | undefined> {
     return Chain.with(this._option)
       .with(this._action)
       .with({
         name: "commandline",
         transform: async (_commands, context) => {
           const commands = await _commands;
+          if (commands.length <= 0) return undefined;
+
           const options = context.history.getOutput<O>("option");
-          const command = context.general.getOrElse(commands.shift(), "echo");
           if (options?.debug) {
             context.log.setDebug(true);
           }
 
-          context.log.debug("command", `${command} ${commands.join(" ")}`);
+          context.log.debug("command", commands.join(" "));
 
           if (options?.dryrun) {
-            return this._execution(context, "exit", ["0"]);
+            return this._execution(context, {
+              commands: ["exit", "0"],
+              option: options,
+            });
           } else {
-            return this._execution(context, command, commands);
+            return this._execution(context, {
+              commands,
+              option: options,
+            });
           }
         },
       })

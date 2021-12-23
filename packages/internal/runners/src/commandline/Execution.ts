@@ -1,18 +1,21 @@
 import { ChildProcess, spawn } from "child_process";
 import { Context } from "../contexts";
 
-export type Execution<T> = (
-  context: Context,
-  command: string,
-  args: string[]
-) => T;
+export type ExecutionData<O> = {
+  option?: O;
+  commands: string[];
+};
 
-export const defaultExecution: Execution<ChildProcess> = (
+export type Execution<T, O> = (context: Context, data: ExecutionData<O>) => T;
+
+export const defaultExecution: Execution<ChildProcess, unknown> = (
   context: Context,
-  command: string,
-  args: string[]
+  data: ExecutionData<unknown>
 ): ChildProcess => {
-  const proc = spawn(command, args, { stdio: "inherit" });
+  const commands = data.commands.copyWithin(0, 0); // copy commands to different list
+  const command = context.general.getOrElse(commands.shift(), "echo");
+
+  const proc = spawn(command, commands, { stdio: "inherit" });
   proc.on("error", (err) => {
     if (err) {
       if (err.message.includes("spawn exit ENOENT")) return;
