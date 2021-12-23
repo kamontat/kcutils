@@ -3,10 +3,13 @@ import { Builder } from "../models/Builder";
 import { Transformer } from "../models/Transformer";
 import { OptionData } from "./Option";
 
-export type Action<O> = (option: O, context: Context) => string[];
+export type Action<O> = (
+  option: O,
+  context: Context
+) => string[] | Promise<string[]>;
 
 export class ActionBuilder<O extends OptionData>
-  implements Builder<Transformer<O, string[]>>
+  implements Builder<Transformer<O, string[] | Promise<string[]>, string[]>>
 {
   static initial<O extends OptionData>(
     option: Transformer<string[], O>,
@@ -20,7 +23,7 @@ export class ActionBuilder<O extends OptionData>
     private _action: Action<O>
   ) {}
 
-  build(): Transformer<O, string[], string[]> {
+  build(): Transformer<O, string[] | Promise<string[]>, string[]> {
     return {
       previous: this._option,
       name: "action",
