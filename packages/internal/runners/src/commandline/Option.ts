@@ -27,7 +27,7 @@ export class OptionBuilder<O>
     return new OptionBuilder(def);
   }
 
-  static empty(): OptionBuilder<{}> {
+  static empty(): OptionBuilder<Record<string, never>> {
     return new OptionBuilder({});
   }
 
