@@ -35,7 +35,7 @@ describe("chain command", () => {
 });
 
 describe("commandline", () => {
-  const mockExecution: Execution<string, unknown> = (_context, _data) => {
+  const mockExecution: Execution<string, OptionData> = (_context, _data) => {
     return _data.commands.join(" ");
   };
 
