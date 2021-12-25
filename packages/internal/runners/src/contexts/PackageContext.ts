@@ -1,5 +1,3 @@
-import { readFileSync } from "fs";
-
 import type { Package } from "package_json";
 
 /**
