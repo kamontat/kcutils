@@ -19,6 +19,7 @@
 export COMMAND_ALIAS=(
   "@kir=@kcinternal/runners"
   "@kic=@kcinternal/commandline"
+  "@kpc=@kcprivate/client"
   "@kpg=@kcprivate/generator"
   "g=general"
   "ps=packages"
