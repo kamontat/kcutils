@@ -58,7 +58,7 @@ runs:
       if: ${{ inputs.with_unittest == 'true' && inputs.collect_coverage == 'true' }}
       with:
         name: code-coverage-reports
-        path: packages/**/coverage/
+        path: packages/**/coverage/lcov-report/
     - id: mutator_test
       name: Run mutator test
       run: yarn packages test:mutator

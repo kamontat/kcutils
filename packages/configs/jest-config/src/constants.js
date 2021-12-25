@@ -25,5 +25,5 @@ module.exports = {
     "<rootDir>/.stryker-tmp/",
     "<rootDir>/test/",
   ],
-  coverageReporters: ["json", "lcov", "text", "clover"],
+  coverageReporters: ["text", "lcov"],
 };
