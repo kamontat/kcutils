@@ -12,7 +12,8 @@ on_root_directory
 
 args=()
 
-is_ci && args+=("--runInBand")
+# On CI, not print unit test result in console and 
+is_ci && args+=("--runInBand" "--reporters" "jest-junit" "--coverageReporters" "text-summary" "lcov")
 
 # run yarn test on every module
 run_xlerna_run "test" -- "${args[@]}" "$@" &&
