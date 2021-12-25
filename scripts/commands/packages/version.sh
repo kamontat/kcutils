@@ -21,6 +21,8 @@ args=(
   "--sign-git-commit"            # sign git commit
   "--sign-git-tag"               # sign git tag
   "--no-private"                 # ignore private packages
+  "--loglevel"                   # just to debug what it failed on CI mode
+  "debug"
 )
 
 is_ci && args+=("--yes")
