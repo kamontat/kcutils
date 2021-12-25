@@ -68,7 +68,7 @@ runs:
         GIT_USERNAME: ${{ inputs.git_username }}
         GIT_EMAIL: ${{ inputs.git_email }}
     - name: Setup npm token
-      run: npm set https://registry.npmjs.org/:_authToken $NPM_TOKEN
+      run: ${{ github.action_path }}/setup_npm.sh
       shell: bash
 
     - name: Check package to deploy
