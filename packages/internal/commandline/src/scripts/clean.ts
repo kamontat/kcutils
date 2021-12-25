@@ -1,11 +1,6 @@
 import del from "del";
 
-import {
-  Commandline,
-  OptionBuilder,
-  Option,
-  ActionBuilder,
-} from "@kcinternal/runners";
+import { Commandline, OptionBuilder, ActionBuilder } from "@kcinternal/runners";
 
 const printHelp = () => {
   console.log(`# Help for kc-clean
