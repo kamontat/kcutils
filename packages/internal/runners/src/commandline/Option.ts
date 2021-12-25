@@ -100,6 +100,10 @@ export class OptionBuilder<O>
 }
 
 export class Option {
+  static none(value: string, def: string) {
+    return value ? value : def; // check empty string and undefined/null
+  }
+
   static toBoolean(value: string | boolean, def: boolean) {
     if (value === true || value === "true") return true;
     else if (value === false || value === "false") return false;
