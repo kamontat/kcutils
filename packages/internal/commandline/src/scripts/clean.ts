@@ -13,7 +13,7 @@ const printHelp = () => {
 help clean all caches and tmp files, add --all to also remove node_module and yarn.lock file`);
 };
 
-export default (args: string[]) => {
+export default async (args: string[]) => {
   const option = OptionBuilder.initial({
     all: {
       defaultValue: false,
@@ -28,20 +28,34 @@ export default (args: string[]) => {
       return [];
     }
 
-    const removeRegex = ["**/*.log", "lib", "coverage", "dist", "reports"];
+    const removeRegex = [
+      "**/*.tsbuildinfo",
+      "**/*.log",
+      "dist",
+      "lib",
+      "temp",
+      "tmp",
+      "reports",
+      "coverage",
+      "junit.xml",
+      ".stryker-tmp",
+      ".rollup.cache",
+    ];
     if (option.all) {
       removeRegex.push("yarn.lock", "node_modules");
     }
     return removeRegex;
   }).build();
 
-  Commandline.initial(action, async (_context, data) => {
+  await Commandline.initial(action, async (context, data) => {
     const results = await del(data.commands, {
       dryRun: data.option?.dryrun ?? false,
     });
 
     results.forEach((v, i) => {
-      console.log(`${i + 1}) remove ${v}`);
+      context.log.debug(
+        `${i + 1}) ${data.option?.dryrun ? "Removing" : "Removed"} ${v}`
+      );
     });
   }).start(args);
 };
