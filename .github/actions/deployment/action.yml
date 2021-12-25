@@ -67,6 +67,9 @@ runs:
       env:
         GIT_USERNAME: ${{ inputs.git_username }}
         GIT_EMAIL: ${{ inputs.git_email }}
+    - name: Setup npm token
+      run: npm set https://registry.npmjs.org/:_authToken $NPM_TOKEN
+      shell: bash
 
     - name: Check package to deploy
       run: yarn packages change
@@ -78,7 +81,7 @@ runs:
       run: yarn packages publish ${{ inputs.release_type }}
       shell: bash
     - name: Publish documentation
-      run: yarn packages doc
+      run: yarn packages docs
       shell: bash
       env:
         NODE_DEBUG: gh-pages
