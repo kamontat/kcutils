@@ -53,12 +53,14 @@ runs:
       run: yarn packages test
       if: ${{ inputs.with_unittest == 'true' }}
       shell: bash
-    - name: Collect Code Coverage report
+    - name: Collect Unit test and Coverage report
       uses: actions/upload-artifact@v2
-      if: ${{ inputs.with_unittest == 'true' && inputs.collect_coverage == 'true' }}
+      if: ${{ inputs.with_unittest == 'true' && inputs.collect_coverage == 'true' && failure() }}
       with:
-        name: code-coverage-reports
-        path: packages/**/coverage/lcov-report/
+        name: test-reports
+        path: |
+          "packages/**/coverage/lcov-report/"
+          "packages/**/junit.xml"
     - id: mutator_test
       name: Run mutator test
       run: yarn packages test:mutator
@@ -69,7 +71,7 @@ runs:
     - id: sonarqube
       name: Scan sourcecode
       uses: SonarSource/sonarcloud-github-action@master
-      if: ${{ inputs.with_sonar == 'true' && inputs.github_apikey && inputs.sonar_apikey }}
+      if: ${{ inputs.with_sonar == 'true' && inputs.github_apikey && inputs.sonar_apikey && always() }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_apikey }}
         SONAR_TOKEN: ${{ inputs.sonar_apikey }}
