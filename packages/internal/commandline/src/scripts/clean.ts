@@ -1,6 +1,11 @@
 import del from "del";
 
-import { Commandline, OptionBuilder, ActionBuilder } from "@kcinternal/runners";
+import {
+  Commandline,
+  Option,
+  OptionBuilder,
+  ActionBuilder,
+} from "@kcinternal/runners";
 
 const printHelp = () => {
   console.log(`# Help for kc-clean
@@ -9,7 +14,13 @@ help clean all caches and tmp files, add --all to also remove node_module and ya
 };
 
 export default (args: string[]) => {
-  const option = OptionBuilder.empty().build();
+  const option = OptionBuilder.initial({
+    all: {
+      defaultValue: false,
+      fn: Option.toBoolean,
+      alias: ["A"],
+    },
+  }).build();
 
   const action = ActionBuilder.initial(option, async (option) => {
     if (option.help) {
@@ -17,13 +28,20 @@ export default (args: string[]) => {
       return [];
     }
 
-    const removeRegex = ["**/*.log"];
+    const removeRegex = ["**/*.log", "lib", "coverage", "dist", "reports"];
+    if (option.all) {
+      removeRegex.push("yarn.lock", "node_modules");
+    }
     return removeRegex;
   }).build();
 
-  Commandline.initial(action, (_context, data) => {
-    del(data.commands, {
+  Commandline.initial(action, async (_context, data) => {
+    const results = await del(data.commands, {
       dryRun: data.option?.dryrun ?? false,
+    });
+
+    results.forEach((v, i) => {
+      console.log(`${i + 1}) remove ${v}`);
     });
   }).start(args);
 };

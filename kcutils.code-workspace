@@ -9,8 +9,8 @@
       "path": "packages/internal/commandline"
     },
     {
-      "name": "private/generator",
-      "path": "packages/private/generator"
+      "name": "private/client",
+      "path": "packages/private/client"
     },
     {
       "name": "scripts",
