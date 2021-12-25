@@ -41,18 +41,10 @@ export class Commandline<O extends OptionData, T> implements Starter<string[]> {
           }
 
           context.log.debug("command", commands.join(" "));
-
-          if (options?.dryrun) {
-            return this._execution(context, {
-              commands: ["exit", "0"],
-              option: options,
-            });
-          } else {
-            return this._execution(context, {
-              commands,
-              option: options,
-            });
-          }
+          return this._execution(context, {
+            commands,
+            option: options,
+          });
         },
       })
       .start(input);

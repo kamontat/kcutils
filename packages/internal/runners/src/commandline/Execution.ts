@@ -1,21 +1,27 @@
 import { ChildProcess, spawn } from "child_process";
 import { Context } from "../contexts";
+import { OptionData } from "./Option";
 
 export type ExecutionData<O> = {
   option?: O;
   commands: string[];
 };
 
-export type Execution<T, O> = (context: Context, data: ExecutionData<O>) => T;
-
-export const defaultExecution: Execution<ChildProcess, unknown> = (
+export type Execution<T, O extends OptionData> = (
   context: Context,
-  data: ExecutionData<unknown>
+  data: ExecutionData<O>
+) => T;
+
+export const defaultExecution: Execution<ChildProcess, OptionData> = (
+  context: Context,
+  data: ExecutionData<OptionData>
 ): ChildProcess => {
   const commands = data.commands.copyWithin(0, 0); // copy commands to different list
   const command = context.general.getOrElse(commands.shift(), "echo");
 
-  const proc = spawn(command, commands, { stdio: "inherit" });
+  const proc = data.option?.dryrun
+    ? spawn("exit", ["0"], { stdio: "inherit" })
+    : spawn(command, commands, { stdio: "inherit" });
   proc.on("error", (err) => {
     if (err) {
       if (err.message.includes("spawn exit ENOENT")) return;
