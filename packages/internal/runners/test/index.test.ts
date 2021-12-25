@@ -36,12 +36,8 @@ describe("chain command", () => {
 });
 
 describe("commandline", () => {
-  const mockExecution: Execution<string> = (
-    _context: Context,
-    _command: string,
-    args: string[]
-  ) => {
-    return args.join(" ");
+  const mockExecution: Execution<string, unknown> = (_context, _data) => {
+    return _data.commands.join(" ");
   };
 
   test("commandline without option should failed", () => {
