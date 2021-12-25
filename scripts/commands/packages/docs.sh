@@ -15,5 +15,6 @@ args=()
 
 is_ci && args=("--logLevel" "Verbose")
 
+# TODO: upload typedoc to gh-page instead of using main branch to avoid manually push new commit
 run_yarn "typedoc" "${args[@]}" "$@" &&
   go_back
