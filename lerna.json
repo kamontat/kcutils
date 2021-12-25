@@ -14,7 +14,7 @@
       "exact": true
     },
     "version": {
-      "allowBranch": ["master", "develop", "feature/*"],
+      "allowBranch": ["main", "develop", "feature/*"],
       "message": "chore(release): publish %s"
     },
     "publish": {
