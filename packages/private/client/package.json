@@ -32,7 +32,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "start": "node lib/index.js"
+    "start": "kc-start",
+    "clean": "kc-clean"
   },
   "dependencies": {
     "@kcprivate/rollup": "*",
