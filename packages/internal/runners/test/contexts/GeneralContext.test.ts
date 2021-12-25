@@ -10,10 +10,10 @@ describe("GeneralContext", () => {
     const context = Context.build().general;
 
     expect(context.exist("test")).toBe(true);
-    expect(context.exist("")).toBe(true);
     expect(context.exist(false)).toBe(true);
     expect(context.exist(0)).toBe(true);
 
+    expect(context.exist("")).toBe(false);
     expect(context.exist(null)).toBe(false);
     expect(context.exist(undefined)).toBe(false);
   });

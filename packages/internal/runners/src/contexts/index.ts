@@ -5,7 +5,7 @@ import { EnvContext } from "./EnvContext";
 import { GeneralContext } from "./GeneralContext";
 import { LogContext } from "./LogContext";
 import { QuestionContext } from "./QuestionContext";
-import { HistoryData, HistoryStatus, HistoryContext } from "./HistoryContext";
+import { HistoryData, HistoryContext } from "./HistoryContext";
 import { CommandContext } from "./CommandContext";
 import { PackageContext } from "./PackageContext";
 
@@ -84,7 +84,6 @@ export {
   LogContext,
   QuestionContext,
   HistoryContext,
-  HistoryStatus,
   CommandContext,
   PackageContext,
 };
