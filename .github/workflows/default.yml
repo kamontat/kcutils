@@ -28,6 +28,7 @@ jobs:
           with_sonar: true
           github_apikey: ${{ secrets.GITHUB_TOKEN }}
           sonar_apikey: ${{ secrets.SONAR_TOKEN }}
+          collect_coverage: true
 
   # Test on different node version to ensure backward compatible
   test:

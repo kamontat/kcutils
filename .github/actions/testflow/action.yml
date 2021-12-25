@@ -29,31 +29,45 @@ inputs:
     description: "Sonarsource APIKey to connect with report apis (Require by with_sonar)"
     required: false
     default: ""
+  collect_coverage:
+    description: "Upload code coverage report to Github Artifact"
+    required: false
+    default: "false"
 
 runs:
   using: "composite"
   steps:
-    - name: Check style
+    - id: lint
+      name: Check style
       run: yarn packages lint
       if: ${{ inputs.with_lint == 'true' }}
       shell: bash
-    - name: Run unit test
+    - name: Collect Eslint report
+      uses: actions/upload-artifact@v2
+      if: ${{ inputs.with_lint == 'true' && failure() }}
+      with:
+        name: eslint-report
+        path: packages/**/reports/eslint-result.json
+    - id: unittest
+      name: Run unit test
       run: yarn packages test
       if: ${{ inputs.with_unittest == 'true' }}
       shell: bash
-    - name: Run mutator test
+    - name: Collect Code Coverage report
+      uses: actions/upload-artifact@v2
+      if: ${{ inputs.with_unittest == 'true' && inputs.collect_coverage == 'true' }}
+      with:
+        name: code-coverage-reports
+        path: packages/**/coverage/
+    - id: mutator_test
+      name: Run mutator test
       run: yarn packages test:mutator
       if: ${{ inputs.with_mutator_test == 'true' && inputs.mutator_apikey }}
       shell: bash
       env:
         STRYKER_DASHBOARD_API_KEY: ${{ inputs.mutator_apikey }}
-    - name: Run mutator test
-      run: yarn packages test:mutator
-      if: ${{ inputs.with_mutator_test == 'true' && inputs.mutator_apikey }}
-      shell: bash
-      env:
-        STRYKER_DASHBOARD_API_KEY: ${{ inputs.mutator_apikey }}
-    - name: Scan sourcecode
+    - id: sonarqube
+      name: Scan sourcecode
       uses: SonarSource/sonarcloud-github-action@master
       if: ${{ inputs.with_sonar == 'true' && inputs.github_apikey && inputs.sonar_apikey }}
       env:
