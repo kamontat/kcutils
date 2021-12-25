@@ -4,6 +4,7 @@ pull_request_rules:
       - author~=^dependabot\[bot\]$
       - base=main
       - -closed
+      - -conflict
       - check-success=Analyze (javascript)
       - check-success=testflow
       - check-success=test (12)
