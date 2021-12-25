@@ -1,12 +1,24 @@
+import { readFileSync } from "fs";
+
 import { DefaultArgument, ArgumentContext } from "./ArgumentContext";
 import { EnvContext } from "./EnvContext";
 import { GeneralContext } from "./GeneralContext";
 import { LogContext } from "./LogContext";
 import { QuestionContext } from "./QuestionContext";
-import { HistoryData, HistoryContext } from "./HistoryContext";
+import { HistoryData, HistoryStatus, HistoryContext } from "./HistoryContext";
+import { CommandContext } from "./CommandContext";
+import { PackageContext } from "./PackageContext";
 
 export class Context {
+  // singleton
+  private static _context: Context | undefined;
   static build(): Context {
+    if (!Context._context) Context._context = new Context();
+    return Context._context;
+  }
+
+  // To avoid same object reference in history context
+  static new(): Context {
     return new Context();
   }
 
@@ -16,14 +28,20 @@ export class Context {
   private _logContext: LogContext;
   private _questionContext: QuestionContext;
   private _historyContext: HistoryContext;
+  private _commandContext: CommandContext;
+  private _packageContext: PackageContext;
 
-  constructor() {
-    this._generalContext = new GeneralContext();
+  private constructor() {
+    const content = readFileSync("./package.json", { encoding: "utf-8" });
+
     this._envContext = new EnvContext(process.env);
-    this._argumentContext = new ArgumentContext();
     this._logContext = new LogContext(this._envContext);
+    this._generalContext = new GeneralContext();
+    this._packageContext = new PackageContext(content);
+    this._argumentContext = new ArgumentContext();
     this._questionContext = new QuestionContext();
     this._historyContext = new HistoryContext();
+    this._commandContext = new CommandContext();
   }
 
   get general(): GeneralContext {
@@ -49,6 +67,14 @@ export class Context {
   get history(): HistoryContext {
     return this._historyContext;
   }
+
+  get command(): CommandContext {
+    return this._commandContext;
+  }
+
+  get package(): PackageContext {
+    return this._packageContext;
+  }
 }
 
 export {
@@ -58,6 +84,9 @@ export {
   LogContext,
   QuestionContext,
   HistoryContext,
+  HistoryStatus,
+  CommandContext,
+  PackageContext,
 };
 
 export type { DefaultArgument, HistoryData };
