@@ -23,6 +23,9 @@
     "email": "developer@kamontat.net",
     "url": "https://github.com/kamontat"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "kcmono",
     "commandline",

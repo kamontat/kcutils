@@ -97,6 +97,9 @@ const build = (option) => {
     email: contact.email,
     url: url.GITHUB,
   };
+  pkg["publishConfig"] = {
+    access: "public",
+  };
   pkg["keywords"] = keywords;
   pkg["files"] = [
     "package.json",

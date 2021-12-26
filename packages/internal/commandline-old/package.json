@@ -1,6 +1,7 @@
 {
   "name": "@kcinternal/commandline-old",
   "description": "simplify commandline for kcmono repositories",
+  "private": true,
   "version": "0.20.1",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/internal/commandline",
@@ -15,6 +16,9 @@
     "name": "Kamontat Chantrachirathumrong",
     "email": "developer@kamontat.net",
     "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "kcmono",
