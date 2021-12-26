@@ -12,7 +12,7 @@
   "excludePrivate": false,
   "excludeProtected": false,
   "disableSources": false,
-  "includeVersion": true,
+  "includeVersion": false,
   "sort": ["kind", "instance-first", "alphabetical"],
   "theme": "default",
   "lightHighlightTheme": "solarized-light",

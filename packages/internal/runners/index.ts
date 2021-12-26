@@ -9,7 +9,7 @@ export type {
 } from "./src/commandline/Option";
 
 export { Commandline } from "./src/commandline/Commandline";
-export type { Execution } from "./src/commandline/Execution";
+export type { Execution, ExecutionData } from "./src/commandline/Execution";
 
 export * from "./src/contexts";
 
@@ -18,3 +18,5 @@ export { Chain } from "./src/models/Chain";
 export type { Builder } from "./src/models/Builder";
 export type { Starter } from "./src/models/Starter";
 export type { Transformer } from "./src/models/Transformer";
+
+export type { Package } from "package_json";
