@@ -15,10 +15,10 @@ const getBuildCmd = (compiler) => {
 
 const getDevDeps = (compiler) => {
   const base = {
-    "@kcconfig/eslint-config": "0.0.1",
-    "@kcconfig/jest-config": "0.0.1",
-    "@kcconfig/stryker-config": "0.0.1",
-    "@kcconfig/ts-config": "0.0.1",
+    "@kcconfig/eslint-config": "0.1.0",
+    "@kcconfig/jest-config": "0.1.0",
+    "@kcconfig/stryker-config": "0.1.0",
+    "@kcconfig/ts-config": "0.1.0",
     "@stryker-mutator/core": "5.5.1",
     "@stryker-mutator/jest-runner": "5.5.1",
     "@stryker-mutator/typescript-checker": "5.5.1",
@@ -35,7 +35,7 @@ const getDevDeps = (compiler) => {
   };
 
   if (compiler === "rollup") {
-    base["@kcconfig/rollup-config"] = "0.0.1";
+    base["@kcconfig/rollup-config"] = "0.1.0";
     base["rollup"] = "2.59.0";
   }
 
