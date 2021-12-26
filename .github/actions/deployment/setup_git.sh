@@ -17,5 +17,10 @@ else
   exit 1
 fi
 
+# Update remote url to support gh-page
+if test -n "$GITHUB_TOKEN"; then
+  git remote set-url origin "https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+fi
+
 echo '##### Config (After change) #####'
 git config --local --list

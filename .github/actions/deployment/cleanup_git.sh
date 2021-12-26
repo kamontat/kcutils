@@ -3,3 +3,5 @@
 git config --local user.name ""
 git config --local user.email ""
 git config --local user.signingKey ""
+
+git remote remove origin

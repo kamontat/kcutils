@@ -73,6 +73,7 @@ runs:
       env:
         GIT_USERNAME: ${{ inputs.git_username }}
         GIT_EMAIL: ${{ inputs.git_email }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
     - name: Setup npm token
       run: ${{ github.action_path }}/setup_npm.sh
       shell: bash
@@ -98,7 +99,6 @@ runs:
       run: yarn packages docs
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ inputs.github_token }}
         NODE_DEBUG: gh-pages
 
     - name: Cleanup git
