@@ -111,3 +111,6 @@ runs:
       shell: bash
       env:
         GPG_IDENTIFY_KEY: ${{ inputs.gpg_identify_key }}
+    - name: Setup npm token
+      run: ${{ github.action_path }}/cleanup_npm.sh
+      shell: bash
