@@ -31,6 +31,15 @@ describe("GeneralContext", () => {
     expect(context.getOrElse(undefined, "b")).toBe("b");
   });
 
+  test("getOr() should pick first valid value", () => {
+    const context = Context.build().general;
+    expect(
+      context.getOr("default", undefined, null, "", "valid", "second-valid")
+    ).toEqual("valid");
+
+    expect(context.getOr("default", undefined, null, "")).toEqual("default");
+  });
+
   test("byDefault() should merge json with default", () => {
     const context = Context.build().general;
 

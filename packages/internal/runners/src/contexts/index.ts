@@ -12,13 +12,13 @@ import { PackageContext } from "./PackageContext";
 export class Context {
   // singleton
   private static _context: Context | undefined;
-  static build(): Context {
+  static get(): Context {
     if (!Context._context) Context._context = new Context();
     return Context._context;
   }
 
   // To avoid same object reference in history context
-  static new(): Context {
+  static build(): Context {
     return new Context();
   }
 

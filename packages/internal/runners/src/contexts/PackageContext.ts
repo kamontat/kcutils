@@ -6,12 +6,14 @@ import type { Package } from "package_json";
  * read from package.json file
  */
 export class PackageContext {
-  private _invalid: boolean;
-  private _pkg: Package;
+  private _pkg?: Package;
 
   constructor(packageContent: string) {
-    this._invalid = packageContent === "";
-    this._pkg = JSON.parse(packageContent);
+    try {
+      this._pkg = JSON.parse(packageContent);
+    } catch (e) {
+      this._pkg = undefined;
+    }
   }
 
   /**
@@ -20,7 +22,6 @@ export class PackageContext {
    * @returns main file
    */
   getMain(): string | undefined {
-    if (this._invalid) return undefined;
-    return this._pkg.main;
+    return this._pkg?.main;
   }
 }
