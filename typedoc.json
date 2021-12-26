@@ -1,6 +1,8 @@
 {
+  "emit": "docs",
   "entryPointStrategy": "packages",
   "entryPoints": ["packages/internal/runners", "packages/private/rollup"],
+  "out": "dist",
   "plugin": [],
   "logger": "console",
   "logLevel": "Warn",
@@ -11,15 +13,17 @@
   "excludeProtected": false,
   "disableSources": false,
   "includeVersion": true,
+  "sort": ["kind", "instance-first", "alphabetical"],
   "theme": "default",
   "lightHighlightTheme": "solarized-light",
   "darkHighlightTheme": "solarized-dark",
   "gaID": "",
   "gaSite": "auto",
   "githubPages": true,
-  "cleanOutputDir": false,
+  "cleanOutputDir": true,
   "readme": "none",
   "validation": {
+    "notExported": true,
     "invalidLink": true
   }
 }
