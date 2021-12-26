@@ -10,11 +10,18 @@
 
 on_root_directory
 
-# "--treatWarningsAsErrors"
-args=()
+typedoc_args=("--treatWarningsAsErrors")
+ghpage_args=(
+  "--dist"
+  "dist"
+  "--message"
+  "chore(release): publish new document"
+  "--add"
+  "--dotfiles"
+)
 
-is_ci && args=("--logLevel" "Verbose")
+is_ci && typedoc_args=("--logLevel" "Verbose")
 
-# TODO: upload typedoc to gh-page instead of using main branch to avoid manually push new commit
-run_yarn "typedoc" "${args[@]}" "$@" &&
+run_yarn "typedoc" "${typedoc_args[@]}" &&
+  run_yarn "gh-pages" "${ghpage_args[@]}" &&
   go_back
