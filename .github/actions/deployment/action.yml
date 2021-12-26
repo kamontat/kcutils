@@ -98,8 +98,6 @@ runs:
     - name: Publish documentation
       run: yarn packages docs
       shell: bash
-      env:
-        NODE_DEBUG: gh-pages
 
     - name: Cleanup git
       if: ${{ inputs.with_git == 'true' }}
