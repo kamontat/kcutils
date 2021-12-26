@@ -51,6 +51,5 @@ jobs:
           gpg_private_key_base64: ${{ secrets.GPG_PRIVATE_KEY_BASE64 }}
           gpg_signing_key: ${{ secrets.GPG_SIGNING_KEY }}
           gpg_identify_key: ${{ secrets.GPG_IDENTIFY_KEY }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          npm_token: ${{ secrets.NPM_TOKEN }}

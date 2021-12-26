@@ -1,6 +1,12 @@
 name: "Deployment"
 description: "For deploy changed packages"
 inputs:
+  github_token:
+    description: "Github Token to release new version"
+    required: true
+  npm_token:
+    description: "NPM Token to publish package"
+    required: true
   with_build:
     description: "Build packages"
     required: false
@@ -70,6 +76,8 @@ runs:
     - name: Setup npm token
       run: ${{ github.action_path }}/setup_npm.sh
       shell: bash
+      env:
+        NPM_TOKEN: ${{ inputs.npm_token }}
 
     - name: Check package to deploy
       run: yarn packages change
@@ -77,13 +85,20 @@ runs:
     - name: Increase new package version
       run: yarn packages version ${{ inputs.release_type }}
       shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github_token }}
+        NPM_TOKEN: ${{ inputs.npm_token }}
     - name: Publish new package
       run: yarn packages publish ${{ inputs.release_type }}
       shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github_token }}
+        NPM_TOKEN: ${{ inputs.npm_token }}
     - name: Publish documentation
       run: yarn packages docs
       shell: bash
       env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
         NODE_DEBUG: gh-pages
 
     - name: Cleanup git
