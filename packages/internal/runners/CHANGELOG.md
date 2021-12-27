@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.1.0...@kcinternal/runners@0.1.1) (2021-12-27)
+
+
+### Bug Fixes
+
+* **core:** all public package must have publishConfig access public ([4c17ffb](https://github.com/kamontat/kcutils/commit/4c17ffb799bb44a87997101a15825366d9f55495))
+* **model:** fix some bugs and add test ([d07a45b](https://github.com/kamontat/kcutils/commit/d07a45b0537a5ad50e0a31249a1e823183f0f7dd))
+
+
+### Performance Improvements
+
+* **yarn:** because yarn workspace hoist the lock to root, remove all yarn.lock ([2aaf874](https://github.com/kamontat/kcutils/commit/2aaf87404c68f6b7f1ad8deb5984b5e00ba6085e))
+
+
+
+
+
 # 0.1.0 (2021-12-26)
 
 

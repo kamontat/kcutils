@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.22.0...@kcinternal/commandline@0.22.1) (2021-12-27)
+
+
+### Bug Fixes
+
+* **core:** all public package must have publishConfig access public ([4c17ffb](https://github.com/kamontat/kcutils/commit/4c17ffb799bb44a87997101a15825366d9f55495))
+
+
+
+
+
 # [0.22.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.20.1...@kcinternal/commandline@0.22.0) (2021-12-26)
 
 

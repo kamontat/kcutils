@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.1.0...@kcconfig/rollup-config@0.1.1) (2021-12-27)
+
+
+### Performance Improvements
+
+* **yarn:** because yarn workspace hoist the lock to root, remove all yarn.lock ([2aaf874](https://github.com/kamontat/kcutils/commit/2aaf87404c68f6b7f1ad8deb5984b5e00ba6085e))
+
+
+
+
+
 # 0.1.0 (2021-12-26)
 
 

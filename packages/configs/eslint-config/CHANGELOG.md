@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.0...@kcconfig/eslint-config@0.1.1) (2021-12-27)
+
+
+### Bug Fixes
+
+* **rule:** update quote to allow backtick as well ([2d66ffe](https://github.com/kamontat/kcutils/commit/2d66ffec7b44988cce928039c797222515827b94))
+
+
+### Performance Improvements
+
+* **yarn:** because yarn workspace hoist the lock to root, remove all yarn.lock ([2aaf874](https://github.com/kamontat/kcutils/commit/2aaf87404c68f6b7f1ad8deb5984b5e00ba6085e))
+
+
+
+
+
 # 0.1.0 (2021-12-26)
 
 
