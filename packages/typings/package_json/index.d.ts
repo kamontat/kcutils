@@ -1,13 +1,50 @@
 declare module "package_json" {
-  export class Package {
-    readonly name: string;
-    readonly version: string;
-    readonly private: boolean;
-    readonly description?: string;
-    readonly typedocMain?: string;
-    readonly main?: string;
-    readonly dependencies?: { [name: string]: string };
-    readonly devDependencies?: { [name: string]: string };
-    readonly peerDependencies?: { [name: string]: string };
+  export interface PackageRepository {
+    type: "git";
+    url: string;
+    directory?: string;
   }
+
+  export interface PackageBugReport {
+    email?: string;
+    url?: string;
+  }
+
+  export interface PackageAuthor {
+    name: string;
+    email?: string;
+    url?: string;
+  }
+
+  export interface PackagePublishConfig {
+    access: "public" | "restricted";
+  }
+
+  export interface Package {
+    name: string;
+    version: string;
+    private: boolean;
+    description?: string;
+    typedocMain?: string;
+    main?: string;
+    module?: string;
+    browser?: string;
+    types?: string;
+    license?: string;
+    homepage?: string;
+    repository?: string | PackageRepository;
+    bugs?: string | PackageBugReport;
+    author?: string | PackageAuthor;
+    publishConfig?: PackagePublishConfig;
+    keywords?: string[];
+    files?: string[];
+    scripts?: Record<string, string>;
+    dependencies?: { [name: string]: string };
+    devDependencies?: { [name: string]: string };
+    peerDependencies?: { [name: string]: string };
+  }
+
+  export type OptionalPackage = Partial<Package>;
+  export type ReadonlyPackage = Readonly<Package>;
+  export type OptionalReadonlyPackage = Readonly<OptionalPackage>;
 }
