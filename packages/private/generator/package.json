@@ -2,11 +2,15 @@
   "name": "@kcprivate/generator",
   "description": "help contributor create new package easier with project conversion",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
-    "start": "hygen"
+    "build": "tsc",
+    "start": "tsc && hygen"
   },
   "devDependencies": {
-    "hygen": "6.1.0"
+    "@types/package_json": "0.2.3",
+    "@kcconfig/ts-config": "0.1.1",
+    "hygen": "6.1.0",
+    "typescript": "4.4.4"
   }
 }

@@ -1,8 +1,23 @@
-const { toNamespace, toPackageName } = require("../constants/name");
-const { buildHomepage, url, buildPackagePath } = require("../utils/location");
-const { isPrivate } = require("../utils/package");
+import type { Package } from "package_json";
 
-const getBuildCmd = (compiler) => {
+import { BASE_KEYWORDS, AUTHOR_NAME, AUTHOR_EMAIL } from "../constants/pkg";
+import { GH_USERLINK, GH_REPOLINK, GH_ISSUELINK } from "../constants/location";
+
+import { toPackageName } from "../utils/name";
+import { buildPackageUrl, buildPackagePath } from "../utils/location";
+import { isPrivate } from "../utils/pkg";
+
+type SupportedCompiler = "tsc" | "rollup";
+type BuildOption = {
+  compiler: SupportedCompiler;
+  category: string;
+  name: string;
+  description: string;
+  version: string;
+  keywords: string[];
+};
+
+const getBuildCmd = (compiler: SupportedCompiler) => {
   switch (compiler) {
     case "tsc":
       return "tsc --project tsconfig.prod.json";
@@ -13,12 +28,12 @@ const getBuildCmd = (compiler) => {
   }
 };
 
-const getDevDeps = (compiler) => {
-  const base = {
-    "@kcconfig/eslint-config": "0.1.0",
-    "@kcconfig/jest-config": "0.1.0",
-    "@kcconfig/stryker-config": "0.1.0",
-    "@kcconfig/ts-config": "0.1.0",
+const getDevDeps = (compiler: SupportedCompiler) => {
+  const base: Record<string, string> = {
+    "@kcconfig/eslint-config": "0.1.2",
+    "@kcconfig/jest-config": "0.1.2",
+    "@kcconfig/stryker-config": "0.1.2",
+    "@kcconfig/ts-config": "0.1.2",
     "@stryker-mutator/core": "5.5.1",
     "@stryker-mutator/jest-runner": "5.5.1",
     "@stryker-mutator/typescript-checker": "5.5.1",
@@ -44,26 +59,12 @@ const getDevDeps = (compiler) => {
 
 /**
  * build package.json content
- *
- * @param {{
- *    compiler: "tsc" | "rollup",
- *    category: string,
- *    name: string,
- *    description: string,
- *    version: string,
- *    keywords: string[],
- * }} option parameters from cli
+ * @param option build option
  * @returns package.json content
  */
-const build = (option) => {
-  const contact = {
-    name: "Kamontat Chantrachirathumrong",
-    email: "developer@kamontat.net",
-  };
-  const keywords = ["kcmono"];
-  keywords.push(...option.keywords);
-
-  const pkg = {
+export const build = (option: BuildOption) => {
+  const keywords = BASE_KEYWORDS.concat(...option.keywords);
+  const pkg: Package = {
     name: toPackageName(option.category, option.name),
     version: option.version,
     description: option.description,
@@ -82,20 +83,20 @@ const build = (option) => {
   }
 
   pkg["license"] = "SEE LICENSE IN LICENSE";
-  pkg["homepage"] = buildHomepage(option.category, option.name);
+  pkg["homepage"] = buildPackageUrl(option.category, option.name);
   pkg["repository"] = {
     type: "git",
-    url: url.GITHUB_REPO,
+    url: GH_REPOLINK,
     directory: buildPackagePath(option.category, option.name),
   };
   pkg["bugs"] = {
-    email: contact.email,
-    url: `${url.GITHUB_REPO}/issues`,
+    email: AUTHOR_EMAIL,
+    url: `${GH_ISSUELINK}`,
   };
   pkg["author"] = {
-    name: contact.name,
-    email: contact.email,
-    url: url.GITHUB,
+    name: AUTHOR_NAME,
+    email: AUTHOR_EMAIL,
+    url: GH_USERLINK,
   };
   pkg["publishConfig"] = {
     access: "public",
@@ -122,5 +123,3 @@ const build = (option) => {
 
   return JSON.stringify(pkg, null, "  ");
 };
-
-module.exports = { build };

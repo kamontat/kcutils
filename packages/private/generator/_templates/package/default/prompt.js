@@ -1,8 +1,7 @@
 // see types of prompts:
 // https://github.com/enquirer/enquirer/tree/master/examples
 
-const { toSafeName } = require("../../../src/constants/name");
-const { mustNotEmpty } = require("../../../src/utils/validate");
+const { name, validator } = require("../../../lib/src");
 
 module.exports = [
   {
@@ -22,9 +21,9 @@ module.exports = [
     type: "input",
     name: "name",
     message: "What's new package name?",
-    format: toSafeName,
-    result: toSafeName,
-    validate: mustNotEmpty,
+    format: name.toSafeName,
+    result: name.toSafeName,
+    validate: validator.mustNotEmpty,
   },
   {
     type: "input",
