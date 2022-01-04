@@ -1,10 +1,16 @@
 import { promisify } from "util";
 import { resolve, dirname, basename } from "path";
-import { existsSync, exists as _exists, readFileSync, readFile as _readFile } from "fs";
+import {
+  existsSync,
+  access,
+  readFileSync,
+  readFile as _readFile,
+  constants,
+} from "fs";
 
-import { Package } from "package_json";
+import { OptionalReadonlyPackage, ReadonlyPackage } from "package_json";
 
-const exists = promisify(_exists);
+const exists = promisify(access);
 const readFile = promisify(_readFile);
 
 type QueryType = "dirname" | "json";
@@ -56,7 +62,7 @@ export class PathHelper {
    * this will load package.json file if exist, if not will return {}
    * for sync method see packageJsonSync
    */
-  async packageJson(): Promise<Package | Partial<Package>> {
+  async packageJson(): Promise<OptionalReadonlyPackage> {
     const p = await this.pathEnsure("package.json");
     if (p !== undefined) {
       const content = await readFile(p, { encoding: "utf-8" });
@@ -68,17 +74,21 @@ export class PathHelper {
    * this will load package.json file if exist, if not will return {}
    * for async method see packageJson
    */
-  packageJsonSync(): Package | Partial<Package> {
+  packageJsonSync(): OptionalReadonlyPackage {
     const p = this.pathEnsureSync("package.json");
-    if (p !== undefined) return JSON.parse(readFileSync(p, { encoding: "utf-8" }));
+    if (p !== undefined)
+      return JSON.parse(readFileSync(p, { encoding: "utf-8" }));
     else return {}; // empty json
   }
 
-  isPackage(input: Partial<Package> | Package): input is Package {
+  isPackage(input: OptionalReadonlyPackage): input is ReadonlyPackage {
     return input.name !== undefined;
   }
 
-  async searchPackageJson(key: "dependencies" | "devDependencies", searchText: string): Promise<boolean> {
+  async searchPackageJson(
+    key: "dependencies" | "devDependencies",
+    searchText: string
+  ): Promise<boolean> {
     const pjson = await this.packageJson();
     if (!this.isPackage(pjson)) {
       return false;
@@ -87,18 +97,23 @@ export class PathHelper {
     }
   }
 
-  searchPackageJsonSync(key: "dependencies" | "devDependencies" | "all", searchText: string | RegExp): boolean {
+  searchPackageJsonSync(
+    key: "dependencies" | "devDependencies" | "all",
+    searchText: string | RegExp
+  ): boolean {
     const pjson = this.packageJsonSync();
     if (!this.isPackage(pjson)) {
       return false;
     } else {
       const arr =
         key === "all"
-          ? Object.keys(pjson.dependencies ?? {}).concat(Object.keys(pjson.devDependencies ?? {}))
+          ? Object.keys(pjson.dependencies ?? {}).concat(
+              Object.keys(pjson.devDependencies ?? {})
+            )
           : Object.keys(pjson[key] ?? {});
 
       if (typeof searchText === "string") return arr.includes(searchText);
-      else return arr.some(dep => searchText.test(dep));
+      else return arr.some((dep) => searchText.test(dep));
     }
   }
 
@@ -121,9 +136,12 @@ export class PathHelper {
    */
   async pathEnsure(...name: string[]): Promise<string | undefined> {
     const p = this.path(...name);
-    const is = await exists(p);
-    if (is) return p;
-    else return undefined;
+    try {
+      await exists(p, constants.F_OK | constants.R_OK);
+      return p;
+    } catch (e) {
+      return undefined;
+    }
   }
 
   /**

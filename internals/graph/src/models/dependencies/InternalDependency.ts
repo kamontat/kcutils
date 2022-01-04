@@ -1,4 +1,4 @@
-import { Package } from "package_json";
+import { ReadonlyPackage } from "package_json";
 
 import { Dependency } from "./Dependency";
 import { DependencyType } from "./DependencyType";
@@ -13,7 +13,11 @@ export class InternalDependency extends Dependency {
 }
 
 export class InternalDependencies {
-  static from(classify: Classify, p: Package): InternalDependency {
-    return new InternalDependency(p.name, p.version, classify.type(p.name, p.version));
+  static from(classify: Classify, p: ReadonlyPackage): InternalDependency {
+    return new InternalDependency(
+      p.name,
+      p.version,
+      classify.type(p.name, p.version)
+    );
   }
 }
