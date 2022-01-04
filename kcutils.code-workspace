@@ -13,6 +13,10 @@
       "path": "packages/private/client"
     },
     {
+      "name": "private/generator",
+      "path": "packages/private/generator"
+    },
+    {
       "name": "scripts",
       "path": "scripts"
     },
