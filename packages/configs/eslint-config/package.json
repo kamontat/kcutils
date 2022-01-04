@@ -26,7 +26,8 @@
   "files": [
     "CHANGELOG.md",
     "README.md",
-    "includes/*.json",
+    "includes/**/*.json",
+    "src/**/*.js",
     "*.js"
   ],
   "dependencies": {

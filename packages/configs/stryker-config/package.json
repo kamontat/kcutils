@@ -26,9 +26,9 @@
   "files": [
     "CHANGELOG.md",
     "README.md",
-    "includes/*.json",
-    "*.js",
-    "src/*.js"
+    "includes/**/*.json",
+    "src/**/*.js",
+    "*.js"
   ],
   "dependencies": {
     "@stryker-mutator/core": "5.5.1"
