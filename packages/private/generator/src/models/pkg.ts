@@ -50,7 +50,7 @@ const getDevDeps = (compiler: SupportedCompiler) => {
   };
 
   if (compiler === "rollup") {
-    base["@kcconfig/rollup-config"] = "0.1.0";
+    base["@kcconfig/rollup-config"] = "0.1.2";
     base["rollup"] = "2.59.0";
   }
 
