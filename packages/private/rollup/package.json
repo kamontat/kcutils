@@ -49,7 +49,7 @@
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.0",
     "@kcconfig/jest-config": "0.1.0",
-    "@kcconfig/rollup-config": "0.1.0",
+    "@kcconfig/rollup-config": "0.1.1",
     "@kcconfig/stryker-config": "0.1.0",
     "@kcconfig/ts-config": "0.1.0",
     "@stryker-mutator/core": "5.5.1",

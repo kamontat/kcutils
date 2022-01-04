@@ -4,7 +4,7 @@
   "description": "simplify commandline for kamontat repositories",
   "private": false,
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/tree/main/packages/internal/commandline",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/internal/commandline",
   "bin": {
     "kc-clean": "./bin/clean.js",
     "kc-start": "./bin/start.js"
