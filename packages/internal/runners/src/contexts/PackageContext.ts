@@ -1,4 +1,4 @@
-import type { Package } from "package_json";
+import type { ReadonlyPackage } from "package_json";
 
 /**
  * @public
@@ -6,7 +6,7 @@ import type { Package } from "package_json";
  * read from package.json file
  */
 export class PackageContext {
-  private _pkg?: Package;
+  private _pkg?: ReadonlyPackage;
 
   constructor(packageContent: string) {
     try {
