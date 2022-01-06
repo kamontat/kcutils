@@ -23,6 +23,7 @@ defaults:
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    if: ${{ github.repository == 'kamontat/kcutils' }}
     steps:
       - uses: actions/checkout@v2
         with:

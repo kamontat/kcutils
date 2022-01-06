@@ -64,14 +64,14 @@ runs:
     - id: mutator_test
       name: Run mutator test
       run: yarn packages test:mutator
-      if: ${{ inputs.with_mutator_test == 'true' && inputs.mutator_apikey }}
+      if: ${{ github.repository == 'kamontat/kcutils' && inputs.with_mutator_test == 'true' && inputs.mutator_apikey }}
       shell: bash
       env:
         STRYKER_DASHBOARD_API_KEY: ${{ inputs.mutator_apikey }}
     - id: sonarqube
       name: Scan sourcecode
       uses: SonarSource/sonarcloud-github-action@master
-      if: ${{ inputs.with_sonar == 'true' && inputs.github_apikey && inputs.sonar_apikey && always() }}
+      if: ${{ github.repository == 'kamontat/kcutils' && inputs.with_sonar == 'true' && inputs.github_apikey && inputs.sonar_apikey && always() }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_apikey }}
         SONAR_TOKEN: ${{ inputs.sonar_apikey }}
