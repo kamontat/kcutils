@@ -1,6 +1,11 @@
 import { createInterface } from "readline";
 
 export class QuestionContext {
+  constructor(
+    private stdin: NodeJS.ReadStream = process.stdin,
+    private stdout: NodeJS.WriteStream = process.stdout
+  ) {}
+
   askString(title: string): Promise<string> {
     const i = this.newInterface();
     return new Promise((resolve) =>
@@ -33,8 +38,8 @@ export class QuestionContext {
 
   private newInterface() {
     return createInterface({
-      input: process.stdin,
-      output: process.stdout,
+      input: this.stdin,
+      output: this.stdout,
     });
   }
 }
