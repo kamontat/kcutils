@@ -8,6 +8,7 @@ import { QuestionContext } from "./QuestionContext";
 import { HistoryData, HistoryContext } from "./HistoryContext";
 import { CommandContext } from "./CommandContext";
 import { PackageContext } from "./PackageContext";
+import { LocationContext } from "./LocationContext";
 
 export class Context {
   // singleton
@@ -30,6 +31,7 @@ export class Context {
   private readonly _historyContext: HistoryContext;
   private readonly _commandContext: CommandContext;
   private readonly _packageContext: PackageContext;
+  private readonly _locationContext: LocationContext;
 
   private constructor() {
     const content = readFileSync("./package.json", { encoding: "utf-8" });
@@ -42,6 +44,7 @@ export class Context {
     this._questionContext = new QuestionContext();
     this._historyContext = new HistoryContext();
     this._commandContext = new CommandContext();
+    this._locationContext = new LocationContext();
   }
 
   get general(): GeneralContext {
@@ -75,6 +78,10 @@ export class Context {
   get package(): PackageContext {
     return this._packageContext;
   }
+
+  get location(): LocationContext {
+    return this._locationContext;
+  }
 }
 
 export {
@@ -86,6 +93,7 @@ export {
   HistoryContext,
   CommandContext,
   PackageContext,
+  LocationContext,
 };
 
 export type { DefaultArgument, HistoryData };
