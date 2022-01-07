@@ -1,4 +1,4 @@
-import constants from "./constants";
+const constants = require("./constants");
 
 /**
  * @argument {string} packageName package name from package.json `name`
