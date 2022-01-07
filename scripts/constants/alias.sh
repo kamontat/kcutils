@@ -28,4 +28,5 @@ export COMMAND_ALIAS=(
   "packages>B=build"
   "package>b=build"
   "c=clean"
+  "t=test"
 )
