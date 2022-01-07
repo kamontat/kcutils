@@ -19,8 +19,8 @@ export class ActionBuilder<O extends OptionData>
   }
 
   private constructor(
-    private _option: Transformer<string[], O>,
-    private _action: Action<O>
+    private readonly _option: Transformer<string[], O>,
+    private readonly _action: Action<O>
   ) {}
 
   build(): Transformer<O, string[] | Promise<string[]>, string[]> {

@@ -4,11 +4,12 @@ export type HistoryData<I, O> = {
 };
 
 export class HistoryContext {
-  private _mapper: Map<string, HistoryData<unknown, unknown>>;
-
-  constructor() {
-    this._mapper = new Map();
-  }
+  constructor(
+    private readonly _mapper: Map<
+      string,
+      HistoryData<unknown, unknown>
+    > = new Map()
+  ) {}
 
   setInput<T>(name: string, input: T) {
     const oldData = this._mapper.get(name) ?? {

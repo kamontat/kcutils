@@ -9,7 +9,9 @@ const baseConfig = require("./constants");
 module.exports = (moduleName, override) => {
   const overridedConfig = Object.assign(baseConfig, override);
   if (moduleName !== "") {
-    if (!overridedConfig.dashboard) overridedConfig.dashboard = {};
+    if (!overridedConfig.dashboard) {
+      overridedConfig.dashboard = {};
+    }
     overridedConfig.dashboard.module = moduleName;
   }
 

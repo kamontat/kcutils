@@ -1,3 +1,5 @@
+import constants from "./constants";
+
 /**
  * @argument {string} packageName package name from package.json `name`
  * @return {string} unscoped name
@@ -57,7 +59,23 @@ const buildFormat = (pkg, format) => {
   };
 };
 
+/**
+ * select plugins base on rollup config
+ * @param {"umd" | "cjs" | "es"} format
+ */
+const buildPlugins = (format) => {
+  switch (format) {
+    case "umd":
+      return constants.pluginsDefaultMinify;
+    case "cjs":
+      return constants.pluginsDefault;
+    default:
+      return constants.pluginsTsOnly;
+  }
+};
+
 module.exports = {
   buildUnscopedName,
   buildFormat,
+  buildPlugins,
 };

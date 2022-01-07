@@ -2,8 +2,8 @@ import { createInterface } from "readline";
 
 export class QuestionContext {
   constructor(
-    private stdin: NodeJS.ReadStream = process.stdin,
-    private stdout: NodeJS.WriteStream = process.stdout
+    private readonly stdin: NodeJS.ReadStream = process.stdin,
+    private readonly stdout: NodeJS.WriteStream = process.stdout
   ) {}
 
   askString(title: string): Promise<string> {

@@ -5,10 +5,8 @@
  * @returns joined string with separator
  */
 export const join = (arr: string[], separator: string = ",") => {
-  const output = arr.reduce((p, c) => {
+  return arr.reduce((p, c) => {
     if (!p) return `"${c}"`;
     else return `${p}${separator}"${c}"`;
   }, "");
-
-  return output;
 };

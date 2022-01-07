@@ -1,5 +1,4 @@
-import { inspect } from "util";
-import { format } from "util";
+import { inspect, format } from "util";
 
 import { EnvContext } from "./EnvContext";
 

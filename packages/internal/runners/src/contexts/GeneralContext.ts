@@ -1,10 +1,12 @@
+type Nullable<T> = T | null | undefined;
+
 export class GeneralContext {
   /**
    * check data for null/undefined value (include empty string)
    * @param data data
    * @returns true if data exist
    */
-  exist<T>(data: T | undefined | null): data is T {
+  exist<T>(data: Nullable<T>): data is T {
     const check1 = typeof data === "string" ? data !== "" : true;
     return data !== undefined && data !== null && check1;
   }
@@ -15,7 +17,7 @@ export class GeneralContext {
    * @param def default data
    * @param data data
    */
-  getOr<T>(def: T, ...data: (T | undefined | null)[]): T {
+  getOr<T>(def: T, ...data: Nullable<T>[]): T {
     const result = data.find((c) => this.exist(c));
     if (result) return result;
     else return def;
@@ -27,7 +29,7 @@ export class GeneralContext {
    * @param data data
    * @param def else data
    */
-  getOrElse<T>(data: T | undefined | null, def: T): T {
+  getOrElse<T>(data: Nullable<T>, def: T): T {
     if (this.exist(data)) return data;
     return def;
   }

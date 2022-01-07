@@ -22,14 +22,14 @@ export class Context {
     return new Context();
   }
 
-  private _generalContext: GeneralContext;
-  private _envContext: EnvContext;
-  private _argumentContext: ArgumentContext;
-  private _logContext: LogContext;
-  private _questionContext: QuestionContext;
-  private _historyContext: HistoryContext;
-  private _commandContext: CommandContext;
-  private _packageContext: PackageContext;
+  private readonly _generalContext: GeneralContext;
+  private readonly _envContext: EnvContext;
+  private readonly _argumentContext: ArgumentContext;
+  private readonly _logContext: LogContext;
+  private readonly _questionContext: QuestionContext;
+  private readonly _historyContext: HistoryContext;
+  private readonly _commandContext: CommandContext;
+  private readonly _packageContext: PackageContext;
 
   private constructor() {
     const content = readFileSync("./package.json", { encoding: "utf-8" });

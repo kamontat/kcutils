@@ -1,6 +1,6 @@
 const rollup = require("rollup");
 const constants = require("./src/constants");
-const { buildUnscopedName, buildFormat } = require("./src/utils");
+const { buildUnscopedName, buildFormat, buildPlugins } = require("./src/utils");
 
 /**
  * @argument {{
@@ -46,13 +46,7 @@ function build(opt) {
     });
   }
 
-  const plugins =
-    opt.format === "umd"
-      ? constants.pluginsDefaultMinify
-      : opt.format === "cjs"
-      ? constants.pluginsDefault
-      : constants.pluginsTsOnly;
-
+  const plugins = buildPlugins(opt.format);
   return {
     input,
     output,

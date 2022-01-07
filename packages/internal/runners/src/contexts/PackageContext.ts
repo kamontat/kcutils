@@ -6,7 +6,7 @@ import type { ReadonlyPackage } from "package_json";
  * read from package.json file
  */
 export class PackageContext {
-  private _pkg?: ReadonlyPackage;
+  private readonly _pkg?: ReadonlyPackage;
 
   constructor(packageContent: string) {
     try {

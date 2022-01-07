@@ -7,7 +7,9 @@ export class Chain<I, O> implements Starter<I> {
     return new Chain([transformer]);
   }
 
-  private constructor(private _transformers: Transformer<any, any>[]) {}
+  private constructor(
+    private readonly _transformers: Transformer<any, any>[]
+  ) {}
 
   with<OO>(data: Transformer<O, OO>): Chain<I, OO> {
     this._transformers.push(data);

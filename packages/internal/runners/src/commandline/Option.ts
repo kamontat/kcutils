@@ -31,7 +31,7 @@ export class OptionBuilder<O>
     return new OptionBuilder({});
   }
 
-  private constructor(private _valueMapper: OptionMapper<O>) {}
+  private constructor(private readonly _valueMapper: OptionMapper<O>) {}
 
   build(): Transformer<string[], OptionData & O> {
     return {
