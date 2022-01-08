@@ -9,8 +9,8 @@ import {
 } from "..";
 
 describe("chain command", () => {
-  test("normal chainable command", () => {
-    const result = Chain.with<string[], number>({
+  test("normal chainable command", async () => {
+    const result = await Chain.with<string[], number>({
       name: "option",
       transform: (data) => {
         return data.length;
