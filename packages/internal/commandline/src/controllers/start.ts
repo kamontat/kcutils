@@ -26,20 +26,23 @@ export const option = OptionBuilder.initial({
 }).build();
 
 export const action = ActionBuilder.initial(option, async (option, context) => {
-  const isFileExist = await context.location.isExist(option.file);
-  context.log.print(`file`, option.file);
-  context.log.print(`isFileExist`, isFileExist);
-
-  const file = context.general.getOr(
-    "",
-    option.file,
-    context.package.getMain()
-  );
-
-  if (file === "") {
-    throw new Error("Cannot find main file to run");
+  if (option.file) {
+    const optionFileExist = await context.location.isExist(option.file);
+    if (optionFileExist) {
+      return context.command.node(option.file);
+    }
   }
-  return context.command.node(file);
+
+  const mainFile = context.package.getMain();
+  if (mainFile) {
+    const mainFileExist = await context.location.isExist(mainFile);
+    if (mainFileExist) {
+      return context.command.node(mainFile);
+    }
+  }
+
+  console.log("error");
+  throw new Error("Cannot find main file to run");
 })
   .help(help)
   .build();
