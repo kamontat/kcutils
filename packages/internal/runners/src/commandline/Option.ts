@@ -83,7 +83,6 @@ export class OptionBuilder<O>
         mapper.raw.fn = () => args._;
         mapper.extraRaw.fn = () => args["--"] ?? [];
 
-        context.log.debug("Arguments", args);
         const result: Record<string, unknown> = {};
 
         for (const key in mapper) {
