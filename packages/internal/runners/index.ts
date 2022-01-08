@@ -1,5 +1,4 @@
-export { ActionBuilder } from "./src/commandline/Action";
-export type { Action } from "./src/commandline/Action";
+export { Help } from "./src/commandline/Help";
 
 export { OptionBuilder, Option } from "./src/commandline/Option";
 export type {
@@ -7,6 +6,9 @@ export type {
   OptionTransformer,
   OptionMapper,
 } from "./src/commandline/Option";
+
+export { ActionBuilder } from "./src/commandline/Action";
+export type { Action } from "./src/commandline/Action";
 
 export { Commandline } from "./src/commandline/Commandline";
 export type { Execution, ExecutionData } from "./src/commandline/Execution";
