@@ -38,7 +38,8 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.prod.json",
-    "clean": "rimraf reports lib coverage junit.xml temp dist .rollup.cache",
+    "clean": "kc-clean",
+    "start": "kc-start",
     "lint": "eslint .",
     "test": "jest",
     "test:mutator": "stryker run"
