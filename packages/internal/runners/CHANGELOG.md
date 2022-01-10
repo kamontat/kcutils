@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.1.1...@kcinternal/runners@0.2.0) (2022-01-10)
+
+
+### Bug Fixes
+
+* **model:** command chain didn't wait previous to complete ([807bffa](https://github.com/kamontat/kcutils/commit/807bffa62d2cf9d4b07d4d579244579b6a76e859))
+* **model:** command chain need to wait for promise as well ([06988e7](https://github.com/kamontat/kcutils/commit/06988e79278869def94c41319af66bcf77f1e073))
+* **sonar:** take sonarqube suggestion ([3c50891](https://github.com/kamontat/kcutils/commit/3c508912543396fda4ee7e93ed6226c8c0770cdc))
+
+
+### Features
+
+* **context:** add location context and test with memfs ([93a7d52](https://github.com/kamontat/kcutils/commit/93a7d52c491c0ed6dcab11aea066db84cca9bae4))
+
+
+### Performance Improvements
+
+* **context:** add print in log context to print message ([530d226](https://github.com/kamontat/kcutils/commit/530d226b6a5c041c51a78a8ffac721bfeb0f0c4a))
+* **legacy:** migrate new package.json version ([e05c3ee](https://github.com/kamontat/kcutils/commit/e05c3ee8f703f79504e80529420f7b2bf6ca727d))
+* **model:** add help message to commandline action ([49465b1](https://github.com/kamontat/kcutils/commit/49465b1e0ad2c2251bb7540213030abe112de74e))
+* **model:** add Help model to help user create help command easier ([50a1bcc](https://github.com/kamontat/kcutils/commit/50a1bcc79cc1ccbe20a593b63fb02b4a1a21f3ee))
+* **test:** add testing for question context and add new dependencies ([8fe3e9d](https://github.com/kamontat/kcutils/commit/8fe3e9de1627a6de49cd3fca34d7689a3a3c1f92))
+
+
+
+
+
 ## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.1.0...@kcinternal/runners@0.1.1) (2021-12-27)
 
 

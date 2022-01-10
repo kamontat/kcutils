@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/kamontat/kcutils/compare/@kcconfig/ts-config@0.1.1...@kcconfig/ts-config@0.1.2) (2022-01-10)
+
+
+### Bug Fixes
+
+* **config:** all kcconfig package didn't deploy all files. ([66cb696](https://github.com/kamontat/kcutils/commit/66cb6968b0ad2917b53477dd5f9fec3fba97a5ff))
+
+
+
+
+
 ## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcconfig/ts-config@0.1.0...@kcconfig/ts-config@0.1.1) (2021-12-27)
 
 
