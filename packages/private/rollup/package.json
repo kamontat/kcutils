@@ -47,11 +47,11 @@
     "test:mutator": "stryker run"
   },
   "devDependencies": {
-    "@kcconfig/eslint-config": "0.1.1",
-    "@kcconfig/jest-config": "0.1.1",
-    "@kcconfig/rollup-config": "0.1.1",
-    "@kcconfig/stryker-config": "0.1.1",
-    "@kcconfig/ts-config": "0.1.1",
+    "@kcconfig/eslint-config": "*",
+    "@kcconfig/jest-config": "*",
+    "@kcconfig/rollup-config": "*",
+    "@kcconfig/stryker-config": "*",
+    "@kcconfig/ts-config": "*",
     "@stryker-mutator/core": "5.5.1",
     "@stryker-mutator/jest-runner": "5.5.1",
     "@stryker-mutator/typescript-checker": "5.5.1",
