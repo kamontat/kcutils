@@ -9,7 +9,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "danger": "10.7.1",
+    "danger": "10.8.0",
     "gh-pages": "3.2.3",
     "husky": "7.0.4",
     "lerna": "4.0.0",
