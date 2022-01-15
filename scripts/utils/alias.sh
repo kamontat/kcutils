@@ -39,7 +39,7 @@ __build_alias_mapper() {
 __clean_alias_mapper() {
   local db=("${COMMAND_ALIAS[@]}")
   db+=("${COMMAND_MAPPER[@]}")
-  
+
   local size="${#db[@]}" key key1 key2 key3 key4 key5 key6
   log_debug "Alias" "removing alias mapper size: '$size'"
 
@@ -51,7 +51,6 @@ __clean_alias_mapper() {
     key4="${key3//@/asign__}"
     key5="${key4//\*/__star__}"
     key6="${key5//\./__dott__}"
-
 
     log_debug "Alias" "remove '__command_alias__$key6' key"
     eval "unset __command_alias__$key6"
@@ -86,7 +85,7 @@ __resolve_alias() {
     return 0
   fi
 
-  echo "$key"
+  echo "${key//\////}"
 }
 
 export resolve_alias

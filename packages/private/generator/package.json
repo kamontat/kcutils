@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@types/package_json": "0.2.3",
-    "@kcconfig/ts-config": "0.1.1",
+    "@kcconfig/ts-config": "*",
     "hygen": "6.1.0",
     "typescript": "4.4.4"
   }

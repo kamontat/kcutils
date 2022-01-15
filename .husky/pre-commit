@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+[ -n "$CI" ] && exit 0
+
+yarn lerna run \
+  --concurrency 1 \
+  --stream \
+  lint-staged --since HEAD --exclude-dependents

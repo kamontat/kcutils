@@ -17,10 +17,10 @@
 # Command name: "packages" | "package" | "general"
 # Support only [A-Z, a-z, @, -, :]
 export COMMAND_ALIAS=(
-  "@kir=@kcinternal/runners"
-  "@kic=@kcinternal/commandline"
-  "@kpc=@kcprivate/client"
-  "@kpg=@kcprivate/generator"
+  "@kir=@kcinternal//runners"
+  "@kic=@kcinternal//commandline"
+  "@kpc=@kcprivate//client"
+  "@kpg=@kcprivate//generator"
   "g=general"
   "ps=packages"
   "p=package"

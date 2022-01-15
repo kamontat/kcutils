@@ -18,9 +18,10 @@ export class Chain<I, O> implements Starter<I> {
 
   start(input: I): O {
     const context = Context.build();
-    return this._transformers.reduce((previous, data) => {
-      context.history.setInput(data.name, previous);
-      const output = data.transform(previous, context);
+    return this._transformers.reduce(async (previous, data) => {
+      const p = await previous;
+      context.history.setInput(data.name, p);
+      const output = await data.transform(p, context);
       context.history.setOutput(data.name, output);
 
       return output;

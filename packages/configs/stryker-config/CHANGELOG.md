@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.1...@kcconfig/stryker-config@0.1.2) (2022-01-10)
+
+
+### Bug Fixes
+
+* **config:** all kcconfig package didn't deploy all files. ([66cb696](https://github.com/kamontat/kcutils/commit/66cb6968b0ad2917b53477dd5f9fec3fba97a5ff))
+* **sonar:** take sonarqube suggestion ([3c50891](https://github.com/kamontat/kcutils/commit/3c508912543396fda4ee7e93ed6226c8c0770cdc))
+
+
+
+
+
 ## [0.1.1](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.0...@kcconfig/stryker-config@0.1.1) (2021-12-27)
 
 

@@ -91,40 +91,47 @@ find_command_file() {
   local callback="$1"
   local command_finder="$2"
 
-  local last next current arguments=()    # a/b/c/d
-  last="$(dirname "$command_finder")"     # /a/b/c
-  next="$(basename "$last")"              # c
-  current="$(basename "$command_finder")" # d
-  last="$(dirname "$last")"               # /a/b
+  local command_path
+  local last next current arguments=() # /a/b/c/d | /a/b/c//d | /a/b//c/d
+  last="${command_finder%/*}"          # /a/b/c   | /a/b/c    |
+  next="${last##*/}"                   # c        | c
+  current="${command_finder##*/}"      # d        | d
 
   while [[ "$next" != "scripts" ]]; do
-    command_path="$last/$next/$current.sh"
-
     log_debug "Loop" "last directory    : $last"
-    log_debug "Loop" "base name         : $next >> $current"
+    log_debug "Loop" "processing name   : $current (next = '$next')"
     log_debug "Loop" "current argument  : ${arguments[*]}"
-    log_debug "Loop" "-------------------"
 
-    if test -f "$command_path"; then
-      $callback "$command_path" "${arguments[@]}"
-      return $?
-    fi
+    if [[ "$last" = */ ]]; then
+      log_debug "Loop" "parser            : custom mode"
 
-    argument="$current"
-    if [[ "$next" =~ "@" ]]; then
-      argument="$next/$current"
+      last="${last%/*}" # left shift 1
+      next="${last##*/}"
+      arguments=("$next/$current" "${arguments[@]}")
+      log_debug "Loop" "new argument      : $next/$current"
 
-      current="$(basename "$last")"
-      last="$(dirname "$last")"
-      next="$(basename "$last")"
-      last="$(dirname "$last")"
+      last="${last%/*}"
+      current="${last##*/}"
+      last="${last%/*}"
+      next="${last##*/}"
     else
+      log_debug "Loop" "parser            : normal mode"
+      command_path="$last/$current.sh"
+      if test -f "$command_path"; then
+        $callback "$command_path" "${arguments[@]}"
+        return $?
+      fi
+
+      arguments=("$current" "${arguments[@]}")
+      log_debug "Loop" "new argument      : $current"
+
       current="$next"
-      next="$(basename "$last")"
-      last="$(dirname "$last")"
+      last="${last%/*}"
+      next="${last##*/}"
     fi
 
-    arguments=("$argument" "${arguments[@]}")
+    log_debug "Loop" "next name         : $current (next = '$next')"
+    log_debug "Loop" "status            : ------------------------"
   done
 
   # just need to mark as error, caller will decide actual exit code

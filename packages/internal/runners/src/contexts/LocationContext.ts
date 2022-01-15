@@ -15,14 +15,12 @@ export class LocationContext {
    * @returns true if path file/directory is exist
    */
   async isExist(...args: string[]): Promise<boolean> {
-    try {
-      const access = promisify(_access);
-      await access(join(...args), constants.F_OK | constants.R_OK);
-      return true;
-    } catch (e) {
-      return false;
-    }
+    const access = promisify(_access);
+    return access(join(...args), constants.F_OK | constants.R_OK)
+      .then(() => true)
+      .catch(() => false);
   }
+
   /**
    * search location from current path
    *

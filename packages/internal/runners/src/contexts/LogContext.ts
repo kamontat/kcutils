@@ -15,13 +15,13 @@ export class LogContext {
     if (!this._debugMode && !this._ciMode) return;
 
     if (message === undefined || message === null || message === "")
-      console.log(format("[%s] %s", key, title));
+      this.print(format("[%s] %s", key, title));
     else {
       const msg =
         typeof message === "object"
           ? inspect(message, false, 3)
           : format("%s", message);
-      console.log(format("[%s] %s: %s", key, title, msg));
+      this.print(format("[%s] %s", key, title), msg);
     }
   }
 
@@ -45,5 +45,11 @@ export class LogContext {
    */
   debug<T = unknown>(title: string, message?: T): void {
     return this.log("debug", title, message);
+  }
+
+  print<T = unknown>(title: string, message?: T): void {
+    if (message !== undefined || message !== null) {
+      console.log(`${title}: ${message}`);
+    } else console.log(title);
   }
 }

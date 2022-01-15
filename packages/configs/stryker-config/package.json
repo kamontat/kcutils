@@ -1,7 +1,7 @@
 {
   "name": "@kcconfig/stryker-config",
   "description": "personal stryker mutation configuration",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/stryker-config",
@@ -31,7 +31,7 @@
     "*.js"
   ],
   "dependencies": {
-    "@stryker-mutator/core": "5.5.1"
+    "@stryker-mutator/core": "5.6.0"
   },
   "peerDependencies": {
     "@stryker-mutator/core": ">= 5",

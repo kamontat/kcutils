@@ -5,13 +5,19 @@
   "scripts": {
     "general": "scripts/command.sh general",
     "packages": "scripts/command.sh packages",
-    "package": "scripts/command.sh package"
+    "package": "scripts/command.sh package",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@nrwl/cli": "13.4.5",
+    "@nrwl/nx-cloud": "13.0.2",
+    "@nrwl/tao": "13.4.5",
+    "@nrwl/workspace": "13.4.5",
+    "danger": "10.8.0",
     "gh-pages": "3.2.3",
+    "husky": "7.0.4",
     "lerna": "4.0.0",
     "lerna-update-wizard": "1.1.0",
-    "rimraf": "3.0.2",
     "stryker-cli": "1.0.2",
     "typedoc": "0.22.10",
     "typescript": "4.4.4"

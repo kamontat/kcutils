@@ -13,6 +13,10 @@
       "path": "packages/private/client"
     },
     {
+      "name": "private/tsc",
+      "path": "packages/private/tsc"
+    },
+    {
       "name": "private/generator",
       "path": "packages/private/generator"
     },
