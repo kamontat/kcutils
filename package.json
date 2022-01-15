@@ -11,12 +11,12 @@
   "devDependencies": {
     "danger": "10.7.1",
     "gh-pages": "3.2.3",
+    "husky": "7.0.4",
     "lerna": "4.0.0",
     "lerna-update-wizard": "1.1.0",
     "stryker-cli": "1.0.2",
     "typedoc": "0.22.10",
-    "typescript": "4.4.4",
-    "husky": "7.0.4"
+    "typescript": "4.4.4"
   },
   "workspaces": [
     "packages/private/*",

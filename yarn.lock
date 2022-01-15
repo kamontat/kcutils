@@ -796,21 +796,6 @@
   resolved "https://registry.yarnpkg.com/@kcconfig/ts-config/-/ts-config-0.1.1.tgz#063e8a6e6b7d25d509e9a5b631fec6d7bc499a8a"
   integrity sha512-yPO9JDYvv0bFhrhM4neX0QePDy8GJ2/kf+1Ajhve0jS/yVZFXnHCnottOUKoXSx9EA8HMcNxymkbZgOBBcQH2Q==
 
-"@kcinternal/commandline@0.22.1":
-  version "0.22.1"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.22.1.tgz#bba1ee802f55db8a02612e6c1f95a8afff8efcdc"
-  integrity sha512-Ef2XqX9Lk8kPKfDK+PKkB+51da8STenN5vixecd2dlDUcIeAyKHdBXgV8y21tKkyYXEGLMXZDiOwCqmZiIl0wg==
-  dependencies:
-    "@kcinternal/runners" "0.1.1"
-    del "6.0.0"
-
-"@kcinternal/runners@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@kcinternal/runners/-/runners-0.1.1.tgz#1543a04c16b8a8913b3e5a708b1da630decc2f31"
-  integrity sha512-B+gtr4CzmThp9zoAraoepcVqoUctEOGcaz9Wyi7/Qk3ebprhCMj+GDGhVuEcR0Jgos2/ZjJrR0eKB1sq52lqWQ==
-  dependencies:
-    minimist "1.2.5"
-
 "@lerna/add@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-4.0.0.tgz#c36f57d132502a57b9e7058d1548b7a565ef183f"
