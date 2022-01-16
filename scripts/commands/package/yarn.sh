@@ -11,8 +11,6 @@
 module_name="$1"
 shift
 
-on_module_directory "$module_name"
-
-run_yarn "$@"
-
-go_back
+on_module_directory "$module_name" &&
+  run_yarn "$@" &&
+  go_back
