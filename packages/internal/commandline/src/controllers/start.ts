@@ -6,6 +6,8 @@ import {
   Help,
 } from "@kcinternal/runners";
 
+import { commandline as buildCommand } from "./build";
+
 export const help = Help.initial("Help for kc-start").newParagraph(
   `help start application without specify javascript location.
 default application is 'main' key in package.json or 'lib/index.js'.
@@ -26,6 +28,12 @@ export const option = OptionBuilder.initial({
 }).build();
 
 export const action = ActionBuilder.initial(option, async (option, context) => {
+  if (option.build) {
+    await buildCommand.start(
+      context.history.getInput<string[]>("option") ?? []
+    );
+  }
+
   if (option.file) {
     const optionFileExist = await context.location.isExist(option.file);
     if (optionFileExist) {
@@ -41,7 +49,6 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
     }
   }
 
-  console.log("error");
   throw new Error("Cannot find main file to run");
 })
   .help(help)
