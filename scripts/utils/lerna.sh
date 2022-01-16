@@ -13,11 +13,9 @@
 #/ Since:        10/12/2020
 #/ -----------------------------------
 
-export LERNA_PATH="${ROOT_PATH}/node_modules/.bin/lerna"
-
 export run_lerna
 run_lerna() {
-  run_cmd "$LERNA_PATH" "$@"
+  run_yarn "lerna" "$@"
 }
 
 export run_xlerna
