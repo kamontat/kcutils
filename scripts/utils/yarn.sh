@@ -17,7 +17,20 @@ export run_yarn
 run_yarn() {
   local args=("$@")
 
-  run_cmd "yarn" "${args[@]}"
+  run_cmd "yarn" "--no-progress" "--silent" "${args[@]}"
+}
+
+export run_xyarn
+run_xyarn() {
+  local command_name command_args command_path
+  command_name="$1"
+  shift
+  command_args=("$@")
+  command_path="$(yarn bin "$command_name")"
+  if test -n "$command_path"; then
+    run_cmd "$command_path" "${command_args[@]}"
+  fi
+  return 1
 }
 
 export run_yarn_workspace
