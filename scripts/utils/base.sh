@@ -107,10 +107,24 @@ find_command_file() {
 
       last="${last%/*}" # left shift 1
       next="${last##*/}"
-      arguments=("$next/$current" "${arguments[@]}")
-      log_debug "Loop" "new argument      : $next/$current"
-
       last="${last%/*}"
+
+      new_argument="$next/$current"
+      log_debug "Loop" "new argument      : $new_argument"
+      if [[ "$next" =~ ^@ ]]; then
+        log_debug "Loop" "checker           : custom checker"
+
+        command_path="$last/$DYNAMIC_PACKAGES_DIRECTORY/${arguments[0]}.sh"
+        log_debug "Loop" "checker           : $command_path"
+        if test -f "$command_path"; then
+          arguments[0]="$new_argument"
+          log_debug "Loop" "custom argument   : ${arguments[*]}"
+          $callback "$command_path" "${arguments[@]}"
+          return $?
+        fi
+      fi
+      arguments=("$new_argument" "${arguments[@]}")
+
       current="${last##*/}"
       last="${last%/*}"
       next="${last##*/}"
