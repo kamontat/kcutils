@@ -29,8 +29,9 @@ run_xyarn() {
   command_path="$(yarn bin "$command_name")"
   if test -n "$command_path"; then
     run_cmd "$command_path" "${command_args[@]}"
+  else
+    return 1
   fi
-  return 1
 }
 
 export run_yarn_workspace
