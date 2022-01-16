@@ -15,7 +15,7 @@
 
 export run_lerna
 run_lerna() {
-  run_yarn "lerna" "$@"
+  run_node_module_bin "lerna" "$@"
 }
 
 export run_xlerna
