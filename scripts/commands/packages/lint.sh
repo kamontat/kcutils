@@ -17,5 +17,6 @@ else
   args+=("--format" "stylish")
 fi
 
-run_xlerna_run "lint" -- "${args[@]}" &&
+run_nx workspace-lint &&
+  run_xlerna_run "lint" -- "${args[@]}" &&
   go_back

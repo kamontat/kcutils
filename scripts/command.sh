@@ -54,6 +54,8 @@ source "$COMMON_PATH/node-modules.sh" || exit 4
 # shellcheck disable=SC1091
 source "$COMMON_PATH/lerna.sh" || exit 4
 # shellcheck disable=SC1091
+source "$COMMON_PATH/nx.sh" || exit 4
+# shellcheck disable=SC1091
 source "$COMMON_PATH/location.sh" || exit 4
 # shellcheck disable=SC1091
 source "$COMMON_PATH/alias.sh" || exit 3
