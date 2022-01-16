@@ -19,6 +19,16 @@
         "target": "build",
         "projects": "dependencies"
       }
+    ],
+    "start": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      },
+      {
+        "target": "build",
+        "projects": "self"
+      }
     ]
   }
 }
