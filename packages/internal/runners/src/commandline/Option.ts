@@ -92,6 +92,9 @@ export class OptionBuilder<O>
             value.defaultValue;
         }
 
+        if (result?.debug) {
+          context.log.setDebug(true);
+        }
         return result as OptionData & O;
       },
     };

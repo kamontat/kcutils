@@ -33,15 +33,11 @@ export class Commandline<O extends OptionData, T> implements Starter<string[]> {
         name: "commandline",
         transform: async (_commands, context) => {
           const commands = await _commands;
-          const options = context.history.getOutput<O>("option");
-          if (options?.debug) {
-            context.log.setDebug(true);
-          }
-
+          const option = context.history.getOutput<O>("option");
           context.log.debug("command", commands.join(" "));
           return this._execution(context, {
             commands,
-            option: options,
+            option,
           });
         },
       })
