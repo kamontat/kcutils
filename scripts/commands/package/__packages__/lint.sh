@@ -12,6 +12,7 @@ module_name="$1"
 shift
 
 # on_module_directory "$module_name"
+
 args=("$@")
 if is_ci; then
   args+=("--format" "json" "--output-file" "./reports/eslint-result.json")
@@ -19,6 +20,6 @@ else
   args+=("--format" "stylish")
 fi
 
-run_xlerna_exec "--scope" "$module_name" "--" "yarn" "lint" "${args[@]}"
+run_nx "lint" "$module_name" "${args[@]}"
 
 # go_back
