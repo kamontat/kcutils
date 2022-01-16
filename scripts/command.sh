@@ -37,6 +37,8 @@ export COMMON_PATH="${SCRIPT_PATH}/utils"
 ########################################
 
 # shellcheck disable=SC1091
+source "$CONSTANTS_PATH/special_key.sh" || exit 3
+# shellcheck disable=SC1091
 source "$CONSTANTS_PATH/alias.sh" || exit 3
 # shellcheck disable=SC1091
 source "$CONSTANTS_PATH/mapper.sh" || exit 3

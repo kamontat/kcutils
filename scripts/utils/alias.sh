@@ -24,15 +24,15 @@ __build_alias_mapper() {
     value="${i##*=}"
 
     key="${i%%=*}"
-    key1="${key//>/__scoped__}"
-    key2="${key1//:/__colon__}"
-    key3="${key2//-/dash__}"
-    key4="${key3//@/asign__}"
-    key5="${key4//\*/__star__}"
-    key6="${key5//\./__dott__}"
+    key1="${key//>/$SP_SCOPED_KEY}"
+    key2="${key1//:/$SP_COLON_KEY}"
+    key3="${key2//-/$SP_DASH_KEY}"
+    key4="${key3//@/$SP_ASIGN_KEY}"
+    key5="${key4//\*/$SP_STAR_KEY}"
+    key6="${key5//\./$SP_DOT_KEY}"
 
-    log_debug "Alias" "update '__command_alias__$key6' key with '$value'"
-    eval "export __command_alias__$key6=\"$value\""
+    log_debug "Alias" "update '$ALIAS_PREFIX$key6' key with '$value'"
+    eval "export $ALIAS_PREFIX$key6=\"$value\""
   done
 }
 
@@ -45,30 +45,30 @@ __clean_alias_mapper() {
 
   for i in "${db[@]}"; do
     key="${i%%=*}"
-    key1="${key//>/__scoped__}"
-    key2="${key1//:/__colon__}"
-    key3="${key2//-/dash__}"
-    key4="${key3//@/asign__}"
-    key5="${key4//\*/__star__}"
-    key6="${key5//\./__dott__}"
+    key1="${key//>/$SP_SCOPED_KEY}"
+    key2="${key1//:/$SP_COLON_KEY}"
+    key3="${key2//-/$SP_DASH_KEY}"
+    key4="${key3//@/$SP_ASIGN_KEY}"
+    key5="${key4//\*/$SP_STAR_KEY}"
+    key6="${key5//\./$SP_DOT_KEY}"
 
-    log_debug "Alias" "remove '__command_alias__$key6' key"
-    eval "unset __command_alias__$key6"
+    log_debug "Alias" "remove '$ALIAS_PREFIX$key6' key"
+    eval "unset $ALIAS_PREFIX$key6"
   done
 }
 
 __resolve_alias() {
   local value="" scoped="$1" key="$2" key1 key2 key3 key4 key5 key6
 
-  key1="${key//:/__colon__}"
-  key2="${key1//-/dash__}"
-  key3="${key2//@/asign__}"
-  key4="${key3//\*/__star__}"
-  key5="${key4//\./__dott__}"
-  key6="${scoped}__scoped__$key5"
+  key1="${key//:/$SP_COLON_KEY}"
+  key2="${key1//-/$SP_DASH_KEY}"
+  key3="${key2//@/$SP_ASIGN_KEY}"
+  key4="${key3//\*/$SP_STAR_KEY}"
+  key5="${key4//\./$SP_DOT_KEY}"
+  key6="$scoped$SP_SCOPED_KEY$key5"
 
   log_debug "Alias" "searching alias data for '$key' (scoped=$scoped)"
-  eval "value=\"\${__command_alias__$key6}\""
+  eval "value=\"\${$ALIAS_PREFIX$key6}\""
 
   if test -n "$value"; then
     log_debug "found alias $key => $value"
@@ -77,7 +77,7 @@ __resolve_alias() {
   fi
 
   log_debug "Alias" "searching alias data for '$key' (unscoped)"
-  eval "value=\"\${__command_alias__$key5}\""
+  eval "value=\"\${$ALIAS_PREFIX$key5}\""
 
   if test -n "$value"; then
     log_debug "found alias $key => $value"
