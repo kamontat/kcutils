@@ -27,7 +27,7 @@ export const defaultExecution: Execution<ChildProcess, OptionData> = (
       if (err.message.includes("spawn exit ENOENT")) return;
     }
 
-    console.log(err.message);
+    context.log.print(err.message);
   });
 
   proc.on("exit", (_code, signal) => {
