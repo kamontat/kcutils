@@ -37,7 +37,7 @@
     "lib/**/*.d.ts.map"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.prod.json",
+    "build": "kc-build",
     "clean": "kc-clean",
     "start": "kc-start",
     "lint": "eslint .",
