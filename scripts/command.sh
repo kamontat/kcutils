@@ -50,8 +50,6 @@ source "$COMMON_PATH/base.sh" || exit 4
 # shellcheck disable=SC1091
 source "$COMMON_PATH/yarn.sh" || exit 4
 # shellcheck disable=SC1091
-source "$COMMON_PATH/node-modules.sh" || exit 4
-# shellcheck disable=SC1091
 source "$COMMON_PATH/lerna.sh" || exit 4
 # shellcheck disable=SC1091
 source "$COMMON_PATH/nx.sh" || exit 4
