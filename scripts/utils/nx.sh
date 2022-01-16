@@ -15,5 +15,5 @@
 
 export run_nx
 run_nx() {
-  run_yarn "nx" "$@"
+  run_xyarn "nx" "$@"
 }

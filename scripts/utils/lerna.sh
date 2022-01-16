@@ -15,7 +15,7 @@
 
 export run_lerna
 run_lerna() {
-  run_yarn "lerna" "$@"
+  run_xyarn "lerna" "$@"
 }
 
 export run_xlerna
