@@ -48,7 +48,7 @@ export class LogContext {
   }
 
   print<T = unknown>(title: string, message?: T): void {
-    if (message !== undefined || message !== null) {
+    if (message !== undefined && message !== null) {
       console.log(`${title}: ${message}`);
     } else console.log(title);
   }
