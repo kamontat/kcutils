@@ -10,24 +10,10 @@
 
 #/ -----------------------------------
 #/ Create by:    Kamontat Chantrachirathumrong <developer@kamontat.net>
-#/ Since:        10/12/2020
+#/ Since:        16/01/2022
 #/ -----------------------------------
 
-export run_node_module_bin
-run_node_module_bin() {
-  local command_name="$1"
-  shift
-  local command_args=("$@")
-  local command_path="$PWD/node_modules/.bin/${command_name}"
-
-  log_warn "deprecated" "should not use this, please use run_yarn() instead"
-
-  log_debug "${command_name}" "$" "${command_path}" "${command_args[*]}"
-  if ! is_dry; then
-    if "${command_path}" "${command_args[@]}"; then
-      return 0
-    else
-      exit 1
-    fi
-  fi
+export run_nx
+run_nx() {
+  run_yarn "nx" "$@"
 }
