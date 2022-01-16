@@ -1,7 +1,7 @@
 import { accessSync, constants } from "fs";
 import { access as _access } from "fs";
 import { promisify } from "util";
-import { join } from "path";
+import { join, resolve } from "path";
 
 /**
  * @public
@@ -34,5 +34,33 @@ export class LocationContext {
     } catch (e) {
       return false;
     }
+  }
+
+  async findExist(...paths: string[]): Promise<string> {
+    for await (const path of paths) {
+      try {
+        if (await this.isExist(path)) {
+          return resolve(path);
+        }
+      } catch (e) {
+        continue;
+      }
+    }
+
+    throw new Error("cannot find anything");
+  }
+
+  findExistSync(...paths: string[]): string | undefined {
+    for (const path of paths) {
+      try {
+        if (this.isExistSync(path)) {
+          return resolve(path);
+        }
+      } catch (e) {
+        continue;
+      }
+    }
+
+    return;
   }
 }
