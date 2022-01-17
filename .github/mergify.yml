@@ -20,7 +20,7 @@ pull_request_rules:
       - -conflict
       - -closed
       - label!=wip
-      - title~=^wip
+      - -title~=^wip
       - check-success=Analyze (javascript)
       - check-success=testflow
       - check-success=test (12)
