@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "@stryker-mutator/core": ">= 5",
-    "@stryker-mutator/jest-runner": ">= 5",
-    "@stryker-mutator/typescript-checker": " >= 5"
+    "@stryker-mutator/jest-runner": "5.6.0",
+    "@stryker-mutator/typescript-checker": "5.6.0"
   }
 }
