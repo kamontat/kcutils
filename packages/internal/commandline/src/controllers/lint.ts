@@ -20,7 +20,12 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
   );
 
   if (eslintConfig) {
-    return context.command.eslint(eslintConfig, ".");
+    return context.command.eslint(
+      eslintConfig,
+      ".",
+      ...option.raw,
+      ...option.extraRaw
+    );
   }
 
   throw new Error("Cannot find eslint config file to run");
