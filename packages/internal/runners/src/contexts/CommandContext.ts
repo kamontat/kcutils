@@ -30,4 +30,13 @@ export class CommandContext {
   rollup(...args: string[]): string[] {
     return ["rollup", "--config", ...args];
   }
+
+  /**
+   * build eslint command with input argument
+   * @param configPath .eslintrc.json
+   * @param args eslint arguments
+   */
+  eslint(configPath: string, ...args: string[]): string[] {
+    return ["eslint", "--config", configPath, ...args];
+  }
 }
