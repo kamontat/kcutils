@@ -6,8 +6,12 @@ export type OptionData = {
   help: boolean;
   dryrun: boolean;
   debug: boolean;
-  raw: string[]; // all argument without option
-  extraRaw: string[]; // argument after --
+  /** all argument left after parsing option  */
+  args: string[];
+  /** all argument after -- option */
+  extraArgs: string[];
+  /** raw input argument */
+  raw: string[];
 };
 
 export type OptionTransformer<T> = {
@@ -54,11 +58,15 @@ export class OptionBuilder<O>
               fn: Option.toBoolean,
               alias: ["D"],
             },
-            raw: {
+            args: {
               defaultValue: [],
               fn: () => [],
             },
-            extraRaw: {
+            extraArgs: {
+              defaultValue: [],
+              fn: () => [],
+            },
+            raw: {
               defaultValue: [],
               fn: () => [],
             },
@@ -80,8 +88,9 @@ export class OptionBuilder<O>
           alias,
         });
 
-        mapper.raw.fn = () => args._;
-        mapper.extraRaw.fn = () => args["--"] ?? [];
+        mapper.args.fn = () => args._;
+        mapper.extraArgs.fn = () => args["--"] ?? [];
+        mapper.raw.fn = () => _args;
 
         const result: Record<string, unknown> = {};
 
@@ -95,6 +104,9 @@ export class OptionBuilder<O>
         if (result?.debug) {
           context.log.setDebug(true);
         }
+
+        context.log.debug("option", `raw input value: ${_args}`);
+        context.log.debug("option", result);
         return result as OptionData & O;
       },
     };
