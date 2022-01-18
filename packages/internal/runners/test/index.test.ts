@@ -39,18 +39,18 @@ describe("commandline", () => {
     return _data.commands.join(" ");
   };
 
-  test("commandline without option should failed", () => {
-    expect(() => {
+  test("commandline without option should failed", async () => {
+    await expect(() =>
       Commandline.initial({
         name: "test",
         transform: () => {
           return [];
         },
-      }).start(["test", "--dry"]);
-    }).toThrow();
+      }).start(["test", "--dry"])
+    ).toThrow();
   });
 
-  test("normal commandline with option and action", () => {
+  test("normal commandline with option and action", async () => {
     const option = OptionBuilder.initial({
       test: {
         defaultValue: false,
@@ -69,16 +69,17 @@ describe("commandline", () => {
 
       expect(_option.debug).toEqual(false);
       expect(_option.dryrun).toEqual(true);
-      expect(_option.raw).toEqual(["test"]);
+      expect(_option.raw).toEqual(["test", "--dry"]);
+      expect(_option.args).toEqual(["test"]);
 
       return args;
     }).build();
 
-    Commandline.initial(action).start(["test", "--dry"]);
+    await Commandline.initial(action).start(["test", "--dry"]);
   });
 
-  test("commandline default option if option is undefined", () => {
-    Commandline.initial(
+  test("commandline default option if option is undefined", async () => {
+    await Commandline.initial(
       {
         name: "test",
         transform: () => {
