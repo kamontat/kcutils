@@ -39,4 +39,13 @@ export class CommandContext {
   eslint(configPath: string, ...args: string[]): string[] {
     return ["eslint", "--config", configPath, ...args];
   }
+
+  /**
+   * build jest command with input argument
+   * @param configPath jest.config.js
+   * @param args jest arguments
+   */
+  jest(configPath: string, ...args: string[]): string[] {
+    return ["jest", "--config", configPath, ...args];
+  }
 }

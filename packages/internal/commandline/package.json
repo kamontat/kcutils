@@ -8,8 +8,9 @@
   "bin": {
     "kc-core": "./bin/core.js",
     "kc-clean": "./bin/clean.js",
-    "kc-build": "./bin/build.js",
     "kc-lint": "./bin/lint.js",
+    "kc-test": "./bin/test.js",
+    "kc-build": "./bin/build.js",
     "kc-start": "./bin/start.js"
   },
   "repository": {
