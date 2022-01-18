@@ -14,17 +14,17 @@ message_prefix=""
 message_suffix="[skip ci]"
 
 args=(
-  "--exact"                   # create version without ^ or ~
-  "--conventional-commits"    # use convertional commit
-  "--create-release" "github" # create release on github too
-  "--sign-git-commit"         # sign git commit
-  "--sign-git-tag"            # sign git tag
-  "--no-private"              # ignore private packages
+  "--exact"                      # create version without ^ or ~
+  "--conventional-commits"       # use convertional commit
+  "--changelog-preset" "angular" # convertional commit is angular
+  "--create-release" "github"    # create release on github too
+  "--sign-git-commit"            # sign git commit
+  "--sign-git-tag"               # sign git tag
+  "--no-private"                 # ignore private packages
 )
 
 is_ci && args+=(
-  "--yes"                        # auto create new release without user input
-  "--changelog-preset" "angular" # convertional commit is angular
+  "--yes" # auto create new release without user input
 )
 is_ci && message_prefix="auto "
 args+=("--message" "chore(release): ${message_prefix}publish ${version_name} version ${message_suffix}")
@@ -35,22 +35,22 @@ case "$1" in
 "live")
   version_id=""
   version_name="live"
-  is_ci && args+=("--conventional-graduate")
+  args+=("--conventional-graduate")
   ;;
 "rc")
   version_id="rc"
   version_name="release candidate"
-  is_ci && args+=("--conventional-prerelease")
+  args+=("--conventional-prerelease" "--preid" "${version_id}")
   ;;
 "beta")
   version_id="beta"
   version_name="beta"
-  is_ci && args+=("--conventional-prerelease")
+  args+=("--conventional-prerelease" "--preid" "${version_id}")
   ;;
 "alpha")
   version_id="alpha"
   version_name="alpha"
-  is_ci && args+=("--conventional-prerelease")
+  args+=("--conventional-prerelease" "--preid" "${version_id}")
   ;;
 *)
   log_error "Publish" "You might pass publish key [ live | rc | beta | alpha ] as first parameters"
@@ -59,7 +59,6 @@ case "$1" in
 esac
 
 run_xlerna "version" \
-  "${args[@]}" \
-  --preid "${version_id}"
+  "${args[@]}"
 
 go_back
