@@ -42,7 +42,7 @@
     "build": "kc-build",
     "clean": "kc-clean",
     "start": "kc-start",
-    "lint": "kc-lint",
+    "lint": "eslint .",
     "test": "jest",
     "test:mutator": "stryker run"
   },
