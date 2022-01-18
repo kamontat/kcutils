@@ -24,7 +24,7 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
       eslintConfig,
       ".",
       ...option.raw,
-      ...option.extraRaw
+      ...option.extraArgs
     );
   }
 
