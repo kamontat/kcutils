@@ -1,4 +1,4 @@
-import { Option } from "../..";
+import { Option } from "../../index";
 
 describe("Option", () => {
   describe("static function", () => {

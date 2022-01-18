@@ -6,7 +6,7 @@ import {
   ActionBuilder,
   OptionData,
   Execution,
-} from "..";
+} from "../index";
 
 describe("chain command", () => {
   test("normal chainable command", async () => {

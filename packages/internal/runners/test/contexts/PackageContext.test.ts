@@ -1,4 +1,4 @@
-import { Context, PackageContext } from "../..";
+import { Context, PackageContext } from "../../index";
 
 describe("PackageContext", () => {
   test("create package context", () => {

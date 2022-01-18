@@ -1,5 +1,4 @@
-import { Context } from "../..";
-import { EnvContext } from "../../src/contexts/EnvContext";
+import { Context, EnvContext } from "../../index";
 
 describe("EnvContext", () => {
   test("create env context", () => {

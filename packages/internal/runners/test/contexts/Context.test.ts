@@ -1,4 +1,4 @@
-import { Context } from "../..";
+import { Context } from "../../index";
 
 describe("Context", () => {
   test("build always return new object", () => {

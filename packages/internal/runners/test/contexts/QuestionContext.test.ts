@@ -1,4 +1,4 @@
-import { Context, QuestionContext } from "../..";
+import { Context, QuestionContext } from "../../index";
 
 describe("QuestionContext", () => {
   let stdin: any = undefined;

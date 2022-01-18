@@ -1,5 +1,5 @@
-import { Context, LocationContext } from "../..";
 import { vol } from "memfs";
+import { Context, LocationContext } from "../../index";
 
 jest.mock("fs");
 

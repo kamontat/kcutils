@@ -1,4 +1,4 @@
-import { Context } from "../..";
+import { Context } from "../../index";
 
 describe("ArgumentContext", () => {
   test("create argument context", () => {
