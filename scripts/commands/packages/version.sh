@@ -14,16 +14,18 @@ message_prefix=""
 message_suffix="[skip ci]"
 
 args=(
-  "--exact"                      # create version without ^ or ~
-  "--conventional-commits"       # use convertional commit
-  "--changelog-preset" "angular" # convertional commit is angular
-  "--create-release" "github"    # create release on github too
-  "--sign-git-commit"            # sign git commit
-  "--sign-git-tag"               # sign git tag
-  "--no-private"                 # ignore private packages
+  "--exact"                   # create version without ^ or ~
+  "--conventional-commits"    # use convertional commit
+  "--create-release" "github" # create release on github too
+  "--sign-git-commit"         # sign git commit
+  "--sign-git-tag"            # sign git tag
+  "--no-private"              # ignore private packages
 )
 
-is_ci && args+=("--yes")
+is_ci && args+=(
+  "--yes"                        # auto create new release without user input
+  "--changelog-preset" "angular" # convertional commit is angular
+)
 is_ci && message_prefix="auto "
 args+=("--message" "chore(release): ${message_prefix}publish ${version_name} version ${message_suffix}")
 
@@ -33,22 +35,22 @@ case "$1" in
 "live")
   version_id=""
   version_name="live"
-  args+=("--conventional-graduate")
+  is_ci && args+=("--conventional-graduate")
   ;;
 "rc")
   version_id="rc"
   version_name="release candidate"
-  args+=("--conventional-prerelease")
+  is_ci && args+=("--conventional-prerelease")
   ;;
 "beta")
   version_id="beta"
   version_name="beta"
-  args+=("--conventional-prerelease")
+  is_ci && args+=("--conventional-prerelease")
   ;;
 "alpha")
   version_id="alpha"
   version_name="alpha"
-  args+=("--conventional-prerelease")
+  is_ci && args+=("--conventional-prerelease")
   ;;
 *)
   log_error "Publish" "You might pass publish key [ live | rc | beta | alpha ] as first parameters"
