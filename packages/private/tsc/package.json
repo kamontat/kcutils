@@ -40,8 +40,8 @@
     "build": "kc-build",
     "clean": "kc-clean",
     "start": "kc-start",
-    "lint": "eslint .",
-    "test": "jest",
+    "lint": "kc-lint",
+    "test": "kc-test",
     "test:mutator": "stryker run"
   },
   "devDependencies": {
