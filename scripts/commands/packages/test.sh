@@ -12,7 +12,7 @@ on_root_directory
 
 args=()
 
-# On CI, not print unit test result in console and 
+# On CI, not print unit test result in console and show only coverage summary
 is_ci && args+=("--runInBand" "--reporters" "jest-junit" "--coverageReporters" "text-summary" "lcov")
 
 # run yarn test on every module
