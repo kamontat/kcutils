@@ -9,7 +9,7 @@ module.exports = {
     ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  testMatch: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
+  testMatch: ["**/__tests__/**/*.ts?(x)", "**/(*.)+(spec|test).ts?(x)"],
   testPathIgnorePatterns: [
     "<rootDir>/.stryker-tmp/",
     "<rootDir>/node_modules/",
