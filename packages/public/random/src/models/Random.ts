@@ -25,7 +25,12 @@ export abstract class Random {
   }
 
   pick<T>(array: T[]): T {
-    const index = this.number({ min: 0, max: array.length, inclusiveMax: false, integer: true });
+    const index = this.number({
+      min: 0,
+      max: array.length,
+      inclusiveMax: false,
+      integer: true,
+    });
     return array[index];
   }
 
@@ -33,7 +38,9 @@ export abstract class Random {
     const option = Object.assign(
       {
         length: 10,
-        possible: englishLowerAlphabetCharacter.concat(englishUpperAlphabetCharacter).concat(numberCharacter),
+        possible: englishLowerAlphabetCharacter
+          .concat(englishUpperAlphabetCharacter)
+          .concat(numberCharacter),
       },
       opt
     );
@@ -41,7 +48,14 @@ export abstract class Random {
     let result = "";
     for (let i = 0; i < option.length; i++) {
       result +=
-        option.possible[this.number({ min: 0, max: option.possible.length, inclusiveMax: false, integer: true })];
+        option.possible[
+          this.number({
+            min: 0,
+            max: option.possible.length,
+            inclusiveMax: false,
+            integer: true,
+          })
+        ];
     }
     return result.substr(0, option.length);
   }
@@ -54,10 +68,14 @@ export abstract class Random {
    * @param opt number generator options
    */
   number(opt: Partial<RandomNumberOption>): number {
-    const option = Object.assign({ min: 1, max: 10, inclusiveMax: false, integer: true }, opt);
+    const option = Object.assign(
+      { min: 1, max: 10, inclusiveMax: false, integer: true },
+      opt
+    );
 
     const tmpMin = Math.min(option.min, option.max);
-    const tmpMax = Math.max(option.min, option.max) - (option.inclusiveMax ? 0 : 1);
+    const tmpMax =
+      Math.max(option.min, option.max) - (option.inclusiveMax ? 0 : 1);
     const min = Math.min(tmpMin, tmpMax);
     const max = Math.max(tmpMin, tmpMax);
     if (max === min) return min;
@@ -70,7 +88,9 @@ export abstract class Random {
   }
 
   boolean(): boolean {
-    return this.number({ min: 0, max: 1, inclusiveMax: true, integer: true }) === 1;
+    return (
+      this.number({ min: 0, max: 1, inclusiveMax: true, integer: true }) === 1
+    );
   }
 
   abstract pseudo(): number;
