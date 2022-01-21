@@ -1,5 +1,4 @@
-import { accessSync, constants } from "fs";
-import { access as _access } from "fs";
+import { accessSync, constants, access as _access } from "fs";
 import { promisify } from "util";
 import { join, resolve } from "path";
 
@@ -61,6 +60,6 @@ export class LocationContext {
       }
     }
 
-    return;
+    return undefined;
   }
 }
