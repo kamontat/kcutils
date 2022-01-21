@@ -33,6 +33,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           node_version: 16
+          with_build: true
       - name: Start testflow
         uses: ./.github/actions/testflow
         with:
@@ -43,7 +44,6 @@ jobs:
       - name: Deployment
         uses: ./.github/actions/deployment
         with:
-          with_build: true
           release_type: ${{ github.event.inputs.release_type || 'live' }}
           with_git: true
           git_username: ${{ secrets.GIT_USERNAME }}
