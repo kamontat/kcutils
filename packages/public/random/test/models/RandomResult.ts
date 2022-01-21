@@ -5,7 +5,7 @@ export class Result {
     return new Result(r);
   }
 
-  constructor(private r: Random) {}
+  constructor(private readonly r: Random) {}
 
   average(time: number = 1000, size?: number): ResultChecker {
     if (!size) size = time / 100;
@@ -25,7 +25,7 @@ export class Result {
 }
 
 export class ResultChecker {
-  constructor(private map: Map<number, number>) {}
+  constructor(private readonly map: Map<number, number>) {}
 
   check(threshold: number = 0.1): Error[] {
     const errors: Error[] = [];
