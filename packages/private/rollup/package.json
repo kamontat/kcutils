@@ -44,7 +44,7 @@
     "start": "kc-start",
     "lint": "kc-lint",
     "test": "kc-test",
-    "test:mutator": "stryker run"
+    "test:mutator": "kc-test --mutator"
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "*",

@@ -48,4 +48,13 @@ export class CommandContext {
   jest(configPath: string, ...args: string[]): string[] {
     return ["jest", "--config", configPath, ...args];
   }
+
+  /**
+   * build stryker run command with input option
+   * @param configPath stryker.conf.js
+   * @param args stryker option arguments
+   */
+  stryker(configPath: string, ...args: string[]): string[] {
+    return ["stryker", ...args, "run", configPath];
+  }
 }

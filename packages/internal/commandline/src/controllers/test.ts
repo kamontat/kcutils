@@ -1,4 +1,5 @@
 import {
+  Option,
   OptionBuilder,
   ActionBuilder,
   Commandline,
@@ -10,9 +11,32 @@ export const help = Help.initial("Help for kc-test").newParagraph(
 run jest with pre configure for kcmono repository. guideline`
 );
 
-export const option = OptionBuilder.empty().build();
+export const option = OptionBuilder.initial({
+  mutator: {
+    defaultValue: false,
+    fn: Option.toBoolean,
+    alias: ["M"],
+  },
+}).build();
 
 export const action = ActionBuilder.initial(option, async (option, context) => {
+  if (option.mutator) {
+    const strykerConfig = await context.location.findExist("stryker.conf.js");
+    const args = [];
+    if (strykerConfig) {
+      if (context.env.isCI()) {
+        args.push("--concurrency", "1");
+      }
+      if (context.env.isDebug() || option.debug) {
+        args.push("--logLevel", "debug");
+      }
+
+      return context.command.stryker(strykerConfig, ...args);
+    }
+
+    throw new Error("Cannot find stryker.conf.js file to run");
+  }
+
   const jestConfig = await context.location.findExist("jest.config.js");
   const args = [];
   if (jestConfig) {
