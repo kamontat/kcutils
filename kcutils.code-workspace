@@ -1,12 +1,8 @@
 {
   "folders": [
     {
-      "name": "internal/runners",
-      "path": "packages/internal/runners"
-    },
-    {
-      "name": "internal/commandline",
-      "path": "packages/internal/commandline"
+      "name": "kcutils/random",
+      "path": "packages/public/random"
     },
     {
       "name": "private/client",
