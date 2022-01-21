@@ -1,4 +1,4 @@
-import { env } from "../src";
+import { env } from "../index";
 
 const setCI = (str: string | undefined) => {
   const old = process.env.CI;

@@ -1,4 +1,4 @@
-import { string } from "../src";
+import { string } from "../index";
 import { MaskOption } from "../src/types/string";
 
 describe("String Helper", () => {
@@ -73,7 +73,11 @@ describe("String Helper", () => {
 
   describe("Mask string", () => {
     test.each([
-      ["very very long string", {} as Partial<MaskOption>, "ver***************ing"],
+      [
+        "very very long string",
+        {} as Partial<MaskOption>,
+        "ver***************ing",
+      ],
       ["s", {} as Partial<MaskOption>, "*"],
       ["hello", { front: 100, back: 0 } as Partial<MaskOption>, "hello"],
       ["hello", { front: 0, back: 100 } as Partial<MaskOption>, "hello"],

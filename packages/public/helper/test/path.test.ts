@@ -1,4 +1,4 @@
-import { path } from "../src";
+import { path } from "../index";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const { Paths } = path;

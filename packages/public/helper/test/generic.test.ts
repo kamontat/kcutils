@@ -1,4 +1,4 @@
-import { generic } from "../src";
+import { generic } from "../index";
 
 describe("Generic checker", () => {
   describe("generic.isExist(any)", () => {
@@ -164,9 +164,12 @@ describe("Generic checker", () => {
 
       [NaN, false, false],
       [Infinity, false, false],
-    ])("called isNumber(%s, %s) should returns %s", (a: any, o: boolean, b: boolean) => {
-      expect(generic.isNumber(a, o)).toEqual(b);
-    });
+    ])(
+      "called isNumber(%s, %s) should returns %s",
+      (a: any, o: boolean, b: boolean) => {
+        expect(generic.isNumber(a, o)).toEqual(b);
+      }
+    );
   });
 
   describe("generic.isBoolean(any)", () => {

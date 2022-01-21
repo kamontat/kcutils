@@ -24,7 +24,9 @@ export class Paths {
   private readonly dir: string[];
 
   constructor(filepath: string | null | undefined) {
-    const fp = filepath?.endsWith(path.sep) ? `${filepath}${filewhitelist}` : filepath ?? "";
+    const fp = filepath?.endsWith(path.sep)
+      ? `${filepath}${filewhitelist}`
+      : filepath ?? "";
     const fileparsed = path.parse(fp);
 
     this.file = {
@@ -39,7 +41,7 @@ export class Paths {
       this.dir = path
         .normalize(fileparsed.dir)
         .split(path.sep)
-        .filter(v => v !== "" && v !== "..");
+        .filter((v) => v !== "" && v !== "..");
   }
 
   get isFileExist(): boolean {
@@ -111,12 +113,12 @@ export class Paths {
   after(regex: RegExp, num: number, size: number = 0): string | undefined {
     const n = num < 0 ? 0 : num;
 
-    const index = this.dir.findIndex(v => regex.test(v));
+    const index = this.dir.findIndex((v) => regex.test(v));
     const targetdir = index < 0 ? this.dir[n] : this.dir[index + n];
     if (size <= 0) return targetdir;
     else {
       const arr = [targetdir, this.after(regex, n + 1, size - 1)];
-      return arr.filter(v => v !== undefined && v !== "").join(path.sep);
+      return arr.filter((v) => v !== undefined && v !== "").join(path.sep);
     }
   }
 
@@ -126,7 +128,7 @@ export class Paths {
    */
   includes(regex: RegExp): boolean {
     if (regex.test(this.filename)) return true;
-    else if (this.dir.some(d => regex.test(d))) return true;
+    else if (this.dir.some((d) => regex.test(d))) return true;
     else return false;
   }
 }

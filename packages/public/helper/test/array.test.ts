@@ -1,4 +1,4 @@
-import { array } from "../src";
+import { array } from "../index";
 
 describe("Array helper", () => {
   test("change string to string array", () => {
@@ -15,7 +15,14 @@ describe("Array helper", () => {
 
   test("flatmap array", () => {
     const str = "asdf";
-    const a1: (string | string[])[] = [str, str, str, [str], str, [str, str, str]];
+    const a1: (string | string[])[] = [
+      str,
+      str,
+      str,
+      [str],
+      str,
+      [str, str, str],
+    ];
     const a2: (string | string[])[] = [[str, str], str, str, [str, str]];
     const arr = array.flatmap(a1, a2);
 

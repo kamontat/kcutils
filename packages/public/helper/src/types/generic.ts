@@ -1,4 +1,4 @@
-import { Optional, Null, AnyOptional } from "../models/Optional";
+import type { Optional, Null } from "generic";
 
 /**
  * return true when match following condition
@@ -45,11 +45,14 @@ export const isFalsy = <T = unknown>(t: Optional<T>): t is T => {
   else return true;
 };
 
-export const isString = (t: AnyOptional): t is string => {
+export const isString = (t: Optional<unknown>): t is string => {
   return isExist(t) && typeof t === "string";
 };
 
-export const isNumber = (t: AnyOptional, ignoreSpecial: boolean = false): t is number => {
+export const isNumber = (
+  t: Optional<unknown>,
+  ignoreSpecial: boolean = false
+): t is number => {
   if (isExist(t)) {
     if (typeof t === "number") {
       if (ignoreSpecial) return true;
@@ -59,7 +62,7 @@ export const isNumber = (t: AnyOptional, ignoreSpecial: boolean = false): t is n
   return false;
 };
 
-export const isBoolean = (t: AnyOptional): t is boolean => {
+export const isBoolean = (t: Optional<unknown>): t is boolean => {
   return isExist(t) && typeof t === "boolean";
 };
 
@@ -84,7 +87,7 @@ export const isObject = <T = unknown>(obj: Optional<T>): obj is T => {
  *
  * @param input input data on any type
  */
-export const toString = <T extends any = unknown>(input: T): string | undefined => {
+export const toString = <T = unknown>(input: T): string | undefined => {
   if (noExist(input)) return undefined;
   else if (isString(input)) return input;
   else if (isBoolean(input)) return input ? "true" : "false";
@@ -104,7 +107,7 @@ export const toString = <T extends any = unknown>(input: T): string | undefined 
  * @param input input data on any type
  * @param converter parseFloat or parseInt, applied only when input is string. (default is parseFloat())
  */
-export const toNumber = <T extends any = unknown>(
+export const toNumber = <T = unknown>(
   input: T,
   converter: (s: string) => number = parseFloat
 ): number | undefined => {
@@ -117,7 +120,7 @@ export const toNumber = <T extends any = unknown>(
   } else return undefined;
 };
 
-export const toBoolean = <T extends any = unknown>(input: T): boolean | undefined => {
+export const toBoolean = <T = unknown>(input: T): boolean | undefined => {
   if (noExist(input)) return undefined;
   else if (isBoolean(input)) return input;
   else if (isNumber(input)) {
@@ -143,6 +146,6 @@ export const toBoolean = <T extends any = unknown>(input: T): boolean | undefine
  * @param input input as any type and undefined | null
  * @return input if input is exist; otherwise, return undefined. This function will never return null
  */
-export const toOptional = <T extends any = unknown>(input: Optional<T>): T | undefined => {
+export const toOptional = <T = unknown>(input: Optional<T>): T | undefined => {
   return isExist(input) ? input : undefined;
 };

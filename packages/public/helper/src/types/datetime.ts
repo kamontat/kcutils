@@ -1,20 +1,61 @@
-import { json, generic } from "..";
+import { noExist, isString, isNumber } from "./generic";
+import { forceObject, merge } from "./json";
 
 type Day = [string, string, string, string, string, string, string];
-type Month = [string, string, string, string, string, string, string, string, string, string, string, string];
+type Month = [
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string,
+  string
+];
 
 export type DatetimeKey = "day" | "month";
 export type DatetimeLang = "en" | "th";
 export type DatetimeType = "short" | "long";
 export type DatetimeTimezone = "UTC" | "local";
 export type DatetimeFormat<T> = Record<DatetimeType, T>;
-export type Datetime<T, L extends string = DatetimeLang> = Record<L, DatetimeFormat<T>>;
+export type Datetime<T, L extends string = DatetimeLang> = Record<
+  L,
+  DatetimeFormat<T>
+>;
 
 const enDayShort: Day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const enDayLong: Day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const enDayLong: Day = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
-const thDayShort: Day = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัส", "ศุกร์", "เสาร์"];
-const thDayLong: Day = ["วันอาทิตย์", "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันศุกร์", "วันเสาร์"];
+const thDayShort: Day = [
+  "อาทิตย์",
+  "จันทร์",
+  "อังคาร",
+  "พุธ",
+  "พฤหัส",
+  "ศุกร์",
+  "เสาร์",
+];
+const thDayLong: Day = [
+  "วันอาทิตย์",
+  "วันจันทร์",
+  "วันอังคาร",
+  "วันพุธ",
+  "วันพฤหัสบดี",
+  "วันศุกร์",
+  "วันเสาร์",
+];
 
 const day: Datetime<Day> = {
   en: {
@@ -27,7 +68,20 @@ const day: Datetime<Day> = {
   },
 };
 
-const enMonthShort: Month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const enMonthShort: Month = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 const enMonthLong: Month = [
   "January",
   "February",
@@ -98,9 +152,23 @@ export type NewDateOption = {
  * @param opt datetime object (each key start point is 0)
  * @param type datetime timezone
  */
-export const newDate = (opt?: NewDateOption, type: DatetimeTimezone = "UTC"): Date => {
-  const option = json.forceObject(
-    json.merge({ year: 0, month: 0, date: 0, hour: 0, minute: 0, second: 0, millisecond: 0 } as NewDateOption, opt)
+export const newDate = (
+  opt?: NewDateOption,
+  type: DatetimeTimezone = "UTC"
+): Date => {
+  const option = forceObject(
+    merge(
+      {
+        year: 0,
+        month: 0,
+        date: 0,
+        hour: 0,
+        minute: 0,
+        second: 0,
+        millisecond: 0,
+      } as NewDateOption,
+      opt
+    )
   );
 
   if (
@@ -116,7 +184,15 @@ export const newDate = (opt?: NewDateOption, type: DatetimeTimezone = "UTC"): Da
   else {
     if (type === "UTC")
       return new Date(
-        Date.UTC(option.year, option.month, option.date, option.hour, option.minute, option.second, option.millisecond)
+        Date.UTC(
+          option.year,
+          option.month,
+          option.date,
+          option.hour,
+          option.minute,
+          option.second,
+          option.millisecond
+        )
       );
     else
       return new Date(
@@ -141,8 +217,11 @@ export type ConvertDayNameOption = {
  * @param dayName day name in string
  * @param opt specify the name type, passes undefined will search all day name in database
  */
-export const convertDayName = (dayName: string, opt?: ConvertMonthNameOption): number => {
-  if (generic.noExist(opt)) {
+export const convertDayName = (
+  dayName: string,
+  opt?: ConvertMonthNameOption
+): number => {
+  if (noExist(opt)) {
     for (const t of ["short", "long"] as Array<DatetimeType>) {
       for (const l of ["en", "th"] as Array<DatetimeLang>) {
         const i = convertDayName(dayName, { lang: l, type: t });
@@ -152,7 +231,7 @@ export const convertDayName = (dayName: string, opt?: ConvertMonthNameOption): n
     return -1;
   } else {
     const arr = day[opt.lang][opt.type];
-    return arr.findIndex(m => m.toLowerCase() === dayName.toLowerCase());
+    return arr.findIndex((m) => m.toLowerCase() === dayName.toLowerCase());
   }
 };
 
@@ -166,8 +245,11 @@ export type ConvertMonthNameOption = {
  * @param monthName month name in string
  * @param opt specify the name type, passes undefined will search all month name in database
  */
-export const convertMonthName = (monthName: string, opt?: ConvertMonthNameOption): number => {
-  if (generic.noExist(opt)) {
+export const convertMonthName = (
+  monthName: string,
+  opt?: ConvertMonthNameOption
+): number => {
+  if (noExist(opt)) {
     for (const t of ["short", "long"] as Array<DatetimeType>) {
       for (const l of ["en", "th"] as Array<DatetimeLang>) {
         const i = convertMonthName(monthName, { lang: l, type: t });
@@ -177,7 +259,7 @@ export const convertMonthName = (monthName: string, opt?: ConvertMonthNameOption
     return -1;
   } else {
     const arr = month[opt.lang][opt.type];
-    return arr.findIndex(m => m.toLowerCase() === monthName.toLowerCase());
+    return arr.findIndex((m) => m.toLowerCase() === monthName.toLowerCase());
   }
 };
 
@@ -186,7 +268,11 @@ export type GetIndexOption = {
   type: DatetimeType;
   lang: DatetimeLang;
 };
-export const getIndex = (name: string, key: DatetimeKey, opt?: GetIndexOption): number => {
+export const getIndex = (
+  name: string,
+  key: DatetimeKey,
+  opt?: GetIndexOption
+): number => {
   if (key === "day") return convertDayName(name, opt);
   else if (key === "month") return convertMonthName(name, opt);
   else return -1;
@@ -197,8 +283,12 @@ export type GetNameOption = {
   type: DatetimeType;
   lang: DatetimeLang;
 };
-export const getName = (index: number, opt: GetNameOption): string | undefined => {
-  if (generic.noExist(opt.key) || generic.noExist(opt.type) || generic.noExist(opt.lang)) return undefined;
+export const getName = (
+  index: number,
+  opt: GetNameOption
+): string | undefined => {
+  if (noExist(opt.key) || noExist(opt.type) || noExist(opt.lang))
+    return undefined;
 
   const base = opt.key === "day" ? day : month;
   const arr = base[opt.lang][opt.type];
@@ -235,7 +325,9 @@ export const convertYear = (year: string, type: YearType = "thai"): number => {
   const prefix = type === "thai" ? "25" : "20";
   const converter = type === "thai" ? -543 : 0;
 
-  const yearn = year.split("").reduce((p, c) => (isNaN(parseInt(c)) ? p : p + c), ""); // remove all non-number string
+  const yearn = year
+    .split("")
+    .reduce((p, c) => (isNaN(parseInt(c)) ? p : p + c), ""); // remove all non-number string
   const year1 = yearn.padStart(2, "0"); // padding start with 0 if string length is 1
   const year2 = year1.length === 2 ? `${prefix}${year1}` : year1; // add 25 if year length is 2
   const year3 = year2.length === 3 ? `${prefix.charAt(0)}${year2}` : year2; // add 2 if year length is 3
@@ -246,19 +338,26 @@ export const convertYear = (year: string, type: YearType = "thai"): number => {
 };
 
 export type TimestampType = "second" | "millisecond";
-export const timestamp = (input: string | number | Date, type: TimestampType = "millisecond"): number => {
-  const date = generic.isString(input) || generic.isNumber(input) ? new Date(input) : input;
+export const timestamp = (
+  input: string | number | Date,
+  type: TimestampType = "millisecond"
+): number => {
+  const date = isString(input) || isNumber(input) ? new Date(input) : input;
   const ms = date.getTime();
   return type === "millisecond" ? ms : Math.round(ms / 1000);
 };
 
-export const getDateFromTimestamp = (timestamp: string | number): Date | undefined => {
-  if (generic.isString(timestamp)) {
+export const getDateFromTimestamp = (
+  timestamp: string | number
+): Date | undefined => {
+  if (isString(timestamp)) {
     if (/^(\d)+$/.test(timestamp)) {
       const number = parseInt(timestamp, 10);
       return new Date(number);
     } else return undefined;
   }
 
-  return isNaN(timestamp) || !isFinite(timestamp) ? undefined : new Date(timestamp);
+  return isNaN(timestamp) || !isFinite(timestamp)
+    ? undefined
+    : new Date(timestamp);
 };

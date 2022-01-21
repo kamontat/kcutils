@@ -10,7 +10,11 @@ class DevNull extends Writable {
   }
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
-  _write(_chunk: any, _encoding: BufferEncoding, callback: (error?: Error | null) => void) {
+  _write(
+    _chunk: any,
+    _encoding: BufferEncoding,
+    callback: (error?: Error | null) => void
+  ) {
     return setImmediate(callback);
   }
 }

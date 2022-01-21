@@ -1,6 +1,6 @@
 import { Readable } from "stream";
 
-import { stream } from "../src";
+import { stream } from "../index";
 
 class NumberStream extends Readable {
   private idx: number;
@@ -22,7 +22,7 @@ describe("Stream Helper", () => {
     const data: any[] = [];
     const numbers = new NumberStream(2);
 
-    return new Promise(res => {
+    return new Promise((res) => {
       numbers
         .on("data", function (d) {
           data.push(d);
@@ -37,7 +37,7 @@ describe("Stream Helper", () => {
   test("with dev/null", () => {
     const data: any[] = [];
     const numbers = new NumberStream(2);
-    return new Promise(res => {
+    return new Promise((res) => {
       numbers
         .on("end", () => {
           expect(data).toHaveLength(0);

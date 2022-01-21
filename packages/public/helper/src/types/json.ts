@@ -1,6 +1,7 @@
+import type { Optional } from "generic";
+
 import { nonEmpty, isString, isObject, isExist, noExist } from "./generic";
-import { array } from "..";
-import { Optional } from "../models/Optional";
+import { equals as arrayEqual } from "./array";
 
 export type JsonSortableData<T> = {
   index: number;
@@ -18,7 +19,9 @@ type PossibleValue<T = Value> = T | T[];
 type PossibleValues<T = PossibleValue> = T | Record<string, T>;
 
 type Json<T = Value> = Partial<Record<string, PossibleValue<T>>>;
-type NestedJson<T = Value> = Partial<Record<string, PossibleValues<PossibleValue<T>>>>;
+type NestedJson<T = Value> = Partial<
+  Record<string, PossibleValues<PossibleValue<T>>>
+>;
 
 /**
  * deepEquals object data with specify keys
@@ -34,7 +37,11 @@ type NestedJson<T = Value> = Partial<Record<string, PossibleValues<PossibleValue
  *  equals({a: 2, b: 3}, {a: 2, b: 3}) - check all keys ('a' and 'b')
  *  equals({a: {aa: 1, ab: 2}}, {a: {aa: 2, bb: 3, cc: 1}, ["a.ab"]}) - check only 'b' key inside a object
  */
-export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, keys: string[] = []): boolean => {
+export const equals = <T extends NestedJson>(
+  o1: Optional<T>,
+  o2: Optional<T>,
+  keys: string[] = []
+): boolean => {
   // for deep equals object data
   if (isObject(o1) && isObject(o2)) {
     // checking all keys
@@ -48,7 +55,7 @@ export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, k
       return equals(o1, o2, keys1);
       // checking only specify keys
     } else {
-      return keys.every(key => {
+      return keys.every((key) => {
         const value1: any = getObject(o1, key);
         const value2: any = getObject(o2, key);
 
@@ -57,7 +64,7 @@ export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, k
           return equals(
             value1,
             value2,
-            keys.map(k => k.split(".").slice(1).join("."))
+            keys.map((k) => k.split(".").slice(1).join("."))
           );
         // checking by
         else if (equals(value1, value2)) return true;
@@ -67,7 +74,7 @@ export const equals = <T extends NestedJson>(o1: Optional<T>, o2: Optional<T>, k
 
     // normal datatype
   } else if (Array.isArray(o1) || Array.isArray(o2)) {
-    return array.equals(o1, o2);
+    return arrayEqual(o1, o2);
   } else {
     return o1 === o2;
   }
@@ -91,7 +98,7 @@ export const forceObject = <T = unknown>(obj: Optional<T>, def = {}): T => {
  * @param key object query statment (format as a.b.c)
  * @param all if enable this, getObject will return full object instead of undefined
  */
-export const getObject = <R extends any, T extends NestedJson<R>>(
+export const getObject = <R, T extends NestedJson<R>>(
   obj: T,
   key: string,
   all: boolean = false
@@ -118,7 +125,9 @@ export const getObject = <R extends any, T extends NestedJson<R>>(
  *
  * @param obj massy object
  */
-export const cleanObject = <T = Value>(obj: Optional<Json<T>>): Record<string, PossibleValue<T>> => {
+export const cleanObject = <T = Value>(
+  obj: Optional<Json<T>>
+): Record<string, PossibleValue<T>> => {
   if (noExist(obj)) return {};
   else
     return Object.keys(obj).reduce((p, k) => {
@@ -128,9 +137,12 @@ export const cleanObject = <T = Value>(obj: Optional<Json<T>>): Record<string, P
     }, {} as Record<string, T>);
 };
 
-export const merge = <T extends Json>(base: Optional<Partial<T>>, ...obj: Optional<Partial<T>>[]): T | undefined => {
+export const merge = <T extends Json>(
+  base: Optional<Partial<T>>,
+  ...obj: Optional<Partial<T>>[]
+): T | undefined => {
   if (noExist(base)) return undefined;
-  const newObjectList = obj.map(o => cleanObject(o));
+  const newObjectList = obj.map((o) => cleanObject(o));
   return Object.assign(cleanObject(base), ...newObjectList);
 };
 
@@ -143,14 +155,18 @@ export const deepMerge = <T extends NestedJson, U extends NestedJson>(
   const jsonB: U = forceObject(_jsonB);
 
   return [jsonB].reduce((prev, obj) => {
-    (Object.keys(obj) as Array<keyof typeof obj>).forEach(key => {
+    (Object.keys(obj) as Array<keyof typeof obj>).forEach((key) => {
       const pVal = prev[key];
       const oVal = obj[key];
 
       if (Array.isArray(pVal) && Array.isArray(oVal)) {
         prev[key] = pVal.concat(...oVal);
       } else if (isObject(pVal) && isObject(oVal) && size > 0) {
-        prev[key] = deepMerge(pVal as NestedJson, oVal as NestedJson, size - 1) as any;
+        prev[key] = deepMerge(
+          pVal as NestedJson,
+          oVal as NestedJson,
+          size - 1
+        ) as any;
       } else {
         // replace only when new value is exist
         if (isExist(oVal)) prev[key] = oVal;
@@ -171,6 +187,9 @@ export const toArray = (json: OptionalSortableJson): string[] => {
       else if (v1.index < v2.index) return -1;
       else return 0;
     })
-    .map(k => json[k]?.data ?? "")
-    .reduce<string[]>((p, c) => (Array.isArray(c) ? [...p, ...c] : [...p, c]), [] as string[]);
+    .map((k) => json[k]?.data ?? "")
+    .reduce<string[]>(
+      (p, c) => (Array.isArray(c) ? [...p, ...c] : [...p, c]),
+      [] as string[]
+    );
 };

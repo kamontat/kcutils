@@ -1,4 +1,4 @@
-import { json as jsonHelper } from "../src";
+import { json as jsonHelper } from "../index";
 
 describe("Json Object Helper", () => {
   describe("toArray", () => {
@@ -74,7 +74,8 @@ describe("Json Object Helper", () => {
     test("merge conflict normal object", () => {
       const objA = { a: true, b: "hello", c: 20 };
       const objB = { d: 75, b: false, a: "unknown" };
-      const result: { a: string; b: boolean; c: number; d: number } = jsonHelper.deepMerge(objA, objB);
+      const result: { a: string; b: boolean; c: number; d: number } =
+        jsonHelper.deepMerge(objA, objB);
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -104,7 +105,8 @@ describe("Json Object Helper", () => {
     test("merge array on normal object", () => {
       const objA = { a: ["hello"], b: ["old", "array"], c: true };
       const objB = { a: ["next", "world"], b: "hello", c: ["array"] };
-      const result: { a: string[]; b: string; c: string[] } = jsonHelper.deepMerge(objA, objB);
+      const result: { a: string[]; b: string; c: string[] } =
+        jsonHelper.deepMerge(objA, objB);
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -162,7 +164,7 @@ describe("Json Object Helper", () => {
     ])("merge '%p' with '%p'", (a: any, b: any, output) => {
       const result = jsonHelper.deepMerge(a, b);
       if (output.length <= 0) expect(result).toEqual({});
-      else output.forEach(e => expect(result).toHaveProperty(e));
+      else output.forEach((e) => expect(result).toHaveProperty(e));
     });
   });
 
@@ -203,9 +205,12 @@ describe("Json Object Helper", () => {
       [["aa"], {}, undefined, false],
       [{ a: "abc" }, ["abc"], undefined, false],
       [{ a: "abc" }, ["abc"], ["a"], false],
-    ])("json.equals(%p, %p, %p) returns %s", (a: any, b: any, keys: string[] | undefined, result: boolean) => {
-      expect(jsonHelper.equals(a, b, keys)).toEqual(result);
-    });
+    ])(
+      "json.equals(%p, %p, %p) returns %s",
+      (a: any, b: any, keys: string[] | undefined, result: boolean) => {
+        expect(jsonHelper.equals(a, b, keys)).toEqual(result);
+      }
+    );
   });
 
   describe("getObject", () => {
@@ -222,14 +227,22 @@ describe("Json Object Helper", () => {
       [{}, "key", false, undefined],
       [{}, "key", true, {}],
       [{ a: true, b: 123, c: "bigC" }, "", false, undefined],
-      [{ a: true, b: 123, c: "bigC" }, "", true, { a: true, b: 123, c: "bigC" }],
+      [
+        { a: true, b: 123, c: "bigC" },
+        "",
+        true,
+        { a: true, b: 123, c: "bigC" },
+      ],
       [{ a: true, b: 123, c: "bigC" }, "a", false, true],
       [{ a: true, b: 123, c: "bigC" }, "b", false, 123],
       [{ a: true, b: 123, c: "bigC" }, "c", false, "bigC"],
       [{ a: { b: { c: "abc" } } }, "a.b.c", false, "abc"],
-    ])("getObject(%p, %s) returns %s", (obj: any, key: any, all: boolean, result: any) => {
-      expect(jsonHelper.getObject(obj, key, all)).toEqual(result);
-    });
+    ])(
+      "getObject(%p, %s) returns %s",
+      (obj: any, key: any, all: boolean, result: any) => {
+        expect(jsonHelper.getObject(obj, key, all)).toEqual(result);
+      }
+    );
   });
 
   describe("forceObject", () => {
@@ -244,9 +257,12 @@ describe("Json Object Helper", () => {
       [{ a: "start" }, {}, { a: "start" }],
       [{}, {}, {}],
       [{}, { a: "test" }, {}],
-    ])("forceObject(%s, %s) returns %s", (input: any, def: any, result: any) => {
-      expect(jsonHelper.forceObject(input, def)).toEqual(result);
-    });
+    ])(
+      "forceObject(%s, %s) returns %s",
+      (input: any, def: any, result: any) => {
+        expect(jsonHelper.forceObject(input, def)).toEqual(result);
+      }
+    );
   });
 
   describe("cleanObject", () => {

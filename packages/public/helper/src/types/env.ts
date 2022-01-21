@@ -1,10 +1,13 @@
-import { generic } from "..";
+import { isExist } from "./generic";
 
 type Data = string;
 
 const check = (...d: Data[]) => {
-  const env = process.env.ENV === undefined || process.env.ENV === "undefined" ? "" : process.env.ENV;
-  return d.some(data => env === data);
+  const env =
+    process.env.ENV === undefined || process.env.ENV === "undefined"
+      ? ""
+      : process.env.ENV;
+  return d.some((data) => env === data);
 };
 
 export const isDevelopment = (): boolean => {
@@ -27,7 +30,10 @@ export const isCI = (): boolean => {
   return process.env.CI === "true";
 };
 
-export const setEnv = (name: string, value: string | undefined): string | undefined => {
+export const setEnv = (
+  name: string,
+  value: string | undefined
+): string | undefined => {
   const old = process.env[name];
   process.env[name] = value;
   return old;
@@ -35,6 +41,6 @@ export const setEnv = (name: string, value: string | undefined): string | undefi
 
 export const read = (name: string, def: string): string => {
   const env = process.env[name];
-  if (generic.isExist(env)) return env;
+  if (isExist(env)) return env;
   else return def;
 };
