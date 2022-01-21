@@ -86,6 +86,7 @@ run_source() {
   fi
 }
 
+# FIXME: command path not return correct output if it found double path twice without single path in between
 export find_command_file
 find_command_file() {
   local callback="$1"
