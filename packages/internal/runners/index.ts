@@ -29,3 +29,5 @@ export type {
   PackageRepository,
 } from "package_json";
 export type { Nullable } from "generic";
+
+export { version as _version } from "./package.json";
