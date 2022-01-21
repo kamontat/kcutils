@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.22.2...@kcinternal/commandline@0.23.0) (2022-01-21)
+
+
+### Bug Fixes
+
+* **script:** command name should been removed from argument fields ([ad621d2](https://github.com/kamontat/kcutils/commit/ad621d2836661c9b79054c17bb2eb21fc1ba8974))
+* **script:** kc-lint is missing from compile output ([ac16841](https://github.com/kamontat/kcutils/commit/ac1684104edd459621a824a8d70c23b493cc8196))
+* **script:** lint -- didn't works because wrong variable name ([041e29a](https://github.com/kamontat/kcutils/commit/041e29ac2baf704a67712fbcee77273c6628e12c))
+* **test:** test is expect correct value ([b1fbb26](https://github.com/kamontat/kcutils/commit/b1fbb26331c837decc03d81668c894f3c4e80b8e))
+
+
+### Features
+
+* **script:** add kc-build for build tsc and rollup project ([5b3b922](https://github.com/kamontat/kcutils/commit/5b3b922d3306c0d7492c3b984685999f30eba916))
+* **script:** add kc-core general to print kc-core general information ([bcbceff](https://github.com/kamontat/kcutils/commit/bcbceffc938019b8a09d1beef74fbc3c6e623dc9))
+
+
+### Performance Improvements
+
+* **docs:** add mutator detail in kc-test --help command ([5208768](https://github.com/kamontat/kcutils/commit/5208768bd19fe05041f72b81926ebb48c9083d75))
+* **script:** add --mutator in kc-test for run mutator script ([0fc8cd2](https://github.com/kamontat/kcutils/commit/0fc8cd2b7db15707b676fd28539d5ab162ee1b2d))
+* **script:** add kc-lint for run eslint ([372d6a9](https://github.com/kamontat/kcutils/commit/372d6a9a09a9b4b958a3d9e5dfdf42a0002a6787))
+* **script:** add kc-test ([e814e7b](https://github.com/kamontat/kcutils/commit/e814e7b0f49c5c6605d899295c9003a6191c9664))
+* **script:** implement kc-start with --build option ([680994b](https://github.com/kamontat/kcutils/commit/680994bd7f83149633b1d8350f776248a5062f16))
+* **script:** make kc-lint will pass all argument from input args to eslint cli ([bf21224](https://github.com/kamontat/kcutils/commit/bf21224d88e9ca6eafd64b140bca010426f871d2))
+
+
+
+
+
 ## [0.22.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.22.1...@kcinternal/commandline@0.22.2) (2022-01-10)
 
 

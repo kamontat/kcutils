@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/kamontat/kcutils/compare/@kcconfig/ts-config@0.1.2...@kcconfig/ts-config@0.1.3) (2022-01-21)
+
+
+### Bug Fixes
+
+* **compiler:** disabled composite because TypeStrong/ts-loader[#905](https://github.com/kamontat/kcutils/issues/905) ([b646d5b](https://github.com/kamontat/kcutils/commit/b646d5ba164bbcf82745faa60573b2884bbd92db))
+
+
+
+
+
 ## [0.1.2](https://github.com/kamontat/kcutils/compare/@kcconfig/ts-config@0.1.1...@kcconfig/ts-config@0.1.2) (2022-01-10)
 
 

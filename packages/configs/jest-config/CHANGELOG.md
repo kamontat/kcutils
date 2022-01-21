@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/kamontat/kcutils/compare/@kcconfig/jest-config@0.1.2...@kcconfig/jest-config@0.1.3) (2022-01-21)
+
+
+### Bug Fixes
+
+* **config:** jest must run test only xxx.test.ts but not include test.ts ([a186230](https://github.com/kamontat/kcutils/commit/a186230d837c6524e76691fa2784ffdc6351532f))
+
+
+### Performance Improvements
+
+* **config:** remove verbose, update static ignore pattern between coverage and test ([6965b8b](https://github.com/kamontat/kcutils/commit/6965b8b6a822f541825337d12613dff4d2fe1a2a))
+
+
+
+
+
 ## [0.1.2](https://github.com/kamontat/kcutils/compare/@kcconfig/jest-config@0.1.1...@kcconfig/jest-config@0.1.2) (2022-01-10)
 
 
