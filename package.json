@@ -9,7 +9,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@nrwl/cli": "13.4.5",
+    "@nrwl/cli": "13.4.6",
     "@nrwl/nx-cloud": "13.0.2",
     "@nrwl/tao": "13.4.5",
     "@nrwl/workspace": "13.4.5",
