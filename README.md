@@ -1,5 +1,8 @@
 # KCUtils (Kamontat Utilities)
 
+> APIs documentation: https://kcutils.kamontat.net <br>
+> Dependencies graph: https://kcutils.kamontat.net/graph/
+
 | Name     | Badge #1                 | Badge #2                   |
 | -------- | ------------------------ | -------------------------- |
 | Analysis | [![quality][q_img]][sdb] | [![violation][sv_img]][sv] |
