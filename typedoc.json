@@ -1,7 +1,11 @@
 {
   "emit": "docs",
   "entryPointStrategy": "packages",
-  "entryPoints": ["packages/internal/runners", "packages/private/rollup"],
+  "entryPoints": [
+    "packages/public/helper",
+    "packages/public/random",
+    "packages/internal/runners"
+  ],
   "out": "dist",
   "plugin": [],
   "logger": "console",
