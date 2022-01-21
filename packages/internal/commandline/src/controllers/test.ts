@@ -52,7 +52,7 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
       );
     }
 
-    return context.command.jest(jestConfig, ...args);
+    return context.command.jest(jestConfig, ...args, ...option.args);
   }
 
   throw new Error("Cannot find jest.config.js file to run");
