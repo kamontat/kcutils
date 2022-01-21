@@ -4,6 +4,9 @@ const setImmediate = (fn: (error?: Error | null) => void) => {
   setTimeout(fn, 0);
 };
 
+/**
+ * This can use in all Writeable object to write data to /dev/null channel
+ */
 class DevNull extends Writable {
   constructor() {
     super();
