@@ -10,12 +10,13 @@
 
 on_root_directory
 
+depgraph_args=(
+  "--file" "dist/graph/index.html"
+)
 typedoc_args=("--treatWarningsAsErrors")
 ghpage_args=(
-  "--dist"
-  "dist"
-  "--message"
-  "chore(release): publish new document"
+  "--dist" "dist"
+  "--message" "chore(release): publish new document"
   "--add"
   "--dotfiles"
 )
@@ -23,5 +24,6 @@ ghpage_args=(
 is_ci && typedoc_args=("--logLevel" "Verbose")
 
 run_yarn "typedoc" "${typedoc_args[@]}" &&
+  run_nx "dep-graph" "${depgraph_args[@]}" &&
   run_yarn "gh-pages" "${ghpage_args[@]}" &&
   go_back
