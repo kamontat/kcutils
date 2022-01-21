@@ -8,7 +8,8 @@ import {
 
 export const help = Help.initial("Help for kc-test").newParagraph(
   `test application follow kcmono setup guideline.
-run jest with pre configure for kcmono repository. guideline`
+run jest with pre configure for kcmono repository.
+add --mutator for run stryker-mutator instead of normal test`
 );
 
 export const option = OptionBuilder.initial({
