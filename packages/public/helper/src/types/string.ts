@@ -2,6 +2,14 @@ import type { Optional } from "generic";
 
 import { isExist } from "./generic";
 
+/**
+ * Add <fill> on the end if not enough or remove character if exceed
+ *
+ * @param str input string
+ * @param length string limitation
+ * @param fill character for fill if input is not long enough
+ * @returns string with exactly length size
+ */
 export const padEnd = (
   str: string,
   length: number,
@@ -11,6 +19,14 @@ export const padEnd = (
   return str.padEnd(length, fill);
 };
 
+/**
+ * Add <fill> on the start if not enough or remove character if exceed
+ *
+ * @param str input string
+ * @param length string limitation
+ * @param fill character for fill if input is not long enough
+ * @returns string with exactly length size
+ */
 export const padStart = (
   str: string,
   size: number,
@@ -43,11 +59,12 @@ export const mask = (
 ): string => {
   if (!isNotEmpty(str)) return "";
   const option = Object.assign({}, defaultMaskOption, opt);
+  if (!option.enabled) return str;
 
   const limitFront = parseInt((str.length * (option.front / 100)).toFixed(0));
   const limitBack = parseInt((str.length * (option.back / 100)).toFixed(0));
 
-  const preview = str.substr(0, limitFront);
+  const preview = str.substring(0, limitFront);
   const endPreview = str.substring(str.length - limitBack, str.length);
 
   return preview.padEnd(str.length - limitBack, option.mask).concat(endPreview);

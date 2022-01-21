@@ -79,8 +79,19 @@ describe("String Helper", () => {
         "ver***************ing",
       ],
       ["s", {} as Partial<MaskOption>, "*"],
+      ["s", { enabled: false } as Partial<MaskOption>, "s"],
       ["hello", { front: 100, back: 0 } as Partial<MaskOption>, "hello"],
       ["hello", { front: 0, back: 100 } as Partial<MaskOption>, "hello"],
+      [
+        "0123456789",
+        { front: 20, back: 30 } as Partial<MaskOption>,
+        "01*****789",
+      ],
+      [
+        "0123456789",
+        { front: 30, back: 20 } as Partial<MaskOption>,
+        "012*****89",
+      ],
       [undefined, {} as Partial<MaskOption>, ""],
     ])("Mask '%s' with options %p returns '%s'", (input, option, output) => {
       expect(string.mask(input, option)).toEqual(output);
