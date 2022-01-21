@@ -13,18 +13,6 @@
       "path": "packages/private/client"
     },
     {
-      "name": "private/tsc",
-      "path": "packages/private/tsc"
-    },
-    {
-      "name": "private/rollup",
-      "path": "packages/private/rollup"
-    },
-    {
-      "name": "private/generator",
-      "path": "packages/private/generator"
-    },
-    {
       "name": "scripts",
       "path": "scripts"
     },
