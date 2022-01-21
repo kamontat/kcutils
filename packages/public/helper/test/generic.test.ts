@@ -217,7 +217,7 @@ describe("Generic checker", () => {
       [false, "false"],
       [["array"], "[array]"],
       [["multiple", "element"], "[multiple,element]"],
-      [{ data: true }, '{"data":true}'],
+      [{ data: true }, `{"data":true}`],
       [new Map(), "{}"],
       [new Error("helo world"), "{}"],
     ])("of '%s' should returns %s", (input, expected) => {
