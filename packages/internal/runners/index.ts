@@ -21,4 +21,11 @@ export type { Builder } from "./src/models/Builder";
 export type { Starter } from "./src/models/Starter";
 export type { Transformer } from "./src/models/Transformer";
 
-export type { Package } from "package_json";
+export type {
+  Package,
+  PackageAuthor,
+  PackageBugReport,
+  PackagePublishConfig,
+  PackageRepository,
+} from "package_json";
+export type { Nullable } from "generic";

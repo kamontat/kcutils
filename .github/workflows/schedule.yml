@@ -38,7 +38,7 @@ jobs:
         with:
           with_lint: true
           with_unittest: true
-          with_mutator_test: true
+          with_mutator_test: false
           mutator_apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
       - name: Deployment
         uses: ./.github/actions/deployment

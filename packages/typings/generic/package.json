@@ -1,0 +1,7 @@
+{
+  "name": "@types/generic",
+  "private": true,
+  "version": "0.0.1",
+  "description": "TypeScript definitions all generic types",
+  "typings": "index.d.ts"
+}

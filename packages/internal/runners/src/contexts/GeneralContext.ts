@@ -1,4 +1,4 @@
-type Nullable<T> = T | null | undefined;
+import type { Nullable } from "generic";
 
 export class GeneralContext {
   /**
