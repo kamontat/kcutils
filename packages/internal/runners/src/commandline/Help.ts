@@ -8,8 +8,8 @@ export class Help {
   }
 
   constructor(
-    private _title: string = "",
-    private _paragraphs: string[] = []
+    private readonly _title: string = "",
+    private readonly _paragraphs: string[] = []
   ) {}
 
   newParagraph(paragraph: string): this {
