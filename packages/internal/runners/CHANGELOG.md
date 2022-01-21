@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.0...@kcinternal/runners@0.2.1) (2022-01-21)
+
+
+### Bug Fixes
+
+* **action:** move debug setup to option action for fast response ([bd5aef9](https://github.com/kamontat/kcutils/commit/bd5aef95988dfd4bfc3ee679a05266d19784055b))
+* **bug:** change import statement to avoid node resolve path from package.json ([cdc5056](https://github.com/kamontat/kcutils/commit/cdc50560da2ef07223e58e9ad97354c354ccfd76)), closes [#359](https://github.com/kamontat/kcutils/issues/359)
+* **context:** print output not pass undefined correctly cause output to be undefined ([e3f7da3](https://github.com/kamontat/kcutils/commit/e3f7da3dfed088921cb267d43a5390804c558b5b))
+* **test:** test failed because we not proper wait async code ([c10406b](https://github.com/kamontat/kcutils/commit/c10406bf432d2d350524a845335e254d2627a149))
+
+
+### Performance Improvements
+
+* **apis:** add command.tsc() and command.rollup() to cli context ([7a4d7fe](https://github.com/kamontat/kcutils/commit/7a4d7fe9d1d763ff7a6aaa8b168a483f490f7c0f))
+* **apis:** add findExist to location context for alternative file option ([b0d3f53](https://github.com/kamontat/kcutils/commit/b0d3f53d8c22c3573175f5ee5a7d914e995d7fd1))
+* **apis:** export _version as package.version ([981fec5](https://github.com/kamontat/kcutils/commit/981fec5cb98e5a5b8031fbe4786f25b6d46d1f61))
+* **context:** normalize import values ([72379b9](https://github.com/kamontat/kcutils/commit/72379b92bc457675840e952a52fa4e0c8d617d91))
+* **model:** add readonly in Help model ([d07416b](https://github.com/kamontat/kcutils/commit/d07416b43160a77059f97939a9e1285cd5219f1a))
+* **model:** return raw input argument from option data and change raw field to args instead ([67bbe80](https://github.com/kamontat/kcutils/commit/67bbe8056c079cc9adc220a6eca5f5530d45086c))
+* **model:** use generic types instead of create new one ([e3510d7](https://github.com/kamontat/kcutils/commit/e3510d76638d3bd1a4daf1c204eb5149bc36a0ce))
+* **script:** add --mutator in kc-test for run mutator script ([0fc8cd2](https://github.com/kamontat/kcutils/commit/0fc8cd2b7db15707b676fd28539d5ab162ee1b2d))
+* **script:** add kc-lint for run eslint ([372d6a9](https://github.com/kamontat/kcutils/commit/372d6a9a09a9b4b958a3d9e5dfdf42a0002a6787))
+* **script:** add kc-test ([e814e7b](https://github.com/kamontat/kcutils/commit/e814e7b0f49c5c6605d899295c9003a6191c9664))
+
+
+
+
+
 # [0.2.0](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.1.1...@kcinternal/runners@0.2.0) (2022-01-10)
 
 
