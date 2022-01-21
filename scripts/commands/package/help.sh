@@ -14,7 +14,7 @@ echo "
 1. new                          - interactive prompt for create new package
 2. <package_name> add <library> - add new library to specify package
 3. <package_name> <cmd>         - run command using nx
-4. lerna-run <package_name>     - run command using lerna run
-5. lerna-exec <package_name>    - run command using lerna exec
-6. yarn <package_name>          - run command using yarn
+4. <package_name> lerna-run     - run command using lerna run
+5. <package_name> lerna-exec    - run command using lerna exec
+6. <package_name> yarn          - run command using yarn
 "
