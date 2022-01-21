@@ -1,4 +1,8 @@
-import { englishLowerAlphabetCharacter, englishUpperAlphabetCharacter, numberCharacter } from "../src";
+import {
+  englishLowerAlphabetCharacter,
+  englishUpperAlphabetCharacter,
+  numberCharacter,
+} from "../index";
 
 describe("Constants", () => {
   test("number list", () => {

@@ -1,8 +1,8 @@
-import { Seed, SeedGenerator } from "../src";
+import { Seed, SeedGenerator } from "../index";
 
 describe("Seed", () => {
   test("Return value base on generator function", () => {
-    const gen: SeedGenerator = a => () => parseInt(a);
+    const gen: SeedGenerator = (a) => () => parseInt(a);
     const seed = new Seed("1", gen);
 
     expect(seed.getSeed()).toEqual(1);
@@ -10,15 +10,15 @@ describe("Seed", () => {
   });
 
   test("Return value with patch when exist", () => {
-    const gen: SeedGenerator = a => () => parseInt(a);
+    const gen: SeedGenerator = (a) => () => parseInt(a);
     const seed = new Seed("1", gen);
 
-    expect(seed.getSeed(n => n + 1)).toEqual(2);
-    expect(seed.getSeed(n => n + 10)).toEqual(11);
+    expect(seed.getSeed((n) => n + 1)).toEqual(2);
+    expect(seed.getSeed((n) => n + 10)).toEqual(11);
   });
 
   test("Copy new seed", () => {
-    const gen: SeedGenerator = a => () => parseInt(a);
+    const gen: SeedGenerator = (a) => () => parseInt(a);
     const seed = new Seed("1", gen);
 
     expect(seed.getSeed()).toEqual(1);
@@ -30,7 +30,7 @@ describe("Seed", () => {
   });
 
   test("Copy with new generator", () => {
-    const gen: SeedGenerator = a => () => parseInt(a);
+    const gen: SeedGenerator = (a) => () => parseInt(a);
     const newGen: SeedGenerator = () => () => 5;
     const seed = new Seed("1", gen);
 

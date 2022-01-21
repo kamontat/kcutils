@@ -1,0 +1,8 @@
+{
+  "extends": "@kcconfig/ts-config/includes/default.json",
+  "exclude": ["lib"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "declarationDir": "."
+  }
+}

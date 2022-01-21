@@ -1,4 +1,4 @@
-import { Seeds } from "../src";
+import { Seeds } from "../index";
 
 describe("Seed constants", () => {
   test.each([

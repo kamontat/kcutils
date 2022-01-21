@@ -1,4 +1,4 @@
-import { Random } from "../../src";
+import { Random } from "../../index";
 
 export class Result {
   static new(r: Random): Result {
@@ -11,7 +11,12 @@ export class Result {
     if (!size) size = time / 100;
     const map = new Map<number, number>();
     for (let index = 0; index < time; index++) {
-      const e = this.r.number({ min: 1, max: size, inclusiveMax: true, integer: true });
+      const e = this.r.number({
+        min: 1,
+        max: size,
+        inclusiveMax: true,
+        integer: true,
+      });
       map.set(e, map.get(e) ?? 1);
     }
 
@@ -32,7 +37,7 @@ export class ResultChecker {
       const max = base + threshold;
       const min = base - threshold;
 
-      array.forEach(key => {
+      array.forEach((key) => {
         const [index, value] = key;
         if (value < min || value > max) {
           errors.push(

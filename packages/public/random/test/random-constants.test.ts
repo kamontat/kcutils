@@ -1,4 +1,4 @@
-import { Randoms, Seeds } from "../src";
+import { Randoms, Seeds } from "../index";
 import { Fixed } from "../src/constants/seeds/fixed";
 import { Result } from "./models/RandomResult";
 
