@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "kcutils/helper",
+      "path": "packages/public/helper"
+    },
+    {
       "name": "kcutils/random",
       "path": "packages/public/random"
     },
