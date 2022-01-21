@@ -22,21 +22,22 @@ This project adapted concept from mono-repository which contains all utilities f
 
 ## Basic concept
 
-Mono-repository managed by [lerna][lerna_link] and [nx][nx_link]. [Typescript][ts_link] is primary language but some packages still using [Javascript][js_link]. We use `tsc` as primary compiler with optional `rollup` template can be use on some project as well, `jest` as primary testing tools with `stryker` mutator supported, `eslint` as primary linter and `typedoc` as documentation website generator.
+Mono-repository managed by [lerna][lerna_link] and [nx][nx_link]. [Typescript][ts_link] is primary language but some packages still using [Javascript][js_link]. We use [tsc][ts_link] as primary compiler with optional [rollup][rollup_link] template can be use on some project as well, [jest][jest_link] as primary testing tools with [stryker mutator][stryker_link] supported, [eslint][eslint_link] as primary linter and [typedoc][typedoc_link] as documentation website generator.
 
 ## User
 
 This is a utilties project for another javascript/typescript repositories.
 Every package on this repository separate to 3 npm scope for different purposes
 
-1. `@kcutils` is public utilities or helpful package, will be main package for consumer
-2. `@kcconfig` is configuration package, for global configuration on some framework or tools
-3. `@kcinternal` is internal package, should always add to devDependencies. might useful on some libraries
+1. [@kcutils][kcutils_npm] is public utilities or helpful package, will be main package for consumer
+2. [@kcconfig][kcconfig_npm] is configuration package, for global configuration on some framework or tools
+3. [@kcinternal][kcinternal_npm] is internal package, should always add to devDependencies. might useful on some libraries
 4. `@kcprivate` is private package, will not publish to npm and meant to use in this repository only
 
 ### @kcutils
 
-- <none>
+- [@kcutils/helper][kcu_hpr_gh]      - functional programming utilities
+- [@kcutils/random][kcu_rdm_gh]      - custom random object
 
 ### @kcconfig
 
@@ -53,12 +54,12 @@ Every package on this repository separate to 3 npm scope for different purposes
 
 ## Contributor
 
-I have [CONTRIBUTING.md](./docs/CONTRIBUTING.md) guideline for setup, and maintain project.
+I have [CONTRIBUTING.md][contributing] guideline for setup, and maintain project.
 
 ## License
 
 This repository hold CC-BY-SA 4.0 License. On each package might contains different license. 
-More information found [here](./LICENSE)
+More information found [here][license]
 
 <!-- BANNER SECTION -->
 
@@ -80,12 +81,26 @@ More information found [here](./LICENSE)
 [nx_link]: https://nx.dev/
 [js_link]: https://www.javascript.com/
 [ts_link]: https://www.typescriptlang.org/
+[rollup_link]: https://rollupjs.org/guide/en/
+[jest_link]: https://jestjs.io/
+[stryker_link]: https://stryker-mutator.io/
+[eslint_link]: https://eslint.org/
+[typedoc_link]: https://typedoc.org/
+
+<!-- NPM SECTION -->
+
+[kcutils_npm]: https://www.npmjs.com/org/kcutils
+[kcconfig_npm]: https://www.npmjs.com/org/kcconfig
+[kcinternal_npm]: https://www.npmjs.com/org/kcinternal
 
 <!-- GITHUB SECTION -->
 
+[contributing]: ./CONTRIBUTING.md
+[license]: ./LICENSE
+
+[kcu_hpr_gh]: ./packages/public/helper
+[kcu_rdm_gh]: ./packages/public/random
 [kci_rn_gh]: ./packages/internal/runners
 [kci_cli_gh]: ./packages/internal/commandline
-
 [kcc_esl_gh]: ./packages/configs/eslint-config
-
 [kcp_gen_gh]: ./packages/private/generator
