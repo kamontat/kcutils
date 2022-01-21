@@ -1,3 +1,4 @@
+/** english alphabet in lower case */
 export const englishLowerAlphabetCharacter = [
   "a",
   "b",
@@ -27,6 +28,7 @@ export const englishLowerAlphabetCharacter = [
   "z",
 ];
 
+/** english alphabet in upper case */
 export const englishUpperAlphabetCharacter = [
   "A",
   "B",
@@ -56,4 +58,16 @@ export const englishUpperAlphabetCharacter = [
   "Z",
 ];
 
-export const numberCharacter = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+/** number character */
+export const numberCharacter = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+];

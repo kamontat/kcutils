@@ -6,9 +6,10 @@ import { Seed, SeedGenerator } from "../../models/Seed";
  * @param input any string input
  * @see https://github.com/bryc/code/blob/master/jshash/PRNGs.md#addendum-a-seed-generating-functions
  */
-export const xfnv1a: SeedGenerator = input => {
+export const xfnv1a: SeedGenerator = (input) => {
   let h = 2166136261 >>> 0;
-  for (let i = 0; i < input.length; i++) h = Math.imul(h ^ input.charCodeAt(i), 16777619);
+  for (let i = 0; i < input.length; i++)
+    h = Math.imul(h ^ input.charCodeAt(i), 16777619);
 
   return () => {
     h += h << 13;
@@ -20,6 +21,10 @@ export const xfnv1a: SeedGenerator = input => {
   };
 };
 
+/**
+ * This using Xfnv1a algorithm to create seed value
+ * @see https://github.com/bryc/code/blob/master/jshash/PRNGs.md#addendum-a-seed-generating-functions
+ */
 export class Xfnv1a extends Seed {
   constructor(input: string) {
     super(input, xfnv1a);

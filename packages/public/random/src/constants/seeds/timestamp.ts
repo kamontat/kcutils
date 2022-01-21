@@ -2,10 +2,7 @@ import { Seed, SeedGenerator } from "../../models/Seed";
 
 /**
  * This is seed generator for Seed class.
- * This implementation will return input instantly without calculate anything
- *
- *
- * @param input input number in string datatype
+ * This implementation will ignore input and always return timestamp out
  */
 export const timestamp: SeedGenerator = () => {
   return () => {
@@ -13,6 +10,9 @@ export const timestamp: SeedGenerator = () => {
   };
 };
 
+/**
+ * Use timestamp as a seed value
+ */
 export class Timestamp extends Seed {
   constructor() {
     super("", timestamp);
