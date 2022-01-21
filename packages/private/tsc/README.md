@@ -7,7 +7,7 @@
 1. primary language: `typescript`
 2. build and compile: `tsc`
 3. test: `jest`
-4. mutator test: `strker-mutator`
+4. mutator test: `stryker-mutator`
 5. code style: `eslint`
 
 ## To do list after generate new package
