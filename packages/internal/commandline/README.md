@@ -9,8 +9,3 @@
 3. test: `jest`
 4. mutator test: `stryker-mutator`
 5. code style: `eslint`
-
-## To do list after generate new package
-
-1. If you want to have start script you can add `start: "node lib/index.js"` in **package.json**
-2. If you want this package to shown in document website, add package name to **typedoc.json**
