@@ -27,7 +27,7 @@ describe("logger modules", () => {
       expect(logger).not.toBeUndefined();
 
       expect(logger.isEnabled()).toEqual(true);
-      expect(logger.isColor()).toEqual(true);
+      // expect(logger.isColor()).toEqual(true);
     });
 
     test("custom logger configuration", () => {
@@ -36,19 +36,7 @@ describe("logger modules", () => {
       expect(logger).not.toBeUndefined();
 
       expect(logger.isEnabled()).toEqual(false);
-      expect(logger.isColor()).toEqual(false);
-    });
-
-    test("disable color on promise", () => {
-      const logger = def.copy();
-
-      expect(logger.isColor()).toEqual(true);
-
-      logger.uncolor();
-      expect(logger.isColor()).toEqual(false);
-
-      logger.color();
-      expect(logger.isColor()).toEqual(true);
+      // expect(logger.isColor()).toEqual(false);
     });
 
     test("getting levels", () => {
@@ -302,7 +290,7 @@ describe("logger modules", () => {
     });
 
     test.each([
-      [{ color: false }, { color: true }],
+      // [{ color: false }, { color: true }],
       [{ json: true }, { json: false }],
       [
         { datetime: "time" as DateTimeFormat },

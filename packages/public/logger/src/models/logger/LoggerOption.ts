@@ -1,7 +1,7 @@
 import { Types } from "./LoggerType";
 import { OptionalSetting } from "./LoggerSetting";
 import { Levels, info, toLevel } from "../../constants/levels";
-import { Writable } from "stream";
+import type { Writable } from "stream";
 import { generic, env, array, json } from "@kcutils/helper";
 import { arrowRight } from "figures";
 
@@ -47,17 +47,30 @@ export interface StrictLoggerOption<T extends string> extends StrictOption {
 /**
  * @deprecated Please use LoggerOptionBuilder instead
  */
-export type OptionalLoggerOption<T extends string> = Partial<StrictLoggerOption<T>>;
+export type OptionalLoggerOption<T extends string> = Partial<
+  StrictLoggerOption<T>
+>;
 
-export type StrictExtraLoggerOption<T extends string> = { types: Types<T>; settings: OptionalSetting };
-export type OptionalExtraLoggerOption<T extends string> = Partial<StrictExtraLoggerOption<T>>;
+export type StrictExtraLoggerOption<T extends string> = {
+  types: Types<T>;
+  settings: OptionalSetting;
+};
+export type OptionalExtraLoggerOption<T extends string> = Partial<
+  StrictExtraLoggerOption<T>
+>;
 
 export class LoggerOption<T extends string> {
   private static readonly envPrefix = "KCUTILS";
 
-  constructor(private option: StrictOption, private readonly extra?: OptionalExtraLoggerOption<T>) {}
+  constructor(
+    private option: StrictOption,
+    private readonly extra?: OptionalExtraLoggerOption<T>
+  ) {}
 
-  set<K extends keyof StrictOption, V extends StrictOption[K] = StrictOption[K]>(key: K, value: V): void {
+  set<
+    K extends keyof StrictOption,
+    V extends StrictOption[K] = StrictOption[K]
+  >(key: K, value: V): void {
     this.option[key] = value;
   }
 
@@ -92,11 +105,23 @@ export class LoggerOption<T extends string> {
   }
 
   getLevel(override?: Levels): Levels {
-    return this.getString("LEVEL", "level", info.name, s => toLevel(s).name, override);
+    return this.getString(
+      "LEVEL",
+      "level",
+      info.name,
+      (s) => toLevel(s).name,
+      override
+    );
   }
 
   getSeparator(override?: string): string {
-    return this.getString("SEPARATOR", "separator", arrowRight, s => s, override);
+    return this.getString(
+      "SEPARATOR",
+      "separator",
+      arrowRight,
+      (s) => s,
+      override
+    );
   }
 
   getDatetime(override?: DateTimeFormat): DateTimeFormat {
@@ -105,7 +130,10 @@ export class LoggerOption<T extends string> {
       "DATETIME",
       "datetime",
       def,
-      s => (s === "date" || s === "datetime" || s === "time" || s === "timestamp" ? (s as DateTimeFormat) : def),
+      (s) =>
+        s === "date" || s === "datetime" || s === "time" || s === "timestamp"
+          ? (s as DateTimeFormat)
+          : def,
       override
     );
   }
@@ -114,8 +142,8 @@ export class LoggerOption<T extends string> {
     return this.getArray(
       "OUTPUT_LIST",
       "output",
-      v => v === "file" || v === "console",
-      t => t as OutputType,
+      (v) => v === "file" || v === "console",
+      (t) => t as OutputType,
       this.onlyExistArray,
       override
     );
@@ -126,7 +154,7 @@ export class LoggerOption<T extends string> {
       "SCOPES",
       "scopes",
       () => true,
-      s => s,
+      (s) => s,
       this.appendArray,
       override
     );
@@ -137,7 +165,7 @@ export class LoggerOption<T extends string> {
       "SECRETS",
       "secrets",
       () => true,
-      s => s,
+      (s) => s,
       this.appendArray,
       override
     );
@@ -164,11 +192,19 @@ export class LoggerOption<T extends string> {
   ): T {
     if (generic.isExist(override)) return override;
 
-    const envData = env.read(`${LoggerOption.envPrefix}_${envName}`, generic.toString(this.option[key]) ?? def);
+    const envData = env.read(
+      `${LoggerOption.envPrefix}_${envName}`,
+      generic.toString(this.option[key]) ?? def
+    );
     return mapFn(envData);
   }
 
-  private getBoolean(envName: string, key: keyof StrictOption, def: boolean, override?: boolean): boolean {
+  private getBoolean(
+    envName: string,
+    key: keyof StrictOption,
+    def: boolean,
+    override?: boolean
+  ): boolean {
     if (generic.isExist(override)) return override;
 
     const envData = env.read(
@@ -178,7 +214,10 @@ export class LoggerOption<T extends string> {
     return generic.toBoolean(envData) ?? def;
   }
 
-  private getArray<K extends keyof StrictOption = keyof StrictOption, T = unknown>(
+  private getArray<
+    K extends keyof StrictOption = keyof StrictOption,
+    T = unknown
+  >(
     envName: string,
     key: K,
     filterFn: (t: string) => boolean,
@@ -194,7 +233,7 @@ export class LoggerOption<T extends string> {
       .filter(generic.nonEmpty)
       .filter(filterFn)
       .map(mapFn);
-    const defaultOutput = (this.option[key] as unknown) as T[];
+    const defaultOutput = this.option[key] as unknown as T[];
 
     return selectFn(defaultOutput, output);
   }
@@ -213,7 +252,10 @@ export class LoggerOption<T extends string> {
     return tt1.concat(tt2);
   }
 
-  copy<R extends string = T>(inOpt?: OptionalOption, inExt?: OptionalExtraLoggerOption<R>): LoggerOption<T | R> {
+  copy<R extends string = T>(
+    inOpt?: OptionalOption,
+    inExt?: OptionalExtraLoggerOption<R>
+  ): LoggerOption<T | R> {
     const option = json.deepMerge(this.option, inOpt);
     const extra = json.deepMerge(this.extra, inExt);
 

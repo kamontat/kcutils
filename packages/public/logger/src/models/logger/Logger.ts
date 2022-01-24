@@ -5,12 +5,20 @@ import { moveCursor, clearLine, cursorTo } from "readline";
 
 import { json, string, array } from "@kcutils/helper";
 
-import { Chalk, Instance as ChalkInstance, level as defaultColorLevel } from "chalk";
+import {
+  Chalk,
+  Instance as ChalkInstance,
+  level as defaultColorLevel,
+} from "chalk";
 import * as Badge from "figures";
 
 import { StrictOption, OptionalOption, LoggerOption } from "./LoggerOption";
 import { Types, LoggerType } from "./LoggerType";
-import { OptionalSetting, StrictSetting, StrictCommonSetting } from "./LoggerSetting";
+import {
+  OptionalSetting,
+  StrictSetting,
+  StrictCommonSetting,
+} from "./LoggerSetting";
 
 import { settings } from "../../constants/settings";
 import { types, DefaultKeyTypes } from "../../constants/types";
@@ -36,7 +44,9 @@ type Parameters = typeof longestLabel;
 export class Logger<T extends string = ""> {
   private static counter: number = 0;
 
-  static create<T extends string = "">(builder: LoggerOptionBuilder<T> = LoggerOptionBuilder.initial()): Logger<T> {
+  static create<T extends string = "">(
+    builder: LoggerOptionBuilder<T> = LoggerOptionBuilder.initial()
+  ): Logger<T> {
     return new Logger(builder.get());
   }
 
@@ -123,11 +133,15 @@ export class Logger<T extends string = ""> {
 
     const inputOption = typeof data === "string" ? { message: data } : data;
 
-    const _stream = this._option.isOverrideStream() ? this._option.getOverrideStream() : level.stream;
+    const _stream = this._option.isOverrideStream()
+      ? this._option.getOverrideStream()
+      : level.stream;
     let _streams = array.toArray(_stream);
     if (inputOption.stream) {
       const streams = array.toArray(inputOption.stream);
-      _streams = inputOption.appendStream ? _streams.concat(...streams) : streams;
+      _streams = inputOption.appendStream
+        ? _streams.concat(...streams)
+        : streams;
     }
 
     const message = this.build(_type, data);
@@ -141,12 +155,20 @@ export class Logger<T extends string = ""> {
 
     const inputOption = typeof input === "string" ? { message: input } : input;
 
-    const metadata = this.buildMetadata(inputOption.timestamp, inputOption.scopes);
-    const prefix = this.buildPrefix(type, inputOption.label, inputOption.prefix);
+    const metadata = this.buildMetadata(
+      inputOption.timestamp,
+      inputOption.scopes
+    );
+    const prefix = this.buildPrefix(
+      type,
+      inputOption.label,
+      inputOption.prefix
+    );
     const data = this.buildMessage(inputOption.message);
     const suffix = this.buildSuffix(inputOption.suffix);
 
-    if (this._option.isJson()) return this.buildAsJson(type, { metadata, prefix, data, suffix });
+    if (this._option.isJson())
+      return this.buildAsJson(type, { metadata, prefix, data, suffix });
     else return this.buildAsString(type, { metadata, prefix, data, suffix });
   }
 
@@ -158,7 +180,10 @@ export class Logger<T extends string = ""> {
     return label;
   }
 
-  endTimer(label?: string, message?: string): { label?: string; timestamp: number } {
+  endTimer(
+    label?: string,
+    message?: string
+  ): { label?: string; timestamp: number } {
     if (this._timers.size < 1) return { label: label, timestamp: 0 };
 
     let _label = label;
@@ -173,7 +198,10 @@ export class Logger<T extends string = ""> {
       const previous = this._timers.get(_label) as number;
       const current = Date.now();
       const timestamp = current - previous;
-      const time = timestamp < 1000 ? `${timestamp} ms` : `${(timestamp / 1000).toFixed(2)} s`;
+      const time =
+        timestamp < 1000
+          ? `${timestamp} ms`
+          : `${(timestamp / 1000).toFixed(2)} s`;
 
       this._timers.delete(_label);
 
@@ -201,7 +229,9 @@ export class Logger<T extends string = ""> {
     return secrets.reduce((msg, secret) => {
       const regex = new RegExp(secret, "gi");
       const s = this._option.onCensor(secret);
-      const formatting = this.format(s, this._setting.secret, undefined, ["censor"]);
+      const formatting = this.format(s, this._setting.secret, undefined, [
+        "censor",
+      ]);
       return msg.replace(regex, formatting);
     }, message);
   }
@@ -210,7 +240,7 @@ export class Logger<T extends string = ""> {
     const secrets = this._option.getSecrets();
 
     if (secrets.length === 0) return false;
-    return secrets.some(secret => {
+    return secrets.some((secret) => {
       const regex = new RegExp(secret, "g");
       return regex.test(message);
     });
@@ -244,8 +274,15 @@ export class Logger<T extends string = ""> {
    * @param setting - new setting merged with current setting
    * @param type - new type merged with current type
    */
-  copy<U extends string = "">(option?: OptionalOption, setting?: OptionalSetting, type?: Types<U>): Logger<T | U> {
-    const options = this._option.copy(option, { types: type, settings: setting });
+  copy<U extends string = "">(
+    option?: OptionalOption,
+    setting?: OptionalSetting,
+    type?: Types<U>
+  ): Logger<T | U> {
+    const options = this._option.copy(option, {
+      types: type,
+      settings: setting,
+    });
     return new Logger(options);
   }
 
@@ -296,16 +333,27 @@ export class Logger<T extends string = ""> {
 
   equals(l: Logger): boolean {
     const keys = Object.keys(this.importantData()) as (keyof StrictOption)[];
-    return keys.every(k => {
-      const cond = json.equals(l.option[k] as Record<string, any>, this.option[k] as Record<string, any>);
-      if (!cond) this.idebug("input logger is not equals because '%s'(%s !== %s)", k, this.option[k], l.option[k]);
+    return keys.every((k) => {
+      const cond = json.equals(
+        l.option[k] as Record<string, any>,
+        this.option[k] as Record<string, any>
+      );
+      if (!cond)
+        this.idebug(
+          "input logger is not equals because '%s'(%s !== %s)",
+          k,
+          this.option[k],
+          l.option[k]
+        );
       return cond;
     });
   }
 
   toString(): string {
     const data = this.importantData();
-    return `Logger(${(Object.keys(data) as (keyof StrictOption)[]).map(key => `${key}=${data[key]}`).join(", ")})`;
+    return `Logger(${(Object.keys(data) as (keyof StrictOption)[])
+      .map((key) => `${key}=${data[key]}`)
+      .join(", ")})`;
   }
 
   private importantData(): Partial<Record<keyof StrictOption, any>> {
@@ -325,10 +373,14 @@ export class Logger<T extends string = ""> {
     const _ = Error.prepareStackTrace;
     Error.prepareStackTrace = (_error, stack) => stack;
     const error = new Error();
-    const callers = ((error.stack as unknown) as NodeJS.CallSite[]).map(x => x.getFileName());
-    const firstExternalFilePath = callers.find(x => x !== callers[0]);
+    const callers = (error.stack as unknown as NodeJS.CallSite[]).map((x) =>
+      x.getFileName()
+    );
+    const firstExternalFilePath = callers.find((x) => x !== callers[0]);
     Error.prepareStackTrace = _;
-    return firstExternalFilePath ? basename(firstExternalFilePath) : "anonymous";
+    return firstExternalFilePath
+      ? basename(firstExternalFilePath)
+      : "anonymous";
   }
 
   private get date() {
@@ -363,7 +415,10 @@ export class Logger<T extends string = ""> {
 
   private buildAsJson(_type: LoggerType, output: OutputMessage) {
     const level = toLevel(_type.level);
-    return JSON.stringify({ ...output, level: { name: level.name, code: level.level } });
+    return JSON.stringify({
+      ...output,
+      level: { name: level.name, code: level.level },
+    });
   }
 
   private buildAsString(type: LoggerType, output: OutputMessage) {
@@ -372,26 +427,58 @@ export class Logger<T extends string = ""> {
       else return i;
     };
 
-    const datetime = this.format(output.metadata.datetime.data, this._setting.datetime, this._color.gray);
+    const datetime = this.format(
+      output.metadata.datetime.data,
+      this._setting.datetime,
+      this._color.gray
+    );
     const scopes = output.metadata.scopes.data
-      .map(scope => this.format(scope, this._setting.scope, this._color.gray))
-      .filter(v => string.isNotEmpty(v))
+      .map((scope) => this.format(scope, this._setting.scope, this._color.gray))
+      .filter((v) => string.isNotEmpty(v))
       .join(" ");
-    const filename = this.format(output.metadata.filename.data, this._setting.filename);
-    const separator = this.format(output.metadata.seperator.data, this._setting.seperator);
+    const filename = this.format(
+      output.metadata.filename.data,
+      this._setting.filename
+    );
+    const separator = this.format(
+      output.metadata.seperator.data,
+      this._setting.seperator
+    );
     const _paddingBadge = string.padEnd(output.prefix.badge.data, 2);
-    const badge = this.format(_paddingBadge, this._setting.badge, type.color(this._color));
-    const _longestLabelLength = (this._parameters.get(longestLabel) ?? "").length;
-    const _paddingLabel = string.padEnd(output.prefix.label.data, _longestLabelLength + 1);
-    const label = this.format(_paddingLabel, this._setting.label, type.color(this._color));
-    const customPrefix = this.format(output.prefix.custom.data, this._setting.prefix);
-    const message = this.format(output.data.messages.data, this._setting.message);
+    const badge = this.format(
+      _paddingBadge,
+      this._setting.badge,
+      type.color(this._color)
+    );
+    const _longestLabelLength = (this._parameters.get(longestLabel) ?? "")
+      .length;
+    const _paddingLabel = string.padEnd(
+      output.prefix.label.data,
+      _longestLabelLength + 1
+    );
+    const label = this.format(
+      _paddingLabel,
+      this._setting.label,
+      type.color(this._color)
+    );
+    const customPrefix = this.format(
+      output.prefix.custom.data,
+      this._setting.prefix
+    );
+    const message = this.format(
+      output.data.messages.data,
+      this._setting.message
+    );
     const suffix = this.format(output.suffix.custom.data, this._setting.suffix);
 
-    const metadata = `${datetime}${withSpace(scopes)}${withSpace(filename)}${withSpace(separator)}`;
+    const metadata = `${datetime}${withSpace(scopes)}${withSpace(
+      filename
+    )}${withSpace(separator)}`;
     const prefix = `${badge}${withSpace(label)}${withSpace(customPrefix)}`;
 
-    return `${metadata}${withSpace(prefix)}${withSpace(message)}${withSpace(suffix)}`;
+    return `${metadata}${withSpace(prefix)}${withSpace(message)}${withSpace(
+      suffix
+    )}`;
   }
 
   private buildMetadata(timestamp?: string, cusScope?: string[]) {
@@ -407,17 +494,31 @@ export class Logger<T extends string = ""> {
 
     const datetime = { index: 1, data: d };
 
-    const scopes = { index: 2, data: this._option.getScopes().concat(cusScope ?? []) };
+    const scopes = {
+      index: 2,
+      data: this._option.getScopes().concat(cusScope ?? []),
+    };
     const filename = { index: 3, data: this.filename };
     const seperator = { index: 4, data: this._option.getSeparator() };
 
-    const metadata: OutputMessageMetadata = { datetime, scopes, filename, seperator };
+    const metadata: OutputMessageMetadata = {
+      datetime,
+      scopes,
+      filename,
+      seperator,
+    };
     this.idebug("build metadata object: ", metadata);
     return metadata;
   }
 
-  private buildPrefix(type: LoggerType, overrideLabel?: string, customPrefix?: string | string[]) {
-    const _label = string.isNotEmpty(overrideLabel) ? overrideLabel : type.label;
+  private buildPrefix(
+    type: LoggerType,
+    overrideLabel?: string,
+    customPrefix?: string | string[]
+  ) {
+    const _label = string.isNotEmpty(overrideLabel)
+      ? overrideLabel
+      : type.label;
     const label = { index: 1, data: _label };
 
     const _badge = type.badge(Badge);
@@ -483,20 +584,29 @@ export class Logger<T extends string = ""> {
    * @param settings - formatting settings
    * @param color - with color format
    */
-  private format(input: string | string[], settings: StrictCommonSetting, color?: Chalk, disabledList: string[] = []) {
+  private format(
+    input: string | string[],
+    settings: StrictCommonSetting,
+    color?: Chalk,
+    disabledList: string[] = []
+  ) {
     const msg = array.toArray(input).join(" ");
     this.idebug(`formatting ${msg} by`, settings);
     if (settings === undefined || settings === false) return "";
 
     type Execute = [string, boolean, (s: string) => string];
     const executes: Execute[] = [
-      ["uppercase", settings.uppercase, m => m.toUpperCase()],
-      ["append", settings.prefix !== "" || settings.suffix !== "", m => settings.prefix + m + settings.suffix],
-      ["underline", settings.underline, m => this._color.underline(m)],
-      ["bold", settings.bold, m => this._color.bold(m)],
-      ["italic", settings.italic, m => this._color.italic(m)],
-      ["color", color !== undefined, m => (color as Chalk)(m)],
-      ["censor", this.isContainSecret(msg), m => this.censor(m)],
+      ["uppercase", settings.uppercase, (m) => m.toUpperCase()],
+      [
+        "append",
+        settings.prefix !== "" || settings.suffix !== "",
+        (m) => settings.prefix + m + settings.suffix,
+      ],
+      ["underline", settings.underline, (m) => this._color.underline(m)],
+      ["bold", settings.bold, (m) => this._color.bold(m)],
+      ["italic", settings.italic, (m) => this._color.italic(m)],
+      ["color", color !== undefined, (m) => (color as Chalk)(m)],
+      ["censor", this.isContainSecret(msg), (m) => this.censor(m)],
     ];
 
     return executes.reduce((p, c) => {
@@ -529,7 +639,7 @@ export class Logger<T extends string = ""> {
     const streams = array.toArray(stream);
 
     this.idebug(`write message to ${streams.length} output`);
-    streams.forEach(stream => {
+    streams.forEach((stream) => {
       if (this._option.isInteractive() && this._isPreviousLogInteractive) {
         moveCursor(stream, 0, -1);
         clearLine(stream, 0);
@@ -549,7 +659,8 @@ export class Logger<T extends string = ""> {
    */
   private idebug(formatter: string, ...data: any[]) {
     if (this._option.isDebug())
-      if (data.length === 1) console.log(format(formatter, inspect(data[0], false, 1, false)));
+      if (data.length === 1)
+        console.log(format(formatter, inspect(data[0], false, 1, false)));
       else console.log(format(formatter, ...data));
   }
 }
