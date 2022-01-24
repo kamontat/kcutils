@@ -25,14 +25,14 @@ const internalPackageVersion = (category: string, version: string) =>
 const getDevDeps = (category: string, compiler: SupportedCompiler) => {
   const base: Record<string, string> = {};
 
-  base["@kcconfig/eslint-config"] = internalPackageVersion(category, "0.1.2");
-  base["@kcconfig/jest-config"] = internalPackageVersion(category, "0.1.2");
-  base["@kcconfig/stryker-config"] = internalPackageVersion(category, "0.1.2");
-  base["@kcconfig/ts-config"] = internalPackageVersion(category, "0.1.2");
+  base["@kcconfig/eslint-config"] = internalPackageVersion(category, "0.1.4");
+  base["@kcconfig/jest-config"] = internalPackageVersion(category, "0.1.4");
+  base["@kcconfig/stryker-config"] = internalPackageVersion(category, "0.1.4");
+  base["@kcconfig/ts-config"] = internalPackageVersion(category, "0.1.4");
   if (compiler === "rollup") {
-    base["@kcconfig/rollup-config"] = internalPackageVersion(category, "0.1.2");
+    base["@kcconfig/rollup-config"] = internalPackageVersion(category, "0.1.4");
   }
-  base["@kcinternal/commandline"] = internalPackageVersion(category, "0.22.2");
+  base["@kcinternal/commandline"] = internalPackageVersion(category, "0.23.1");
 
   base["@stryker-mutator/core"] = "5.6.0";
   base["@stryker-mutator/jest-runner"] = "5.6.0";
