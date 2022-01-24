@@ -7,5 +7,5 @@ const pkg = require("./package.json");
 
 module.exports = config.initial(
   config.buildCommonJSModuleJS(pkg)<% if(browser){ -%>,<% } -%>
-  <% if(browser){ -%>config.buildBrowser(pkg)<% } -%>
+  <% if(browser){ -%>config.buildBrowser(pkg)<% } %>
 );
