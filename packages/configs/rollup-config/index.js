@@ -35,15 +35,19 @@ function build(opt) {
       checkDuplicate[format] = true;
     }
 
-    const format = buildFormat(opt.pkg, opt.format);
-    output.push({
+    const formatObject = buildFormat(opt.pkg, format);
+    const baseObject = {
       name,
-      file: format.outfile,
-      format: format.id,
+      file: formatObject.outfile,
+      format: formatObject.id,
       sourcemap,
       compact,
-      ...opt.overrided,
-    });
+    };
+    if (opt.overrided) {
+      output.push(Object.assign(baseObject, opt.overrided));
+    } else {
+      output.push(baseObject);
+    }
   }
 
   const plugins = buildPlugins(opt.formats[0]);
@@ -124,7 +128,7 @@ function dinitial(overrided, ...options) {
     return Object.assign(opt, overrided);
   });
 
-  return initial(results);
+  return initial(...results);
 }
 
 module.exports = {
