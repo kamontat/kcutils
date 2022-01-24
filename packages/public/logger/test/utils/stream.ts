@@ -1,10 +1,13 @@
 import { Writable } from "stream";
 
-import { Logger } from "../../src";
+import { Logger } from "../../index";
 import { MockStream } from "../models/stream";
 
 export type JestStream = { fn: jest.Mock<any, any>; stream: Writable };
-export type LoggerJestStream = { stream: jest.Mock<any, any>; logger: Logger<""> };
+export type LoggerJestStream = {
+  stream: jest.Mock<any, any>;
+  logger: Logger<"">;
+};
 
 export const newMockStream = (): JestStream => {
   const fn = jest.fn();
@@ -20,7 +23,10 @@ export const withCustomStream = (_logger: Logger): LoggerJestStream => {
   return { logger, stream: s.fn };
 };
 
-export const getStreamChunk = (stream: jest.Mock<any, any>, times: number = 1): string => {
+export const getStreamChunk = (
+  stream: jest.Mock<any, any>,
+  times: number = 1
+): string => {
   const length = stream.mock.calls.length;
   const _times = times > length ? length - 1 : times - 1;
 

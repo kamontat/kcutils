@@ -1,6 +1,6 @@
 import { Writable } from "stream";
 
-import { WithLogger, LoggerOptionBuilder, LoggerBuilder } from "../src";
+import { WithLogger, LoggerOptionBuilder, LoggerBuilder } from "../index";
 import { newMockStream } from "./utils/stream";
 import { StrictOption } from "../src/models/logger/LoggerOption";
 
@@ -33,11 +33,11 @@ class T extends WithLogger {
   }
 
   updateV1() {
-    this.updateLogger(l => l.options({ level: "silent" }));
+    this.updateLogger((l) => l.options({ level: "silent" }));
   }
 
   updateV2() {
-    this.updateLoggerOption(b => b.withLevel("silent"));
+    this.updateLoggerOption((b) => b.withLevel("silent"));
   }
 }
 
@@ -100,7 +100,10 @@ describe("WithLogger class", () => {
   });
 
   test("with custom logger option builder", () => {
-    const optionBuilder = LoggerOptionBuilder.initial().withColor(false).withOutput(["file"]).withJson(false);
+    const optionBuilder = LoggerOptionBuilder.initial()
+      .withColor(false)
+      .withOutput(["file"])
+      .withJson(false);
     const t = new T(LoggerBuilder.initial().withOption(optionBuilder));
     const option = t.options();
 

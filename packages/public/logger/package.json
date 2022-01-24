@@ -1,18 +1,19 @@
 {
-  "name": "@kcutils/helper",
-  "version": "1.2.2",
-  "description": "functional programming utilities",
-  "private": false,
+  "name": "@kcutils/logger",
+  "version": "0.10.0",
+  "description": "another logger service",
+  "private": true,
   "typedocMain": "index.ts",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
+  "browser": "lib/index.umd.js",
   "types": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/public/helper",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/public/logger",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/public/helper"
+    "directory": "packages/public/logger"
   },
   "bugs": {
     "email": "developer@kamontat.net",
@@ -28,8 +29,9 @@
   },
   "keywords": [
     "kcmono",
-    "helper",
-    "functional"
+    "logger",
+    "log",
+    "signal"
   ],
   "files": [
     "package.json",
@@ -38,7 +40,8 @@
     "lib/**/*.js",
     "lib/**/*.js.map",
     "lib/**/*.d.ts",
-    "lib/**/*.d.ts.map"
+    "lib/**/*.d.ts.map",
+    "includes/**/*"
   ],
   "scripts": {
     "build": "kc-build",
@@ -48,7 +51,9 @@
     "test:mutator": "kc-test --mutator"
   },
   "dependencies": {
-    "@types/generic": "0.0.1"
+    "@kcutils/helper": "1.2.2",
+    "chalk": "4.1.0",
+    "figures": "3.2.0"
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.4",
@@ -71,5 +76,9 @@
     "rollup": "2.59.0",
     "ts-jest": "27.1.3",
     "typescript": "4.5.5"
+  },
+  "_generator": {
+    "name": "@kcprivate/generator",
+    "version": "0.2.0"
   }
 }

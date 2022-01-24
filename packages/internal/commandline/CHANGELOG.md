@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.23.0...@kcinternal/commandline@0.23.1) (2022-01-24)
+
+
+### Bug Fixes
+
+* **docs:** stryker not strker ([648a04f](https://github.com/kamontat/kcutils/commit/648a04f7ebe0867c4c001f2a84d89029f046f364))
+* **script:** kc-test will accept files argument for filtering test case ([52cb8c7](https://github.com/kamontat/kcutils/commit/52cb8c7604c3a1030ed7fb160d37d2eaf869dc7e))
+
+
+
+
+
 # [0.23.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.22.2...@kcinternal/commandline@0.23.0) (2022-01-21)
 
 

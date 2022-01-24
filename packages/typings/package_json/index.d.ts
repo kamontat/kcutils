@@ -42,6 +42,9 @@ declare module "package_json" {
     dependencies?: { [name: string]: string };
     devDependencies?: { [name: string]: string };
     peerDependencies?: { [name: string]: string };
+
+    /** custom key using in kcmono only */
+    _generator?: { name: string; version: string };
   }
 
   export type OptionalPackage = Partial<Package>;

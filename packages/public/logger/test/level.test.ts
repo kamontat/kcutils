@@ -1,4 +1,4 @@
-import { LoggerLevelBuilder } from "../src";
+import { LoggerLevelBuilder } from "../index";
 
 import * as level from "../src/constants/levels";
 import { newMockStream } from "./utils/stream";
@@ -23,7 +23,10 @@ describe("Logger level", () => {
       [LoggerLevelBuilder.get().withName(""), level.info],
       [LoggerLevelBuilder.get().withName("not_found"), level.info],
       [LoggerLevelBuilder.get().withName("not_found", undefined), level.info],
-      [LoggerLevelBuilder.get().withName("unknown", level.silent), level.silent],
+      [
+        LoggerLevelBuilder.get().withName("unknown", level.silent),
+        level.silent,
+      ],
     ])("builder of '%p' is level '%p'", (actual, expected) => {
       expect(actual).toEqual(expected);
     });
@@ -36,10 +39,13 @@ describe("Logger level", () => {
     [level.debug, LoggerLevelBuilder.get().debug],
     [level.silly, LoggerLevelBuilder.get().silly],
     [level.silent, LoggerLevelBuilder.get().silent],
-  ])("Checking level in LoggerLevelBuilder must match to constants, (level=%s)", (lv1, lv2) => {
-    expect(lv1.name).toEqual(lv2.name);
-    expect(lv1.level).toEqual(lv2.level);
-  });
+  ])(
+    "Checking level in LoggerLevelBuilder must match to constants, (level=%s)",
+    (lv1, lv2) => {
+      expect(lv1.name).toEqual(lv2.name);
+      expect(lv1.level).toEqual(lv2.level);
+    }
+  );
 
   test("custom writable stream", () => {
     const level = -1;
@@ -48,7 +54,11 @@ describe("Logger level", () => {
     const mock1 = newMockStream();
     const mock2 = newMockStream();
 
-    const old = LoggerLevelBuilder.new().withLevel(level).withName(name).withStream(mock1.stream).get();
+    const old = LoggerLevelBuilder.new()
+      .withLevel(level)
+      .withName(name)
+      .withStream(mock1.stream)
+      .get();
 
     expect(old.level).toEqual(level);
     expect(old.name).toEqual(name);

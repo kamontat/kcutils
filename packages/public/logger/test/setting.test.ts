@@ -1,6 +1,6 @@
 import { settings } from "../src/constants/settings";
 import { StrictSettingObjectKey } from "../src/models/logger/LoggerSetting";
-import { LoggerSettingBuilder } from "../src";
+import { LoggerSettingBuilder } from "../index";
 
 const init = (): LoggerSettingBuilder => {
   return LoggerSettingBuilder.initial();
@@ -67,14 +67,30 @@ describe("Logger Setting", () => {
       [init().withItalic(false), "italic" as StrictSettingObjectKey, false],
 
       [init().withUpperCase(), "uppercase" as StrictSettingObjectKey, true],
-      [init().withUpperCase(undefined), "uppercase" as StrictSettingObjectKey, true],
+      [
+        init().withUpperCase(undefined),
+        "uppercase" as StrictSettingObjectKey,
+        true,
+      ],
       [init().withUpperCase(true), "uppercase" as StrictSettingObjectKey, true],
-      [init().withUpperCase(false), "uppercase" as StrictSettingObjectKey, false],
+      [
+        init().withUpperCase(false),
+        "uppercase" as StrictSettingObjectKey,
+        false,
+      ],
 
       [init().withUnderline(), "underline" as StrictSettingObjectKey, true],
-      [init().withUnderline(undefined), "underline" as StrictSettingObjectKey, true],
+      [
+        init().withUnderline(undefined),
+        "underline" as StrictSettingObjectKey,
+        true,
+      ],
       [init().withUnderline(true), "underline" as StrictSettingObjectKey, true],
-      [init().withUnderline(false), "underline" as StrictSettingObjectKey, false],
+      [
+        init().withUnderline(false),
+        "underline" as StrictSettingObjectKey,
+        false,
+      ],
 
       [init().withBold(), "bold" as StrictSettingObjectKey, true],
       [init().withBold(undefined), "bold" as StrictSettingObjectKey, true],
