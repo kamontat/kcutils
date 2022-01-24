@@ -5,6 +5,10 @@
       "path": "packages/public/helper"
     },
     {
+      "name": "kcutils/logger",
+      "path": "packages/public/logger"
+    },
+    {
       "name": "kcutils/random",
       "path": "packages/public/random"
     },

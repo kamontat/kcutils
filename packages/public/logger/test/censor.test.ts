@@ -1,6 +1,6 @@
 import { string } from "@kcutils/helper";
 
-import { LoggerBuilder } from "../src";
+import { LoggerBuilder } from "../index";
 
 describe("Logger censor", () => {
   const def = LoggerBuilder.default();
@@ -24,7 +24,10 @@ describe("Logger censor", () => {
       "[secure], I'm become a [secure] wo[secure] after I meet [secure] like you",
     ],
     [
-      { secrets: ["hello", "new", "man"], censor: (s: string) => string.padEnd("", s.length, "*") },
+      {
+        secrets: ["hello", "new", "man"],
+        censor: (s: string) => string.padEnd("", s.length, "*"),
+      },
       "hello, I'm become a new woman after I meet man like you",
       "[*****], I'm become a [***] wo[***] after I meet [***] like you",
     ],

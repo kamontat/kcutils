@@ -2,9 +2,17 @@ import * as Badge from "figures";
 
 import { types } from "../src/constants/types";
 import { LoggerType } from "../src/models/logger/LoggerType";
-import { LoggerTypeBuilder } from "../src";
+import { LoggerTypeBuilder } from "../index";
 
-const supportMockColor = ["blue", "yellow", "gray", "green", "cyan", "red", "reset"];
+const supportMockColor = [
+  "blue",
+  "yellow",
+  "gray",
+  "green",
+  "cyan",
+  "red",
+  "reset",
+];
 const mockColor: any = supportMockColor.reduce((p, c) => {
   return Object.assign({}, p, {
     [c]: c,
@@ -40,7 +48,13 @@ describe("Logger type", () => {
       [defaultTypes.stop, "info", "stop", Badge.squareSmallFilled, "yellow"],
     ])(
       "checking as '%p' = { level: %s, label: %s, badge: %s, color: %s }",
-      (type: LoggerType, level: string, label: string, badge: string, color: string) => {
+      (
+        type: LoggerType,
+        level: string,
+        label: string,
+        badge: string,
+        color: string
+      ) => {
         expect(type.level).toEqual(level);
         expect(type.label).toEqual(label);
         expect(type.badge(Badge)).toEqual(badge);
@@ -60,7 +74,10 @@ describe("Logger type", () => {
     });
 
     test("create new logger type", () => {
-      const t = LoggerTypeBuilder.initial().withLevel("silly").withLabel("mock").get();
+      const t = LoggerTypeBuilder.initial()
+        .withLevel("silly")
+        .withLabel("mock")
+        .get();
 
       expect(t.color(mockColor)).toEqual("reset");
       expect(t.badge(Badge)).toEqual("");
@@ -69,7 +86,10 @@ describe("Logger type", () => {
     });
 
     test("create new types", () => {
-      const t = LoggerTypeBuilder.initial().withLevel("debug").withLabel("hello").getType("hello");
+      const t = LoggerTypeBuilder.initial()
+        .withLevel("debug")
+        .withLabel("hello")
+        .getType("hello");
 
       expect(t).toHaveProperty("hello");
 

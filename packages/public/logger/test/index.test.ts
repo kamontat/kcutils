@@ -1,10 +1,14 @@
-import { Logger, LoggerBuilder } from "../src";
+import { Logger, LoggerBuilder } from "../index";
 
 import { DateTimeFormat } from "../src/models/logger/LoggerOption";
 import { Levels } from "../src/constants/levels";
 import { DefaultKeyTypes, types } from "../src/constants/types";
 
-import { newMockStream, withCustomStream, getStreamChunk } from "./utils/stream";
+import {
+  newMockStream,
+  withCustomStream,
+  getStreamChunk,
+} from "./utils/stream";
 
 describe("logger modules", () => {
   describe("Logger object", () => {
@@ -73,8 +77,12 @@ describe("logger modules", () => {
       const a = withCustomStream(def.copy());
       const b = withCustomStream(def.copy());
 
-      a.logger.settings({ message: { bold: true } }).print("success", "scope is bold");
-      b.logger.settings({ seperator: { italic: true } }).print("success", "label is italic");
+      a.logger
+        .settings({ message: { bold: true } })
+        .print("success", "scope is bold");
+      b.logger
+        .settings({ seperator: { italic: true } })
+        .print("success", "label is italic");
 
       const chunkA = getStreamChunk(a.stream);
       const chunkB = getStreamChunk(b.stream);
@@ -85,7 +93,7 @@ describe("logger modules", () => {
     test("new logger by builder.load", () => {
       const loggerA = def.copy({ secrets: ["after", "coding"] });
       const loggerB = LoggerBuilder.load(loggerA)
-        .updateOption(b => b.withJson(true))
+        .updateOption((b) => b.withJson(true))
         .get();
 
       expect(loggerA.id).not.toEqual(loggerB.id);
@@ -95,12 +103,14 @@ describe("logger modules", () => {
       expect(loggerA.option.secrets).toEqual(loggerB.option.secrets);
     });
 
-    test.each(Object.keys(types).map(v => [v]) as DefaultKeyTypes[][])(
+    test.each(Object.keys(types).map((v) => [v]) as DefaultKeyTypes[][])(
       "print '%s' type to stream and check",
       (type: DefaultKeyTypes) => {
         const typeObject = types[type];
 
-        const { stream, logger } = withCustomStream(def.copy({ level: "silly" }));
+        const { stream, logger } = withCustomStream(
+          def.copy({ level: "silly" })
+        );
         logger.print(type, { message: "hello world" });
 
         expect(stream).toBeCalledTimes(1);
@@ -142,7 +152,9 @@ describe("logger modules", () => {
     });
 
     test("log custom suffix message", () => {
-      const { stream, logger } = withCustomStream(def.copy({}, { suffix: { prefix: "{", suffix: "}" } }));
+      const { stream, logger } = withCustomStream(
+        def.copy({}, { suffix: { prefix: "{", suffix: "}" } })
+      );
 
       logger.print("wait", { message: "custom suffix", suffix: "suf" });
 
@@ -156,7 +168,10 @@ describe("logger modules", () => {
       _def.logger.print("start", { message: "hello world" });
       _def.logger.print("start", { message: "hello world" });
 
-      _def.logger.print("start", { message: "hello world", stream: stream.stream });
+      _def.logger.print("start", {
+        message: "hello world",
+        stream: stream.stream,
+      });
 
       expect(_def.stream).toBeCalledTimes(2);
       expect(stream.fn).toBeCalledTimes(1);
@@ -168,7 +183,11 @@ describe("logger modules", () => {
       _def.logger.print("start", { message: "hello world" });
       _def.logger.print("start", { message: "hello world" });
 
-      _def.logger.print("start", { message: "hello world", stream: stream.stream, appendStream: true });
+      _def.logger.print("start", {
+        message: "hello world",
+        stream: stream.stream,
+        appendStream: true,
+      });
 
       expect(_def.stream).toBeCalledTimes(3);
       expect(stream.fn).toBeCalledTimes(1);
@@ -263,7 +282,9 @@ describe("logger modules", () => {
       test("on print", () => {
         const message = { message: "hello world" };
 
-        const { logger, stream } = withCustomStream(def.copy({ debug: false, level }));
+        const { logger, stream } = withCustomStream(
+          def.copy({ debug: false, level })
+        );
         logger.print(type, message);
 
         expect(stream).toBeCalledTimes(expected);
@@ -283,32 +304,50 @@ describe("logger modules", () => {
     test.each([
       [{ color: false }, { color: true }],
       [{ json: true }, { json: false }],
-      [{ datetime: "time" as DateTimeFormat }, { datetime: "date" as DateTimeFormat }],
-      [{ datetime: "datetime" as DateTimeFormat }, { datetime: "timestamp" as DateTimeFormat }],
-      [{ datetime: "unknown" as DateTimeFormat }, { datetime: "time" as DateTimeFormat }],
-      [{ datetime: "unknown" as DateTimeFormat }, { datetime: "datetime" as DateTimeFormat }],
-      [{ datetime: "unknown" as DateTimeFormat }, { datetime: "timestamp" as DateTimeFormat }],
+      [
+        { datetime: "time" as DateTimeFormat },
+        { datetime: "date" as DateTimeFormat },
+      ],
+      [
+        { datetime: "datetime" as DateTimeFormat },
+        { datetime: "timestamp" as DateTimeFormat },
+      ],
+      [
+        { datetime: "unknown" as DateTimeFormat },
+        { datetime: "time" as DateTimeFormat },
+      ],
+      [
+        { datetime: "unknown" as DateTimeFormat },
+        { datetime: "datetime" as DateTimeFormat },
+      ],
+      [
+        { datetime: "unknown" as DateTimeFormat },
+        { datetime: "timestamp" as DateTimeFormat },
+      ],
       [{ scopes: [] }, { scopes: ["hello", "world"] }],
       [{ secrets: [] }, { secrets: ["world"] }],
       [{ separator: ">" }, {}],
-    ])("difference config difference result (%p != %p)", (settingsA, settingsB) => {
-      const type = "start";
-      const message = { message: "hello world" };
+    ])(
+      "difference config difference result (%p != %p)",
+      (settingsA, settingsB) => {
+        const type = "start";
+        const message = { message: "hello world" };
 
-      const d = withCustomStream(def.copy(settingsA));
-      d.logger.print(type, message);
+        const d = withCustomStream(def.copy(settingsA));
+        d.logger.print(type, message);
 
-      const e = withCustomStream(def.copy(settingsB));
-      e.logger.print(type, message);
+        const e = withCustomStream(def.copy(settingsB));
+        e.logger.print(type, message);
 
-      expect(d.stream).toBeCalledTimes(1);
-      expect(e.stream).toBeCalledTimes(1);
+        expect(d.stream).toBeCalledTimes(1);
+        expect(e.stream).toBeCalledTimes(1);
 
-      const chunk1 = getStreamChunk(d.stream);
-      const chunk2 = getStreamChunk(e.stream);
+        const chunk1 = getStreamChunk(d.stream);
+        const chunk2 = getStreamChunk(e.stream);
 
-      expect(chunk1).not.toEqual(chunk2);
-    });
+        expect(chunk1).not.toEqual(chunk2);
+      }
+    );
 
     test("start and end timer with default label", () => {
       const a = withCustomStream(def);
