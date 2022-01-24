@@ -2,7 +2,7 @@
   "name": "@kcutils/logger",
   "version": "0.10.0",
   "description": "another logger service",
-  "private": false,
+  "private": true,
   "typedocMain": "index.ts",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
