@@ -1,4 +1,26 @@
-import { datetime, generic } from "../index";
+import type {
+  ConvertOption,
+  DatetimeKey,
+  TimestampType,
+  YearType,
+} from "../src/datetime";
+import {
+  newDate,
+  convertName,
+  convertIndex,
+  convertYear,
+  timestamp,
+  fromTimestamp,
+} from "../src/datetime";
+
+import { isExist } from "../src/generic";
+
+const day: DatetimeKey = "day";
+const month: DatetimeKey = "month";
+const second: TimestampType = "second";
+const millisecond: TimestampType = "millisecond";
+const thai: YearType = "thai";
+const global: YearType = "global";
 
 describe("Datetime", () => {
   test.each([
@@ -11,7 +33,7 @@ describe("Datetime", () => {
     ],
     [{ year: 2555, month: 0, millisecond: 8 }, "2554-12-31T00:00:00.008Z"],
   ])("create new '%p', will return new Date(%s, UTC)", (input, output) => {
-    const actual = datetime.newDate(input);
+    const actual = newDate(input);
     const expected = output ? new Date(output) : new Date(Date.now());
 
     expect(actual.getFullYear()).toEqual(expected.getFullYear());
@@ -26,7 +48,7 @@ describe("Datetime", () => {
   test.each([[{ year: 2010, month: 9, date: 6 }, 2010, 9, 6]])(
     "create new local '%p', will return new Date(%s, local)",
     (input, y, m, d) => {
-      const actual = datetime.newDate(input, "local");
+      const actual = newDate(input, "local");
       const expected = new Date(y, m, d);
 
       expect(actual.getFullYear()).toEqual(expected.getFullYear());
@@ -40,115 +62,46 @@ describe("Datetime", () => {
   );
 
   test.each([
-    ["name", undefined, -1],
-    ["Jan", undefined, 0],
-    [
-      "พฤษภาคม",
-      { type: "short", lang: "en" } as datetime.ConvertMonthNameOption,
-      -1,
-    ],
-    [
-      "October",
-      { type: "long", lang: "en" } as datetime.ConvertMonthNameOption,
-      9,
-    ],
-  ])("convert %s with %p options to %s month index", (name, opt, index) => {
-    expect(datetime.convertMonthName(name, opt)).toEqual(index);
+    [month, "name", undefined, -1],
+    [month, "Jan", undefined, 0],
+    [month, "พฤษภาคม", { type: "short", lang: "en" } as ConvertOption, -1],
+    [month, "October", { type: "long", lang: "en" } as ConvertOption, 9],
+    [day, "name", undefined, -1],
+    [day, "Wednesday", undefined, 3],
+    [day, "อาทิตย์", { type: "short", lang: "en" } as ConvertOption, -1],
+    [day, "Monday", { type: "long", lang: "en" } as ConvertOption, 1],
+  ])(
+    "convert %s with %p options to %s month index",
+    (key, name, opt, index) => {
+      expect(convertName(key, name, opt)).toEqual(index);
+    }
+  );
+
+  test.each([
+    [month, 1, {} as ConvertOption, undefined],
+    [month, 1, { type: "short" } as ConvertOption, undefined],
+    [month, 1, { lang: "en" } as ConvertOption, undefined],
+    [month, 1, { lang: "en", type: "long" } as ConvertOption, "February"],
+    [day, 1, { lang: "th", type: "short" } as ConvertOption, "จันทร์"],
+    [day, 10, { lang: "en", type: "short" } as ConvertOption, undefined],
+    [month, -1, { lang: "th", type: "long" } as ConvertOption, undefined],
+  ])("getName(%s, '%p') returns %s", (key, index, option, output) => {
+    expect(convertIndex(key, index, option)).toEqual(output);
   });
 
   test.each([
-    ["name", undefined, -1],
-    ["Wednesday", undefined, 3],
-    [
-      "อาทิตย์",
-      { type: "short", lang: "en" } as datetime.ConvertDayNameOption,
-      -1,
-    ],
-    [
-      "Monday",
-      { type: "long", lang: "en" } as datetime.ConvertDayNameOption,
-      1,
-    ],
-  ])("convert %s with %p options to %s day index", (name, opt, index) => {
-    expect(datetime.convertDayName(name, opt)).toEqual(index);
-  });
-
-  test.each([
-    ["day" as datetime.DatetimeKey, "name", undefined, -1],
-    ["month" as datetime.DatetimeKey, "name", undefined, -1],
-    ["unknown" as datetime.DatetimeKey, "Jan", undefined, -1],
-  ])("[%s] getIndex(%s, '%p') returns %s", (key, name, opt, output) => {
-    expect(datetime.getIndex(name, key, opt)).toEqual(output);
-  });
-
-  test.each([
-    [1, {} as datetime.GetNameOption, undefined],
-    [1, { key: "day" } as datetime.GetNameOption, undefined],
-    [1, { type: "short" } as datetime.GetNameOption, undefined],
-    [1, { lang: "en" } as datetime.GetNameOption, undefined],
-    [1, { lang: "en", type: "long" } as datetime.GetNameOption, undefined],
-    [
-      -2,
-      { key: "day", lang: "th", type: "short" } as datetime.GetNameOption,
-      undefined,
-    ],
-    [
-      12,
-      { key: "month", lang: "en", type: "short" } as datetime.GetNameOption,
-      undefined,
-    ],
-    [
-      1,
-      { key: "day", lang: "th", type: "short" } as datetime.GetNameOption,
-      "จันทร์",
-    ],
-    [
-      1,
-      { key: "month", lang: "en", type: "long" } as datetime.GetNameOption,
-      "February",
-    ],
-  ])("getName(%s, '%p') returns %s", (name, opt, output) => {
-    expect(datetime.getName(name, opt)).toEqual(output);
-  });
-
-  test.each([
-    [new Date("2011/05/01 GMT+0700"), 1304182800000, undefined],
-    ["2011/05/01 GMT+0700", 1304182800000, undefined],
-    [
-      new Date("2011/05/01 GMT+0700"),
-      1304182800000,
-      "millisecond" as datetime.TimestampType,
-    ],
-    [
-      new Date("2011/05/01 GMT+0700"),
-      1304182800,
-      "second" as datetime.TimestampType,
-    ],
-
-    [
-      new Date("2012/11/11 12:05:10 GMT+0700"),
-      1352610310000,
-      "millisecond" as datetime.TimestampType,
-    ],
-    [
-      "2012/11/11 12:05:12 GMT+0700",
-      1352610312,
-      "second" as datetime.TimestampType,
-    ],
-    [
-      new Date("2012/05/19 00:00:01 GMT+0700"),
-      1337360401000,
-      "millisecond" as datetime.TimestampType,
-    ],
-    [
-      new Date("2012/05/18 00:00:01 GMT+0700"),
-      1337274001,
-      "second" as datetime.TimestampType,
-    ],
-    [1258192312412, 1258192312412, "millisecond" as datetime.TimestampType],
-    [1337274001000, 1337274001, "second" as datetime.TimestampType],
-  ])("convert Date(%s) to timestamp(%s, %s)", (date, timestamp, type) => {
-    expect(datetime.timestamp(date, type)).toEqual(timestamp);
+    [new Date("2011/05/01 GMT+0700"), undefined, 1304182800000],
+    ["2011/05/01 GMT+0700", undefined, 1304182800000],
+    [new Date("2011/05/01 GMT+0700"), millisecond, 1304182800000],
+    [new Date("2011/05/01 GMT+0700"), second, 1304182800],
+    [new Date("2012/11/11 12:05:10 GMT+0700"), millisecond, 1352610310000],
+    ["2012/11/11 12:05:12 GMT+0700", second, 1352610312],
+    [new Date("2012/05/19 00:00:01 GMT+0700"), millisecond, 1337360401000],
+    [new Date("2012/05/18 00:00:01 GMT+0700"), second, 1337274001],
+    [1258192312412, millisecond, 1258192312412],
+    [1337274001000, second, 1337274001],
+  ])("convert Date(%s) to timestamp(%s, %s)", (date, type, output) => {
+    expect(timestamp(date, type)).toEqual(output);
   });
 
   test.each([
@@ -157,7 +110,6 @@ describe("Datetime", () => {
     ["string", undefined],
     ["1234A", undefined],
     ["NaN", undefined],
-
     [-1, new Date("Thu Jan 01 1970 06:59:59 GMT+0700 (Indochina Time)")],
     [1304182800000, new Date("2011/05/01 GMT+0700")],
     [1352610310000, new Date("2012/11/11 12:05:10 GMT+0700")],
@@ -165,14 +117,14 @@ describe("Datetime", () => {
     [1352610312000, new Date("2012/11/11 12:05:12 GMT+0700")],
     ["1352610312000", new Date("2012/11/11 12:05:12 GMT+0700")],
   ])("convert Timestamp(%s) to Date(%s)", (timestamp, date) => {
-    const d = datetime.getDateFromTimestamp(timestamp);
+    const d = fromTimestamp(timestamp);
     if (d === undefined && date !== undefined)
       return fail(`expected(${date}) but received undefined`);
     else if (d !== undefined && date === undefined)
       return fail(`expected(undefined) but received ${d}`);
     else if (d === undefined && date === undefined)
       return expect(true).toEqual(true);
-    else if (generic.isExist(d) && generic.isExist(date))
+    else if (isExist(d) && isExist(date))
       expect(d.toString()).toEqual(date.toString());
     else fail("never");
   });
@@ -199,34 +151,33 @@ describe("Datetime", () => {
     ["25500", undefined, 4957],
     ["91881", undefined, 1338],
 
-    ["54", "thai" as datetime.YearType, 2011],
-    ["61", "thai" as datetime.YearType, 2018],
-    ["2544", "thai" as datetime.YearType, 2001],
-    ["2565", "thai" as datetime.YearType, 2022],
-    ["5", "thai" as datetime.YearType, 1962],
-    ["0", "thai" as datetime.YearType, 1957],
-    ["610", "thai" as datetime.YearType, 2067],
-    ["Y62", "thai" as datetime.YearType, 2019],
-    ["51V", "thai" as datetime.YearType, 2008],
-    ["7A8", "thai" as datetime.YearType, 2035],
-    ["25500", "thai" as datetime.YearType, 4957],
-    ["91881", "thai" as datetime.YearType, 1338],
+    ["54", thai, 2011],
+    ["61", thai, 2018],
+    ["2544", thai, 2001],
+    ["2565", thai, 2022],
+    ["5", thai, 1962],
+    ["0", thai, 1957],
+    ["610", thai, 2067],
+    ["Y62", thai, 2019],
+    ["51V", thai, 2008],
+    ["7A8", thai, 2035],
+    ["25500", thai, 4957],
+    ["91881", thai, 1338],
 
-    ["11", "global" as datetime.YearType, 2011],
-    ["18", "global" as datetime.YearType, 2018],
-    ["1", "global" as datetime.YearType, 2001],
-    ["22", "global" as datetime.YearType, 2022],
-    ["1962", "global" as datetime.YearType, 1962],
-    ["1957", "global" as datetime.YearType, 1957],
-    ["166", "global" as datetime.YearType, 2166],
-    ["A19", "global" as datetime.YearType, 2019],
-    ["B8", "global" as datetime.YearType, 2008],
-    ["V3V5", "global" as datetime.YearType, 2035],
-    ["121314", "global" as datetime.YearType, 1314],
-    ["150001", "global" as datetime.YearType, 1],
+    ["11", global, 2011],
+    ["18", global, 2018],
+    ["1", global, 2001],
+    ["22", global, 2022],
+    ["1962", global, 1962],
+    ["1957", global, 1957],
+    ["166", global, 2166],
+    ["A19", global, 2019],
+    ["B8", global, 2008],
+    ["V3V5", global, 2035],
+    ["121314", global, 1314],
+    ["150001", global, 1],
   ])("convert input %s to %s year %s", (input, type, output) => {
-    if (generic.isExist(type))
-      expect(datetime.convertYear(input, type)).toEqual(output);
-    else expect(datetime.convertYear(input)).toEqual(output);
+    if (isExist(type)) expect(convertYear(input, type)).toEqual(output);
+    else expect(convertYear(input)).toEqual(output);
   });
 });

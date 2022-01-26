@@ -1,4 +1,3 @@
-import notExist from "../generic/notExist";
 import isNumber from "../number/isNumber";
 import isBoolean from "../boolean/isBoolean";
 import isObject from "../object/isObject";
@@ -16,8 +15,7 @@ import isString from "./isString";
  * @param input input data on any type
  */
 const toString = <T = unknown>(input: T): string | undefined => {
-  if (notExist(input)) return undefined;
-  else if (isString(input)) return input;
+  if (isString(input)) return input;
   else if (isBoolean(input)) return input ? "true" : "false";
   else if (isNumber(input)) return input.toString(10);
   else if (Array.isArray(input)) return `[${input.join(",")}]`;

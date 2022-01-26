@@ -8,11 +8,14 @@ const setImmediate = (fn: (error?: Error | null) => void) => {
  * This can use in all Writeable object to write data to /dev/null channel
  */
 class DevNull extends Writable {
+  static get instance(): Writable {
+    return new DevNull();
+  }
+
   constructor() {
     super();
   }
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   _write(
     _chunk: any,
     _encoding: BufferEncoding,
@@ -22,4 +25,4 @@ class DevNull extends Writable {
   }
 }
 
-export default { null: new DevNull() };
+export default DevNull;

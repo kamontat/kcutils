@@ -1,6 +1,6 @@
 import { Readable } from "stream";
 
-import { stream } from "../index";
+import { DevNull } from "../src/stream";
 
 class NumberStream extends Readable {
   private idx: number;
@@ -43,7 +43,7 @@ describe("Stream Helper", () => {
           expect(data).toHaveLength(0);
           res(void 0);
         })
-        .pipe(stream.null)
+        .pipe(DevNull.instance)
         .on("data", function (d) {
           console.log("data");
           data.push(d);

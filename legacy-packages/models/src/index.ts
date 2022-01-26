@@ -1,6 +1,7 @@
-import { Scheduler, SchedulerEventName as ISchedulerEventName } from "./helper/Scheduler";
-
-export { Optional } from "./datatype/Optional";
+import {
+  Scheduler,
+  SchedulerEventName as ISchedulerEventName,
+} from "./helper/Scheduler";
 
 export { RetrySystem } from "./helper/RetrySystem";
 

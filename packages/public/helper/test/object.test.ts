@@ -1,20 +1,43 @@
-import { json as jsonHelper } from "../index";
+import {
+  isObject,
+  toArray,
+  mergeObject,
+  deepMergeObject,
+  equals,
+  getObject,
+  forceObject,
+  cleanObject,
+} from "../src/object";
 
 describe("Json Object Helper", () => {
+  describe("isObject(any)", () => {
+    test.each([
+      [undefined, false],
+      [null, false],
+      ["string", false],
+      [12, false],
+      [true, false],
+      [["array"], false],
+      [{ data: true }, true],
+      [new Map(), true],
+    ])("of '%s' should returns %s", (input, expected) => {
+      expect(isObject(input)).toEqual(expected);
+    });
+  });
+
   describe("toArray", () => {
     test("empty json", () => {
       const json = {};
-      const array = jsonHelper.toArray(json);
+      const array = toArray(json);
 
       expect(array).toHaveLength(0);
     });
 
     test("partial json not filter empty string", () => {
       const json = { one: { index: 1, data: "string" }, two: undefined };
-      const array = jsonHelper.toArray(json);
+      const array = toArray(json);
 
-      expect(array).toHaveLength(2);
-      expect(array).toContain("string");
+      expect(array).toEqual(["string"]);
     });
 
     test("multiple partial json", () => {
@@ -25,11 +48,9 @@ describe("Json Object Helper", () => {
         four: undefined,
         five: { index: 2, data: "number" },
       };
-      const array = jsonHelper.toArray(json);
+      const array = toArray(json);
 
-      expect(array).toHaveLength(5);
-      expect(array).toContain("string");
-      expect(array).toContain("number");
+      expect(array).toEqual(["string", "number"]);
     });
 
     test("complete json", () => {
@@ -38,12 +59,9 @@ describe("Json Object Helper", () => {
         one: { index: 3, data: "number" },
         three: { index: 2, data: "boolean" },
       };
-      const array = jsonHelper.toArray(json);
+      const array = toArray(json);
 
-      expect(array).toHaveLength(3);
-      expect(array[0]).toEqual("string");
-      expect(array[1]).toEqual("boolean");
-      expect(array[2]).toEqual("number");
+      expect(array).toEqual(["string", "boolean", "number"]);
     });
 
     test("complete json with data as string[]", () => {
@@ -52,12 +70,16 @@ describe("Json Object Helper", () => {
         one: { index: 3, data: ["number3", "string3"] },
         three: { index: 2, data: "boolean2" },
       };
-      const array = jsonHelper.toArray(json);
+      const array = toArray(json);
 
-      expect(array).toHaveLength(6);
-      expect(array[0]).toEqual("string");
-      expect(array[3]).toEqual("boolean2");
-      expect(array[4]).toEqual("number3");
+      expect(array).toEqual([
+        "string",
+        "number",
+        "boolean",
+        "boolean2",
+        "number3",
+        "string3",
+      ]);
     });
   });
 
@@ -65,7 +87,7 @@ describe("Json Object Helper", () => {
     test("merge normal object", () => {
       const objA = { a: 12 };
       const objB = { b: "hello" };
-      const result = jsonHelper.deepMerge(objA, objB);
+      const result = deepMergeObject(objA, objB);
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -75,7 +97,7 @@ describe("Json Object Helper", () => {
       const objA = { a: true, b: "hello", c: 20 };
       const objB = { d: 75, b: false, a: "unknown" };
       const result: { a: string; b: boolean; c: number; d: number } =
-        jsonHelper.deepMerge(objA, objB);
+        deepMergeObject(objA, objB);
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -91,7 +113,7 @@ describe("Json Object Helper", () => {
     test("merge nested normal object", () => {
       const objA = { a: true, b: "hello", c: { a: true, b: "hello" } };
       const objB = { a: false, c: { d: 99, b: "next" } };
-      const result = jsonHelper.deepMerge(objA, objB);
+      const result = deepMergeObject(objA, objB);
 
       expect(result).toHaveProperty("c");
 
@@ -105,8 +127,10 @@ describe("Json Object Helper", () => {
     test("merge array on normal object", () => {
       const objA = { a: ["hello"], b: ["old", "array"], c: true };
       const objB = { a: ["next", "world"], b: "hello", c: ["array"] };
-      const result: { a: string[]; b: string; c: string[] } =
-        jsonHelper.deepMerge(objA, objB);
+      const result: { a: string[]; b: string; c: string[] } = deepMergeObject(
+        objA,
+        objB
+      );
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -127,7 +151,7 @@ describe("Json Object Helper", () => {
 
       const objA = { b: "string" };
       const objB = new Foo("hello");
-      const result = jsonHelper.deepMerge<any, any>(objA, objB);
+      const result = deepMergeObject<any, any>(objA, objB);
 
       expect(result).toHaveProperty("a");
       expect(result).toHaveProperty("b");
@@ -139,7 +163,7 @@ describe("Json Object Helper", () => {
     test("not merge when new object is undefined", () => {
       const objA = { a: "test", b: "bbb", c: true };
       const objB = { a: undefined as any, b: null as any, d: 999 };
-      const result = jsonHelper.deepMerge(objA, objB);
+      const result = deepMergeObject(objA, objB);
 
       expect(Object.keys(result).length).toEqual(4);
 
@@ -162,7 +186,7 @@ describe("Json Object Helper", () => {
       [undefined, { b: "b" }, ["b"]],
       [null, undefined, []],
     ])("merge '%p' with '%p'", (a: any, b: any, output) => {
-      const result = jsonHelper.deepMerge(a, b);
+      const result = deepMergeObject(a, b);
       if (output.length <= 0) expect(result).toEqual({});
       else output.forEach((e) => expect(result).toHaveProperty(e));
     });
@@ -208,7 +232,7 @@ describe("Json Object Helper", () => {
     ])(
       "json.equals(%p, %p, %p) returns %s",
       (a: any, b: any, keys: string[] | undefined, result: boolean) => {
-        expect(jsonHelper.equals(a, b, keys)).toEqual(result);
+        expect(equals(a, b, keys)).toEqual(result);
       }
     );
   });
@@ -240,7 +264,7 @@ describe("Json Object Helper", () => {
     ])(
       "getObject(%p, %s) returns %s",
       (obj: any, key: any, all: boolean, result: any) => {
-        expect(jsonHelper.getObject(obj, key, all)).toEqual(result);
+        expect(getObject(obj, key, all)).toEqual(result);
       }
     );
   });
@@ -260,7 +284,7 @@ describe("Json Object Helper", () => {
     ])(
       "forceObject(%s, %s) returns %s",
       (input: any, def: any, result: any) => {
-        expect(jsonHelper.forceObject(input, def)).toEqual(result);
+        expect(forceObject(input, def)).toEqual(result);
       }
     );
   });
@@ -273,17 +297,16 @@ describe("Json Object Helper", () => {
       [{ a: null, b: "bb" }, { b: "bb" }],
       [undefined, {}],
     ])("clean object '%p' to '%p'", (a: any, b: any) => {
-      expect(jsonHelper.cleanObject(a)).toEqual(b);
+      expect(cleanObject(a)).toEqual(b);
     });
   });
 
   test.each([
-    [undefined, { a: "aa" }, undefined],
     [{}, {}, {}],
     [{ a: "a" }, { b: "b" }, { a: "a", b: "b" }],
     [{ a: "a" }, { a: "aa" }, { a: "aa" }],
     [{ a: "a" }, { a: undefined }, { a: "a" }],
-  ])("merge %p and %p to %p", (a, b, c) => {
-    expect(jsonHelper.merge<Record<string, string>>(a, b)).toEqual(c);
+  ])("mergeObject %p and %p to %p", (a, b, c) => {
+    expect(mergeObject<Record<string, string>>(a, b)).toEqual(c);
   });
 });
