@@ -131,11 +131,36 @@ function dinitial(overrided, ...options) {
   return initial(...results);
 }
 
+/**
+ *
+ * @param {any} pkg
+ * @param {{input: string, main: string, module: string, browser: string}} custom new custom object
+ * @returns
+ */
+function customPackage(pkg, custom) {
+  const base = Object.assign({}, pkg);
+  if (custom.input) {
+    base["typedocMain"] = custom.input;
+  }
+  if (custom.main) {
+    base["main"] = custom.main;
+  }
+  if (custom.module) {
+    base["module"] = custom.module;
+  }
+  if (custom.browser) {
+    base["browser"] = custom.browser;
+  }
+
+  return base;
+}
+
 module.exports = {
   buildBrowser,
   buildCommonJS,
   buildModuleJS,
   buildCommonJSModuleJS,
+  customPackage,
   initial,
   dinitial,
 };
