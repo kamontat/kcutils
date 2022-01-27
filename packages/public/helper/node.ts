@@ -1,3 +1,5 @@
+export * from "./src/path";
+export * from "./src/stream";
 export * from "./src/array";
 export * from "./src/boolean";
 export * from "./src/datetime";
