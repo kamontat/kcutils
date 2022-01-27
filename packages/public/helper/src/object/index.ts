@@ -6,7 +6,7 @@ export { default as getObject } from "./getObject";
 export { default as isObject } from "./isObject";
 export { default as mergeObject } from "./mergeObject";
 
-export { default as toArray } from "./toArray";
+export { default as toObjectArray } from "./toObjectArray";
 
-export type { JsonSortableData, SortableJson } from "./toArray";
+export type { JsonSortableData, SortableJson } from "./toObjectArray";
 export type { PossibleValue, PossibleValues, Json, NestedJson } from "./types";

@@ -9,7 +9,7 @@ export type SortableJson = {
   [key: string]: JsonSortableData<string | string[]>;
 };
 
-const toArray = (json: Partial<SortableJson>): (string | undefined)[] => {
+const toObjectArray = (json: Partial<SortableJson>): (string | undefined)[] => {
   const output = Object.keys(json)
     .filter((k) => (json[k]?.index ?? -1) > 0 && (json[k]?.data ?? "") !== "")
     .sort((k1, k2) => {
@@ -25,4 +25,4 @@ const toArray = (json: Partial<SortableJson>): (string | undefined)[] => {
   return flatmap(output);
 };
 
-export default toArray;
+export default toObjectArray;

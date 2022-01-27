@@ -1,6 +1,6 @@
 import {
   isObject,
-  toArray,
+  toObjectArray,
   mergeObject,
   deepMergeObject,
   equals,
@@ -25,17 +25,17 @@ describe("Json Object Helper", () => {
     });
   });
 
-  describe("toArray", () => {
+  describe("toObjectArray", () => {
     test("empty json", () => {
       const json = {};
-      const array = toArray(json);
+      const array = toObjectArray(json);
 
       expect(array).toHaveLength(0);
     });
 
     test("partial json not filter empty string", () => {
       const json = { one: { index: 1, data: "string" }, two: undefined };
-      const array = toArray(json);
+      const array = toObjectArray(json);
 
       expect(array).toEqual(["string"]);
     });
@@ -48,7 +48,7 @@ describe("Json Object Helper", () => {
         four: undefined,
         five: { index: 2, data: "number" },
       };
-      const array = toArray(json);
+      const array = toObjectArray(json);
 
       expect(array).toEqual(["string", "number"]);
     });
@@ -59,7 +59,7 @@ describe("Json Object Helper", () => {
         one: { index: 3, data: "number" },
         three: { index: 2, data: "boolean" },
       };
-      const array = toArray(json);
+      const array = toObjectArray(json);
 
       expect(array).toEqual(["string", "boolean", "number"]);
     });
@@ -70,7 +70,7 @@ describe("Json Object Helper", () => {
         one: { index: 3, data: ["number3", "string3"] },
         three: { index: 2, data: "boolean2" },
       };
-      const array = toArray(json);
+      const array = toObjectArray(json);
 
       expect(array).toEqual([
         "string",
@@ -230,11 +230,30 @@ describe("Json Object Helper", () => {
       [{ a: "abc" }, ["abc"], undefined, false],
       [{ a: "abc" }, ["abc"], ["a"], false],
     ])(
-      "json.equals(%p, %p, %p) returns %s",
+      "object.equals(%p, %p, %p) returns %s",
       (a: any, b: any, keys: string[] | undefined, result: boolean) => {
         expect(equals(a, b, keys)).toEqual(result);
       }
     );
+
+    test.each([
+      [undefined, undefined, true],
+      [null, null, true],
+      [null, undefined, false],
+      ["asdf", 123, false],
+      [192, false, false],
+      [["a"], 123, false],
+      [true, ["b"], false],
+      [["a"], [], false],
+      [["a"], ["b", "c"], false],
+      [["a"], ["b"], false],
+      [[], [], true],
+      [["asdf"], ["asdf"], true],
+      [["a", "b"], ["a", "b"], true],
+      [["a", "b"], ["a", "b"], true],
+    ])("array.equals(%p, %p) returns %s", (a: any, b: any, output) => {
+      expect(equals(a, b)).toEqual(output);
+    });
   });
 
   describe("getObject", () => {
