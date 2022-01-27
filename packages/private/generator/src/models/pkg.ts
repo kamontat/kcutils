@@ -41,8 +41,8 @@ const getDevDeps = (category: string, compiler: SupportedCompiler) => {
   base["@types/jest"] = "27.4.0";
   base["@types/node"] = "17.0.10";
 
-  base["@typescript-eslint/eslint-plugin"] = "5.10.0";
-  base["@typescript-eslint/parser"] = "5.10.0";
+  base["@typescript-eslint/eslint-plugin"] = "5.10.1";
+  base["@typescript-eslint/parser"] = "5.10.1";
 
   base["eslint"] = "8.7.0";
   base["eslint-plugin-tsdoc"] = "0.2.14";
@@ -52,7 +52,7 @@ const getDevDeps = (category: string, compiler: SupportedCompiler) => {
   base["ts-jest"] = "27.1.3";
 
   if (compiler === "rollup") {
-    base["rollup"] = "2.59.0";
+    base["rollup"] = "2.66.1";
   }
 
   base["typescript"] = "4.5.5";
