@@ -1,9 +1,9 @@
 import type { Optional } from "generic";
 import type { NestedJson } from "./types";
 
+import toArray from "../array/toArray";
 import isObject from "./isObject";
 import getObject from "./getObject";
-import arrayEquals from "../array/equals";
 
 /**
  * deepEquals object data with specify keys
@@ -56,7 +56,16 @@ const equals = <T extends NestedJson<unknown>>(
 
     // normal datatype
   } else if (Array.isArray(o1) || Array.isArray(o2)) {
-    return arrayEquals(o1, o2);
+    const arr1 = toArray(o1);
+    const arr2 = toArray(o2);
+    if (arr1.length !== arr2.length) return false;
+
+    const clone1 = Array.from(arr1).sort();
+    const clone2 = Array.from(arr2).sort();
+    for (let i = 0; i < clone1.length; ++i) {
+      if (clone1[i] !== clone2[i]) return false;
+    }
+    return true;
   } else {
     return o1 === o2;
   }
