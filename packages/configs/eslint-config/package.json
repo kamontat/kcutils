@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "5.10.0"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 5",
+    "@typescript-eslint/eslint-plugin": "5.10.1",
     "eslint": ">= 8",
     "eslint-plugin-tsdoc": "0.2.14"
   }

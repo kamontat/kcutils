@@ -34,9 +34,9 @@ const getDevDeps = (category: string, compiler: SupportedCompiler) => {
   }
   base["@kcinternal/commandline"] = internalPackageVersion(category, "0.23.1");
 
-  base["@stryker-mutator/core"] = "5.6.0";
-  base["@stryker-mutator/jest-runner"] = "5.6.0";
-  base["@stryker-mutator/typescript-checker"] = "5.6.0";
+  base["@stryker-mutator/core"] = "5.6.1";
+  base["@stryker-mutator/jest-runner"] = "5.6.1";
+  base["@stryker-mutator/typescript-checker"] = "5.6.1";
 
   base["@types/jest"] = "27.4.0";
   base["@types/node"] = "17.0.10";

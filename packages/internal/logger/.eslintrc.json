@@ -1,0 +1,3 @@
+{
+  "extends": "@kcconfig/eslint-config"
+}
