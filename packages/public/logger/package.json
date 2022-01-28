@@ -53,7 +53,7 @@
   "dependencies": {
     "@kcutils/helper": "1.2.2",
     "chalk": "4.1.0",
-    "figures": "3.2.0"
+    "figures": "4.0.0"
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.4",
