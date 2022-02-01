@@ -2,10 +2,17 @@
  * @packageDocumentation
  * @module Logger.Builders
  */
+import type { Writable } from "../models/custom/Writable";
 
-import { Writable } from "stream";
-
-import { silent, error, warn, info, debug, silly, toLevel } from "../constants/levels";
+import {
+  silent,
+  error,
+  warn,
+  info,
+  debug,
+  silly,
+  toLevel,
+} from "../constants/levels";
 import { LoggerLevel } from "../models/logger/LoggerLevel";
 
 export class LoggerLevelBuilder {
@@ -61,7 +68,7 @@ export class LoggerNewLevelBuilder<T extends string> {
   constructor() {
     this.level = -1;
     this.name = "" as T;
-    this.stream = process.stdout;
+    this.stream = console.log.bind(console);
   }
 
   withLevel(lv: number): this {
@@ -71,7 +78,7 @@ export class LoggerNewLevelBuilder<T extends string> {
 
   withName<N extends string>(name: N): LoggerNewLevelBuilder<N> {
     this.name = name;
-    return (this as unknown) as LoggerNewLevelBuilder<N>;
+    return this as unknown as LoggerNewLevelBuilder<N>;
   }
 
   withStream(writer: Writable): this {

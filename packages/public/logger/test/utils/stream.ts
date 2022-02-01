@@ -1,7 +1,7 @@
-import { Writable } from "stream";
+import type { Logger } from "../../index";
+import type { Writable } from "../../src/models/custom/Writable";
 
-import { Logger } from "../../index";
-import { MockStream } from "../models/stream";
+import { mockStream } from "../models/stream";
 
 export type JestStream = { fn: jest.Mock<any, any>; stream: Writable };
 export type LoggerJestStream = {
@@ -11,7 +11,7 @@ export type LoggerJestStream = {
 
 export const newMockStream = (): JestStream => {
   const fn = jest.fn();
-  const stream = new MockStream(fn);
+  const stream = mockStream(fn);
 
   return { fn, stream };
 };

@@ -1,4 +1,4 @@
-import { Writable } from "stream";
+import type { Writable } from "../custom/Writable";
 
 export interface InputOption {
   label?: string;

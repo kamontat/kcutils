@@ -1,9 +1,20 @@
-import { Types } from "./LoggerType";
-import { OptionalSetting } from "./LoggerSetting";
-import { Levels, info, toLevel } from "../../constants/levels";
-import type { Writable } from "stream";
-import { generic, env, array, json } from "@kcutils/helper";
+import type { Types } from "./LoggerType";
+import type { OptionalSetting } from "./LoggerSetting";
+import type { Levels } from "../../constants/levels";
+import type { Writable } from "../custom/Writable";
+
 import { arrowRight } from "figures";
+import {
+  isExist,
+  notEmpty,
+  read,
+  toBoolean,
+  toArray,
+  toString,
+  deepMergeObject,
+} from "@kcutils/helper";
+
+import { info, toLevel } from "../../constants/levels";
 
 export type DateTimeFormat = "date" | "time" | "datetime" | "timestamp";
 export type OutputType = "file" | "console";
@@ -95,13 +106,13 @@ export class LoggerOption<T extends string> {
   }
 
   isOverrideStream(override?: boolean): boolean {
-    if (generic.isExist(override)) return override;
+    if (isExist(override)) return override;
     return this.option.overrideStream;
   }
 
   getOverrideStream(override?: Writable[]): Writable[] {
-    if (generic.isExist(override)) return override;
-    return array.toArray(this.option.streams);
+    if (isExist(override)) return override;
+    return toArray(this.option.streams);
   }
 
   getLevel(override?: Levels): Levels {
@@ -190,11 +201,11 @@ export class LoggerOption<T extends string> {
     mapFn: (s: string) => T,
     override?: T
   ): T {
-    if (generic.isExist(override)) return override;
+    if (isExist(override)) return override;
 
-    const envData = env.read(
+    const envData = read(
       `${LoggerOption.envPrefix}_${envName}`,
-      generic.toString(this.option[key]) ?? def
+      toString(this.option[key]) ?? def
     );
     return mapFn(envData);
   }
@@ -205,13 +216,13 @@ export class LoggerOption<T extends string> {
     def: boolean,
     override?: boolean
   ): boolean {
-    if (generic.isExist(override)) return override;
+    if (isExist(override)) return override;
 
-    const envData = env.read(
+    const envData = read(
       `${LoggerOption.envPrefix}_${envName}`,
-      generic.toString(this.option[key]) ?? def.toString()
+      toString(this.option[key]) ?? def.toString()
     );
-    return generic.toBoolean(envData) ?? def;
+    return toBoolean(envData) ?? def;
   }
 
   private getArray<
@@ -225,12 +236,11 @@ export class LoggerOption<T extends string> {
     selectFn: (t1: T[], t2: T[]) => T[],
     override?: T[]
   ): T[] {
-    if (generic.isExist(override)) return override;
+    if (isExist(override)) return override;
 
-    const output = env
-      .read(`${LoggerOption.envPrefix}_${envName}`, "")
+    const output = read(`${LoggerOption.envPrefix}_${envName}`, "")
       .split(",")
-      .filter(generic.nonEmpty)
+      .filter(notEmpty)
       .filter(filterFn)
       .map(mapFn);
     const defaultOutput = this.option[key] as unknown as T[];
@@ -239,16 +249,16 @@ export class LoggerOption<T extends string> {
   }
 
   private onlyExistArray<T>(t1?: T[], t2?: T[]): T[] {
-    const tt1 = generic.nonEmpty(t1) ? t1 : [];
-    const tt2 = generic.nonEmpty(t2) ? t2 : [];
+    const tt1 = notEmpty(t1) ? t1 : [];
+    const tt2 = notEmpty(t2) ? t2 : [];
 
     if (tt2.length > 0) return tt2;
     else return tt1;
   }
 
   private appendArray<T>(t1?: T[], t2?: T[]): T[] {
-    const tt1 = generic.nonEmpty(t1) ? t1 : [];
-    const tt2 = generic.nonEmpty(t2) ? t2 : [];
+    const tt1 = notEmpty(t1) ? t1 : [];
+    const tt2 = notEmpty(t2) ? t2 : [];
     return tt1.concat(tt2);
   }
 
@@ -256,8 +266,8 @@ export class LoggerOption<T extends string> {
     inOpt?: OptionalOption,
     inExt?: OptionalExtraLoggerOption<R>
   ): LoggerOption<T | R> {
-    const option = json.deepMerge(this.option, inOpt);
-    const extra = json.deepMerge(this.extra, inExt);
+    const option = deepMergeObject(this.option, inOpt);
+    const extra = deepMergeObject(this.extra, inExt);
 
     return new LoggerOption(option, extra);
   }

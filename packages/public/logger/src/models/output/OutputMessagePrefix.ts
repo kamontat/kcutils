@@ -1,7 +1,7 @@
-import { json } from "@kcutils/helper";
+import type { JsonSortableData, SortableJson } from "@kcutils/helper";
 
-export interface OutputMessagePrefix extends json.OptionalSortableJson {
-  badge: json.JsonSortableData<string>;
-  label: json.JsonSortableData<string>;
-  custom: json.JsonSortableData<string[]>;
+export interface OutputMessagePrefix extends Partial<SortableJson> {
+  badge: JsonSortableData<string>;
+  label: JsonSortableData<string>;
+  custom: JsonSortableData<string[]>;
 }

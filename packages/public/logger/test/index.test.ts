@@ -1,4 +1,4 @@
-import { Logger, LoggerBuilder } from "../index";
+import { LoggerBuilder } from "../index";
 
 import { DateTimeFormat } from "../src/models/logger/LoggerOption";
 import { Levels } from "../src/constants/levels";
@@ -12,14 +12,7 @@ import {
 
 describe("logger modules", () => {
   describe("Logger object", () => {
-    const def = Logger.create(); // using logger create utils
-
-    test("Logger.create should equals to LoggerBuilder", () => {
-      const l1 = Logger.create();
-      const l2 = LoggerBuilder.initial().get();
-
-      expect(l1.toString()).toEqual(l2.toString());
-    });
+    const def = LoggerBuilder.default();
 
     test("create default logger", () => {
       const logger = def.copy();

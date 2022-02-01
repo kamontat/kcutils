@@ -7,8 +7,15 @@ import { StrictSetting } from "../models/logger/LoggerSetting";
 import { LoggerSettingBuilder } from "../builder/LoggerSettingBuilder";
 
 export const settings: StrictSetting = {
-  datetime: LoggerSettingBuilder.initial().withPrefix("[").withSuffix("]").get(),
-  scope: LoggerSettingBuilder.initial().withUnderline().withPrefix("[").withSuffix("]").get(),
+  datetime: LoggerSettingBuilder.initial()
+    .withPrefix("[")
+    .withSuffix("]")
+    .get(),
+  scope: LoggerSettingBuilder.initial()
+    .withUnderline()
+    .withPrefix("[")
+    .withSuffix("]")
+    .get(),
   filename: LoggerSettingBuilder.initial().withItalic().get(),
   seperator: LoggerSettingBuilder.initial().get(),
   badge: LoggerSettingBuilder.initial().get(),

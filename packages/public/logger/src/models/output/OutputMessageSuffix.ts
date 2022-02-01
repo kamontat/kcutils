@@ -1,5 +1,5 @@
-import { json } from "@kcutils/helper";
+import type { JsonSortableData, SortableJson } from "@kcutils/helper";
 
-export interface OutputMessageSuffix extends json.OptionalSortableJson {
-  custom: json.JsonSortableData<string[]>;
+export interface OutputMessageSuffix extends Partial<SortableJson> {
+  custom: JsonSortableData<string[]>;
 }

@@ -2,10 +2,12 @@
  * @packageDocumentation
  * @module Logger.Builders
  */
+import type { Writable } from "../models/custom/Writable";
 
 import { arrowRight } from "figures";
-import { Writable } from "stream";
+import { isExist, notExist, notEmpty, toArray } from "@kcutils/helper";
 
+import { Levels } from "../constants/levels";
 import {
   StrictOption,
   OptionalOption,
@@ -14,34 +16,36 @@ import {
   LoggerOption,
   OptionalExtraLoggerOption,
 } from "../models/logger/LoggerOption";
-import { Levels } from "../constants/levels";
-import { LoggerTypeBuilder } from "./LoggerTypeBuilder";
-import { LoggerSettingBuilder } from "./LoggerSettingBuilder";
 import { Types } from "../models/logger/LoggerType";
 import { OptionalSetting, StrictSetting } from "../models/logger/LoggerSetting";
-import { generic, array } from "@kcutils/helper";
+import { LoggerTypeBuilder } from "./LoggerTypeBuilder";
+import { LoggerSettingBuilder } from "./LoggerSettingBuilder";
 
 export class LoggerOptionBuilder<T extends string> {
   static initial<T extends string = "">(): LoggerOptionBuilder<T> {
     return new LoggerOptionBuilder();
   }
 
-  static load<T extends string = "">(option: OptionalOption): LoggerOptionBuilder<T> {
+  static load<T extends string = "">(
+    option: OptionalOption
+  ): LoggerOptionBuilder<T> {
     const builder = LoggerOptionBuilder.initial<T>();
 
-    if (generic.isExist(option.debug)) builder.withDebug(option.debug);
-    if (generic.isExist(option.output)) builder.withOutput(option.output);
-    if (generic.isExist(option.json)) builder.withJson(option.json);
-    if (generic.isExist(option.interactive)) builder.withInteractive(option.interactive);
-    if (generic.isExist(option.disabled)) builder.withDisabled(option.disabled);
-    if (generic.isExist(option.color)) builder.withColor(option.color);
-    if (generic.isExist(option.level)) builder.withLevel(option.level);
-    if (generic.isExist(option.datetime)) builder.withDatetime(option.datetime);
-    if (generic.isExist(option.censor)) builder.withCensor(option.censor);
-    if (generic.isExist(option.separator)) builder.withSeparator(option.separator);
-    if (generic.isExist(option.scopes)) builder.withScopes(option.scopes);
-    if (generic.isExist(option.secrets)) builder.withSecrets(option.secrets);
-    if (generic.isExist(option.streams)) builder.withOverrideStream(array.toArray(option.streams));
+    if (isExist(option.debug)) builder.withDebug(option.debug);
+    if (isExist(option.output)) builder.withOutput(option.output);
+    if (isExist(option.json)) builder.withJson(option.json);
+    if (isExist(option.interactive))
+      builder.withInteractive(option.interactive);
+    if (isExist(option.disabled)) builder.withDisabled(option.disabled);
+    if (isExist(option.color)) builder.withColor(option.color);
+    if (isExist(option.level)) builder.withLevel(option.level);
+    if (isExist(option.datetime)) builder.withDatetime(option.datetime);
+    if (isExist(option.censor)) builder.withCensor(option.censor);
+    if (isExist(option.separator)) builder.withSeparator(option.separator);
+    if (isExist(option.scopes)) builder.withScopes(option.scopes);
+    if (isExist(option.secrets)) builder.withSecrets(option.secrets);
+    if (isExist(option.streams))
+      builder.withOverrideStream(toArray(option.streams));
 
     return builder;
   }
@@ -161,8 +165,11 @@ export class LoggerOptionBuilder<T extends string> {
     return this;
   }
 
-  withType<R extends string>(name: R, builder: LoggerTypeBuilder): LoggerOptionBuilder<T | R> {
-    if (generic.noExist(this.types))
+  withType<R extends string>(
+    name: R,
+    builder: LoggerTypeBuilder
+  ): LoggerOptionBuilder<T | R> {
+    if (notExist(this.types))
       this.types = {
         [name]: builder.get(),
       };
@@ -176,8 +183,11 @@ export class LoggerOptionBuilder<T extends string> {
     return this as LoggerOptionBuilder<N>;
   }
 
-  withSetting<R extends keyof StrictSetting>(name: R, builder: LoggerSettingBuilder): this {
-    if (generic.noExist(this.settings))
+  withSetting<R extends keyof StrictSetting>(
+    name: R,
+    builder: LoggerSettingBuilder
+  ): this {
+    if (notExist(this.settings))
       this.settings = {
         [name]: builder.get(),
       };
@@ -197,8 +207,8 @@ export class LoggerOptionBuilder<T extends string> {
   get(): LoggerOption<T> {
     const opts: OptionalExtraLoggerOption<T> = {};
 
-    if (generic.nonEmpty(this.types)) opts["types"] = this.types;
-    if (generic.nonEmpty(this.settings)) opts["settings"] = this.settings;
+    if (notEmpty(this.types)) opts["types"] = this.types;
+    if (notEmpty(this.settings)) opts["settings"] = this.settings;
 
     return new LoggerOption(this.internalGet(), opts);
   }

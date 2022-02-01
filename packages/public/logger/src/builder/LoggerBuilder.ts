@@ -21,7 +21,9 @@ export class LoggerBuilder<T extends string> {
 
   static load<T extends string>(logger: Logger<T>): LoggerBuilder<T> {
     return LoggerBuilder.initial().withOption(
-      LoggerOptionBuilder.load(logger.option).withRawType(logger.type).withRawSetting(logger.setting)
+      LoggerOptionBuilder.load(logger.option)
+        .withRawType(logger.type)
+        .withRawSetting(logger.setting)
     );
   }
 
@@ -31,12 +33,16 @@ export class LoggerBuilder<T extends string> {
     this.builder = LoggerOptionBuilder.initial();
   }
 
-  withOption<R extends string>(builder: LoggerOptionBuilder<R>): LoggerBuilder<R> {
+  withOption<R extends string>(
+    builder: LoggerOptionBuilder<R>
+  ): LoggerBuilder<R> {
     this.builder = builder;
     return this as LoggerBuilder<R>;
   }
 
-  updateOption<R extends string>(builder: UpdateOptionFn<T, R>): LoggerBuilder<T | R> {
+  updateOption<R extends string>(
+    builder: UpdateOptionFn<T, R>
+  ): LoggerBuilder<T | R> {
     const newBuilder = builder(this.builder);
     this.builder = newBuilder;
 

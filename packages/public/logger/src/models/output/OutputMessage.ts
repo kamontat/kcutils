@@ -1,7 +1,7 @@
-import { OutputMessageMetadata } from "./OutputMessageMetadata";
-import { OutputMessagePrefix } from "./OutputMessagePrefix";
-import { OutputMessageData } from "./OutputMessageData";
-import { OutputMessageSuffix } from "./OutputMessageSuffix";
+import type { OutputMessageMetadata } from "./OutputMessageMetadata";
+import type { OutputMessagePrefix } from "./OutputMessagePrefix";
+import type { OutputMessageData } from "./OutputMessageData";
+import type { OutputMessageSuffix } from "./OutputMessageSuffix";
 
 export interface OutputMessage {
   metadata: OutputMessageMetadata;

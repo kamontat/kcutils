@@ -1,4 +1,4 @@
-import { Writable } from "stream";
+import type { Writable } from "../src/models/custom/Writable";
 
 import { WithLogger, LoggerOptionBuilder, LoggerBuilder } from "../index";
 import { newMockStream } from "./utils/stream";

@@ -1,4 +1,4 @@
-import { string } from "@kcutils/helper";
+import { padEnd } from "@kcutils/helper";
 
 import { LoggerBuilder } from "../index";
 
@@ -26,7 +26,7 @@ describe("Logger censor", () => {
     [
       {
         secrets: ["hello", "new", "man"],
-        censor: (s: string) => string.padEnd("", s.length, "*"),
+        censor: (s: string) => padEnd("", s.length, "*"),
       },
       "hello, I'm become a new woman after I meet man like you",
       "[*****], I'm become a [***] wo[***] after I meet [***] like you",

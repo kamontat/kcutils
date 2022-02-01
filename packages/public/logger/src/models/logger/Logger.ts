@@ -1,9 +1,13 @@
 import { format, inspect } from "util";
 import { basename } from "path";
-import { Writable } from "stream";
-import { moveCursor, clearLine, cursorTo } from "readline";
-
-import { json, string, array } from "@kcutils/helper";
+import {
+  equals,
+  deepMergeObject,
+  toArray,
+  padStart,
+  padEnd,
+  notEmpty,
+} from "@kcutils/helper";
 
 import {
   Chalk,
@@ -12,6 +16,7 @@ import {
 } from "chalk";
 import * as Badge from "figures";
 
+import type { Writable } from "../custom/Writable";
 import { StrictOption, OptionalOption, LoggerOption } from "./LoggerOption";
 import { Types, LoggerType } from "./LoggerType";
 import {
@@ -75,8 +80,8 @@ export class Logger<T extends string = ""> {
 
     this._option = option;
 
-    this._types = json.deepMerge(types, this._option.getTypes());
-    this._setting = json.deepMerge(settings, this._option.getSettings());
+    this._types = deepMergeObject(types, this._option.getTypes());
+    this._setting = deepMergeObject(settings, this._option.getSettings());
 
     this.idebug(`create new logger (id = ${this._id})`);
     this.idebug("option: ", JSON.stringify(this._option));
@@ -136,9 +141,9 @@ export class Logger<T extends string = ""> {
     const _stream = this._option.isOverrideStream()
       ? this._option.getOverrideStream()
       : level.stream;
-    let _streams = array.toArray(_stream);
+    let _streams = toArray(_stream);
     if (inputOption.stream) {
-      const streams = array.toArray(inputOption.stream);
+      const streams = toArray(inputOption.stream);
       _streams = inputOption.appendStream
         ? _streams.concat(...streams)
         : streams;
@@ -263,7 +268,7 @@ export class Logger<T extends string = ""> {
    */
   settings(setting: OptionalSetting): this {
     this.idebug("settings parameters: ", setting);
-    this._setting = json.deepMerge(this._setting, setting);
+    this._setting = deepMergeObject(this._setting, setting);
     this.idebug("new settings: ", setting);
     return this;
   }
@@ -334,7 +339,7 @@ export class Logger<T extends string = ""> {
   equals(l: Logger): boolean {
     const keys = Object.keys(this.importantData()) as (keyof StrictOption)[];
     return keys.every((k) => {
-      const cond = json.equals(
+      const cond = equals(
         l.option[k] as Record<string, any>,
         this.option[k] as Record<string, any>
       );
@@ -386,9 +391,9 @@ export class Logger<T extends string = ""> {
   private get date() {
     const _ = new Date();
 
-    const year = string.padStart(_.getFullYear().toFixed(0), 2, "0");
-    const month = string.padStart((_.getMonth() + 1).toFixed(0), 2, "0");
-    const day = string.padStart(_.getDate().toFixed(0), 2, "0");
+    const year = padStart(_.getFullYear().toFixed(0), 2, "0");
+    const month = padStart((_.getMonth() + 1).toFixed(0), 2, "0");
+    const day = padStart(_.getDate().toFixed(0), 2, "0");
 
     return [year, month, day].join("-");
   }
@@ -396,10 +401,10 @@ export class Logger<T extends string = ""> {
   private get time() {
     const _ = new Date();
 
-    const hour = string.padStart(_.getHours().toFixed(0), 2, "0");
-    const min = string.padStart(_.getMinutes().toFixed(0), 2, "0");
-    const sec = string.padStart(_.getSeconds().toFixed(0), 2, "0");
-    const ms = string.padStart(_.getMilliseconds().toFixed(0), 3, "0");
+    const hour = padStart(_.getHours().toFixed(0), 2, "0");
+    const min = padStart(_.getMinutes().toFixed(0), 2, "0");
+    const sec = padStart(_.getSeconds().toFixed(0), 2, "0");
+    const ms = padStart(_.getMilliseconds().toFixed(0), 3, "0");
 
     return [hour, min, sec].join(":").concat(".", ms);
   }
@@ -423,7 +428,7 @@ export class Logger<T extends string = ""> {
 
   private buildAsString(type: LoggerType, output: OutputMessage) {
     const withSpace = (i: string) => {
-      if (string.isNotEmpty(i)) return ` ${i}`;
+      if (notEmpty(i)) return ` ${i}`;
       else return i;
     };
 
@@ -434,7 +439,7 @@ export class Logger<T extends string = ""> {
     );
     const scopes = output.metadata.scopes.data
       .map((scope) => this.format(scope, this._setting.scope, this._color.gray))
-      .filter((v) => string.isNotEmpty(v))
+      .filter((v) => notEmpty(v))
       .join(" ");
     const filename = this.format(
       output.metadata.filename.data,
@@ -444,7 +449,7 @@ export class Logger<T extends string = ""> {
       output.metadata.seperator.data,
       this._setting.seperator
     );
-    const _paddingBadge = string.padEnd(output.prefix.badge.data, 2);
+    const _paddingBadge = padEnd(output.prefix.badge.data, 2);
     const badge = this.format(
       _paddingBadge,
       this._setting.badge,
@@ -452,7 +457,7 @@ export class Logger<T extends string = ""> {
     );
     const _longestLabelLength = (this._parameters.get(longestLabel) ?? "")
       .length;
-    const _paddingLabel = string.padEnd(
+    const _paddingLabel = padEnd(
       output.prefix.label.data,
       _longestLabelLength + 1
     );
@@ -516,15 +521,13 @@ export class Logger<T extends string = ""> {
     overrideLabel?: string,
     customPrefix?: string | string[]
   ) {
-    const _label = string.isNotEmpty(overrideLabel)
-      ? overrideLabel
-      : type.label;
+    const _label = notEmpty(overrideLabel) ? overrideLabel : type.label;
     const label = { index: 1, data: _label };
 
     const _badge = type.badge(Badge);
     const badge = { index: 2, data: _badge };
 
-    const custom = { index: 3, data: array.toArray(customPrefix ?? "") };
+    const custom = { index: 3, data: toArray(customPrefix ?? "") };
 
     const prefix: OutputMessagePrefix = { label, badge, custom };
     this.idebug("build prefix object: ", prefix);
@@ -532,7 +535,7 @@ export class Logger<T extends string = ""> {
   }
 
   private buildMessage(msg: string | string[]) {
-    const messages = { index: 1, data: array.toArray(msg) };
+    const messages = { index: 1, data: toArray(msg) };
 
     const data: OutputMessageData = { messages };
     this.idebug("build data object: ", data);
@@ -540,7 +543,7 @@ export class Logger<T extends string = ""> {
   }
 
   private buildSuffix(customSuffix?: string | string[]) {
-    const custom = { index: 1, data: array.toArray(customSuffix ?? "") };
+    const custom = { index: 1, data: toArray(customSuffix ?? "") };
 
     const suffix: OutputMessageSuffix = { custom };
     this.idebug("build metadata object: ", suffix);
@@ -590,7 +593,7 @@ export class Logger<T extends string = ""> {
     color?: Chalk,
     disabledList: string[] = []
   ) {
-    const msg = array.toArray(input).join(" ");
+    const msg = toArray(input).join(" ");
     this.idebug(`formatting ${msg} by`, settings);
     if (settings === undefined || settings === false) return "";
 
@@ -636,17 +639,17 @@ export class Logger<T extends string = ""> {
    * @param message - message
    */
   private writing(stream: Writable | Writable[], message: string) {
-    const streams = array.toArray(stream);
+    const streams = toArray(stream);
 
     this.idebug(`write message to ${streams.length} output`);
     streams.forEach((stream) => {
-      if (this._option.isInteractive() && this._isPreviousLogInteractive) {
-        moveCursor(stream, 0, -1);
-        clearLine(stream, 0);
-        cursorTo(stream, 0);
-      }
-
-      stream.write(`${message}\n`);
+      // if (this._option.isInteractive() && this._isPreviousLogInteractive) {
+      //   moveCursor(stream, 0, -1);
+      //   clearLine(stream, 0);
+      //   cursorTo(stream, 0);
+      // }
+      // stream.write(`${message}\n`);
+      stream(`${message}\n`);
       this._isPreviousLogInteractive = this._option.isInteractive();
     });
   }

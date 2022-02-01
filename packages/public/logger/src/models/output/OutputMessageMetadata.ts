@@ -1,8 +1,8 @@
-import { json } from "@kcutils/helper";
+import type { JsonSortableData, SortableJson } from "@kcutils/helper";
 
-export interface OutputMessageMetadata extends json.OptionalSortableJson {
-  datetime: json.JsonSortableData<string>;
-  scopes: json.JsonSortableData<string[]>;
-  filename: json.JsonSortableData<string>;
-  seperator: json.JsonSortableData<string>;
+export interface OutputMessageMetadata extends Partial<SortableJson> {
+  datetime: JsonSortableData<string>;
+  scopes: JsonSortableData<string[]>;
+  filename: JsonSortableData<string>;
+  seperator: JsonSortableData<string>;
 }

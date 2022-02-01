@@ -1,26 +1,11 @@
-/**
- * @packageDocumentation
- * @module Logger.Externals
- */
-
-// v2
-
 export { LoggerLevelBuilder } from "./src/builder/LoggerLevelBuilder";
 export { LoggerTypeBuilder } from "./src/builder/LoggerTypeBuilder";
 export { LoggerSettingBuilder } from "./src/builder/LoggerSettingBuilder";
 export { LoggerOptionBuilder } from "./src/builder/LoggerOptionBuilder";
 export { LoggerBuilder } from "./src/builder/LoggerBuilder";
+export { Logger } from "./src/models/logger/Logger";
 
 export { WithLogger } from "./src/services/WithLogger";
-
-// v1
-
-export {
-  /**
-   * @deprecated Please use LoggerBuilder instead
-   */
-  Logger,
-} from "./src/models/logger/Logger";
 
 // type
 
@@ -34,3 +19,5 @@ export type { InputMessage } from "./src/models/input/InputMessage";
 export type { InputOption } from "./src/models/input/InputOptions";
 
 export type { OutputMessage } from "./src/models/output/OutputMessage";
+
+export type { Writable } from "./src/models/custom/Writable";

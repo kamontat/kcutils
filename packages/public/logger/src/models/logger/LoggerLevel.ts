@@ -1,4 +1,4 @@
-import { Writable } from "stream";
+import type { Writable } from "../custom/Writable";
 
 export type Levels = "silent" | "error" | "warn" | "info" | "debug" | "silly";
 
