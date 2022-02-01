@@ -1,7 +1,10 @@
-export type PossibleValue<T> = T | T[];
-export type PossibleValues<T = PossibleValue<unknown>> = T | Record<string, T>;
+export type JsonKey = string;
+export type JsonValue = any;
 
-export type Json<T> = Partial<Record<string, PossibleValue<T>>>;
-export type NestedJson<T> = Partial<
-  Record<string, PossibleValues<PossibleValue<T>>>
+export type PossibleValue<T = JsonValue> = T | T[];
+export type PossibleValues<T = PossibleValue<unknown>> = T | Record<JsonKey, T>;
+
+export type Json<T = JsonValue> = Partial<Record<JsonKey, PossibleValue<T>>>;
+export type NestedJson<T = JsonValue> = Partial<
+  Record<JsonKey, PossibleValues<PossibleValue<T>>>
 >;
