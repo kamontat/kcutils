@@ -5,10 +5,6 @@
       "path": "packages/public/helper"
     },
     {
-      "name": "kcinternal/logger",
-      "path": "packages/internal/logger"
-    },
-    {
       "name": "kcutils/logger",
       "path": "packages/public/logger"
     },
