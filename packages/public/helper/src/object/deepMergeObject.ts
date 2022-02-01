@@ -1,16 +1,12 @@
-import type { Optional } from "generic";
 import type { NestedJson } from "./types";
 
 import isExist from "../generic/isExist";
 import isObject from "./isObject";
 import forceObject from "./forceObject";
 
-const deepMergeObject = <
-  T extends NestedJson<unknown>,
-  U extends NestedJson<unknown>
->(
-  _jsonA?: Optional<T>,
-  _jsonB?: Optional<U>,
+const deepMergeObject = <T extends NestedJson, U extends NestedJson>(
+  _jsonA?: T,
+  _jsonB?: U,
   size: number = 20
 ): T & U => {
   const jsonA: T = forceObject(_jsonA);
