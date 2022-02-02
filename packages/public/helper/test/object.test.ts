@@ -7,6 +7,7 @@ import {
   getObject,
   forceObject,
   cleanObject,
+  stringify,
 } from "../src/object";
 
 describe("Json Object Helper", () => {
@@ -327,5 +328,28 @@ describe("Json Object Helper", () => {
     [{ a: "a" }, { a: undefined }, { a: "a" }],
   ])("mergeObject %p and %p to %p", (a, b, c) => {
     expect(mergeObject<Record<string, string>>(a, b)).toEqual(c);
+  });
+
+  describe("stringify", () => {
+    test.each([
+      [{ a: "b" }, `{"a":"b"}`],
+      [{ a: "b", b: 12 }, `{"a":"b","b":12}`],
+      [{}, `{}`],
+    ])("stringify(%p) will return %s", (a, b) => {
+      expect(stringify(a)).toEqual(b);
+    });
+
+    test("stringify(cycle-obj) will return string instead", () => {
+      const circularObj: any = {};
+      circularObj.circular = circularObj;
+      circularObj.obj = {
+        test: circularObj,
+      };
+      circularObj.list = [circularObj, circularObj];
+
+      expect(stringify(circularObj)).toEqual(
+        `{"circular":"[Circular]","obj":{"test":"[Circular]"},"list":["[Circular]","[Circular]"]}`
+      );
+    });
   });
 });

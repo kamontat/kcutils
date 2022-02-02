@@ -1,4 +1,5 @@
-import { notExist, isExist } from "@kcutils/helper";
+import isExist from "../generic/isExist";
+import notExist from "../generic/notExist";
 
 type Replacer = (this: any, key: string, value: unknown) => unknown;
 
@@ -8,10 +9,8 @@ const serializer = (replacer?: Replacer, cycleReplacer?: Replacer) => {
 
   if (notExist(cycleReplacer)) {
     cycleReplacer = function (_key, value) {
-      if (stack[0] === value) return "[Circular ~]";
-      return (
-        "[Circular ~." + keys.slice(0, stack.indexOf(value)).join(".") + "]"
-      );
+      if (stack[0] === value) return "[Circular]";
+      return "[Circular." + keys.slice(0, stack.indexOf(value)).join(".") + "]";
     };
   }
 
@@ -29,12 +28,22 @@ const serializer = (replacer?: Replacer, cycleReplacer?: Replacer) => {
   };
 };
 
+/**
+ * same with {@link JSON.stringify()}
+ * this function copy from {@link https://github.com/moll/json-stringify-safe}
+ *
+ * @param obj similar object you would pass to JSON.stringify
+ * @param replacer same with replacer in JSON.stringify
+ * @param spaces same with spaces in JSON.stringify
+ * @param cycleReplacer same with replacer in JSON.stringify but for cycle object
+ * @returns text represent input object
+ */
 const stringify = <T extends Record<string, any>>(
   obj: T,
   replacer?: Replacer,
   spaces?: number | string,
   cycleReplacer?: Replacer
-) => {
+): string => {
   return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces);
 };
 
