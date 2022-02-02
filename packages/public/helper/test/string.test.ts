@@ -1,5 +1,13 @@
 import type { MaskOption } from "../src/string";
-import { mask, padStart, padEnd, isString, toString } from "../src/string";
+import {
+  mask,
+  padStart,
+  padEnd,
+  isString,
+  toString,
+  replace,
+  format,
+} from "../src/string";
 
 describe("String Helper", () => {
   describe("Padding start", () => {
@@ -103,7 +111,7 @@ describe("String Helper", () => {
     });
   });
 
-  describe("toString(any)", () => {
+  describe.only("toString(any)", () => {
     test.each([
       [undefined, undefined],
       [null, undefined],
@@ -117,10 +125,30 @@ describe("String Helper", () => {
       [["array"], "[array]"],
       [["multiple", "element"], "[multiple,element]"],
       [{ data: true }, `{"data":true}`],
-      [new Map(), "{}"],
-      [new Error("helo world"), "{}"],
+      [new Map(), "[object Map]"],
+      [new Map().set("a", "b"), "[object Map]"],
+      [new Error("helo world"), "Error: helo world"],
     ])("of '%s' should returns %s", (input, expected) => {
       expect(toString(input)).toEqual(expected);
+    });
+  });
+
+  describe("Replace", () => {
+    test.each([
+      ["{a}, {b}", { a: "hello", b: "world" }, "hello, world"],
+      ["{c}, {d}", { a: "hello", b: "world" }, "{c}, {d}"],
+      ["{a}", {}, "{a}"],
+    ])("replace(%s, %p) should return %s", (a, b, c) => {
+      expect(replace(a, b)).toEqual(c);
+    });
+  });
+
+  describe("Format", () => {
+    test.each([
+      ["%s %o", ["string", { a: "hello" }], `string {"a":"hello"}`],
+      ["%d %s", [123, "don't care"], `123 don't care`],
+    ])("format(%s, %p) should return %s", (a, b, c) => {
+      expect(format(a, ...b)).toEqual(c);
     });
   });
 });
