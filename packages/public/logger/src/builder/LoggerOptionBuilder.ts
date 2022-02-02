@@ -3,6 +3,11 @@
  * @module Logger.Builders
  */
 import type { Writable } from "../models/custom/Writable";
+import type { Types } from "../models/logger/LoggerType";
+import type {
+  OptionalSetting,
+  StrictSetting,
+} from "../models/logger/LoggerSetting";
 
 import { arrowRight } from "figures";
 import { isExist, notExist, notEmpty, toArray } from "@kcutils/helper";
@@ -16,8 +21,7 @@ import {
   LoggerOption,
   OptionalExtraLoggerOption,
 } from "../models/logger/LoggerOption";
-import { Types } from "../models/logger/LoggerType";
-import { OptionalSetting, StrictSetting } from "../models/logger/LoggerSetting";
+
 import { LoggerTypeBuilder } from "./LoggerTypeBuilder";
 import { LoggerSettingBuilder } from "./LoggerSettingBuilder";
 

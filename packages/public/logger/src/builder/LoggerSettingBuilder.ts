@@ -3,7 +3,7 @@
  * @module Logger.Builders
  */
 
-import { StrictCommonSetting } from "../models/logger/LoggerSetting";
+import type { StrictCommonSetting } from "../models/logger/LoggerSetting";
 
 export class LoggerSettingBuilder {
   static initial(): LoggerSettingBuilder {
