@@ -1,4 +1,3 @@
-import { format, inspect } from "util";
 import { basename } from "path";
 import {
   equals,
@@ -7,6 +6,8 @@ import {
   padStart,
   padEnd,
   notEmpty,
+  toString,
+  format,
 } from "@kcutils/helper";
 
 import {
@@ -662,8 +663,7 @@ export class Logger<T extends string = ""> {
    */
   private idebug(formatter: string, ...data: any[]) {
     if (this._option.isDebug())
-      if (data.length === 1)
-        console.log(format(formatter, inspect(data[0], false, 1, false)));
+      if (data.length === 1) console.log(format(formatter, toString(data[0])));
       else console.log(format(formatter, ...data));
   }
 }
