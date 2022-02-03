@@ -1,5 +1,3 @@
-import * as Badge from "figures";
-
 import { types } from "../src/constants/types";
 import { LoggerType } from "../src/models/logger/LoggerType";
 import { LoggerTypeBuilder } from "../index";
@@ -33,19 +31,19 @@ describe("Logger type", () => {
     });
 
     test.each([
-      [defaultTypes.silly, "silly", "silly", Badge.circleCircle, "gray"],
-      [defaultTypes.debug, "debug", "debug", Badge.circleCircle, "gray"],
-      [defaultTypes.info, "info", "info", Badge.info, "blue"],
-      [defaultTypes.warn, "warn", "warn", Badge.warning, "yellow"],
-      [defaultTypes.error, "error", "error", Badge.cross, "red"],
+      [defaultTypes.silly, "silly", "silly", "()", "gray"],
+      [defaultTypes.debug, "debug", "debug", "()", "gray"],
+      [defaultTypes.info, "info", "info", "#", "blue"],
+      [defaultTypes.warn, "warn", "warn", "!!", "yellow"],
+      [defaultTypes.error, "error", "error", "x", "red"],
 
-      [defaultTypes.fatal, "error", "fatal", Badge.cross, "red"],
-      [defaultTypes.success, "info", "success", Badge.tick, "green"],
-      [defaultTypes.wait, "info", "waiting", Badge.ellipsis, "blue"],
-      [defaultTypes.watch, "info", "watching", Badge.ellipsis, "yellow"],
-      [defaultTypes.complete, "info", "complete", Badge.checkboxOn, "cyan"],
-      [defaultTypes.start, "info", "start", Badge.play, "green"],
-      [defaultTypes.stop, "info", "stop", Badge.squareSmallFilled, "yellow"],
+      [defaultTypes.fatal, "error", "fatal", "X", "red"],
+      [defaultTypes.success, "info", "success", "/", "green"],
+      [defaultTypes.wait, "info", "waiting", "...", "blue"],
+      [defaultTypes.watch, "info", "watching", "...", "yellow"],
+      [defaultTypes.complete, "info", "complete", "[X]", "cyan"],
+      [defaultTypes.start, "info", "start", "|>", "green"],
+      [defaultTypes.stop, "info", "stop", "[O]", "yellow"],
     ])(
       "checking as '%p' = { level: %s, label: %s, badge: %s, color: %s }",
       (
@@ -57,7 +55,7 @@ describe("Logger type", () => {
       ) => {
         expect(type.level).toEqual(level);
         expect(type.label).toEqual(label);
-        expect(type.badge(Badge)).toEqual(badge);
+        expect(type.badge()).toEqual(badge);
         expect(type.color(mockColor)).toEqual(color);
       }
     );
@@ -68,7 +66,7 @@ describe("Logger type", () => {
       const t = LoggerTypeBuilder.initial().get();
 
       expect(t.color(mockColor)).toEqual("reset");
-      expect(t.badge(Badge)).toEqual("");
+      expect(t.badge()).toEqual("");
       expect(t.label).toEqual("");
       expect(t.level).toEqual("info");
     });
@@ -80,7 +78,7 @@ describe("Logger type", () => {
         .get();
 
       expect(t.color(mockColor)).toEqual("reset");
-      expect(t.badge(Badge)).toEqual("");
+      expect(t.badge()).toEqual("");
       expect(t.label).toEqual("mock");
       expect(t.level).toEqual("silly");
     });

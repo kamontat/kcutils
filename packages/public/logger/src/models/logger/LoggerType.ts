@@ -1,10 +1,7 @@
-import { Chalk } from "chalk";
-import * as Badge from "figures";
-
 import { Levels } from "../../constants/levels";
 
-export type BadgeFn = (badge: typeof Badge) => string;
-export type ColorFn = (color: Chalk) => Chalk;
+export type BadgeFn = () => string;
+export type ColorFn = (msg: string) => string;
 
 export interface LoggerType {
   badge: BadgeFn;

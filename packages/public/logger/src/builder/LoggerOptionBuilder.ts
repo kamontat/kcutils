@@ -9,7 +9,6 @@ import type {
   StrictSetting,
 } from "../models/logger/LoggerSetting";
 
-import { arrowRight } from "figures";
 import { isExist, notExist, notEmpty, toArray } from "@kcutils/helper";
 
 import { Levels } from "../constants/levels";
@@ -83,7 +82,7 @@ export class LoggerOptionBuilder<T extends string> {
     this.level = "info";
     this.datetime = "date";
     this.censor = () => "secure";
-    this.separator = arrowRight;
+    this.separator = "=>";
     this.scopes = [];
     this.secrets = [];
     this.overrideStream = false;

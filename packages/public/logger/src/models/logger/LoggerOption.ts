@@ -3,7 +3,6 @@ import type { OptionalSetting } from "./LoggerSetting";
 import type { Levels } from "../../constants/levels";
 import type { Writable } from "../custom/Writable";
 
-import { arrowRight } from "figures";
 import {
   isExist,
   notEmpty,
@@ -126,13 +125,7 @@ export class LoggerOption<T extends string> {
   }
 
   getSeparator(override?: string): string {
-    return this.getString(
-      "SEPARATOR",
-      "separator",
-      arrowRight,
-      (s) => s,
-      override
-    );
+    return this.getString("SEPARATOR", "separator", "=>", (s) => s, override);
   }
 
   getDatetime(override?: DateTimeFormat): DateTimeFormat {

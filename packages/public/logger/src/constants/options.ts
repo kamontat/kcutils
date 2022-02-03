@@ -5,7 +5,6 @@
 
 import type { Writable } from "../models/custom/Writable";
 
-import { arrowRight } from "figures";
 import { read } from "@kcutils/helper";
 
 import { StrictOption } from "../models/logger/LoggerOption";
@@ -26,7 +25,7 @@ export const options: StrictOption = {
   level: toLevel(read(`${prefix}LEVEL`, "info")).name,
   datetime: "date",
   censor: () => "secure",
-  separator: arrowRight,
+  separator: "=>",
   scopes: [] as string[],
   secrets: [] as string[],
   overrideStream: false,

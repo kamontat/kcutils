@@ -3,7 +3,12 @@
  * @module Logger.Builders
  */
 
-import { BadgeFn, ColorFn, LoggerType, Types } from "../models/logger/LoggerType";
+import {
+  BadgeFn,
+  ColorFn,
+  LoggerType,
+  Types,
+} from "../models/logger/LoggerType";
 import { Levels } from "../constants/levels";
 
 /**
@@ -22,7 +27,7 @@ export class LoggerTypeBuilder {
 
   constructor() {
     this.badgeFn = () => "";
-    this.colorFn = c => c.reset;
+    this.colorFn = (c) => c;
     this.label = "";
     this.level = "info";
   }

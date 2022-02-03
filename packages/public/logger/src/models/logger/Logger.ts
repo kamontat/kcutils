@@ -1,4 +1,11 @@
-import { basename } from "path";
+import type { Writable } from "../custom/Writable";
+import { Types, LoggerType } from "./LoggerType";
+import type {
+  OptionalSetting,
+  StrictSetting,
+  StrictCommonSetting,
+} from "./LoggerSetting";
+
 import {
   equals,
   deepMergeObject,
@@ -10,21 +17,7 @@ import {
   format,
 } from "@kcutils/helper";
 
-import {
-  Chalk,
-  Instance as ChalkInstance,
-  level as defaultColorLevel,
-} from "chalk";
-import * as Badge from "figures";
-
-import type { Writable } from "../custom/Writable";
 import { StrictOption, OptionalOption, LoggerOption } from "./LoggerOption";
-import { Types, LoggerType } from "./LoggerType";
-import {
-  OptionalSetting,
-  StrictSetting,
-  StrictCommonSetting,
-} from "./LoggerSetting";
 
 import { settings } from "../../constants/settings";
 import { types, DefaultKeyTypes } from "../../constants/types";
@@ -60,7 +53,6 @@ export class Logger<T extends string = ""> {
   private _option: LoggerOption<T>;
   private _setting: StrictSetting;
 
-  private _color: Chalk;
   private _isPreviousLogInteractive: boolean;
 
   private readonly _types: Types<DefaultKeyTypes | T>;
@@ -90,7 +82,6 @@ export class Logger<T extends string = ""> {
     this.idebug("types: ", JSON.stringify(this._types));
 
     this._timers = new Map();
-    this._color = new ChalkInstance(this._option.isColor() ? {} : { level: 0 });
     this._isPreviousLogInteractive = false;
 
     this._parameters = new Map();
@@ -235,9 +226,7 @@ export class Logger<T extends string = ""> {
     return secrets.reduce((msg, secret) => {
       const regex = new RegExp(secret, "gi");
       const s = this._option.onCensor(secret);
-      const formatting = this.format(s, this._setting.secret, undefined, [
-        "censor",
-      ]);
+      const formatting = this.format(s, this._setting.secret, ["censor"]);
       return msg.replace(regex, formatting);
     }, message);
   }
@@ -317,7 +306,6 @@ export class Logger<T extends string = ""> {
    */
   color(): this {
     this._option.set("color", true);
-    this._color.level = defaultColorLevel;
     return this;
   }
 
@@ -326,7 +314,6 @@ export class Logger<T extends string = ""> {
    */
   uncolor(): this {
     this._option.set("color", false);
-    this._color.level = 0;
     return this;
   }
 
@@ -334,7 +321,7 @@ export class Logger<T extends string = ""> {
    * is color enabled
    */
   isColor(): boolean {
-    return this._color.level > 0 && this._option.isColor();
+    return this._option.isColor();
   }
 
   equals(l: Logger): boolean {
@@ -384,8 +371,9 @@ export class Logger<T extends string = ""> {
     );
     const firstExternalFilePath = callers.find((x) => x !== callers[0]);
     Error.prepareStackTrace = _;
+
     return firstExternalFilePath
-      ? basename(firstExternalFilePath)
+      ? firstExternalFilePath?.split("/").shift()
       : "anonymous";
   }
 
@@ -435,11 +423,10 @@ export class Logger<T extends string = ""> {
 
     const datetime = this.format(
       output.metadata.datetime.data,
-      this._setting.datetime,
-      this._color.gray
+      this._setting.datetime
     );
     const scopes = output.metadata.scopes.data
-      .map((scope) => this.format(scope, this._setting.scope, this._color.gray))
+      .map((scope) => this.format(scope, this._setting.scope))
       .filter((v) => notEmpty(v))
       .join(" ");
     const filename = this.format(
@@ -451,22 +438,14 @@ export class Logger<T extends string = ""> {
       this._setting.seperator
     );
     const _paddingBadge = padEnd(output.prefix.badge.data, 2);
-    const badge = this.format(
-      _paddingBadge,
-      this._setting.badge,
-      type.color(this._color)
-    );
+    const badge = this.format(_paddingBadge, this._setting.badge);
     const _longestLabelLength = (this._parameters.get(longestLabel) ?? "")
       .length;
     const _paddingLabel = padEnd(
       output.prefix.label.data,
       _longestLabelLength + 1
     );
-    const label = this.format(
-      _paddingLabel,
-      this._setting.label,
-      type.color(this._color)
-    );
+    const label = this.format(_paddingLabel, this._setting.label);
     const customPrefix = this.format(
       output.prefix.custom.data,
       this._setting.prefix
@@ -504,7 +483,7 @@ export class Logger<T extends string = ""> {
       index: 2,
       data: this._option.getScopes().concat(cusScope ?? []),
     };
-    const filename = { index: 3, data: this.filename };
+    const filename = { index: 3, data: this.filename ?? "" };
     const seperator = { index: 4, data: this._option.getSeparator() };
 
     const metadata: OutputMessageMetadata = {
@@ -525,7 +504,7 @@ export class Logger<T extends string = ""> {
     const _label = notEmpty(overrideLabel) ? overrideLabel : type.label;
     const label = { index: 1, data: _label };
 
-    const _badge = type.badge(Badge);
+    const _badge = type.badge();
     const badge = { index: 2, data: _badge };
 
     const custom = { index: 3, data: toArray(customPrefix ?? "") };
@@ -591,7 +570,6 @@ export class Logger<T extends string = ""> {
   private format(
     input: string | string[],
     settings: StrictCommonSetting,
-    color?: Chalk,
     disabledList: string[] = []
   ) {
     const msg = toArray(input).join(" ");
@@ -606,10 +584,6 @@ export class Logger<T extends string = ""> {
         settings.prefix !== "" || settings.suffix !== "",
         (m) => settings.prefix + m + settings.suffix,
       ],
-      ["underline", settings.underline, (m) => this._color.underline(m)],
-      ["bold", settings.bold, (m) => this._color.bold(m)],
-      ["italic", settings.italic, (m) => this._color.italic(m)],
-      ["color", color !== undefined, (m) => (color as Chalk)(m)],
       ["censor", this.isContainSecret(msg), (m) => this.censor(m)],
     ];
 
