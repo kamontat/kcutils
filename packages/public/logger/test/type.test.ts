@@ -2,21 +2,6 @@ import { types } from "../src/constants/types";
 import { LoggerType } from "../src/models/logger/LoggerType";
 import { LoggerTypeBuilder } from "../index";
 
-const supportMockColor = [
-  "blue",
-  "yellow",
-  "gray",
-  "green",
-  "cyan",
-  "red",
-  "reset",
-];
-const mockColor: any = supportMockColor.reduce((p, c) => {
-  return Object.assign({}, p, {
-    [c]: c,
-  });
-}, {});
-
 describe("Logger type", () => {
   const defaultTypes = Object.assign({}, types);
 
@@ -31,32 +16,25 @@ describe("Logger type", () => {
     });
 
     test.each([
-      [defaultTypes.silly, "silly", "silly", "()", "gray"],
-      [defaultTypes.debug, "debug", "debug", "()", "gray"],
-      [defaultTypes.info, "info", "info", "#", "blue"],
-      [defaultTypes.warn, "warn", "warn", "!!", "yellow"],
-      [defaultTypes.error, "error", "error", "x", "red"],
+      [defaultTypes.silly, "silly", "silly", "()"],
+      [defaultTypes.debug, "debug", "debug", "()"],
+      [defaultTypes.info, "info", "info", "#"],
+      [defaultTypes.warn, "warn", "warn", "!!"],
+      [defaultTypes.error, "error", "error", "x"],
 
-      [defaultTypes.fatal, "error", "fatal", "X", "red"],
-      [defaultTypes.success, "info", "success", "/", "green"],
-      [defaultTypes.wait, "info", "waiting", "...", "blue"],
-      [defaultTypes.watch, "info", "watching", "...", "yellow"],
-      [defaultTypes.complete, "info", "complete", "[X]", "cyan"],
-      [defaultTypes.start, "info", "start", "|>", "green"],
-      [defaultTypes.stop, "info", "stop", "[O]", "yellow"],
+      [defaultTypes.fatal, "error", "fatal", "X"],
+      [defaultTypes.success, "info", "success", "/"],
+      [defaultTypes.wait, "info", "waiting", "..."],
+      [defaultTypes.watch, "info", "watching", "..."],
+      [defaultTypes.complete, "info", "complete", "[X]"],
+      [defaultTypes.start, "info", "start", "|>"],
+      [defaultTypes.stop, "info", "stop", "[O]"],
     ])(
-      "checking as '%p' = { level: %s, label: %s, badge: %s, color: %s }",
-      (
-        type: LoggerType,
-        level: string,
-        label: string,
-        badge: string,
-        color: string
-      ) => {
+      "checking as '%p' = { level: %s, label: %s, badge: %s }",
+      (type: LoggerType, level: string, label: string, badge: string) => {
         expect(type.level).toEqual(level);
         expect(type.label).toEqual(label);
         expect(type.badge()).toEqual(badge);
-        expect(type.color(mockColor)).toEqual(color);
       }
     );
   });
@@ -65,7 +43,6 @@ describe("Logger type", () => {
     test("create empty type", () => {
       const t = LoggerTypeBuilder.initial().get();
 
-      expect(t.color(mockColor)).toEqual("reset");
       expect(t.badge()).toEqual("");
       expect(t.label).toEqual("");
       expect(t.level).toEqual("info");
@@ -77,7 +54,6 @@ describe("Logger type", () => {
         .withLabel("mock")
         .get();
 
-      expect(t.color(mockColor)).toEqual("reset");
       expect(t.badge()).toEqual("");
       expect(t.label).toEqual("mock");
       expect(t.level).toEqual("silly");
