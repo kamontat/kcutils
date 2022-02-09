@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.4...@kcconfig/stryker-config@0.1.5) (2022-02-09)
+
+
+### Bug Fixes
+
+* **config:** rootDir and roots are not support in stryker ([2e1660f](https://github.com/kamontat/kcutils/commit/2e1660faacbee03cb33faf377d909214ebef0279))
+* **deps:** upgrade [@stryker-mutator](https://github.com/stryker-mutator) to 5.6.1 ([4414bdc](https://github.com/kamontat/kcutils/commit/4414bdc71996c26394247a055e690b881d27a784))
+
+
+
+
+
 ## [0.1.4](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.3...@kcconfig/stryker-config@0.1.4) (2022-01-24)
 
 **Note:** Version bump only for package @kcconfig/stryker-config

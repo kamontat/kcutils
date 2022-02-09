@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.1.4...@kcconfig/rollup-config@0.2.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **core:** some variable never created and compile error ([03c05ae](https://github.com/kamontat/kcutils/commit/03c05ae1f25e1e6cd84ddf19e683df43e303a2e6))
+
+
+### Features
+
+* **apis:** add new customPackage for rollup to custom input and output base on user needs ([b3e5794](https://github.com/kamontat/kcutils/commit/b3e5794cc4cb5c92027c864633025f59ced8335d))
+* **config:** add overrided config option on output level and root level ([1d26ff8](https://github.com/kamontat/kcutils/commit/1d26ff8da48802ca1505e2092c0d51e49e7e1187))
+
+
+
+
+
 ## [0.1.4](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.1.3...@kcconfig/rollup-config@0.1.4) (2022-01-24)
 
 **Note:** Version bump only for package @kcconfig/rollup-config

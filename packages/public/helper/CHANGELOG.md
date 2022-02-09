@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@1.2.2...@kcutils/helper@1.3.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **deps:** upgrade [@stryker-mutator](https://github.com/stryker-mutator) to 5.6.1 ([4414bdc](https://github.com/kamontat/kcutils/commit/4414bdc71996c26394247a055e690b881d27a784))
+* **types:** deepMergeObject always have problem with defined types ([80f8229](https://github.com/kamontat/kcutils/commit/80f82295fcff31a8117586216e0e89225588f5bf))
+
+
+### Features
+
+* **apis:** add string.format() and string.replace() ([5a8d91c](https://github.com/kamontat/kcutils/commit/5a8d91c041c3343b37182fa5c5f38b0b81b6e3fc))
+* **apis:** add stringify() to safely print cycle obj ([99794aa](https://github.com/kamontat/kcutils/commit/99794aa6aab6acddb5e6beb9f98a47e7324d6a95))
+* **core:** add lib/node separately to ensure helper is browser friendly ([e379d31](https://github.com/kamontat/kcutils/commit/e379d310bc46c1f63c856214889fd3e22b26b74d))
+* **core:** migrate helper function to es syntax to avoid too big compiled code ([ad25fb5](https://github.com/kamontat/kcutils/commit/ad25fb57e66b8dc24ff60be8b3c7e8523882bba4))
+* **models:** order deps, browser key depend on settings, add includes directory to package, add generator key in package.json ([b398dae](https://github.com/kamontat/kcutils/commit/b398daea14e9601135c91d113eb08ab36ea8868a))
+
+
+### Performance Improvements
+
+* **apis:** toString() return better result when input is custom Object ([c397092](https://github.com/kamontat/kcutils/commit/c397092fa4dd9d1b98288c2dd42db570b0ceb27d))
+* **config:** helper did not support browser mode since it import nodejs package ([86352b6](https://github.com/kamontat/kcutils/commit/86352b647cd19a0d50b6a76e4d330dc36f456f67))
+* **docs:** add replace() document ([3fb1028](https://github.com/kamontat/kcutils/commit/3fb10284ae4fe5d18be5f69d903a7bbeb05e3e7c))
+* **types:** update json types in helper ([28d8cd8](https://github.com/kamontat/kcutils/commit/28d8cd83b24ae310fb82588e3cd1957392c1156a))
+* **utils:** add applyMixins() to extends base class with mixins class ([2fcf004](https://github.com/kamontat/kcutils/commit/2fcf004da3f73c20e0defc72964d616793fe6347))
+
+
+
+
+
 ## [1.2.2](https://github.com/kamontat/kcutils/compare/@kcutils/helper@1.2.1...@kcutils/helper@1.2.2) (2022-01-24)
 
 

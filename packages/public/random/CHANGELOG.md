@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.3.2...@kcutils/random@0.3.3) (2022-02-09)
+
+
+### Bug Fixes
+
+* **deps:** upgrade [@stryker-mutator](https://github.com/stryker-mutator) to 5.6.1 ([4414bdc](https://github.com/kamontat/kcutils/commit/4414bdc71996c26394247a055e690b881d27a784))
+
+
+### Performance Improvements
+
+* **config:** enabled @kcutils/random on browser mode ([aa42f69](https://github.com/kamontat/kcutils/commit/aa42f69420b6cb944e23a9e8cb56c1bdef5860cb))
+
+
+
+
+
 ## [0.3.2](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.3.1...@kcutils/random@0.3.2) (2022-01-24)
 
 

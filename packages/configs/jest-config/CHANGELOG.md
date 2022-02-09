@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/kamontat/kcutils/compare/@kcconfig/jest-config@0.1.4...@kcconfig/jest-config@0.1.5) (2022-02-09)
+
+
+### Bug Fixes
+
+* **config:** rootDir and roots are not support in stryker ([2e1660f](https://github.com/kamontat/kcutils/commit/2e1660faacbee03cb33faf377d909214ebef0279))
+
+
+
+
+
 ## [0.1.4](https://github.com/kamontat/kcutils/compare/@kcconfig/jest-config@0.1.3...@kcconfig/jest-config@0.1.4) (2022-01-24)
 
 **Note:** Version bump only for package @kcconfig/jest-config

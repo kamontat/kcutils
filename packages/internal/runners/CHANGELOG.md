@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.2...@kcinternal/runners@0.2.3) (2022-02-09)
+
+
+### Bug Fixes
+
+* **deps:** upgrade [@stryker-mutator](https://github.com/stryker-mutator) to 5.6.1 ([4414bdc](https://github.com/kamontat/kcutils/commit/4414bdc71996c26394247a055e690b881d27a784))
+
+
+
+
+
 ## [0.2.2](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.1...@kcinternal/runners@0.2.2) (2022-01-24)
 
 **Note:** Version bump only for package @kcinternal/runners
