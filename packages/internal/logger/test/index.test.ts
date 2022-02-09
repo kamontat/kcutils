@@ -5,7 +5,7 @@ import {
   newSettings,
   newActions,
   newData,
-} from "..";
+} from "../index";
 
 const context = newContext({
   ENV: "from context",
