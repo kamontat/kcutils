@@ -2,7 +2,7 @@
   "name": "@kcprivate/generator",
   "description": "help contributor create new package easier with project conversion",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "build": "tsc",
     "start": "tsc && hygen"
