@@ -12,8 +12,8 @@ on_root_directory
 
 args=()
 
-# On CI, not print unit test result in console and show only coverage summary
-is_ci && args+=("--runInBand" "--reporters" "jest-junit" "--coverageReporters" "text-summary" "lcov")
+# On CI, coverage will be in summary format
+is_ci && args+=("--runInBand" "--coverageReporters" "text-summary" "lcov")
 
 # run yarn test on every module
 run_xlerna_run "test" -- "${args[@]}" "$@" &&
