@@ -3,8 +3,6 @@
  */
 module.exports = {
   preset: "ts-jest",
-  rootDir: process.cwd(),
-  roots: ["<rootDir>/src/", "<rootDir>/test/"],
   moduleNameMapper: {
     ".+\\.(css|styl|less|sass|scss)$": "identity-obj-proxy",
   },
