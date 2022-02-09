@@ -24,12 +24,13 @@ export const build = (option: BuildOption) => {
     include.push("**/*.ts", "package.json");
   }
 
-  const pkg = {
+  const pkg: Record<string, unknown> = {
     extends: "@kcconfig/ts-config/includes/default.json",
-    include,
     exclude,
     compilerOptions,
   };
+
+  if (include.length > 0) pkg.include = include;
 
   return JSON.stringify(pkg, null, "  ");
 };
