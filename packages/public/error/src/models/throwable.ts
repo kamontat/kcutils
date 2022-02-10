@@ -1,9 +1,9 @@
 import type { Optional } from "@kcutils/helper";
 
 import { sep, parse } from "path";
-import { format } from "util";
 
 import {
+  format,
   isExist,
   padEnd,
   search,
