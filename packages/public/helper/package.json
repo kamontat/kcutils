@@ -4,10 +4,10 @@
   "description": "functional programming utilities",
   "private": false,
   "typedocMain": "index.ts",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.esm.js",
+  "main": "lib/node.cjs.js",
+  "module": "lib/node.esm.js",
   "browser": "lib/index.umd.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/node.d.ts",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/public/helper",
   "repository": {

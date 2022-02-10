@@ -10,7 +10,7 @@ import {
   getAt,
   includes,
   isProduction,
-} from "@kcutils/helper/lib/node";
+} from "@kcutils/helper";
 import ThrowState, { ThrowStateType } from "./state";
 
 export interface ThrowableStack {
