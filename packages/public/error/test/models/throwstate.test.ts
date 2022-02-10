@@ -1,4 +1,4 @@
-import { ThrowState, ThrowStateType } from "../../src";
+import { ThrowState, ThrowStateType } from "../../index";
 
 describe("ThrowState", () => {
   test("create new throw state object", () => {

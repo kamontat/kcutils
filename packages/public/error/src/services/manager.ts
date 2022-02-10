@@ -11,7 +11,10 @@ export abstract class AbstractManager extends EventEmitter {
   emit(event: EventType, ...args: [Throwable]): boolean {
     return super.emit(event, ...args);
   }
-  on(event: EventType.NEW_ERROR, listener: (...args: [Throwable]) => void): this {
+  on(
+    event: EventType.NEW_ERROR,
+    listener: (...args: [Throwable]) => void
+  ): this {
     return super.on(event, listener);
   }
 }
@@ -28,13 +31,13 @@ export default class Manager extends AbstractManager {
     try {
       return fn();
     } catch (e) {
-      this.add(e);
+      this.add(e as Error);
       return undefined;
     }
   }
 
   runFuture<R>(fn: RunFn<Promise<R>>): Promise<R | undefined> {
-    return fn().catch(e => {
+    return fn().catch((e) => {
       this.add(e);
       return undefined;
     });
@@ -46,7 +49,7 @@ export default class Manager extends AbstractManager {
   }
 
   hasDeadly(): boolean {
-    return this.errors.some(v => {
+    return this.errors.some((v) => {
       return v.deadly;
     });
   }
@@ -54,7 +57,7 @@ export default class Manager extends AbstractManager {
   formatted(): string {
     if (this.size > 0) {
       let msg = "Errors: \n";
-      msg += this.errors.map(e => `  - ${e.toString()}`);
+      msg += this.errors.map((e) => `  - ${e.toString()}`);
       return msg;
     } else return "";
   }

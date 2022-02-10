@@ -13,6 +13,10 @@
       "path": "packages/public/logger"
     },
     {
+      "name": "kcutils/error",
+      "path": "packages/public/error"
+    },
+    {
       "name": "kcutils/random",
       "path": "packages/public/random"
     },

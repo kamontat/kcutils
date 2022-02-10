@@ -1,11 +1,20 @@
-import { sep } from "path";
+import type { Optional } from "@kcutils/helper";
+
+import { sep, parse } from "path";
 import { format } from "util";
 
-import { env, path, string, type, generic } from "@kcutils/helper";
+import {
+  isExist,
+  padEnd,
+  search,
+  getAt,
+  includes,
+  isProduction,
+} from "@kcutils/helper/node";
 import ThrowState, { ThrowStateType } from "./state";
 
 export interface ThrowableStack {
-  path: path.Paths;
+  path: string;
   typename: string | null;
   linenum: number | null;
   colmnum: number | null;
@@ -20,20 +29,37 @@ export const setProject = (name: string): void => {
 
 export default class Throwable extends Error {
   static build(state: ThrowState, message?: string): Throwable {
-    return new Throwable(state.code, state.name, message, undefined, state.type === ThrowStateType.WARN ? false : true);
+    return new Throwable(
+      state.code,
+      state.name,
+      message,
+      undefined,
+      state.type === ThrowStateType.WARN ? false : true
+    );
   }
 
   static from<E extends Error>(error: E, deadly: boolean = true): Throwable {
-    if (typeof error === "object" && typeof ((error as unknown) as Throwable).code === "number")
-      return (error as unknown) as Throwable;
+    if (
+      typeof error === "object" &&
+      typeof (error as unknown as Throwable).code === "number"
+    )
+      return error as unknown as Throwable;
 
     return new Throwable(-1, error.name, error.message, error.stack, deadly);
   }
 
-  static fn(state: ThrowState, message?: string): (...a: type.Optional<string>[]) => Throwable {
+  static fn(
+    state: ThrowState,
+    message?: string
+  ): (...a: Optional<string>[]) => Throwable {
     const templates = message;
-    return (...args: type.Optional<string>[]) => {
-      return Throwable.build(state, templates ? format(templates, ...args.filter(v => generic.isExist(v))) : templates);
+    return (...args: Optional<string>[]) => {
+      return Throwable.build(
+        state,
+        templates
+          ? format(templates, ...args.filter((v) => isExist(v)))
+          : templates
+      );
     };
   }
 
@@ -60,7 +86,7 @@ export default class Throwable extends Error {
     this._stack = [];
     for (const frame of rawStack) {
       this._stack.push({
-        path: new path.Paths(frame.getFileName()),
+        path: frame.getFileName() ?? "",
         typename: frame.getTypeName(),
         linenum: frame.getLineNumber(),
         colmnum: frame.getColumnNumber(),
@@ -79,15 +105,16 @@ export default class Throwable extends Error {
     let msg = `${this.name}(${this.code}): ${this.message}\n`;
     msg += `stacks:\n`;
 
-    const stacks = this._stack.map(s => {
+    const stacks = this._stack.map((s) => {
       const typename = s.typename ? `${s.typename}.` : "";
       const funcname = s.funcname ?? s.method ?? "<anonymous>";
 
       const name = `${typename}${funcname}`;
 
       const buildDir = (regex: RegExp, start: number) => {
-        const rootdir = s.path.after(regex, start) ?? s.path.at(-1);
-        const dir = s.path.after(regex, start + 1);
+        const rootdir =
+          search(s.path, regex, { shift: start }) ?? getAt(s.path, -1);
+        const dir = search(s.path, regex, { shift: start + 1 });
         if (!dir) return `<${rootdir}>`;
         else return `<${rootdir}>/${dir}`;
       };
@@ -95,9 +122,9 @@ export default class Throwable extends Error {
       let filename = "";
       const registry = /registry\.npmjs\.org/;
       const nodeModules = /node_modules/;
-      if (s.path.includes(registry)) {
+      if (includes(s.path, registry)) {
         filename = buildDir(registry, 1);
-      } else if (s.path.includes(nodeModules)) {
+      } else if (includes(s.path, nodeModules)) {
         filename = buildDir(nodeModules, 1);
       } else {
         filename = buildDir(new RegExp(projectName), 0);
@@ -106,9 +133,10 @@ export default class Throwable extends Error {
       const linenum = s.linenum ? `:${s.linenum}` : "";
       const colnum = s.colmnum ? `:${s.colmnum}` : "";
 
-      if (s.path.isFileExist) {
+      const path = parse(s.path);
+      if (path.base !== "") {
         filename += sep;
-        filename += `${s.path.filename}`;
+        filename += `${path.base}`;
       }
 
       return {
@@ -119,10 +147,16 @@ export default class Throwable extends Error {
       };
     });
 
-    const maximum = stacks.reduce((p, c) => (c.name.length > p ? c.name.length : p), 0);
+    const maximum = stacks.reduce(
+      (p, c) => (c.name.length > p ? c.name.length : p),
+      0
+    );
 
     msg += `${stacks
-      .map(s => `  - ${string.padEnd(s.name, maximum)} ${s.filename}${s.linenum}${s.colnum}`)
+      .map(
+        (s) =>
+          `  - ${padEnd(s.name, maximum)} ${s.filename}${s.linenum}${s.colnum}`
+      )
       .join("\n")}`;
 
     return msg;
@@ -137,7 +171,7 @@ export default class Throwable extends Error {
   }
 
   toString(): string {
-    if (env.isProduction()) return this.getProductionFormatted();
+    if (isProduction()) return this.getProductionFormatted();
     else return this.getDevelopmentFormatted();
   }
 }

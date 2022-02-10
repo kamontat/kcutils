@@ -1,5 +1,5 @@
-import { env } from "@kcutils/helper";
-import { Throwable, setProject, ThrowState, ThrowStateType } from "../../src";
+import { write } from "@kcutils/helper";
+import { Throwable, setProject, ThrowState, ThrowStateType } from "../../index";
 
 describe("Throwable object", () => {
   setProject("error");
@@ -38,30 +38,30 @@ describe("Throwable object", () => {
     });
 
     test("development message is multiple details line", () => {
-      const old = env.setEnv("ENV", "development");
+      const old = write("ENV", "development");
 
       expect(t.toString()).toContain("stacks");
 
-      env.setEnv("ENV", old);
+      write("ENV", old);
     });
 
     test("production message is oneline error", () => {
-      const old = env.setEnv("ENV", "production");
+      const old = write("ENV", "production");
 
       expect(t.toString()).not.toContain("stacks");
 
-      env.setEnv("ENV", old);
+      write("ENV", old);
     });
 
     test("log throwable exception stack", () => {
-      const old = env.setEnv("ENV", "development");
+      const old = write("ENV", "development");
 
       const t = new Throwable(13, "name");
       const str = t.toString();
       expect(str).toContain("<error>");
       expect(str).toContain("jest");
 
-      env.setEnv("ENV", old);
+      write("ENV", old);
     });
 
     test("Throwable.build() works the same as new Throwable()", () => {

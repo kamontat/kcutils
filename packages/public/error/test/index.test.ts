@@ -1,9 +1,18 @@
-import { ThrowState, Throwable, ThrowStateType, Manager, EventType } from "../src";
+import {
+  ThrowState,
+  Throwable,
+  ThrowStateType,
+  Manager,
+  EventType,
+} from "../index";
 
 describe("Error manager", () => {
   it("run normal result manager", () => {
     const hello = (): string => {
-      throw Throwable.build(new ThrowState(ThrowStateType.WARN, 1, "Hello"), "this is a exception from hello function");
+      throw Throwable.build(
+        new ThrowState(ThrowStateType.WARN, 1, "Hello"),
+        "this is a exception from hello function"
+      );
     };
 
     const world = () => {
@@ -22,27 +31,30 @@ describe("Error manager", () => {
   it("throw exception when we want", () => {
     const manager = new Manager();
     manager.run(() => {
-      throw Throwable.build(new ThrowState(ThrowStateType.ERROR, 2, "Exception"), "this is a exception message");
+      throw Throwable.build(
+        new ThrowState(ThrowStateType.ERROR, 2, "Exception"),
+        "this is a exception message"
+      );
     });
 
     expect(manager.size).toBe(1);
-    manager.on(EventType.NEW_ERROR, t => {
+    manager.on(EventType.NEW_ERROR, (t) => {
       expect(t).toBeDefined();
     });
   });
 
-  it("get result from future", done => {
+  it("get result from future", (done) => {
     const manager = new Manager();
     manager
       .runFuture(() => {
-        return new Promise(res => {
+        return new Promise((res) => {
           setTimeout(res, 100);
         });
       })
       .then(done);
   });
 
-  it("get exception from future", done => {
+  it("get exception from future", (done) => {
     const manager = new Manager();
     manager.runFuture(() => {
       return new Promise((_, rej) => {
@@ -50,7 +62,7 @@ describe("Error manager", () => {
       });
     });
 
-    manager.on(EventType.NEW_ERROR, t => {
+    manager.on(EventType.NEW_ERROR, (t) => {
       expect(t).toBeDefined();
       done();
     });

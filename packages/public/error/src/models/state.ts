@@ -1,5 +1,4 @@
-import { Optional } from "@kcutils/models";
-import { generic } from "@kcutils/helper";
+import { isExist, toOptional } from "@kcutils/helper";
 
 export enum ThrowStateType {
   WARN,
@@ -36,20 +35,20 @@ export default class ThrowState {
     this.id = ThrowState.counter;
     ThrowState.increase();
 
-    if (generic.isExist(type)) this.type = type;
+    if (isExist(type)) this.type = type;
     else this.type = ThrowStateType.ERROR;
 
-    if (generic.isExist(code)) this.code = code;
+    if (isExist(code)) this.code = code;
     else this.code = randomCode();
 
-    if (generic.isExist(name)) this.name = name;
+    if (isExist(name)) this.name = name;
     else this.name = "";
   }
 
   copy(input?: Partial<ThrowStateInput>): ThrowState {
-    const type = new Optional(input?.type).getOrElse(this.type);
-    const code = new Optional(input?.code).getOrElse(this.code);
-    const name = new Optional(input?.name).getOrElse(this.name);
+    const type = toOptional(input?.type).getOrElse(this.type);
+    const code = toOptional(input?.code).getOrElse(this.code);
+    const name = toOptional(input?.name).getOrElse(this.name);
 
     return new ThrowState(type, code, name);
   }
