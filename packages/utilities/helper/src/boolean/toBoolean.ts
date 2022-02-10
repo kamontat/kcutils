@@ -1,6 +1,6 @@
 import notExist from "../generic/notExist";
 import isNumber from "../number/isNumber";
-import isBoolean from "../boolean/isBoolean";
+import isBoolean from "./isBoolean";
 import isString from "../string/isString";
 
 const toBoolean = <T = unknown>(input: T): boolean | undefined => {

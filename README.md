@@ -98,8 +98,8 @@ More information found [here][license]
 [contributing]: ./CONTRIBUTING.md
 [license]: ./LICENSE
 
-[kcu_hpr_gh]: ./packages/public/helper
-[kcu_rdm_gh]: ./packages/public/random
+[kcu_hpr_gh]: ./packages/utilities/helper
+[kcu_rdm_gh]: ./packages/utilities/random
 [kci_rn_gh]: ./packages/internal/runners
 [kci_cli_gh]: ./packages/internal/commandline
 [kcc_esl_gh]: ./packages/configs/eslint-config

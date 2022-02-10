@@ -7,7 +7,7 @@
     "packages/typings/*",
     "packages/configs/*",
     "packages/internal/*",
-    "packages/public/*"
+    "packages/utilities/*"
   ],
   "command": {
     "init": {

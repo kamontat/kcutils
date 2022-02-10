@@ -2,7 +2,7 @@
   "folders": [
     {
       "name": "kcutils/helper",
-      "path": "packages/public/helper"
+      "path": "packages/utilities/helper"
     },
     {
       "name": "kcinternal/logger",
@@ -10,15 +10,15 @@
     },
     {
       "name": "kcutils/logger",
-      "path": "packages/public/logger"
+      "path": "packages/utilities/logger"
     },
     {
       "name": "kcutils/error",
-      "path": "packages/public/error"
+      "path": "packages/utilities/error"
     },
     {
       "name": "kcutils/random",
-      "path": "packages/public/random"
+      "path": "packages/utilities/random"
     },
     {
       "name": "private/client",

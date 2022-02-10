@@ -9,11 +9,11 @@
   "browser": "lib/index.umd.js",
   "types": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/public/logger",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/utilities/logger",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/public/logger"
+    "directory": "packages/utilities/logger"
   },
   "bugs": {
     "email": "developer@kamontat.net",

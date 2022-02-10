@@ -1,19 +1,19 @@
 {
-  "name": "@kcutils/random",
-  "version": "0.3.3",
-  "description": "PRNGs (Pseudorandom number generators)",
+  "name": "@kcutils/helper",
+  "version": "1.3.0",
+  "description": "functional programming utilities",
   "private": false,
   "typedocMain": "index.ts",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.esm.js",
+  "main": "lib/node.cjs.js",
+  "module": "lib/node.esm.js",
   "browser": "lib/index.umd.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/node.d.ts",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/public/random",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/utilities/helper",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/public/random"
+    "directory": "packages/utilities/helper"
   },
   "bugs": {
     "email": "developer@kamontat.net",
@@ -24,17 +24,13 @@
     "email": "developer@kamontat.net",
     "url": "https://github.com/kamontat"
   },
-  "maintainers": [
-    {
-      "name": "Natcha Triratchatchawan",
-      "email": "pprangnt.0512@gmail.com"
-    }
-  ],
   "publishConfig": {
     "access": "public"
   },
   "keywords": [
-    "kcmono"
+    "kcmono",
+    "helper",
+    "functional"
   ],
   "files": [
     "package.json",
@@ -51,6 +47,9 @@
     "lint": "kc-lint",
     "test": "kc-test",
     "test:mutator": "kc-test --mutator"
+  },
+  "dependencies": {
+    "@types/generic": "0.0.1"
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.5",

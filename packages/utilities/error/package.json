@@ -8,11 +8,11 @@
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/public/error",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/utilities/error",
   "repository": {
     "type": "git",
     "url": "https://github.com/kamontat/kcutils",
-    "directory": "packages/public/error"
+    "directory": "packages/utilities/error"
   },
   "bugs": {
     "email": "developer@kamontat.net",

@@ -2,8 +2,8 @@
   "emit": "docs",
   "entryPointStrategy": "packages",
   "entryPoints": [
-    "packages/public/helper",
-    "packages/public/random",
+    "packages/utilities/helper",
+    "packages/utilities/random",
     "packages/internal/runners"
   ],
   "out": "dist",
