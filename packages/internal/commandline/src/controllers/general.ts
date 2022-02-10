@@ -1,4 +1,3 @@
-import { version } from "../../package.json";
 import {
   OptionBuilder,
   ActionBuilder,
@@ -14,8 +13,15 @@ export const help = Help.initial("Help for kc-general").newParagraph(
 export const option = OptionBuilder.empty().build();
 
 export const action = ActionBuilder.initial(option, async (_, context) => {
-  context.log.print(`Runner`, _version);
-  context.log.print("Commandline", version);
+  try {
+    const pkg = require("../../../package.json");
+    context.log.print(`Runner`, _version);
+    context.log.print(`Commandline`, pkg.version);
+  } catch (e) {
+    context.log.print(`Runner`, _version);
+    context.log.print(`Commandline`, "dev");
+  }
+
   return [];
 })
   .help(help)
