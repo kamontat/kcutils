@@ -1,4 +1,4 @@
-import { Seeds } from "../index";
+import { Fixed, Xfnv1a, Xmur3 } from "../index";
 
 describe("Seed constants", () => {
   test.each([
@@ -12,7 +12,7 @@ describe("Seed constants", () => {
     [123, 123],
     [123.99, 123.99],
   ])("Fixed: Fixed(%s).getSeed() return %s", (i, j) => {
-    const f = new Seeds.Fixed(i);
+    const f = new Fixed(i);
     expect(f.getSeed()).toBeCloseTo(j, 5);
   });
 
@@ -23,11 +23,11 @@ describe("Seed constants", () => {
     ["", 1493338014, 2822906736],
     ["boolean", 4108559831, 723513985],
   ])("XFNV1A: Xfnv1a(%s).getSeed() return %s", (i, j, k) => {
-    const x = new Seeds.Xfnv1a(i);
+    const x = new Xfnv1a(i);
     expect(x.getSeed()).toBeCloseTo(j, 4);
     expect(x.getSeed()).toBeCloseTo(k, 4);
 
-    const y = new Seeds.Xfnv1a(i);
+    const y = new Xfnv1a(i);
     expect(y.getSeed()).toBeCloseTo(j, 4);
   });
 
@@ -41,7 +41,7 @@ describe("Seed constants", () => {
     const magicNumber = 2143722380;
     const round = 1;
 
-    const a = new Seeds.Xfnv1a(inputString);
+    const a = new Xfnv1a(inputString);
 
     let sum = 0;
     for (let i = 0; i < size; i++) {
@@ -60,11 +60,11 @@ describe("Seed constants", () => {
     ["", 167010153, 2610615433],
     ["boolean", 2579961042, 19056677],
   ])("XMUR3: Xmur3(%s).getSeed() return %s", (i, j, k) => {
-    const x = new Seeds.Xmur3(i);
+    const x = new Xmur3(i);
     expect(x.getSeed()).toBeCloseTo(j, 4);
     expect(x.getSeed()).toBeCloseTo(k, 4);
 
-    const y = new Seeds.Xmur3(i);
+    const y = new Xmur3(i);
     expect(y.getSeed()).toBeCloseTo(j, 4);
   });
 
@@ -78,7 +78,7 @@ describe("Seed constants", () => {
     const magicNumber = 2202321726;
     const round = 1;
 
-    const a = new Seeds.Xmur3(inputString);
+    const a = new Xmur3(inputString);
 
     let sum = 0;
     for (let i = 0; i < size; i++) {
