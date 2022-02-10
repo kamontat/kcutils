@@ -3,7 +3,7 @@ export enum Categories {
   Type = "typings",
   Private = "private",
   Internal = "internal",
-  Public = "public",
+  Utils = "utilities",
 }
 
 export enum Namespaces {
@@ -11,5 +11,5 @@ export enum Namespaces {
   Type = "types",
   Private = "kcprivate",
   Internal = "kcinternal",
-  Public = "kcutils",
+  Utils = "kcutils",
 }

@@ -32,8 +32,8 @@ export const toNamespace = (category: string) => {
       return Namespaces.Config;
     case Categories.Internal:
       return Namespaces.Internal;
-    case Categories.Public:
-      return Namespaces.Public;
+    case Categories.Utils:
+      return Namespaces.Utils;
     default:
       throw new Error(
         `cannot convert unknown category to namespace (${category})`
