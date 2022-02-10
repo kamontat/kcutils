@@ -111,7 +111,7 @@ describe("String Helper", () => {
     });
   });
 
-  describe.only("toString(any)", () => {
+  describe("toString(any)", () => {
     test.each([
       [undefined, undefined],
       [null, undefined],
