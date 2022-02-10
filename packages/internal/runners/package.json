@@ -26,6 +26,7 @@
     "node"
   ],
   "files": [
+    "lib/**/*.json",
     "lib/**/*.js",
     "lib/**/*.js.map",
     "lib/**/*.d.ts",
