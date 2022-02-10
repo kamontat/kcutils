@@ -47,7 +47,9 @@
     "test": "kc-test",
     "test:mutator": "kc-test --mutator"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@kcutils/helper": "1.3.0"
+  },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.4",
     "@kcconfig/jest-config": "0.1.4",
