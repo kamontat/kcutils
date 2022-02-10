@@ -3708,7 +3708,7 @@ execa@^5.0.0, execa@~5.1.1:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
-execution-time@^1.2.0:
+execution-time@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/execution-time/-/execution-time-1.4.1.tgz#d942f835ca9fd608691c4912d55458fc4a495271"
   integrity sha512-4t9svrTtsXxAEzAs9/tm1R/Voj5AYHqxd72BiLEbGQWJq2PD3tAmW8bXI7Pp0yorjaKshT1+NyKy0ytHlKW4Pg==
@@ -4621,7 +4621,7 @@ init-package-json@^2.0.2:
     validate-npm-package-license "^3.0.4"
     validate-npm-package-name "^3.0.0"
 
-inquirer-autocomplete-prompt@^1.0.1:
+inquirer-autocomplete-prompt@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/inquirer-autocomplete-prompt/-/inquirer-autocomplete-prompt-1.4.0.tgz#e767592f747e3d5bb6336fe71fb4094352e4c317"
   integrity sha512-qHgHyJmbULt4hI+kCmwX92MnSxDs/Yhdt4wPA30qnoa01OF6uTXV8yvH4hKXgdaTNmkZ9D01MHjqKYEuJN+ONw==
@@ -4651,7 +4651,7 @@ inquirer@^6.2.2:
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
-inquirer@^7.0.0, inquirer@^7.3.3:
+inquirer@^7.3.3:
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.3.3.tgz#04d176b2af04afc157a83fd7c100e98ee0aad003"
   integrity sha512-JG3eIAj5V9CwcGvuOmoo6LB9kbAYT8HXffUl6memuszlwDC/qvFAJw49XJ5NROSFNPxp3iQg1GqkFhaY/CR0IA==
@@ -4670,7 +4670,7 @@ inquirer@^7.0.0, inquirer@^7.3.3:
     strip-ansi "^6.0.0"
     through "^2.3.6"
 
-inquirer@~8.2.0:
+inquirer@^8.2.0, inquirer@~8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.0.tgz#f44f008dd344bbfc4b30031f45d984e034a3ac3a"
   integrity sha512-0crLweprevJ02tTuA6ThpoAERAGyVILC4sS74uib58Xf/zSr1/ZWtmm7D5CI+bSQEaA04f0K7idaHpQbSWgiVQ==
@@ -5745,21 +5745,20 @@ ky@^0.12.0:
   resolved "https://registry.yarnpkg.com/ky/-/ky-0.12.0.tgz#c05be95e6745ba422a6d2cc8ae964164962279f9"
   integrity sha512-t9b7v3V2fGwAcQnnDDQwKQGF55eWrf4pwi1RN08Fy8b/9GEwV7Ea0xQiaSW6ZbeghBHIwl8kgnla4vVo9seepQ==
 
-lerna-update-wizard@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/lerna-update-wizard/-/lerna-update-wizard-1.1.0.tgz#dd3c209f692dfc374d8405e5c54bf920935067cf"
-  integrity sha512-V6VtJFbt4BS1HKsNDsyBMeAU86CYRoQSikZsJyEMVc2x/yqH/hX+Z79fI0J3gSiWFkkIKrLj/vPUf6Zvn/79jw==
+lerna-update-wizard@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/lerna-update-wizard/-/lerna-update-wizard-1.1.1.tgz#c8a78d2345f8623cad453f491c05929fc5e32f39"
+  integrity sha512-Fj6Q8EAox4DW7k6kbbJdUMefIc5Z2k5a+C6yHyZu8mD1mmAASAOqBS9rAttB9M4Zx5Qz6BGTooOErmFYnYGl2Q==
   dependencies:
     chalk "^4.1.2"
-    cli-cursor "^2.1.0"
-    execution-time "^1.2.0"
+    execution-time "^1.4.1"
     fs-extra "^7.0.0"
     globby "^11.0.4"
-    inquirer "^7.0.0"
-    inquirer-autocomplete-prompt "^1.0.1"
+    inquirer "^8.2.0"
+    inquirer-autocomplete-prompt "^1.4.0"
     lodash "^4.17.21"
     meow "^9.0.0"
-    minimist "^1.2.3"
+    minimist "^1.2.5"
     semver-compare "^1.0.0"
 
 lerna@4.0.0:
@@ -6248,7 +6247,7 @@ minimist-options@4.1.0:
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
 
-minimist@1.2.5, minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.5:
+minimist@1.2.5, minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
