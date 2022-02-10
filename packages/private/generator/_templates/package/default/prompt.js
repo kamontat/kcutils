@@ -8,14 +8,13 @@ module.exports = [
     type: "autocomplete",
     name: "compiler",
     message: "What's new package compiler?",
-    choices: ["tsc", "rollup"],
-    initial: "rollup",
+    choices: ["rollup", "tsc"],
   },
   {
     type: "autocomplete",
     name: "category",
     message: "What's new package category?",
-    choices: ["public", "internal", "private", "configs", "typings"],
+    choices: name.categoryChoices,
   },
   {
     type: "input",
@@ -34,7 +33,7 @@ module.exports = [
     type: "input",
     name: "version",
     message: "What's new package initial version?",
-    initial: "1.0.0-alpha.1",
+    initial: "0.1.0",
   },
   {
     type: "list",

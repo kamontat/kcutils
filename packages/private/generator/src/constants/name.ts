@@ -6,6 +6,14 @@ export enum Categories {
   Utils = "utilities",
 }
 
+export const categoryChoices = [
+  Categories.Utils,
+  Categories.Internal,
+  Categories.Config,
+  Categories.Private,
+  Categories.Type,
+];
+
 export enum Namespaces {
   Config = "kcconfig",
   Type = "types",
