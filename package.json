@@ -11,7 +11,7 @@
   "devDependencies": {
     "@nrwl/cli": "13.7.2",
     "@nrwl/nx-cloud": "13.1.2",
-    "@nrwl/tao": "13.7.2",
+    "@nrwl/tao": "13.8.1",
     "@nrwl/workspace": "13.7.2",
     "danger": "11.0.2",
     "gh-pages": "3.2.3",
