@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@nrwl/cli": "13.8.1",
-    "@nrwl/nx-cloud": "13.1.2",
+    "@nrwl/nx-cloud": "13.1.4",
     "@nrwl/tao": "13.8.1",
     "@nrwl/workspace": "13.7.2",
     "danger": "11.0.2",
