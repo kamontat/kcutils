@@ -15,4 +15,4 @@
 4. mutator test: `stryker-mutator`
 5. code style: `eslint`
 
-[pkg_version]: https://img.shields.io/github/package-json/v/kamontat/kcutils?filename=packages%2Fpublic%2Fhelper%2Fpackage.json&style=flat-square
+[pkg_version]: https://img.shields.io/github/package-json/v/kamontat/kcutils?filename=packages%2Futilities%2Fhelper%2Fpackage.json&style=flat-square
