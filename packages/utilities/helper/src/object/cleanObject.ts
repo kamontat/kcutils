@@ -8,9 +8,10 @@ import isExist from "../generic/isExist";
  * clean object mean remove undefined and null object
  *
  * @param obj massy object
+ * @returns new object instance
  */
 const cleanObject = <T>(
-  obj: Optional<Json<T>>
+  obj: Optional<Partial<Json<T>>>
 ): Record<string, PossibleValue<T>> => {
   if (notExist(obj)) return {};
   else
