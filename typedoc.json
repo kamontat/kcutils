@@ -4,6 +4,7 @@
   "entryPoints": [
     "packages/utilities/helper",
     "packages/utilities/random",
+    "packages/utilities/error",
     "packages/internal/runners"
   ],
   "out": "dist",
