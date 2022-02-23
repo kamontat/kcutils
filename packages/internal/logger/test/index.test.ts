@@ -1,6 +1,7 @@
 import {
   initial,
   build,
+  log,
   newContext,
   newSettings,
   newActions,
@@ -32,32 +33,63 @@ const settings = newSettings({
 });
 
 describe("Logger interface", () => {
-  describe("Context", () => {
-    test("call context in transformer", () => {
-      const actions = newActions(context, settings, {
-        transformers: {
-          all: (i) => JSON.stringify(i),
-          context: (_, context) => context.ENV,
-        },
-        outputs: {
-          console: console.log.bind(console),
-          debug: console.debug.bind(console),
-        },
-      });
-
-      const executor = initial(context, settings, actions, {
-        level: "a",
-        type: "z",
-        output: "console",
-        transform: "all",
-      });
-
-      expect(
-        build(executor, {
-          value: "string",
-          transform: "context",
-        })
-      ).toEqual("from context");
+  it("build output log message", () => {
+    const actions = newActions(context, settings, {
+      context: (input) => {
+        return {
+          getType: (t: keyof typeof input.settings.types) =>
+            input.settings.types[t].transform(input.settings.types[t]),
+          getLevel: (t: keyof typeof input.settings.levels) =>
+            input.settings.levels[t].transform(input.settings.levels[t]),
+        };
+      },
+      transformers: {
+        all: (i) => i.message.value as string,
+        context: (_, context) => context.build(context.ENV),
+      },
+      outputs: {
+        console: console.log.bind(console),
+      },
     });
+
+    const executor = initial(context, settings, actions, {
+      level: "a",
+      type: "z",
+      output: "console",
+      transform: "all",
+    });
+
+    expect(
+      build(executor, {
+        value: "string",
+        transform: "context",
+      })
+    ).toEqual("build from context");
+  });
+
+  it("print output log message", () => {
+    const mockFn = jest.fn();
+    const actions = newActions(context, settings, {
+      transformers: {
+        message: (i) => i.message.value as string,
+      },
+      outputs: {
+        test: mockFn,
+      },
+    });
+
+    const executor = initial(context, settings, actions, {
+      level: "a",
+      type: "z",
+      output: "test",
+      transform: "message",
+    });
+
+    log(executor, {
+      value: "string",
+      transform: "message",
+      output: "test",
+    });
+    expect(mockFn).toHaveBeenCalledWith("string");
   });
 });
