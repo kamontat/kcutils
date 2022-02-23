@@ -1,4 +1,5 @@
 import {
+  Option,
   OptionBuilder,
   ActionBuilder,
   Commandline,
@@ -7,12 +8,20 @@ import {
 
 export const help = Help.initial("Help for kc-lint").newParagraph(
   `lint application follow kcmono setup guideline.
-run eslint with auto configure setup.`
+run eslint with auto configure setup. Pass --fix to
+auto fix errors if possible.`
 );
 
-export const option = OptionBuilder.empty().build();
+export const option = OptionBuilder.initial({
+  fix: {
+    defaultValue: false,
+    fn: Option.toBoolean,
+    alias: ["F"],
+  },
+}).build();
 
 export const action = ActionBuilder.initial(option, async (option, context) => {
+  const prefixArguments = [];
   const eslintConfig = await context.location.findExist(
     ".eslintrc",
     ".eslintrc.json",
@@ -20,8 +29,10 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
   );
 
   if (eslintConfig) {
+    if (option.fix) prefixArguments.push("--fix");
     return context.command.eslint(
       eslintConfig,
+      ...prefixArguments,
       ".",
       ...option.raw,
       ...option.extraArgs
