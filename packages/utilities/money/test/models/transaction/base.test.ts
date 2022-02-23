@@ -1,4 +1,12 @@
-import { Baht, Money, Transaction, TransactionType, Uplift, Downlift, USDollar } from "../../../src";
+import {
+  Baht,
+  Money,
+  Transaction,
+  TransactionType,
+  Uplift,
+  Downlift,
+  USDollar,
+} from "../../../index";
 
 class Ex extends Transaction {
   isEligible() {
@@ -95,27 +103,39 @@ describe("Transaction", () => {
     });
 
     test(".minus(In)", () => {
-      expect(exp.minus(inc)).toEqual(new Ex("global EX - global IN", new Baht(-5400)));
+      expect(exp.minus(inc)).toEqual(
+        new Ex("global EX - global IN", new Baht(-5400))
+      );
     });
 
     test(".minus(Ex)", () => {
-      expect(exp.minus(exp)).toEqual(new Ex("global EX - global EX", new Baht(0)));
+      expect(exp.minus(exp)).toEqual(
+        new Ex("global EX - global EX", new Baht(0))
+      );
     });
 
     test(".plus(In)", () => {
-      expect(exp.plus(inc)).toEqual(new Ex("global EX + global IN", new Baht(-4600)));
+      expect(exp.plus(inc)).toEqual(
+        new Ex("global EX + global IN", new Baht(-4600))
+      );
     });
 
     test(".plus(Ex)", () => {
-      expect(exp.plus(exp)).toEqual(new Ex("global EX + global EX", new Baht(-800)));
+      expect(exp.plus(exp)).toEqual(
+        new Ex("global EX + global EX", new Baht(-800))
+      );
     });
 
     test(".apply(uplift)", () => {
-      expect(exp.apply(uplift)).toEqual(new Ex("global EX + 10 baht", new Baht(-390)));
+      expect(exp.apply(uplift)).toEqual(
+        new Ex("global EX + 10 baht", new Baht(-390))
+      );
     });
 
     test(".apply(downlift)", () => {
-      expect(exp.apply(downlift)).toEqual(new Ex("global EX - 10 baht", new Baht(-410)));
+      expect(exp.apply(downlift)).toEqual(
+        new Ex("global EX - 10 baht", new Baht(-410))
+      );
     });
   });
 
@@ -125,27 +145,39 @@ describe("Transaction", () => {
     });
 
     test(".minus(In)", () => {
-      expect(inc.minus(inc)).toEqual(new In("global IN - global IN", new Baht(0)));
+      expect(inc.minus(inc)).toEqual(
+        new In("global IN - global IN", new Baht(0))
+      );
     });
 
     test(".minus(Ex)", () => {
-      expect(inc.minus(exp)).toEqual(new In("global IN - global EX", new Baht(5400)));
+      expect(inc.minus(exp)).toEqual(
+        new In("global IN - global EX", new Baht(5400))
+      );
     });
 
     test(".plus(In)", () => {
-      expect(inc.plus(inc)).toEqual(new In("global IN + global IN", new Baht(10000)));
+      expect(inc.plus(inc)).toEqual(
+        new In("global IN + global IN", new Baht(10000))
+      );
     });
 
     test(".plus(Ex)", () => {
-      expect(inc.plus(exp)).toEqual(new In("global IN + global EX", new Baht(4600)));
+      expect(inc.plus(exp)).toEqual(
+        new In("global IN + global EX", new Baht(4600))
+      );
     });
 
     test(".apply(uplift)", () => {
-      expect(inc.apply(uplift)).toEqual(new In("global IN + 10 baht", new Baht(5010)));
+      expect(inc.apply(uplift)).toEqual(
+        new In("global IN + 10 baht", new Baht(5010))
+      );
     });
 
     test(".apply(downlift)", () => {
-      expect(inc.apply(downlift)).toEqual(new In("global IN - 10 baht", new Baht(4990)));
+      expect(inc.apply(downlift)).toEqual(
+        new In("global IN - 10 baht", new Baht(4990))
+      );
     });
   });
 });

@@ -1,7 +1,7 @@
-import { Randoms, Seeds, RandomNumberOption } from "@kcutils/random";
-import { Baht, Money, USDollar } from "../../../src";
+import { Alea, RandomNumberOption, Xmur3 } from "@kcutils/random";
+import { Baht, Money, USDollar } from "../../../index";
 
-const random = new Randoms.Alea(new Seeds.Xmur3("Number money"));
+const random = new Alea(new Xmur3("Number money"));
 const numberLimit: Partial<RandomNumberOption> = {
   min: 5,
   max: 100,

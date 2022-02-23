@@ -1,14 +1,14 @@
-import { PercentUplift } from "../../../src";
+import { Discount } from "../../../index";
 
-describe("PercentUplift", () => {
+describe("Discount", () => {
   describe.each([
-    [-5, 50, -2.5],
-    [12, 98, 11.76],
+    [-5, 50, 2.5],
+    [12, 98, -11.76],
     [0, 9, 0],
     [-0, 9, 0],
-    [1.55, 700, 10.85],
-  ])("new PercentUplift(%s)", (number, base, expected) => {
-    const d = new PercentUplift(number);
+    [1.55, 700, -10.85],
+  ])("new Discount(%s)", (number, base, expected) => {
+    const d = new Discount(number);
 
     test("create new object", () => {
       expect(d).not.toBeUndefined();
@@ -19,7 +19,7 @@ describe("PercentUplift", () => {
     });
 
     test(`${number}% of ${base} is ${expected}`, () => {
-      expect(d.calculate(base)).toEqual(expected);
+      expect(d.calculate(base)).toBeCloseTo(expected);
     });
   });
 });

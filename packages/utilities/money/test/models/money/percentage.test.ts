@@ -1,5 +1,14 @@
-import { AutoPercent, AutoPercentAction, Percentage, Uplift, Downlift } from "../../../src";
-import { PercentIncrease, PercentDecrease } from "../../../src/models/money/AutoPercent";
+import {
+  AutoPercent,
+  AutoPercentAction,
+  Percentage,
+  Uplift,
+  Downlift,
+} from "../../../index";
+import {
+  PercentIncrease,
+  PercentDecrease,
+} from "../../../src/models/money/AutoPercent";
 
 describe("Percentage", () => {
   test("create new object", () => {

@@ -6,6 +6,7 @@
     "packages/utilities/random",
     "packages/utilities/error",
     "packages/utilities/color",
+    "packages/utilities/money",
     "packages/internal/runners"
   ],
   "out": "dist",

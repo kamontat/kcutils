@@ -1,4 +1,4 @@
-import { MoneyUnits } from "../../src";
+import { MoneyUnits } from "../../index";
 
 describe("MoneyUnit", () => {
   test.each([

@@ -1,4 +1,4 @@
-import { Split } from "../../../src";
+import { Split } from "../../../index";
 
 describe("Split", () => {
   describe.each([

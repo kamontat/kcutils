@@ -21,6 +21,10 @@
       "path": "packages/utilities/color"
     },
     {
+      "name": "kcutils/money",
+      "path": "packages/utilities/money"
+    },
+    {
       "name": "kcinternal/logger",
       "path": "packages/internal/logger"
     },

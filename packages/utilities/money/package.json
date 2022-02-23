@@ -1,0 +1,84 @@
+{
+  "name": "@kcutils/money",
+  "version": "0.1.14",
+  "description": "money module for calculate spend",
+  "private": false,
+  "typedocMain": "index.ts",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/utilities/money",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/utilities/money"
+  },
+  "bugs": {
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat/kcutils/issues"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "kcmono",
+    "money"
+  ],
+  "files": [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "includes/**/*"
+  ],
+  "scripts": {
+    "build": "kc-build",
+    "clean": "kc-clean",
+    "lint": "kc-lint",
+    "test": "kc-test",
+    "test:mutator": "kc-test --mutator"
+  },
+  "dependencies": {
+    "@kcutils/error": "0.7.5",
+    "@kcutils/helper": "1.1.11",
+    "@kcutils/logger": "0.9.3",
+    "luxon": "1.26.0"
+  },
+  "devDependencies": {
+    "@kcconfig/eslint-config": "0.1.5",
+    "@kcconfig/jest-config": "0.1.5",
+    "@kcconfig/stryker-config": "0.1.5",
+    "@kcconfig/ts-config": "0.1.4",
+    "@kcconfig/rollup-config": "0.2.0",
+    "@kcinternal/commandline": "0.23.2",
+    "@stryker-mutator/core": "5.6.1",
+    "@stryker-mutator/jest-runner": "5.6.1",
+    "@stryker-mutator/typescript-checker": "5.6.1",
+    "@types/jest": "27.4.0",
+    "@types/node": "17.0.10",
+    "@typescript-eslint/eslint-plugin": "5.10.1",
+    "@typescript-eslint/parser": "5.10.1",
+    "eslint": "8.7.0",
+    "eslint-plugin-tsdoc": "0.2.14",
+    "jest": "27.4.7",
+    "jest-junit": "13.0.0",
+    "ts-jest": "27.1.3",
+    "rollup": "2.66.1",
+    "typescript": "4.5.5",
+    "@kcutils/random": "0.3.3",
+    "@types/luxon": "1.26.0"
+  },
+  "_generator": {
+    "name": "@kcprivate/generator",
+    "version": "0.2.1"
+  }
+}

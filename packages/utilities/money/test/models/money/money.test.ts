@@ -12,7 +12,7 @@ import {
   PercentUplift,
   SocialSecurity,
   Split,
-} from "../../../src";
+} from "../../../index";
 import { Type } from "../../../src/models/money/Type";
 
 describe("Money", () => {
@@ -59,8 +59,16 @@ describe("Money", () => {
     [new Baht(199), MoneyUnits.THB, 199],
     [new Money(199, MoneyUnits.custom("ABC", 2)), MoneyUnits.USD, 99.5],
     [new Money(199, MoneyUnits.custom("ABC", 2)), MoneyUnits.THB, 3184],
-    [new Money(563, MoneyUnits.custom("NTHB", 31.15)), MoneyUnits.custom("HKG", 7.75), 140.072],
-    [new Money(108, MoneyUnits.custom("HKG", 7.75)), MoneyUnits.custom("NTHB", 31.15), 434.09],
+    [
+      new Money(563, MoneyUnits.custom("NTHB", 31.15)),
+      MoneyUnits.custom("HKG", 7.75),
+      140.072,
+    ],
+    [
+      new Money(108, MoneyUnits.custom("HKG", 7.75)),
+      MoneyUnits.custom("NTHB", 31.15),
+      434.09,
+    ],
   ])("Convert '%s' currency to %s", (base, unit, result) => {
     test(`return Money(${result}) when using convert()`, () => {
       expect(base.convert(unit).getAmount()).toBeCloseTo(result);
@@ -271,17 +279,24 @@ describe("Money", () => {
     });
 
     test("with 'ProvidentFund' and 'Tax'", () => {
-      expect(base.apply(new ProvidentFund(5)).apply(new Tax(7))).toEqual(new Baht(883_500));
-    });
-
-    test("with 'Discount' and 'SocialSecurity' and 'PercentUplift'", () => {
-      expect(base.apply(new Discount(3)).apply(new SocialSecurity(55)).apply(new PercentUplift(3))).toEqual(
-        new Baht(998327.5)
+      expect(base.apply(new ProvidentFund(5)).apply(new Tax(7))).toEqual(
+        new Baht(883_500)
       );
     });
 
+    test("with 'Discount' and 'SocialSecurity' and 'PercentUplift'", () => {
+      expect(
+        base
+          .apply(new Discount(3))
+          .apply(new SocialSecurity(55))
+          .apply(new PercentUplift(3))
+      ).toEqual(new Baht(998327.5));
+    });
+
     test("with 'Split' and 'Discount' and 'Uplift'", () => {
-      expect(base.apply(new Split(4)).apply(new Discount(4)).apply(new Uplift(100))).toEqual(new Baht(240100));
+      expect(
+        base.apply(new Split(4)).apply(new Discount(4)).apply(new Uplift(100))
+      ).toEqual(new Baht(240100));
     });
   });
 });

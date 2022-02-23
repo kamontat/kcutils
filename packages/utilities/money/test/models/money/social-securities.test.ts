@@ -1,14 +1,11 @@
-import { Discount } from "../../../src";
+import { SocialSecurity } from "../../../index";
 
-describe("Discount", () => {
+describe("SocialSecurity", () => {
   describe.each([
-    [-5, 50, 2.5],
-    [12, 98, -11.76],
-    [0, 9, 0],
-    [-0, 9, 0],
-    [1.55, 700, -10.85],
-  ])("new Discount(%s)", (number, base, expected) => {
-    const d = new Discount(number);
+    [15, 10000, -750],
+    [10, 6000, -600],
+  ])("new SocialSecurity(%s)", (number, base, expected) => {
+    const d = new SocialSecurity(number);
 
     test("create new object", () => {
       expect(d).not.toBeUndefined();
