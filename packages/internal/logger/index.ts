@@ -20,3 +20,6 @@ export { default as newActions } from "./src/builders/newActions";
 
 export { default as newMessage } from "./src/builders/newMessage";
 export { default as newDefaults } from "./src/builders/newDefaults";
+
+export { default as buildContext } from "./src/builders/buildContext";
+export { default as buildMessage } from "./src/builders/buildMessage";
