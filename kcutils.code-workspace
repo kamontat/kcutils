@@ -5,10 +5,6 @@
       "path": "packages/utilities/helper"
     },
     {
-      "name": "kcinternal/logger",
-      "path": "packages/internal/logger"
-    },
-    {
       "name": "kcutils/logger",
       "path": "packages/utilities/logger"
     },
@@ -21,7 +17,39 @@
       "path": "packages/utilities/random"
     },
     {
-      "name": "private/client",
+      "name": "kcinternal/logger",
+      "path": "packages/internal/logger"
+    },
+    {
+      "name": "kcinternal/runners",
+      "path": "packages/internal/runners"
+    },
+    {
+      "name": "kcinternal/commandline",
+      "path": "packages/internal/commandline"
+    },
+    {
+      "name": "kcconfig/jest",
+      "path": "packages/configs/jest-config"
+    },
+    {
+      "name": "kcconfig/rollup",
+      "path": "packages/configs/rollup-config"
+    },
+    {
+      "name": "kcconfig/eslint",
+      "path": "packages/configs/eslint-config"
+    },
+    {
+      "name": "kcconfig/stryker",
+      "path": "packages/configs/stryker-config"
+    },
+    {
+      "name": "kcconfig/typescript",
+      "path": "packages/configs/ts-config"
+    },
+    {
+      "name": "kcprivate/client",
       "path": "packages/private/client"
     },
     {
