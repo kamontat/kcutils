@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.4",
-    "@kcconfig/jest-config": "0.1.4",
+    "@kcconfig/jest-config": "0.1.5",
     "@kcconfig/stryker-config": "0.1.5",
     "@kcconfig/ts-config": "0.1.4",
     "@kcconfig/rollup-config": "0.1.4",
