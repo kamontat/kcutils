@@ -5,6 +5,7 @@
     "packages/utilities/helper",
     "packages/utilities/random",
     "packages/utilities/error",
+    "packages/utilities/color",
     "packages/internal/runners"
   ],
   "out": "dist",

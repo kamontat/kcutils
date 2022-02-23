@@ -17,6 +17,10 @@
       "path": "packages/utilities/random"
     },
     {
+      "name": "kcutils/color",
+      "path": "packages/utilities/color"
+    },
+    {
       "name": "kcinternal/logger",
       "path": "packages/internal/logger"
     },
@@ -47,6 +51,10 @@
     {
       "name": "kcconfig/typescript",
       "path": "packages/configs/ts-config"
+    },
+    {
+      "name": "kcprivate/generator",
+      "path": "packages/private/generator"
     },
     {
       "name": "kcprivate/client",
