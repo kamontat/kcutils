@@ -9,5 +9,5 @@
 # set -n #EVALUATE - Check syntax of the script but don't execute.
 
 echo
-echo "$@"
+echo "Example:" "$@"
 echo
