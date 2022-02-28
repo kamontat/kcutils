@@ -11,8 +11,16 @@
 echo
 echo "Alias information"
 for i in "${COMMAND_ALIAS[@]}"; do
-  key="${i%%=*}"
-  value="${i##*=}"
-  printf '  - %-5s => %s\n' "$key" "$value"
+  # [scope]>[name]=[value]
+  key="${i%%=*}"     # [scope]>[name]
+  scope="${key%%>*}" # [scope]
+  name="${key##*>}"  # [name]
+  value="${i##*=}"   # [value]
+  if [[ "$scope" == "$name" ]]; then
+    printf '  - %-7s => %s\n' "$key" "$value"
+  else
+    printf '  - %-7s => %s (scope=%s)\n' "$name" "$value" "$scope"
+  fi
+
 done
 echo
