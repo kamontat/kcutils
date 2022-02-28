@@ -76,7 +76,7 @@ is_dry && log_warn "Message" "You running in Dry mode"
 
 if ! find_command_file source_command_file "${COMMAND_PATH}/${command_rawpath}"; then
   exitcode="5"
-  log_debug "Error" "Cannot found command '${*}' (code=$exitcode)"
+  log_error "Error" "Cannot found command '${*}' (code=$exitcode)"
 
   exit "$exitcode"
 fi
