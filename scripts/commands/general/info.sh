@@ -11,5 +11,6 @@
 on_root_directory
 
 run_lerna "info"
+run_nx "report"
 
 go_back
