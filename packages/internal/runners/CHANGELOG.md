@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.3...@kcinternal/runners@0.2.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* **core:** runners always crash on runtime because package.json is miss place ([e5cc6a9](https://github.com/kamontat/kcutils/commit/e5cc6a9e300dbc4d0414c6b5bc38e3cec5a787da))
+
+
+
+
+
 ## [0.2.3](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.2...@kcinternal/runners@0.2.3) (2022-02-09)
 
 

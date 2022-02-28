@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.0...@kcconfig/rollup-config@0.2.1) (2022-02-28)
+
+
+### Performance Improvements
+
+* **config:** add node-resolver for es2015 syntax ([349849f](https://github.com/kamontat/kcutils/commit/349849f6afdfcc508f1552b95b2d8a3a0f661793))
+
+
+
+
+
 # [0.2.0](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.1.4...@kcconfig/rollup-config@0.2.0) (2022-02-09)
 
 

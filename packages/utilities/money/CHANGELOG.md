@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.1.14...@kcutils/money@0.2.0) (2022-02-28)
+
+
+### Features
+
+* **core:** migrate @kcutils/money from legacy package ([4a77fdd](https://github.com/kamontat/kcutils/commit/4a77fdd72c51df96673b65360229a43fa8966ee0))
+
+
+
+
+
 ## [0.1.14](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.1.13...@kcutils/money@0.1.14) (2021-06-11)
 
 **Note:** Version bump only for package @kcutils/money

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.5...@kcconfig/eslint-config@0.1.6) (2022-02-28)
+
+**Note:** Version bump only for package @kcconfig/eslint-config
+
+
+
+
+
 ## [0.1.5](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.4...@kcconfig/eslint-config@0.1.5) (2022-02-09)
 
 **Note:** Version bump only for package @kcconfig/eslint-config

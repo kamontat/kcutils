@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/kamontat/kcutils/compare/@kcutils/error@1.1.11...@kcutils/error@2.0.0) (2022-02-28)
+
+
+### Bug Fixes
+
+* **deps:** @kcconfig/jest-config v0.1.4 has problem with stryker when run ([9594a58](https://github.com/kamontat/kcutils/commit/9594a58d499a9c82504b9ccaa2940359f2599993))
+* **deps:** update latest @kcconfig/* version ([32f4290](https://github.com/kamontat/kcutils/commit/32f4290664d5438c729c3622cc29ad1b6fc25f82))
+* **deps:** upgrade internal dependencies for vulnerabilities ([5fef779](https://github.com/kamontat/kcutils/commit/5fef7798525cebce8f8827bebaae8a3949a993e3))
+* **docs:** update project layout from public to utilities ([9d9b91a](https://github.com/kamontat/kcutils/commit/9d9b91a025b0d3148766761e450d290022d03cd7))
+
+
+### Features
+
+* **core:** moved to v2 apis ([5a85d62](https://github.com/kamontat/kcutils/commit/5a85d6237abb95199950d407f9c8d15e43de4601))
+
+
+### Performance Improvements
+
+* **layout:** move all [@kcutils](https://github.com/kcutils) from public to utilities directory ([e7a1503](https://github.com/kamontat/kcutils/commit/e7a15034d6d3d3216a89353e74678e2f60120108))
+
+
+### BREAKING CHANGES
+
+* **core:** remove all old apis and implement new ones
+
+
+
+
+
 ## [1.1.11](https://github.com/kamontat/kcutils/compare/@kcutils/error@1.1.10...@kcutils/error@1.1.11) (2021-06-11)
 
 **Note:** Version bump only for package @kcutils/error

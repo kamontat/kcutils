@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.3.3...@kcutils/random@0.3.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* **docs:** update project layout from public to utilities ([9d9b91a](https://github.com/kamontat/kcutils/commit/9d9b91a025b0d3148766761e450d290022d03cd7))
+
+
+### Performance Improvements
+
+* **layout:** move all [@kcutils](https://github.com/kcutils) from public to utilities directory ([e7a1503](https://github.com/kamontat/kcutils/commit/e7a15034d6d3d3216a89353e74678e2f60120108))
+
+
+
+
+
 ## [0.3.3](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.3.2...@kcutils/random@0.3.3) (2022-02-09)
 
 

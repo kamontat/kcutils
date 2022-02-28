@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.0...@kcinternal/logger@0.2.1) (2022-02-28)
+
+
+### Performance Improvements
+
+* **apis:** export buildContext and buildMessage for user ([643ac0d](https://github.com/kamontat/kcutils/commit/643ac0dd540bc9c728a65e8c7ae825fd6cefa25f))
+
+
+
+
+
 # 0.2.0 (2022-02-09)
 
 

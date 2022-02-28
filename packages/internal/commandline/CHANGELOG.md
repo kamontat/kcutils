@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.23.2...@kcinternal/commandline@0.24.0) (2022-02-28)
+
+
+### Bug Fixes
+
+* **script:** on general version it might cannot resolve path and crash ([21643ea](https://github.com/kamontat/kcutils/commit/21643ea2391f4e52f58c7da033ecc8ef56bb2ad5))
+
+
+### Features
+
+* **script:** add --fix option in kc-lint for auto fix with eslint ([3de7a53](https://github.com/kamontat/kcutils/commit/3de7a53ce2717c24a27051b9d2ade28176db882b))
+
+
+
+
+
 ## [0.23.2](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.23.1...@kcinternal/commandline@0.23.2) (2022-02-09)
 
 

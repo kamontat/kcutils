@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/kamontat/kcutils/compare/@kcutils/helper@1.3.0...@kcutils/helper@1.3.1) (2022-02-28)
+
+
+### Bug Fixes
+
+* **docs:** update project layout from public to utilities ([9d9b91a](https://github.com/kamontat/kcutils/commit/9d9b91a025b0d3148766761e450d290022d03cd7))
+* **types:** mergeObject didn't resolve type correctly with custom JSON ([29ec277](https://github.com/kamontat/kcutils/commit/29ec277b1d87a2408e3db9bc971552eb7607aebe))
+
+
+### Performance Improvements
+
+* **layout:** move all [@kcutils](https://github.com/kcutils) from public to utilities directory ([e7a1503](https://github.com/kamontat/kcutils/commit/e7a15034d6d3d3216a89353e74678e2f60120108))
+
+
+
+
+
 # [1.3.0](https://github.com/kamontat/kcutils/compare/@kcutils/helper@1.2.2...@kcutils/helper@1.3.0) (2022-02-09)
 
 
