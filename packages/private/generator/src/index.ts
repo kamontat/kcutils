@@ -14,7 +14,7 @@ import * as utilsPkg from "./utils/pkg";
 const pkg = Object.assign({}, constantPkg, modelsPkg, utilsPkg);
 
 import * as tsconfig from "./models/tsconfig";
-
 import * as array from "./utils/array";
+import * as repo from "./utils/repo";
 
-export { location, name, validator, pkg, tsconfig, array };
+export { location, name, validator, pkg, tsconfig, array, repo };

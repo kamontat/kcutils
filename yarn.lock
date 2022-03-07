@@ -2075,6 +2075,20 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
 
+"@types/lerna__package@*":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/lerna__package/-/lerna__package-4.0.1.tgz#25c389cfc6bbc8277a58fbbaad0144b76fb37517"
+  integrity sha512-okd+fuj2n/F2JrbfnhNvazA4vq4ixxUwdBskpuLB8+76OrFAHtjt7ekWsaKw4Jz9HCMyjWmWJYLLEmnOFhmIkA==
+  dependencies:
+    "@types/npm-package-arg" "*"
+
+"@types/lerna__project@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/lerna__project/-/lerna__project-4.0.0.tgz#beec3c5fe21b2afe42243ff9d996e16ad5834110"
+  integrity sha512-NOWoCSRQTWWPdYuqGP8wZ7E+oxUVlUGbxNUA+ZaZWKIs82Cimd5xOthi+iIuF6L73xSYhdBnR259XAPENIEtlQ==
+  dependencies:
+    "@types/lerna__package" "*"
+
 "@types/luxon@1.26.0":
   version "1.26.0"
   resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.26.0.tgz#8e783986370ad3bb9f885d93eb1a91caeecaed36"
@@ -2104,6 +2118,11 @@
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
+
+"@types/npm-package-arg@*":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@types/npm-package-arg/-/npm-package-arg-6.1.1.tgz#9e2d8adc04d39824a3d9f36f738010a3f7da3c1a"
+  integrity sha512-452/1Kp9IdM/oR10AyqAgZOxUt7eLbm+EMJ194L6oarMYdZNiFIFAOJ7IIr0OrZXTySgfHjJezh2oiyk2kc3ag==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
