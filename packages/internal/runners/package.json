@@ -43,7 +43,7 @@
     "test:mutator": "stryker run"
   },
   "dependencies": {
-    "minimist": "1.2.5"
+    "minimist": "1.2.6"
   },
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.6",
