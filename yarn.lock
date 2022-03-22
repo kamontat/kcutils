@@ -731,21 +731,6 @@
     rollup "2.66.1"
     rollup-plugin-terser "7.0.2"
 
-"@kcinternal/commandline@0.23.2":
-  version "0.23.2"
-  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.23.2.tgz#9fe2eab1ed0de6df8bbc032cea67b4b2e7a74c52"
-  integrity sha512-wbQApDgwCKiifr/hrBnO2FCg3LYz3bVOzG/j7K5cFYgTv0UpjGt2zrfDHWlbrVHk9nk4zCxsT/7Wu6NobUO09w==
-  dependencies:
-    "@kcinternal/runners" "0.2.3"
-    del "6.0.0"
-
-"@kcinternal/runners@0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@kcinternal/runners/-/runners-0.2.3.tgz#bace72f097e74588c54fa91f84973701e5b26104"
-  integrity sha512-RZHRUxlfusfrA3ZtNUpESfDeZEDeXUbzVlFtJvDlOyFNbX4oNGs9TJ8hztA5DEtDlN82xbaFpEVhZEeEpGcLmg==
-  dependencies:
-    minimist "1.2.5"
-
 "@kcutils/error@0.7.12":
   version "0.7.12"
   resolved "https://registry.yarnpkg.com/@kcutils/error/-/error-0.7.12.tgz#6d3da0a5b229e8f13f617b52c0a296422bccbc39"
