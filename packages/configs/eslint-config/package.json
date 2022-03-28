@@ -1,7 +1,7 @@
 {
   "name": "@kcconfig/eslint-config",
   "description": "personal eslint configuration",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/eslint-config",

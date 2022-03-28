@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.1](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.0...@kcinternal/commandline@0.24.1) (2022-03-28)
+
+
+### Bug Fixes
+
+* **core:** remove version from package code because project layout on production is different ([b7d3bac](https://github.com/kamontat/kcutils/commit/b7d3bac3b953e05649875943ced6815c2e1dcb9b))
+
+
+
+
+
 # [0.24.0](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.23.2...@kcinternal/commandline@0.24.0) (2022-02-28)
 
 
