@@ -731,6 +731,21 @@
     rollup "2.66.1"
     rollup-plugin-terser "7.0.2"
 
+"@kcinternal/commandline@0.24.0":
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.24.0.tgz#0d8f099ae4f2013a25b8f3d00bb804331b35fef8"
+  integrity sha512-x5YPc40DiLTnSHJtjLw80EUFoFUWJP1vlj5jZ6VDzxcsYjGp46SEuJJwUZyF2srHQhdP8vnJHko4cogoqG9K6A==
+  dependencies:
+    "@kcinternal/runners" "0.2.4"
+    del "6.0.0"
+
+"@kcinternal/runners@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@kcinternal/runners/-/runners-0.2.4.tgz#45397706590cb463038128e8a8cf84605d976afb"
+  integrity sha512-CBvignL9PAK8k404LgBjrSjmckG8o/90GA/g4GR/1HpSB1e1Dau81ksAXMG7b8HE03zgM5lfsJsB1FdoVO6kPQ==
+  dependencies:
+    minimist "1.2.5"
+
 "@kcutils/error@0.7.12":
   version "0.7.12"
   resolved "https://registry.yarnpkg.com/@kcutils/error/-/error-0.7.12.tgz#6d3da0a5b229e8f13f617b52c0a296422bccbc39"
@@ -1583,6 +1598,13 @@
   dependencies:
     nx "13.9.4"
 
+"@nrwl/cli@13.9.5":
+  version "13.9.5"
+  resolved "https://registry.yarnpkg.com/@nrwl/cli/-/cli-13.9.5.tgz#398122e1b70350454f4d4e4230d98cc4e24f1c1f"
+  integrity sha512-WO2tcRTnYcz/LMJO9RVDoQtpwREjanosUJhymFD6ozrdZBhDuxKQ2S681mjnCXWlWEhYvccGfLhechluiEdCLA==
+  dependencies:
+    nx "13.9.5"
+
 "@nrwl/devkit@13.9.4":
   version "13.9.4"
   resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-13.9.4.tgz#7f75cd9d33a7762017ce00cc06258d00b696f2ed"
@@ -1641,6 +1663,13 @@
   integrity sha512-haJbuUku0JNf81H+VtGpAEQ6V2muyZ96sqxmUfnUe5ZoTvAX/pjSlHQaCWZuLzH9YzFP8KkjQb/lUepeEvSaFw==
   dependencies:
     nx "13.9.4"
+
+"@nrwl/tao@13.9.5":
+  version "13.9.5"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-13.9.5.tgz#d45d3b75bfe015f9344f6e22735d5aa0388b04c6"
+  integrity sha512-wvHdEuTxamADvQoGJa3BOZoijQm3Irol0vAxkxzoFS47SYXNvoBPtLhvrtF8P+yJv+gTLW8C0QnUHPVtsnenPA==
+  dependencies:
+    nx "13.9.5"
 
 "@nrwl/workspace@13.9.4":
   version "13.9.4"
@@ -6508,6 +6537,11 @@ minimist-options@4.1.0:
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
 
+minimist@1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+
 minimist@1.2.6, minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
@@ -6933,6 +6967,30 @@ nx@13.9.4:
   dependencies:
     "@nrwl/cli" "13.9.4"
     "@nrwl/tao" "13.9.4"
+    "@swc-node/register" "^1.4.2"
+    "@swc/core" "^1.2.146"
+    chalk "4.1.0"
+    enquirer "~2.3.6"
+    fast-glob "3.2.7"
+    fs-extra "^9.1.0"
+    ignore "^5.0.4"
+    jsonc-parser "3.0.0"
+    rxjs "^6.5.4"
+    rxjs-for-await "0.0.2"
+    semver "7.3.4"
+    tmp "~0.2.1"
+    tsconfig-paths "^3.9.0"
+    tslib "^2.3.0"
+    v8-compile-cache "2.3.0"
+    yargs-parser "20.0.0"
+
+nx@13.9.5:
+  version "13.9.5"
+  resolved "https://registry.yarnpkg.com/nx/-/nx-13.9.5.tgz#b67068a83a2bd80e35d97f7e8d62f622c7fc9744"
+  integrity sha512-hkGWaoJCqQPeVh3w67dlksM0Eab61EYYeZ1GZd6/YSC4EKzjtlQLRt2CMNu+2qCAkkUp4UgOWJHGUesGakcyDA==
+  dependencies:
+    "@nrwl/cli" "13.9.5"
+    "@nrwl/tao" "13.9.5"
     "@swc-node/register" "^1.4.2"
     "@swc/core" "^1.2.146"
     chalk "4.1.0"
