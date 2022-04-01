@@ -731,6 +731,21 @@
     rollup "2.66.1"
     rollup-plugin-terser "7.0.2"
 
+"@kcinternal/commandline@0.24.0":
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/@kcinternal/commandline/-/commandline-0.24.0.tgz#0d8f099ae4f2013a25b8f3d00bb804331b35fef8"
+  integrity sha512-x5YPc40DiLTnSHJtjLw80EUFoFUWJP1vlj5jZ6VDzxcsYjGp46SEuJJwUZyF2srHQhdP8vnJHko4cogoqG9K6A==
+  dependencies:
+    "@kcinternal/runners" "0.2.4"
+    del "6.0.0"
+
+"@kcinternal/runners@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@kcinternal/runners/-/runners-0.2.4.tgz#45397706590cb463038128e8a8cf84605d976afb"
+  integrity sha512-CBvignL9PAK8k404LgBjrSjmckG8o/90GA/g4GR/1HpSB1e1Dau81ksAXMG7b8HE03zgM5lfsJsB1FdoVO6kPQ==
+  dependencies:
+    minimist "1.2.5"
+
 "@kcutils/error@0.7.12":
   version "0.7.12"
   resolved "https://registry.yarnpkg.com/@kcutils/error/-/error-0.7.12.tgz#6d3da0a5b229e8f13f617b52c0a296422bccbc39"
@@ -1807,10 +1822,10 @@
     magic-string "^0.25.7"
     resolve "^1.17.0"
 
-"@rollup/plugin-commonjs@21.0.2":
-  version "21.0.2"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-21.0.2.tgz#0b9c539aa1837c94abfaf87945838b0fc8564891"
-  integrity sha512-d/OmjaLVO4j/aQX69bwpWPpbvI3TJkQuxoAk7BH8ew1PyoMBLTOuvJTjzG8oEoW7drIIqB0KCJtfFLu/2GClWg==
+"@rollup/plugin-commonjs@21.0.3":
+  version "21.0.3"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-21.0.3.tgz#287896c64926ef3d7f0013708dcdcc1223576ef0"
+  integrity sha512-ThGfwyvcLc6cfP/MWxA5ACF+LZCvsuhUq7V5134Az1oQWsiC7lNpLT4mJI86WQunK7BYmpUiHmMk2Op6OAHs0g==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     commondir "^1.0.1"
@@ -6507,6 +6522,11 @@ minimist-options@4.1.0:
     arrify "^1.0.1"
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
+
+minimist@1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 minimist@1.2.6, minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.6"
