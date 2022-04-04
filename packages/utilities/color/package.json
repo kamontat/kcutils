@@ -1,6 +1,6 @@
 {
   "name": "@kcutils/color",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "color transformer",
   "private": false,
   "typedocMain": "index.ts",
@@ -54,12 +54,12 @@
     "@kcutils/logger": "0.9.24"
   },
   "devDependencies": {
-    "@kcconfig/eslint-config": "0.1.7",
+    "@kcconfig/eslint-config": "0.1.8",
     "@kcconfig/jest-config": "0.1.5",
-    "@kcconfig/rollup-config": "0.2.2",
+    "@kcconfig/rollup-config": "0.2.3",
     "@kcconfig/stryker-config": "0.1.5",
     "@kcconfig/ts-config": "0.1.4",
-    "@kcinternal/commandline": "0.24.1",
+    "@kcinternal/commandline": "0.24.2",
     "@stryker-mutator/core": "5.6.1",
     "@stryker-mutator/jest-runner": "5.6.1",
     "@stryker-mutator/typescript-checker": "5.6.1",

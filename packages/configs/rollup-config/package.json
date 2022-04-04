@@ -1,7 +1,7 @@
 {
   "name": "@kcconfig/rollup-config",
   "description": "personal rollup configuration",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/rollup-config",
