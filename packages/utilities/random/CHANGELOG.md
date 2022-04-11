@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.7](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.3.6...@kcutils/random@0.3.7) (2022-04-11)
+
+**Note:** Version bump only for package @kcutils/random
+
+
+
+
+
 ## [0.3.6](https://github.com/kamontat/kcutils/compare/@kcutils/random@0.3.5...@kcutils/random@0.3.6) (2022-04-04)
 
 **Note:** Version bump only for package @kcutils/random
