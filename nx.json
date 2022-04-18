@@ -1,6 +1,6 @@
 {
   "extends": "@nrwl/workspace/presets/npm.json",
-  "npmScope": "kcutils",
+  "npmScope": "kcmono",
   "affected": {
     "defaultBase": "main"
   },
