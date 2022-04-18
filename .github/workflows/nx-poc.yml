@@ -43,6 +43,8 @@ jobs:
       - run: yarn install
       - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3
+      - run: ls -la packages/internal/commandline
+      - run: ls -la packages/internal/commandline/lib
       - run: yarn nx affected --target=test --parallel --max-parallel=2
       - run: yarn nx-cloud stop-all-agents
   agents:
