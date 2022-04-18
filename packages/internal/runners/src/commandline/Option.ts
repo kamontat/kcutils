@@ -15,9 +15,9 @@ export type OptionData = {
 };
 
 export type OptionTransformer<T> = {
+  fn?: (value: string, def: T) => T;
   alias?: string[];
   defaultValue: T;
-  fn: (value: string, def: T) => T;
 };
 
 export type OptionMapper<O> = {
@@ -60,15 +60,12 @@ export class OptionBuilder<O>
             },
             args: {
               defaultValue: [],
-              fn: () => [],
             },
             extraArgs: {
               defaultValue: [],
-              fn: () => [],
             },
             raw: {
               defaultValue: [],
-              fn: () => [],
             },
           },
           this._valueMapper
@@ -95,10 +92,17 @@ export class OptionBuilder<O>
         const result: Record<string, unknown> = {};
 
         for (const key in mapper) {
-          const value = mapper[key as keyof typeof mapper];
-          result[key] =
-            value.fn(args[key], value.defaultValue as any) ??
-            value.defaultValue;
+          const mapperValue = mapper[key as keyof typeof mapper];
+          const output = args[key];
+          if (!mapperValue.fn && output !== undefined && output !== null) {
+            result[key] = output; // this should always be string
+          } else if (mapperValue.fn) {
+            result[key] =
+              mapperValue.fn(output, mapperValue.defaultValue as any) ??
+              mapperValue.defaultValue;
+          } else {
+            result[key] = mapperValue.defaultValue; // fallback if nothing works
+          }
         }
 
         if (result?.debug) {
