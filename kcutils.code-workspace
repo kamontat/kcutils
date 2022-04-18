@@ -13,28 +13,32 @@
       "path": "packages/internal/commandline"
     },
     {
-      "name": "@kcconfig/jest",
+      "name": "@kcconfig/jest-config",
       "path": "packages/configs/jest-config"
     },
     {
-      "name": "@kcconfig/rollup",
+      "name": "@kcconfig/rollup-config",
       "path": "packages/configs/rollup-config"
     },
     {
-      "name": "@kcconfig/eslint",
+      "name": "@kcconfig/eslint-config",
       "path": "packages/configs/eslint-config"
     },
     {
-      "name": "@kcconfig/stryker",
+      "name": "@kcconfig/stryker-config",
       "path": "packages/configs/stryker-config"
     },
     {
-      "name": "@kcconfig/typescript",
+      "name": "@kcconfig/ts-config",
       "path": "packages/configs/ts-config"
     },
     {
       "name": "@kcprivate/generator",
       "path": "packages/private/generator"
+    },
+    {
+      "name": "@kcprivate/client",
+      "path": "packages/private/client"
     },
     {
       "name": "scripts",
