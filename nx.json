@@ -1,5 +1,6 @@
 {
   "extends": "@nrwl/workspace/presets/npm.json",
+  "npmScope": "kcutils",
   "affected": {
     "defaultBase": "main"
   },
@@ -27,6 +28,12 @@
       {
         "target": "build",
         "projects": "self"
+      }
+    ],
+    "clean": [
+      {
+        "target": "build",
+        "projects": "dependencies"
       }
     ]
   }

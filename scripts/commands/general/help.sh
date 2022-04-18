@@ -12,7 +12,7 @@ echo "
 # Help for General command
 
 1. version - print current version
-2. test    - immediately output the input arguments
+2. example - example for custom commands
 3. alias   - list all alias available
-4. info    - print lerna infomation
+4. info    - print internal information
 "

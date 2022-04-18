@@ -10,14 +10,14 @@
 
 on_root_directory
 
-args=()
-if test -n "$1"; then
-  args+=("--" "--all")
-fi
-
-run_xlerna_run "clean" "${args[@]}"
+run_many_nx \
+  --all \
+  --target clean \
+  --exclude=@kcinternal/runners \
+  --exclude=@kcinternal/commandline
 
 cleanup_paths=("*.tsbuildinfo" "lib" "lerna-debug.log" "junit.xml" "reports" "coverage")
+# If call with argument e.g. `clean.sh --all`
 if test -n "$1"; then
   cleanup_paths+=("node_modules" "yarn.lock")
 fi

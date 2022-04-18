@@ -37,9 +37,9 @@ This should not be deploy to anywhere and can be viewed on repository only.
 
 ## Tools
 
-What tools and how we using them.
+This is Nx tools which contains nx executor and nx generator
 
-### Nx & Lerna
+## Nx & Lerna
 
 > Nx: https://nx.dev
 > Lerna: https://lerna.js.org

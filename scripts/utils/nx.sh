@@ -17,3 +17,8 @@ export run_nx
 run_nx() {
   run_xyarn "nx" "$@"
 }
+
+export run_many_nx
+run_many_nx() {
+  run_nx "run-many" "$@"
+}

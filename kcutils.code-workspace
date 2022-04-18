@@ -1,68 +1,40 @@
 {
   "folders": [
     {
-      "name": "kcutils/helper",
-      "path": "packages/utilities/helper"
-    },
-    {
-      "name": "kcutils/logger",
-      "path": "packages/utilities/logger"
-    },
-    {
-      "name": "kcutils/error",
-      "path": "packages/utilities/error"
-    },
-    {
-      "name": "kcutils/random",
-      "path": "packages/utilities/random"
-    },
-    {
-      "name": "kcutils/color",
-      "path": "packages/utilities/color"
-    },
-    {
-      "name": "kcutils/money",
-      "path": "packages/utilities/money"
-    },
-    {
-      "name": "kcinternal/logger",
+      "name": "@kcinternal/logger",
       "path": "packages/internal/logger"
     },
     {
-      "name": "kcinternal/runners",
+      "name": "@kcinternal/runners",
       "path": "packages/internal/runners"
     },
     {
-      "name": "kcinternal/commandline",
+      "name": "@kcinternal/commandline",
       "path": "packages/internal/commandline"
     },
     {
-      "name": "kcconfig/jest",
+      "name": "@kcconfig/jest",
       "path": "packages/configs/jest-config"
     },
     {
-      "name": "kcconfig/rollup",
+      "name": "@kcconfig/rollup",
       "path": "packages/configs/rollup-config"
     },
     {
-      "name": "kcconfig/eslint",
+      "name": "@kcconfig/eslint",
       "path": "packages/configs/eslint-config"
     },
     {
-      "name": "kcconfig/stryker",
+      "name": "@kcconfig/stryker",
       "path": "packages/configs/stryker-config"
     },
     {
-      "name": "kcconfig/typescript",
+      "name": "@kcconfig/typescript",
       "path": "packages/configs/ts-config"
     },
     {
-      "name": "kcprivate/generator",
+      "name": "@kcprivate/generator",
       "path": "packages/private/generator"
-    },
-    {
-      "name": "kcprivate/client",
-      "path": "packages/private/client"
     },
     {
       "name": "scripts",

@@ -2,11 +2,6 @@
   "emit": "docs",
   "entryPointStrategy": "packages",
   "entryPoints": [
-    "packages/utilities/helper",
-    "packages/utilities/random",
-    "packages/utilities/error",
-    "packages/utilities/color",
-    "packages/utilities/money",
     "packages/internal/runners"
   ],
   "out": "dist",
