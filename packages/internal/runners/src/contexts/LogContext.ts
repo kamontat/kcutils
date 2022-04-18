@@ -14,15 +14,8 @@ export class LogContext {
   private log(key: string, title: string, message?: any) {
     if (!this._debugMode && !this._ciMode) return;
 
-    if (message === undefined || message === null || message === "")
-      this.print(format("[%s] %s", key, title));
-    else {
-      const msg =
-        typeof message === "object"
-          ? inspect(message, false, 3)
-          : format("%s", message);
-      this.print(format("[%s] %s", key, title), msg);
-    }
+    const _title = format("[%s] %s", key, title);
+    this.print(_title, message);
   }
 
   setDebug(toggle: boolean) {
@@ -48,8 +41,20 @@ export class LogContext {
   }
 
   print<T = unknown>(title: string, message?: T): void {
-    if (message !== undefined && message !== null) {
-      console.log(`${title}: ${message}`);
-    } else console.log(title);
+    if (message === undefined || message === null) {
+      console.log(title);
+      return;
+    }
+
+    const _message =
+      typeof message === "object"
+        ? inspect(message, false, 3)
+        : format("%s", message);
+    if (_message === "") {
+      console.log(title);
+      return;
+    }
+
+    console.log(`${title}: ${_message}`);
   }
 }

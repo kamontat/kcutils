@@ -2,8 +2,13 @@ import { Context, QuestionContext } from "../../index";
 
 describe("QuestionContext", () => {
   let stdin: any = undefined;
+  let stdout: any = undefined;
+
   beforeEach(() => {
     stdin = require("mock-stdin").stdin();
+    stdout = jest.spyOn(process.stdout, "write").mockImplementation(() => {
+      return true;
+    });
   });
 
   test("create package context", () => {
@@ -16,6 +21,7 @@ describe("QuestionContext", () => {
     const context = new QuestionContext();
 
     const ps = context.askString("test").then((answer) => {
+      expect(stdout).toHaveBeenCalledTimes(1);
       expect(answer).toBe(output);
     });
 
@@ -28,6 +34,7 @@ describe("QuestionContext", () => {
     test.each([["hello"], [""]])("return input string (%s)", (output) => {
       const context = new QuestionContext();
       const ps = context.askString("test").then((answer) => {
+        expect(stdout).toHaveBeenCalledTimes(1);
         expect(answer).toBe(output);
       });
 
@@ -44,6 +51,7 @@ describe("QuestionContext", () => {
     ])("input (%s) return answer as number type (%s)", (output, result) => {
       const context = new QuestionContext();
       const ps = context.askNumber("test").then((answer) => {
+        expect(stdout).toHaveBeenCalledTimes(1);
         expect(answer).toBe(result);
       });
 
@@ -53,14 +61,16 @@ describe("QuestionContext", () => {
     });
   });
 
-  describe("asking a number", () => {
+  describe("asking a boolean", () => {
     test.each([
       ["-1", false],
       ["true", true],
       ["YeS", true],
+      ["f", false],
     ])("input (%s) return answer as boolean type (%s)", (output, result) => {
       const context = new QuestionContext();
       const ps = context.askBoolean("test").then((answer) => {
+        expect(stdout).toHaveBeenCalledTimes(1);
         expect(answer).toBe(result);
       });
 
@@ -72,5 +82,6 @@ describe("QuestionContext", () => {
 
   afterEach(() => {
     stdin.restore();
+    stdout.mockRestore();
   });
 });
