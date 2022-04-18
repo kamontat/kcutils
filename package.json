@@ -9,18 +9,18 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@nrwl/cli": "13.8.3",
-    "@nrwl/nx-cloud": "13.1.5",
-    "@nrwl/tao": "13.8.3",
-    "@nrwl/workspace": "13.8.3",
+    "@nrwl/cli": "13.10.2",
+    "@nrwl/nx-cloud": "13.3.1",
+    "@nrwl/tao": "13.10.0",
+    "@nrwl/workspace": "13.10.2",
     "danger": "11.0.2",
     "gh-pages": "3.2.3",
     "husky": "7.0.4",
     "lerna": "4.0.0",
-    "lerna-update-wizard": "1.1.1",
+    "lerna-update-wizard": "1.1.2",
     "stryker-cli": "1.0.2",
-    "typedoc": "0.22.12",
-    "typescript": "4.5.5"
+    "typedoc": "0.22.15",
+    "typescript": "4.6.3"
   },
   "workspaces": [
     "packages/private/*",

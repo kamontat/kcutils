@@ -12,7 +12,7 @@ jobs:
   testflow:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # require by sonar to disable shadow clone for sonar analysis correctly
       - name: Setup project
@@ -39,7 +39,7 @@ jobs:
       matrix:
         node-version: [12, 14, 17]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup project
         uses: ./.github/actions/setup
         with:

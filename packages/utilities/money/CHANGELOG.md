@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.2.3...@kcutils/money@0.2.4) (2022-04-18)
+
+**Note:** Version bump only for package @kcutils/money
+
+
+
+
+
+## [0.2.3](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.2.2...@kcutils/money@0.2.3) (2022-04-11)
+
+**Note:** Version bump only for package @kcutils/money
+
+
+
+
+
+## [0.2.2](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.2.1...@kcutils/money@0.2.2) (2022-04-04)
+
+**Note:** Version bump only for package @kcutils/money
+
+
+
+
+
+## [0.2.1](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.2.0...@kcutils/money@0.2.1) (2022-03-28)
+
+**Note:** Version bump only for package @kcutils/money
+
+
+
+
+
 # [0.2.0](https://github.com/kamontat/kcutils/compare/@kcutils/money@0.1.14...@kcutils/money@0.2.0) (2022-02-28)
 
 

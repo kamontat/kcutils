@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.8](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.7...@kcinternal/runners@0.2.8) (2022-04-18)
+
+**Note:** Version bump only for package @kcinternal/runners
+
+
+
+
+
+## [0.2.7](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.6...@kcinternal/runners@0.2.7) (2022-04-11)
+
+**Note:** Version bump only for package @kcinternal/runners
+
+
+
+
+
+## [0.2.6](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.5...@kcinternal/runners@0.2.6) (2022-04-04)
+
+**Note:** Version bump only for package @kcinternal/runners
+
+
+
+
+
+## [0.2.5](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.4...@kcinternal/runners@0.2.5) (2022-03-28)
+
+
+### Bug Fixes
+
+* **core:** remove version from package code because project layout on production is different ([b7d3bac](https://github.com/kamontat/kcutils/commit/b7d3bac3b953e05649875943ced6815c2e1dcb9b))
+
+
+
+
+
 ## [0.2.4](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.3...@kcinternal/runners@0.2.4) (2022-02-28)
 
 
