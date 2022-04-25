@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.5](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.4...@kcconfig/rollup-config@0.2.5) (2022-04-25)
+
+**Note:** Version bump only for package @kcconfig/rollup-config
+
+
+
+
+
 ## [0.2.4](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.3...@kcconfig/rollup-config@0.2.4) (2022-04-18)
 
 **Note:** Version bump only for package @kcconfig/rollup-config

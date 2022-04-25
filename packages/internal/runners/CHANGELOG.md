@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.9](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.8...@kcinternal/runners@0.2.9) (2022-04-25)
+
+
+### Performance Improvements
+
+* **models:** update Option fn to be optional ([ffedaae](https://github.com/kamontat/kcutils/commit/ffedaaef0aade477c31d6708873a53b25aede43a))
+* **test:** increate test coverage of context to 100% :hooray: ([d356f1c](https://github.com/kamontat/kcutils/commit/d356f1c00d2701234947a08df71650e2e823563f))
+
+
+
+
+
 ## [0.2.8](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.7...@kcinternal/runners@0.2.8) (2022-04-18)
 
 **Note:** Version bump only for package @kcinternal/runners
