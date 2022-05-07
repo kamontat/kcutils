@@ -58,7 +58,7 @@ source "$COMMON_PATH/nx.sh" || exit 4
 # shellcheck disable=SC1091
 source "$COMMON_PATH/location.sh" || exit 4
 # shellcheck disable=SC1091
-source "$COMMON_PATH/alias.sh" || exit 3
+source "$COMMON_PATH/alias.sh" || exit 4
 
 ########################################
 # Setup
