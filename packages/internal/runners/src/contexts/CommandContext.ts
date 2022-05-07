@@ -3,13 +3,26 @@
  * commandline interface collection context
  */
 export class CommandContext {
+  // TODO: Implement this function
+  /**
+   * sometime we have to add path to commandline name
+   * when commandline is not in $PATH or it's yarn bin files
+   *
+   * @param cmd commandline name
+   * @returns valid commandline name
+   */
+  private commandResolver(cmd: string): string {
+    return cmd;
+  }
+
   /**
    * build node command with input argument
    * @param args node arguments
    * @returns node command in cli
    */
   node(...args: string[]): string[] {
-    return ["node", ...args];
+    const cmd = this.commandResolver("node");
+    return [cmd, ...args];
   }
 
   /**
@@ -19,7 +32,8 @@ export class CommandContext {
    * @returns tsc command in cli
    */
   tsc(configPath: string, ...args: string[]): string[] {
-    return ["tsc", "--project", configPath, ...args];
+    const cmd = this.commandResolver("tsc");
+    return [cmd, "--project", configPath, ...args];
   }
 
   /**
@@ -28,7 +42,8 @@ export class CommandContext {
    * @returns rollup command in cli
    */
   rollup(...args: string[]): string[] {
-    return ["rollup", "--config", ...args];
+    const cmd = this.commandResolver("rollup");
+    return [cmd, "--config", ...args];
   }
 
   /**
@@ -37,7 +52,8 @@ export class CommandContext {
    * @param args eslint arguments
    */
   eslint(configPath: string, ...args: string[]): string[] {
-    return ["eslint", "--config", configPath, ...args];
+    const cmd = this.commandResolver("eslint");
+    return [cmd, "--config", configPath, ...args];
   }
 
   /**
@@ -46,7 +62,8 @@ export class CommandContext {
    * @param args jest arguments
    */
   jest(configPath: string, ...args: string[]): string[] {
-    return ["jest", "--config", configPath, ...args];
+    const cmd = this.commandResolver("jest");
+    return [cmd, "--config", configPath, ...args];
   }
 
   /**
@@ -55,6 +72,7 @@ export class CommandContext {
    * @param args stryker option arguments
    */
   stryker(configPath: string, ...args: string[]): string[] {
-    return ["stryker", ...args, "run", configPath];
+    const cmd = this.commandResolver("stryker");
+    return [cmd, ...args, "run", configPath];
   }
 }
