@@ -22,13 +22,13 @@ export const option = OptionBuilder.initial({
 
 export const action = ActionBuilder.initial(option, async (option, context) => {
   const prefixArguments = [];
-  const eslintConfig = await context.location.findExist(
-    ".eslintrc",
-    ".eslintrc.json",
-    ".eslintrc.js"
-  );
+  try {
+    const eslintConfig = await context.location.findExist(
+      ".eslintrc",
+      ".eslintrc.json",
+      ".eslintrc.js"
+    );
 
-  if (eslintConfig) {
     if (option.fix) prefixArguments.push("--fix");
     return context.command.eslint(
       eslintConfig,
@@ -37,9 +37,9 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
       ...option.raw,
       ...option.extraArgs
     );
+  } catch (e) {
+    throw new Error("Cannot find eslint config file to run");
   }
-
-  throw new Error("Cannot find eslint config file to run");
 })
   .help(help)
   .build();

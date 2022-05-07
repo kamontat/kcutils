@@ -22,9 +22,10 @@ export const option = OptionBuilder.initial({
 
 export const action = ActionBuilder.initial(option, async (option, context) => {
   if (option.mutator) {
-    const strykerConfig = await context.location.findExist("stryker.conf.js");
-    const args = [];
-    if (strykerConfig) {
+    try {
+      const strykerConfig = await context.location.findExist("stryker.conf.js");
+      const args = [];
+
       if (context.env.isCI()) {
         args.push("--concurrency", "1");
       }
@@ -33,14 +34,14 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
       }
 
       return context.command.stryker(strykerConfig, ...args);
+    } catch (e) {
+      throw new Error("Cannot find stryker.conf.js file to run");
     }
-
-    throw new Error("Cannot find stryker.conf.js file to run");
   }
 
-  const jestConfig = await context.location.findExist("jest.config.js");
-  const args = [];
-  if (jestConfig) {
+  try {
+    const jestConfig = await context.location.findExist("jest.config.js");
+    const args = [];
     if (context.env.isCI()) {
       args.push(
         "--runInBand",
@@ -53,9 +54,9 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
     }
 
     return context.command.jest(jestConfig, ...args, ...option.args);
+  } catch (e) {
+    throw new Error("Cannot find jest.config.js file to run");
   }
-
-  throw new Error("Cannot find jest.config.js file to run");
 })
   .help(help)
   .build();
