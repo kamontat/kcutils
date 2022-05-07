@@ -42,7 +42,8 @@
     "lib/**/*.js",
     "lib/**/*.js.map",
     "lib/**/*.d.ts",
-    "lib/**/*.d.ts.map"
+    "lib/**/*.d.ts.map",
+    "bin/**/*.js"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.prod.json",
