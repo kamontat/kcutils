@@ -1,6 +1,12 @@
-import { accessSync, constants, access as _access } from "fs";
+import {
+  constants,
+  accessSync,
+  access as _access,
+  readFileSync,
+  readFile as _readFile,
+} from "fs";
 import { promisify } from "util";
-import { join, resolve, normalize } from "path";
+import { join, normalize } from "path";
 
 import { INPUT_PATHS_NOT_FOUND } from "../constants/errors";
 
@@ -52,6 +58,7 @@ export class LocationContext {
    *
    * @param paths full-path
    * @returns first existing path
+   * @throws input not found if none of input paths exist
    */
   async findExist(...paths: string[]): Promise<string> {
     for await (const p of paths) {
@@ -69,14 +76,40 @@ export class LocationContext {
    *
    * @param paths full-path
    * @returns first existing path
+   * @throws input not found if none of input paths exist
    */
   findExistSync(...paths: string[]): string {
-    for (const path of paths) {
+    for (const p of paths) {
+      const path = normalize(p);
       if (this.isExistSync(path)) {
-        return resolve(path);
+        return path;
       }
     }
 
     throw new Error(INPUT_PATHS_NOT_FOUND);
+  }
+
+  /**
+   * read first existing input file content
+   * @param paths list of full-path
+   * @returns first file content
+   * @throws input not found if none of input paths exist
+   */
+  async readFirst(...paths: string[]): Promise<string> {
+    const readFile = promisify(_readFile);
+    const validPath = await this.findExist(...paths);
+
+    return readFile(validPath, "utf-8");
+  }
+
+  /**
+   * read first existing input file content
+   * @param paths list of full-path
+   * @returns first file content
+   * @throws input not found if none of input paths exist
+   */
+  async readFirstSync(...paths: string[]): Promise<string> {
+    const validPath = this.findExistSync(...paths);
+    return readFileSync(validPath, "utf-8");
   }
 }
