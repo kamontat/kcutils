@@ -1,6 +1,8 @@
 import { accessSync, constants, access as _access } from "fs";
 import { promisify } from "util";
-import { join, resolve } from "path";
+import { join, resolve, normalize } from "path";
+
+import { INPUT_PATHS_NOT_FOUND } from "../constants/errors";
 
 /**
  * @public
@@ -52,13 +54,14 @@ export class LocationContext {
    * @returns first existing path
    */
   async findExist(...paths: string[]): Promise<string> {
-    for await (const path of paths) {
+    for await (const p of paths) {
+      const path = normalize(p);
       if (await this.isExist(path)) {
-        return resolve(path);
+        return path;
       }
     }
 
-    throw new Error("cannot find existing path");
+    throw new Error(INPUT_PATHS_NOT_FOUND);
   }
 
   /**
@@ -74,6 +77,6 @@ export class LocationContext {
       }
     }
 
-    throw new Error("cannot find existing path");
+    throw new Error(INPUT_PATHS_NOT_FOUND);
   }
 }
