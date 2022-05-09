@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@kcconfig/ts-config": "*",
+    "@lerna/package": "4.0.0",
     "@types/lerna__project": "4.0.0",
     "@types/package_json": "0.2.3",
     "hygen": "6.2.0",
