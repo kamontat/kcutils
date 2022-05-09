@@ -18,7 +18,8 @@ echo "
 5.  publish      - publish latest tag to npm registry using lerna publish command
 6.  test:mutator - run mutation test on every packages
 7.  test         - run test on every package and combine the result
-8.  upgrade      - run upgrade interactive wizard (via lernaupdate command)
-9.  version      - update version, create git tag and Github release
-10. <yarn_cmd>   - run yarn command on each package by 'lerna run' command
+8.  lint         - run lint base on current environment
+9.  upgrade      - run upgrade interactive wizard (via lernaupdate command)
+10. version      - update version, create git tag and Github release
+11. <yarn_cmd>   - run yarn command on each package by 'lerna run' command
 "

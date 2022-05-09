@@ -13,6 +13,7 @@ export class Commandline<O extends OptionData, T> implements Starter<string[]> {
       throw new Error("cannot found option parser");
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return new Commandline<O, any>(
       action.previous,
       action,

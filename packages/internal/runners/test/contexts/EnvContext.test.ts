@@ -66,6 +66,7 @@ describe("EnvContext", () => {
       hello: "world",
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(context.is("hello", 12 as any)).toBe(false);
   });
 

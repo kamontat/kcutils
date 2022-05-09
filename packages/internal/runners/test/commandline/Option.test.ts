@@ -25,7 +25,7 @@ describe("Option", () => {
     ])(
       "Option(%p), arguments '%p' will return flag=%p",
       (config, args, output) => {
-        const option = OptionBuilder.initial<any>({
+        const option = OptionBuilder.initial<unknown>({
           flag: config,
         }).build();
 
@@ -59,11 +59,15 @@ describe("Option", () => {
   describe("static function", () => {
     test("none() should works same as GeneralContext.exist()", () => {
       expect(Option.none("test", "default")).toBe("test");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect(Option.none(false as any, "default")).toBe(false);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect(Option.none(0 as any, "default")).toBe(0);
 
       expect(Option.none("", "default")).toBe("default");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect(Option.none(null as any, "default")).toBe("default");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       expect(Option.none(undefined as any, "default")).toBe("default");
     });
 

@@ -11,12 +11,18 @@
 on_root_directory
 
 args=("$@")
-if is_ci; then
-  args+=("--format" "json" "--output-file" "./reports/eslint-result.json")
+if is_husky; then
+  run_nx workspace-lint &&
+    run_nx "affected" "--target" "lint" "--base" "main" &&
+    go_back
 else
-  args+=("--format" "stylish")
-fi
+  if is_ci; then
+    args+=("--format" "json" "--output-file" "./reports/eslint-result.json")
+  else
+    args+=("--format" "stylish")
+  fi
 
-run_nx workspace-lint &&
-  run_xlerna_run "lint" -- "${args[@]}" &&
-  go_back
+  run_nx workspace-lint &&
+    run_xlerna_run "lint" -- "${args[@]}" &&
+    go_back
+fi

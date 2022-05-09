@@ -14,17 +14,8 @@ module.exports = {
   rules: {
     semi: ["error", "always"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
-    "no-tabs": [
-      "error",
-      {
-        allowIndentationTabs: false,
-      },
-    ],
-    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-tabs": "error",
     "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
