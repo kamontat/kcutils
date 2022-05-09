@@ -31,7 +31,7 @@
     "lib/**/*.d.ts"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "kc-build",
     "start": "kc-start",
     "clean": "kc-clean"
   },
