@@ -7,9 +7,9 @@ pull_request_rules:
       - -conflict
       - check-success=Analyze (javascript)
       - check-success=testflow
-      - check-success=test (12)
       - check-success=test (14)
-      - check-success=test (17)
+      - check-success=test (16)
+      - check-success=test (18)
     actions:
       merge:
         method: merge
@@ -23,9 +23,9 @@ pull_request_rules:
       - -title~=^wip
       - check-success=Analyze (javascript)
       - check-success=testflow
-      - check-success=test (12)
       - check-success=test (14)
-      - check-success=test (17)
+      - check-success=test (16)
+      - check-success=test (18)
     actions:
       merge:
         method: merge
