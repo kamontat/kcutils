@@ -45,6 +45,7 @@ declare module "package_json" {
 
     /** custom key using in kcmono only */
     _generator?: { name: string; version: string };
+    nx?: Record<string, unknown>;
   }
 
   export type OptionalPackage = Partial<Package>;
