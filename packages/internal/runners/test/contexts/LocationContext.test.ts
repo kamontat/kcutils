@@ -1,6 +1,8 @@
 import { vol } from "memfs";
 import { Context, LocationContext } from "../../index";
 
+import { INPUT_PATHS_NOT_FOUND } from "../../src/constants/errors";
+
 jest.mock("fs");
 
 describe("LocationContext", () => {
@@ -64,7 +66,7 @@ describe("LocationContext", () => {
           "/tmp/test2.txt",
           "/tmp/test3.txt"
         );
-      }).toThrow("cannot find existing path");
+      }).toThrow(INPUT_PATHS_NOT_FOUND);
 
       expect(
         context.findExistSync(
@@ -93,7 +95,7 @@ describe("LocationContext", () => {
     );
 
     await expect(output1).rejects.toEqual(
-      new Error("cannot find existing path")
+      new Error(INPUT_PATHS_NOT_FOUND)
     );
 
     const output2 = await context.findExist(
