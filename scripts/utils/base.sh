@@ -18,6 +18,11 @@ is_ci() {
   [[ "$CI" == "true" ]]
 }
 
+export is_husky
+is_husky() {
+  [[ "$HUSKY" == "true" ]]
+}
+
 export is_debug
 is_debug() {
   [[ "$DEBUG" == "true" ]]
