@@ -16,8 +16,8 @@ module.exports = [
     name: "browser",
     message: (context) => {
       const answers = context.answers;
-      const package = repo.getPackage(answers.package);
-      const mode = package.pjson.browser ? "nodejs" : "browser";
+      const pkg = repo.getPackage(answers.package);
+      const mode = pkg.pjson.browser ? "nodejs" : "browser";
       return `Change to '${mode}' mode?`;
     },
     initial: true,
