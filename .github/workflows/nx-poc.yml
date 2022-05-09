@@ -11,37 +11,19 @@ env:
 jobs:
   main:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v3
-        name: Checkout [main]
         with:
+          ref: ${{ github.ref }}
           fetch-depth: 0
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "16"
       - run: yarn install
       - run: yarn nx-cloud start-ci-run
-      - run: yarn nx affected --target=build --parallel --max-parallel=3
-      - run: yarn nx affected --target=test --parallel --max-parallel=2
-      - run: yarn nx-cloud stop-all-agents
-  pr:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "14"
-      - run: yarn install
-      - run: yarn nx-cloud start-ci-run
+      - run: yarn package @kcinternal/commandline build
       - run: yarn nx affected --target=build --parallel --max-parallel=3
       - run: ls -la packages/internal/commandline
       - run: ls -la packages/internal/commandline/lib
