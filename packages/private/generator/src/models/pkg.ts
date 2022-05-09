@@ -25,37 +25,37 @@ const internalPackageVersion = (category: string, version: string) =>
 const getDevDeps = (category: string, compiler: SupportedCompiler) => {
   const base: Record<string, string> = {};
 
-  base["@kcconfig/eslint-config"] = internalPackageVersion(category, "0.1.5");
+  base["@kcconfig/eslint-config"] = internalPackageVersion(category, "0.1.13");
   base["@kcconfig/jest-config"] = internalPackageVersion(category, "0.1.5");
   base["@kcconfig/stryker-config"] = internalPackageVersion(category, "0.1.5");
   base["@kcconfig/ts-config"] = internalPackageVersion(category, "0.1.4");
   if (compiler === "rollup") {
-    base["@kcconfig/rollup-config"] = internalPackageVersion(category, "0.2.0");
+    base["@kcconfig/rollup-config"] = internalPackageVersion(category, "0.2.7");
   }
-  base["@kcinternal/commandline"] = internalPackageVersion(category, "0.23.2");
+  base["@kcinternal/commandline"] = internalPackageVersion(category, "0.24.7");
 
   base["@stryker-mutator/core"] = "5.6.1";
   base["@stryker-mutator/jest-runner"] = "5.6.1";
   base["@stryker-mutator/typescript-checker"] = "5.6.1";
 
-  base["@types/jest"] = "27.4.0";
-  base["@types/node"] = "17.0.10";
+  base["@types/jest"] = "27.5.0";
+  base["@types/node"] = "17.0.31";
 
-  base["@typescript-eslint/eslint-plugin"] = "5.10.1";
-  base["@typescript-eslint/parser"] = "5.10.1";
+  base["@typescript-eslint/eslint-plugin"] = "5.22.0";
+  base["@typescript-eslint/parser"] = "5.22.0";
 
-  base["eslint"] = "8.7.0";
-  base["eslint-plugin-tsdoc"] = "0.2.14";
+  base["eslint"] = "8.14.0";
+  base["eslint-plugin-tsdoc"] = "0.2.16";
 
-  base["jest"] = "27.4.7";
-  base["jest-junit"] = "13.0.0";
-  base["ts-jest"] = "27.1.3";
+  base["jest"] = "27.5.1";
+  base["jest-junit"] = "13.2.0";
+  base["ts-jest"] = "27.1.4";
 
   if (compiler === "rollup") {
-    base["rollup"] = "2.66.1";
+    base["rollup"] = "2.72.0";
   }
 
-  base["typescript"] = "4.5.5";
+  base["typescript"] = "4.6.4";
 
   return base;
 };
