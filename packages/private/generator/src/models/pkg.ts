@@ -67,6 +67,7 @@ const getDevDeps = (category: string, compiler: SupportedCompiler) => {
  */
 export const build = (option: BuildOption) => {
   const keywords = BASE_KEYWORDS.concat(...option.keywords);
+  const directory = buildPackagePath(option.category, option.name);
   const pkg: Package = {
     name: toPackageName(option.category, option.name),
     version: option.version,
@@ -92,7 +93,7 @@ export const build = (option: BuildOption) => {
   pkg["repository"] = {
     type: "git",
     url: GH_REPOLINK,
-    directory: buildPackagePath(option.category, option.name),
+    directory,
   };
   pkg["bugs"] = {
     email: AUTHOR_EMAIL,
@@ -127,6 +128,17 @@ export const build = (option: BuildOption) => {
 
   pkg["dependencies"] = {};
   pkg["devDependencies"] = getDevDeps(option.category, option.compiler);
+
+  pkg["nx"] = {
+    targets: {
+      build: {
+        outputs: [`${directory}/lib`],
+      },
+      test: {
+        outputs: [`${directory}/junit.xml`, `${directory}/coverage`],
+      },
+    },
+  };
   pkg["_generator"] = {
     name: pjson.name,
     version: pjson.version,
