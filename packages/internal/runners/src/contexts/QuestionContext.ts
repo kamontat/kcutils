@@ -20,7 +20,7 @@ export class QuestionContext {
     title: string,
     yes: string[] = ["y", "yes", "true", "t"],
     no: string[] = ["n", "no", "false", "f"],
-    def: boolean = false
+    def = false
   ): Promise<boolean> {
     const ans = await this.askString(title);
     if (yes.find((y) => ans.toLowerCase() === y.toLowerCase())) return true;
@@ -29,7 +29,7 @@ export class QuestionContext {
     else return def;
   }
 
-  async askNumber(title: string, def: number = -1): Promise<number> {
+  async askNumber(title: string, def = -1): Promise<number> {
     const ans = await this.askString(title);
     const number = parseFloat(ans);
     if (isFinite(number)) return number;

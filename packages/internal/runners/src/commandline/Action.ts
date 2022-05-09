@@ -19,7 +19,7 @@ export class ActionBuilder<O extends OptionData>
     return new ActionBuilder(option, fn);
   }
 
-  private helpMessage: string = "";
+  private helpMessage = "";
 
   private constructor(
     private readonly _option: Transformer<string[], O>,

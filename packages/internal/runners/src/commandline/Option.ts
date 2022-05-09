@@ -98,6 +98,7 @@ export class OptionBuilder<O>
             result[key] = output; // this should always be string
           } else if (mapperValue.fn) {
             result[key] =
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               mapperValue.fn(output, mapperValue.defaultValue as any) ??
               mapperValue.defaultValue;
           } else {

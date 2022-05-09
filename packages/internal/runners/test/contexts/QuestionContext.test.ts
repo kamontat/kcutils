@@ -1,7 +1,9 @@
 import { Context, QuestionContext } from "../../index";
 
 describe("QuestionContext", () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let stdin: any = undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let stdout: any = undefined;
 
   beforeEach(() => {

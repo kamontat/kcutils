@@ -11,7 +11,7 @@ export class LogContext {
     this._ciMode = envContext.isCI(true);
   }
 
-  private log(key: string, title: string, message?: any) {
+  private log(key: string, title: string, message?: unknown) {
     if (!this._debugMode && !this._ciMode) return;
 
     const _title = format("[%s] %s", key, title);

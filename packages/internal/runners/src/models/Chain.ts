@@ -8,6 +8,7 @@ export class Chain<I, O> implements Starter<I> {
   }
 
   private constructor(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private readonly _transformers: Transformer<any, any>[]
   ) {}
 

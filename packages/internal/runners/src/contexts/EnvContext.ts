@@ -32,12 +32,12 @@ export class EnvContext {
     return this.is("CI", checking);
   }
 
-  isDev(key: string = "ENV"): boolean {
+  isDev(key = "ENV"): boolean {
     // either 'dev', 'develop', 'development'
     return this.regex(key, /d[(ev)(evelop)(evelopment)]/);
   }
 
-  isProd(key: string = "ENV"): boolean {
+  isProd(key = "ENV"): boolean {
     // either 'prod', 'product', 'production'
     return this.regex(key, /p[(rod)(roduct)(roduction)]/);
   }
