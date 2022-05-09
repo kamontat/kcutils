@@ -9,6 +9,7 @@ if (cmd) {
     index[cmd](args);
   } else {
     const keys = Object.keys(index).join(",");
-    throw new Error("expected '" + keys + "' but receive '" + cmd + "'");
+    const message = `expected either [${keys}] but received '${cmd}'`;
+    throw new Error(message);
   }
 }
