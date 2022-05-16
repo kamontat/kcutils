@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.12](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.11...@kcinternal/runners@0.2.12) (2022-05-16)
+
+
+### Bug Fixes
+
+* **config:** missing nx output directory cause nx cache to be invalid ([fdef938](https://github.com/kamontat/kcutils/commit/fdef93857218b84e26365d6ad11b11c9be30e5d8))
+* **test:** forget to update error message ([d5a0bb4](https://github.com/kamontat/kcutils/commit/d5a0bb423fe9338b7c31e73233b64d46c08feab4))
+
+
+### Performance Improvements
+
+* **context:** add readFirst for read file content if existed ([af8b108](https://github.com/kamontat/kcutils/commit/af8b1088c34e46040b79ff578d168a2205a2ae8f))
+* **context:** add todo for command wrapper if run without yarn ([3393f60](https://github.com/kamontat/kcutils/commit/3393f602afe06de756d744465268024d6f063795))
+* **typo:** move error message to different file ([4919003](https://github.com/kamontat/kcutils/commit/491900341b122c7aff3d1661ea9582c54e39f791))
+
+
+
+
+
 ## [0.2.11](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.10...@kcinternal/runners@0.2.11) (2022-05-09)
 
 **Note:** Version bump only for package @kcinternal/runners

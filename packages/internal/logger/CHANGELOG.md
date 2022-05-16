@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.9](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.8...@kcinternal/logger@0.2.9) (2022-05-16)
+
+
+### Bug Fixes
+
+* **config:** missing nx output directory cause nx cache to be invalid ([fdef938](https://github.com/kamontat/kcutils/commit/fdef93857218b84e26365d6ad11b11c9be30e5d8))
+
+
+
+
+
 ## [0.2.8](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.7...@kcinternal/logger@0.2.8) (2022-05-09)
 
 **Note:** Version bump only for package @kcinternal/logger
