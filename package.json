@@ -12,7 +12,7 @@
     "@nrwl/cli": "14.1.4",
     "@nrwl/nx-cloud": "14.0.3",
     "@nrwl/tao": "14.1.4",
-    "@nrwl/workspace": "14.1.4",
+    "@nrwl/workspace": "14.1.7",
     "danger": "11.0.2",
     "gh-pages": "3.2.3",
     "husky": "8.0.0",
