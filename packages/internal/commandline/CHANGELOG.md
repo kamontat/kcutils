@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.8](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.7...@kcinternal/commandline@0.24.8) (2022-05-16)
+
+
+### Bug Fixes
+
+* **config:** bin folder missing from pack ([7ec79f8](https://github.com/kamontat/kcutils/commit/7ec79f8f3cc5e9d14d99443e4d30501094c7b398))
+* **config:** missing nx output directory cause nx cache to be invalid ([fdef938](https://github.com/kamontat/kcutils/commit/fdef93857218b84e26365d6ad11b11c9be30e5d8))
+* **script:** async version never return undefined string so we have to use try-catch instead ([0bf4dd2](https://github.com/kamontat/kcutils/commit/0bf4dd2c0763a63aec4ae48e9da379b95ae6a636))
+
+
+### Performance Improvements
+
+* **script:** general version has better way to find package.json file ([304f14f](https://github.com/kamontat/kcutils/commit/304f14f93dabc1eac2ac1ca676bd4496d73dfae9))
+* **script:** improve error if command is not exist ([27b5d9a](https://github.com/kamontat/kcutils/commit/27b5d9a4748f53641aedc2a9c0b7705145e7728c))
+
+
+
+
+
 ## [0.24.7](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.6...@kcinternal/commandline@0.24.7) (2022-05-09)
 
 **Note:** Version bump only for package @kcinternal/commandline
