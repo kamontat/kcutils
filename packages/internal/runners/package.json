@@ -60,7 +60,7 @@
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "eslint": "8.16.0",
     "eslint-plugin-tsdoc": "0.2.16",
-    "jest": "27.5.1",
+    "jest": "28.1.0",
     "jest-junit": "13.2.0",
     "memfs": "3.4.1",
     "mock-stdin": "1.0.0",
