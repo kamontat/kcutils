@@ -1942,15 +1942,6 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stryker-mutator/api@5.6.1":
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-5.6.1.tgz#dfd7ffec05ca42cd351f2fd3fc9eabc51e685e86"
-  integrity sha512-VMsyi6EATGw69RvsS5ObR1Eh8Dz6XbsESA9VHTOF5xXSTob9ZVj2okmgBo/QPh54Rafdl7W75yhNxI3mDz58Kw==
-  dependencies:
-    mutation-testing-metrics "1.7.8"
-    mutation-testing-report-schema "1.7.8"
-    tslib "~2.3.0"
-
 "@stryker-mutator/api@6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@stryker-mutator/api/-/api-6.0.2.tgz#59411f6e8b4ea5172d9cef391d4a2a9647af808e"
@@ -2021,21 +2012,14 @@
     semver "~7.3.7"
     tslib "~2.4.0"
 
-"@stryker-mutator/typescript-checker@5.6.1":
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript-checker/-/typescript-checker-5.6.1.tgz#649cf6cbfc427fd4e00fee3e01d78eba4e1fb066"
-  integrity sha512-vHYroi8f/7w31wfJC330+p7r92+Ax1A4VBN6E8EDvm97HTm+mAjuq+OyJngzSTlsH3hhSed8dKh7Trb/BjRFgQ==
+"@stryker-mutator/typescript-checker@6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/typescript-checker/-/typescript-checker-6.0.2.tgz#dec084cddb26f4c986cdd94d33d01dc54cae74ea"
+  integrity sha512-UiOnTKvl9K8Jbd3BV+F7nUbDl7JpW+xxOOuWcQxWUCeBDXBqTJ40oX0Yj1OKyA4YMxn+owSxsCca94c4Q+3PNg==
   dependencies:
-    "@stryker-mutator/api" "5.6.1"
-    "@stryker-mutator/util" "5.6.1"
+    "@stryker-mutator/api" "6.0.2"
+    "@stryker-mutator/util" "6.0.2"
     semver "~7.3.2"
-
-"@stryker-mutator/util@5.6.1":
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-5.6.1.tgz#598ceafbe57ba3fa0ae5ab1608f4ad40f829ce32"
-  integrity sha512-Tdw/nqSkB0zJ+tivlB+WWN+Byj8p8BJeJwFmw2aW1C13J7Dt4c9OQTATOZJ9cKaVpPwoLPsN5d7XurRewDQ7gA==
-  dependencies:
-    lodash.flatmap "~4.5.0"
 
 "@stryker-mutator/util@6.0.2":
   version "6.0.2"
@@ -6531,22 +6515,10 @@ mutation-testing-metrics@1.7.10:
   dependencies:
     mutation-testing-report-schema "1.7.10"
 
-mutation-testing-metrics@1.7.8:
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/mutation-testing-metrics/-/mutation-testing-metrics-1.7.8.tgz#1b57e6a947447a47d7a7e89a0290d7443340f690"
-  integrity sha512-WZACxXE5s3Sh5pHLaTcmJ3tdHI3JX1PGwrPE/nNZ2DQ2rl6y8CBlWsCMmHwFLpWT+JYGirx7MJoU7/7smBCZoQ==
-  dependencies:
-    mutation-testing-report-schema "1.7.8"
-
 mutation-testing-report-schema@1.7.10:
   version "1.7.10"
   resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.7.10.tgz#3e03a2791097cb68bca11120cd936ec67b665fa1"
   integrity sha512-lPbEVTAlx0XCXA5GKpb6+0mtDk9MoepYVsXhEtRcwiHRjmqBn2frwXL1Xmkh6HxYnEDIQddzZAgk8SIbkV7p+g==
-
-mutation-testing-report-schema@1.7.8:
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/mutation-testing-report-schema/-/mutation-testing-report-schema-1.7.8.tgz#3f5b041ef85e2d42c84db8e651e9d3a74a3547e2"
-  integrity sha512-m0hjxDUMdGpgQRQILM3tr2/j7aJ8baBA9lhERzEK2sVv+7JLTyIVd0BjhI97v7xLNeIOSKny+jEWLejoINmfug==
 
 mute-stream@0.0.7:
   version "0.0.7"
