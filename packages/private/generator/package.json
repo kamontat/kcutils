@@ -8,7 +8,7 @@
     "start": "tsc && hygen"
   },
   "dependencies": {
-    "@lerna/project": "4.0.0"
+    "@lerna/project": "5.0.0"
   },
   "devDependencies": {
     "@kcconfig/ts-config": "*",
