@@ -1214,6 +1214,15 @@
     npm-package-arg "^8.1.0"
     write-pkg "^4.0.0"
 
+"@lerna/package@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.0.0.tgz#4beeb3a1e8eed6e7ae9cebca283c7684278cdd28"
+  integrity sha512-/JiUU88bhbYEUTzPqoGLGwrrdWWTIVMlBb1OPxCGNGDEqYYNySX+OTTSs3zGMcmJnRNI0UyQALiEd0sh3JFN5w==
+  dependencies:
+    load-json-file "^6.2.0"
+    npm-package-arg "^8.1.0"
+    write-pkg "^4.0.0"
+
 "@lerna/prerelease-id-from-version@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@lerna/prerelease-id-from-version/-/prerelease-id-from-version-4.0.0.tgz#c7e0676fcee1950d85630e108eddecdd5b48c916"
