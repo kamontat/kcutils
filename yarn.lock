@@ -1210,19 +1210,19 @@
     npmlog "^4.1.2"
     semver "^7.3.4"
 
-"@lerna/package@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-4.0.0.tgz#1b4c259c4bcff45c876ee1d591a043aacbc0d6b7"
-  integrity sha512-l0M/izok6FlyyitxiQKr+gZLVFnvxRQdNhzmQ6nRnN9dvBJWn+IxxpM+cLqGACatTnyo9LDzNTOj2Db3+s0s8Q==
+"@lerna/package@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.0.0.tgz#4beeb3a1e8eed6e7ae9cebca283c7684278cdd28"
+  integrity sha512-/JiUU88bhbYEUTzPqoGLGwrrdWWTIVMlBb1OPxCGNGDEqYYNySX+OTTSs3zGMcmJnRNI0UyQALiEd0sh3JFN5w==
   dependencies:
     load-json-file "^6.2.0"
     npm-package-arg "^8.1.0"
     write-pkg "^4.0.0"
 
-"@lerna/package@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.0.0.tgz#4beeb3a1e8eed6e7ae9cebca283c7684278cdd28"
-  integrity sha512-/JiUU88bhbYEUTzPqoGLGwrrdWWTIVMlBb1OPxCGNGDEqYYNySX+OTTSs3zGMcmJnRNI0UyQALiEd0sh3JFN5w==
+"@lerna/package@5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.1.1.tgz#f775a59e1e8abe8cbf6bd70438a42926d311cebe"
+  integrity sha512-1Re5wMPux4kTzuCI4WSSXaN9zERdhFoU/hHOoyDYjAnNsWy8ee9qkLEEGl8p1IVW8YSJTDDHS0RA9rg35Vd8lA==
   dependencies:
     load-json-file "^6.2.0"
     npm-package-arg "^8.1.0"
@@ -1244,13 +1244,13 @@
     npmlog "^4.1.2"
     upath "^2.0.1"
 
-"@lerna/project@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-4.0.0.tgz#ff84893935833533a74deff30c0e64ddb7f0ba6b"
-  integrity sha512-o0MlVbDkD5qRPkFKlBZsXZjoNTWPyuL58564nSfZJ6JYNmgAptnWPB2dQlAc7HWRZkmnC2fCkEdoU+jioPavbg==
+"@lerna/project@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.0.0.tgz#31672891236696b2a70226388de0300c6086d75f"
+  integrity sha512-+izHk7D/Di2b0s69AzKzAa/qBz32H9s67oN9aKntrjNylpY7iN5opU157l60Kh4TprYHU5bLisqzFLZsHHADGw==
   dependencies:
-    "@lerna/package" "4.0.0"
-    "@lerna/validation-error" "4.0.0"
+    "@lerna/package" "5.0.0"
+    "@lerna/validation-error" "5.0.0"
     cosmiconfig "^7.0.0"
     dedent "^0.7.0"
     dot-prop "^6.0.1"
@@ -1262,13 +1262,13 @@
     resolve-from "^5.0.0"
     write-json-file "^4.3.0"
 
-"@lerna/project@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.0.0.tgz#31672891236696b2a70226388de0300c6086d75f"
-  integrity sha512-+izHk7D/Di2b0s69AzKzAa/qBz32H9s67oN9aKntrjNylpY7iN5opU157l60Kh4TprYHU5bLisqzFLZsHHADGw==
+"@lerna/project@5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.1.1.tgz#772f299ec1ed880f5171af4f5cf2cd389c404ed5"
+  integrity sha512-3WkJUOMWNquYshA7wFW9vMHJK8DaIOFmS7fs/XYnWGXWKEt6Mrc/+BqVDweUDK4gi/mT2nuwSH4GEB/TGNuSBg==
   dependencies:
-    "@lerna/package" "5.0.0"
-    "@lerna/validation-error" "5.0.0"
+    "@lerna/package" "5.1.1"
+    "@lerna/validation-error" "5.1.1"
     cosmiconfig "^7.0.0"
     dedent "^0.7.0"
     dot-prop "^6.0.1"
@@ -1425,17 +1425,17 @@
   resolved "https://registry.yarnpkg.com/@lerna/timer/-/timer-5.0.0.tgz#ab8fba29f90de21b0eb02406916269122deb2e41"
   integrity sha512-p2vevkpB6V/b0aR8VyMLDfg0Arp9VvMxcZOEu+IfZ9XKTtnbwjWPHKUOS34x/VGa6bnOIWjE046ixWymOs/fTw==
 
-"@lerna/validation-error@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-4.0.0.tgz#af9d62fe8304eaa2eb9a6ba1394f9aa807026d35"
-  integrity sha512-1rBOM5/koiVWlRi3V6dB863E1YzJS8v41UtsHgMr6gB2ncJ2LsQtMKlJpi3voqcgh41H8UsPXR58RrrpPpufyw==
-  dependencies:
-    npmlog "^4.1.2"
-
 "@lerna/validation-error@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-5.0.0.tgz#3d3557023e3eb2fd3d8fc9c89f7352a1b6e5bd3e"
   integrity sha512-fu/MhqRXiRQM2cirP/HoSkfwc5XtJ21G60WHv74RnanKBqWEZAUALWa3MQN2sYhVV/FpDW3GLkO008IW5NWzdg==
+  dependencies:
+    npmlog "^4.1.2"
+
+"@lerna/validation-error@5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-5.1.1.tgz#3e4bb27452022bf9d621bc8c4c6712d67c332d49"
+  integrity sha512-6mwvlaMxu03ydKCvKeK8XvbCDCHM0UURvJpgtVo/0ghu8kQOICHo3qwkJNf7lzbUIPojTLrdfWNCZ5M4CT43Dg==
   dependencies:
     npmlog "^4.1.2"
 
@@ -2242,10 +2242,10 @@
   dependencies:
     "@types/npm-package-arg" "*"
 
-"@types/lerna__project@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/lerna__project/-/lerna__project-4.0.0.tgz#beec3c5fe21b2afe42243ff9d996e16ad5834110"
-  integrity sha512-NOWoCSRQTWWPdYuqGP8wZ7E+oxUVlUGbxNUA+ZaZWKIs82Cimd5xOthi+iIuF6L73xSYhdBnR259XAPENIEtlQ==
+"@types/lerna__project@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/lerna__project/-/lerna__project-5.1.0.tgz#0418629d42a5b8f35b7ad95fc944fc54e8c9b1af"
+  integrity sha512-J41EBQZOD7CL7Aqwriifb63paXePjBBkDEfGdTGs65Yrn0624ekNcLRG8UH+4mfbcog4zCoaHZHMjcSMytEzjA==
   dependencies:
     "@types/lerna__package" "*"
 
