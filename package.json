@@ -11,7 +11,7 @@
   "devDependencies": {
     "@nrwl/cli": "14.1.9",
     "@nrwl/nx-cloud": "14.0.5",
-    "@nrwl/tao": "14.1.9",
+    "@nrwl/tao": "14.2.4",
     "@nrwl/workspace": "14.1.9",
     "danger": "11.0.7",
     "gh-pages": "4.0.0",
