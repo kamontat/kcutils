@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.11](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.10...@kcinternal/commandline@0.24.11) (2022-06-13)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/parser from 5.27.0 to 5.27.1 ([0613c6c](https://github.com/kamontat/kcutils/commit/0613c6c3bdc5380a9177e6e96abca0e6af2b1239))
+* **deps:** bump del from 6.0.0 to 6.1.1 ([6528906](https://github.com/kamontat/kcutils/commit/6528906585d73df4828621a268b9443e3d20f6d9))
+
+
+
+
+
 ## [0.24.10](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.9...@kcinternal/commandline@0.24.10) (2022-06-06)
 
 

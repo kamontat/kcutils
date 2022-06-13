@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.12](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.11...@kcinternal/logger@0.2.12) (2022-06-13)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/parser from 5.27.0 to 5.27.1 ([0613c6c](https://github.com/kamontat/kcutils/commit/0613c6c3bdc5380a9177e6e96abca0e6af2b1239))
+
+
+
+
+
 ## [0.2.11](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.10...@kcinternal/logger@0.2.11) (2022-06-06)
 
 

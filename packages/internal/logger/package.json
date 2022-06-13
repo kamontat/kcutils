@@ -1,6 +1,6 @@
 {
   "name": "@kcinternal/logger",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "logger interface for all log libraries",
   "private": false,
   "typedocMain": "index.ts",
@@ -48,11 +48,11 @@
     "test:mutator": "kc-test --mutator"
   },
   "devDependencies": {
-    "@kcconfig/eslint-config": "0.1.16",
+    "@kcconfig/eslint-config": "0.1.17",
     "@kcconfig/jest-config": "0.1.5",
     "@kcconfig/stryker-config": "0.1.6",
     "@kcconfig/ts-config": "0.1.4",
-    "@kcinternal/commandline": "0.24.10",
+    "@kcinternal/commandline": "0.24.11",
     "@stryker-mutator/core": "6.0.2",
     "@stryker-mutator/jest-runner": "6.0.2",
     "@stryker-mutator/typescript-checker": "6.0.2",
