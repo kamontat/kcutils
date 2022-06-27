@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.18](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.17...@kcconfig/eslint-config@0.1.18) (2022-06-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/parser from 5.27.1 to 5.29.0 ([2f4fa65](https://github.com/kamontat/kcutils/commit/2f4fa65dbd0f1dd30c6cf969ec46110b969f42d6))
+
+
+
+
+
 ## [0.1.17](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.16...@kcconfig/eslint-config@0.1.17) (2022-06-13)
 
 
