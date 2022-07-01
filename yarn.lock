@@ -2150,13 +2150,13 @@
     angular-html-parser "~1.8.0"
     weapon-regex "~0.6.0"
 
-"@stryker-mutator/jest-runner@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@stryker-mutator/jest-runner/-/jest-runner-6.0.2.tgz#71d06326ad56893654e4b4af4cb998f2fc9ac8d5"
-  integrity sha512-fHa/2izIuqUZDW343/PYa5sXlZUpjZ53kqfUbwXJGxCVKiYrYlWGxAa/LfdBT2mRaPKL9Ji76F2n+53mDuu7rA==
+"@stryker-mutator/jest-runner@6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@stryker-mutator/jest-runner/-/jest-runner-6.1.2.tgz#832ad6e1a2d16e0ba75de89940b12125c56e3ed4"
+  integrity sha512-eQsWeznNM2BPZeqwsa/zDBpFZUdqFnZGo01g2dKrIHKfLMXe7zEjbB6M6BIWjWOEW6OOfUc8j2WDdUQe2HbY3A==
   dependencies:
-    "@stryker-mutator/api" "6.0.2"
-    "@stryker-mutator/util" "6.0.2"
+    "@stryker-mutator/api" "6.1.2"
+    "@stryker-mutator/util" "6.1.2"
     semver "~7.3.7"
     tslib "~2.4.0"
 
