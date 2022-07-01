@@ -61,7 +61,7 @@
     "@kcconfig/jest-config": "0.1.5",
     "@kcconfig/stryker-config": "0.1.6",
     "@kcconfig/ts-config": "0.1.4",
-    "@stryker-mutator/core": "6.0.2",
+    "@stryker-mutator/core": "6.1.2",
     "@stryker-mutator/jest-runner": "6.0.2",
     "@stryker-mutator/typescript-checker": "6.0.2",
     "@types/jest": "27.5.0",
