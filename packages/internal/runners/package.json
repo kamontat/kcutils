@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/runners",
   "description": "runner apis for chain (with commandline included)",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "typedocMain": "index.ts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@kcconfig/eslint-config": "0.1.18",
     "@kcconfig/jest-config": "0.1.5",
-    "@kcconfig/stryker-config": "0.1.6",
+    "@kcconfig/stryker-config": "0.1.7",
     "@kcconfig/ts-config": "0.1.4",
     "@stryker-mutator/core": "6.1.2",
     "@stryker-mutator/jest-runner": "6.1.2",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.13](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.12...@kcinternal/commandline@0.24.13) (2022-07-04)
+
+
+### Bug Fixes
+
+* **deps:** bump @stryker-mutator/core from 6.0.2 to 6.1.2 ([9b366a4](https://github.com/kamontat/kcutils/commit/9b366a41bdcfd9784bb6fc3d8351321f0ebce62f))
+
+
+
+
+
 ## [0.24.12](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.11...@kcinternal/commandline@0.24.12) (2022-06-27)
 
 
