@@ -1372,24 +1372,6 @@
     npmlog "^6.0.2"
     upath "^2.0.1"
 
-"@lerna/project@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.1.6.tgz#a8a79c78f9c9b5406cba77ab75986e265e61940a"
-  integrity sha512-9EXc2uTDfruvJcWnW3UrDZCAgZ/LUOQDC92xBSi1qazSE3fEsfrLBJmMqUzBRTuGoGh5BPnJgA2l0It01z51dQ==
-  dependencies:
-    "@lerna/package" "5.1.6"
-    "@lerna/validation-error" "5.1.6"
-    cosmiconfig "^7.0.0"
-    dedent "^0.7.0"
-    dot-prop "^6.0.1"
-    glob-parent "^5.1.1"
-    globby "^11.0.2"
-    load-json-file "^6.2.0"
-    npmlog "^6.0.2"
-    p-map "^4.0.0"
-    resolve-from "^5.0.0"
-    write-json-file "^4.3.0"
-
 "@lerna/project@5.1.8":
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.1.8.tgz#6c379d258eed12acff0d4fe8524f8f084e3892a4"
@@ -1552,13 +1534,6 @@
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/@lerna/timer/-/timer-5.1.8.tgz#8613aca7ed121a7c9f73f754a5b07e9891bf2e5e"
   integrity sha512-Ua4bw2YOO3U+sFujE+MsUG+lllU0X7u6PCTj1QKe0QlR0zr2gCa0pcwjUQPdNfxnpJpPY+hdbfTUv2viDloaiA==
-
-"@lerna/validation-error@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-5.1.6.tgz#12371dcc8dc610e04644b1bcf05535c6487755ca"
-  integrity sha512-6+rc1bGTqaRMvML8Qew+RoqZFxyESSX+GBCTv0pW1SBcNo/yC76fq9y/WSA3dn6GuqHWyX3H0Yki7HutezM7/A==
-  dependencies:
-    npmlog "^6.0.2"
 
 "@lerna/validation-error@5.1.8":
   version "5.1.8"
