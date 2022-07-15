@@ -1338,15 +1338,6 @@
     npmlog "^6.0.2"
     semver "^7.3.4"
 
-"@lerna/package@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.1.6.tgz#90159a4d3857178bc35c53a4e53636b4cf68ea35"
-  integrity sha512-OwsYEVVDEFIybYSh3edn5ZH7EoMPEmfl92pri3rqtaGYj76/ENGaQZSXT5ZH2oJKg5Jh9LrtaYAc+r/fZ+1vuQ==
-  dependencies:
-    load-json-file "^6.2.0"
-    npm-package-arg "^8.1.0"
-    write-pkg "^4.0.0"
-
 "@lerna/package@5.1.8":
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.1.8.tgz#17e119553b8c957915f92e43a5f4284ec98439c2"
