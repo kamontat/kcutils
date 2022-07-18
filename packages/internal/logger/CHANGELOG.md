@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.15](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.14...@kcinternal/logger@0.2.15) (2022-07-18)
+
+**Note:** Version bump only for package @kcinternal/logger
+
+
+
+
+
 ## [0.2.14](https://github.com/kamontat/kcutils/compare/@kcinternal/logger@0.2.13...@kcinternal/logger@0.2.14) (2022-07-04)
 
 

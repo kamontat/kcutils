@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/runners",
   "description": "runner apis for chain (with commandline included)",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "typedocMain": "index.ts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
