@@ -55,7 +55,7 @@
     "@stryker-mutator/typescript-checker": "6.1.2",
     "@types/generic": "0.0.1",
     "@types/jest": "27.5.0",
-    "@types/node": "18.0.4",
+    "@types/node": "18.0.6",
     "@types/package_json": "0.2.3",
     "@typescript-eslint/eslint-plugin": "5.30.6",
     "eslint": "8.19.0",
