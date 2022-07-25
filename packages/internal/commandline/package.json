@@ -1,6 +1,6 @@
 {
   "name": "@kcinternal/commandline",
-  "version": "0.24.14",
+  "version": "0.24.15",
   "description": "simplify commandline for kamontat repositories",
   "private": false,
   "license": "SEE LICENSE IN LICENSE",
@@ -53,11 +53,11 @@
     "test:mutator": "stryker run"
   },
   "dependencies": {
-    "@kcinternal/runners": "0.2.18",
+    "@kcinternal/runners": "0.2.19",
     "del": "6.1.1"
   },
   "devDependencies": {
-    "@kcconfig/eslint-config": "0.1.18",
+    "@kcconfig/eslint-config": "0.1.19",
     "@kcconfig/jest-config": "0.1.5",
     "@kcconfig/stryker-config": "0.1.7",
     "@kcconfig/ts-config": "0.1.4",
