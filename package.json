@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "@nrwl/cli": "14.5.1",
-    "@nrwl/nx-cloud": "14.1.3",
-    "@nrwl/tao": "14.4.2",
+    "@nrwl/nx-cloud": "14.2.0",
+    "@nrwl/tao": "14.5.1",
     "@nrwl/workspace": "14.5.1",
     "danger": "11.1.1",
     "gh-pages": "4.0.0",
@@ -19,7 +19,7 @@
     "lerna": "5.1.8",
     "lerna-update-wizard": "1.1.2",
     "stryker-cli": "1.0.2",
-    "typedoc": "0.23.8",
+    "typedoc": "0.23.9",
     "typescript": "4.7.4"
   },
   "workspaces": [
