@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.20](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.19...@kcinternal/runners@0.2.20) (2022-08-01)
+
+**Note:** Version bump only for package @kcinternal/runners
+
+
+
+
+
 ## [0.2.19](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.18...@kcinternal/runners@0.2.19) (2022-07-25)
 
 **Note:** Version bump only for package @kcinternal/runners

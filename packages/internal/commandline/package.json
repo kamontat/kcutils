@@ -1,6 +1,6 @@
 {
   "name": "@kcinternal/commandline",
-  "version": "0.24.15",
+  "version": "0.24.16",
   "description": "simplify commandline for kamontat repositories",
   "private": false,
   "license": "SEE LICENSE IN LICENSE",
@@ -53,7 +53,7 @@
     "test:mutator": "stryker run"
   },
   "dependencies": {
-    "@kcinternal/runners": "0.2.19",
+    "@kcinternal/runners": "0.2.20",
     "del": "6.1.1"
   },
   "devDependencies": {
