@@ -1361,15 +1361,6 @@
     npm-package-arg "^8.1.0"
     write-pkg "^4.0.0"
 
-"@lerna/package@5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.1.8.tgz#17e119553b8c957915f92e43a5f4284ec98439c2"
-  integrity sha512-Ot+wu6XZ93tw8p9oSTJJA15TzGhVpo8VbgNhKPcI3JJjkxVq2D5L5jVeBkjQvFEQBonLibTr339uLLXyZ0RMzg==
-  dependencies:
-    load-json-file "^6.2.0"
-    npm-package-arg "^8.1.0"
-    write-pkg "^4.0.0"
-
 "@lerna/package@5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.3.0.tgz#8985035bfdaa91b99b855b9d1abb86aa9cc2cc74"
@@ -1394,24 +1385,6 @@
     fs-extra "^9.1.0"
     npmlog "^6.0.2"
     upath "^2.0.1"
-
-"@lerna/project@5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.1.8.tgz#6c379d258eed12acff0d4fe8524f8f084e3892a4"
-  integrity sha512-zTFp91kmyJ0VHBmNXEArVrMSZVxnBJ7pHTt8C7RY91WSZhw8XDNumqMHDM+kEM1z/AtDBAAAGqBE3sjk5ONDXQ==
-  dependencies:
-    "@lerna/package" "5.1.8"
-    "@lerna/validation-error" "5.1.8"
-    cosmiconfig "^7.0.0"
-    dedent "^0.7.0"
-    dot-prop "^6.0.1"
-    glob-parent "^5.1.1"
-    globby "^11.0.2"
-    load-json-file "^6.2.0"
-    npmlog "^6.0.2"
-    p-map "^4.0.0"
-    resolve-from "^5.0.0"
-    write-json-file "^4.3.0"
 
 "@lerna/project@5.3.0":
   version "5.3.0"
@@ -1576,13 +1549,6 @@
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@lerna/timer/-/timer-5.3.0.tgz#b3da6c71bb37eb313cf30d333eb7f0d841976e55"
   integrity sha512-IeDjj1gJtbUPKl2ebpiml9u4k2kRqYF1Dbs6JuWpeC7lGxAx3JcUmkNH2RQ1BYTxk5xc9FKlgNMrZQwhq2K1Ow==
-
-"@lerna/validation-error@5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-5.1.8.tgz#e12f6ee6bb9bd18bc1f3b2d0ae3045882d2a4f32"
-  integrity sha512-n+IiaxN2b08ZMYnezsmwL6rXB15/VvweusC04GMh1XtWunnMzSg9JDM7y6bw2vfpBBQx6cBFhLKSpD2Fcq5D5Q==
-  dependencies:
-    npmlog "^6.0.2"
 
 "@lerna/validation-error@5.3.0":
   version "5.3.0"
