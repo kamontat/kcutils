@@ -1352,15 +1352,6 @@
     npmlog "^6.0.2"
     semver "^7.3.4"
 
-"@lerna/package@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.1.6.tgz#90159a4d3857178bc35c53a4e53636b4cf68ea35"
-  integrity sha512-OwsYEVVDEFIybYSh3edn5ZH7EoMPEmfl92pri3rqtaGYj76/ENGaQZSXT5ZH2oJKg5Jh9LrtaYAc+r/fZ+1vuQ==
-  dependencies:
-    load-json-file "^6.2.0"
-    npm-package-arg "^8.1.0"
-    write-pkg "^4.0.0"
-
 "@lerna/package@5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.3.0.tgz#8985035bfdaa91b99b855b9d1abb86aa9cc2cc74"
@@ -6843,15 +6834,6 @@ npm-package-arg@8.1.1:
   dependencies:
     hosted-git-info "^3.0.6"
     semver "^7.0.0"
-    validate-npm-package-name "^3.0.0"
-
-npm-package-arg@^8.1.0:
-  version "8.1.5"
-  resolved "https://registry.yarnpkg.com/npm-package-arg/-/npm-package-arg-8.1.5.tgz#3369b2d5fe8fdc674baa7f1786514ddc15466e44"
-  integrity sha512-LhgZrg0n0VgvzVdSm1oiZworPbTxYHUJCgtsJW8mGvlDpxTM1vSJc3m5QZeUkhAHIzbz3VCHd/R4osi1L1Tg/Q==
-  dependencies:
-    hosted-git-info "^4.0.1"
-    semver "^7.3.4"
     validate-npm-package-name "^3.0.0"
 
 npm-package-arg@^9.0.0, npm-package-arg@^9.0.1:
