@@ -16,7 +16,7 @@
     "danger": "11.1.1",
     "gh-pages": "4.0.0",
     "husky": "8.0.1",
-    "lerna": "5.1.8",
+    "lerna": "5.3.0",
     "lerna-update-wizard": "1.1.2",
     "stryker-cli": "1.0.2",
     "typedoc": "0.23.8",
