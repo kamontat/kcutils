@@ -29,7 +29,7 @@ jobs:
       - run: yarn nx-cloud stop-all-agents
   agents:
     runs-on: ubuntu-latest
-    name: Agent 1
+    name: Agent
     timeout-minutes: 60
     strategy:
       matrix:
@@ -40,5 +40,6 @@ jobs:
         with:
           node-version: "14"
       - run: yarn install
+      - run: yarn package @kcinternal/commandline build
       - name: Start Nx Agent ${{ matrix.agent }}
         run: yarn nx-cloud start-agent
