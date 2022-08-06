@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.11](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.10...@kcconfig/rollup-config@0.2.11) (2022-06-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @rollup/plugin-typescript from 8.3.2 to 8.3.3 ([4a7ba7f](https://github.com/kamontat/kcutils/commit/4a7ba7f0b56b87ca4fcd5d2b83b2469e626f9853))
+* **deps:** bump rollup from 2.75.5 to 2.75.7 ([6b4570a](https://github.com/kamontat/kcutils/commit/6b4570a59039fc83b5db8cbc7efb9e5fcdcf881d))
+
+
+
+
+
+## [0.2.10](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.9...@kcconfig/rollup-config@0.2.10) (2022-06-06)
+
+
+### Bug Fixes
+
+* **deps:** bump rollup from 2.72.0 to 2.75.5 ([66db3f3](https://github.com/kamontat/kcutils/commit/66db3f3abf8fd4b38cdc2b34c5385172095fb9f9))
+
+
+
+
+
+## [0.2.9](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.8...@kcconfig/rollup-config@0.2.9) (2022-05-30)
+
+**Note:** Version bump only for package @kcconfig/rollup-config
+
+
+
+
+
 ## [0.2.8](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.7...@kcconfig/rollup-config@0.2.8) (2022-05-16)
 
 **Note:** Version bump only for package @kcconfig/rollup-config

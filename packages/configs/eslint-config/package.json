@@ -1,7 +1,7 @@
 {
   "name": "@kcconfig/eslint-config",
   "description": "personal eslint configuration",
-  "version": "0.1.14",
+  "version": "0.1.19",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/eslint-config",
@@ -31,7 +31,7 @@
     "*.js"
   ],
   "dependencies": {
-    "@typescript-eslint/parser": "5.22.0"
+    "@typescript-eslint/parser": "5.32.0"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "5.10.1",

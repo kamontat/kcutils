@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.6...@kcconfig/stryker-config@0.1.7) (2022-07-04)
+
+
+### Bug Fixes
+
+* **deps:** bump @stryker-mutator/core from 6.0.2 to 6.1.2 ([9b366a4](https://github.com/kamontat/kcutils/commit/9b366a41bdcfd9784bb6fc3d8351321f0ebce62f))
+
+
+
+
+
+## [0.1.6](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.5...@kcconfig/stryker-config@0.1.6) (2022-06-06)
+
+**Note:** Version bump only for package @kcconfig/stryker-config
+
+
+
+
+
 ## [0.1.5](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.4...@kcconfig/stryker-config@0.1.5) (2022-02-09)
 
 

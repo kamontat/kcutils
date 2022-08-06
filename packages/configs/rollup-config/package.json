@@ -1,7 +1,7 @@
 {
   "name": "@kcconfig/rollup-config",
   "description": "personal rollup configuration",
-  "version": "0.2.8",
+  "version": "0.2.11",
   "main": "index.js",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/configs/rollup-config",
@@ -33,8 +33,8 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "22.0.0",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-typescript": "8.3.2",
-    "rollup": "2.72.0",
+    "@rollup/plugin-typescript": "8.3.4",
+    "rollup": "2.77.2",
     "rollup-plugin-terser": "7.0.2"
   }
 }

@@ -8,14 +8,14 @@
     "start": "tsc && hygen"
   },
   "dependencies": {
-    "@lerna/project": "4.0.0"
+    "@lerna/project": "5.3.0"
   },
   "devDependencies": {
     "@kcconfig/ts-config": "*",
-    "@lerna/package": "4.0.0",
-    "@types/lerna__project": "4.0.0",
+    "@lerna/package": "5.3.0",
+    "@types/lerna__project": "5.1.0",
     "@types/package_json": "0.2.3",
-    "hygen": "6.2.0",
-    "typescript": "4.6.4"
+    "hygen": "6.2.8",
+    "typescript": "4.7.4"
   }
 }
