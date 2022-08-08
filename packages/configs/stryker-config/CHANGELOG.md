@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.7...@kcconfig/stryker-config@0.1.8) (2022-08-08)
+
+**Note:** Version bump only for package @kcconfig/stryker-config
+
+
+
+
+
 ## [0.1.7](https://github.com/kamontat/kcutils/compare/@kcconfig/stryker-config@0.1.6...@kcconfig/stryker-config@0.1.7) (2022-07-04)
 
 
