@@ -21,7 +21,8 @@ ghpage_args=(
   "--dotfiles"
 )
 
-is_ci && typedoc_args=("--logLevel" "Verbose")
+# No needs anymore
+# is_ci && typedoc_args=("--logLevel" "Verbose")
 
 run_yarn "typedoc" "${typedoc_args[@]}" &&
   run_nx "dep-graph" "${depgraph_args[@]}" &&
