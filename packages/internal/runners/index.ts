@@ -27,5 +27,6 @@ export type {
   PackageBugReport,
   PackagePublishConfig,
   PackageRepository,
+  TypedocConfig,
 } from "package_json";
-export type { Nullable } from "generic";
+export type { Nullable, Optional } from "generic";
