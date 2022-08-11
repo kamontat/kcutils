@@ -73,7 +73,9 @@ export const build = (option: BuildOption) => {
     version: option.version,
     description: option.description,
     private: isPrivate(option.category),
-    typedocMain: "index.ts",
+    typedoc: {
+      entryPoint: "index.ts",
+    },
   };
 
   if (option.compiler === "rollup") {

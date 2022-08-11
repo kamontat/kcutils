@@ -3,11 +3,13 @@
   "description": "example package with rollup as compiler",
   "version": "0.0.1",
   "private": true,
-  "typedocMain": "index.ts",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.umd.js",
   "types": "lib/index.d.ts",
+  "typedoc": {
+    "entryPoint": "index.ts"
+  },
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/private/rollup",
   "repository": {

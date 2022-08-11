@@ -20,12 +20,16 @@ declare module "package_json" {
     access: "public" | "restricted";
   }
 
+  export interface TypedocConfig {
+    entryPoint: string;
+  }
+
   export interface Package {
     name: string;
     version: string;
     private: boolean;
     description?: string;
-    typedocMain?: string;
+    typedoc?: TypedocConfig;
     main?: string;
     module?: string;
     browser?: string;

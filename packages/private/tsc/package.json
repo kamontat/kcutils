@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "example package with tsc compiler",
   "private": true,
-  "typedocMain": "index.ts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "typedoc": {
+    "entryPoint": "index.ts"
+  },
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/private/tsc",
   "repository": {
