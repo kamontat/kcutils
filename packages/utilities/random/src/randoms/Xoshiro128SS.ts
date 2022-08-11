@@ -1,0 +1,38 @@
+import type { ISeed } from "../interfaces/Seed";
+import { Random } from "../models/Random";
+
+/**
+ * Random Xoshiro128** included in Xoshiro family.
+ * @see https://github.com/bryc/code/blob/master/jshash/PRNGs.md#xoshiro
+ */
+export class Xoshiro128SS extends Random {
+  private a: number;
+  private b: number;
+  private c: number;
+  private d: number;
+
+  constructor(seed: ISeed) {
+    super(seed);
+    this.a = this.getSeed();
+    this.b = this.getSeed();
+    this.c = this.getSeed();
+    this.d = this.getSeed();
+  }
+
+  pseudo(): number {
+    const t = this.b << 9;
+    let r = this.a * 5;
+    r = ((r << 7) | (r >>> 25)) * 9;
+    this.c = this.c ^ this.a;
+    this.d = this.d ^ this.b;
+    this.b = this.b ^ this.c;
+    this.a = this.a ^ this.d;
+    this.c = this.c ^ t;
+    this.d = (this.d << 11) | (this.d >>> 21);
+    return (r >>> 0) / 4294967296;
+  }
+
+  copy(s?: ISeed): Random {
+    return new Xoshiro128SS(s ?? this.seed);
+  }
+}

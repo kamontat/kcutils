@@ -1,0 +1,93 @@
+{
+  "name": "@kcutils/random",
+  "version": "0.3.0",
+  "description": "PRNGs (Pseudorandom number generators)",
+  "private": false,
+  "typedocMain": "index.ts",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "browser": "lib/index.umd.js",
+  "types": "lib/index.d.ts",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/kamontat/kcutils/tree/main/packages/utilities/random",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamontat/kcutils",
+    "directory": "packages/utilities/random"
+  },
+  "bugs": {
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat/kcutils/issues"
+  },
+  "author": {
+    "name": "Kamontat Chantrachirathumrong",
+    "email": "developer@kamontat.net",
+    "url": "https://github.com/kamontat"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "kcmono",
+    "random"
+  ],
+  "files": [
+    "package.json",
+    "CHANGELOG.md",
+    "README.md",
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "includes/**/*"
+  ],
+  "scripts": {
+    "build": "kc-build",
+    "clean": "kc-clean",
+    "lint": "kc-lint",
+    "test": "kc-test",
+    "test:mutator": "kc-test --mutator"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@kcconfig/eslint-config": "0.1.13",
+    "@kcconfig/jest-config": "0.1.5",
+    "@kcconfig/stryker-config": "0.1.5",
+    "@kcconfig/ts-config": "0.1.4",
+    "@kcconfig/rollup-config": "0.2.7",
+    "@kcinternal/commandline": "0.24.7",
+    "@stryker-mutator/core": "5.6.1",
+    "@stryker-mutator/jest-runner": "5.6.1",
+    "@stryker-mutator/typescript-checker": "5.6.1",
+    "@types/jest": "27.5.0",
+    "@types/node": "17.0.31",
+    "@typescript-eslint/eslint-plugin": "5.22.0",
+    "@typescript-eslint/parser": "5.22.0",
+    "eslint": "8.14.0",
+    "eslint-plugin-tsdoc": "0.2.16",
+    "jest": "27.5.1",
+    "jest-junit": "13.2.0",
+    "ts-jest": "27.1.4",
+    "rollup": "2.72.0",
+    "typescript": "4.6.4"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "packages/utilities/random/lib"
+        ]
+      },
+      "test": {
+        "outputs": [
+          "packages/utilities/random/junit.xml",
+          "packages/utilities/random/coverage"
+        ]
+      }
+    }
+  },
+  "_generator": {
+    "name": "@kcprivate/generator",
+    "version": "0.3.0"
+  }
+}

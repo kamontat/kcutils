@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "@kcutils/random",
+      "path": "packages/utilities/random"
+    },
+    {
       "name": "@kcinternal/logger",
       "path": "packages/internal/logger"
     },
