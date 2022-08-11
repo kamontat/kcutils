@@ -40,6 +40,5 @@ jobs:
         with:
           node-version: "14"
       - run: yarn install
-      - run: yarn package @kcinternal/commandline build
       - name: Start Nx Agent ${{ matrix.agent }}
         run: yarn nx-cloud start-agent
