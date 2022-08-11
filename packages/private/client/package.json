@@ -36,6 +36,7 @@
     "clean": "kc-clean"
   },
   "dependencies": {
+    "@kcinternal/commandline": "*",
     "@kcprivate/rollup": "*",
     "@kcprivate/tsc": "*"
   },
