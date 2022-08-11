@@ -4,26 +4,20 @@ import { EnvContext } from "./EnvContext";
 
 export class LogContext {
   private _debugMode: boolean;
-  private _ciMode: boolean;
 
   constructor(envContext: EnvContext) {
     this._debugMode = envContext.isDebug(true);
-    this._ciMode = envContext.isCI(true);
   }
 
   private log(key: string, title: string, message?: unknown) {
-    if (!this._debugMode && !this._ciMode) return;
-
-    const _title = format("[%s] %s", key, title);
-    this.print(_title, message);
+    if (this._debugMode) {
+      const _title = format("[%s] %s", key, title);
+      this.print(_title, message);
+    }
   }
 
   setDebug(toggle: boolean) {
     this._debugMode = toggle;
-  }
-
-  setCI(toggle: boolean) {
-    this._ciMode = toggle;
   }
 
   isDebug(): boolean {

@@ -57,54 +57,42 @@ describe("LogContext", () => {
   });
 
   test.each([
-    [false, false, false],
-    [true, false, true],
-    [true, true, false],
-    [true, true, true],
-  ])(
-    "print=%s on debug() if debug_mode is %s and ci_mode is %s (env mode)",
-    (a, b, c) => {
-      const mockConsole = jest
-        .spyOn(console, "log")
-        .mockImplementation(doNothing);
-      mockConsole.mockReset();
+    [false, false],
+    [true, true],
+  ])("print=%s on debug() if debug_mode is %s (env mode)", (a, b) => {
+    const mockConsole = jest
+      .spyOn(console, "log")
+      .mockImplementation(doNothing);
+    mockConsole.mockReset();
 
-      const env: Record<string, string> = {};
-      if (b) env["DEBUG"] = "true";
-      if (c) env["CI"] = "true";
+    const env: Record<string, string> = {};
+    if (b) env["DEBUG"] = "true";
 
-      const envContext = new EnvContext(env);
-      const context = new LogContext(envContext);
+    const envContext = new EnvContext(env);
+    const context = new LogContext(envContext);
 
-      context.debug("example message");
-      expect(mockConsole).toBeCalledTimes(a ? 1 : 0);
+    context.debug("example message");
+    expect(mockConsole).toBeCalledTimes(a ? 1 : 0);
 
-      mockConsole.mockRestore();
-    }
-  );
+    mockConsole.mockRestore();
+  });
 
   test.each([
-    [false, false, false],
-    [true, false, true],
-    [true, true, false],
-    [true, true, true],
-  ])(
-    "print=%s on debug() if debug_mode is %s and ci_mode is %s (overrided mode)",
-    (a, b, c) => {
-      const mockConsole = jest
-        .spyOn(console, "log")
-        .mockImplementation(doNothing);
-      mockConsole.mockReset();
+    [false, false],
+    [true, true],
+  ])("print=%s on debug() if debug_mode is %s (overrided mode)", (a, b) => {
+    const mockConsole = jest
+      .spyOn(console, "log")
+      .mockImplementation(doNothing);
+    mockConsole.mockReset();
 
-      const envContext = new EnvContext({});
-      const context = new LogContext(envContext);
+    const envContext = new EnvContext({});
+    const context = new LogContext(envContext);
 
-      context.setDebug(b);
-      context.setCI(c);
-      context.debug("example message");
-      expect(mockConsole).toBeCalledTimes(a ? 1 : 0);
+    context.setDebug(b);
+    context.debug("example message");
+    expect(mockConsole).toBeCalledTimes(a ? 1 : 0);
 
-      mockConsole.mockRestore();
-    }
-  );
+    mockConsole.mockRestore();
+  });
 });
