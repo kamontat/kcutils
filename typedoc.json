@@ -1,9 +1,8 @@
 {
+  "$schema": "https://typedoc.org/schema.json",
   "emit": "docs",
   "entryPointStrategy": "packages",
-  "entryPoints": [
-    "packages/internal/runners"
-  ],
+  "entryPoints": ["packages/internal/runners", "packages/utilities/random"],
   "out": "dist",
   "plugin": [],
   "logger": "console",
@@ -20,7 +19,6 @@
   "lightHighlightTheme": "solarized-light",
   "darkHighlightTheme": "solarized-dark",
   "gaID": "",
-  "gaSite": "auto",
   "githubPages": true,
   "cleanOutputDir": true,
   "readme": "none",
