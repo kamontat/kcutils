@@ -16,7 +16,7 @@ function build(opt) {
   const name = buildUnscopedName(opt.pkg.name);
   const sourcemap = opt.map ? opt.map : true;
   const compact = opt.compact ? opt.compact : true;
-  const input = opt.pkg.typedocMain;
+  const input = opt.pkg.typedoc.entryPoint;
   if (opt.formats.length < 1) {
     throw new Error(`Format cannot be undefined`);
   } else if (!input) {
@@ -140,7 +140,7 @@ function dinitial(overrided, ...options) {
 function customPackage(pkg, custom) {
   const base = Object.assign({}, pkg);
   if (custom.input) {
-    base["typedocMain"] = custom.input;
+    base["typedoc"] = { entryPoint: custom.input };
   }
   if (custom.main) {
     base["main"] = custom.main;
