@@ -1619,6 +1619,15 @@
     npm-package-arg "8.1.1"
     write-pkg "^4.0.0"
 
+"@lerna/package@5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@lerna/package/-/package-5.4.0.tgz#98cc92ba74651045ac6ffa8df671eb266ef3241e"
+  integrity sha512-lfj4AmN7STzWR+ML5FKhVjnG/tBYBmUWFP2D0WP7jaBCtvA4YfhTRX8bnIPTB6QoYrJl72cPx7eTxGD/VO0ZKA==
+  dependencies:
+    load-json-file "^6.2.0"
+    npm-package-arg "8.1.1"
+    write-pkg "^4.0.0"
+
 "@lerna/prerelease-id-from-version@5.3.0":
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@lerna/prerelease-id-from-version/-/prerelease-id-from-version-5.3.0.tgz#dc806da65600458c5567728e18a1b29053d9fd10"
@@ -1642,6 +1651,24 @@
   dependencies:
     "@lerna/package" "5.3.0"
     "@lerna/validation-error" "5.3.0"
+    cosmiconfig "^7.0.0"
+    dedent "^0.7.0"
+    dot-prop "^6.0.1"
+    glob-parent "^5.1.1"
+    globby "^11.0.2"
+    load-json-file "^6.2.0"
+    npmlog "^6.0.2"
+    p-map "^4.0.0"
+    resolve-from "^5.0.0"
+    write-json-file "^4.3.0"
+
+"@lerna/project@5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@lerna/project/-/project-5.4.0.tgz#bd1bbd5bfce6b05decda1e97e06f27bd098b64f9"
+  integrity sha512-lr8+EybiRNmS6ecDtFmXzEUNcOepbvku9oxBc47CtvXtCcLdDLG4bI9TXrN4lUO2vJajXTSlhN7sD1LVUkcYdg==
+  dependencies:
+    "@lerna/package" "5.4.0"
+    "@lerna/validation-error" "5.4.0"
     cosmiconfig "^7.0.0"
     dedent "^0.7.0"
     dot-prop "^6.0.1"
@@ -1803,6 +1830,13 @@
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-5.3.0.tgz#21c2054079ab997cd9ec8fa6fde5685d5fda68a9"
   integrity sha512-GVvnTxx+CNFjXCiJahAu2c/pP2R3DhGuQp4CJUyKegnzGaWK0h5PhlwRL7/LbDMPLh2zLobPOVr9kTOjwv76Nw==
+  dependencies:
+    npmlog "^6.0.2"
+
+"@lerna/validation-error@5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@lerna/validation-error/-/validation-error-5.4.0.tgz#ede63fccdb7ef8666fefb47151a475fd976afb34"
+  integrity sha512-H/CiOgMlZO0QlGbVGk1iVKDbtWKV0gUse9XwP7N15qroCJU2d6u0XUJS5eCTNQ/JrLdFCtEdzg3uPOHbpIOykw==
   dependencies:
     npmlog "^6.0.2"
 
