@@ -1,4 +1,4 @@
-name: Schedule Task
+name: Deployment
 
 on:
   workflow_dispatch:
@@ -32,15 +32,17 @@ jobs:
       - name: Setup project
         uses: ./.github/actions/setup
         with:
-          node_version: 16
           with_build: true
-      - name: Start testflow
-        uses: ./.github/actions/testflow
+      - uses: ./.github/actions/lint
         with:
-          with_lint: true
-          with_unittest: true
-          with_mutator_test: true
-          mutator_apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+          collect_report: true
+      - uses: ./.github/actions/unit-test
+        with:
+          collect_report: true
+      - uses: ./.github/actions/mutator-test
+        with:
+          apikey: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+          collect_report: true
       - name: Deployment
         uses: ./.github/actions/deployment
         with:

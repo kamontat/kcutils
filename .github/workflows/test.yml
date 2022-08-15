@@ -1,4 +1,4 @@
-name: Default
+name: Test
 
 on:
   push:
@@ -8,44 +8,46 @@ defaults:
     shell: bash
 
 jobs:
-  # Test and report result in sonarqube (run only primary node version)
-  testflow:
+  default:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # require by sonar to disable shadow clone for sonar analysis correctly
+          fetch-depth: 0
+      - name: Set SHAs for "nx affected"
+        uses: nrwl/nx-set-shas@v2
       - name: Setup project
         uses: ./.github/actions/setup
         with:
-          node_version: 16
           with_build: true
-      - name: Start testflow
-        uses: ./.github/actions/testflow
+      - uses: ./.github/actions/lint
         with:
-          with_lint: true
-          with_unittest: true
-          with_sonar: true
+          collect_report: true
+      - uses: ./.github/actions/unit-test
+        with:
+          collect_report: true
+      - uses: ./.github/actions/sonar
+        with:
           github_apikey: ${{ secrets.GITHUB_TOKEN }}
           sonar_apikey: ${{ secrets.SONAR_TOKEN }}
-          collect_coverage: true
 
-  # Test on different node version to ensure backward compatible
   test:
     runs-on: ubuntu-latest
-    needs:
-      - testflow
     strategy:
+      fail-fast: false
       matrix:
         node-version: [14, 16, 18]
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set SHAs for "nx affected"
+        uses: nrwl/nx-set-shas@v2
       - name: Setup project
         uses: ./.github/actions/setup
         with:
           with_build: true
           node_version: ${{ matrix.node-version }}
-      - name: Start testflow
-        uses: ./.github/actions/testflow
+      - uses: ./.github/actions/unit-test
         with:
-          with_unittest: true
+          collect_report: true

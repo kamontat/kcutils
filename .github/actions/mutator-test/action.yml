@@ -1,0 +1,29 @@
+name: "Mutator test"
+description: "For mutator test"
+
+inputs:
+  apikey:
+    description: "Stryker APIKey to connect with dashboard apis"
+    required: true
+  collect_report:
+    description: "Upload mutator report to Github Artifact"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - id: mutator_test
+      name: Run mutator test
+      run: yarn packages test:mutator
+      if: ${{ github.repository == 'kamontat/kcutils' && inputs.apikey }}
+      shell: bash
+      env:
+        STRYKER_DASHBOARD_API_KEY: ${{ inputs.apikey }}
+    - name: Collect Mutator test report
+      uses: actions/upload-artifact@v3
+      if: ${{ inputs.collect_report == 'true' }}
+      with:
+        name: mutator-reports
+        retention-days: 7
+        path: "packages/**/reports/mutation"

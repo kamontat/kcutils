@@ -3,7 +3,8 @@ description: "For download and install project dependencies"
 inputs:
   node_version:
     description: "Specify nodejs version"
-    required: true
+    required: false
+    default: "16"
   with_build:
     description: "Build packages, you SHOULD NOT USE if you plan to collect coverage report"
     required: false

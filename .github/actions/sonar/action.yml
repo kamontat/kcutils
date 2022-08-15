@@ -1,0 +1,21 @@
+name: "SonarQube"
+description: "For sonarqube report"
+
+inputs:
+  github_apikey:
+    description: "Github APIKey to connect with github (Require by with_sonar)"
+    required: true
+  sonar_apikey:
+    description: "Sonarsource APIKey to connect with report apis (Require by with_sonar)"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - id: sonarqube
+      name: Scan sourcecode
+      uses: SonarSource/sonarcloud-github-action@master
+      if: ${{ github.repository == 'kamontat/kcutils' && always() }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_apikey }}
+        SONAR_TOKEN: ${{ inputs.sonar_apikey }}

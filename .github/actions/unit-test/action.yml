@@ -1,0 +1,25 @@
+name: "Unit test"
+description: "For unit test"
+
+inputs:
+  collect_report:
+    description: "Upload test report to Github Artifact"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - id: unit_test
+      name: Run unit test
+      run: yarn packages test
+      shell: bash
+    - name: Collect Unit test and Coverage report
+      uses: actions/upload-artifact@v3
+      if: ${{ inputs.collect_report == 'true' && failure() }}
+      with:
+        name: test-reports
+        retention-days: 7
+        path: |
+          "packages/**/coverage/lcov-report/"
+          "packages/**/junit.xml"

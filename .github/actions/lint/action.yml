@@ -1,0 +1,23 @@
+name: "Linter"
+description: "For check style"
+
+inputs:
+  collect_report:
+    description: "Upload linter report to Github Artifact"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - id: lint
+      name: Run check style
+      run: yarn packages lint
+      shell: bash
+    - name: Collect Eslint report
+      uses: actions/upload-artifact@v3
+      if: ${{ inputs.collect_report == 'true' && failure() }}
+      with:
+        name: eslint-report
+        retention-days: 7
+        path: packages/**/reports/eslint-result.json
