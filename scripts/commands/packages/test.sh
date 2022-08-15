@@ -13,8 +13,12 @@ on_root_directory
 args=()
 
 # On CI, coverage will be in summary format
-is_ci && args+=("--runInBand" "--coverageReporters" "text-summary" "lcov")
-
-# run yarn test on every module
-run_xlerna_run "test" -- "${args[@]}" "$@" &&
-  go_back
+if is_ci; then
+  # run yarn test on every module
+  run_nx_affected "--target" "test" &&
+    go_back
+else
+  # run yarn test on every module
+  run_xlerna_run "test" -- "${args[@]}" "$@" &&
+    go_back
+fi
