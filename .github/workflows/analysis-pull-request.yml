@@ -1,4 +1,4 @@
-name: Analysis Pull Request
+name: analysis-pull-request
 
 on:
   pull_request:

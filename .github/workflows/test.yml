@@ -1,4 +1,4 @@
-name: Test
+name: test
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           github_apikey: ${{ secrets.GITHUB_TOKEN }}
           sonar_apikey: ${{ secrets.SONAR_TOKEN }}
 
-  test:
+  nodes:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

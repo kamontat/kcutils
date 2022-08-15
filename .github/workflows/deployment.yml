@@ -1,4 +1,4 @@
-name: Deployment
+name: deployment
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ defaults:
     shell: bash
 
 jobs:
-  deployment:
+  deploy:
     runs-on: ubuntu-latest
     if: ${{ github.repository == 'kamontat/kcutils' }}
     steps:

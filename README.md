@@ -66,7 +66,7 @@ More information found [here][license]
 [q_img]: https://img.shields.io/sonar/quality_gate/kamontat_kcutils?server=https%3A%2F%2Fsonarcloud.io&style=flat-square
 [sv_img]: https://img.shields.io/sonar/violations/kamontat_kcutils?format=long&server=https%3A%2F%2Fsonarcloud.io&style=flat-square
 [sc_img]: https://img.shields.io/sonar/coverage/kamontat_kcutils?server=https%3A%2F%2Fsonarcloud.io&style=flat-square
-[t_img]: https://img.shields.io/github/workflow/status/kamontat/kcutils/Default/main?style=flat-square
+[t_img]: https://img.shields.io/github/workflow/status/kamontat/kcutils/test/main?style=flat-square
 [mt_img]: https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fkamontat%2Fkcutils%2Fmain
 
 [sdb]: https://sonarcloud.io/dashboard?id=kamontat_kcutils
