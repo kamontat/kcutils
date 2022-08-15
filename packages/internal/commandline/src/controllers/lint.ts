@@ -30,11 +30,21 @@ export const action = ActionBuilder.initial(option, async (option, context) => {
     );
 
     if (option.fix) prefixArguments.push("--fix");
+    if (context.env.isCI()) {
+      prefixArguments.push(
+        "--format",
+        "json",
+        "--output-file",
+        "./reports/eslint-result.json"
+      );
+    } else {
+      prefixArguments.push("--format", "stylish");
+    }
+
     return context.command.eslint(
       eslintConfig,
       ...prefixArguments,
       ".",
-      ...option.raw,
       ...option.extraArgs
     );
   } catch (e) {
