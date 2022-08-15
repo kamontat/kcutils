@@ -47,10 +47,10 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.prod.json",
-    "clean": "rimraf reports lib coverage junit.xml temp dist .rollup.cache",
-    "lint": "eslint .",
-    "test": "jest",
-    "test:mutator": "stryker run"
+    "clean": "kc-clean",
+    "lint": "kc-lint",
+    "test": "kc-test",
+    "test:mutator": "kc-test --mutator"
   },
   "dependencies": {
     "@kcinternal/runners": "0.2.21",
