@@ -5,10 +5,6 @@
       "path": "packages/utilities/random"
     },
     {
-      "name": "@kcinternal/logger",
-      "path": "packages/internal/logger"
-    },
-    {
       "name": "@kcinternal/runners",
       "path": "packages/internal/runners"
     },
