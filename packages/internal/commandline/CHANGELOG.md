@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.24.18](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.17...@kcinternal/commandline@0.24.18) (2022-08-22)
+
+
+### Performance Improvements
+
+* **script:** add custom options when execute from ci ([f4d1e69](https://github.com/kamontat/kcutils/commit/f4d1e69f07163586dfecd0f99559d339bfeb4734))
+* **script:** change commandline to use itself script for all except build ([f4622ac](https://github.com/kamontat/kcutils/commit/f4622acc39eed628f3962be9b6d6b9e9556fb693))
+
+
+
+
+
 ## [0.24.17](https://github.com/kamontat/kcutils/compare/@kcinternal/commandline@0.24.16...@kcinternal/commandline@0.24.17) (2022-08-08)
 
 

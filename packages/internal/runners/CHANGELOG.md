@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.22](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.21...@kcinternal/runners@0.2.22) (2022-08-22)
+
+
+### Bug Fixes
+
+* **docs:** missing document export for apis website ([1d17af0](https://github.com/kamontat/kcutils/commit/1d17af02b4c36ed4191eabd9e27ed04378f73efa))
+* **typedoc:** migrate lagacy typedoc config ([0a45956](https://github.com/kamontat/kcutils/commit/0a459567776f56433d1d334569c824050708e5cc))
+
+
+### Performance Improvements
+
+* **context:** not show debug message on CI ([34b0fda](https://github.com/kamontat/kcutils/commit/34b0fda512af84105fe1ef1b3dbb654290d02f43))
+
+
+
+
+
 ## [0.2.21](https://github.com/kamontat/kcutils/compare/@kcinternal/runners@0.2.20...@kcinternal/runners@0.2.21) (2022-08-08)
 
 **Note:** Version bump only for package @kcinternal/runners

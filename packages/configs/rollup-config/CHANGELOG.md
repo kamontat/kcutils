@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.13](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.12...@kcconfig/rollup-config@0.2.13) (2022-08-22)
+
+
+### Bug Fixes
+
+* **config:** typedocs config location is changed ([1836422](https://github.com/kamontat/kcutils/commit/18364222b768677482d7ad76835807513dbe9a50))
+
+
+
+
+
 ## [0.2.12](https://github.com/kamontat/kcutils/compare/@kcconfig/rollup-config@0.2.11...@kcconfig/rollup-config@0.2.12) (2022-08-08)
 
 
