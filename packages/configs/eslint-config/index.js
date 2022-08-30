@@ -1,3 +1,4 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   ignorePatterns: ["**/lib/**", "**/*.d.ts"],
   parser: "@typescript-eslint/parser",
