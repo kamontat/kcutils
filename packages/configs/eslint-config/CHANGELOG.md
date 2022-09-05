@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.22](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.21...@kcconfig/eslint-config@0.1.22) (2022-09-05)
+
+
+### Performance Improvements
+
+* **types:** add eslint-config types ([fc29a3c](https://github.com/kamontat/kcutils/commit/fc29a3cb3750ee15b259fae1a87db7309ec048c7))
+
+
+
+
+
 ## [0.1.21](https://github.com/kamontat/kcutils/compare/@kcconfig/eslint-config@0.1.20...@kcconfig/eslint-config@0.1.21) (2022-08-22)
 
 **Note:** Version bump only for package @kcconfig/eslint-config

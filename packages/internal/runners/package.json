@@ -1,7 +1,7 @@
 {
   "name": "@kcinternal/runners",
   "description": "runner apis for chain (with commandline included)",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "typedoc": {
@@ -48,7 +48,7 @@
     "minimist": "1.2.6"
   },
   "devDependencies": {
-    "@kcconfig/eslint-config": "0.1.21",
+    "@kcconfig/eslint-config": "0.1.22",
     "@kcconfig/jest-config": "0.1.5",
     "@kcconfig/stryker-config": "0.1.9",
     "@kcconfig/ts-config": "0.1.4",
