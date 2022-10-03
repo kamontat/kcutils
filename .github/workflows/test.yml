@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Set SHAs for "nx affected"
-        uses: nrwl/nx-set-shas@v2
+        uses: nrwl/nx-set-shas@v3
       - name: Setup project
         uses: ./.github/actions/setup
         with:
@@ -42,7 +42,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Set SHAs for "nx affected"
-        uses: nrwl/nx-set-shas@v2
+        uses: nrwl/nx-set-shas@v3
       - name: Setup project
         uses: ./.github/actions/setup
         with:
