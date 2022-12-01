@@ -17,7 +17,7 @@ jobs:
         with:
           with_build: true
       - name: Danger JS
-        uses: danger/danger-js@11.1.1
+        uses: danger/danger-js@11.2.0
         with:
           args: --dangerfile .dangerjs/pr-analysis.ts
         env:
