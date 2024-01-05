@@ -11,7 +11,7 @@ jobs:
   default:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Set SHAs for "nx affected"
@@ -38,7 +38,7 @@ jobs:
       matrix:
         node-version: [14, 16, 18]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Set SHAs for "nx affected"
